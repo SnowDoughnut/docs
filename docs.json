@@ -19,55 +19,50 @@
     "options": ["copy", "view", "assistant", "mcp", "add-mcp"]
   },
   "navigation": {
-    "anchors": [
+    "tabs": [
       {
-        "anchor": "Welcome",
-        "tabs": [
+        "tab": "Get started",
+        "pages": [
+          "overview",
+          "quick-starts",
+          "glossary",
+          "how-to-use-this-knowledge-base"
+        ]
+      },
+      {
+        "tab": "Find what you need",
+        "dropdowns": [
           {
-            "tab": "Get started",
+            "dropdown": "By Platform",
             "pages": [
-              "overview",
-              "quick-starts",
-              "glossary",
-              "how-to-use-this-knowledge-base"
+              "google",
+              "linkedin",
+              "meta",
+              "untitled-page",
+              "email"
             ]
           },
           {
-            "tab": "Find what you need",
-            "dropdowns": [
-              {
-                "dropdown": "By Platform",
-                "pages": [
-                  "google",
-                  "linkedin",
-                  "meta",
-                  "untitled-page",
-                  "email"
-                ]
-              },
-              {
-                "dropdown": "By Document Type",
-                "pages": [
-                  "untitled-page",
-                  "sops",
-                  "how-tos",
-                  "untitled-page",
-                  "brand-documents",
-                  "reports",
-                  "tools"
-                ]
-              },
-              {
-                "dropdown": "By Marketing Type",
-                "pages": [
-                  "oragni",
-                  "untitled-page",
-                  "paid-search",
-                  "paid-social",
-                  "content-marketing",
-                  "analytics"
-                ]
-              }
+            "dropdown": "By Document Type",
+            "pages": [
+              "untitled-page",
+              "sops",
+              "how-tos",
+              "untitled-page",
+              "brand-documents",
+              "reports",
+              "tools"
+            ]
+          },
+          {
+            "dropdown": "By Marketing Type",
+            "pages": [
+              "oragni",
+              "untitled-page",
+              "paid-search",
+              "paid-social",
+              "content-marketing",
+              "analytics"
             ]
           }
         ]
