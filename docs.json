@@ -38,7 +38,6 @@
               "google",
               "linkedin",
               "meta",
-              "untitled-page",
               "email"
             ]
           },
@@ -48,8 +47,8 @@
               "untitled-page",
               "sops",
               "how-tos",
-              "untitled-page",
               "brand-documents",
+              "untitled-page",
               "reports",
               "tools"
             ]
@@ -64,6 +63,144 @@
               "content-marketing",
               "analytics"
             ]
+          }
+        ]
+      },
+      {
+        "tab": "Brand",
+        "pages": [
+          "brand-guidelines",
+          "brand-guidelines",
+          "voice-and-tone",
+          "voice-and-tone",
+          "visual-identity",
+          "visual-identity",
+          "logo-usage",
+          "logo-usage",
+          "messaging",
+          "messaging",
+          "positioning",
+          "positioning",
+          "brand-assets",
+          "brand-assets"
+        ]
+      },
+      {
+        "tab": "Shared Standards",
+        "dropdowns": [
+          {
+            "dropdown": "Naming Conventions",
+            "pages": [
+              "campaign-naming-conventions",
+              "campaign-naming-conventions",
+              "ad-set-group-naming-conventions",
+              "ad-set-group-naming-conventions",
+              "ad-name-conventions",
+              "ad-name-conventions",
+              "audience-naming-conventions",
+              "audience-naming-conventions",
+              "file-naming-conventions",
+              "file-naming-conventions",
+              "event-naming-conventions",
+              "event-naming-conventions"
+            ]
+          },
+          {
+            "dropdown": "Tracking & attribution",
+            "pages": [
+              "utm-standards",
+              "utm-standards"
+            ]
+          },
+          {
+            "dropdown": "Reporting standards",
+            "pages": [
+              "kpi-definitions",
+              "kpi-definitions",
+              "reporting-cadence",
+              "reporting-cadence",
+              "dashboard-standards",
+              "dashboard-standards"
+            ]
+          },
+          {
+            "dropdown": "Creative standards",
+            "pages": [
+              "ad-copy-standards",
+              "ad-copy-standards",
+              "creative-review-checklist",
+              "creative-review-checklist",
+              "image-and-video-specs",
+              "image-and-video-specs",
+              "landing-page-standards",
+              "landing-page-standards"
+            ]
+          },
+          {
+            "dropdown": "Compliance and Approval",
+            "pages": [
+              "legal-review-process",
+              "legal-review-process",
+              "brand-approval-process",
+              "brand-approval-process"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Platforms & Channels",
+        "dropdowns": [
+          {
+            "dropdown": "Meta",
+            "pages": [
+              "meta-home",
+              "meta-home",
+              {
+                "group": "Tutorials",
+                "pages": []
+              },
+              {
+                "group": "SOPs",
+                "pages": []
+              },
+              {
+                "group": "How-tos",
+                "pages": []
+              },
+              {
+                "group": "Best practices",
+                "pages": []
+              },
+              {
+                "group": "Reports",
+                "pages": []
+              },
+              {
+                "group": "Checklists",
+                "pages": []
+              }
+            ]
+          },
+          {
+            "dropdown": "Google"
+          },
+          {
+            "dropdown": "LinkedIn"
+          },
+          {
+            "dropdown": "TikTok"
+          },
+          {
+            "dropdown": "Organic social"
+          },
+          {
+            "dropdown": "Email"
+          },
+          {
+            "dropdown": "SEO"
+          },
+          {
+            "dropdown": "Website & landing pages"
           }
         ]
       }
