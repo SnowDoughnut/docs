@@ -26,7 +26,15 @@
           "overview",
           "quick-starts",
           "glossary",
-          "how-to-use-this-knowledge-base"
+          "how-to-use-this-knowledge-base",
+          {
+            "group": "Onbaording",
+            "pages": [
+              "new-member-onboarding",
+              "paid-media-onboardin",
+              "brand-onboarding"
+            ]
+          }
         ]
       },
       {
@@ -500,6 +508,88 @@
           },
           {
             "group": "Email",
+            "pages": []
+          }
+        ]
+      },
+      {
+        "tab": "Tools and Systems",
+        "pages": [
+          "campaign-name-generator",
+          "camopaign-brief",
+          "creative-brief-creator"
+        ]
+      },
+      {
+        "tab": "Reports",
+        "groups": [
+          {
+            "group": "Weekly Reports",
+            "pages": []
+          },
+          {
+            "group": "Monthly Reports",
+            "pages": []
+          },
+          {
+            "group": "Untitled Group",
+            "pages": []
+          },
+          {
+            "group": "Yearly Reports",
+            "pages": []
+          }
+        ]
+      },
+      {
+        "tab": "Campaigns",
+        "dropdowns": [
+          {
+            "dropdown": "Active campaigns "
+          },
+          {
+            "dropdown": "Past campaigns"
+          },
+          {
+            "dropdown": "Evergreen campaigns"
+          }
+        ]
+      },
+      {
+        "tab": "Newsletters",
+        "groups": [
+          {
+            "group": "2026",
+            "pages": [
+              {
+                "group": "June",
+                "pages": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference Library",
+        "groups": [
+          {
+            "group": "Benchmarks",
+            "pages": []
+          },
+          {
+            "group": "Competitor research",
+            "pages": []
+          },
+          {
+            "group": "Audience research",
+            "pages": []
+          },
+          {
+            "group": "Market research",
+            "pages": []
+          },
+          {
+            "group": "Vendor documentation",
             "pages": []
           }
         ]
