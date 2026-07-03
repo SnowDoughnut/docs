@@ -75,19 +75,18 @@
         "tab": "Brand",
         "pages": [
           "brand-guidelines",
-          "brand-guidelines",
-          "voice-and-tone",
-          "voice-and-tone",
-          "visual-identity",
           "visual-identity",
           "logo-usage",
-          "logo-usage",
           "messaging",
-          "messaging",
-          "positioning",
           "positioning",
           "brand-assets",
-          "brand-assets"
+          {
+            "group": "Brand Voice & Tone Guidelines  ",
+            "pages": [
+              "voice-and-tone",
+              "untitled-page"
+            ]
+          }
         ]
       },
       {
@@ -97,23 +96,16 @@
             "dropdown": "Naming Conventions",
             "pages": [
               "campaign-naming-conventions",
-              "campaign-naming-conventions",
-              "ad-set-group-naming-conventions",
               "ad-set-group-naming-conventions",
               "ad-name-conventions",
-              "ad-name-conventions",
-              "audience-naming-conventions",
               "audience-naming-conventions",
               "file-naming-conventions",
-              "file-naming-conventions",
-              "event-naming-conventions",
               "event-naming-conventions"
             ]
           },
           {
             "dropdown": "Tracking & attribution",
             "pages": [
-              "utm-standards",
               "utm-standards"
             ]
           },
@@ -121,10 +113,7 @@
             "dropdown": "Reporting standards",
             "pages": [
               "kpi-definitions",
-              "kpi-definitions",
               "reporting-cadence",
-              "reporting-cadence",
-              "dashboard-standards",
               "dashboard-standards"
             ]
           },
@@ -132,12 +121,8 @@
             "dropdown": "Creative standards",
             "pages": [
               "ad-copy-standards",
-              "ad-copy-standards",
-              "creative-review-checklist",
               "creative-review-checklist",
               "image-and-video-specs",
-              "image-and-video-specs",
-              "landing-page-standards",
               "landing-page-standards"
             ]
           },
@@ -145,8 +130,6 @@
             "dropdown": "Compliance and Approval",
             "pages": [
               "legal-review-process",
-              "legal-review-process",
-              "brand-approval-process",
               "brand-approval-process"
             ]
           }
