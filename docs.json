@@ -89,12 +89,18 @@
           {
             "dropdown": "Naming Conventions",
             "pages": [
-              "campaign-naming-conventions",
-              "ad-set-group-naming-conventions",
-              "ad-name-conventions",
               "audience-naming-conventions",
               "file-naming-conventions",
-              "event-naming-conventions"
+              "event-naming-conventions",
+              {
+                "group": "Naming Conventions for Campaigns",
+                "pages": [
+                  "cool",
+                  "campaign-naming-conventions",
+                  "ad-set-group-naming-conventions",
+                  "ad-name-conventions"
+                ]
+              }
             ]
           },
           {
@@ -576,6 +582,12 @@
             "group": "Vendor documentation",
             "pages": []
           }
+        ]
+      },
+      {
+        "tab": "Dictionaries",
+        "pages": [
+          "naming-convention-dictionary"
         ]
       }
     ]

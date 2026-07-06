@@ -1,0 +1,56 @@
+---
+title: "Overview"
+---
+
+A naming convention gives every campaign, ad set, and ad a predictable, structured name. Use it to organize, analyze, filter, and group performance data into actionable insights, and to manage an ad account as it scales across every channel you run: Google, Meta, Pinterest, Display, SMS, email, and anything you add later.
+
+This document explains the thinking behind the framework. The three naming SOPs and the dictionary put it into practice.
+
+_Examples throughout this document, and in the three SOPs and dictionary that follow, use one fictional brand: Doughnut Labs, a SaaS business that builds doughnut shop management apps (point of sale, online ordering, inventory and ingredient tracking, delivery routing), running paid campaigns across Google, Meta, Pinterest, Display, SMS, and email. Swap in your own brand and values as you fill in each document._
+
+## What a naming convention does for you
+
+- **Creates a manageable ad environment.** Anyone on the team can scan a name and understand what's running without opening the platform.
+- **Supports analysis.** Consistent identifiers let you filter and compare ads by the variable that actually matters: offer, creative type, audience, funnel stage, and so on.
+
+## How a name is built
+
+Every name in this framework is built from two kinds of identifiers.
+
+**Standard identifiers** describe the permanent facts about a campaign, ad set, or ad: its channel, objective, audience, offer, and so on. Every campaign, ad set, and ad carries its full set of standard identifiers, in the same order, every time.
+
+**Testing identifiers** describe a hypothesis you're currently running, for example a creative format test. They're optional, and only appended to the ads that are part of that test, for as long as the test runs. This framework covers where a testing identifier goes in a name. 
+
+## Name jamming (short identifiers)
+
+Name jamming means packing as many identifiers as possible into a name using their short form. For example:
+
+```text
+go-$l-CBO-tR-tO
+```
+
+instead of:
+
+```text
+Google-Leads-CBO-tROAS-TOFU
+```
+
+Name jamming keeps names short enough for automated reporting and platform character limits, at the cost of being harder for a person to read at a glance. Some teams name-jam everything; others only jam the fields that push a name past a platform's limit. Both work as long as the choice is applied the same way everywhere.
+
+If you name-jam any identifier, add its short form to the dictionary alongside the long form. That way anyone on the team can look up what a short code means, and reporting can map short and long forms back to each other.
+
+<Warning>
+  Never rename or remove an identifier once it's used in a live or historical campaign. Add new identifiers to the list instead. Renaming fragments your data, since reporting can no longer group the old and new names together. Removing loses the record entirely.
+</Warning>
+
+## Related resources
+
+**Campaign naming conventions** Standard identifiers that describe a campaign's channel and strategy.
+
+**Ad set / ad group / variant naming conventions** Identifiers that describe audience-level structure.
+
+**Ad naming conventions** Identifiers for creative, offer, and destination detail, plus where testing identifiers go.
+
+**Naming convention dictionary** Every value in use across every category, in both long and short form.
+
+**Experiment ID SOP (not yet created)** Defines how a hypothesis becomes a short experiment ID, how long that ID stays on an ad before the test ends, and where the hypothesis, dates, and result get logged once the test is done. Build this before you start using testing identifiers in the field.
