@@ -126,6 +126,12 @@
               "legal-review-process",
               "brand-approval-process"
             ]
+          },
+          {
+            "dropdown": "Experimentation and Testing ",
+            "pages": [
+              "experiment-ids"
+            ]
           }
         ]
       },
@@ -494,7 +500,8 @@
         "pages": [
           "campaign-name-generator",
           "camopaign-brief",
-          "creative-brief-creator"
+          "creative-brief-creator",
+          "experimentation-id-creator"
         ]
       },
       {
