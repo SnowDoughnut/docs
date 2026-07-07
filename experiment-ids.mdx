@@ -1,3 +1,73 @@
 ---
 title: "Experiment ID's"
 ---
+
+Use an experiment ID to track a single test across your project management tool, ad platform, and reporting dashboard. This SOP explains what an experiment ID is, when to create one, how to format it, and where to add it once a test goes live.
+
+## What is an experiment ID
+
+An experiment ID is a short, unique code assigned to one test. You add it to the end of a campaign, ad set, or ad name so the test stays identifiable no matter where you look it up.
+
+For example, in `Meta-Instagram-Awareness-CBO-TOFU-TEST01`, `TEST01` is the experiment ID. The rest of the string describes the platform, placement, objective, budget type, and funnel stage. The experiment ID is the one segment that stays tied to this specific test, even if you clone the campaign or update the other naming segments later.
+
+## Why experiment IDs matter
+
+Experiment IDs let you:
+
+- Find a specific test in your BI tool, ad platform, or project management tool without searching by full campaign name
+- Compare test results without confusing two similarly named campaigns
+- Trace a live test back to the experiment brief that documents its hypothesis
+- Keep reporting consistent when multiple team members set up tests
+
+## Create an experiment ID
+
+Create the experiment ID when you set up the experiment brief, before the test launches on any ad platform. See the [Creating an experiment brief SOP](/test-brief-process) for how to build the brief itself.
+
+To create an experiment ID:
+
+1. Open the experiment brief in your project management tool (Airtable, monday.com, Notion, or similar).
+2. Generate a new ID using your team's chosen pattern (see **Choose an ID pattern** below).
+3. Check your experiment log to confirm the ID isn't already in use.
+4. Save the ID in the brief record.
+5. Add the ID to the campaign, ad set, or ad name in the ad platform.
+6. Add the same ID to any BI tool tags, dashboard filters, or UTM parameters your reporting depends on.
+
+<Warning>
+  Don't change an experiment ID after a test launches. Changing it breaks the link between the brief, the live campaign, and any report that already references the original code.
+</Warning>
+
+### Choose an ID pattern
+
+You can define your own experiment ID pattern. What matters more than the specific pattern is that everyone on the team uses the same one, every time.
+
+Three common patterns:
+
+| Pattern | Example | Best for |
+| --- | --- | --- |
+| Sequential number | `TEST01`, `TEST02`, `TEST03` | Small teams running tests in a single queue |
+| Date-based | `TEST-0714` | Teams that want the launch date visible at a glance |
+| Random alphanumeric | `TEST-8H2P` | Teams running many tests at once, across several people, where sequential numbers could collide |
+
+Whichever pattern you choose:
+
+- **Keep it short.** Long strings get cut off in ad platform reports and are harder to scan.
+- **Use only letters and numbers, plus one delimiter** (a dash or underscore). Spaces and symbols such as `&`, `#`, or `/` can break UTM tracking parameters and cause errors when reports import campaign data.
+- **Avoid characters that look alike**, such as `O` and `0`, or `I`, `l`, and `1`. This matters if anyone ever reads an ID aloud or retypes it by hand.
+- **Keep the ID the same length each time** (for example, always two digits: `TEST01`, not `TEST1`). Consistent length makes IDs easier to scan in a list.
+
+## Where the experiment ID is used
+
+Add the same experiment ID everywhere the test appears:
+
+- The experiment brief in your project management tool
+- The campaign, ad set, or ad name in the ad platform
+- Tags, filters, or dashboards in your BI tool
+- UTM parameters, such as `utm_content` or `utm_campaign`, if the test links to a tracked landing page
+
+## Keep a single experiment log
+
+Store every experiment ID you've created in one place. A tab or view in your project management tool works well. Before you assign a new ID, check this log to confirm it isn't already in use. The same log lets anyone on the team scan test history at a glance, without opening every brief.
+
+## Related resources
+
+[**Creating an experiment brief** ](/test-brief-process)Build the hypothesis and test structure that your experiment ID will point back to.
