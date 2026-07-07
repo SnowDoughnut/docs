@@ -1,3 +1,127 @@
 ---
-title: "Ad set / group naming conventions"
+title: "Ad set / ad group / variant naming conventions"
 ---
+
+_Fill in the workbook for each section below. Expand a concept review if you want the reasoning behind a section before you commit to a structure._
+
+_Examples below continue the Doughnut Labs brand introduced in How naming conventions work._
+
+<Note>
+  Platforms use different terms for this level: Meta calls it an ad set, Google and Pinterest call it an ad group, and SMS or email platforms often call it a segment or variant. This document covers all of them under one convention. Fill in a row for every value you use in each category table below; that's what builds this level's dictionary. Testing identifiers, below, are optional and only apply while a test is running.
+</Note>
+
+<Steps>
+  <Step title="List your audience sources">
+    Note every audience type and seed source you draw on: lookalikes, retargeting pools, customer lists, and so on.
+  </Step>
+  <Step title="Fill in a row for every value you use, in each category table below">
+    Add its short form too, if you plan to name jam it.
+  </Step>
+  <Step title="Assemble the name">
+    Concatenate the identifiers in order, using one delimiter. Then add the testing identifier, if any, at the end.
+  </Step>
+</Steps>
+
+## Standard identifiers
+
+Date is freeform, for example `20260601`, and doesn't need a table of its own.
+
+### Audience type
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. 3% LLA_ | _LLA3_ | _1 to 3 percent lookalike audience_ |  |
+| Retargeting | RT | Users who previously engaged with the brand |  |
+| Interest | INT | Platform interest or behavior targeting |  |
+| Customer match | CM | Matched against an uploaded customer list |  |
+| Prospecting | PROS | Broad, non-lookalike cold targeting |  |
+| \[add audience type\] |  |  |  |
+
+### Audience seed
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. HubSpot Leads_ | _HSL_ | _CRM lead list exported from HubSpot_ |  |
+| Stripe Customers | STC | Paying customer list exported from Stripe |  |
+| Website Visitors 180d | WV180 | Site visitors in the last 180 days |  |
+| Email Subscribers | ESUB | Active email list subscribers |  |
+| Trial Abandoners | TRIALAB | Started a free trial signup without completing it |  |
+| \[add seed source\] |  |  |  |
+
+<Accordion title="Concept review: ad set / ad group / variant identifiers">
+  Date tells you when an audience was built or last refreshed, which matters because audience performance can drift as a list ages or a lookalike source changes. Recording it lets you compare an audience's early performance against its later performance, or tell two versions of "the same" audience apart. Audience type and audience seed work together rather than separately. Audience type says what kind of audience it is (a lookalike, a retargeting pool, a customer list); audience seed says where it came from. Two 3% lookalikes built from different seed lists can perform very differently, so recording both is what lets you attribute a result to the audience itself rather than just to "lookalikes" in general.
+</Accordion>
+
+## Additional categories many teams add
+
+<Tip>
+  Optional: add these if you target by geography, language, or device, or if you run email or SMS sends as distinct segments.
+</Tip>
+
+### Geo / market
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. US_ | _US_ | _United States_ |  |
+| CA | CA | Canada |  |
+| UK | UK | United Kingdom |  |
+| ALL | ALL | Not geo-restricted |  |
+| \[add market\] |  |  |  |
+
+### Language
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. English_ | _EN_ | _English-language creative_ |  |
+| Spanish | ES | Spanish-language creative |  |
+| French | FR | French-language creative |  |
+| \[add language\] |  |  |  |
+
+### Device
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. All devices_ | _ALL_ | _Not restricted by device_ |  |
+| Mobile | MOB | Mobile-only targeting or creative |  |
+| Desktop | DESK | Desktop-only targeting or creative |  |
+| \[add device\] |  |  |  |
+
+### List / segment type
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. Newsletter_ | _NEWS_ | _Recurring editorial or brand send_ |  |
+| Promo | PROMO | Discount or promotional send |  |
+| Trial abandoned | ABTRIAL | Triggered when a trial signup isn't completed |  |
+| Winback | WINBK | Targeted at lapsed customers |  |
+| Transactional | TRANS | Order or account-related send |  |
+| \[add segment type\] |  |  |  |
+
+<Accordion title="Concept review: additional targeting and segment categories">
+  Geo, language, and device only earn a place in the name if you actually target or create by them. An account running only broad, English-language, all-device campaigns doesn't need any of the three; one that runs separate creative for mobile and desktop, or localizes into French, does. List and segment type is the ad-set-level equivalent for email and SMS. A newsletter send and a cart-abandonment trigger aren't different audiences in the ad-platform sense, but they're different sends with different timing and intent, and naming them the same way you'd name a Meta ad set keeps them comparable in reporting.
+
+  If you add one of these to your names, decide where it sits in the order and keep it there consistently.
+</Accordion>
+
+## Assemble the name
+
+Spaces, `%`, and other special characters can break platform parsing or reporting exports. Use the short form you logged above for anything that isn't a plain alphanumeric string.
+
+- Long form: `20260601-3-Percent-LLA-HubSpot-Leads`
+- Short form (name jammed): `20260601-LLA3-HSL`
+
+<Info>
+  This document covers ad set / ad group / variant-level identifiers, including this level's dictionary of values. See [Campaign naming conventions](/campaign-naming-conventions) and [Ad naming conventions](/ad-name-conventions) for the other two levels.
+</Info>
+
+## Testing identifiers
+
+<Tip>
+  Optional: append only to sets / groups / variants that are part of an active test.
+</Tip>
+
+Testing identifiers mark a hypothesis you're currently running, for example a A/B variant test. Because a test only applies to some sets / groups / variants for a limited time, testing identifiers aren't part of the standard identifier set: append one to the end of the  sets / groups / variant name, after the standard identifiers, instead of building it into a table above.
+
+- With a testing identifier appended: `20260601-3-Percent-LLA-HubSpot-Leads-TEST01`
+
+This document only covers where a testing identifier sits in the name. It doesn't cover how a test ID gets created, how long it stays on an ad, or where the result gets logged once the test ends. Visit the [Experiment ID SOP](/experiment-ids) for that.

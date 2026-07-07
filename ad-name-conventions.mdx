@@ -1,3 +1,115 @@
 ---
-title: "Ad name conventions"
+title: "Ad naming conventions"
 ---
+
+_Fill in the workbook for each section below. Expand a concept review if you want the reasoning behind a section before you commit to a structure._
+
+_Examples below continue the Doughnut Labs brand introduced in How naming conventions work._
+
+<Note>
+  Fill in a row for every value you use in each category table below; that's what builds this level's dictionary. Testing identifiers, below, are optional and only apply while a test is running.
+</Note>
+
+<Steps>
+  <Step title="Fill in a row for every value you use, in each category table below">
+    Add its short form too, if you plan to name jam it.
+  </Step>
+  <Step title="Append a testing identifier if the ad is part of an active test">
+    Only for ads currently running a hypothesis test.
+  </Step>
+  <Step title="Assemble the name">
+    Concatenate standard identifiers first, then the testing identifier, if any, at the end.
+  </Step>
+</Steps>
+
+## Standard identifiers
+
+Creative name is freeform, for example `AutoGlaze`, and doesn't need a table of its own; every creative has a unique name. Whenever possible, the creative name should match the file name. [See File naming conventions](/file-naming-conventions) for more information.
+
+### Ad type
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. STATIC_ | _STA_ | _Single static image_ |  |
+| VIDEO | VID | Video creative |  |
+| CAROUSEL | CAR | Multi-card carousel format |  |
+| COLLECTION | COL | Collection format, for showcasing multiple products or apps |  |
+| GIF | GIF | Animated GIF |  |
+| UGC | UGC | User-generated or creator-style content |  |
+| \[add ad type\] |  |  |  |
+
+### Offer
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. FREETRIAL_ | _FREETRIAL_ | _Free trial of the product, no credit card required_ |  |
+| ANNUAL20 | AN20 | 20 percent off an annual plan |  |
+| EXTTRIAL | EXT | Extended trial period beyond the standard length |  |
+| FREEMIG | FMIG | Free data migration from a competitor or spreadsheet |  |
+| \[add offer\] |  |  |  |
+
+### CTA
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. TRY_ | _TRY_ | _"Start free trial" call to action_ |  |
+| DEMO | DEM | "Book a demo" call to action |  |
+| LEARN | LRN | "Learn more" call to action |  |
+| SIGNUP | SGN | "Sign up" call to action |  |
+| DOWNLOAD | DL | "Download" call to action |  |
+| CONTACT | CNT | "Contact sales" call to action |  |
+| \[add CTA\] |  |  |  |
+
+### Destination
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. LP_ | _LP_ | _Standalone landing page_ |  |
+| PDP | PDP | Product or feature detail page |  |
+| PRICING | PRC | Pricing or plans page |  |
+| HOME | HOM | Homepage |  |
+| CART | CRT | Checkout or cart page |  |
+| BLOG | BLG | Blog or content page |  |
+| \[add destination\] |  |  |  |
+
+<Accordion title="Concept review: ad-level identifiers">
+  Creative name, together with ad type, offer, CTA, and destination, is what lets you run creative analysis. When two ads are identical except for one field, for example the same creative and CTA but a different offer, the naming convention is what makes that comparison visible in a report without having to open each ad individually. Creative name is the one freeform field here; it doesn't need a table of its own, since every creative has a unique name. Ad type, offer, CTA, and destination are the enumerable ones worth standardizing and logging above.
+</Accordion>
+
+## Additional categories many teams add
+
+<Tip>
+  Optional: add this if you run display ads with fixed creative dimensions.
+</Tip>
+
+### Ad format / size
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. 300x250_ | _300x250_ | _Medium rectangle display unit_ |  |
+| 728x90 | 728x90 | Leaderboard display unit |  |
+| 160x600 | 160x600 | Wide skyscraper display unit |  |
+| Responsive | RESP | Responsive display, size set by the platform |  |
+| \[add format\] |  |  |  |
+
+Ad format / size only matters for channels with fixed creative dimensions, mainly display. Skip it for channels where creative is responsive or single-format by default.
+
+## Assemble the name
+
+- Standard only: `AutoGlaze-STATIC-FREETRIAL-TRY-LP`
+
+<Info>
+  This document covers ad-level identifiers, including this level's dictionary of values. See [Campaign naming conventions ](/campaign-naming-conventions)and [Ad set / ad group / variant naming conventions](/ad-set-group-naming-conventions) for the other two levels.
+</Info>
+
+## Testing identifiers
+
+<Tip>
+  Optional: append only to ads that are part of an active test.
+</Tip>
+
+Testing identifiers mark a hypothesis you're currently running, for example a creative format test or an offer test. Because a test only applies to some ads for a limited time, testing identifiers aren't part of the standard identifier set: append one to the end of the ad name, after the standard identifiers, instead of building it into a table above.
+
+- With a testing identifier appended: `AutoGlaze-STATIC-FREETRIAL-TRY-LP-TEST01`
+
+This document only covers where a testing identifier sits in the name. It doesn't cover how a test ID gets created, how long it stays on an ad, or where the result gets logged once the test ends. Visit the [Experiment ID SOP](/experiment-ids) for that.
