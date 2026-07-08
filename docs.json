@@ -21,17 +21,18 @@
   "navigation": {
     "products": [
       {
-        "product": "Practice ",
-        "pages": [
-          "statistical-significance",
-          "test"
-        ]
-      },
-      {
         "product": "Theory ",
         "tabs": [
           {
-            "tab": "Dictionary"
+            "tab": "Learn",
+            "dropdowns": [
+              {
+                "dropdown": "Dictionary",
+                "pages": [
+                  "statistical-significance"
+                ]
+              }
+            ]
           },
           {
             "tab": "Get started",
@@ -593,7 +594,9 @@
               },
               {
                 "group": "Vendor documentation",
-                "pages": []
+                "pages": [
+                  ""
+                ]
               }
             ]
           }
