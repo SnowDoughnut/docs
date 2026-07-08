@@ -24,29 +24,6 @@
         "version": "v1",
         "tabs": [
           {
-            "tab": "Learn",
-            "menu": [
-              {
-                "item": "Experimentation",
-                "pages": [
-                  "experiment-ids",
-                  "test-brief-process",
-                  "experiment-review-process",
-                  {
-                    "group": "Learnings library",
-                    "pages": []
-                  }
-                ]
-              },
-              {
-                "item": "Dictionary",
-                "pages": [
-                  "statistical-significance"
-                ]
-              }
-            ]
-          },
-          {
             "tab": "Get started",
             "pages": [
               "overview",
@@ -97,22 +74,45 @@
             ]
           },
           {
-            "tab": "Brand",
-            "pages": [
-              "brand-guidelines",
-              "visual-identity",
-              "logo-usage",
-              "messaging",
-              "positioning",
-              "brand-assets",
-              "untitled-page"
+            "tab": "Concepts",
+            "groups": [
+              {
+                "group": "Experimentation",
+                "pages": [
+                  "experiment-ids",
+                  "test-brief-process",
+                  "experiment-review-process",
+                  {
+                    "group": "Learnings library",
+                    "pages": []
+                  }
+                ]
+              },
+              {
+                "group": "Dictionary",
+                "pages": [
+                  "statistical-significance"
+                ]
+              }
             ]
           },
           {
-            "tab": "Shared Standards",
-            "dropdowns": [
+            "tab": "Standards",
+            "groups": [
               {
-                "dropdown": "Naming Conventions",
+                "group": "Brand guidelines",
+                "pages": [
+                  "brand-guidelines",
+                  "visual-identity",
+                  "logo-usage",
+                  "messaging",
+                  "positioning",
+                  "brand-assets",
+                  "untitled-page"
+                ]
+              },
+              {
+                "group": "Naming Conventions",
                 "pages": [
                   "audience-naming-conventions",
                   "file-naming-conventions",
@@ -129,21 +129,13 @@
                 ]
               },
               {
-                "dropdown": "Tracking & attribution",
+                "group": "Tracking & attribution",
                 "pages": [
                   "utm-standards"
                 ]
               },
               {
-                "dropdown": "Reporting standards",
-                "pages": [
-                  "kpi-definitions",
-                  "reporting-cadence",
-                  "dashboard-standards"
-                ]
-              },
-              {
-                "dropdown": "Creative standards",
+                "group": "Creative standards",
                 "pages": [
                   "ad-copy-standards",
                   "creative-review-checklist",
@@ -152,10 +144,18 @@
                 ]
               },
               {
-                "dropdown": "Compliance and Approval",
+                "group": "Compliance and Approval",
                 "pages": [
                   "legal-review-process",
                   "brand-approval-process"
+                ]
+              },
+              {
+                "group": "Reporting standards",
+                "pages": [
+                  "kpi-definitions",
+                  "reporting-cadence",
+                  "dashboard-standards"
                 ]
               }
             ]
@@ -572,9 +572,6 @@
                 ]
               }
             ]
-          },
-          {
-            "tab": "Reference Library"
           }
         ]
       }
