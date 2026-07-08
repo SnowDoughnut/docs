@@ -25,9 +25,21 @@
         "tabs": [
           {
             "tab": "Learn",
-            "dropdowns": [
+            "groups": [
               {
-                "dropdown": "Dictionary",
+                "group": "Experimentation",
+                "pages": [
+                  "experiment-ids",
+                  "test-brief-process",
+                  "experiment-review-process",
+                  {
+                    "group": "Learnings library",
+                    "pages": []
+                  }
+                ]
+              },
+              {
+                "group": "Dictionary",
                 "pages": [
                   "statistical-significance"
                 ]
@@ -439,18 +451,6 @@
                   "weekly-reporting-process",
                   "weekly-reporting-process-1",
                   "weekly-reporting-process-2"
-                ]
-              },
-              {
-                "dropdown": "Experimentation",
-                "pages": [
-                  "experiment-ids",
-                  "test-brief-process",
-                  "experiment-review-process",
-                  {
-                    "group": "Learnings library",
-                    "pages": []
-                  }
                 ]
               }
             ]
