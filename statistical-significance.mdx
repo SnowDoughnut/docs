@@ -1,0 +1,157 @@
+---
+title: "Statistical significance"
+---
+
+Statistical significance is one signal that a test's results are trustworthy. This page explains what it means, when to require it, what to do when you can't reach it, and when it's reasonable to call a test without it.
+
+## What statistical significance is
+
+Statistical significance is the probability that the difference between your variants is real, not random noise.
+
+When you run a test, some difference between variants will show up even if the change had no effect at all. That's just how random data behaves. Statistical significance measures how likely it is that the difference you're seeing would occur by chance if the variants were actually identical.
+
+It's usually expressed two ways:
+
+- **Confidence level:** how sure you are the result is real. 95% confidence means there's a 5% chance the observed difference is a fluke.
+- **P-value:** the same idea from the other side. `p < 0.05` is the same as 95% confidence. A test at 95% confidence means: if the variants were actually identical, you'd only see a difference this large about 5% of the time. That's usually a low enough error rate to act on.
+
+<Note>
+  Significance tells you a result is likely real. It does not tell you the result is big enough to matter. See the section on statistical vs practical significance below.
+</Note>
+
+## When to use statistical significance
+
+Use a significance threshold when:
+
+- The test has enough traffic to reach the threshold in a reasonable timeframe
+- The decision is expensive or hard to reverse
+- Stakeholders will scrutinize the result
+- You want to compare tests to each other on the same basis
+
+Don't insist on statistical significance when:
+
+- Traffic is too low to reach any reasonable threshold before results go stale
+- The change is cheap, reversible, and low-risk.
+- You're running exploratory tests to learn, not to decide
+- The observed effect is very large and consistent across the full test period
+
+## Choose a confidence level
+
+95% is the default in most tools and most industries. Use a different level when the situation calls for it.
+
+| Confidence level | When to use it |
+| --- | --- |
+| 90% | Low-stakes, reversible changes; low-traffic tests where you need any signal |
+| 95% | Default, most conversion and engagement tests |
+| 99% | High-stakes changes, permanent decisions, large investments |
+
+Lowering the confidence level lets you call tests faster but increases the chance of false positives. Raising it gives you more certainty but requires much more traffic.
+
+Pick the level before the test runs, not after. Choosing a threshold after seeing the results is how false wins get shipped.
+
+## Statistical vs practical significance
+
+A test can be statistically significant and still not worth shipping.
+
+Example: a landing page test shows a 0.4% lift in conversion rate at 99% confidence. The result is real, but the change requires two weeks of engineering time and the page has low traffic. The projected annual revenue lift doesn't cover the build cost. The right call is not to ship, even though the test "won."
+
+Before shipping a winner, ask:
+
+- Is the effect large enough to matter to the business?
+- Does the projected impact justify the cost of implementing and maintaining the change?
+- Will the effect hold outside the test window? (See novelty effects below.) Statistical significance is a filter for noise. Practical significance is the actual decision.
+
+## Handling low-volume tests
+
+Many digital marketing tests will never generate enough traffic to reach 95% confidence in a useful timeframe. Small email lists, niche SMS segments, low-traffic pages, and short-cycle brand campaigns all fall into this bucket.
+
+When traffic is limited, adjust the approach.
+
+### Test bigger changes
+
+Small changes require huge sample sizes to detect. Large changes show up faster.
+
+Instead of testing button colors, test whole page layouts, offer structures, or headline angles. The bigger the true difference between variants, the smaller the sample needed to see it.
+
+### Lower the confidence threshold
+
+Dropping from 95% to 90% confidence can meaningfully cut the required sample size. Only do this on low-stakes, reversible decisions, and record the tradeoff in the brief. You're accepting more false positives in exchange for faster decisions.
+
+Do not lower the threshold on high-stakes decisions.
+
+### Reduce the number of variants
+
+Splitting traffic across four variants means each variant gets a quarter of the sample. On a low-traffic test, run A/B rather than A/B/C/D.
+
+### Extend the timeline, but not indefinitely
+
+Running a test longer collects more data, but past a certain point it introduces new problems:
+
+- **Seasonality:** results start reflecting different customer behavior week to week
+- **Cookie loss:** users clear cookies, get reassigned, or come back on new devices
+- **Business changes:** other campaigns, product changes, or market events confound the test Two to six weeks is a common range for web and email tests. Longer tests need care.
+
+### Look at direction and confidence intervals
+
+Even without hitting a threshold, you can read the shape of the data:
+
+- Is one variant consistently ahead across the full test period, not just at the end?
+- Do the confidence intervals overlap heavily, or are they starting to separate?
+- Does the pattern hold across segments (new vs returning, mobile vs desktop, region)? A consistent, well-behaved trend at 80% confidence is a stronger signal than a wildly swinging result that briefly touches 95%.
+
+### Combine with qualitative signals
+
+Low-traffic tests benefit from mixing methods. Session recordings, heatmaps, user interviews, survey responses, and support ticket patterns can corroborate what the quantitative test is hinting at. If the numbers lean toward variant B and users are also saying they preferred it in interviews, the call is easier.
+
+## When to make a judgment call
+
+Sometimes you have to decide without statistical significance. Use this checklist before you do:
+
+- Traffic is genuinely too low to reach significance in a useful timeframe
+- The change is reversible if it turns out to be wrong
+- The primary metric is trending consistently in one direction across the full test period
+- Guardrail metrics are healthy 
+- The result matches the hypothesis (a surprise result deserves more scrutiny)
+
+If any are false, either extend the test, redesign it, or accept that this question can't be answered with a test right now.
+
+## Common pitfalls
+
+Statistical significance can mislead you when the underlying test has problems. Check for these before trusting a result:
+
+### Peeking
+
+Repeatedly checking a running test and stopping the moment it crosses 95% inflates false-positive rates. Set the sample size and duration in advance, and only stop early for real reasons broken tracking, harmful guardrail movement, business change. 
+
+### Sample ratio mismatch
+
+The variants should receive the split you configured. If you set a 50/50 split and see 52/48, something is wrong with the randomization, tracking, or data pipeline. This is called sample ratio mismatch (SRM), and it invalidates the test.
+
+Check the split before analyzing the metric results. If it's off by more than a small margin, investigate before drawing conclusions.
+
+### Novelty and primacy effects
+
+Users react to change. When something new appears, some users engage with it just because it's new. This is the novelty effect. Others prefer the version they're used to and stick with it. This is the primacy effect. Both distort early test results.
+
+To reduce these effects:
+
+- Run the test long enough for initial reactions to settle (usually at least one full business cycle)
+- Segment results by new vs returning users. If the effect only shows in one group, novelty or primacy may be driving it
+
+### Multiple testing
+
+If you run twenty tests at 95% confidence and none of the changes actually work, roughly one will still look like a winner by pure chance. This matters most when running many small tests on the same page or funnel at the same time.
+
+Reduce the risk by testing fewer things at once, using stricter thresholds for exploratory tests, or applying a correction if your tool supports it.
+
+### Post-hoc segmentation
+
+Slicing results after the test ends until you find a segment where the variant wins is a form of cheating. If you didn't plan to look at "mobile users in Ontario aged 25–34," don't declare a win in that segment after the fact.
+
+Decide which segments matter before the test runs.
+
+## Related resources
+
+[**Create an experiment brief** ](/test-brief-process)How to document a test before running it, including sample size and success criteria.
+
+[**The experiment review process**](/experiment-review-process) How to write up results and add them to the learning library.

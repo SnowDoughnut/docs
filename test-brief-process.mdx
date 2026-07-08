@@ -1,3 +1,168 @@
 ---
 title: "Creating an experiment brief"
 ---
+
+An experiment brief is the record of a single test. It captures the hypothesis and design before the test runs, and the results after, so decisions are documented and future tests can build on what was learned.
+
+Use one for any digital marketing test where you're comparing variants.
+
+## When to use an experiment brief
+
+Fill out a brief for any test where you're comparing at least two versions and want to record what happened. That includes:
+
+- Paid media tests (Meta, Google, TikTok, LinkedIn)
+- Web CRO tests (page copy, CTA color, form length, layout)
+- Email CRO tests (subject line, send time, template, offer)
+- SMS tests (copy, timing, segment)
+- Any other digital test with a control and one or more variants
+
+If you're making a change without comparing it to a control, you're not running an experiment a brief isn't needed.
+
+## Setup
+
+The setup fields identify the test and the person accountable for it.
+
+### Owner
+
+The person responsible for implementing the test, running it, analyzing results after completion, and recommending the next action. One owner per test.
+
+### Experiment ID
+
+A short, unique code assigned to the test. See [experiment ID conventions](/experiment-ids) to learn more. 
+
+### Test type
+
+The kind of test being run. Common types:
+
+- **A/B:** one control, one variant
+- **A/B/n:** one control, multiple variants
+- **Multivariate:** multiple variables tested at once
+- **Holdout:** a group is excluded from the change to measure its impact
+
+## Hypothesis and metrics
+
+These fields define what you're testing and how you'll measure it.
+
+### Hypothesis
+
+The outcome you expect and the reasoning behind it. A useful hypothesis has three parts:
+
+- The change you're making
+- The outcome you expect
+- Why you expect it
+
+Example: _Changing the CTA button from grey to orange on the pricing page will increase click-through rate, because orange has higher contrast against the page background and draws the eye more clearly._
+
+### Primary metric
+
+The single metric used to decide if the test worked. Choose one. If two candidates seem equally good, pick the one closest to the outcome the hypothesis predicts.
+
+### Secondary metrics
+
+Metrics you also want to watch, but aren't using to make the decision. Secondary metrics fill in the fuller story. For a CTA test, that might be time on page, scroll depth, or downstream conversion volume.
+
+### Guardrail metrics
+
+Metrics that must not degrade, even if the primary metric improves. If a guardrail drops meaningfully, the test does not count as a win. Even if the primary metric moved in the right direction.
+
+Common guardrails:
+
+- Revenue per session
+- Average order value
+- Unsubscribe rate (email)
+- Opt-out rate (SMS)
+- Cost per acquisition
+
+### Baseline
+
+The current performance of the primary metric before the test runs. Baseline gives the result context.
+
+## Test design
+
+These fields define how the test will run and how you'll decide the outcome.
+
+### Success criteria
+
+What you'll accept as a win, stated before results come in. Success criteria usually combine three things:
+
+- A minimum lift in the primary metric (for example, \+5%)
+- A confidence threshold (for example, 95%)
+- A guardrail condition (for example, no more than a 2% drop in AOV)
+
+Stating success criteria upfront prevents the temptation to move the goalposts after seeing results.
+
+### Sample size and minimum detectable effect
+
+The sample size is the number of users, sessions, or impressions the test needs before results can be trusted. The minimum detectable effect (MDE) is the smallest change the test can reliably detect at that sample size.
+
+Calculate both before launching. If the required sample size can't be reached in a reasonable timeframe, either accept a larger MDE (only detecting bigger effects), extend the timeline, or reconsider whether the test is worth running.
+
+See [sample size calculator](/sample-size-calculator).
+
+### Statistical significance
+
+The probability threshold used to decide whether the observed difference between variants is real or due to random chance. Most digital marketing tests use a 95% confidence level (p \< 0.05).
+
+Not every test can hit statistical significance. Low-traffic email lists, niche SMS segments, and short-cycle brand tests may not generate enough sample. For those, record the observed direction, note that significance wasn't reached, and make a directional call. See [Statistical significance](/statistical-significance).
+
+<Warning>
+  Do not extend a test just because it hasn't crossed the significance threshold. Repeatedly checking a running test and stopping the moment it crosses 95% inflates false-positive rates. This practice is called peeking. Set the sample size and duration in advance, and only extend if something changed during the test (traffic dropped, seasonality shifted, tracking broke). Extending to chase significance is not a valid reason.
+</Warning>
+
+### Test timeline
+
+The planned start and end date. Derive the end date from the sample size math, not from a calendar preference.
+
+If a test needs to be extended, record why in the brief. Valid reasons are external changes (traffic drop, tracking issue, seasonality). "Not yet significant" is not a valid reason.
+
+## Test description
+
+Describe the test in enough detail that someone auditing it six months from now could find the exact assets and settings. The fields depend on the channel:
+
+| Channel | Fields to record |
+| --- | --- |
+| Paid social | Platform, campaign, ad set, ad, creative, copy |
+| Paid search | Platform, campaign, ad group, ad, headline, description |
+| Web CRO | URL, testing tool, experiment name, element being changed |
+| Email | ESP, campaign name, segment, subject line, body copy |
+| SMS | Provider, campaign name, segment, message copy |
+
+If you can't find the exact asset later, the record isn't detailed enough.
+
+## Variants and splits
+
+List every variant, including the control, and how traffic, budget, or audience is divided between them. Splits should add to 100%.
+
+Example:
+
+| Variant | Description | Split |
+| --- | --- | --- |
+| Control | Existing grey CTA button | 50% |
+| Variant A | Orange CTA button | 50% |
+
+For A/B/n or multivariate tests, add a row for each variant.
+
+## Results
+
+After the test ends, mark it with one of four statuses:
+
+| Status | When to use it |
+| --- | --- |
+| Winner | Primary metric hit success criteria; no guardrails degraded |
+| Loser | Primary metric performed worse than control at the stated confidence level |
+| Inconclusive | Test ran to plan but did not reach significance, or results didn't meet criteria |
+| Cancelled | Test was stopped before completion (broken tracking, bad launch, business change) |
+
+For any test marked winner, loser, or inconclusive, create a report in the learning library and link it to this brief. 
+
+Cancelled tests do not need a full report but should include a short note explaining why the test was stopped.
+
+Linking each brief to a learning library entry makes past decisions easy to review, and gives future tests a source of prior evidence to build on. See the [experiment review process ](/experiment-review-process)for how to write up results.
+
+## Related resources
+
+[**Statistical significance in digital marketing tests**](/statistical-significance) When to use a confidence threshold, and what to do when you can't reach one.
+
+[**Experiment ID conventions**](/experiment-ids) How to name and register experiment IDs.
+
+[**The experiment review process** ](/experiment-review-process)The steps to take when a test finishes.
