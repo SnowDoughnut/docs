@@ -558,20 +558,6 @@
                 "dropdown": "Evergreen campaigns"
               }
             ]
-          },
-          {
-            "tab": "Newsletters",
-            "groups": [
-              {
-                "group": "2026",
-                "pages": [
-                  {
-                    "group": "June",
-                    "pages": []
-                  }
-                ]
-              }
-            ]
           }
         ]
       }
