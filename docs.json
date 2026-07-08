@@ -19,9 +19,9 @@
     "options": ["copy", "view", "assistant", "mcp", "add-mcp"]
   },
   "navigation": {
-    "products": [
+    "versions": [
       {
-        "product": "Theory ",
+        "version": "v1",
         "tabs": [
           {
             "tab": "Learn",
@@ -574,31 +574,7 @@
             ]
           },
           {
-            "tab": "Reference Library",
-            "groups": [
-              {
-                "group": "Benchmarks",
-                "pages": []
-              },
-              {
-                "group": "Competitor research",
-                "pages": []
-              },
-              {
-                "group": "Audience research",
-                "pages": []
-              },
-              {
-                "group": "Market research",
-                "pages": []
-              },
-              {
-                "group": "Vendor documentation",
-                "pages": [
-                  ""
-                ]
-              }
-            ]
+            "tab": "Reference Library"
           }
         ]
       }
