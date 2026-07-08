@@ -78,7 +78,6 @@
             "pages": [
               "experiment-ids",
               "test-brief-process",
-              "experiment-review-process",
               {
                 "group": "Learnings library",
                 "pages": []
@@ -94,7 +93,7 @@
         ]
       },
       {
-        "tab": "Standards",
+        "tab": "Shared Standards",
         "groups": [
           {
             "group": "Brand guidelines",
@@ -447,7 +446,8 @@
             "pages": [
               "weekly-reporting-process",
               "weekly-reporting-process-1",
-              "weekly-reporting-process-2"
+              "weekly-reporting-process-2",
+              "experiment-review-process"
             ]
           }
         ]
@@ -525,15 +525,15 @@
         "tab": "Reports",
         "groups": [
           {
+            "group": "Experiment Learning",
+            "pages": []
+          },
+          {
             "group": "Weekly Reports",
             "pages": []
           },
           {
             "group": "Monthly Reports",
-            "pages": []
-          },
-          {
-            "group": "Untitled Group",
             "pages": []
           },
           {
