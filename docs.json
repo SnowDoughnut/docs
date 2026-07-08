@@ -21,14 +21,23 @@
   "navigation": {
     "products": [
       {
-        "product": "Wiki",
+        "product": "Practice ",
+        "pages": [
+          "statistical-significance",
+          "test"
+        ]
+      },
+      {
+        "product": "Theory ",
         "tabs": [
+          {
+            "tab": "Dictionary"
+          },
           {
             "tab": "Get started",
             "pages": [
               "overview",
               "quick-starts",
-              "glossary",
               "how-to-use-this-knowledge-base",
               {
                 "group": "Onbaording",
@@ -587,19 +596,7 @@
                 "pages": []
               }
             ]
-          },
-          {
-            "tab": "Dictionary",
-            "pages": [
-              "statistical-significance"
-            ]
           }
-        ]
-      },
-      {
-        "product": "Processes",
-        "pages": [
-          "test"
         ]
       }
     ]
