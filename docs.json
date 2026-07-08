@@ -25,9 +25,9 @@
         "tabs": [
           {
             "tab": "Learn",
-            "groups": [
+            "menu": [
               {
-                "group": "Experimentation",
+                "item": "Experimentation",
                 "pages": [
                   "experiment-ids",
                   "test-brief-process",
@@ -39,7 +39,7 @@
                 ]
               },
               {
-                "group": "Dictionary",
+                "item": "Dictionary",
                 "pages": [
                   "statistical-significance"
                 ]
