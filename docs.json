@@ -190,6 +190,14 @@
                   {
                     "group": "Checklists",
                     "pages": []
+                  },
+                  {
+                    "group": "Campaigns",
+                    "pages": [
+                      "",
+                      "",
+                      ""
+                    ]
                   }
                 ]
               },
@@ -546,18 +554,7 @@
             ]
           },
           {
-            "tab": "Campaigns",
-            "dropdowns": [
-              {
-                "dropdown": "Active campaigns "
-              },
-              {
-                "dropdown": "Past campaigns"
-              },
-              {
-                "dropdown": "Evergreen campaigns"
-              }
-            ]
+            "tab": "Campaigns"
           }
         ]
       }
