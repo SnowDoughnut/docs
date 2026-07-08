@@ -132,12 +132,6 @@
               "legal-review-process",
               "brand-approval-process"
             ]
-          },
-          {
-            "dropdown": "Experimentation and Testing ",
-            "pages": [
-              "experiment-ids"
-            ]
           }
         ]
       },
@@ -437,6 +431,7 @@
           {
             "dropdown": "Experimentation",
             "pages": [
+              "experiment-ids",
               "test-brief-process",
               "experiment-review-process",
               {
