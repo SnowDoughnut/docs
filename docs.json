@@ -19,539 +19,526 @@
     "options": ["copy", "view", "assistant", "mcp", "add-mcp"]
   },
   "navigation": {
-    "versions": [
+    "tabs": [
       {
-        "version": "v1",
-        "tabs": [
+        "tab": "Get started",
+        "pages": [
+          "overview",
+          "quick-starts",
+          "how-to-use-this-knowledge-base",
           {
-            "tab": "Get started",
+            "group": "Onbaording",
             "pages": [
-              "overview",
-              "quick-starts",
-              "how-to-use-this-knowledge-base",
-              {
-                "group": "Onbaording",
-                "pages": [
-                  "new-member-onboarding",
-                  "paid-media-onboardin",
-                  "brand-onboarding"
-                ]
-              }
+              "new-member-onboarding",
+              "paid-media-onboardin",
+              "brand-onboarding"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "tab": "Find what you need",
+        "dropdowns": [
           {
-            "tab": "Find what you need",
-            "dropdowns": [
-              {
-                "dropdown": "By Platform",
-                "pages": [
-                  "google",
-                  "linkedin",
-                  "meta",
-                  "email"
-                ]
-              },
-              {
-                "dropdown": "By Document Type",
-                "pages": [
-                  "sops",
-                  "how-tos",
-                  "brand-documents",
-                  "reports",
-                  "tools"
-                ]
-              },
-              {
-                "dropdown": "By Marketing Type",
-                "pages": [
-                  "oragni",
-                  "paid-search",
-                  "paid-social",
-                  "content-marketing",
-                  "analytics"
-                ]
-              }
-            ]
-          },
-          {
-            "tab": "Concepts",
-            "groups": [
-              {
-                "group": "Experimentation",
-                "pages": [
-                  "experiment-ids",
-                  "test-brief-process",
-                  "experiment-review-process",
-                  {
-                    "group": "Learnings library",
-                    "pages": []
-                  }
-                ]
-              },
-              {
-                "group": "Dictionary",
-                "pages": [
-                  "statistical-significance"
-                ]
-              }
-            ]
-          },
-          {
-            "tab": "Standards",
-            "groups": [
-              {
-                "group": "Brand guidelines",
-                "pages": [
-                  "brand-guidelines",
-                  "visual-identity",
-                  "logo-usage",
-                  "messaging",
-                  "positioning",
-                  "brand-assets",
-                  "untitled-page"
-                ]
-              },
-              {
-                "group": "Naming Conventions",
-                "pages": [
-                  "audience-naming-conventions",
-                  "file-naming-conventions",
-                  "event-naming-conventions",
-                  {
-                    "group": "Naming Conventions for Campaigns",
-                    "pages": [
-                      "cool",
-                      "campaign-naming-conventions",
-                      "ad-set-group-naming-conventions",
-                      "ad-name-conventions"
-                    ]
-                  }
-                ]
-              },
-              {
-                "group": "Tracking & attribution",
-                "pages": [
-                  "utm-standards"
-                ]
-              },
-              {
-                "group": "Creative standards",
-                "pages": [
-                  "ad-copy-standards",
-                  "creative-review-checklist",
-                  "image-and-video-specs",
-                  "landing-page-standards"
-                ]
-              },
-              {
-                "group": "Compliance and Approval",
-                "pages": [
-                  "legal-review-process",
-                  "brand-approval-process"
-                ]
-              },
-              {
-                "group": "Reporting standards",
-                "pages": [
-                  "kpi-definitions",
-                  "reporting-cadence",
-                  "dashboard-standards"
-                ]
-              }
-            ]
-          },
-          {
-            "tab": "Platforms & Channels",
-            "dropdowns": [
-              {
-                "dropdown": "Meta",
-                "pages": [
-                  "meta-home",
-                  {
-                    "group": "Tutorials",
-                    "pages": []
-                  },
-                  {
-                    "group": "SOPs",
-                    "pages": []
-                  },
-                  {
-                    "group": "How-tos",
-                    "pages": []
-                  },
-                  {
-                    "group": "Best practices",
-                    "pages": []
-                  },
-                  {
-                    "group": "Reports",
-                    "pages": []
-                  },
-                  {
-                    "group": "Checklists",
-                    "pages": []
-                  },
-                  {
-                    "group": "Campaigns",
-                    "pages": [
-                      "",
-                      "",
-                      ""
-                    ]
-                  }
-                ]
-              },
-              {
-                "dropdown": "Google",
-                "pages": [
-                  "google-home",
-                  {
-                    "group": "Tutorials",
-                    "pages": []
-                  },
-                  {
-                    "group": "SOPs",
-                    "pages": []
-                  },
-                  {
-                    "group": "How-tos",
-                    "pages": []
-                  },
-                  {
-                    "group": "Best practices",
-                    "pages": []
-                  },
-                  {
-                    "group": "Reports",
-                    "pages": []
-                  },
-                  {
-                    "group": "Checklists",
-                    "pages": []
-                  }
-                ]
-              },
-              {
-                "dropdown": "LinkedIn",
-                "pages": [
-                  "linked-in-home",
-                  {
-                    "group": "Tutorials",
-                    "pages": []
-                  },
-                  {
-                    "group": "SOPs",
-                    "pages": []
-                  },
-                  {
-                    "group": "How-tos",
-                    "pages": []
-                  },
-                  {
-                    "group": "Best practices",
-                    "pages": []
-                  },
-                  {
-                    "group": "Reports",
-                    "pages": []
-                  },
-                  {
-                    "group": "Checklists",
-                    "pages": []
-                  }
-                ]
-              },
-              {
-                "dropdown": "TikTok",
-                "pages": [
-                  "tik-tok-home",
-                  {
-                    "group": "Tutorials",
-                    "pages": []
-                  },
-                  {
-                    "group": "SOPs",
-                    "pages": []
-                  },
-                  {
-                    "group": "How-tos",
-                    "pages": []
-                  },
-                  {
-                    "group": "Best practices",
-                    "pages": []
-                  },
-                  {
-                    "group": "Reports",
-                    "pages": []
-                  },
-                  {
-                    "group": "Checklists",
-                    "pages": []
-                  }
-                ]
-              },
-              {
-                "dropdown": "Organic social",
-                "pages": [
-                  "organic-social-home",
-                  {
-                    "group": "Tutorials",
-                    "pages": []
-                  },
-                  {
-                    "group": "SOPs",
-                    "pages": []
-                  },
-                  {
-                    "group": "How-tos",
-                    "pages": []
-                  },
-                  {
-                    "group": "Best practices",
-                    "pages": []
-                  },
-                  {
-                    "group": "Reports",
-                    "pages": []
-                  },
-                  {
-                    "group": "Checklists",
-                    "pages": []
-                  },
-                  {
-                    "group": "Content calender",
-                    "pages": []
-                  }
-                ]
-              },
-              {
-                "dropdown": "Email",
-                "pages": [
-                  "email-home",
-                  {
-                    "group": "Tutorials",
-                    "pages": []
-                  },
-                  {
-                    "group": "SOPs",
-                    "pages": []
-                  },
-                  {
-                    "group": "How-tos",
-                    "pages": []
-                  },
-                  {
-                    "group": "Best practices",
-                    "pages": []
-                  },
-                  {
-                    "group": "Reports",
-                    "pages": []
-                  },
-                  {
-                    "group": "Checklists",
-                    "pages": []
-                  },
-                  {
-                    "group": "Automations",
-                    "pages": []
-                  },
-                  {
-                    "group": "Segmentation",
-                    "pages": []
-                  }
-                ]
-              },
-              {
-                "dropdown": "SEO",
-                "pages": [
-                  "seo-home",
-                  {
-                    "group": "Tutorials",
-                    "pages": []
-                  },
-                  {
-                    "group": "SOPs",
-                    "pages": []
-                  },
-                  {
-                    "group": "How-tos",
-                    "pages": []
-                  },
-                  {
-                    "group": "Best practices",
-                    "pages": []
-                  },
-                  {
-                    "group": "Reports",
-                    "pages": []
-                  },
-                  {
-                    "group": "Checklists",
-                    "pages": []
-                  }
-                ]
-              },
-              {
-                "dropdown": "Website & landing pages",
-                "pages": [
-                  "web-home",
-                  {
-                    "group": "Tutorials",
-                    "pages": []
-                  },
-                  {
-                    "group": "SOPs",
-                    "pages": []
-                  },
-                  {
-                    "group": "How-tos",
-                    "pages": []
-                  },
-                  {
-                    "group": "Best practices",
-                    "pages": []
-                  },
-                  {
-                    "group": "Reports",
-                    "pages": []
-                  },
-                  {
-                    "group": "Checklists",
-                    "pages": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "tab": "Processes",
-            "dropdowns": [
-              {
-                "dropdown": "Campaign planning",
-                "pages": [
-                  "campaign-brief-process",
-                  "campaign-launch-checklist",
-                  "campaign-qa-checklist",
-                  "campaign-retrospect-process"
-                ]
-              },
-              {
-                "dropdown": "Creative production",
-                "pages": [
-                  "creative-brief-process",
-                  "copywriting-process",
-                  "approval-process"
-                ]
-              },
-              {
-                "dropdown": "Budgeting",
-                "pages": [
-                  "budget-planning",
-                  "budget-pacing",
-                  "budget-reporting-process"
-                ]
-              },
-              {
-                "dropdown": "Reporting",
-                "pages": [
-                  "weekly-reporting-process",
-                  "weekly-reporting-process-1",
-                  "weekly-reporting-process-2"
-                ]
-              }
-            ]
-          },
-          {
-            "tab": "Templates",
-            "groups": [
-              {
-                "group": "General",
-                "pages": [
-                  {
-                    "group": "Campaign",
-                    "pages": []
-                  },
-                  {
-                    "group": "Reporting",
-                    "pages": []
-                  },
-                  {
-                    "group": "Creative",
-                    "pages": []
-                  }
-                ]
-              },
-              {
-                "group": "Email",
-                "pages": []
-              },
-              {
-                "group": "Meta",
-                "pages": [
-                  "audience-csv-template"
-                ]
-              },
-              {
-                "group": "Google",
-                "pages": [
-                  "audience-csv-template-1"
-                ]
-              },
-              {
-                "group": "TikTok",
-                "pages": []
-              },
-              {
-                "group": "LinkedIn",
-                "pages": []
-              },
-              {
-                "group": "Organic Social",
-                "pages": []
-              },
-              {
-                "group": "Email",
-                "pages": []
-              }
-            ]
-          },
-          {
-            "tab": "Tools and Systems",
+            "dropdown": "By Platform",
             "pages": [
-              "campaign-name-generator",
-              "camopaign-brief",
-              "creative-brief-creator",
+              "google",
+              "linkedin",
+              "meta",
+              "email"
+            ]
+          },
+          {
+            "dropdown": "By Document Type",
+            "pages": [
+              "sops",
+              "how-tos",
+              "brand-documents",
+              "reports",
+              "tools"
+            ]
+          },
+          {
+            "dropdown": "By Marketing Type",
+            "pages": [
+              "oragni",
+              "paid-search",
+              "paid-social",
+              "content-marketing",
+              "analytics"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Concepts",
+        "groups": [
+          {
+            "group": "Experimentation",
+            "pages": [
+              "experiment-ids",
+              "test-brief-process",
+              "experiment-review-process",
               {
-                "group": "Experiment Tooling",
+                "group": "Learnings library",
+                "pages": []
+              }
+            ]
+          },
+          {
+            "group": "Dictionary",
+            "pages": [
+              "statistical-significance"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Standards",
+        "groups": [
+          {
+            "group": "Brand guidelines",
+            "pages": [
+              "brand-guidelines",
+              "visual-identity",
+              "logo-usage",
+              "messaging",
+              "positioning",
+              "brand-assets",
+              "untitled-page"
+            ]
+          },
+          {
+            "group": "Naming Conventions",
+            "pages": [
+              "audience-naming-conventions",
+              "file-naming-conventions",
+              "event-naming-conventions",
+              {
+                "group": "Naming Conventions for Campaigns",
                 "pages": [
-                  "experimentation-id-creator",
-                  "sample-size-calculator"
+                  "cool",
+                  "campaign-naming-conventions",
+                  "ad-set-group-naming-conventions",
+                  "ad-name-conventions"
                 ]
               }
             ]
           },
           {
-            "tab": "Reports",
-            "groups": [
+            "group": "Tracking & attribution",
+            "pages": [
+              "utm-standards"
+            ]
+          },
+          {
+            "group": "Creative standards",
+            "pages": [
+              "ad-copy-standards",
+              "creative-review-checklist",
+              "image-and-video-specs",
+              "landing-page-standards"
+            ]
+          },
+          {
+            "group": "Compliance and Approval",
+            "pages": [
+              "legal-review-process",
+              "brand-approval-process"
+            ]
+          },
+          {
+            "group": "Reporting standards",
+            "pages": [
+              "kpi-definitions",
+              "reporting-cadence",
+              "dashboard-standards"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Platforms & Channels",
+        "dropdowns": [
+          {
+            "dropdown": "Meta",
+            "pages": [
+              "meta-home",
               {
-                "group": "Weekly Reports",
+                "group": "Tutorials",
                 "pages": []
               },
               {
-                "group": "Monthly Reports",
+                "group": "SOPs",
                 "pages": []
               },
               {
-                "group": "Untitled Group",
+                "group": "How-tos",
                 "pages": []
               },
               {
-                "group": "Yearly Reports",
+                "group": "Best practices",
+                "pages": []
+              },
+              {
+                "group": "Reports",
+                "pages": []
+              },
+              {
+                "group": "Checklists",
                 "pages": []
               }
             ]
+          },
+          {
+            "dropdown": "Google",
+            "pages": [
+              "google-home",
+              {
+                "group": "Tutorials",
+                "pages": []
+              },
+              {
+                "group": "SOPs",
+                "pages": []
+              },
+              {
+                "group": "How-tos",
+                "pages": []
+              },
+              {
+                "group": "Best practices",
+                "pages": []
+              },
+              {
+                "group": "Reports",
+                "pages": []
+              },
+              {
+                "group": "Checklists",
+                "pages": []
+              }
+            ]
+          },
+          {
+            "dropdown": "LinkedIn",
+            "pages": [
+              "linked-in-home",
+              {
+                "group": "Tutorials",
+                "pages": []
+              },
+              {
+                "group": "SOPs",
+                "pages": []
+              },
+              {
+                "group": "How-tos",
+                "pages": []
+              },
+              {
+                "group": "Best practices",
+                "pages": []
+              },
+              {
+                "group": "Reports",
+                "pages": []
+              },
+              {
+                "group": "Checklists",
+                "pages": []
+              }
+            ]
+          },
+          {
+            "dropdown": "TikTok",
+            "pages": [
+              "tik-tok-home",
+              {
+                "group": "Tutorials",
+                "pages": []
+              },
+              {
+                "group": "SOPs",
+                "pages": []
+              },
+              {
+                "group": "How-tos",
+                "pages": []
+              },
+              {
+                "group": "Best practices",
+                "pages": []
+              },
+              {
+                "group": "Reports",
+                "pages": []
+              },
+              {
+                "group": "Checklists",
+                "pages": []
+              }
+            ]
+          },
+          {
+            "dropdown": "Organic social",
+            "pages": [
+              "organic-social-home",
+              {
+                "group": "Tutorials",
+                "pages": []
+              },
+              {
+                "group": "SOPs",
+                "pages": []
+              },
+              {
+                "group": "How-tos",
+                "pages": []
+              },
+              {
+                "group": "Best practices",
+                "pages": []
+              },
+              {
+                "group": "Reports",
+                "pages": []
+              },
+              {
+                "group": "Checklists",
+                "pages": []
+              },
+              {
+                "group": "Content calender",
+                "pages": []
+              }
+            ]
+          },
+          {
+            "dropdown": "Email",
+            "pages": [
+              "email-home",
+              {
+                "group": "Tutorials",
+                "pages": []
+              },
+              {
+                "group": "SOPs",
+                "pages": []
+              },
+              {
+                "group": "How-tos",
+                "pages": []
+              },
+              {
+                "group": "Best practices",
+                "pages": []
+              },
+              {
+                "group": "Reports",
+                "pages": []
+              },
+              {
+                "group": "Checklists",
+                "pages": []
+              },
+              {
+                "group": "Automations",
+                "pages": []
+              },
+              {
+                "group": "Segmentation",
+                "pages": []
+              }
+            ]
+          },
+          {
+            "dropdown": "SEO",
+            "pages": [
+              "seo-home",
+              {
+                "group": "Tutorials",
+                "pages": []
+              },
+              {
+                "group": "SOPs",
+                "pages": []
+              },
+              {
+                "group": "How-tos",
+                "pages": []
+              },
+              {
+                "group": "Best practices",
+                "pages": []
+              },
+              {
+                "group": "Reports",
+                "pages": []
+              },
+              {
+                "group": "Checklists",
+                "pages": []
+              }
+            ]
+          },
+          {
+            "dropdown": "Website & landing pages",
+            "pages": [
+              "web-home",
+              {
+                "group": "Tutorials",
+                "pages": []
+              },
+              {
+                "group": "SOPs",
+                "pages": []
+              },
+              {
+                "group": "How-tos",
+                "pages": []
+              },
+              {
+                "group": "Best practices",
+                "pages": []
+              },
+              {
+                "group": "Reports",
+                "pages": []
+              },
+              {
+                "group": "Checklists",
+                "pages": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Processes",
+        "dropdowns": [
+          {
+            "dropdown": "Campaign planning",
+            "pages": [
+              "campaign-brief-process",
+              "campaign-launch-checklist",
+              "campaign-qa-checklist",
+              "campaign-retrospect-process"
+            ]
+          },
+          {
+            "dropdown": "Creative production",
+            "pages": [
+              "creative-brief-process",
+              "copywriting-process",
+              "approval-process"
+            ]
+          },
+          {
+            "dropdown": "Budgeting",
+            "pages": [
+              "budget-planning",
+              "budget-pacing",
+              "budget-reporting-process"
+            ]
+          },
+          {
+            "dropdown": "Reporting",
+            "pages": [
+              "weekly-reporting-process",
+              "weekly-reporting-process-1",
+              "weekly-reporting-process-2"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Templates",
+        "groups": [
+          {
+            "group": "General",
+            "pages": [
+              {
+                "group": "Campaign",
+                "pages": []
+              },
+              {
+                "group": "Reporting",
+                "pages": []
+              },
+              {
+                "group": "Creative",
+                "pages": []
+              }
+            ]
+          },
+          {
+            "group": "Email",
+            "pages": []
+          },
+          {
+            "group": "Meta",
+            "pages": [
+              "audience-csv-template"
+            ]
+          },
+          {
+            "group": "Google",
+            "pages": [
+              "audience-csv-template-1"
+            ]
+          },
+          {
+            "group": "TikTok",
+            "pages": []
+          },
+          {
+            "group": "LinkedIn",
+            "pages": []
+          },
+          {
+            "group": "Organic Social",
+            "pages": []
+          },
+          {
+            "group": "Email",
+            "pages": []
+          }
+        ]
+      },
+      {
+        "tab": "Tools and Systems",
+        "pages": [
+          "campaign-name-generator",
+          "camopaign-brief",
+          "creative-brief-creator",
+          {
+            "group": "Experiment Tooling",
+            "pages": [
+              "experimentation-id-creator",
+              "sample-size-calculator"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reports",
+        "groups": [
+          {
+            "group": "Weekly Reports",
+            "pages": []
+          },
+          {
+            "group": "Monthly Reports",
+            "pages": []
+          },
+          {
+            "group": "Untitled Group",
+            "pages": []
+          },
+          {
+            "group": "Yearly Reports",
+            "pages": []
           }
         ]
       }
