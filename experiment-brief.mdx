@@ -1,0 +1,220 @@
+---
+title: "Experiment brief"
+description: "A fill-in brief for a single test. Each field is yours to keep, cut, or extend, with a concept review explaining what it captures and why."
+---
+
+<Info>
+  This brief is built from the [Experiment brief concept SOP](/test-brief-process). It also references the [experiment ID conventions](/experiment-id), [statistical significance guidance](/statistical-significance), and the [experiment review process](/experiment-review-process-1). Consult those for the reasoning behind each field.
+</Info>
+
+<Note>
+  Nothing here is fixed. The fields, channels, test types, and result statuses below are a starting set. Where you see an `[add ...]` row, that's an invitation to extend the set; where a row doesn't apply to you, delete it. Fill in the setup, hypothesis, and design fields before the test launches, and return to the results section after it ends.
+</Note>
+
+<Steps>
+  <Step title="Before launch">
+    Complete setup, hypothesis and metrics, and test design. These lock in what you're testing and how you'll judge it, before any results can bias the call.
+  </Step>
+  <Step title="At launch">
+    Fill in the test description, variants, and splits so the exact assets are recoverable later.
+  </Step>
+  <Step title="After the test ends">
+    Record the result status and link a report in your learning library.
+  </Step>
+</Steps>
+
+The examples below all describe one invented test, a pricing-page CTA color test run by the _Doughnut Labs_ growth team, so you can see what a filled-in brief looks like end to end.
+
+## Setup
+
+**Fill in the fields that identify the test and who owns it. Keep the rows that fit, add any your team relies on:**
+
+| Field | Fill in |
+| :-- | :-- |
+| Owner | _E.g. Steve Steverson._ |
+| [Experiment ID](/experiment-id) | _E.g. `TEST-8H2P`_ |
+| Test type | _E.g. A/B (one control, one variant)_ |
+| Marketing campaign brief | _E.g. Black Friday Cyber Monday 2027_ |
+| \[add setup field\] |  |
+
+<Accordion title="Concept review: Setup fields">
+  These fields answer "which test is this, and who's accountable for it." Teams differ on how much identifying detail a brief needs: some add a squad, a quarter, or a linked objective; a solo operator might strip it down to owner and ID. The set here is a common starting point rather than a required list.
+
+  The owner field tends to work best as one named person rather than a team, because a test with shared ownership can become the test nobody analyzes once results land. Where your team lands on the rest is yours to decide, but the general aim is that anyone opening the brief can tell at a glance which test this is and who to ask about it.
+</Accordion>
+
+### Test type
+
+_E.g A/B: one control, one variant_
+
+<Accordion title="Concept review: Why test type is worth naming">
+  Naming the test type early sets expectations for the design that follows. A multivariate test needs more variant rows and more sample than a simple A/B, so flagging the type up front signals what the rest of the brief has to account for.
+
+  The four types listed are the common ones in digital marketing, but they aren't a closed set. Some teams run bandit tests, sequential tests, or their own named variations, and this list is meant to be edited toward whatever your team runs rather than treated as the only options.
+</Accordion>
+
+## Hypothesis and metrics
+
+### Hypothesis
+
+**State the change you're making, the outcome you expect, and why:**
+
+_E.g. Changing the pricing-page CTA button from grey to orange will increase click-through rate, because orange has higher contrast against the page background and draws the eye more clearly._
+
+<Accordion title="Concept review: What makes a hypothesis useful">
+  A hypothesis is more than a description of the change. It's a prediction with a reason attached, and the reason is the part that makes a test worth running. Pairing the change, the expected outcome, and the "because" turns a guess into something you can learn from whether it wins or loses.
+
+  The "because" tends to carry the most weight. If the test wins, the reasoning is what you carry into the next test. If it loses, the reasoning is what you now know was wrong. A hypothesis with no stated reason can still produce a number, but it's harder to pull a lesson from it.
+</Accordion>
+
+### Primary metric
+
+**Name the single metric you'll use to decide if the test worked:**
+
+_E.g. Click-through rate on the pricing-page CTA._
+
+<Accordion title="Concept review: The role of a single primary metric">
+  The primary metric is the one number that settles whether the test succeeded. Committing to one before launch is what keeps the outcome from being renegotiated afterward. With several "primary" metrics, there's usually one that moved favorably, and the read of the test can drift toward whichever number looks best.
+
+  When two candidates seem equally strong, a common tie-breaker is closeness to the outcome the hypothesis predicted. The hypothesis named something specific that should improve; the primary metric is usually that thing.
+</Accordion>
+
+### Secondary metrics
+
+**List metrics you'll watch for the fuller story, but won't use to make the decision:**
+
+_E.g. Time on page, scroll depth, and downstream checkout conversions._
+
+<Accordion title="Concept review: What secondary metrics add">
+  Secondary metrics fill in the story around the decision without being part of it. They can explain why the primary metric moved, or surface a side effect worth noting, while staying out of the win-or-lose call.
+
+  Keeping them clearly separate from the primary metric is the reason the split exists. Once a "watch this too" metric starts swaying the decision, it has effectively become a second primary metric, and the clarity the previous section was after gets diluted.
+</Accordion>
+
+### Guardrail metrics
+
+**List the metrics that must not degrade, even if the primary metric improves. Common ones are below; keep, cut, and extend:**
+
+_E.g. For the CTA test, Northwind watches revenue per session and average order value; if either drops more than 2%, the test doesn't count as a win._
+
+<Accordion title="Concept review: How guardrails protect a result">
+  A guardrail is a metric you're not trying to improve but don't want to harm. A CTA change that lifts click-through but quietly drops revenue per session is a trade, and guardrails are how you name the trades you're unwilling to make before results arrive.
+
+  Which metrics belong here is channel-specific, which is why the list is a starting set rather than a fixed one: unsubscribe rate matters for email, opt-out rate for SMS, cost per acquisition for paid media. The common thread is that these are the numbers you'd want to veto a "win" over, so the set is worth tailoring to what your channel could quietly break.
+</Accordion>
+
+### Baseline
+
+**Record the current performance of the primary metric before the test runs:**
+
+_E.g. Current pricing-page CTA click-through rate is 4.1% over the trailing 30 days._
+
+<Accordion title="Concept review: Why the baseline is captured first">
+  A result means little without the number it's compared to. "Click-through rate was 4.6%" reads as good news only once you know it started at 4.1%, and it's captured most honestly when the starting point is written down before the test can color your memory of it.
+
+  The baseline also feeds the design math below. The smallest effect worth detecting, and the sample needed to detect it, are both calculated relative to where the metric stands today.
+</Accordion>
+
+## Test design
+
+### Success criteria
+
+**State what you'll accept as a win, before results come in. A common shape combines a lift, a confidence threshold, and a guardrail condition:**
+
+_E.g. At least a 5% relative lift in CTA click-through, at 95% confidence, with no more than a 2% drop in average order value._
+
+<Accordion title="Concept review: Deciding the win before you can see it">
+  Success criteria are the finish line, drawn before the race starts. Setting the minimum lift, the confidence threshold, and the guardrail condition ahead of time is what keeps the goalposts still once results are visible.
+
+  The situation this guards against is a familiar one: results land a little short, and "5% lift" softens into "3% is still positive." Fixing the bar beforehand doesn't make the test more likely to pass, it makes the pass-or-fail honest. The three-part shape here is a common one, not the only one; some teams add a cost ceiling or a minimum absolute volume.
+</Accordion>
+
+### Sample size and minimum detectable effect
+
+**Record the sample size the test needs and the smallest effect it can reliably detect at that size:**
+
+_E.g. 18,000 sessions per variant, giving a minimum detectable effect of roughly 4% relative lift. Calculated before launch with the sample size calculator._
+
+<Accordion title="Concept review: Sizing the test before you run it">
+  Sample size is how much traffic you need before a result can be trusted; minimum detectable effect (MDE) is the smallest change that amount of traffic can actually catch. The two move together, since a smaller detectable effect calls for a larger sample.
+
+  Running this math before launch is what shows whether the test is feasible at all. If the sample you'd need can't be reached in a sensible window, there are three real options: accept a larger MDE and only detect bigger effects, extend the timeline, or set the test aside. Skipping the calculation doesn't remove that choice, it just defers it until after the traffic is spent.
+</Accordion>
+
+### Statistical significance
+
+**Set the confidence threshold you'll use, and note what you'll do if a test can't reach it:**
+
+_E.g. 95% confidence (p \< 0.05). The pricing page has enough traffic to reach this. For lower-traffic tests, Northwind records the observed direction, notes that significance wasn't reached, and makes a directional call._
+
+<Accordion title="Concept review: Significance, and when you can't get it">
+  The significance threshold is how you separate a real difference between variants from random noise. Most digital marketing tests settle on 95% confidence, meaning a result is accepted only when there's less than a 5% chance it's a fluke. Some teams choose a different threshold depending on how costly a wrong call would be, which is a decision this field leaves to you.
+
+  Not every test can reach the threshold at all. Small email lists, niche SMS segments, and short brand tests may never generate the sample significance needs. That doesn't make those tests worthless; a common response is to record the direction the metric moved, state plainly that significance wasn't reached, and make a directional call rather than presenting a low-confidence result as a certain one.
+</Accordion>
+
+<Warning>
+  Don't extend a test just because it hasn't crossed the significance threshold. Checking a running test repeatedly and stopping the moment it hits 95% inflates false positives, a practice called peeking. Set sample size and duration in advance. Only extend if something changed during the test (traffic dropped, seasonality shifted, tracking broke), never to chase significance.
+</Warning>
+
+### Test timeline
+
+**Record the planned start and end dates, derived from the sample size math:**
+
+_E.g. Start 2026-07-14, end 2026-07-28. End date set by the sample math (18,000 sessions per variant at current traffic), not by the calendar._
+
+<Accordion title="Concept review: Why the end date comes from the math">
+  The end date reads best as an output of the sample size calculation rather than a scheduling preference: the test ends when it has collected the traffic it needs, not on a round-numbered Friday. Deriving the dates from the math keeps the timeline honest and reduces the pull to stop early on a good day.
+
+  If a test does get extended, the reason belongs in the brief, and the reasons that hold up are external ones: a traffic drop, a tracking issue, a seasonal shift. "Not yet significant" doesn't hold up, for the same peeking reason the warning above describes.
+</Accordion>
+
+## Test description
+
+**Record the test in enough detail that someone auditing it in six months could find the exact assets and settings.**
+
+| Channel | Fields to record | Your entry |
+| :-- | :-- | :-- |
+| _E.g. Paid social_ | _Platform, campaign, ad set, ad, creative, copy_ | _E.g. Meta, Q3-Pricing, TOFU-set, CTA-color-ad, orange-button-v1, "See pricing"_ |
+
+<Accordion title="Concept review: Writing for the six-month auditor">
+  This section is written for a specific reader: someone who opens the brief months later and needs to find the exact asset that ran. The test is recorded so the campaign, ad, page, or message can be located and confirmed, not just described in general terms.
+
+  The fields differ by channel because what identifies an asset differs by channel, and the list here covers the common ones rather than every platform you might use. If you run tests somewhere not listed, the guiding question for the fields you add is the same: could someone find the real asset from what you wrote? If the entry says "the pricing page test" but three ran that quarter, the record isn't specific enough yet.
+</Accordion>
+
+## Variants and splits
+
+**List every variant, including the control, and how traffic, budget, or audience divides between them. Splits should total 100%. Add a row per variant for A/B/n or multivariate tests:**
+
+| Variant | Description | Split |
+| :-- | :-- | :-- |
+| Control | _E.g. Existing grey CTA button_ | _E.g. 50%_ |
+| Variant A | _E.g. Orange CTA button_ | _E.g. 50%_ |
+| \[add variant\] |  |  |
+
+<Accordion title="Concept review: Listing the control and the splits">
+  The control belongs in this list as explicitly as any variant. It's the thing every result is measured against, and leaving it implicit is how tests end up without a clear reference point. Giving it its own row keeps the comparison legible.
+
+  Splits totalling 100% is the accounting check that traffic is actually divided the way you intended. A split that doesn't add up is often a sign that a variant is missing from the list or that the allocation in the tool has drifted from the plan on the page. The row count grows with the test: two rows for an A/B, more for A/B/n or multivariate.
+</Accordion>
+
+## Results
+
+**After the test ends, mark it with a status and note the outcome. These four cover the common cases; add your own if your team distinguishes more:**
+
+| Status | When to use it | Your result |
+| :-- | :-- | :-- |
+| Winner | Primary metric hit success criteria; no guardrails degraded | _E.g. Selected. CTA click-through rose 6.2% at 96% confidence, AOV flat._ |
+| Loser | Primary metric performed worse than control at the stated confidence |  |
+| Inconclusive | Ran to plan but didn't reach significance, or missed criteria |  |
+| Cancelled | Stopped before completion (broken tracking, bad launch, business change) |  |
+| \[add status\] | \[when your team would use it\] |  |
+
+**Report / review link:** _E.g. Link to the CTA-color writeup in the learning library._
+
+<Accordion title="Concept review: Statuses and the link to a report">
+  The statuses keep the outcome unambiguous, sorting each test into a clear bucket rather than a fuzzy in-between. The winner bucket is worth noting: it usually asks for both halves of the success criteria, the primary metric hitting its bar and no guardrail degrading, which is what keeps a metric-up, revenue-down result from being filed as a win. Some teams add statuses of their own, such as a partial result or a re-run flag, which is what the extra row is for.
+
+  Linking each completed test to a learning library report is what turns a stack of finished tests into something later tests can build on. Without the link, a brief records what happened once and then fades; with it, the next person testing the same idea can find the prior evidence instead of starting blind. Cancelled tests are the common exception: often they need only a short note on why they stopped rather than a full report.
+</Accordion>

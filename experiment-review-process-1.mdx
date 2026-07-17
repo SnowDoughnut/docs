@@ -1,0 +1,144 @@
+---
+title: "Experiment review"
+description: "A fill-in review for a finished test. Each field is yours to keep, cut, or extend, with a concept review explaining what it captures and why."
+---
+
+_This is your experiment review. Fill it in once a test has ended, to record what happened, why, and what you'll do next, then link it back to the brief. Every set of fields, statuses, and checks starts from a common version you can edit: add rows, remove ones you don't use, rename them to fit your stack. Each section has a "Concept review" dropdown that explains the thinking behind the field so you can make those edits deliberately. Greyed `E.g.` text is an example you replace with your own answer._
+
+<Info>
+  This review is built from the results and reporting sections of the [Experiment brief concept SOP](/test-brief-process). Once complete, it's saved as a report in the [experiment learning group](/experirment-learning-home), and that report's link is posted back into the original brief so the two point at each other.
+</Info>
+
+<Note>
+  Run this review only after a test has finished collecting data on its planned timeline. Pull the primary metric, secondary metrics, and guardrails from the same source you named in the brief, then work down. When you're done, the review is saved into the [experiment learning group](/experirment-learning-home) and its link is posted back in the [brief](/experiment-brief). The statuses, checks, and fields below are a starting set: where you see an `[add ...]` row, extend it; where a row doesn't apply, delete it.
+</Note>
+
+<Steps>
+  <Step title="Confirm the test is done">
+    Check the test ran to its planned sample and timeline before reading results. A review of a half-finished test measures noise.
+  </Step>
+  <Step title="Record the numbers against the brief">
+    Enter the primary metric, secondary metrics, and guardrails next to the baseline and success criteria the brief committed to.
+  </Step>
+  <Step title="Assign a status and decide the next action">
+    Pick one status, write the interpretation, save the review in the experiment learning group, then post that link back in the brief.
+  </Step>
+</Steps>
+
+The examples below continue the one invented test from the brief, the Doughnut Labs pricing-page CTA color test, so you can see what a filled-in review looks like end to end.
+
+## Identify the test
+
+**Fill in the fields that tie this review to its brief. Keep the rows that fit, add any your team relies on:**
+
+| Field | Fill in |
+| :-- | :-- |
+| Experiment ID | _E.g. `TEST-8H2P`_ |
+| Test name | _E.g. Pricing-page CTA color test_ |
+| Owner | _E.g. Priya Shah_ |
+| Brief link | _E.g. Link to the brief record in Notion_ |
+| Review date | _E.g. 2026-07-29_ |
+| \[add field\] | _E.g. Reviewer, if someone other than the owner writes up results_ |
+
+<Accordion title="Concept review: Tying the review to its brief">
+  A review is only as useful as the brief it points back to. The brief holds the hypothesis, the baseline, and the success criteria this review is judged against, so the identifying fields exist to make that link unambiguous rather than something a reader has to reconstruct months later.
+
+  The experiment ID is the anchor here, since it's the code that already appears on the live campaign and in your reporting. Teams differ on what else they attach, a reviewer name, a squad, a linked objective, which is why the set is a starting point rather than a fixed list. The guiding question is whether someone landing on this review could get from it back to the original brief without guessing.
+</Accordion>
+
+## Record the results
+
+**Enter each metric next to what the brief committed to, so the comparison is visible in one place:**
+
+| Metric | Baseline | Result | Change |
+| :-- | :-- | :-- | :-- |
+| Primary | _E.g. 4.1% CTR_ | _E.g. 4.36% CTR_ | _E.g. \+6.2% relative_ |
+| Secondary | _E.g. 38s time on page_ | _E.g. 41s time on page_ | _E.g. \+7.9%_ |
+| Guardrail | _E.g. \$2.40 revenue/session_ | _E.g. \$2.41 revenue/session_ | _E.g. flat_ |
+| \[add metric row\] |  |  |  |
+
+**Statistical significance reached:** _E.g. Yes, 96% confidence (p = 0.04)._
+
+<Accordion title="Concept review: Reading results against the brief, not on their own">
+  A raw result number carries little meaning by itself. "4.36% click-through" only becomes good or bad news once it sits beside the 4.1% baseline and the lift the success criteria asked for. Putting baseline, result, and change in one row is what turns a number into a judgment you can defend.
+
+  Significance belongs in the same view because it answers a separate question from size: not "how much did it move" but "is the move likely real." A large lift that missed significance and a small lift that reached it are different situations, and recording both keeps the two questions from collapsing into one. Where a test couldn't reach significance at all, that's worth stating plainly here rather than leaving blank, so the directional nature of the read is on the record.
+</Accordion>
+
+## Check the result against success criteria
+
+**Work through the checks the brief set. Keep the ones that apply, add any your criteria included:**
+
+- _E.g. Primary metric met the minimum lift stated in the brief_
+- _E.g. Result reached the confidence threshold stated in the brief_
+- _E.g. No guardrail degraded beyond its stated limit_
+- _E.g. Test ran to its planned sample and timeline (no peeking, no early stop)_
+- _\[add your own criterion\]_
+
+_E.g. For the CTA test, all four boxes are checked: \+6.2% beat the \+5% bar, 96% cleared the 95% threshold, revenue per session held flat, and the test ran its full two weeks._
+
+<Accordion title="Concept review: Why the checks are separate from the numbers">
+  Recording the numbers and judging them are two different acts, and separating them is deliberate. The previous section captured what happened; this one holds the result to the standard the brief set before anyone could see the outcome. Running the criteria as an explicit checklist is what stops a favorable-looking number from being waved through without meeting the bar it was supposed to clear.
+
+  The guardrail check earns its place because it can override an otherwise good result: a primary metric that beats its target while a guardrail degrades is a trade the brief already said it wouldn't accept. The sample-and-timeline check guards against a quieter failure, a test stopped the moment it looked significant, which the brief's peeking rule was written to prevent. Which checks belong here follows from whatever your brief committed to, so the set is meant to mirror that rather than stand as a universal list.
+</Accordion>
+
+## Assign a status
+
+**Mark the test with one status. These four cover the common cases; add your own if your team distinguishes more:**
+
+| Status | When to use it | Selected |
+| :-- | :-- | :-- |
+| _E.g. Winner_ | _Primary metric hit success criteria; no guardrails degraded_ | _E.g. Selected_ |
+| _E.g. Loser_ | _Primary metric performed worse than control at the stated confidence_ |  |
+| _E.g. Inconclusive_ | _Ran to plan but didn't reach significance, or missed criteria_ |  |
+| _E.g. Cancelled_ | _Stopped before completion (broken tracking, bad launch, business change)_ |  |
+| _\[add status\]_ | _\[when your team would use it\]_ |  |
+
+<Accordion title="Concept review: What the four statuses keep clean">
+  The statuses exist to make the outcome unambiguous, sorting each finished test into one clear bucket instead of a soft "sort of worked." The winner bucket usually carries the strictest test, both halves of the success criteria at once: the primary metric clearing its bar and no guardrail degrading. That pairing is what keeps a metric-up, revenue-down result from being logged as a win.
+
+  Loser and inconclusive are worth keeping distinct, because they lead to different next steps: a loser tells you the change hurt, while an inconclusive tells you the test couldn't decide, often for lack of sample. Cancelled sits apart from all three, since it describes a test that never produced a trustworthy read at all. Some teams split these further, adding a partial win or a re-run flag, which is what the extra row is for.
+</Accordion>
+
+## Interpret and decide the next action
+
+**Explain what the result means and what you'll do about it:**
+
+_E.g. Orange CTA lifted click-through without touching revenue per session, which supports the contrast hypothesis. Next action: roll the orange button out to the pricing page permanently, and queue a follow-up test applying the same treatment to the checkout CTA._
+
+<Accordion title="Concept review: Why interpretation and next action live together">
+  A status label says whether the test succeeded; it doesn't say what you learned or what happens now. This is where the review earns its keep, by turning a result into a decision. Tying the interpretation to the hypothesis from the brief is what closes the loop: the test predicted something for a reason, and here you record whether that reason held up.
+
+  Pairing the interpretation with a concrete next action keeps a finished test from becoming a result nobody acted on. A winner usually implies a rollout and often a follow-up test; a loser or inconclusive result implies either a new hypothesis or a decision to stop pursuing the idea. What the right next step is depends entirely on your situation, so this field asks you to name it rather than suggesting one.
+</Accordion>
+
+## Save the review and link it back to the brief
+
+Once the review is complete, it doesn't live here. Save it into the experiment learning group as a report, then copy that report's link back into the original brief, so the brief and the learning group point at each other.
+
+<Accordion title="Concept review: Why the review lives in the learning group, linked from the brief">
+  A finished review is only useful if someone can find it later, and the two-step round trip is what makes that possible. Saving the review into the shared experiment learning group turns a pile of finished tests into a body of evidence the whole team can search, so the next person testing a CTA change finds the prior result instead of repeating the experiment blind. Keeping the review here, in the reviewer's own notes, or in a document nobody else opens would defeat that.
+
+  Posting the link back into the brief closes the loop from the other direction. The brief is where someone starts when they pull up a past test, so a brief that points to its own review lets a reader move from hypothesis to outcome without hunting. Without that link, the brief records what you set out to test and then goes quiet on what happened. Cancelled tests are the common exception: a test that never produced a trustworthy result usually needs only a short note on why it stopped rather than a full report, since forcing a full writeup on a test that never really ran tends to mean nothing gets recorded at all.
+</Accordion>
+
+## Your review at a glance
+
+<Steps>
+  <Step title="Identify">
+    Tie the review to its brief by experiment ID and link.
+  </Step>
+  <Step title="Record">
+    Enter primary, secondary, and guardrail metrics against baseline, plus significance.
+  </Step>
+  <Step title="Check">
+    Hold the result to the success criteria the brief set in advance.
+  </Step>
+  <Step title="Status">
+    Assign one status: winner, loser, inconclusive, or cancelled.
+  </Step>
+  <Step title="Decide, save, and link back">
+    Interpret the result, name the next action, save the review in the experiment learning group, then post that link back in the brief.
+  </Step>
+</Steps>

@@ -1,0 +1,150 @@
+---
+title: "UTM parameters"
+description: "How UTM parameters tag links so you can trace clicks back to the exact ad, email, or campaign. Read this to set up standard and ID-based tags correctly, keep them consistent, and understand how attribution windows change the data you get back."
+---
+
+UTM parameters are tags you add to the end of a link to record where a click came from. When someone clicks a tagged link, the destination reads those tags and stores them, so you can later see which ad, email, or campaign brought that person in.
+
+This document explains what UTM parameters are, the standard and ID-based versions, why consistency matters, how the tags move through the funnel, when to use custom parameters, and how attribution windows affect the data you get back.
+
+## What UTM parameters are
+
+A UTM parameter is a name-value pair added to a URL as a query string. UTM stands for Urchin Tracking Module, named after the analytics tool that introduced them.
+
+You add them after a `?` in the link, and separate multiple parameters with `&`.
+
+```text
+https://example.com/offer?utm_source=meta&utm_medium=paid_social&utm_campaign=spring_launch
+```
+
+Each parameter answers a question about the click:
+
+- `utm_source` — where the traffic came from
+- `utm_medium` — the type of channel
+- `utm_campaign` — the specific campaign
+- `utm_content` — which creative or link variant
+- `utm_term` — the paid keyword
+
+The link still works exactly as normal. The parameters are metadata riding along with the click; they do not change the page the visitor lands on.
+
+## Why UTM parameters matter
+
+Without UTM parameters, most analytics platforms can only tell you that a visitor arrived from a domain, for example "came from facebook.com." They cannot tell you which ad, which audience, or which campaign drove that visit.
+
+UTM parameters are the base layer of digital marketing analytics. They are how a click becomes a measurable, attributable event. Once the tags are captured and stored, you can:
+
+- See which campaigns produce leads, signups, or sales
+- Compare channels against each other on the same terms
+- Trace a customer back to the first ad they clicked
+- Calculate return on ad spend per campaign or creative
+
+If the tags are missing, inconsistent, or wrong, everything built on top of them, from dashboards to attribution models to spend decisions, inherits that error.
+
+## The standard parameters
+
+Five parameters are recognized by nearly every analytics platform. Use these as your default.
+
+| Parameter | Answers | Example value |
+| --- | --- | --- |
+| `utm_source` | Where did the traffic come from? | `meta`, `google`, `newsletter` |
+| `utm_medium` | What type of channel is it? | `paid_social`, `paid_search`, `email` |
+| `utm_campaign` | Which campaign is this? | `spring_launch` |
+| `utm_content` | Which creative or link did they click? | `video_a`, `header_cta` |
+| `utm_term` | Which paid keyword drove the click? | `running_shoes` |
+
+`utm_source`, `utm_medium`, and `utm_campaign` are the three you should set on every link. `utm_content` and `utm_term` are optional and used when you need to separate creatives or track keyword-level paid search.
+
+## ID versions of the parameters
+
+Instead of writing readable names into your campaign and content parameters, you can use the platform's own IDs.
+
+| Name-based value | ID-based value |
+| --- | --- |
+| `utm_campaign=Meta-Instagram-Awareness-CBO-TOFU` | `utm_campaign={{campaign.id}}` |
+| `utm_content=20260601-purchasedList-HSL` | `utm_content={{adset.id}}` |
+
+Most ad platforms provide dynamic fields you can drop into a URL, such as `{{campaign.id}}` and `{{adset.id}}` on Meta. The platform fills in the actual ID at the moment the ad serves, so the link carries the ID rather than a hand-written name.
+
+### Why use IDs over names
+
+Two reasons: privacy and stability.
+
+**Readable names leak strategy.** Take the campaign name `Meta-Instagram-Awareness-CBO-TOFU` and the content name `20260601-purchasedList-HSL`. To anyone who inspects the link, and that includes the visitor, a competitor, or a browser extension, those names reveal the platform, the objective, the budget structure, the funnel stage, the send date, and the fact that the audience came from a purchased list. That is a lot to hand out in a URL. An ID like `120210000123456` reveals none of it.
+
+**Names change; IDs do not.** A person can rename a campaign or ad set at any time, sometimes by accident. The moment a name changes, every historical report keyed on that name splits into two, and your data no longer stitches together cleanly. The platform ID stays fixed for the life of the campaign or ad set, so reporting stays consistent even when someone edits a label.
+
+<Tip>
+  Use IDs in `utm_campaign` and `utm_content`, then map those IDs back to friendly names inside your reporting tool. You keep clean, stable data in the link and readable labels in the dashboard.
+</Tip>
+
+## Why consistency matters
+
+UTM values are just text. To an analytics platform, `paid_search`, `Paid_Search`, `paidsearch`, and `ppc` are four completely different mediums. Every variation creates a new row in your reports and fragments your data.
+
+The value of UTM data comes almost entirely from consistency. Decide on a fixed vocabulary and use it every time:
+
+- Pick one value per concept, for example `utm_medium` is always `paid_search`, never a synonym
+- Use one case convention, usually all lowercase
+- Use one separator, usually underscores or hyphens, not a mix
+- Write the rules down and give people a builder or template instead of typing links by hand
+
+A single UTM taxonomy, applied the same way by everyone, is what turns individual clicks into data you can trust. One person free-typing `Email` instead of `email` is enough to break a channel report.
+
+## How UTMs move through the funnel
+
+UTM parameters are not a single event. They travel with the visitor from the first click all the way into your customer records. The path looks like this:
+
+1. **Attached.** You add the parameters to the link, whether it is an ad destination URL, an email link, a button, or a web link.
+2. **Clicked and captured.** When the visitor clicks, they land on your site carrying the parameters in the URL. Your site reads them and captures them, usually into a cookie or a hidden form field.
+3. **Stored.** When the visitor converts, for example by submitting a form, the captured values are written into fields on their record in your CRM, CDP, or analytics platform.
+4. **Analyzed.** With the values stored on the record, you can group, filter, and attribute revenue and conversions back to the exact source, medium, campaign, and creative.
+
+This chain is why UTM parameters are the bedrock of digital marketing analytics. Break any link in it, for example by not capturing the tags on the landing page, and the click can never be connected to the eventual customer.
+
+### When you do not need UTMs
+
+You only benefit from UTM parameters when the destination can report on them. If you are sending someone to a place you do not control and cannot pull data from, the tags do nothing.
+
+For example, if you link someone to your Instagram profile, adding UTM parameters is pointless. Instagram will not hand you click-level data for visits to your own profile, so there is nothing to capture and nothing to analyze. Reserve UTM tagging for destinations you own or can measure, such as your website or landing pages.
+
+## Custom UTM parameters
+
+You are not limited to the five standard parameters. You can add your own, for example `lead_code` or `ref`, to carry information the standard fields do not cover.
+
+Use a custom parameter when you have a specific value you need to pass through the click and store on the record, such as an internal lead source code, a referral partner ID, or an offer code.
+
+```text
+https://example.com/offer?utm_source=meta&utm_medium=paid_social&utm_campaign=123456&lead_code=q3promo&ref=partner_88
+```
+
+### The risk with custom parameters
+
+Custom parameters are less reliable than the standard five. Some browsers and privacy tools strip query parameters they do not recognize as standard. They may keep the `utm_` parameters and remove your custom ones, which means the custom data silently disappears before your site ever sees it.
+
+<Warning>
+  If a custom parameter is stripped in transit, you lose that data with no error and no warning. Do not make a custom parameter the only place a critical value lives. Where possible, keep essential information in the standard `utm_` fields, or capture it through a second method such as the page path or a server-side lookup.
+</Warning>
+
+## Cookie and attribution windows
+
+When your site captures UTM parameters, it often stores them in a cookie with an expiry, for example 30, 60, or 90 days. That expiry is the window during which the click can still be credited to a conversion.
+
+If the visitor converts inside the window, the stored UTM values attach to their record and the conversion is attributed to that click. If the cookie expires before they convert, the values fall off, and the conversion is recorded with no source, or gets credited to whatever later touch is still in the cookie.
+
+### Effect on first-touch attribution
+
+This directly affects first-touch attribution, which credits the conversion to the earliest recorded click.
+
+Suppose a visitor first clicks a paid social ad, and your cookie window is 30 days. If they come back and convert on day 20, first-touch works: the original ad still lives in the cookie and gets the credit. If they convert on day 40, the first-touch cookie has already expired. The paid social ad that actually started the journey is now invisible, and the conversion is attributed to a later touch or to none at all.
+
+The practical consequences:
+
+- **Long sales cycles lose early touches.** If your buying cycle is longer than your cookie window, first-touch attribution will systematically undercount the channels that open relationships and overcount the ones that close them.
+- **Attribution windows shape the story.** The same set of conversions can attribute very differently under a 30-day versus a 90-day window. Know your window before you read your reports.
+- **Cross-device and cookie clearing break the chain.** Cookies are per-browser. If the visitor switches devices or clears cookies, the stored UTMs are gone regardless of the window length.
+
+Attribution is only ever as accurate as the tags that survived long enough to be recorded. Consistent tagging plus a realistic cookie window are what keep first-touch and multi-touch models honest.
+
+## Related resources
+
+[**Set your UTM taxonomy**](/utm-standards) Define the fixed vocabulary for `utm_source`, `utm_medium`, and `utm_campaign` so everyone tags links the same way.

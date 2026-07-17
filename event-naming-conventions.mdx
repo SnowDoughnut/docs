@@ -1,3 +1,122 @@
 ---
 title: "Event naming conventions"
+description: "How to name every analytics event so the same action is always called the same thing. Fill this in once with your team, then use it to name every event you add to your Event Tracking Plan."
 ---
+
+_Fill in the rules below, and each section has a concept review dropdown that explains the reasoning if you want it. Once the rules are set, you use them to name events in your [Event Tracking Plan](/event-tracking-plan-overview), which is where the events themselves live._
+
+_Examples below follow the Doughnut Labs brand: a SaaS company that sells Doughnut Technology through a website and app. The greyed `E.g.` text shows a filled-in answer, so delete it and replace it with your own._
+
+<Note>
+  An event name is always an **object followed by an action**: the thing, then what happened to it, with the action in the past tense. `Product Viewed`, not `Viewed Product`. `Cart Viewed`, not `Viewed Cart`. `Audience Entered`, not `Entered Audience`. Lock the rules below once, then apply them to every event. This page defines how to name an event. It does not hold the events themselves; those go in your Event Tracking Plan.
+</Note>
+
+<Steps>
+  <Step title="Confirm the naming rules">
+    Most are pre-filled to the standard. Read them, adjust only if your team has a reason to, and write down the ones that are still open.
+  </Step>
+  <Step title="Fill in your object and action words">
+    List the objects and actions your product actually uses, so everyone reaches for the same word instead of inventing a new one each time.
+  </Step>
+  <Step title="Name events in your Event Tracking Plan">
+    Every time you add an event, build its name as object plus past-tense action, and record it in the tracking plan. The tracking plan is the source of truth for what each event means and what properties it carries.
+  </Step>
+</Steps>
+
+## Naming rules
+
+These apply to every event name, no exceptions. Most are pre-filled to the Segment standard; the greyed text is the recommended default, so keep it unless your team has a specific reason to change it.
+
+| Rule | Convention | Why it holds |
+| :-- | :-- | :-- |
+| Word order | _Object then action: `Product Viewed`_ | One order, applied everywhere, so events sort and group by the object they act on |
+| Action tense | _Past tense: `Viewed`, `Added`, `Completed`_ | An event records something that already happened |
+| Case | _Title Case: `Cart Viewed`_ | The Segment standard; `Cart Viewed` and `cart viewed` are two different events to analytics tools |
+| Separator | _A single space between words: `Order Completed`_ | Matches the Segment spec and reads cleanly in reports |
+| Number | _Singular object by default: `Product Added`_ | Reserve the plural for events that act on a set, like `Products Searched` |
+| Abbreviations | _None; spell words out: `Payment Info Entered`_ | Abbreviations drift; one person's `Info` is another's `Information` |
+| Reuse over invention | _Reuse an existing object and action before adding a new one_ | Two names for one action split its data in half |
+
+<Accordion title="Concept review: Naming rules">
+  The point of a naming convention is that one action always produces one name, so that everyone logging, querying, or reporting on it lands on the same string. Analytics tools treat `Cart Viewed`, `cart viewed`, and `Viewed Cart` as three unrelated events, so a single drift in casing or word order quietly splits one behavior into several, and every chart built on it undercounts without anyone noticing.
+
+  Most of these rules are locked to the Segment standard rather than left open because the value of a convention comes from everyone following the same one, and a widely used external standard is easier to onboard new people onto and is what the analytics tools already expect. The rules left with any room, like how you handle a rare edge case, matter far less than picking a single answer and writing it down, because a convention that is imperfect but consistent beats one that is elegant but applied three different ways.
+</Accordion>
+
+## Object then action
+
+The one rule everything else depends on: name the object first, then the action that happened to it. Read the name aloud and it should say what the user did to what: `Product Viewed`, `Cart Viewed`, `Order Completed`.
+
+<Warning>
+  The order is object then action, never action then object. `Product Viewed`, not `Viewed Product`. `Cart Viewed`, not `Viewed Cart`. `Audience Entered`, not `Entered Audience`. If a name reads as a command ("Add Product"), it is backwards; flip it to the past-tense object-first form ("Product Added").
+</Warning>
+
+**Write your product's most common events in the object-then-action form, to set the pattern for everyone:**
+
+_E.g. Product Viewed, Product Added, Cart Viewed, Checkout Started, Order Completed, Order Refunded._
+
+<Accordion title="Concept review: Object then action">
+  Putting the object first is what makes a list of events readable and groupable. When every name leads with the thing it acts on, all the events for one object collect together the moment the list is sorted, so every `Product` event sits in one block and every `Order` event in another. Lead with the verb instead and the same events scatter across the alphabet, with `Added`, `Viewed`, and `Removed` landing nowhere near each other even though they act on the same object.
+
+  The past tense follows from what an event is: a record that something already happened. `Product Viewed` describes a completed action, while `View Product` reads as an instruction to the software, which is a different kind of statement. Keeping every event in the past tense also keeps them parallel, so the names line up as a consistent log of behavior rather than a mix of records and commands. This is the rule most worth protecting, because a single backwards name is the kind of thing that gets copied once and then spreads.
+</Accordion>
+
+## Your objects
+
+The nouns your events act on. Listing them keeps everyone using the same word for the same thing, so no one logs `Basket` when the rest of the team uses `Cart`.
+
+| Object | Description | \[add object\] |
+| :-- | :-- | :-- |
+| _E.g. Product_ | _A single item in the catalog_ |  |
+| Cart | The user's shopping cart |  |
+| Order | A completed or in-progress purchase |  |
+| Checkout | The checkout flow |  |
+| Coupon | A discount code |  |
+| Account | The user's account |  |
+| \[add object\] |  |  |
+
+<Accordion title="Concept review: Your objects">
+  The object is the noun at the front of every event name, and agreeing on the list is how you stop the same thing from being called two names. If one person logs `Cart Viewed` and another logs `Basket Viewed`, analytics sees two unrelated events and the behavior is split across both, so a shared list of objects is what keeps one thing to one word.
+
+  Keeping the list of objects fairly small tends to make the whole scheme easier to hold in your head, since a handful of well-chosen objects can carry most of a product's events when paired with different actions. Where to draw the object's boundaries is a judgment call, for example whether a wishlist is its own object or a state of a product, and there is no universally right answer. What keeps it working is deciding once and recording it here, so the next person extends the list instead of quietly inventing a parallel one.
+</Accordion>
+
+## Your actions
+
+The past-tense verbs that describe what happened to an object. A shared list keeps the team from splitting one action across near-synonyms like `Viewed`, `Seen`, and `Opened`.
+
+| Action | Description | \[add action\] |
+| :-- | :-- | :-- |
+| _E.g. Viewed_ | _The user saw or opened the object_ |  |
+| Added | The user added the object |  |
+| Removed | The user removed the object |  |
+| Started | The user began a flow |  |
+| Completed | The user finished a flow |  |
+| Entered | The user submitted or joined something |  |
+| \[add action\] |  |  |
+
+<Accordion title="Concept review: Your actions">
+  Actions drift even more easily than objects, because most actions have several plausible synonyms. `Viewed`, `Seen`, `Opened`, and `Loaded` can all describe the same moment, and if the team uses them interchangeably then one behavior ends up spread across four event names, none of which shows the full picture on its own. A shared list of actions settles which verb wins for each kind of action, so the same behavior always produces the same word.
+
+  Reusing an action across objects works in your favor: `Viewed` pairs with `Product`, `Cart`, and `Order` to give you three clear events from one verb, and that consistency is exactly what makes them easy to reason about together. A small, reused set of actions combined with your list of objects covers a surprising range of a product's behavior, and it means a new event is usually a new pairing of words you already have rather than a brand-new term to define.
+</Accordion>
+
+## Put it together
+
+An event name is one object plus one past-tense action, in that order, in Title Case, separated by a space. That is the whole rule.
+
+`Product` \+ `Viewed` becomes `Product Viewed`
+
+`Cart` \+ `Viewed` becomes `Cart Viewed`
+
+`Order` \+ `Completed` becomes `Order Completed`
+
+`Audience` \+ `Entered` becomes `Audience Entered`
+
+When an event acts on a set rather than a single item, the object goes plural, but the order and tense do not change:
+
+`Products` \+ `Searched` becomes `Products Searched`
+
+<Info>
+  This page defines only how to name an event. The events themselves, along with what each one means, when it fires, and the properties it carries, belong in your [**Event Tracking Plan**](/event-tracking-plan-overview). 
+</Info>

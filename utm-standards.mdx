@@ -1,3 +1,180 @@
 ---
-title: "UTM standards"
+title: "UTM standards "
+description: "Set your team's standards for the core UTM parameters, your custom ones, and when to tag with IDs instead of names. Fill in each section to produce one UTM taxonomy everyone can follow."
 ---
+
+_This page is a workbook. You fill it in to define your own UTM standards, and each section has a concept review dropdown that explains the thinking behind it. The concept reviews explain the tradeoffs; they do not tell you what to choose. Your team's answer is yours to set._
+
+_Examples throughout use one invented company, **Doughnut Labs**, a SaaS company that sells disruptive Doughnut Technology. Wherever you see greyed `E.g.` text, that is Doughnut Labs' filled-in answer. Delete it and write your own._
+
+<Note>
+  Fill in the core parameter sections first (A through C). They apply to every link your team ships. The optional sections (D and E) only matter if you run paid search or add custom parameters. Section F sets your ID policy and applies to everyone.
+</Note>
+
+<Steps>
+  <Step title="Agree on the core values">
+    Work through sections A, B, and C to fix your source, medium, and campaign standards.
+  </Step>
+  <Step title="Add the optional parameters you actually use">
+    Fill in sections D and E only if you run keyword-level paid search or need custom fields.
+  </Step>
+  <Step title="Set your ID policy">
+    Section F decides when a link carries an ID instead of a readable name.
+  </Step>
+  <Step title="Publish and enforce">
+    Move the finished standards into a shared builder or template so no one hand-types links.
+  </Step>
+</Steps>
+
+## A. Source standard (`utm_source`)
+
+**List every approved value for `utm_source`, and the one spelling each must always use. Add a rule for who can add a new source.**
+
+| Approved source | Always written as | Notes |
+| :-- | :-- | :-- |
+| Meta | _E.g. `meta`_ | _E.g. Covers Facebook and Instagram placements together._ |
+| Google | _E.g. `google`_ | _E.g. Paid and organic distinguished by medium, not source._ |
+| Newsletter | _E.g. `newsletter`_ | _E.g. Our owned product-update email list._ |
+| \[add source\] |  |  |
+
+**Who can add a new source to this list, and how?**
+
+_E.g. Only the analytics lead. Request in the #marketing-ops channel; the list is updated before the campaign launches, never mid-flight._
+
+<Accordion title="Concept review: Source standard">
+  `utm_source` records where the click came from: the platform, site, or property that sent the visitor. The value of the field comes almost entirely from everyone spelling each source the same way every time. To an analytics platform, `facebook`, `Facebook`, `fb`, and `meta` are four different sources, so one campaign can splinter into four rows that no longer add up.
+
+  A fixed list is what prevents that. Teams differ on how granular the list should be: some fold Facebook and Instagram into one `meta` source and separate them by campaign or content, others keep them apart at the source level. Both work as long as the choice is written down and applied the same way by everyone. The failure mode is not the level of detail you pick, it is letting people invent new spellings on the fly.
+</Accordion>
+
+## B. Medium standard (`utm_medium`)
+
+**List your approved `utm_medium` values. These are channel types, not platforms. Fix one spelling for each.**
+
+| Channel type | Always written as |
+| :-- | :-- |
+| Paid social | _E.g. `paid_social`_ |
+| Paid search | _E.g. `paid_search`_ |
+| Email | _E.g. `email`_ |
+| Organic social | _E.g. `organic_social`_ |
+| \[add channel type\] |  |
+
+<Accordion title="Concept review: Medium standard">
+  `utm_medium` records the type of channel, which is a different question from `utm_source`. Source is the specific platform (`meta`, `google`); medium is the category of marketing (`paid_social`, `email`). A common mix-up is putting a platform name in the medium field, which collapses the distinction the two fields exist to keep separate.
+
+  Medium is also the field most analytics platforms use to sort traffic into channel groups. When a medium value does not match the vocabulary the platform expects, that traffic often lands in an "unassigned" or "other" bucket and drops out of your channel reports. That is why medium tends to be the most tightly controlled of the parameters: a small fixed list, matched to how your analytics tool groups channels, does more work here than anywhere else.
+</Accordion>
+
+## C. Campaign standard (`utm_campaign`)
+
+`utm_campaign` carries the campaign name you built in [Campaign naming conventions](/campaign-naming-conventions). You do not invent a separate pattern here; you reuse the one you already defined at the campaign level.
+
+**Confirm which value goes in `utm_campaign`, and show one filled-in example.**
+
+| Question | Your answer |
+| :-- | :-- |
+| Value to use | _E.g. The campaign name from [Campaign naming conventions](/campaign-naming-conventions)._ |
+| Name or ID | _E.g. ID when the name would leak strategy or could be renamed, see section F._ |
+| Example (name) | _E.g. `Meta-Instagram-Awareness-CBO-TOFU`_ |
+| Example (ID) | _E.g. `{{campaign.id}}`_ |
+
+**When an ID replaces the readable name, see section F.**
+
+<Accordion title="Concept review: Campaign standard">
+  `utm_campaign` ties a set of links back to a single promotion, launch, or initiative so you can measure it as one thing across every channel that carried it. Reusing your campaign naming convention here, rather than inventing a second pattern, is what keeps the UTM value and the campaign in your ad platform pointing at the same thing. If the two drift apart, a report built on UTMs no longer lines up with a report built in the ad platform.
+
+  The campaign name is a real choice with tradeoffs, which is why the naming convention exists as its own document. A self-describing name like `Meta-Instagram-Awareness-CBO-TOFU` is easy to read in a report, but it also reveals strategy to anyone who inspects the link, and it breaks reporting the moment someone renames the campaign. That tension between readability and both privacy and stability is exactly what section F is for: use the readable name where a name is fine, and switch to an ID where it is not.
+</Accordion>
+
+## D. Content and term standard (`utm_content`, `utm_term`)
+
+These two parameters carry the names you built in the other two naming-convention documents. `utm_content` carries the ad set / ad group / variant name; `utm_term` carries the ad (creative) name. Reuse those names rather than inventing new values here.
+
+**Confirm which value goes in each parameter.**
+
+| Parameter | Value to use | Example |
+| :-- | :-- | :-- |
+| `utm_content` | _E.g. The ad set / ad group / variant name from [Ad set / ad group / variant naming conventions](/ad-set-group-naming-conventions)._ | _E.g. `20260601-LLA3-HSL`_ |
+| `utm_term` | _E.g. The ad name from [Ad naming conventions](/ad-name-conventions)._ | _E.g. `AutoGlaze-STATIC-FREETRIAL-TRY-LP`_ |
+
+**Document what `utm_term` means on each platform you run, because it is not the same everywhere.**
+
+| Platform | What `utm_term` holds | Example |
+| :-- | :-- | :-- |
+| Meta | _E.g. The ad (creative) name._ | _E.g. `AutoGlaze-STATIC-FREETRIAL-TRY-LP`_ |
+| Google Search | _E.g. The matched search term or keyword._ | _E.g. `{keyword}`_ |
+| \[add platform\] |  |  |
+
+<Accordion title="Concept review: Content and term standard">
+  `utm_content` and `utm_term` add detail below the campaign level, and the cleanest way to fill them is to reuse the names you already built one level down. `utm_content` takes the ad set / ad group / variant name, so the audience layer of the click is captured; `utm_term` takes the ad name, so the exact creative is captured. Reusing those names keeps your UTM reports lined up with the structure inside the ad platform instead of describing it a second, slightly different way.
+
+  `utm_term` is worth documenting per platform, because the field does not mean the same thing everywhere. Its original use was the paid search keyword, and on Google Search that is still the natural fit. On Meta there is no keyword, so many teams repurpose `utm_term` for the ad name instead. Both are valid; what causes trouble is using it for the ad name on one platform and the keyword on another without writing that down, so a mixed report becomes impossible to read. The field can be used ad hoc, as long as each platform's meaning is recorded in the table above.
+</Accordion>
+
+## E. Custom parameters
+
+<Tip>
+  Optional: fill this in only if you pass values the five standard parameters do not cover, such as an internal lead code or a referral partner ID.
+</Tip>
+
+**List each custom parameter you use, what it carries, and where its value also lives so you are protected if it gets stripped.**
+
+| Custom parameter | What it carries | Backup location |
+| :-- | :-- | :-- |
+| `lead_code` | _E.g. Internal source code for the sales team._ | _E.g. Also written into a hidden form field on the demo-request page._ |
+| `ref` | _E.g. Referral partner ID._ | _E.g. Also resolvable server-side from the partner's unique landing path._ |
+| \[add parameter\] |  |  |
+
+**Write your team's rule for adding a custom parameter:**
+
+_E.g. A custom parameter is added only when no standard field fits, and only if the same value is captured a second way. No critical value lives in a custom parameter alone._
+
+<Accordion title="Concept review: Custom parameters">
+  Custom parameters carry information the five standard fields were never meant to hold, like an internal lead code or a referral partner ID. They are useful precisely because they are yours to define.
+
+  They also carry a risk the standard fields mostly avoid. Some browsers and privacy tools strip query parameters they do not recognize, and they will often keep the `utm_` parameters while dropping your custom ones. When that happens the value disappears before your site ever sees it, with no error and no warning. This is why the backup-location column matters: a custom parameter is a fine place to pass a value, but a risky place to store the only copy of one. Teams that rely on custom parameters tend to pair each with a second capture method so a stripped parameter costs them nothing.
+</Accordion>
+
+## F. ID versus name policy
+
+**Decide, per parameter, whether the link carries a readable name or a platform ID. Note the dynamic field you use to insert each ID.**
+
+| Parameter | Name or ID | ID field to insert |
+| :-- | :-- | :-- |
+| `utm_campaign` | _E.g. ID_ | _E.g. `{{campaign.id}}` on Meta_ |
+| `utm_content` | _E.g. ID (ad set)_ | _E.g. `{{adset.id}}` on Meta_ |
+| `utm_source` | _E.g. Name_ | _E.g. Not applicable, always a fixed name._ |
+| `utm_medium` | _E.g. Name_ | _E.g. Not applicable, always a fixed name._ |
+
+**Write the rule that tells someone which to reach for:**
+
+_E.g. Use an ID wherever the readable name would leak strategy or could be renamed later. Source and medium stay as names because they are fixed, public categories. Campaign and ad set use IDs, mapped back to friendly names in the reporting tool._
+
+<Accordion title="Concept review: ID versus name policy">
+  Some ad platforms let you drop a dynamic field into a link, such as `{{campaign.id}}`, and the platform fills in the real ID when the ad serves. The link then carries the ID instead of a name you typed. Choosing between a name and an ID comes down to two things: what the value reveals, and whether it can change.
+
+  Readable names reveal strategy. A campaign named `us_doughnutpro_launch_2026` tells anyone who inspects the link the region, product, promotion, and timing, and a name like `purchasedlist_enterprise` would tell them how the audience was sourced. That audience includes the visitor and any competitor who looks. An ID reveals none of it. Readable names also change: a person can rename a campaign or ad set at any time, sometimes by accident, and the moment a name changes, historical reports keyed on it split in two. A platform ID stays fixed for the life of the campaign, so the data stitches together even when someone edits a label.
+
+  The cost of IDs is readability, since a raw ID means nothing to a human reading a report. That is why teams that tag with IDs usually map them back to friendly names inside the reporting tool, keeping stable values in the link and readable labels on the dashboard. Where a value is already a fixed, public category, like source and medium, a name carries no strategy and cannot drift, so there is often little to gain from an ID. Where you land on each parameter is yours to set here.
+</Accordion>
+
+## Build order recap
+
+<Steps>
+  <Step title="Fix source and medium as short, fixed lists">
+    These control how your analytics tool groups channels, so they are the tightest.
+  </Step>
+  <Step title="Set the campaign pattern, then the ID policy">
+    Decide the readable pattern first, then decide in section F where an ID replaces it.
+  </Step>
+  <Step title="Add content, term, and custom fields only where you use them">
+    Blank is a valid answer. Format them now so they stay consistent later.
+  </Step>
+  <Step title="Move the finished standards into one builder">
+    A shared builder or template applies every rule above automatically and stops hand-typed drift.
+  </Step>
+</Steps>
+
+<Info>
+  This workbook is built from your team's internal UTM parameters concept document. Keep the two in sync: the concept document explains how UTMs work, and this workbook records the specific standards your team has chosen.
+</Info>

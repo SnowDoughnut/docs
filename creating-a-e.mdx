@@ -1,0 +1,166 @@
+---
+title: "Creating an experiment"
+description: "The process for running a single digital marketing test."
+---
+
+Run a digital marketing test from first idea to logged result. Copy the brief, fill it in, register an experiment ID, apply that ID everywhere the test appears, launch, and set up a review that links back to the brief.
+
+<Info>
+  Each step uses one of these documents: the [experiment brief](/experiment-brief), the [experiment ID conventions](/experiment-ids), the [campaign](/campaign-naming-conventions), [ad set / ad group / variant](/ad-set-group-naming-conventions), and [ad](/ad-name-conventions) naming conventions, and the [experiment review](/experiment-review-process).
+</Info>
+
+## What you'll end up with
+
+Three things that point at each other:
+
+- A **completed brief** that records the hypothesis, design, and result of the test.
+- An **experiment ID** that carries the test across your ad platform, BI tool, and reporting.
+- A **review** saved in the learning library, linked back to the brief.
+
+One person, the [**owner**](/glossary), is responsible for all three. The owner copies the brief, runs the test, writes the review, and recommends the next action. Others come in at set points: whoever approves the spend or page change, whoever builds the creative or audience, and whoever reads the result later.
+
+## Before you start
+
+Confirm these before you copy a new brief:
+
+- Your team has agreed on an experiment brief template . If not, set that up first in the [experiment brief](/experiment-brief). 
+- You have a hypothesis: a change you can make, an outcome you expect, and a reason you expect it.
+- You're comparing a control against at least one variant. A change with no control isn't an experiment, and this process doesn't apply.
+- Your team has agreed on an experiment ID pattern and keeps one experiment log. If not, set that up first in the [experiment ID conventions](/experiment-ids). 
+- Your team has agreed on an review template . If not, set that up first in the [experiment review](/experiment-review-process-1). 
+
+## The process at a glance
+
+<Steps>
+  <Step title="Copy the brief">
+    Make a fresh copy of the [experiment brief](/experiment-brief) for this test.
+  </Step>
+  <Step title="Fill in the setup and hypothesis">
+    Record the owner, test type, hypothesis, and metrics.
+  </Step>
+  <Step title="Design the test">
+    Set success criteria, sample size, confidence, and timeline.
+  </Step>
+  <Step title="Register your experiment ID">
+    Generate an ID from your team's pattern, check the log, and save it in the brief.
+  </Step>
+  <Step title="Apply the ID to every surface">
+    Add it to the variant, campaign, ad set, or ad name, plus your BI tool and UTMs.
+  </Step>
+  <Step title="Launch the test">
+    Confirm the split matches the brief, then set it live.
+  </Step>
+  <Step title="Run and monitor">
+    Let it collect its planned sample. Watch guardrails, don't stop early unless necessary.
+  </Step>
+  <Step title="Set up the review">
+    Copy the [experiment review](/experiment-review-process-1), record the result, and assign a status.
+  </Step>
+  <Step title="Link everything together">
+    Save the review to the [learning library](/experirment-learning-home) and link it back to the brief.
+  </Step>
+</Steps>
+
+## 1. Copy the brief
+
+Make a fresh copy of the [experiment brief](/experiment-brief) for this test. Every test gets its own brief.
+
+Don't reuse an old brief or start from a blank note. The standard brief already holds the sections you need, setup, hypothesis, metrics, design, variants, and results, in the right order.
+
+## 2. Fill in the setup and hypothesis
+
+Work down the top of the brief. Record who owns the test and what kind of test it is, then state what you're testing and how you'll measure it:
+
+- **Setup:** the owner and the test type. Leave the experiment ID blank for now.
+- **Hypothesis:** the change you're making, the outcome you expect, and why.
+- **Metrics:** the single primary metric, any secondary metrics, the guardrail metrics that must not degrade, and the baseline.
+
+See the[ experiment brief concept document](/test-brief-process) for how to write a hypothesis with a reason attached and how to pick a single primary metric.
+
+## 3. Design the test
+
+Finish the design section of the brief before anything goes live. This is where you set what counts as a win and how long the test runs:
+
+- **Success criteria:** the minimum lift, the confidence threshold, and the guardrail condition, all stated before results come in.
+- **Sample size and minimum detectable effect:** calculated with the [sample size calculator](https://www.samplesizecalc.com/).
+- **Timeline:** start and end dates, with the end date derived from the sample math, not the calendar.
+
+<Warning>
+  Set the sample size and end date before launch, and derive the end date from the sample math. Don't plan to stop the moment the test looks significant. Checking a running test and stopping on a good day inflates false positives, a practice called [peeking](/glossary).
+</Warning>
+
+## 4. Register your experiment ID
+
+Create the short code that ties the test together and save it in the brief. Register it at the brief stage, before launch, so it links the brief, the live campaign, and every report from the start.
+
+1. Generate a new ID using [your team's pattern ](/experiment-id)(sequential, date-based, or random alphanumeric).
+2. Check it against your experiment log to confirm it isn't already in use.
+3. Save the ID in the brief's setup section.
+4. Add a row to the experiment log.
+
+<Warning>
+  Don't change an experiment ID after the test launches. Once it's live, the campaign, your dashboards, and data already collected all reference it. Changing it breaks the link between the brief, the campaign, and the reports.
+</Warning>
+
+See the [experiment ID conventions](/experiment-ids) for how to choose a pattern, the formatting rules, and how the experiment log keeps IDs unique.
+
+## 5. Apply the ID to every surface
+
+Add the ID everywhere the test shows up. Where it goes on the ad platform depends on what the test is about. Append it to the end of the name at the level the hypothesis targets, using the matching naming convention:
+
+| Test is about | Level the ID goes on | Naming convention |
+| :-- | :-- | :-- |
+| Channel, objective, budget, or bid strategy | Campaign name | [Campaign naming conventions](/campaign-naming-conventions) |
+| Audience, segment, or targeting | Ad set / ad group / variant name | [Ad set / ad group / variant naming conventions](/ad-set-group-naming-conventions) |
+| Creative, offer, CTA, or destination | Ad name | [Ad naming conventions](/ad-name-conventions) |
+| Page, email, or SMS content | Test name in your testing tool | Your testing tool's naming, plus the ID |
+
+Then add the same ID everywhere else the test is measured:
+
+- Tags, filters, or dashboards in your BI tool.
+- UTM parameters such as `utm_content` or `utm_campaign`, if the test links to a tracked landing page.
+
+## 6. Launch the test
+
+List every variant in the brief, including the control, and confirm the splits add to 100%. Check that the split in the tool matches the split on the page.
+
+Once the ID is on every surface and the split matches the brief, launch.
+
+## 7. Run and monitor
+
+Let the test collect the sample the brief planned for. Watch, don't touch.
+
+- **Watch the guardrails.** If a guardrail metric degrades badly, stop the test and mark it cancelled.
+- **Don't stop early to lock in a win.** A test that crosses 95% on day two hasn't collected its sample yet.
+- **Only extend for an external reason.** A traffic drop, a tracking break, or a seasonal shift can justify extending the timeline. "Not yet significant" cannot. Record the reason in the brief if you extend.
+
+## 8. Set up the review
+
+Once the test finishes collecting data on its planned timeline, copy the [experiment review template](/experiment-review-process-1) and work through it:
+
+1. Fill in the identifying fields, starting with the same experiment ID.
+2. Record the primary metric, secondary metrics, and guardrails against the baseline and success criteria, and note whether significance was reached.
+3. Check the result against the success criteria the brief set in advance.
+4. Assign one status: winner, loser, inconclusive, or cancelled.
+5. Write what the result means and the next action: a rollout, a follow-up test, or a decision to drop the idea.
+
+## 9. Link everything together
+
+Save the finished review to the[ learning library](/experirment-learning-home), then paste its link back into the brief. The brief points to the review, the review points to the brief, and both carry the same experiment ID.
+
+## Exceptions
+
+- **The test is cancelled mid-flight.** If tracking breaks, a launch goes wrong, or a business change makes the test moot, stop it and mark it cancelled. A cancelled test needs only a short note on why it stopped, not a full review.
+- **You're not comparing to a control.** If you're shipping a change with no control, you're not running an experiment. Skip this process; no brief or ID is needed.
+
+## Related resources
+
+[**Experiment brief**](/experiment-brief) The record of a single test.
+
+[**Experiment ID conventions**](/experiment-id) How to create, format, and register the short code that ties the test together.
+
+[**Campaign naming conventions**](/campaign-naming-conventions) Where the experiment ID sits on a campaign name, for tests about channel, objective, budget, or bid strategy.
+
+[**Ad set / ad group / variant naming conventions**](/ad-set-group-naming-conventions) Where the experiment ID sits at the ad set level, for tests about audience or segment.
+
+[**Ad naming conventions**](/ad-name-conventions) Where the experiment ID sits on an ad name, for tests about creative, offer, CTA, or destination.

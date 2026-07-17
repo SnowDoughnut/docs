@@ -1,0 +1,30 @@
+---
+title: "Event tracking plan overview"
+description: "How to add an event to the tracking plan: name it, describe when it fires, and list its properties. Follow this whenever you add or change an event."
+---
+
+The tracking plan holds one row per event. Add a row whenever you introduce a new event, and update the row whenever an existing event changes.
+
+## Before you start
+
+Name the event first, using the[ event naming conventions](/event-naming-conventions): object then action, past tense, Title Case (`Product Viewed`). If the name isn't right, fix it there before it reaches the plan.
+
+## Add an event
+
+1. **Add a row** at the bottom of the table.
+2. **Name** the event exactly as the naming conventions produce it. Reuse an existing name if the event already exists; don't create a second name for the same action.
+3. **Fires when...**: describe the one action or condition that triggers the event, in plain language. "A user opens a product detail page," not "product page stuff."
+4. **Additional notes**: add anything a developer needs to implement it, such as dedup rules, aliases, or edge cases. Leave blank if there's nothing to add.
+5. **Relevant?**: mark `Yes`, `No`, or `Maybe`.
+6. **Biz goal**: name the outcome the event supports, such as `Drive sales`.
+7. **Properties**: list each property in `Prop name`, its data type in `Type`, and its meaning in `Prop description`. Keep all three columns in the same order so each property lines up across them.
+
+## Keep it consistent
+
+- One event, one row, one name. If two rows describe the same action, merge them.
+- Use the same property name everywhere it appears. `product_id` in one event and `productId` in another are two different properties to your analytics tools.
+- When an event changes, update its row in the same edit. A plan that lags the code is worse than no plan.
+
+<Info>
+  Event names come from the[ event naming conventions.](/event-naming-conventions) This page covers filling in the plan; it doesn't define the naming rules.
+</Info>

@@ -1,0 +1,28 @@
+---
+title: "Event tracking plan"
+description: "The record of every analytics event you send: what each one is, when it fires, and the properties it carries. Fill in one row per event, using your event naming conventions for the Name column."
+---
+
+Each row is one event. Name it using your event naming conventions (object then action, past tense: `Product Viewed`). List each property inside the cell, one per line, and keep `Prop name`, `Type`, and `Prop description` in the same order so the rows line up.
+
+| Name | Fires when... | Additional notes | Relevant? | Biz goal | Prop name | Type | Prop description |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| Product Viewed | A user opens a product detail page | Fires once per page load, not on every scroll | Yes | Drive sales | product\_id<br />sku<br />name<br />price<br />currency | String<br />String<br />String<br />Number<br />String | Unique product identifier<br />Public-facing stock code<br />Product display name<br />Price in smallest currency unit<br />ISO currency code |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+|  |  |  |  |  |  |  |  |
+
+## Column reference
+
+Use this to fill each column consistently.
+
+| Column | What goes in it |
+| :-- | :-- |
+| Name | The event name, from your naming conventions: object then action, past tense, Title Case (`Cart Viewed`). |
+| Fires when... | The exact user action or system condition that triggers the event, in plain language. |
+| Additional notes | Edge cases, dedup rules, aliases, or anything a developer needs to implement it correctly. |
+| Relevant? | Whether this event is in scope for your plan: `Yes`, `No`, or `Maybe`. |
+| Biz goal | The business outcome the event supports (for example, `Drive sales`, `Reduce churn`). |
+| Prop name | Each property sent with the event, one per line. |
+| Type | The data type for each property, in the same order: `String`, `Number`, `Boolean`, `Array`, `Object`. |
+| Prop description | What each property means, in the same order as the names above it. |

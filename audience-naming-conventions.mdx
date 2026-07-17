@@ -1,3 +1,231 @@
 ---
 title: "Audience naming conventions"
+description: "How to name every saved, custom, and lookalike audience in your ad accounts so the same audience is called the same thing everywhere. Fill this in once with your team, and anyone can read, find, or rebuild an audience from its name alone."
 ---
+
+_Fill in the workbook for each section below. Each section also has a concept review dropdown that explains the thinking behind it, so you can understand why a field exists before you commit to how you'll fill it in._
+
+_Examples below follow the Doughnut Labs brand: a SaaS company that sells Doughnut Technology across Meta, Google, and TikTok. The greyed `E.g.` text shows you what a filled-in row looks like, so delete it and replace it with your own._
+
+<Note>
+  An audience name is built by taking one value from each field in order and joining them with your separator. The first fields (audience type, funnel stage, the segment itself) apply to almost every audience. The later fields (lookalike percentage, geo, demographics, exclusion, platform) only get added when they apply to that audience. Lock the formatting rules once, fill in a value for every field you use, then assemble the name. Add new values as your library grows, but don't rename or delete a value that live audiences already use, or the names in your ad account will stop matching this sheet.
+</Note>
+
+<Steps>
+  <Step title="Lock the formatting rules">
+    Agree on the separator, casing, and abbreviation style in Formatting rules below. These are the same for every audience, so decide them once.
+  </Step>
+  <Step title="Fill in a value for every field you use">
+    Work through the field dictionaries: audience type, funnel stage, segment, lookalike percentage, geo, demographics, inclusion or exclusion, and platform. Give each value a short form and a plain description.
+  </Step>
+  <Step title="Assemble the name">
+    Concatenate one value from each field, in order, separated by your chosen character, skipping any field that audience doesn't need.
+  </Step>
+</Steps>
+
+## Formatting rules
+
+These rules apply to every audience name regardless of type. Decide each one once, write it down, and don't mix schemes later. A filter for `LAL` will not find `Lookalike`, so a convention that drifts is worse than one that is plain but consistent.
+
+| Rule | Convention | Why it holds |
+| :-- | :-- | :-- |
+| Separator between fields | _E.g. Underscore `_`_ | Keeps each field visually distinct and easy to split when you export to a sheet |
+| Separator within a field | _E.g. Hyphen `-`_ | Lets a multi-word value stay one field: `cart-abandoners` |
+| Case | _E.g. Field codes uppercase, values lowercase_ | Makes the structural codes (`LAL`, `TOF`) scan at a glance against the readable segment |
+| Abbreviation style | _E.g. Fixed short codes from the dictionaries below, never ad-hoc_ | `LAL` and `Lookalike` and `lklk` are three different strings to a filter |
+| Spaces | _E.g. None, ever_ | Spaces break exports, pivot tables, and bulk-upload sheets |
+| Order of fields | _E.g. Always the dictionary order below, even when fields are skipped_ | A predictable order is what lets you read a name left to right without a key |
+| Maximum length | _E.g. Under the platform's field limit, aim for under 60 characters_ | Long names get truncated in the audience dropdown where you actually pick them |
+
+<Accordion title="Concept review: Formatting rules">
+  Everything else in this document decides which words describe an audience. This section decides the mechanics that make those words sortable, filterable, and readable at a glance, and it is the part that quietly determines whether the convention survives once several people are building audiences in the same account.
+
+  Two choices carry most of the weight. One is the separator: a single consistent character between fields is what lets you split a name back into its parts, whether you are reading it in the audience picker or pulling it into a spreadsheet to pivot on. The other is abbreviation discipline. The whole point of a naming convention is that a filter for one value returns every audience with that value, and that only works if the value is written the same way every time. The moment someone types `Lookalike` where the sheet says `LAL`, that audience drops out of the filter and effectively disappears. Picking one scheme and holding to it matters far more than which scheme you pick.
+</Accordion>
+
+## Core fields
+
+These fields apply to almost every audience you build. Fill in a row for every value you use, give it a short form, and describe what it means so the next person reads the same audience the same way. When you assemble a name, you take one value from each field in order.
+
+### Audience type
+
+The kind of audience, by how it was built. This is the field that tells someone at a glance whether they are looking at a warm retargeting pool, a modeled lookalike, or a cold interest-based audience, and it is the one field that applies to every audience you make.
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. Custom audience_ | _CA_ | _Built from your own data: site visitors, customer lists, engagers_ |  |
+| Lookalike audience | LAL | Modeled from a seed audience to find similar new people |  |
+| Saved / interest audience | SAV | Built from interests, demographics, or behaviors in the ad platform |  |
+| Broad / no targeting | BROAD | No manual audience; the platform's algorithm decides |  |
+| Retargeting audience | RTG | A warm pool of people who already interacted with you |  |
+| \[add audience type\] |  |  |  |
+
+<Accordion title="Concept review: Audience type">
+  Audience type is the field that makes your whole audience library readable before anyone opens a single one. It answers the first question anyone has when scanning a list, which is not "who exactly is in this" but "is this cold, warm, or modeled." Because the answer changes how the audience should be used, budgeted, and measured, this field tends to sit at the front of the name where it is easiest to scan and filter on.
+
+  The main tension is how finely to split it. Some teams keep it coarse, with a few buckets like custom, lookalike, and saved. Others separate a retargeting pool from other custom audiences, or a broad Advantage-style audience from a manually saved one, because those get different budgets and different creative. Neither is more correct. The split that works is the one that matches the real decisions your team makes, since a distinction you never act on just adds length to every name.
+</Accordion>
+
+### Funnel stage
+
+Where this audience sits in the customer journey. Tells someone whether an audience is meant for cold awareness, mid-funnel consideration, or bottom-funnel conversion, which is usually the single biggest driver of how it gets used.
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. Top of funnel_ | _TOF_ | _Cold audiences, awareness, people who don't know Doughnut Labs yet_ |  |
+| Middle of funnel | MOF | Warm audiences, consideration, people evaluating options |  |
+| Bottom of funnel | BOF | Hot audiences, conversion, people close to buying |  |
+| Retention | RET | Existing customers, for upsell, cross-sell, or renewal |  |
+| \[add funnel stage\] |  |  |  |
+
+<Accordion title="Concept review: Funnel stage">
+  Funnel stage encodes how warm the audience is, which is the thing that most changes how you treat it. A top-of-funnel cold audience and a bottom-of-funnel retargeting pool want different budgets, different offers, and different creative, and they get measured against different benchmarks, since a cold audience that converts at 0.5 percent and a hot one that converts at 8 percent are both performing normally for what they are. Putting the stage in the name means you can pull every cold audience, or every conversion audience, in one filter and compare like with like.
+
+  The judgment here is how many stages you actually run. The three-stage top, middle, and bottom model is the common default, but some teams collapse it to just cold and warm, and others add a separate retention or win-back stage for existing customers. The field works at any resolution. What breaks it is using the labels loosely, so that the same warm audience is tagged middle-of-funnel in one place and bottom in another, because then filtering by stage stops telling you anything reliable.
+</Accordion>
+
+### Segment
+
+A short, human-readable label for who is actually in the audience. This is the part a person reads to know they have the right audience, rather than a similar-looking one.
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. Cart abandoners, 7 days_ | _cart-abandoners-7d_ | _People who added to cart but didn't buy in the last 7 days_ |  |
+| Purchasers, 180 days | purchasers-180d | Everyone who bought in the last 180 days |  |
+| Website visitors, 30 days | site-visitors-30d | All site traffic in the last 30 days |  |
+| High-LTV customer list | hi-ltv-crm | Top-value customers uploaded from the CRM |  |
+| Video viewers, 50 percent | video-viewers-50 | Watched at least half of a video |  |
+| Interest: doughnut lovers | int-doughnut-lovers | Interest-based segment of doughnut enthusiasts |  |
+| \[add segment\] |  |  |  |
+
+<Accordion title="Concept review: Segment">
+  The segment is the one field written for a human rather than a system. Every other field is a code that sorts and filters; this is the plain-language handle that tells a person "yes, this is the audience I meant" without opening it to check the definition. An audience named only with type and stage codes is findable but not recognizable, and the segment closes that gap.
+
+  Two details do most of the work here. One is the recency window: `site-visitors-30d` and `site-visitors-180d` are completely different audiences that behave differently, so folding the window into the label keeps them from blurring together. The other is consistency of phrasing. If the same group is called `cart-abandoners` in one audience and `abandoned-cart` in another, the segment stops being predictable, and a predictable segment is what lets someone guess the name of an audience before they even find it. The tension throughout is length against clarity: too vague (`visitors`, `list`) and it tells you nothing, too long and it gets cut off in the audience dropdown where you actually pick it.
+</Accordion>
+
+## Conditional fields
+
+<Tip>
+  Add these only to the audiences they apply to. Skip the field entirely for an audience that doesn't need it, rather than inserting a placeholder like `na`.
+</Tip>
+
+Some fields only make sense for some audiences. A lookalike percentage belongs on a lookalike and nothing else. A geography or demographic belongs on an audience that is actually split that way. Fill in the ones your library needs, and leave the rest out of the names they don't apply to.
+
+### Lookalike percentage
+
+The size and closeness of a lookalike audience. Only for lookalikes, where the same seed produces very different audiences at 1 percent versus 10 percent and you need to tell them apart.
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. 1 percent lookalike_ | _1pct_ | _Closest match, smallest and most similar audience_ |  |
+| 1 to 3 percent lookalike | 1-3pct | Slightly wider, still close to the seed |  |
+| 5 percent lookalike | 5pct | Broader reach, looser similarity |  |
+| 10 percent lookalike | 10pct | Widest reach, loosest similarity |  |
+| \[add percentage\] |  |  |  |
+
+<Accordion title="Concept review: Lookalike percentage">
+  A lookalike is defined by two things: the seed it was modeled from and how wide you cast the net. The seed usually lives in the segment field (a 1 percent lookalike of purchasers is not the same audience as a 1 percent lookalike of site visitors). The percentage is what this field captures, and it matters because the same seed at 1 percent and at 10 percent are genuinely different audiences: one is small and tightly matched, the other is large and loose, and they rarely perform the same way.
+
+  This field earns its place only on lookalikes, which is why it sits among the conditional fields rather than the core ones. Putting it on a custom or interest audience would be meaningless. Where it does apply, a consistent way of writing the value matters, since `1pct`, `1%`, and `1-percent` are three different strings even though they mean the same size, and only the one that matches this sheet will come back when you filter for it.
+</Accordion>
+
+### Geography
+
+The location an audience is limited to. Only for audiences that are actually split by region, so the versions of the same segment for different markets don't collide.
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. United States_ | _us_ | _Audience limited to the US market_ |  |
+| Canada | ca | Audience limited to the Canadian market |  |
+| United Kingdom | uk | Audience limited to the UK market |  |
+| DACH region | dach | Germany, Austria, Switzerland |  |
+| English-speaking markets | en-mkts | US, UK, Canada, Australia combined |  |
+| \[add geography\] |  |  |  |
+
+<Accordion title="Concept review: Geography">
+  When the same segment is run separately for different markets, the audiences are otherwise identical: same type, same funnel stage, same recency window. The geography code is often the only thing keeping the US and Canada versions of an audience from looking like duplicates. It also lets someone pull every audience for one market in a single filter, which is how a regional budget or a localized campaign gets audited.
+
+  The field only belongs on audiences that are genuinely split by location. If an account only ever runs in one country, adding the country to every name just makes them longer without telling anyone anything, because a value that is always present stops signaling anything. Where geography does vary, the usual approach is a short standard region code, and as with every field the value is only as useful as its consistency: `us`, `usa`, and `united-states` will not filter as the same market.
+</Accordion>
+
+### Demographics
+
+An age, gender, or other demographic split. Only for audiences you deliberately break out this way, so the segments you test against each other stay separate and comparable.
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. Ages 18 to 24_ | _18-24_ | _Audience limited to the 18 to 24 age band_ |  |
+| Ages 25 to 34 | 25-34 | Audience limited to the 25 to 34 age band |  |
+| Female | f | Audience limited to women |  |
+| Male | m | Audience limited to men |  |
+| Parents | parents | Audience limited to people with children |  |
+| \[add demographic\] |  |  |  |
+
+<Accordion title="Concept review: Demographics">
+  This field exists for the case where you deliberately split one segment into demographic slices to test them against each other, for example running the same interest audience separately for two age bands to see which converts. When you do that, the slices are identical on every other field, and the demographic code is what keeps them distinct and lets you compare them cleanly later.
+
+  It belongs only on audiences that are actually broken out this way. Many audiences aren't, and letting the platform's algorithm handle age and gender is often the better choice, in which case this field should simply be absent rather than filled with an "all" placeholder. As with geography, the value is only useful if it is written consistently: an age band entered as `18-24` in one name and `18to24` in another will not group together when you try to compare the two.
+</Accordion>
+
+### Inclusion or exclusion
+
+Whether an audience is being targeted or suppressed. Only worth marking when the same audience gets used both ways, so a targeting pool and its matching exclusion don't get confused for each other.
+
+<Tip>
+  Optional: many teams keep two clearly named audiences (a target and an exclusion) rather than tagging one. Add this field only if your naming would otherwise be ambiguous.
+</Tip>
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. Include_ | _INCL_ | _Audience used for targeting_ |  |
+| Exclude | EXCL | Audience used to suppress, for example existing customers |  |
+| \[add value\] |  |  |  |
+
+<Accordion title="Concept review: Inclusion or exclusion">
+  The same list of people can play two opposite roles. A customer list might be the audience you target for an upsell in one campaign and the audience you suppress from a new-customer acquisition campaign in another. Because the roles are opposite, mixing them up is costly: an exclusion list accidentally used as a target shows acquisition ads to people who already bought, and a target list used as an exclusion silently blocks the people you meant to reach. This field marks which job an audience is doing.
+
+  It is optional because many teams avoid the ambiguity a different way, by keeping the target and the exclusion as two separate, clearly named audiences rather than one audience tagged with a role. That works just as well. The field is worth adding only when your names would otherwise leave someone guessing whether an audience is meant to be included or held out, which is the exact situation where a wrong guess wastes budget.
+</Accordion>
+
+### Platform
+
+The ad platform the audience lives in. Only needed if you keep audiences for different platforms in one shared library or naming sheet, so a Meta audience and its Google equivalent stay distinct.
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. Meta (Facebook / Instagram)_ | _meta_ | _Audience built in Meta Ads Manager_ |  |
+| Google Ads | goog | Audience built in Google Ads |  |
+| TikTok Ads | tiktok | Audience built in TikTok Ads Manager |  |
+| LinkedIn Ads | li | Audience built in LinkedIn Campaign Manager |  |
+| \[add platform\] |  |  |  |
+
+<Accordion title="Concept review: Platform">
+  Every ad platform holds its own audiences, so within a single platform the name never needs to say which one it is. This field matters only when you track audiences across platforms in one place, like a shared planning sheet or a cross-channel library, where a Meta lookalike and its Google equivalent would otherwise look like the same audience and get confused in reporting.
+
+  Because most people build and pick audiences inside one platform at a time, many teams never need this field at all, and adding it to every name just makes them longer. Where you do run the same audience logic across Meta, Google, and TikTok and compare them side by side, a short platform code keeps them separate. As always, the code only works if it is consistent, so `meta`, `fb`, and `facebook` should not all appear for the same platform.
+</Accordion>
+
+## Assemble the name
+
+Take one value from each field, in order, joined by your field separator. Skip any conditional field an audience doesn't use, rather than leaving a gap or a placeholder. Read left to right, the name should tell you the type, the stage, and exactly who is in the audience.
+
+A warm retargeting audience of recent cart abandoners uses only the core fields:
+
+`CA_MOF_cart-abandoners-7d`
+
+A cold lookalike needs its percentage, so that field is filled in:
+
+`LAL_TOF_purchasers-180d_1pct`
+
+A lookalike split by market and age adds geography and a demographic:
+
+`LAL_TOF_hi-ltv-crm_1pct_us_25-34`
+
+A customer list used as a suppression audience marks the exclusion:
+
+`CA_RET_purchasers-180d_EXCL`
+
+An interest audience tracked in a cross-platform library adds the platform:
+
+`SAV_TOF_int-doughnut-lovers_us_meta`

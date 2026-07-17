@@ -1,3 +1,213 @@
 ---
 title: "File naming conventions"
 ---
+
+_Fill in the workbook for each section below. Expand a concept review if you want the reasoning behind a section before you commit to a structure._
+
+_Examples below continue the Doughnut Labs brand: a SaaS company that sells Doughnut Technology. The greyed `E.g.` text is there to show you what a filled-in row looks like, so delete it and replace it with your own._
+
+<Note>
+  This convention names one file the same way no matter what type it is: a Word doc, an image, a video, a static ad, a slide deck, anything. You fill in a dictionary of values for each field below, its short form, and what it means. Then you assemble a name by taking one value from each field in order. Add a new value, or a whole new field, as your library grows; don't rename or remove one that files are already using, or you will orphan every file named under the old value. The formatting rules (dates, separators, version numbers) apply to every file type without exception.
+</Note>
+
+<Steps>
+  <Step title="Lock the formatting rules">
+    Agree on the separators, date format, and version format in Formatting rules below. These are the same for every file, so decide them once.
+  </Step>
+  <Step title="Fill in a value for every field you use">
+    Work through the field dictionaries: asset type, descriptor, date, version, status, and the optional format and language fields. Add its short form too.
+  </Step>
+  <Step title="Assemble the name">
+    Concatenate one value from each field, in order, separated by underscores, skipping any optional field a given file doesn't need. Add the extension last.
+  </Step>
+</Steps>
+
+## Formatting rules
+
+These rules apply to every file name regardless of type. Decide each one once, write it down, and don't mix schemes later. A search for `doughnut_labs` will not find `doughnut-labs`, so a convention that drifts is worse than one that is imperfect but consistent.
+
+| Rule | Convention | Why it holds |
+| :-- | :-- | :-- |
+| Separator between fields | _E.g. Underscore `_`_ | Keeps each field visually distinct and machine-splittable |
+| Separator within a field | _E.g. Hyphen `-`_ | Lets a multi-word value stay one field: `black-friday` |
+| Date format | _E.g. `YYYYMMDD`_ | ISO 8601: alphabetical sort equals chronological sort |
+| Version format | _E.g. `v` plus two digits: `v01`_ | Leading zero keeps `v10` sorting after `v09`, not after `v01` |
+| Case | _E.g. Lowercase throughout_ | Avoids `File.jpg` and `file.jpg` being treated as different or identical depending on the system |
+| Spaces | _E.g. None, ever_ | Spaces break URLs, command-line tools, and sync scripts |
+| Forbidden characters | \_E.g. \`\< \> : " / \\ | Illegal or reserved on Windows, macOS, Linux, or in URLs |
+| Maximum length | _E.g. Under 70 characters_ | Long paths get truncated or corrupted; Windows caps total path at 260 |
+
+<Accordion title="Concept review: Formatting rules">
+  Everything else in this document is about which words go in a file name. This section is about the mechanics that make those words sortable and portable, and it is the part that quietly decides whether the convention survives contact with real operating systems.
+
+  Two choices do most of the work. The date format is one: `YYYY-MM-DD` is the only common format where sorting a folder alphabetically also sorts it by date, which is why archives and libraries standardize on it. The version format is the other: two digits with a leading zero (`v01`, not `v1`) keeps versions in order once you pass nine, because `v10` sorts before `v2` in a plain text sort. The rest (no spaces, no special characters, one consistent separator) exists because a name that works on one person's Mac can break the moment it is zipped, synced to a shared drive, or dropped into a URL. Picking one scheme and holding to it matters more than which scheme you pick.
+</Accordion>
+
+## Standard fields
+
+Each field below is a small dictionary. Fill in a row for every value you use, give it a short form if you want shorter names, and describe what it means so the next person reads the same file the same way. When you assemble a name, you take one value from each field in order.
+
+### Asset type
+
+The kind of file. This is what lets someone group every deck, every image, or every contract together at a glance, and it is the one field that applies to literally every file type.
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. Document_ | _DOC_ | _Word docs, Google Docs, text files_ |  |
+| Image | IMG | Photos, graphics, exported stills |  |
+| Video | VID | Any moving-image file |  |
+| Static ad | AD | A non-animated ad creative |  |
+| Presentation | DECK | PowerPoint, Keynote, Google Slides |  |
+| Spreadsheet | XLS | Excel, Google Sheets, CSV |  |
+| Logo | LOGO | Brand marks and lockups |  |
+| \[add asset type\] |  |  |  |
+
+<Accordion title="Concept review: Asset type">
+  Asset type is the field that makes a library browsable before anyone opens a single file. It answers the first question people usually have, which is not "what campaign is this" but "is this the deck, the video, or the doc." Sorting or filtering by this one field pulls every file of a kind together, which is why it tends to sit near the front of the name.
+
+  Because it spans every file type, the value list here grows the widest. Some teams keep it coarse, with a handful of buckets like document, image, and video. Others split finer, separating a static ad from a social image from a print graphic, because those go to different places and people search for them differently. Neither is more correct; the split that works is the one that matches how your team actually looks for things.
+</Accordion>
+
+### Descriptor
+
+A short, human-readable label for what the file actually is or contains. This is the part a person reads to know they have the right file.
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. Q3 launch hero_ | _q3-launch-hero_ | _The main hero visual for the Q3 product launch_ |  |
+| Pricing one-pager | pricing-1pager | The single-page pricing explainer |  |
+| Founder headshot | founder-headshot | Portrait of the founder for press use |  |
+| Onboarding welcome | onboard-welcome | The first email in the onboarding series |  |
+| \[add descriptor\] |  |  |  |
+
+<Accordion title="Concept review: Descriptor">
+  The descriptor is the one field written for a human rather than a system. Every other field is a code that sorts and filters; this is the plain-language handle that tells a person "yes, this is the thing I was looking for" without opening it. A file named only with codes and a date is findable but not recognizable, and the descriptor closes that gap.
+
+  The tension here is length against clarity. Too vague (`final`, `image`, `asset`) and it tells the reader nothing; too long and it blows the character budget and gets truncated in dialog boxes. Multi-word descriptors are where the within-field separator earns its place, so `black-friday-hero` stays one readable unit. Consistency helps as much as brevity: if the same kind of file is called `hero` in one name and `main-visual` in another, the descriptor stops being something you can predict, and a predictable descriptor is what makes search work.
+</Accordion>
+
+### Date
+
+When the file was created or dated, in the ISO format you locked above. Gives every file a point in time and makes a folder sort chronologically on its own.
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. 2027-09-15_ | _2027-09-15_ | _Full date: creation or publish date_ |  |
+| 2027-Q3 | 2027-Q3 | Quarter, for files that cover a whole quarter |  |
+| 2027-09 | 2027-09 | Month, for files dated to a month not a day |  |
+| \[add date form\] |  |  |  |
+
+<Accordion title="Concept review: Date">
+  A date in the name does something folders alone cannot: it makes a file identifiable and sortable even after it has been downloaded, moved, or emailed to someone who never saw your folder structure. The name carries its own timeline. In `YYYY-MM-DD` order, that timeline also sorts correctly by default, so a folder falls into chronological order without anyone touching a sort setting.
+
+  The judgment call is which date and how precise. A daily date suits things tied to a specific moment, like a dated export or a sending. For a file that covers a whole quarter or month, a full day-level date implies a precision that is not real, and a `YYYY-Q3` or `YYYY-MM` form reads more honestly. What matters most is picking the creation date or the publish date and applying the same choice everywhere, because a mix of the two makes the timeline unreliable in a way no one can see from the name.
+</Accordion>
+
+### Version
+
+Which iteration of the file this is. Keeps successive drafts of the same file in order and ends the `final_final_v2` problem.
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. Version 1_ | _v01_ | _First version of this file_ |  |
+| Version 2 | v02 | Second version, after a round of changes |  |
+| Version 10 | v10 | Tenth version: two digits keep it sorting after v09 |  |
+| \[add version form\] |  |  |  |
+
+<Accordion title="Concept review: Version">
+  Version numbering exists to answer one question with certainty: which of these is the newest. The word "final" cannot answer it, because there is always one more round, and a folder full of `final`, `final-v2`, and `final-real` tells you nothing about order. A running number does, as long as it is applied from the first draft rather than bolted on once things get confusing.
+
+  The two-digit detail is the part that is easy to miss and annoying to fix later. A plain-text sort orders `v1`, `v10`, `v2`, because it compares character by character, so single-digit versions scramble the moment you reach ten. Starting at `v01` keeps the sequence honest all the way up. Some teams also reserve a jump in the whole number for a major change and smaller marks for minor ones, but the base rule that carries every case is simply: number from the start, pad to two digits.
+</Accordion>
+
+### Status
+
+Where the file sits in its review cycle. Optional, but useful when a file moves through drafts, review, and approval and people need to know at a glance what is safe to use.
+
+<Tip>
+  Optional: append only when a file moves through a review cycle and its stage matters to other people.
+</Tip>
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. Draft_ | _DRAFT_ | _Work in progress, not reviewed_ |  |
+| Work in review | WIP | Submitted for review, not yet approved |  |
+| Approved | APPR | Signed off, cleared for use |  |
+| Final | FINAL | Locked; no further changes expected |  |
+| Archived | ARCH | Superseded, kept for record only |  |
+| \[add status\] |  |  |  |
+
+<Accordion title="Concept review: Status">
+  Status marks a file's place in its review cycle so someone can tell, without asking, whether a file is safe to send to a client or still halfway through edits. It answers a different question than version does: version says which iteration, status says whether that iteration has been cleared. The newest version and the approved version are not always the same file.
+
+  This field is optional because not every file has a review cycle worth tracking; a quick internal export may never need one. Where it does apply, the risk is letting status and version drift apart, so that an `APPR` file and a later `v05` both exist and no one knows which won. Teams handle that in different ways, some by only ever having one approved file, others by re-versioning after approval, and the field works as long as the team agrees on how the two relate rather than leaving it to guesswork.
+</Accordion>
+
+## Optional fields
+
+<Tip>
+  Optional: append these only to file types that need them. Skip the field entirely for a file type it doesn't apply to, rather than inserting a placeholder.
+</Tip>
+
+Some fields only make sense for some file types. A dimension belongs on an image or an ad, not on a Word doc. A language code belongs on anything localized, and on nothing that isn't. Fill in the ones your library needs and leave the rest out of those names.
+
+### Format or dimensions
+
+Size, aspect ratio, or format specification. Mostly for visual files, where the same descriptor exists in several sizes and people need to grab the right one.
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. 300x250_ | _300x250_ | _Medium rectangle display ad, in pixels_ |  |
+| 1080x1920 | 1080x1920 | Vertical story or reel, in pixels |  |
+| 16x9 | 16x9 | Widescreen video aspect ratio |  |
+| A4 | A4 | Print page size |  |
+| \[add format\] |  |  |  |
+
+<Accordion title="Concept review: Format or dimensions">
+  For visual files, one descriptor usually exists in many shapes: the same hero image cut to a square, a vertical story, a banner, and a print size. The format field is what tells those siblings apart, so someone grabbing a `300x250` does not open five look-alike files to find the one that fits the slot. Without it, the only difference between those files lives inside them, where search cannot see it.
+
+  This field earns its place only where size actually varies, which is why it sits among the optional fields. On a Word doc or a spreadsheet it means nothing and would just add noise. Where it does apply, a consistent way of writing the value matters, since `300x250`, `300X250`, and `300-250` are three different strings to a search even though they describe the same ad, and only one of them will come back when someone filters for it.
+</Accordion>
+
+### Language or region
+
+The language or market a file is for. For anything localized or region-specific, so the English and French cuts of the same asset don't collide.
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. English_ | _en_ | _English-language version_ |  |
+| French | fr | French-language version |  |
+| English, Canada | en-CA | English for the Canadian market |  |
+| French, Canada | fr-CA | French for the Canadian market |  |
+| United States | us | US market, any language |  |
+| \[add language or region\] |  |  |  |
+
+<Accordion title="Concept review: Language or region">
+  When a file exists in more than one language or market, the versions are otherwise identical: same descriptor, same date, same dimensions. The language or region code is often the only thing keeping the English and French cuts from looking like duplicates or overwriting each other. It also lets someone pull every asset for one market in a single filter, which is how localized campaigns get audited.
+
+  The common standard is the two-letter language code, extended to a language-and-region pair when the same language differs by market, so `en-CA` and `en-US` can carry different spelling or pricing. The field only belongs on files that are actually localized; adding it to everything, including single-market files, dilutes its usefulness, because a code that is always present stops signaling anything. As with every other field, the value is only as good as its consistency: `fr`, `fre`, and `french` will not sort or search as the same thing.
+</Accordion>
+
+## Assemble the name
+
+Take one value from each field, in order, joined by your field separator. Skip any optional field a given file doesn't use rather than leaving a gap or a placeholder. Add the extension last.
+
+A dated Word document, which has no dimensions or language, uses only the core fields:
+
+`DOC_pricing-1pager_2027-09-15_v03_APPR.docx`
+
+A display ad needs its dimensions, so the format field is filled in:
+
+`AD_q3-launch-hero_300x250_2027-09-15_v02_APPR.jpg`
+
+A localized video adds both dimensions and a language code:
+
+`VID_q3-launch-hero_16x9_en-CA_2027-09-15_v05_FINAL.mp4`
+
+A slide deck in progress, no format or language, still in draft:
+
+`DECK_sales-quarterly-review_2027-09-15_v01_DRAFT.pptx`
+
+<Info>
+  This structure draws on public file-naming guidance from digital asset management providers and creative agencies, and on the ISO 8601 date standard used by libraries and archives. It covers how to name a single file across every type. For naming campaigns, ad sets, and ads inside an ad platform, see your campaign naming conventions.
+</Info>
