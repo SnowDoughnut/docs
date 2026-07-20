@@ -102,7 +102,8 @@
           {
             "group": "Creative",
             "pages": [
-              "creative"
+              "creative",
+              "landing-page-brief-concepts"
             ]
           }
         ]
@@ -130,7 +131,7 @@
               "file-naming-conventions",
               "event-naming-conventions",
               {
-                "group": "Naming Conventions for Campaigns",
+                "group": "Campaigns naming conventions",
                 "pages": [
                   "campaign-naming-conventions",
                   "ad-set-group-naming-conventions",
@@ -511,7 +512,8 @@
               {
                 "group": "Creative",
                 "pages": []
-              }
+              },
+              "landing-page-skeleton"
             ]
           },
           {
