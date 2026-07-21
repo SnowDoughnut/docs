@@ -1,5 +1,5 @@
 ---
-title: "UTM standards "
+title: "UTM standards"
 description: "Set your team's standards for the core UTM parameters, your custom ones, and when to tag with IDs instead of names. Fill in each section to produce one UTM taxonomy everyone can follow."
 ---
 
@@ -106,7 +106,7 @@ These two parameters carry the names you built in the other two naming-conventio
 | \[add platform\] |  |  |
 
 <Accordion title="Concept review: Content and term standard">
-  `utm_content` and `utm_term` add detail below the campaign level, and the cleanest way to fill them is to reuse the names you already built one level down. `utm_content` takes the ad set / ad group / variant name, so the audience layer of the click is captured; `utm_term` takes the ad name, so the exact creative is captured. Reusing those names keeps your UTM reports lined up with the structure inside the ad platform instead of describing it a second, slightly different way.
+  `utm_content` and `utm_term` add detail below the campaign level, and the cleanest way to fill them is to reuse the names you already built one level down. `utm_content` takes the ad set / ad group / variant name, so the customer profile layer of the click is captured; `utm_term` takes the ad name, so the exact creative is captured. Reusing those names keeps your UTM reports lined up with the structure inside the ad platform instead of describing it a second, slightly different way.
 
   `utm_term` is worth documenting per platform, because the field does not mean the same thing everywhere. Its original use was the paid search keyword, and on Google Search that is still the natural fit. On Meta there is no keyword, so many teams repurpose `utm_term` for the ad name instead. Both are valid; what causes trouble is using it for the ad name on one platform and the keyword on another without writing that down, so a mixed report becomes impossible to read. The field can be used ad hoc, as long as each platform's meaning is recorded in the table above.
 </Accordion>
@@ -153,7 +153,7 @@ _E.g. Use an ID wherever the readable name would leak strategy or could be renam
 <Accordion title="Concept review: ID versus name policy">
   Some ad platforms let you drop a dynamic field into a link, such as `{{campaign.id}}`, and the platform fills in the real ID when the ad serves. The link then carries the ID instead of a name you typed. Choosing between a name and an ID comes down to two things: what the value reveals, and whether it can change.
 
-  Readable names reveal strategy. A campaign named `us_doughnutpro_launch_2026` tells anyone who inspects the link the region, product, promotion, and timing, and a name like `purchasedlist_enterprise` would tell them how the audience was sourced. That audience includes the visitor and any competitor who looks. An ID reveals none of it. Readable names also change: a person can rename a campaign or ad set at any time, sometimes by accident, and the moment a name changes, historical reports keyed on it split in two. A platform ID stays fixed for the life of the campaign, so the data stitches together even when someone edits a label.
+  Readable names reveal strategy. A campaign named `us_doughnutpro_launch_2026` tells anyone who inspects the link the region, product, promotion, and timing, and a name like `purchasedlist_enterprise` would tell them how the customer profile was sourced. Anyone who inspects the link, including the visitor and any competitor, sees it. An ID reveals none of it. Readable names also change: a person can rename a campaign or ad set at any time, sometimes by accident, and the moment a name changes, historical reports keyed on it split in two. A platform ID stays fixed for the life of the campaign, so the data stitches together even when someone edits a label.
 
   The cost of IDs is readability, since a raw ID means nothing to a human reading a report. That is why teams that tag with IDs usually map them back to friendly names inside the reporting tool, keeping stable values in the link and readable labels on the dashboard. Where a value is already a fixed, public category, like source and medium, a name carries no strategy and cannot drift, so there is often little to gain from an ID. Where you land on each parameter is yours to set here.
 </Accordion>
@@ -176,5 +176,12 @@ _E.g. Use an ID wherever the readable name would leak strategy or could be renam
 </Steps>
 
 <Info>
-  This workbook is built from your team's internal UTM parameters concept document. Keep the two in sync: the concept document explains how UTMs work, and this workbook records the specific standards your team has chosen.
+  This workbook is built from the [UTM parameters](/utm-parameters) concept document. Keep the two in sync: the concept document explains how UTM parameters work, and this workbook records the specific standards your team has chosen.
 </Info>
+
+## Related resources
+
+- [UTM parameters](/utm-parameters)
+- [Campaign naming conventions](/campaign-naming-conventions)
+- [Ad set / ad group / variant naming conventions](/ad-set-group-naming-conventions)
+- [Ad naming conventions](/ad-name-conventions)

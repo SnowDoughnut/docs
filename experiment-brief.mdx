@@ -4,7 +4,7 @@ description: "A fill-in brief for a single test. Each field is yours to keep, cu
 ---
 
 <Info>
-  This brief is built from the [Experiment brief concept SOP](/test-brief-process). It also references the [experiment ID conventions](/experiment-id), [statistical significance guidance](/statistical-significance), and the [experiment review process](/experiment-review-process-1). Consult those for the reasoning behind each field.
+  This brief is built from the [Experiment brief concept SOP](/test-brief-process). It also references the [experiment ID conventions](/experiment-id), [statistical significance guidance](/statistical-significance), and the [experiment review process](/experiment-review-process). Consult those for the reasoning behind each field.
 </Info>
 
 <Note>
@@ -31,10 +31,10 @@ The examples below all describe one invented test, a pricing-page CTA color test
 
 | Field | Fill in |
 | :-- | :-- |
-| Owner | _E.g. Steve Steverson._ |
+| [Owner](/glossary#owner) | _E.g. Steve Steverson._ |
 | [Experiment ID](/experiment-id) | _E.g. `TEST-8H2P`_ |
 | Test type | _E.g. A/B (one control, one variant)_ |
-| Marketing campaign brief | _E.g. Black Friday Cyber Monday 2027_ |
+| [Marketing campaign brief](/marketing-campaign-brief) | _E.g. Black Friday Cyber Monday 2027_ |
 | \[add setup field\] |  |
 
 <Accordion title="Concept review: Setup fields">
@@ -154,7 +154,7 @@ _E.g. 95% confidence (p \< 0.05). The pricing page has enough traffic to reach t
 </Accordion>
 
 <Warning>
-  Don't extend a test just because it hasn't crossed the significance threshold. Checking a running test repeatedly and stopping the moment it hits 95% inflates false positives, a practice called peeking. Set sample size and duration in advance. Only extend if something changed during the test (traffic dropped, seasonality shifted, tracking broke), never to chase significance.
+  Don't extend a test just because it hasn't crossed the significance threshold. Checking a running test repeatedly and stopping the moment it hits 95% inflates false positives, a practice called [peeking](/glossary#peeking). Set sample size and duration in advance. Only extend if something changed during the test (traffic dropped, seasonality shifted, tracking broke), never to chase significance.
 </Warning>
 
 ### Test timeline
@@ -185,7 +185,7 @@ _E.g. Start 2026-07-14, end 2026-07-28. End date set by the sample math (18,000 
 
 ## Variants and splits
 
-**List every variant, including the control, and how traffic, budget, or audience divides between them. Splits should total 100%. Add a row per variant for A/B/n or multivariate tests:**
+**List every variant, including the control, and how traffic, budget, or customer profile divides between them. Splits should total 100%. Add a row per variant for A/B/n or multivariate tests:**
 
 | Variant | Description | Split |
 | :-- | :-- | :-- |
@@ -218,3 +218,11 @@ _E.g. Start 2026-07-14, end 2026-07-28. End date set by the sample math (18,000 
 
   Linking each completed test to a learning library report is what turns a stack of finished tests into something later tests can build on. Without the link, a brief records what happened once and then fades; with it, the next person testing the same idea can find the prior evidence instead of starting blind. Cancelled tests are the common exception: often they need only a short note on why they stopped rather than a full report.
 </Accordion>
+
+## Related resources
+
+- [Experiment brief concept SOP](/test-brief-process)
+- [Experiment ID conventions](/experiment-id) and the [experiment ID SOP](/experiment-ids)
+- [Statistical significance](/statistical-significance)
+- [Experiment review process](/experiment-review-process)
+- [Experiment learning library](/experirment-learning-home)

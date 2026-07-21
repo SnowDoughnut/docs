@@ -1,5 +1,6 @@
 ---
 title: "Statistical significance"
+description: "What statistical significance means, when to require it, what to do when you can't reach it, and the common pitfalls that can mislead a result."
 ---
 
 Statistical significance is one signal that a test's results are trustworthy. This page explains what it means, when to require it, what to do when you can't reach it, and when it's reasonable to call a test without it.
@@ -110,7 +111,7 @@ Sometimes you have to decide without statistical significance. Use this checklis
 - Traffic is genuinely too low to reach significance in a useful timeframe
 - The change is reversible if it turns out to be wrong
 - The primary metric is trending consistently in one direction across the full test period
-- Guardrail metrics are healthy 
+- Guardrail metrics are healthy
 - The result matches the hypothesis (a surprise result deserves more scrutiny)
 
 If any are false, either extend the test, redesign it, or accept that this question can't be answered with a test right now.
@@ -121,7 +122,7 @@ Statistical significance can mislead you when the underlying test has problems. 
 
 ### Peeking
 
-Repeatedly checking a running test and stopping the moment it crosses 95% inflates false-positive rates. Set the sample size and duration in advance, and only stop early for real reasons broken tracking, harmful guardrail movement, business change. 
+Repeatedly checking a running test and stopping the moment it crosses 95% inflates false-positive rates. Set the sample size and duration in advance, and only stop early for real reasons broken tracking, harmful guardrail movement, business change.
 
 ### Sample ratio mismatch
 
@@ -152,6 +153,6 @@ Decide which segments matter before the test runs.
 
 ## Related resources
 
-[**Create an experiment brief** ](/test-brief-process)How to document a test before running it, including sample size and success criteria.
-
-[**The experiment review process**](/experiment-review-process) How to write up results and add them to the learning library.
+- [**Experiment brief concept SOP**](/test-brief-process) How to document a test before running it, including sample size and success criteria.
+- [**Experiment brief**](/experiment-brief) The fill-in workbook.
+- [**The experiment review process**](/experiment-review-process) How to write up results and add them to the learning library.
