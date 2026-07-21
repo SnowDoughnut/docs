@@ -2,9 +2,9 @@
 title: "Experiment brief"
 ---
 
-An experiment brief is the record of a single test. It captures the hypothesis and design before the test runs, and the results after, so decisions are documented and future tests can build on what was learned.
+An [experiment brief](/experiment-brief) is the record of a single test. It captures the hypothesis and design before the test runs, and the results after, so decisions are documented and future tests can build on what was learned.
 
-Use one for any digital marketing test where you're comparing variants.
+Use one for any digital marketing test where you're comparing variants. This page explains the reasoning behind each field; fill in the [experiment brief workbook](/experiment-brief) itself when you're ready to build one.
 
 ## When to use an experiment brief
 
@@ -16,7 +16,7 @@ Fill out a brief for any test where you're comparing at least two versions and w
 - SMS tests (copy, timing, segment)
 - Any other digital test with a control and one or more variants
 
-If you're making a change without comparing it to a control, you're not running an experiment a brief isn't needed.
+If you're making a change without comparing it to a control, you're not running an experiment, and a brief isn't needed.
 
 ## Setup
 
@@ -28,7 +28,7 @@ The person responsible for implementing the test, running it, analyzing results 
 
 ### Experiment ID
 
-A short, unique code assigned to the test. See [experiment ID conventions](/experiment-ids) to learn more. 
+A short, unique code assigned to the test. See [experiment ID conventions](/experiment-ids) to learn more.
 
 ### Test type
 
@@ -97,8 +97,6 @@ The sample size is the number of users, sessions, or impressions the test needs 
 
 Calculate both before launching. If the required sample size can't be reached in a reasonable timeframe, either accept a larger MDE (only detecting bigger effects), extend the timeline, or reconsider whether the test is worth running.
 
-See [sample size calculator](/sample-size-calculator).
-
 ### Statistical significance
 
 The probability threshold used to decide whether the observed difference between variants is real or due to random chance. Most digital marketing tests use a 95% confidence level (p \< 0.05).
@@ -106,7 +104,7 @@ The probability threshold used to decide whether the observed difference between
 Not every test can hit statistical significance. Low-traffic email lists, niche SMS segments, and short-cycle brand tests may not generate enough sample. For those, record the observed direction, note that significance wasn't reached, and make a directional call. See [Statistical significance](/statistical-significance).
 
 <Warning>
-  Do not extend a test just because it hasn't crossed the significance threshold. Repeatedly checking a running test and stopping the moment it crosses 95% inflates false-positive rates. This practice is called peeking. Set the sample size and duration in advance, and only extend if something changed during the test (traffic dropped, seasonality shifted, tracking broke). Extending to chase significance is not a valid reason.
+  Do not extend a test just because it hasn't crossed the significance threshold. Repeatedly checking a running test and stopping the moment it crosses 95% inflates false-positive rates. This practice is called [peeking](/glossary#peeking). Set the sample size and duration in advance, and only extend if something changed during the test (traffic dropped, seasonality shifted, tracking broke). Extending to chase significance is not a valid reason.
 </Warning>
 
 ### Test timeline
@@ -131,7 +129,7 @@ If you can't find the exact asset later, the record isn't detailed enough.
 
 ## Variants and splits
 
-List every variant, including the control, and how traffic, budget, or audience is divided between them. Splits should add to 100%.
+List every variant, including the control, and how traffic, budget, or customer profile is divided between them. Splits should add to 100%.
 
 Example:
 
@@ -153,16 +151,16 @@ After the test ends, mark it with one of four statuses:
 | Inconclusive | Test ran to plan but did not reach significance, or results didn't meet criteria |
 | Cancelled | Test was stopped before completion (broken tracking, bad launch, business change) |
 
-For any test marked winner, loser, or inconclusive, create a report in the learning library and link it to this brief. 
+For any test marked winner, loser, or inconclusive, create a report in the learning library and link it to this brief.
 
 Cancelled tests do not need a full report but should include a short note explaining why the test was stopped.
 
-Linking each brief to a learning library entry makes past decisions easy to review, and gives future tests a source of prior evidence to build on. See the [experiment review process](/experiment-review-process-1)for how to write up results.
+Linking each brief to a learning library entry makes past decisions easy to review, and gives future tests a source of prior evidence to build on. See the [experiment review process](/experiment-review-process) for how to write up results.
 
 ## Related resources
 
-[**Statistical significance in digital marketing tests**](/statistical-significance) When to use a confidence threshold, and what to do when you can't reach one.
-
-[**Experiment ID conventions**](/experiment-ids) How to name and register experiment IDs.
-
-[The experiment review process](/experiment-review-process-1)The steps to take when a test finishes.
+- [**Experiment brief workbook**](/experiment-brief) Fill in a brief using this reasoning.
+- [**Statistical significance in digital marketing tests**](/statistical-significance) When to use a confidence threshold, and what to do when you can't reach one.
+- [**Experiment ID conventions**](/experiment-ids) How to name and register experiment IDs.
+- [**The experiment review process**](/experiment-review-process) The steps to take when a test finishes.
+- [**Experiment learning library**](/experirment-learning-home) Past test results and evidence.

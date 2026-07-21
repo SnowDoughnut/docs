@@ -4,10 +4,10 @@ title: "Campaign naming conventions"
 
 _Fill in the workbook for each section below. Expand a concept review if you want the reasoning behind a section before you commit to a structure._
 
-_Examples below continue the Doughnut Labs brand introduced in How naming conventions work._
+_Examples below continue the Doughnut Labs brand introduced in [Naming conventions overview](/naming-conventions-overview)._
 
 <Note>
-  Fill in a row for every value you use in each category table below, its short form if you name jam it, and what it means. That's what builds this level's dictionary, all in one place. Add a new value, or a whole new category, as your program grows; don't rename or remove one a live campaign is already using. See How naming conventions work for the reasoning. Testing identifiers, below, are optional and only apply while a test is running.
+  Fill in a row for every value you use in each category table below, its short form if you name jam it, and what it means. That's what builds this level's dictionary, all in one place. Add a new value, or a whole new category, as your program grows; don't rename or remove one a live campaign is already using. See [Naming conventions overview](/naming-conventions-overview) for the reasoning. Testing identifiers, below, are optional and only apply while a test is running.
 </Note>
 
 <Steps>
@@ -93,14 +93,14 @@ _Examples below continue the Doughnut Labs brand introduced in How naming conven
 
 | Long form | Short form | Description | \[add value\] |
 | :-- | :-- | :-- | :-- |
-| _E.g. TOFU_ | _tO_ | _Top of funnel: cold or unaware audiences_ |  |
-| MOFU | tM | Middle of funnel: warm audiences considering the brand |  |
-| BOFU | tB | Bottom of funnel: audiences close to purchase |  |
+| _E.g. TOFU_ | _tO_ | _Top of funnel: cold or unaware customer profiles_ |  |
+| MOFU | tM | Middle of funnel: warm customer profiles considering the brand |  |
+| BOFU | tB | Bottom of funnel: customer profiles close to purchase |  |
 | Retention | RET | Existing customers, post-purchase |  |
 | \[add funnel position\] |  |  |  |
 
 <Accordion title="Concept review: campaign-level identifiers">
-  These six categories describe the strategy behind a campaign, not its creative or its audience. That's what makes one campaign distinguishable from another at a glance: which channel it runs on, what it's optimizing for, and where it sits in the funnel. Not every channel uses every category. A Google Search campaign is often optimized through bid type rather than a platform-level budget type, while Meta's campaign budget optimization makes budget type the meaningful field and leaves bid type blank. When you assemble an actual name, skip whichever category a given channel doesn't use rather than inserting a placeholder into the string.
+  These six categories describe the strategy behind a campaign, not its creative or its customer profile. That's what makes one campaign distinguishable from another at a glance: which channel it runs on, what it's optimizing for, and where it sits in the funnel. Not every channel uses every category. A Google Search campaign is often optimized through bid type rather than a platform-level budget type, while Meta's campaign budget optimization makes budget type the meaningful field and leaves bid type blank. When you assemble an actual name, skip whichever category a given channel doesn't use rather than inserting a placeholder into the string.
 
   If your program needs a seventh category, add a new table here following the same long form, short form, description pattern. Don't rename or remove one of the six above once a live campaign is using it.
 </Accordion>
@@ -125,8 +125,8 @@ Meta's campaign budget optimization makes budget type the meaningful field inste
   Optional: append only to sets / groups / variants that are part of an active test.
 </Tip>
 
-Testing identifiers mark a hypothesis you're currently running, for example a campaign bidding strategy test. Because a test only applies to some campaigns for a limited time, testing identifiers aren't part of the standard identifier set: append one to the end of the camapigns, after the standard identifiers, instead of building it into a table above.
+Testing identifiers mark a hypothesis you're currently running, for example a campaign bidding strategy test. Because a test only applies to some campaigns for a limited time, testing identifiers aren't part of the standard identifier set: append one to the end of the campaign name, after the standard identifiers, instead of building it into a table above.
 
 - With a testing identifier appended: `Meta-Instagram-Awareness-CBO-TOFU-TEST01`
 
-This document only covers where a testing identifier sits in the name. It doesn't cover how a test ID gets created, how long it stays on an ad, or where the result gets logged once the test ends. Visit the [Experiment ID SOP](/experiment-ids) for that.
+This document only covers where a testing identifier sits in the name. It doesn't cover how an [experiment ID](/glossary#experiment-id) gets created, how long it stays on an ad, or where the result gets logged once the test ends. Visit the [Experiment ID SOP](/experiment-ids) for that.

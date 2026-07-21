@@ -30,8 +30,8 @@
             "group": "Onbaording",
             "pages": [
               "new-member-onboarding",
-              "paid-media-onboardin",
-              "brand-onboarding"
+              "brand-onboarding",
+              "paid-media-onboarding"
             ]
           }
         ]
@@ -61,11 +61,11 @@
           {
             "dropdown": "By Marketing Type",
             "pages": [
-              "oragni",
               "paid-search",
               "paid-social",
               "content-marketing",
-              "analytics"
+              "analytics",
+              "organic-social-marketing"
             ]
           }
         ]
@@ -90,7 +90,7 @@
           {
             "group": "Naming conventions",
             "pages": [
-              "cool"
+              "naming-conventions-overview"
             ]
           },
           {
@@ -121,13 +121,12 @@
               "messaging",
               "positioning",
               "brand-assets",
-              "untitled-page"
+              "brand-voice-and-tone"
             ]
           },
           {
             "group": "Naming conventions",
             "pages": [
-              "audience-naming-conventions",
               "file-naming-conventions",
               "event-naming-conventions",
               {
@@ -137,7 +136,8 @@
                   "ad-set-group-naming-conventions",
                   "ad-name-conventions"
                 ]
-              }
+              },
+              "customer-profile-naming-conventions"
             ]
           },
           {
@@ -169,7 +169,7 @@
             "pages": [
               "experiment-id",
               "experiment-brief",
-              "experiment-review-process-1"
+              "experiment-review-process"
             ]
           },
           {
@@ -182,7 +182,7 @@
           {
             "group": "Marketing campaigns",
             "pages": [
-              "markeitng-campaign-brief"
+              "marketing-campaign-brief"
             ]
           }
         ]
@@ -476,14 +476,14 @@
             "dropdown": "Reporting",
             "pages": [
               "weekly-reporting-process",
-              "weekly-reporting-process-1",
-              "weekly-reporting-process-2"
+              "quarterly-reporting-process",
+              "yearly-reporting-process"
             ]
           },
           {
             "dropdown": "Experiments",
             "pages": [
-              "creating-a-e"
+              "creating-an-experiment"
             ]
           },
           {
@@ -523,13 +523,13 @@
           {
             "group": "Meta",
             "pages": [
-              "audience-csv-template"
+              "customer-profile-csv-template-meta"
             ]
           },
           {
             "group": "Google",
             "pages": [
-              "audience-csv-template-1"
+              "customer-profile-csv-template-google"
             ]
           },
           {
