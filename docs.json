@@ -530,9 +530,9 @@
                 "group": "Copy templates",
                 "pages": [
                   "meta-static-video-copy-template",
-                  "meta-carousel-copy-template",
                   "meta-collection-copy-template",
-                  "meta-lead-ad-copy-template"
+                  "meta-lead-ad-copy-template",
+                  "meta-carousel-copy-template"
                 ]
               }
             ]
