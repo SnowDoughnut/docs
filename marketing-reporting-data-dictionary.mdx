@@ -1,0 +1,453 @@
+---
+title: "Marketing reporting data dictionary"
+description: "The single fill-in document that defines what your business measures, how each metric is calculated, where every number comes from, and where every report and dashboard lives. Fill it in once, keep it current, and link to it from every report."
+---
+
+_Fill in each section below. Every section has a "Concept review" dropdown explaining what the section is for and why it exists; you can complete the whole page without opening one, or expand any of them for the reasoning first. Examples throughout use Doughnut Labs, an invented company that sells Doughnut Technology, so you can see one filled-in dictionary rather than scattered fragments. Replace the greyed_ `E.g. `_lines with your own answers._
+
+<Note>
+  Fill in Setup, North star metric, and KPI tiers first, ideally with the people who tend to argue about numbers in the same room for 90 minutes. Attribution, source of truth, and ownership come next. Metric formulas can be added gradually, starting with your north star and tier 1 metrics. Everything is a living document: expect to update it as questions come up, and review it on a schedule rather than only when something breaks.
+</Note>
+
+<Steps>
+  <Step title="Settle what you measure">
+    Fill in Setup, the north star metric, and the KPI tiers. This is the part worth doing live, with whoever ends up arguing about numbers later, rather than as individual homework.
+  </Step>
+  <Step title="Settle how you measure it">
+    Attribution, source of truth, and ownership. These sections are what keep two people from getting two different answers to the same question.
+  </Step>
+  <Step title="Write the formulas">
+    One block per metric, starting with the north star and tier 1. The worked example with real numbers is where a broken definition reveals itself, so don't skip it.
+  </Step>
+  <Step title="Register where things live">
+    Link your flat file, dashboards, and reports so this page becomes the one place anyone can find any of them.
+  </Step>
+  <Step title="Keep it current">
+    Log decisions and changes as they happen, and review the whole dictionary on a set schedule.
+  </Step>
+</Steps>
+
+## Setup
+
+**The basics that identify this dictionary and who's accountable for it:**
+
+| Field | Fill in |
+| :-- | :-- |
+| Organization or brand | _E.g. Doughnut Labs_ |
+| Business model | _E.g. Ecommerce_ |
+| Completed by | _E.g. Priya Desai, Head of Growth_ |
+| Date completed | _E.g. 2026-02-03_ |
+| Last reviewed | _E.g. 2026-05-01_ |
+| Next review | _E.g. 2026-08-01_ |
+
+**What this business gets paid for, in one sentence:**
+
+_E.g. Doughnut Labs sells a direct-to-consumer subscription box of small-batch doughnut kits._
+
+<Accordion title="Concept review: Setup">
+  These fields exist so anyone opening the dictionary can place it in seconds: whose numbers these are, what kind of business they run, and when the definitions were last checked. The one-sentence business description matters more than it looks. A metric like "conversion" or "customer" means something different for a business selling one-time purchases than one selling subscriptions, and writing the model down up front keeps that distinction visible everywhere else in the document.
+</Accordion>
+
+## North star metric
+
+**The tiebreaker metric: the one you optimize for when two reasonable options conflict.**
+
+| Field | Fill in |
+| :-- | :-- |
+| North star metric | _E.g. Contribution margin after marketing_ |
+| Plain-language definition | _E.g. What's left from sales after every cost that scales with an order, including advertising._ |
+| Why this one | _E.g. Revenue alone can be bought at a loss; this can't be improved by spending recklessly._ |
+| Counter-metric | _E.g. New customer count_ |
+| Who owns it | _E.g. Finance lead_ |
+
+**Common starting points, if you want a reference rather than a blank page:**
+
+| Business type | Common north star | Counter-metric |
+| :-- | :-- | :-- |
+| Ecommerce | Contribution margin after marketing | New customer count |
+| Subscription | Net new recurring revenue | Churn rate |
+| Lead generation | Cost per closed-won customer | Pipeline volume |
+| Marketplace | Completed transactions | Take rate |
+
+<Accordion title="Concept review: North star metric">
+  The north star is the tiebreaker, not the most important KPI on the list. A team can have several well-defined KPIs and still disagree constantly, because KPIs conflict with each other in ordinary ways: volume up and margin down, lead count up and lead quality down. The north star is the one number that settles which side wins. There can be many KPIs. There's exactly one north star.
+
+  A counter-metric belongs beside it always, in the same report, because any single metric can be improved by doing something that quietly damages the business elsewhere. The counter-metric doesn't need its own target; it needs to be visible every time the north star is, so the tradeoff shows up in the routine report rather than in a postmortem months later. See [reporting framework concepts](/reporting-framework-concepts) for the four tests a good north star has to pass.
+</Accordion>
+
+## KPI tiers
+
+**Keep the total list under 15. A metric earns a place here only if a 20% move, in either direction, would change what you do.**
+
+### Tier 1, outcomes
+
+Three to five metrics the business is directly accountable for.
+
+| Metric | Definition in one line | Target | Floor | Owner |
+| :-- | :-- | :-- | :-- | :-- |
+| _E.g. Contribution margin_ | _E.g. Net revenue minus every cost that scales with an order_ | _E.g. 24% of net revenue_ | _E.g. 18%_ | _E.g. Finance lead_ |
+| _E.g. New customer count_ | _E.g. First-ever purchasers in the period_ | _E.g. 2,400/month_ | _E.g. 1,800/month_ | _E.g. Growth lead_ |
+| \[add tier 1 metric\] |  |  |  |  |
+
+**Floor** is the level that triggers an actual phone call rather than a note in a report.
+
+### Tier 2, drivers
+
+Five to ten metrics: the levers that move tier 1.
+
+| Metric | Which tier 1 metric it moves | Owner |
+| :-- | :-- | :-- |
+| _E.g. Marketing efficiency ratio_ | _E.g. Contribution margin_ | _E.g. Paid media lead_ |
+| _E.g. Blended customer acquisition cost_ | _E.g. New customer count_ | _E.g. Paid media lead_ |
+| \[add tier 2 metric\] |  |  |
+
+### Tier 3, diagnostics
+
+Listed, not tabled. These explain why a tier 2 driver moved: cost per click by channel, add-to-cart rate, checkout abandonment, whatever your team checks first when something looks off.
+
+_E.g. Cost per click by channel, add-to-cart rate, checkout abandonment rate_
+
+\[add diagnostic\]
+
+### Deliberately not tracking
+
+Write these down. It saves the same conversation from repeating every quarter.
+
+| Not tracking | Why not |
+| :-- | :-- |
+| _E.g. Social media follower count_ | _E.g. Doesn't move with revenue or margin; vanity metric for this business_ |
+| \[add item\] |  |
+
+<Accordion title="Concept review: KPI tiers">
+  A KPI is a metric that changes what you do. If it moved 20% and nobody would act differently, it's context, not a KPI, and it belongs in tier 3 or off the list. Starting from decisions rather than from whatever a dashboard happens to surface is what keeps this list short and useful rather than long and decorative.
+
+  The three tiers exist so a report can explain, not just state. When a tier 1 outcome moves, tier 2 says why; when a tier 2 driver moves, tier 3 says why that happened. A report built on this chain reads as cause and effect instead of a list of unrelated facts. See [reporting framework concepts](/reporting-framework-concepts) for how this plays out differently in a business with a long sales cycle, where tier 1 outcomes lag the activity that produced them.
+</Accordion>
+
+## Attribution
+
+**The rule for deciding which touch gets credit for a result. Every model is wrong differently; pick one, write down where it's wrong, and apply it consistently.**
+
+| Field | Fill in |
+| :-- | :-- |
+| Primary model | _E.g. 7-day click, multi-touch_ |
+| Applied to | _E.g. All paid channels_ |
+| Click window | _E.g. 7 days_ |
+| View window | _E.g. Excluded_ |
+| Lookback window | _E.g. 7 days_ |
+| Secondary model, if any | _E.g. Marketing efficiency ratio (blended, unattributed)_ |
+| Used for | _E.g. Sanity check against the primary model_ |
+| Do platform-reported numbers appear in reports? | _E.g. No_ |
+| If yes, how labeled | _E.g. N/A_ |
+
+**Where the model is known to be wrong, written down honestly:**
+
+| Question | Answer |
+| :-- | :-- |
+| This model overcredits | _E.g. Retargeting and branded search, since they're often the last click before a purchase someone had already decided on_ |
+| This model undercredits | _E.g. Top-of-funnel video, which rarely gets the last click_ |
+| Not measured at all | _E.g. Podcast sponsorships and word of mouth_ |
+
+**How the model gets checked:**
+
+| Field | Fill in |
+| :-- | :-- |
+| Validation method | _E.g. Quarterly geo holdout test on paid social_ |
+| How often | _E.g. Quarterly_ |
+| Last validated | _E.g. 2026-04-15_ |
+| What we found | _E.g. Model undercredited paid social by roughly 12% against the holdout_ |
+
+<Accordion title="Concept review: Attribution">
+  Add up what every ad platform reports and the total will exceed actual orders, because each platform claims every conversion it touched under its own window. This is normal, not a tracking bug, and it's exactly why platform numbers can't be summed and why the business needs one model of its own, applied the same way every time.
+
+  Which model fits depends on how long the path to purchase runs, how much spend goes to channels that can't be clicked (audio, connected TV, sponsorships), and how fast the team needs to act on the answer. See [reporting framework concepts](/reporting-framework-concepts) for how those three questions point toward different models, and why validating the model at least once a year, rather than just trusting it, is what keeps an attribution setup from quietly drifting out of line with reality.
+</Accordion>
+
+## Source of truth
+
+**One approved system per metric. When two systems disagree, the approved one wins.**
+
+| Metric | Approved source | Exact field or report | Refresh | Who owns the pipeline |
+| :-- | :-- | :-- | :-- | :-- |
+| _E.g. Total revenue_ | _E.g. Shopify_ | _E.g. Net sales_ | _E.g. Daily_ | _E.g. Data lead_ |
+| _E.g. Ad spend_ | _E.g. Each ad platform_ | _E.g. Amount spent_ | _E.g. Daily_ | _E.g. Paid media lead_ |
+| _E.g. Cost of goods_ | _E.g. Finance export_ | _E.g. Standard cost per SKU_ | _E.g. Monthly_ | _E.g. Finance lead_ |
+| \[add metric\] |  |  |  |  |
+
+Name the exact field, not just the system. "Revenue from the ecommerce platform" is ambiguous; gross sales, net sales, and total sales are three different numbers in the same admin panel.
+
+### Expected discrepancies
+
+Systems will disagree. Recording the normal gap turns a change in that gap into a signal instead of a monthly crisis.
+
+| Comparison | Normal gap | Why | Investigate when |
+| :-- | :-- | :-- | :-- |
+| _E.g. Analytics revenue vs. platform revenue_ | _E.g. 3 to 6%_ | _E.g. Ad blockers, consent rejection_ | _E.g. Gap exceeds 10%_ |
+| Sum of platform conversions vs. actual orders | _(usually higher, always)_ | Platforms claim shared conversions | Never; this gap is expected |
+
+### Data lag
+
+| Field | Fill in |
+| :-- | :-- |
+| Earliest date a weekly report can cover through | _E.g. 2 days before send_ |
+| Earliest business day a monthly report can send | _E.g. 4th business day_ |
+| When finance closes | _E.g. 10th business day_ |
+| Are monthly reports sent before close? | _E.g. Yes_ |
+| If yes, how estimates are labeled | _E.g. Cost of goods marked "estimated" until reconciled_ |
+
+<Accordion title="Concept review: Source of truth">
+  When two systems produce different numbers for the same metric, the useful question is "which one is approved," not "which one seems more trustworthy right now." Naming the source ahead of time turns that moment from a debate into a lookup.
+
+  The most common mistake is treating an analytics platform as the source for revenue. Analytics tools miss sales lost to ad blockers or consent rejection and don't know about refunds after the fact; revenue belongs to whichever system actually took the money. See [reporting framework concepts](/reporting-framework-concepts) for how to assign a source by which system owns the underlying event, and how a metric that spans several systems, like contribution margin, needs a join rule recorded alongside its source.
+</Accordion>
+
+## Ownership
+
+**No role can be blank. One person can hold several roles.**
+
+| Role | Name | What they decide |
+| :-- | :-- | :-- |
+| Metric owner | _E.g. Priya Desai_ | _E.g. What a metric should measure_ |
+| Data owner | _E.g. Sam Okafor_ | _E.g. Where the number comes from; fixes pipelines_ |
+| Report owner, weekly | _E.g. Marco Silva_ | _E.g. Writes and sends the weekly report_ |
+| Report owner, monthly | _E.g. Priya Desai_ | _E.g. Writes and sends the monthly report_ |
+| Decision owner | _E.g. Head of Growth_ | _E.g. Acts on what the report says_ |
+
+<Accordion title="Concept review: Ownership">
+  Every metric needs one name attached, not a team. A metric with shared ownership tends to drift silently, since someone adjusts a filter, someone else changes a date range, and eventually two views of the same number disagree with no record of why. One owner doesn't mean one person does all the work; it means there's one person to ask when the definition needs a decision.
+
+  A definition should only change when its owner approves the change, and the change gets logged with an effective date below in Part 4, so old reports don't quietly stop matching new ones. See [reporting framework concepts](/reporting-framework-concepts) for what breaks when a definition changes silently instead.
+</Accordion>
+
+## Metric formulas
+
+**One block per tier 1 and tier 2 metric. Copy the block as many times as you need. Start with your north star and tier 1 metrics; you don't need every metric defined before you start reporting.**
+
+```text
+METRIC: _________________________________________
+TIER: ______  OWNER: ____________________________
+
+PLAIN DEFINITION (one sentence, no jargon):
+_________________________________________________
+
+FORMULA:
+_________________________________________________
+
+INPUTS:
+  Input              Source system        Exact field
+  ________________   __________________   ____________
+  ________________   __________________   ____________
+
+INCLUDES: _______________________________________
+EXCLUDES: _______________________________________
+
+GRAIN (what one row represents): ________________
+DATE ATTRIBUTED TO: _____________________________
+ATTRIBUTION APPLIED: ____________________________
+
+TARGET: __________  FLOOR: __________
+NORMAL RANGE: ___________________________________
+
+WORKED EXAMPLE (real numbers, one recent period):
+_________________________________________________
+
+MISLEADS WHEN: __________________________________
+READ ALONGSIDE: _________________________________
+```
+
+**A block filled in, for reference:**
+
+```text
+METRIC: Contribution margin after marketing
+TIER: 1    OWNER: Finance lead
+
+PLAIN DEFINITION:
+What's left from sales after every cost that scales with an
+order, including advertising.
+
+FORMULA:
+Net revenue − cost of goods − shipping − payment fees
+− discounts − ad spend
+
+INPUTS:
+  Input           Source              Exact field
+  Net revenue     Shopify             Net sales
+  Cost of goods   Finance export      Standard cost per SKU
+  Shipping        Fulfilment provider Actual cost per shipment
+  Payment fees    Payment processor   Fee per transaction
+  Discounts       Shopify             Discount applied
+  Ad spend        Ad platforms        Amount spent
+
+INCLUDES: all direct-to-consumer orders, all paid channel spend
+EXCLUDES: wholesale orders, flagged test orders, salaries, software
+
+GRAIN: one order, rolled up to week and channel
+DATE ATTRIBUTED TO: order date, account time zone
+ATTRIBUTION APPLIED: ad spend allocated by 7-day click, multi-touch
+
+TARGET: 24% of net revenue    FLOOR: 18%
+NORMAL RANGE: 21 to 27%
+
+WORKED EXAMPLE (week of June 8, 2026):
+  Net revenue      $103,000
+  Cost of goods    $ 37,100
+  Shipping         $  9,950
+  Payment fees     $  2,975
+  Discounts        $  5,600
+  Ad spend         $ 23,150
+  103,000 − 37,100 − 9,950 − 2,975 − 5,600 − 23,150 = $24,225
+  Margin % = 24,225 / 103,000 = 23.5%
+
+MISLEADS WHEN: standard rather than actual cost of goods delays
+the effect of a supplier price change by a month. A shift in
+product mix can move the percentage with nothing else changing.
+
+READ ALONGSIDE: new customer count, which catches margin
+improving because the business is quietly shrinking.
+```
+
+**Calls worth making explicit, since this is where two people's numbers usually diverge:**
+
+| Question | Your answer |
+| :-- | :-- |
+| Test and internal orders | _E.g. Excluded_ |
+| Refunds | _E.g. Deducted when refunded_ |
+| Cancelled orders | _E.g. Excluded_ |
+| Tax | _E.g. Excluded_ |
+| Shipping revenue charged to customer | _E.g. Included_ |
+| Discounts | _E.g. Net_ |
+| Time zone | _E.g. Account local time_ |
+
+<Accordion title="Concept review: Metric formulas">
+  The worked example is the part most templates skip and the part that matters most. Calculate it with real numbers before adopting a metric; if the answer doesn't roughly match what people already expect, the definition has a problem, and it's far cheaper to find that now than in a meeting where two people are holding different numbers.
+
+  This block is also where the ambiguity in a metric name actually gets resolved. "Revenue" sounds like one number until you write down whether it includes tax, whether a refund gets deducted the day it happens or the day the original order shipped, and which time zone a date belongs to. None of those calls has a universally right answer; what matters is making the call once and writing it down, so it doesn't get made differently by whoever happens to be pulling the number that week.
+</Accordion>
+
+## Where everything lives
+
+**Update this whenever you build something. This section is what makes the dictionary a portal instead of just a form.**
+
+### The flat file
+
+| Field | Fill in |
+| :-- | :-- |
+| Location | _E.g. Google Sheet: "Doughnut Labs Reporting Flat File"_ |
+| Owner | _E.g. Sam Okafor_ |
+| Channels included | _E.g. Meta, Google Search, Email, blended_ |
+| Refresh schedule | _E.g. Every Monday for the prior week_ |
+| Restatement window | _E.g. 14 days_ |
+| Last validated | _E.g. 2026-06-09_ |
+
+Metric names in the flat file must match the metric formulas above. Channel and source names must match Source of truth. See the [flat file template](/flat-file-template) for the schema.
+
+### Dashboards
+
+| Name | What question it answers | Audience | Link | Owner | Refresh |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| _E.g. Live pacing dashboard_ | _E.g. Are we on track to hit this month's target?_ | _E.g. Growth team_ | _E.g. \[link\]_ | _E.g. Sam Okafor_ | _E.g. Daily_ |
+| \[add dashboard\] |  |  |  |  |  |
+
+### Reports
+
+| Report | Send day | Period covered | Audience | Owner | Template |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| Weekly | _E.g. Every Tuesday_ | _E.g. Prior Mon to Sun_ | _E.g. Growth team_ | _E.g. Marco Silva_ | [Weekly report template](/weekly-report-template) |
+| Monthly | _E.g. 4th business day_ | _E.g. Prior calendar month_ | _E.g. Leadership_ | _E.g. Priya Desai_ | [Monthly report template](/monthly-report-template) |
+| Quarterly | _E.g. 2 weeks after quarter end_ | _E.g. Prior quarter_ | _E.g. Leadership, board_ | _E.g. Priya Desai_ | [Quarterly report template](/quarterly-report-template) |
+| Annual | _E.g. Before next year's planning_ | _E.g. Prior year_ | _E.g. Leadership, board_ | _E.g. Priya Desai_ | [Annual report template](/annual-report-template) |
+
+Leave a row's fields blank for a cadence you don't yet produce. Most brands start with a dashboard plus a monthly report and add weekly once spend justifies it.
+
+### Report archive
+
+Every sent report gets logged, by cadence, in the [weekly](/weekly-report-archive), [monthly](/monthly-report-archive), [quarterly](/quarterly-report-archive), and [annual](/annual-report-archive) report archives.
+
+<Accordion title="Concept review: Where everything lives">
+  A dictionary that only defines metrics, without saying where the flat file, dashboards, and reports actually live, leaves a reader with the definitions but not the destination. This section is what turns the dictionary into the front door for the whole reporting system: anyone with a question about a number can start here and reach the actual file, dashboard, or report without asking around for a link.
+
+  Metric and channel names have to match exactly between this section, the formulas above, and the flat file itself. A metric that's spelled one way in the dictionary and another way in the flat file is the same ambiguity the dictionary exists to prevent, just moved one level down.
+</Accordion>
+
+## Decisions and changes
+
+### Why we decided what we decided
+
+One entry per significant choice. The "rejected because" field is what stops the same debate from reopening every few months.
+
+```text
+DATE: ___________________________________________
+DECISION: _______________________________________
+CONTEXT: ________________________________________
+OPTIONS CONSIDERED: _____________________________
+WHY WE CHOSE THIS: ______________________________
+REJECTED BECAUSE: _______________________________
+DECIDED BY: _____________________________________
+EFFECTIVE DATE: _________________________________
+AFFECTS: ________________________________________
+```
+
+**Filled in, for reference:**
+
+```text
+DATE: 2026-02-10
+DECISION: Use a 7-day click, multi-touch model for all channel
+numbers.
+CONTEXT: Platform-reported conversions summed to well over our
+actual order count.
+OPTIONS CONSIDERED: Last touch, platform-reported, 7-day
+multi-touch, media mix modeling.
+WHY WE CHOSE THIS: Median first-touch-to-purchase is 4 days, so
+a 7-day window covers most real paths.
+REJECTED BECAUSE: Last touch overcredited branded search by
+roughly 30% against a January holdout test. Mix modeling needs
+more history than we have.
+DECIDED BY: Head of Growth, with finance present.
+EFFECTIVE DATE: 2026-03-01
+AFFECTS: All channel-level conversion and revenue numbers.
+Reports before this date used last touch.
+```
+
+**Effective date matters.** When a definition changes, every report before that date used the old one; without the date, old numbers look wrong instead of just different.
+
+### What changed and when
+
+Anything that could change how a number should be read. Log it the day it happens, not at report time.
+
+| Date | What changed | Expected effect | Duration | Logged by |
+| :-- | :-- | :-- | :-- | :-- |
+| _E.g. 2026-06-03_ | _E.g. Summer sale, 20% off sitewide_ | _E.g. Revenue up, margin down_ | _E.g. 06-03 to 06-10_ | _E.g. Marco Silva_ |
+| \[add change\] |  |  |  |  |
+
+Log campaign launches, promotions, price changes, site deploys, outages, stockouts, tracking changes, definition changes, and competitor moves. Skip routine bid adjustments and normal creative rotation; log what would actually break a comparison, not everyday tuning.
+
+### Open questions
+
+Anything unresolved. Each needs a name and a date, or it becomes permanent.
+
+| Question | Owner | Needed by | Blocking |
+| :-- | :-- | :-- | :-- |
+| \[add question\] |  |  |  |
+
+<Accordion title="Concept review: Decisions and changes">
+  The decision log exists because the same debate tends to resurface every few months if the reasoning behind a choice isn't written down anywhere. Recording what was considered and why it was rejected is what lets a future conversation start from "we already looked at that" instead of relitigating it from zero.
+
+  The change log answers a different, more immediate question: why did this number move on that date. Without it, an unusual spike or dip in a report becomes a small investigation every time, even when the cause was a known promotion or a tracking change logged weeks earlier and simply forgotten.
+</Accordion>
+
+## Sign-off
+
+Everyone agrees these are the numbers, calculated this way, from these systems, until the decisions and changes section says otherwise.
+
+| Role | Name | Date |
+| :-- | :-- | :-- |
+| Marketing |  |  |
+| Finance |  |  |
+| Agency or analytics, if applicable |  |  |
+
+## Related resources
+
+- [**Reporting framework concepts**](/reporting-framework-concepts) The reasoning behind every section on this page.
+- [**Flat file template**](/flat-file-template) Where the raw numbers this dictionary defines actually get stored.
+- [**Ecommerce metrics starter pack**](/ecommerce-metrics-starter-pack) and [**Sales-led metrics starter pack**](/sales-led-metrics-starter-pack) Pre-researched metric definitions if you'd rather start from a reference than a blank page.
+- [**Weekly**](/weekly-report-template), [**monthly**](/monthly-report-template), [**quarterly**](/quarterly-report-template), and [**annual**](/annual-report-template) report templates The reports this dictionary's definitions feed.

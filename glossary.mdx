@@ -17,6 +17,14 @@ Meta's term for a group of ads that share the same customer profile, budget, sch
 
 The top-level container for ads in a platform account: it sets the objective, budget type, and funnel position that everything underneath it inherits. See [campaign naming conventions](/campaign-naming-conventions).
 
+### Contribution margin
+
+What's left from revenue after every cost that scales with an order, including advertising: cost of goods, shipping, fees, discounts, and ad spend. A common [north star metric](#north-star-metric) for ecommerce businesses, since it's hard to improve by spending recklessly. See the [ecommerce metrics starter pack](/ecommerce-metrics-starter-pack).
+
+### Counter-metric
+
+Watched alongside a [north star metric](#north-star-metric) to catch damage from optimizing too hard for it. Doesn't need its own target, only visibility in the same report. See [reporting framework concepts](/reporting-framework-concepts#the-north-star-metric).
+
 ### Creative brief
 
 The fill-in workbook that defines what a piece of creative needs to say and do before production starts: objective, customer profile, offer, and format. See [creative brief](/creative-brief) and the [creative brief process](/creative-brief-process). Use "creative briefs" only when referring to more than one, such as the [creative brief library](/creative-briefs).
@@ -29,6 +37,10 @@ The person who produces the creative work. This is the designer, art director, p
 
 A defined segment of people an ad, campaign, or landing page is built for, described by shared traits, behavior, or list membership. Use "customer profile" for this concept everywhere — not "audience." See [customer profile brief](/customer-profile-brief), [customer profile naming conventions](/customer-profile-naming-conventions), and the [customer profile library](/customer-profile-library-overview).
 
+### Data dictionary
+
+The fill-in document that defines a business's metrics, formulas, sources of truth, and report registry. See the [marketing reporting data dictionary](/marketing-reporting-data-dictionary). Not to be confused with a naming-convention [dictionary](#dictionary), which is a table of approved identifier values rather than metric definitions.
+
 ### Dictionary
 
 The table of approved values for a naming identifier (for example, every valid objective or offer code), built once per category and reused in every name assembled from it. Each [naming convention](#naming-convention) doc holds the dictionary for its level.
@@ -37,9 +49,25 @@ The table of approved values for a naming identifier (for example, every valid o
 
 The short, structured identifier assigned to a test when its hypothesis is approved, appended to the names of everything that belongs to that test. See the [experiment ID SOP](/experiment-ids) and [experiment ID workbook](/experiment-id).
 
+### Flat file
+
+The single spreadsheet holding every metric, for every channel and reporting period, stored as one row per period, channel, and metric rather than a wide table. Reports and dashboards are views generated from it. See the [flat file template](/flat-file-template).
+
+### Grain
+
+What one row of data represents: an order, a week, a channel. Recorded per metric in the [data dictionary](#data-dictionary) so two people summing the same numbers get the same answer.
+
 ### KPI
 
 Key performance indicator: a specific, named metric a campaign or test is measured against, defined once so everyone reports it the same way (for example, CPA or ROAS). "Metric" is the general word for any measured number; "KPI" is reserved for the metrics defined in [KPI definitions](/kpi-definitions).
+
+### MER
+
+Marketing efficiency ratio: total revenue divided by total marketing spend. A blended, business-level metric rather than a per-channel one, which is what lets it sidestep attribution disputes entirely. See the [ecommerce metrics starter pack](/ecommerce-metrics-starter-pack).
+
+### MQL
+
+Marketing qualified lead: a lead that meets an agreed scoring threshold for sales follow-up. The threshold should be agreed with sales in writing, not set by marketing alone. See the [sales-led metrics starter pack](/sales-led-metrics-starter-pack) and [SQL](#sql).
 
 ### Name jamming
 
@@ -48,6 +76,10 @@ Packing multiple identifiers into a name using their short form instead of their
 ### Naming convention
 
 The rules that define how campaign, ad set/ad group, and ad names are built from a shared dictionary of identifiers, so names stay predictable and filterable at scale. Start at the [naming conventions overview](/naming-conventions-overview).
+
+### North star metric
+
+The single metric a team optimizes for when two reasonable options conflict. Not the most important [KPI](#kpi); the tiebreaker. There can be many KPIs and exactly one north star. See [reporting framework concepts](/reporting-framework-concepts#the-north-star-metric) and the [data dictionary](/marketing-reporting-data-dictionary#north-star-metric).
 
 ### Owner
 
@@ -61,9 +93,25 @@ Tracking spend against a budget over time to confirm a campaign will land on-tar
 
 Checking a running test repeatedly and stopping it the moment the result looks significant. Each extra look gives the result another chance to cross the threshold by luck, so stopping on a good day inflates the false-positive rate: the test reports a winner that isn't real. Avoid it by setting the sample size and end date before launch and letting the test run to that plan, whatever the numbers do along the way. Extending is only valid for an external reason (a traffic drop, a tracking break, a seasonal shift), never because the result hasn't reached significance yet.
 
+### ROAS
+
+Return on ad spend: revenue attributed to a channel divided by that channel's ad spend. A per-channel, attributed metric, unlike the blended [MER](#mer). See the [ecommerce metrics starter pack](/ecommerce-metrics-starter-pack).
+
+### Rollup
+
+Building a longer report from the shorter reports underneath it by summing raw inputs across the shorter periods and recalculating every ratio from the totals, rather than averaging the shorter periods' ratios directly. See [data quality and rollup concepts](/data-quality-and-rollup-concepts).
+
 ### SOP
 
 Standard operating procedure: a documented, repeatable process for a recurring task, kept in the [Processes](/campaign-brief-process) tab.
+
+### Source of truth
+
+The one approved system for a given metric. When two systems disagree, the approved one wins. See [reporting framework concepts](/reporting-framework-concepts#source-of-truth) and the [data dictionary](/marketing-reporting-data-dictionary#source-of-truth).
+
+### SQL
+
+Sales qualified lead: a lead vetted by sales as ready for a direct conversation. Distinct from an [MQL](#mql), which is a marketing judgment rather than a sales one. See the [sales-led metrics starter pack](/sales-led-metrics-starter-pack).
 
 ### Standard identifier
 
@@ -76,6 +124,10 @@ The confidence level that a test result reflects a real difference rather than r
 ### Testing identifier
 
 An identifier appended to a name only while a hypothesis is actively being tested, marking which campaigns, ad sets, or ads belong to that test. See [naming conventions overview](/naming-conventions-overview#how-a-name-is-built) and the [experiment ID SOP](/experiment-ids).
+
+### Tier 1 / 2 / 3
+
+The three KPI levels: outcomes the business is directly accountable for, the drivers that move them, and the diagnostics that explain why a driver moved. See [reporting framework concepts](/reporting-framework-concepts#kpi-tiers).
 
 ### UTM parameter
 

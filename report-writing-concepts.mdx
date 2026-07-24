@@ -1,0 +1,101 @@
+---
+title: "Report writing concepts"
+description: "Why reporting cadence should match decision cadence, the one rule every reported number should follow, and what makes a report worth opening. Read this before filling in a report template or building a dashboard."
+---
+
+A well-defined metric can still produce a report nobody reads. This page covers the second half of reporting: matching how often you report to how often decisions actually get made, writing so the report gets opened, and building dashboards that answer a question instead of listing numbers. Use it alongside the [report templates](/weekly-report-template) for each cadence.
+
+## Match reporting frequency to decision frequency
+
+The question that sets cadence is not "how often could we report this" but "how often does a decision get made that this number should inform."
+
+| If the decision is made | It belongs in |
+| --- | --- |
+| Daily, bid adjustments, pacing checks | A dashboard people check themselves, not a written report |
+| Weekly, creative rotation, pausing campaigns | A weekly report |
+| Monthly, channel budget shifts | A monthly report |
+| Quarterly, strategy, channel mix, targets | A quarterly review |
+| Annually, planning | An annual review |
+
+A daily written report is usually a sign the dashboard is missing or nobody trusts it enough to open it directly. Anything checked daily should live somewhere people can look themselves, on demand, rather than arrive as a push every morning.
+
+Frequency also isn't fixed forever. High spend or volatile performance is a reason to add a weekly cadence earlier than usual. A long sales cycle is a reason to report leading indicators weekly while reporting outcomes monthly, against the cohort that generated them rather than the calendar month they closed in. A small account can often run on a monthly report and a live dashboard alone, since a weekly report on modest spend can cost more production time than it returns in decisions made.
+
+## Every number answers three questions
+
+This is the single rule that separates a report from a data dump. Every number in a report should answer:
+
+1. **What happened.** The observation.
+2. **Why.** The insight.
+3. **What now.** The recommendation.
+
+A number that only answers the first question is data, not reporting. Compare "cost per acquisition rose 22%" against "cost per acquisition rose 22%, driven by a 31% rise in cost per click on paid search after two competitors entered the auction. Conversion rate held steady, so this is auction pressure, not a targeting problem. Recommend moving 20% of budget to paid social, which is under target and not volume-capped." The first is a fact a reader has to interpret themselves. The second is something a reader can approve or reject, which is the actual job of a report.
+
+This rule scales down as well as up. A metric that moved inside its normal range doesn't need a "why," because nothing happened worth explaining, and inventing a cause for ordinary noise teaches readers that the report's explanations are decorative rather than real. Silence on an unremarkable metric is honest; a forced explanation is not.
+
+## Cadence changes what a report is for, not just its length
+
+A weekly report and a quarterly review are not the same report at different lengths. Each cadence answers a different kind of question, and confusing them is a common way reporting stops being useful.
+
+| Cadence | Question it answers |
+| --- | --- |
+| Weekly | Does anything need attention right now? |
+| Monthly | Did we hit the target, and why? |
+| Quarterly | Is the strategy working? |
+| Annual | What did we learn, and what changes? |
+
+A weekly report that tries to also explain quarterly strategy usually ends up too long to get read in the moment it's needed. A quarterly review that's really just a longer monthly report, more tables, same kind of content, tends to get skimmed rather than discussed, because it isn't actually asking the audience to step back.
+
+### Comparisons matter more at some cadences than others
+
+A weekly report should compare against the target and against where the metric normally sits, not against last week. Week-over-week movement on weekly data is mostly noise: a single large order, a day-of-week effect, one campaign's delivery pattern. A monthly or quarterly report benefits from year-over-year comparisons for any business with real seasonality, since without that comparison, a completely normal seasonal dip reads as a performance failure and the conversation becomes about explaining seasonality instead of discussing what actually matters.
+
+### Not every movement has a cause worth reporting
+
+A metric moving inside its normal range is noise, and the right response is to say nothing about it. This only works if normal ranges are actually defined ahead of time; without them, every fluctuation looks equally alarming and equally worth a paragraph. Setting a normal range per metric is what turns "did anything happen" from a judgment call into a lookup.
+
+## Writing that actually gets read
+
+### Include the bad news
+
+A report that only shows wins reads as marketing about the account rather than a measurement of it, and readers notice that shift quickly. Once they do, the good news in the same report stops landing the way it should, because the whole document has started to feel like a pitch. Naming a channel that missed its target, saying what was tried, and proposing a next step, even when the next step is "cut spend and hold," builds more credibility than a report that only ever reports success.
+
+### Say when you don't know
+
+An honest "we checked X, Y, and Z and found nothing, flagging in case it recurs" is more useful than a confident guess, because a wrong guess presented as a finding leads someone to act on it. Reporting doesn't need to resolve every anomaly on the spot. It needs to be honest about which ones are resolved and which aren't.
+
+### Cut anything that doesn't change a decision
+
+A report gets shorter, and more read, when everything left in it justifies its place. That means cutting commentary on channels that didn't move, restating a table in prose the reader can already see, screenshots of a platform dashboard with no comment attached (which quietly imports that platform's own attribution model, undoing whatever model the dictionary settled on), and phrases like "continue to monitor," which usually means the report has no actual recommendation to make.
+
+### A chart earns its place the same way a sentence does
+
+One point per chart, titled with the conclusion rather than the axis label: "cost per acquisition rose after the June creative launch" carries more than "CPA by month." A chart with no accompanying comment is a chart worth cutting, and a truncated y-axis that exaggerates a small move is worth fixing before it goes out.
+
+## Dashboards answer a question in under 30 seconds
+
+A dashboard and a report solve different problems. A report is written analysis delivered on a schedule. A dashboard is a live surface someone checks on their own, usually for the daily-cadence decisions that don't belong in a written report at all.
+
+Specify a dashboard's job before building it: what question does this answer in under 30 seconds? If there's no clear answer, the dashboard probably shouldn't exist yet, however easy it would be to build from whatever a connector happens to offer.
+
+A few things make the difference between a dashboard people actually use and one that becomes a wall of numbers nobody opens:
+
+- **Every number needs a comparison next to it.** Revenue of \$412,000 means nothing on its own; the same number next to a target or a normal range tells a reader something in the same glance.
+- **The north star and its counter-metric sit in the same fixed position every time**, so a reader's eye knows where to go first without relearning the layout.
+- **Color should mean "outside the normal range," not a gut-feel threshold.** Formatting set on instinct tends to be either always red or never red, and either way people stop trusting the color.
+- **The data lag should be visible on the screen itself.** A viewer drawing a conclusion from yesterday's still-settling conversion data is a mistake one line of text prevents.
+- **Definitions should be one click away.** A number nobody can trace back to its definition isn't really governed, whatever the dictionary says.
+
+Dashboards need maintenance in the opposite direction from most things: the useful work is deleting tiles that haven't changed a decision in a quarter, not adding new ones. Eight tiles get looked at. Forty become wallpaper.
+
+## What to automate, and what not to
+
+Collecting data, building standard tables and charts, calculating pacing, and running quality checks are all worth automating, because none of them require judgment and all of them free up time for the parts that do.
+
+Analysis, the recommendation, the executive summary, and the decision about what matters this particular period should stay manual. A report that's fully automated except for a send button is, functionally, a dashboard with extra steps, and a reader who notices that will eventually ask why they didn't just open the dashboard themselves.
+
+## Related resources
+
+- [**Weekly report template**](/weekly-report-template), [**monthly**](/monthly-report-template), [**quarterly**](/quarterly-report-template), and [**annual**](/annual-report-template) The fill-in templates this page's reasoning applies to.
+- [**Reporting framework concepts**](/reporting-framework-concepts) How the metrics referenced in a report get defined in the first place.
+- [**Data quality and rollup concepts**](/data-quality-and-rollup-concepts) How a longer report's numbers get built from the shorter ones underneath it.

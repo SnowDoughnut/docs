@@ -1,0 +1,95 @@
+---
+title: "Ecommerce metrics starter pack"
+description: "A researched, cited set of standard ecommerce metric definitions and formulas, grouped by funnel stage, ready to drop into your data dictionary and flat file instead of starting from a blank page."
+---
+
+_A reference set for an ecommerce or direct-to-consumer business. Adopt what applies, rename anything your team already calls something else, and drop unused rows. Metric names use the lowercase, underscore-separated format the [flat file](/flat-file-template) expects._
+
+<Note>
+  This is a starting point, not a mandate. Definitions here follow common industry usage, cited below, but your business gets the final call on inclusions and exclusions, recorded in your [data dictionary](/marketing-reporting-data-dictionary#metric-formulas).
+</Note>
+
+## Acquisition and delivery
+
+What you spent, and what it bought in impressions and clicks. These are stored inputs, pulled directly from each ad platform.
+
+| Metric name | Definition | Unit | Typical source |
+| :-- | :-- | :-- | :-- |
+| `ad_spend` | Amount spent on paid media | currency | Each ad platform |
+| `impressions` | Number of times an ad was shown | count | Each ad platform |
+| `clicks` | Number of clicks on an ad | count | Each ad platform |
+| `cpm` | Cost per 1,000 impressions: `ad_spend / impressions × 1000` | currency | Calculated |
+| `cpc` | Cost per click: `ad_spend / clicks` | currency | Calculated |
+| `ctr` | Click-through rate: `clicks / impressions × 100` | percent | Calculated |
+
+## Funnel
+
+The path from click to purchase. Store each stage's count; derive every rate between stages.
+
+| Metric name | Definition | Unit | Typical source |
+| :-- | :-- | :-- | :-- |
+| `add_to_carts` | Times a product was added to a cart | count | Ecommerce platform |
+| `checkouts_initiated` | Checkouts started | count | Ecommerce platform |
+| `purchases` | Completed orders | count | Ecommerce platform |
+| `conversion_rate` | `purchases / clicks × 100` | percent | Calculated |
+| `atc_to_purchase_rate` | `purchases / add_to_carts × 100` | percent | Calculated |
+| `checkout_abandonment_rate` | `(checkouts_initiated − purchases) / checkouts_initiated × 100` | percent | Calculated |
+
+## Revenue and efficiency
+
+Return on ad spend (ROAS) is a per-channel, attributed metric. Marketing efficiency ratio (MER) is a blended, business-level metric that avoids attribution disputes entirely, since neither side of the calculation is attributed to a channel. Keep both; they answer different questions.
+
+| Metric name | Definition | Formula | Unit |
+| :-- | :-- | :-- | :-- |
+| `conversion_value` | Revenue attributed to a channel by your attribution model | Stored input | currency |
+| `total_revenue` | Net revenue for the whole business, from your source of truth | Stored input | currency |
+| `roas` | Return on ad spend, per channel | `conversion_value / ad_spend` | ratio |
+| `mer` | Marketing efficiency ratio, blended | `total_revenue / total_marketing_spend` | ratio |
+| `aov` | Average order value | `total_revenue / purchases` | currency |
+| `break_even_roas` | The ROAS below which a campaign loses money | `1 / margin % before ad spend` | ratio |
+
+Common 2026 benchmark ranges cited across ecommerce analytics vendors put blended DTC ROAS around 3x to 5x depending on margin structure, though a headline ROAS in that range can still mean thin or negative profit once every cost is counted, which is exactly what contribution margin below is for.
+
+## Customer acquisition cost and lifetime value
+
+| Metric name | Definition | Formula | Unit |
+| :-- | :-- | :-- | :-- |
+| `new_customers` | First-ever purchasers in the period | Stored input | count |
+| `blended_cac` | Total marketing spend per new customer | `total_marketing_spend / new_customers` | currency |
+| `ltv` | Expected value from a customer over a stated period | `aov × purchase_frequency × customer_lifespan` | currency |
+| `ltv_to_cac` | Return on each acquired customer over their lifetime | `ltv / blended_cac` | ratio |
+| `cac_payback_months` | Months to recover acquisition cost | `blended_cac / monthly_margin_per_customer` | days |
+| `repeat_rate` | Share of customers who purchase again within a stated window | `repeat_customers / total_customers × 100` | percent |
+
+A widely cited healthy benchmark for ecommerce is an LTV:CAC ratio of 3:1 or better, typically measured over a 24-month customer lifetime; state your own window explicitly in the data dictionary, since a shorter or longer window changes the number substantially.
+
+## Profitability
+
+Contribution margin is the metric most ecommerce reporting frameworks converge on as the north star candidate, since it's the hardest of these metrics to improve by doing something that quietly damages the business.
+
+| Metric name | Definition | Formula | Unit |
+| :-- | :-- | :-- | :-- |
+| `cogs` | Cost of goods sold | Stored input | currency |
+| `shipping_cost` | Fulfilment cost per order or period | Stored input | currency |
+| `payment_fees` | Payment processor fees | Stored input | currency |
+| `discounts` | Discounts applied | Stored input | currency |
+| `contribution_margin` | What's left after every cost that scales with an order | `total_revenue − cogs − shipping_cost − payment_fees − discounts − total_marketing_spend` | currency |
+| `contribution_margin_pct` | Contribution margin as a share of revenue | `contribution_margin / total_revenue × 100` | percent |
+
+## Sources
+
+Definitions and formulas above follow common usage from the following, current as of 2026:
+
+- [Shopify: Ecommerce customer acquisition](https://www.shopify.com/blog/ecommerce-customer-acquisition): customer acquisition cost formula and components.
+- [Shopify: LTV](https://www.sarasanalytics.com/blog/shopify-ltv): lifetime value formula and the CAC-against-contribution-margin relationship.
+- [Fairview: D2C metrics](https://getfairview.com/d2c-metrics): contribution margin definition and the acquisition/retention/profitability grouping.
+- [Conjura: Ecommerce KPIs 2026](https://www.conjura.com/blog/ecommerce-kpis-important-metrics-your-business-should-be-tracking-in-2026): the core seven-metric framework this pack's grouping is based on.
+
+Benchmark figures (ROAS ranges, LTV:CAC targets, payback windows) are directional and change with market conditions; treat them as a reference point for a first target, not a fixed standard, and replace them with your own once you have a few months of real data.
+
+## Related resources
+
+- [Data dictionary](/marketing-reporting-data-dictionary)
+- [Flat file template](/flat-file-template)
+- [Sales-led metrics starter pack](/sales-led-metrics-starter-pack)
+- [Reporting framework concepts](/reporting-framework-concepts)

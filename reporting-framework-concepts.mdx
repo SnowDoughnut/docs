@@ -1,0 +1,127 @@
+---
+title: "Reporting framework concepts"
+description: "The thinking behind a data dictionary: how to choose a north star metric, build KPI tiers that don't overwhelm anyone, pick an attribution model and know its blind spots, and assign one source of truth per number. Read this before filling in the data dictionary."
+---
+
+A data dictionary is the single place a business writes down what its numbers mean: which metrics matter, how each one is calculated, which system it comes from, and who owns it. Once it exists, "what does this number mean" has one answer instead of as many answers as there are people in the room.
+
+This page explains the ideas behind each part of the dictionary: what the concept is, why it exists, and what tends to go wrong without it. It is not the fill-in document. Use it to understand the thinking, then fill in the [data dictionary](/marketing-reporting-data-dictionary).
+
+## Why reporting fails
+
+Reporting usually fails for one of two reasons. Either nobody agreed what the numbers mean, so every report reopens the same argument about definitions, or the report is a wall of data with no recommendation attached, so it gets skimmed and forgotten. A data dictionary fixes the first problem. How a report is written fixes the second, covered in [report writing concepts](/report-writing-concepts).
+
+The dictionary is worth building even for a small brand with a handful of channels. The argument it prevents ("is that revenue net of refunds?") happens whether the brand is small or large; a dictionary just means it happens once, in a session, instead of in every meeting from now on.
+
+## KPI tiers
+
+### A KPI is a metric that changes what you do
+
+Plenty of numbers are worth watching. Far fewer are worth calling a KPI. The test is simple: if this metric moved 20% in either direction, would you do anything differently? If the honest answer is no, it is context, not a KPI, and it belongs lower down or off the list entirely.
+
+Starting from decisions rather than from whatever a dashboard happens to surface is what keeps this list short. Starting from available data is how a team ends up reporting impressions and time on page: numbers that are easy to pull and hard to act on.
+
+### Three tiers explain each other
+
+A flat list of ten KPIs gives no sense of priority or cause. Splitting them into tiers turns the list into a chain, so a report can explain why something moved instead of only stating that it did.
+
+| Tier | Contains | Typical audience | How many |
+| --- | --- | --- | --- |
+| 1, outcome | The business results the team is accountable for | Executives, clients | 3 to 5 |
+| 2, driver | The levers that move the outcomes | Marketing leads | 5 to 10 |
+| 3, diagnostic | What explains why a driver moved | Specialists | As needed |
+
+Each tier explains the tier above it. If contribution margin (tier 1) falls, tier 2 says why: efficiency dropped, or order value fell, or acquisition cost rose. If acquisition cost rose, tier 3 says why that happened: cost per click went up, or conversion rate fell. A report built this way reads as a chain of cause and effect rather than a list of unrelated facts.
+
+Businesses with a longer path from marketing touch to revenue run into a specific version of this problem. A lead generated this week might not close for months, so the tier 1 outcome (revenue, closed deals) always lags the tier 2 and 3 activity that produced it. Reporting those lagging outcomes against the cohort that generated them, rather than the calendar period they landed in, is what keeps this month's spend from getting credited with a deal that pipeline built two quarters ago.
+
+### A target needs a basis, and a floor
+
+Write down where each target came from: last year's number, a board plan, a benchmark, or, honestly, a guess. There is nothing wrong with starting from a guess, but a guessed target quietly treated as a firm commitment is how reporting turns into theatre, where every review becomes a defense of a number nobody actually chose carefully.
+
+A floor is different from a target. It is the level that triggers an actual phone call rather than a line in a report. Setting it in advance means the response to a bad number is decided ahead of the moment it happens, rather than negotiated under pressure.
+
+## The north star metric
+
+### It is the tiebreaker, not the most important KPI
+
+A team can have five well-defined KPIs and still argue constantly, because KPIs conflict with each other in ordinary ways: volume up and margin down, lead count up and lead quality down. A north star is the one metric that settles which side of that tradeoff wins when both options look reasonable. There can be twelve KPIs. There is exactly one north star.
+
+### Four tests, and all four have to pass
+
+**Does it reflect real value?** Moving it up should mean the business is genuinely better off, not just busier. Revenue passes this test; a metric like sessions does not, because sessions can be bought without buying anything real.
+
+**Can the team actually move it?** A metric that only responds to forces outside marketing's control cannot guide a weekly decision, however important it is.
+
+**Does it respond inside the decision cycle?** A metric that takes two quarters to shift cannot steer a decision made weekly. Something can be a genuinely important number and still be the wrong choice for a north star, simply because it moves too slowly to guide the cadence of decisions being made.
+
+**Can it be calculated the same way every time?** If two people compute the same metric differently and get different answers, it cannot function as a tiebreaker, because the tiebreak itself becomes a dispute. This is the reason a north star always needs a full formula entry in the dictionary before anyone adopts it: the definition has to be settled before the metric can settle anything else.
+
+### Every north star needs a counter-metric
+
+Any single metric, optimized hard enough, can be gamed, often without anyone intending to game it. Cut spend and margin looks better while the business quietly shrinks. Lower the bar for what counts as a lead and lead volume climbs while pipeline quality erodes. The counter-metric is what surfaces that tradeoff in the same report, rather than in a postmortem after the damage is visible.
+
+A counter-metric does not need its own target. It needs to be reported in the same place as the north star, every time, so the tradeoff is part of the routine reading rather than a special investigation.
+
+## Attribution
+
+### Pick one model, apply it consistently, and write down where it's wrong
+
+Attribution decides which marketing touch gets credit for a result. Every attribution model is wrong in a different way, because no model can see everything that actually influenced a decision to buy or convert. The goal is not finding the one true model. It is picking one and applying it the same way every time, so that a change in the number reflects a change in performance and not a change in how credit was counted.
+
+This is also why platform-reported numbers can never simply be added together. Each ad platform counts a conversion if it touched that customer's path anywhere within its own window, so two or three platforms often claim the same conversion. Summing them produces a total larger than the number of actual orders, not because anyone is lying, but because every platform is answering a slightly different question.
+
+### What changes the right choice
+
+Three questions tend to decide which model fits: how long the path from first touch to purchase usually runs, how much of the budget goes to channels that cannot be clicked (audio, connected TV, out-of-home, sponsorships), and how quickly the team needs an answer to act on. A short path with mostly clickable channels can lean on a simple model read weekly. A long path with meaningful unclickable spend needs either a wider attribution window or a different kind of measurement, like a holdout test, alongside it.
+
+Attribution sophistication tends to track a business's maturity, not because more complexity is inherently better, but because more complex models need more history and more volume to trust. A brand just getting started is usually better served by one simple, consistently applied model than by an ambitious multi-model setup nobody has the data to validate yet.
+
+### The window matters as much as the model
+
+An attribution window that is much shorter than the real path to purchase quietly starves the top of the funnel of credit, because touches that happened outside the window never get counted at all. The fix is not a guess: pull the actual distribution of time between first touch and purchase and set the window where that curve levels off, rather than defaulting to whatever a platform ships with.
+
+### Validate the model, don't just trust it
+
+An attribution model is an assumption about how the business works, not a direct measurement of it, and assumptions drift out of date. A holdout test, where a channel is turned off for part of the audience and the gap against a matched group is measured, is the most direct way to check whether a model's credit roughly matches reality. A blended sanity check, comparing total attributed conversions against actual orders, is a lighter, ongoing version of the same idea. Either way, the result is worth recording even when it simply confirms the model still holds, since that confirmation is itself useful information six months later.
+
+## Source of truth
+
+### One approved system per metric
+
+When two systems disagree on a number, the conversation should be "which one is the approved source," not a debate about which tool is more trustworthy in general. Naming the approved source ahead of time turns that moment from a negotiation into a lookup.
+
+A useful test for whether a definition is actually complete: two people pulling the same metric from the approved source, on the same day, should get the same number. If they don't, the gap usually isn't in the tool. It's in the definition, which is missing a rule about a filter, a date range, or an inclusion decision that both people are silently answering differently.
+
+### Assign by who owns the event
+
+The system that owns a given event is usually the right source for the metrics that event produces: an ecommerce platform for orders and refunds, an ad platform for spend, a CRM for deals, a lifecycle tool for sends. The most common exception people get wrong is treating an analytics platform as the source for revenue. Analytics tools miss transactions blocked by ad blockers or lost to consent rejection, and they don't know when a refund happens after the fact. Revenue belongs to whichever system actually took the money.
+
+### Metrics that span systems need a join rule, not just a source
+
+A metric like contribution margin pulls from several systems at once: revenue from one, cost of goods from another, ad spend from a third. Recording the join key and the timing for each input matters as much as recording the systems themselves, because a margin figure that quietly combines today's revenue with last month's cost of goods will disagree with finance's version in a way that looks like an error even when it isn't one.
+
+## Ownership
+
+Every metric needs one name attached, not a team. A metric with shared ownership tends to drift silently: someone adds a filter, someone else changes a date range, and months later two views of the same number disagree with no record of why. A single owner does not mean one person does all the work. It means there is one person to ask when the definition needs a decision.
+
+Four roles cover most of what a metric needs, and one person can hold several of them:
+
+| Role | Decides |
+| --- | --- |
+| Metric owner | What the metric should measure |
+| Data owner | Where the number comes from, and fixes the pipeline when it breaks |
+| Report owner | Produces the report on schedule |
+| Decision owner | Acts on what the report says |
+
+A report with no decision owner tends to become a status update that nobody is accountable for acting on.
+
+### Definitions change, but never silently
+
+A definition should only change when its owner approves the change, the data owner confirms it can actually be implemented, the change is logged with an effective date, and every report owner knows before the next report goes out. A definition that changes quietly is worse than one that never gets fixed, because it makes last quarter's numbers stop matching this quarter's without anyone knowing why. When a definition does change, either restate history under the new definition or mark the break clearly on any chart that spans it. A trend line crossing a definition change without a marker is misleading even though every individual number in it is correct.
+
+## Related resources
+
+- [**Data dictionary**](/marketing-reporting-data-dictionary) The fill-in workbook for every concept on this page.
+- [**Report writing concepts**](/report-writing-concepts) How the metrics this page defines turn into a report people actually read.
+- [**Data quality and rollup concepts**](/data-quality-and-rollup-concepts) How weekly numbers combine into monthly, quarterly, and annual ones without breaking.
