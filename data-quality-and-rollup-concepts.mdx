@@ -1,0 +1,100 @@
+---
+title: "Data quality and rollup concepts"
+description: "Why a flat file stores raw numbers instead of calculated ones, how a monthly report gets built from its weeklies without becoming a new report, and the naming and tracking habits that keep the whole thing trustworthy. Read this before filling in the flat file."
+---
+
+Two ideas hold up everything else in this framework. First, a report is only as good as the data feeding it, and most data problems trace back to naming, not the numbers themselves. Second, a longer report shouldn't be written from scratch: it should be built from the shorter reports underneath it, the same way a month is built from its weeks. This page explains both, and the flat file is where they meet. Use it alongside [the flat file template](/flat-file-template).
+
+## Keeping data clean
+
+### One campaign, several names, is the most common failure
+
+The most frequent way marketing data breaks isn't a tracking outage. It's the same campaign appearing under three different names because three different people tagged it differently. A reporting tool treats `Facebook`, `facebook`, and `FB` as three separate sources, and a channel report that should show one row quietly splits into several, none of which shows the true total.
+
+A few habits prevent most of this:
+
+- **Lowercase everything.** Case differences fragment a source silently, with no error and no warning.
+- **Pick one separator and use it everywhere.** Underscores or hyphens, never both, never a space.
+- **Use an approved list of values, not whatever feels right at launch.** New values get added on purpose, not invented in the moment a campaign goes live.
+- **Be specific but short.** `fb` is too vague to be useful. A tag with the objective, audience, region, and date crammed into it is too long for anyone to type correctly twice.
+
+### A rule written down is a suggestion. A rule enforced at creation is a fact.
+
+Writing naming conventions in a document changes nothing on its own; it only changes behavior once someone has to follow it to create a link at all. In order of how well each approach actually works: a link builder with locked dropdown values is the only method that scales past a handful of people, because a wrong value simply can't be entered. Automated validation before a link goes live catches most of what a link builder doesn't. Mapping known variants to their correct form during processing recovers some of what gets through anyway. A periodic manual audit catches the rest, but by then some of the damage, the data that was never tagged correctly in the first place, cannot be recovered at all. Tagging errors are not like a typo in a report. Once the data was collected wrong, no amount of later cleanup gets the correct version back.
+
+### Unclassified traffic is usually a tagging problem, not a brand-awareness one
+
+When direct or unassigned traffic rises sharply, the instinctive read is often "brand awareness must be improving." The far more common explanation is that a tag broke somewhere. Tracking this as a share of total traffic, with an established normal range, turns a vague worry into a specific check: a rising share above that range is a tagging problem to go find, not a metric to celebrate.
+
+## Why the flat file stores raw numbers, not calculated ones
+
+### Store the inputs, calculate everything else, every time
+
+This is the single rule that makes the rest of the flat file work: store what a source system actually reports, cost, clicks, orders, revenue, and calculate everything derivable, cost per click, return on spend, conversion rate, fresh from those inputs whenever it's needed.
+
+The reason is simple once you've seen it go wrong. If you store both ad spend and cost per click as separate numbers, and only one of them gets corrected during a routine reconciliation, the two now disagree and nothing in the file tells you which one is right. Storing only the inputs makes that kind of silent disagreement structurally impossible: there's only ever one version of the underlying number, and every ratio calculated from it stays in sync automatically because it's recalculated, not remembered.
+
+### One row per metric, not a table shaped like a whiteboard
+
+Most people picture their reporting data the way it looks on a whiteboard: metrics down the side, weeks across the top, one table per channel. That's a reasonable way to look at data. It's a poor way to store it, because adding a fifth channel or a new metric to that shape means restructuring the whole table, and nothing about the structure prevents someone from summing across a boundary that shouldn't be summed.
+
+The alternative is to store one row per combination of period, channel, and metric: this metric, this channel, this period, this value, and nothing else on the row. Nothing about that structure changes when a channel or a metric gets added. You just add rows. The wide table people actually want to look at is something you generate from this format in a few clicks with a spreadsheet's pivot table, not something you maintain by hand.
+
+## How a rollup actually works
+
+### The core rule: sum the raw numbers, then recalculate every ratio
+
+A monthly report is not a new report written from scratch. It's what you get when you take the raw inputs from every week in that month, add them up, and recalculate every ratio from those totals. A quarterly report does the same thing with its three months, and an annual report with its four quarters. The chain only works because every level stores the same kind of raw inputs the level below it does.
+
+What doesn't work, and what quietly produces wrong numbers even though it feels like the obvious shortcut, is averaging the four weekly ratios directly. A worked example shows why:
+
+```text
+Week 1:  spend $10,000   revenue $30,000   ROAS 3.0
+Week 2:  spend $10,000   revenue $30,000   ROAS 3.0
+Week 3:  spend $10,000   revenue $30,000   ROAS 3.0
+Week 4:  spend $40,000   revenue $80,000   ROAS 2.0   (a promo week, much bigger spend)
+
+Averaging the four weekly ROAS numbers:
+(3.0 + 3.0 + 3.0 + 2.0) / 4 = 2.75
+
+Summing the inputs, then recalculating:
+Total revenue: 30,000 + 30,000 + 30,000 + 80,000 = 170,000
+Total spend:   10,000 + 10,000 + 10,000 + 40,000 =  70,000
+Monthly ROAS = 170,000 / 70,000 = 2.43
+```
+
+The averaged figure, 2.75, overstates monthly performance, because it treats the huge-spend week as equal in weight to three ordinary weeks, when in reality it made up more than half the month's spend. The summed-and-recalculated figure, 2.43, reflects what actually happened: a month where the biggest week ran at below-average efficiency. Any week with meaningfully different volume from the others will produce this same gap, and real weeks almost never have identical volume. This is why a rollup only stays honest if it works upward from the raw inputs rather than averaging the ratios above them.
+
+### Two columns make the rollup safe: scope and period
+
+Two ideas need to be visible on every row for a rollup to work without silently double-counting.
+
+**Scope** distinguishes a number that's true for one period alone from a number that's cumulative to date. Spend during this week and total spend since the account started are both legitimate numbers to store, but they answer different questions, and summing a cumulative number across periods produces nonsense: it would count every earlier period's spend several times over. Keeping the two clearly labeled is what makes it safe to store both.
+
+**Granularity** distinguishes a daily row from a weekly one from a monthly one. Mixing granularities in the same file is genuinely useful, recent detail at the daily level and older history at the weekly level, but only if every calculation filters to a single granularity before adding anything up. Summing a week's row on top of the daily rows that made it up is the same double-counting mistake as summing a cumulative number, just in a different disguise.
+
+### The rollup also carries the estimate flag forward
+
+A number calculated before its inputs have fully settled, spend before a platform's final reconciliation, cost of goods before a finance close, is legitimately useful for an early read, but it should be marked as an estimate everywhere it appears. When a monthly figure rolls up from four weekly figures and one of them was still an estimate at the time, the monthly figure inherits that same uncertainty until the underlying weekly number gets reconciled and the estimate flag comes off.
+
+## Checks before every report
+
+A short set of checks, run the same way every time, catches most of what goes wrong before it reaches a reader:
+
+- Spend for the period matches what the ad platforms themselves report.
+- Revenue matches the approved source of truth, within the normal gap already established for that comparison.
+- Volumes (sessions, conversions) sit inside their established normal range.
+- No channel value looks unclassified or missing in a way that wasn't there last period.
+- The date range, time zone, and attribution setting are the ones the dictionary specifies.
+
+A failed check is worth fixing before anything gets built on top of the data, because a data error found before a report goes out costs a few minutes. The same error found after it's already influenced a meeting costs a great deal more, and it costs trust in every number that follows it.
+
+### When something breaks mid-period
+
+Tracking sometimes fails partway through a reporting period, a campaign gets mistagged, or a source goes down entirely. The instinct to quietly patch over the gap with an estimate presented as a real number is the one to resist. Report the metric with the gap stated plainly, log what happened and when, and never silently drop the affected period from a trend without a note explaining why it's missing. A gap with a note reads as honest. A gap with no note reads as a performance change that never actually happened.
+
+## Related resources
+
+- [**Flat file template**](/flat-file-template) The schema this page's reasoning is built for.
+- [**Reporting framework concepts**](/reporting-framework-concepts) How the metrics stored in the flat file get defined.
+- [**Report writing concepts**](/report-writing-concepts) How the rolled-up numbers become an actual report.

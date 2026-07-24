@@ -1,0 +1,135 @@
+---
+title: "Flat file template"
+description: "The schema for the single spreadsheet that holds every metric, for every channel and period. Every report and dashboard is a view of this file; no code required to build or use it."
+---
+
+_This page explains the schema and how to build it as a plain spreadsheet. Examples use Doughnut Labs, an invented company that sells Doughnut Technology._
+
+<Note>
+  Copy the blank template linked below into your own spreadsheet and start filling in rows each week. Nothing about the structure changes when you add a channel or a metric; you just add rows. See [data quality and rollup concepts](/data-quality-and-rollup-concepts) for why this shape, one row per metric, works better than the wide table most people picture first.
+</Note>
+
+## Why one row per metric
+
+Most people picture a metrics table like this, metrics down the side, dates across the top:
+
+| Metric | Week of 06-01 | Week of 06-08 | Week of 06-15 |
+| :-- | :-- | :-- | :-- |
+| Ad spend | \$61,400 | \$58,200 | \$63,900 |
+| Impressions | 1,204,300 | 1,180,900 | 1,251,600 |
+
+That's a fine way to look at data. It's a poor way to store it, because adding a second channel means either a second table, a second header row, or metric names that awkwardly embed the channel (`Ad spend (Meta)`, `Ad spend (Google)`). Every one of those breaks the moment you add a third channel.
+
+The fix is to store one row per date, channel, and metric instead:
+
+| Week starting | Week ending | Channel | Metric | Value |
+| :-- | :-- | :-- | :-- | :-- |
+| 2026-06-01 | 2026-06-07 | meta | ad\_spend | 61400 |
+| 2026-06-01 | 2026-06-07 | meta | impressions | 1204300 |
+| 2026-06-01 | 2026-06-07 | google\_search | ad\_spend | 28900 |
+
+Nothing about this structure changes when a channel or a metric gets added. You add rows, never new columns. The wide table at the top of this page is one pivot table away from this format; it's a view you generate, not the thing you store.
+
+## The schema
+
+Nine columns. Every row has all nine filled in.
+
+| Column | What it holds | Example |
+| :-- | :-- | :-- |
+| `week_start` | The Monday of the week this row covers | `2026-06-08` |
+| `week_end` | The Sunday of the week this row covers | `2026-06-14` |
+| `channel` | Lowercase channel name, or `blended` for business-level numbers | `meta` |
+| `metric` | Lowercase metric name, matching a metric in your [data dictionary](/marketing-reporting-data-dictionary) | `ad_spend` |
+| `value` | A bare number: no currency symbol, no comma, no percent sign | `172490.55` |
+| `unit` | `currency`, `count`, `ratio`, `percent`, or `days` | `currency` |
+| `source` | Where the number came from | `meta_ads` |
+| `is_estimate` | `true` or `false`; whether the number is still unreconciled | `false` |
+| `notes` | Optional, anything worth flagging on this specific row | _(blank unless needed)_ |
+
+### Why weeks, not days
+
+This framework reports on a weekly base grain, since that's the shortest cadence most brands actually act on, and everything longer (monthly, quarterly, annual) is a rollup built from weeks rather than a separately-collected number. If your team genuinely makes same-day decisions from data, add a daily grain alongside the weekly one; most brands don't need to.
+
+### `blended` is a real channel value, not a summary row
+
+Business-level metrics, total revenue, total marketing spend, contribution margin, aren't attributable to one channel, so they get their own `blended` rows rather than living implicitly as a sum of the channel rows. This is what stops someone accidentally summing a per-channel ratio (like ROAS) into a meaningless blended number; ratios like that have to be recalculated from blended inputs, never summed from channel-level ratios.
+
+### Store the inputs, never the calculated numbers
+
+Store `ad_spend` and `clicks`. Don't store `cost_per_click`. Calculate it fresh, every time you need it, from the two numbers you actually stored. If a derived number gets stored and one of its inputs is later corrected, the two quietly disagree and nothing in the file tells you which one is right.
+
+| Always store | Never store, always calculate |
+| :-- | :-- |
+| Ad spend, impressions, clicks | Cost per click, cost per mille |
+| Purchases, revenue | Return on ad spend, conversion rate |
+| New customers, total revenue | Average order value, marketing efficiency ratio |
+| Cost of goods, shipping, fees, discounts | Contribution margin |
+
+See the [formula blocks in the data dictionary](/marketing-reporting-data-dictionary#metric-formulas) for how each derived number gets calculated from its inputs, and the [ecommerce](/ecommerce-metrics-starter-pack) and [sales-led](/sales-led-metrics-starter-pack) starter packs for a ready-made list of common inputs and the metrics they produce.
+
+## A worked week
+
+Two channels plus blended, one week. A real file has every metric for every channel.
+
+| week\_start | week\_end | channel | metric | value | unit | source | is\_estimate |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| 2026-06-08 | 2026-06-14 | meta | ad\_spend | 61400.00 | currency | meta\_ads | false |
+| 2026-06-08 | 2026-06-14 | meta | clicks | 19840 | count | meta\_ads | false |
+| 2026-06-08 | 2026-06-14 | meta | purchases | 712 | count | meta\_ads | false |
+| 2026-06-08 | 2026-06-14 | meta | conversion\_value | 84920.00 | currency | meta\_ads | false |
+| 2026-06-08 | 2026-06-14 | blended | total\_revenue | 103000.00 | currency | shopify | false |
+| 2026-06-08 | 2026-06-14 | blended | total\_marketing\_spend | 89200.00 | currency | manual | false |
+| 2026-06-08 | 2026-06-14 | blended | cogs | 37100.00 | currency | finance\_export | true |
+
+Note what's absent: no `cost_per_click`, `roas`, or `contribution_margin` rows. Those get calculated when a report needs them, not stored.
+
+## Rolling weeks up into months, quarters, and years
+
+A monthly total is every matching row, filtered to the weeks that fall in that month, added together, with every ratio then recalculated from the summed totals rather than averaged from the weekly ratios. A spreadsheet pivot table does this in a few clicks:
+
+1. Select the whole flat file range.
+2. Insert a pivot table.
+3. Set **rows** to `metric`, **columns** to `week_start` (or filter to a channel first if you want one channel's view).
+4. Set **values** to sum of `value`.
+5. Filter `channel` to the one you want, or leave it as a row field to compare channels side by side.
+
+That gives you the wide, human-readable table. For a monthly rollup, filter the pivot's date range to the weeks in that month, and let the sum do the adding up. Then recalculate every ratio (ROAS, conversion rate, contribution margin) from the summed totals shown in the pivot, exactly as the [monthly report template](/monthly-report-template) walks through.
+
+See [data quality and rollup concepts](/data-quality-and-rollup-concepts) for a worked example of why summing first and recalculating after is the only version of this that produces a correct number.
+
+## Checks before you trust a week's rows
+
+Run through this list before using a week's data in a report. None of it requires code, just a scan of the new rows.
+
+**Structural**
+
+- Every row has all nine columns filled in.
+- `week_end` is six days after `week_start`.
+- `channel` matches your approved list in the data dictionary's source of truth section.
+- `metric` matches a metric defined in the data dictionary's formula blocks.
+- No duplicate rows for the same week, channel, and metric.
+- `value` is a bare number: no `$`, no `%`, no commas.
+
+**Logical**
+
+- Percent values look like percentages, not decimals. A 3.44% conversion rate is stored as `3.44`, not `0.0344`.
+- Counts are whole numbers.
+- `clicks` is less than or equal to `impressions`.
+- `purchases` is less than or equal to any funnel stage above it (checkouts, add-to-carts).
+- No gaps: every week has a full set of rows for every channel you track.
+
+**Cross-checks**
+
+- Spend matches what the ad platforms themselves report for the week.
+- `total_revenue` matches your approved source of truth.
+- Sum of channel-level `conversion_value` sits within the normal gap you recorded against `total_revenue` in the data dictionary; it should be lower, never higher by an unusual margin.
+
+If a check fails, fix it before building anything on top of that week's data. An error caught here costs a few minutes. The same error found after it's already shaped a report costs a great deal more.
+
+## Related resources
+
+- [Data quality and rollup concepts](/data-quality-and-rollup-concepts)
+- [Data dictionary](/marketing-reporting-data-dictionary)
+- [Ecommerce metrics starter pack](/ecommerce-metrics-starter-pack)
+- [Sales-led metrics starter pack](/sales-led-metrics-starter-pack)
+- [Weekly report template](/weekly-report-template)

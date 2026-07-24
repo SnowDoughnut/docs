@@ -105,6 +105,14 @@
               "creative",
               "landing-page-brief-concepts"
             ]
+          },
+          {
+            "group": "Reporting",
+            "pages": [
+              "reporting-framework-concepts",
+              "report-writing-concepts",
+              "data-quality-and-rollup-concepts"
+            ]
           }
         ]
       },
@@ -159,6 +167,7 @@
           {
             "group": "Reporting standards",
             "pages": [
+              "marketing-reporting-data-dictionary",
               "kpi-definitions",
               "reporting-cadence",
               "dashboard-standards"
@@ -476,6 +485,7 @@
             "dropdown": "Reporting",
             "pages": [
               "weekly-reporting-process",
+              "monthly-reporting-process",
               "quarterly-reporting-process",
               "yearly-reporting-process"
             ]
@@ -507,7 +517,15 @@
               },
               {
                 "group": "Reporting",
-                "pages": []
+                "pages": [
+                  "flat-file-template",
+                  "weekly-report-template",
+                  "monthly-report-template",
+                  "quarterly-report-template",
+                  "annual-report-template",
+                  "ecommerce-metrics-starter-pack",
+                  "sales-led-metrics-starter-pack"
+                ]
               },
               {
                 "group": "Creative",
@@ -607,15 +625,27 @@
           },
           {
             "group": "Weekly Reports",
-            "pages": []
+            "pages": [
+              "weekly-report-archive"
+            ]
           },
           {
             "group": "Monthly Reports",
-            "pages": []
+            "pages": [
+              "monthly-report-archive"
+            ]
+          },
+          {
+            "group": "Quarterly Reports",
+            "pages": [
+              "quarterly-report-archive"
+            ]
           },
           {
             "group": "Yearly Reports",
-            "pages": []
+            "pages": [
+              "annual-report-archive"
+            ]
           },
           {
             "group": "Customer Profile Library",

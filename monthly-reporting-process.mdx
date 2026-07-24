@@ -1,0 +1,82 @@
+---
+title: "Monthly reporting process"
+description: "The process for producing the monthly report by rolling up the month's weekly reports rather than writing a new one from scratch: sum the flat file's inputs, recalculate every ratio, then analyze and write."
+---
+
+The monthly report answers a different question than the weekly one: did we hit the target, and why? It's built by rolling up the flat file rows from every week in the month, the same weeks the [weekly reporting process](/weekly-reporting-process) already loaded and checked.
+
+<Info>
+  This process uses the [**data dictionary**](/marketing-reporting-data-dictionary), the [**flat file**](/flat-file-template), and the [**monthly report template**](/monthly-report-template).
+</Info>
+
+## What you'll end up with
+
+- A correct set of monthly totals: raw numbers summed from the month's weeks, every ratio recalculated from those totals.
+- A three-to-five-page report, filed in the [**monthly report archive**](/monthly-report-archive), explaining what drove the result, not just what it was.
+
+## Before you start
+
+- Every week in the month has been loaded and checked through the [weekly reporting process](/weekly-reporting-process). A monthly rollup built on unchecked weeks inherits every one of their errors.
+
+## The process at a glance
+
+<Steps>
+  <Step title="Roll up the month">
+    Sum the raw flat file inputs across the month's weeks, then recalculate every ratio from the totals.
+  </Step>
+  <Step title="Check the rollup">
+    Confirm the monthly totals reconcile against the individual weekly reports.
+  </Step>
+  <Step title="Analyze">
+    Compare against target and prior periods, and work down the KPI tiers to explain what drove the result.
+  </Step>
+  <Step title="Write">
+    Fill in the monthly report template, executive summary last.
+  </Step>
+  <Step title="Quality check and deliver">
+    Have a second reader check it, then send with the headline and the ask.
+  </Step>
+  <Step title="File it">
+    Log the report in the monthly report archive and register it if it's a recurring cadence in the data dictionary.
+  </Step>
+</Steps>
+
+## 1. Roll up the month
+
+Filter the flat file to every week whose dates fall inside the month, add up the raw inputs (spend, revenue, orders, and so on) across those weeks, and only then recalculate every ratio, ROAS, conversion rate, contribution margin, from the summed totals. A spreadsheet pivot table does the summing in a few clicks; see [the flat file template](/flat-file-template#rolling-weeks-up-into-months-quarters-and-years) for the exact steps.
+
+<Warning>
+  Never average the four weekly ratios directly. A week with unusually high or low volume, a promotion, a stockout, a big push, gets the same weight as an ordinary week in a simple average, which produces a monthly number that doesn't match what actually happened. See [data quality and rollup concepts](/data-quality-and-rollup-concepts) for a worked example of how far off this can be.
+</Warning>
+
+If a month straddles a partial week at either end, either assign that week fully to the month it mostly falls in, or split the week's rows proportionally, whichever your data dictionary specifies. Do it the same way every month.
+
+## 2. Check the rollup
+
+Add the month's four or five weekly totals for a single input, like ad spend, and confirm it matches the monthly sum. This lifetime-style check catches a missed or double-counted week before it reaches the report; if the numbers don't reconcile, a week is either missing from the flat file or was pulled into the rollup twice.
+
+## 3. Analyze
+
+Compare the month against its target, against last month, and against the same month last year if the business has real seasonality. Work down the KPI tiers: when a tier 1 outcome missed or beat its target, the tier 2 drivers underneath it say why, and tier 3 explains why a driver moved if that level of detail is needed. Check the [change log](/marketing-reporting-data-dictionary#decisions-and-changes) for anything that happened during the month before concluding a cause.
+
+## 4. Write
+
+Fill in the [monthly report template](/monthly-report-template). Write the body first and the executive summary last, since it's hard to summarize an analysis that isn't finished yet. Every number in the report should answer what happened, why, and what to do about it; a number that only states a fact is data, not reporting.
+
+## 5. Quality check and deliver
+
+Have someone other than the writer read the report before it goes out. Ten minutes from a second reader catches more than an hour of re-reading your own work, and this is the cadence where an error does the most damage to credibility, since a monthly report usually reaches a wider or more senior audience than a weekly one.
+
+Send on the scheduled day with a short message stating the headline result and the ask.
+
+## 6. File it
+
+Log the report in the [monthly report archive](/monthly-report-archive), including its headline result, so the archive stays useful as a scannable history rather than a folder of files nobody reopens.
+
+## Related resources
+
+- [**Data quality and rollup concepts**](/data-quality-and-rollup-concepts) Why summing inputs and recalculating beats averaging.
+- [**Weekly reporting process**](/weekly-reporting-process) The process that produces the weeks this report rolls up.
+- [**Monthly report template**](/monthly-report-template) The fill-in template this process produces.
+- [**Monthly report archive**](/monthly-report-archive) Where the finished report gets filed.
+- [**Quarterly reporting process**](/quarterly-reporting-process) How three of these months become the next report up.

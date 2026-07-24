@@ -1,12 +1,85 @@
 ---
 title: "Weekly reporting process"
-description: "What gets reported every week: KPI actuals against targets and pacing against budget."
+description: "The process for producing the weekly report: load the week's rows into the flat file, check them, compare against target, and file the report in the archive. Built to take about an hour."
 ---
 
-The weekly reporting cadence: [KPI](/kpi-definitions) actuals against targets and spend [pacing](/budget-pacing) against budget, reported at the cadence set in [reporting cadence](/reporting-cadence).
+The weekly report answers one question: does anything need attention right now? It runs on the [flat file](/flat-file-template) and the [data dictionary](/marketing-reporting-data-dictionary), and every later report, monthly, quarterly, and annual, is built by rolling up the weeks this process produces. Getting this cycle right is what makes every longer cadence cheap to produce.
+
+<Info>
+  This process uses the [**data dictionary**](/marketing-reporting-data-dictionary), the [**flat file**](/flat-file-template), and the [**weekly report template**](/weekly-report-template).
+</Info>
+
+## What you'll end up with
+
+- A week's worth of new rows added to the flat file, checked and trustworthy.
+- A one-page report, filed in the [**weekly report archive**](/weekly-report-archive), comparing performance against target and flagging anything outside its normal range.
+
+## Before you start
+
+- Your [data dictionary](/marketing-reporting-data-dictionary) Part 1 is filled in: north star, KPI tiers, attribution model, and sources of truth are settled.
+- Your [flat file](/flat-file-template) exists and has at least a few weeks of history to compare against.
+
+## The process at a glance
+
+<Steps>
+  <Step title="Load the week's rows">
+    Pull each metric from its source of truth and add the week's rows to the flat file.
+  </Step>
+  <Step title="Check them">
+    Run the flat file checks before trusting a single number in the report.
+  </Step>
+  <Step title="Check the change log">
+    Read the data dictionary's change log for anything that happened this week.
+  </Step>
+  <Step title="Write the report">
+    Fill in the weekly report template: pacing, exceptions, and anything needing a decision.
+  </Step>
+  <Step title="Quality check and deliver">
+    Confirm the numbers and send, with a short message giving the headline.
+  </Step>
+  <Step title="File it">
+    Log the report in the weekly report archive.
+  </Step>
+</Steps>
+
+## 1. Load the week's rows
+
+Pull each metric from the system named as its source of truth in the data dictionary, and add one row per channel and metric to the flat file for the week just ended. Load raw inputs only, spend, clicks, purchases, revenue; never a calculated ratio.
+
+Wait at least two days after the week ends before loading it. Conversion data settles over a couple of days, and a week loaded too early will need correcting later.
+
+## 2. Check them
+
+Run through the [flat file's checks](/flat-file-template#checks-before-you-trust-a-weeks-rows) before using the new rows for anything. At minimum: spend matches the ad platforms, revenue matches the source of truth, and nothing looks unclassified or missing that wasn't missing last week.
+
+If a check fails, fix it before writing the report. An error caught here costs a few minutes; the same error found after the report has already shaped a decision costs a great deal more.
+
+## 3. Check the change log
+
+Read the data dictionary's [change log](/marketing-reporting-data-dictionary#decisions-and-changes) for anything logged during the week: a promotion, a price change, a tracking change, a site issue. This is what prevents the "why did revenue spike on Wednesday" conversation from becoming its own investigation when the answer was already on record.
+
+## 4. Write the report
+
+Fill in the [weekly report template](/weekly-report-template). Compare against target and normal range, not against last week; week-over-week movement on weekly data is mostly noise. Only include a metric in the exceptions section if it's genuinely outside its normal range, and give each exception a real cause or an honest "unknown, investigating."
+
+<Warning>
+  Not every movement has a cause. A metric that moved inside its normal range gets no mention. Inventing an explanation for ordinary noise teaches readers that the report's explanations are decorative.
+</Warning>
+
+## 5. Quality check and deliver
+
+Before sending, confirm: the summary matches the numbers in the pacing table, percentages are calculated in the right direction, and last week's "needs a decision" items are carried forward and marked resolved or not.
+
+Send on the scheduled day with a two- or three-line message giving the headline and the ask. A report attached with no summary in the message body tends to get opened later, which in practice often means never.
+
+## 6. File it
+
+Log the report in the [weekly report archive](/weekly-report-archive). Weekly reports are logged by folder location rather than one row per report; see the archive page for the retention period.
 
 ## Related resources
 
-- [Quarterly reporting process](/quarterly-reporting-process)
-- [Yearly reporting process](/yearly-reporting-process)
-- [Reporting cadence](/reporting-cadence)
+- [**Data dictionary**](/marketing-reporting-data-dictionary) Metric definitions, targets, and normal ranges this report compares against.
+- [**Flat file template**](/flat-file-template) The source every number in the report comes from.
+- [**Weekly report template**](/weekly-report-template) The fill-in template this process produces.
+- [**Weekly report archive**](/weekly-report-archive) Where the finished report gets filed.
+- [**Monthly reporting process**](/monthly-reporting-process) How four or five of these weeks become the next report up.

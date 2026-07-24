@@ -1,0 +1,116 @@
+---
+title: "Monthly report template"
+description: "A fill-in template for the monthly report, built by rolling up the month's weekly reports rather than written from scratch. Covers performance against target, what drove the result, and channel-level detail."
+---
+
+_Fill in each section below. Examples use Doughnut Labs, an invented company that sells Doughnut Technology. Replace the greyed_ `E.g. `_lines with your own numbers._
+
+<Note>
+  This is not a new report. Before filling it in, sum the raw numbers (spend, revenue, orders, and so on) from the flat file across every week in this month, then recalculate every ratio, ROAS, conversion rate, contribution margin, from those summed totals. Never average the four weekly ratios directly; see [data quality and rollup concepts](/data-quality-and-rollup-concepts) for why that produces the wrong number. Once the month's totals are correct, this report is mostly analysis and writing.
+</Note>
+
+## Setup
+
+| Field | Fill in |
+| :-- | :-- |
+| Account / brand | _E.g. Doughnut Labs_ |
+| Month | _E.g. June 2026_ |
+| Prepared by | _E.g. Priya Desai_ |
+| Weeks rolled up | _E.g. Weeks ending 06-07, 06-14, 06-21, 06-28_ |
+| [Data dictionary](/marketing-reporting-data-dictionary) link |  |
+
+## Executive summary
+
+**Five sentences, written last, after the rest of the report is done.**
+
+| Field | Fill in |
+| :-- | :-- |
+| Result | _E.g. Revenue landed at \$412,000 against a \$400,000 target, 3% ahead._ |
+| Why | _E.g. The beat came from a 12% lift in average order value after the bundle launch, not from more orders._ |
+| Biggest win | _E.g. Bundle attach rate exceeded plan in its first full month._ |
+| Biggest risk | _E.g. Bundles carry 4 points lower margin, so contribution margin was flat despite revenue growth._ |
+| Recommended next move | _E.g. Test a higher-margin bundle before scaling spend behind the current one._ |
+
+<Accordion title="Concept review: Executive summary">
+  Write this last, since it's hard to summarize an analysis you haven't done yet. A useful test: swap in a different month's numbers and see if the prose still holds up. If it does, it's too generic to be worth reading. "Performance was strong with continued improvements across key channels" passes that test and says nothing; naming the actual mechanism, a bundle lifting average order value while quietly compressing margin, is what makes a summary worth reading on its own.
+</Accordion>
+
+## Performance against target
+
+**Rolled up from the flat file: sum the month's weekly inputs, then recalculate each ratio.**
+
+| Metric | This month | Target | Variance | Last month | Same month last year |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| _E.g. Contribution margin (north star)_ | _E.g. \$97,000_ | _E.g. \$96,000_ | _E.g. \+1%_ | _E.g. \$91,400_ | _E.g. \$79,200_ |
+| _E.g. New customer count (counter-metric)_ | _E.g. 4,860_ | _E.g. 4,800_ | _E.g. \+1%_ | _E.g. 4,510_ | _E.g. 3,990_ |
+| _E.g. Total marketing spend_ | _E.g. \$290,150_ | _E.g. \$280,000_ | _E.g. \+4%_ | _E.g. \$265,900_ | _E.g. \$230,100_ |
+| \[add KPI\] |  |  |  |  |  |
+
+**Verdict:** _E.g. Hit, on the north star and counter-metric both._ In one sentence, why: _E.g. Volume ran slightly over plan and margin held, so the extra spend was efficient rather than wasteful._
+
+## What drove the result
+
+**Two or three paragraphs, working down the KPI tiers: the tier 2 drivers explaining the tier 1 outcome.**
+
+_E.g. Contribution margin held at target despite the bundle launch pulling average margin per order down 4 points, because average order value rose 12% and more than offset it. Blended acquisition cost was flat month over month, so the margin story is a product-mix effect, not an efficiency change. This section is what justifies the report existing rather than the table above speaking for itself._
+
+<Accordion title="Concept review: What drove the result">
+  Work down the tiers rather than stopping at the first level. "Margin held because average order value rose" is one step; naming why average order value rose, a bundle launch, a price change, a shift toward higher-ticket products, is the actual explanation a reader can act on. "Margin held" restates the table above it and adds nothing.
+</Accordion>
+
+## Channel performance
+
+**One line of commentary per channel that moved meaningfully. Say nothing about channels that didn't.**
+
+| Channel | Spend | Revenue | Efficiency | vs. last month | Contribution |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| _E.g. Meta_ | _E.g. \$172,000_ | _E.g. \$236,800_ | _E.g. 1.38x ROAS_ | _E.g. Efficiency down slightly, volume up_ | _E.g. Positive, above break-even_ |
+| \[add channel\] |  |  |  |  |  |
+
+## Tests
+
+**Include tests that failed, not only the ones that won.**
+
+| Test | Hypothesis | Result | Decision |
+| :-- | :-- | :-- | :-- |
+| _E.g. Bundle vs. individual product landing page_ | _E.g. Bundle framing lifts AOV without hurting conversion rate_ | _E.g. AOV \+12%, conversion rate flat, statistically significant_ | _E.g. Rolled out to all traffic_ |
+| \[add test\] |  |  |  |
+
+## What changed
+
+**Pulled from the [data dictionary](/marketing-reporting-data-dictionary) change log for this month.**
+
+| Date | Change | Effect on numbers |
+| :-- | :-- | :-- |
+| _E.g. 2026-06-11_ | _E.g. Consent banner updated_ | _E.g. Analytics sessions down roughly 8%, no revenue impact_ |
+| \[add change\] |  |  |
+
+## Next month
+
+| Field | Fill in |
+| :-- | :-- |
+| Focus | _E.g. Test a leaner, higher-margin bundle_ |
+| Planned spend | _E.g. \$300,000_ |
+| Planned tests | _E.g. Higher-margin bundle vs. current bundle_ |
+| What would change this plan | _E.g. If the current bundle's margin trend continues declining, pause new bundle spend_ |
+
+## Actions
+
+**Every action needs an owner and a date.**
+
+| Action | Owner | By when | Expected effect |
+| :-- | :-- | :-- | :-- |
+| _E.g. Design and launch the higher-margin bundle test_ | _E.g. Priya Desai_ | _E.g. July 10_ | _E.g. Recover 2 to 3 points of margin without losing AOV lift_ |
+| \[add action\] |  |  |  |
+
+---
+
+**Data through:** _E.g. 2026-06-30_ · **Attribution:** _E.g. 7-day click, multi-touch_ · **Definitions:** [Data dictionary](/marketing-reporting-data-dictionary) · _If sent before finance close: cost figures are estimated and will be reconciled next month._
+
+## Related resources
+
+- [Data quality and rollup concepts](/data-quality-and-rollup-concepts)
+- [Report writing concepts](/report-writing-concepts)
+- [Weekly report template](/weekly-report-template)
+- [Quarterly report template](/quarterly-report-template)
+- [Monthly report archive](/monthly-report-archive)
