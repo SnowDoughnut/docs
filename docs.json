@@ -103,7 +103,8 @@
             "group": "Creative",
             "pages": [
               "creative",
-              "landing-page-brief-concepts"
+              "landing-page-brief-concepts",
+              "copy-brief-concepts"
             ]
           },
           {
@@ -575,6 +576,7 @@
           {
             "group": "TikTok",
             "pages": [
+              "customer-profile-csv-template-tiktok",
               {
                 "group": "Copy templates",
                 "pages": [
@@ -590,6 +592,8 @@
           {
             "group": "LinkedIn",
             "pages": [
+              "customer-profile-csv-template-linkedin",
+              "linkedin-company-list-csv-template",
               {
                 "group": "Copy templates",
                 "pages": [

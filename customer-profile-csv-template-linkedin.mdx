@@ -1,0 +1,60 @@
+---
+title: "Customer profile CSV template (LinkedIn)"
+description: "The column format and compliance requirements for uploading a contact list to build a LinkedIn Matched Audiences audience, with a filled-in example row and links to LinkedIn's official documentation."
+---
+
+Use this template to format a customer profile segment for upload to LinkedIn Campaign Manager as a Matched Audiences contact list. Name the file using the [customer profile naming conventions](/customer-profile-naming-conventions). For account-level targeting by company instead of by person, use the [company list CSV template](/linkedin-company-list-csv-template) instead.
+
+<Note>
+  This isn't legal advice. Confirm data rights, consent, and current policy requirements with your legal or privacy team before uploading customer data to any ad platform.
+</Note>
+
+<Warning>
+  Start from LinkedIn's own downloadable template inside Campaign Manager (Account Assets \> Matched Audiences \> Upload list), rather than building the header row by hand. LinkedIn rejects an upload if a header has been changed or removed, and the exact header text can shift between template revisions.
+</Warning>
+
+## File format
+
+- CSV only.
+- At least 300 rows to upload. LinkedIn recommends 10,000 or more contacts, since only a portion of any list typically matches to a real LinkedIn member, and a campaign needs at least 300 matched members before it can serve.
+- Maximum file size 20MB, or 300,000 rows.
+- Matching can take up to 48 hours.
+
+## Column template
+
+Every row needs at least one matchable identifier: an email address, or a first name and last name pair, or a mobile device ID. Leave any other column blank rather than deleting it.
+
+| Column | Format | Example |
+| :-- | :-- | :-- |
+| Email | Plain text or SHA-256 hashed | [jamie.rivera@example.com](mailto:jamie.rivera@example.com) |
+| First Name | Plain text | Jamie |
+| Last Name | Plain text | Rivera |
+| Mobile Device ID | IDFA or AAID | _(device ID string)_ |
+
+## Format rules
+
+- Email can be uploaded as plain text or pre-hashed with SHA-256.
+- Don't rename, reorder, or remove any header from LinkedIn's downloaded template, even for a column you're leaving blank for every row.
+
+## Data and compliance rules
+
+<Warning>
+  - You, the advertiser, are the data controller. LinkedIn processes the contact details you upload, but you're responsible for having a lawful basis, consent or legitimate interest, to use each person's data for ad targeting.
+  - Your privacy policy needs to disclose that you share personal data with LinkedIn for advertising, and you need to be able to honor deletion and opt-out requests.
+  - If the list includes EU or UK contacts, keep a record of the lawful basis for that list as part of your GDPR records of processing.
+</Warning>
+
+## Official documentation
+
+- [Upload company and contact targeting lists for LinkedIn Ads](https://www.linkedin.com/help/lms/answer/a421822)
+- [Requirements for contact targeting lists in Campaign Manager](https://www.linkedin.com/help/lms/answer/a1489764)
+- [LinkedIn Marketing Solutions and the GDPR](https://www.linkedin.com/help/linkedin/answer/a1444756)
+
+## Related resources
+
+- [Company list CSV template (LinkedIn)](/linkedin-company-list-csv-template)
+- [Customer profile naming conventions](/customer-profile-naming-conventions)
+- [Customer profile brief](/customer-profile-brief)
+- [Customer profile CSV template (Meta)](/customer-profile-csv-template-meta)
+- [Customer profile CSV template (Google)](/customer-profile-csv-template-google)
+- [Customer profile CSV template (TikTok)](/customer-profile-csv-template-tiktok)

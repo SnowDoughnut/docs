@@ -1,12 +1,73 @@
 ---
 title: "Customer profile CSV template (Meta)"
-description: "Downloadable CSV template for uploading customer profile segments to Meta Ads."
+description: "The column format, hashing rules, and compliance requirements for uploading a customer list to build a Meta Custom Audience, with a filled-in example row and links to Meta's official documentation."
 ---
 
-Use this template to format customer profile segments for upload to Meta Ads custom audiences. Fill in one row per profile member identifier, following the [customer profile naming conventions](/customer-profile-naming-conventions) for the segment name.
+Use this template to format a customer profile segment for upload to Meta Ads as a Custom Audience from a customer list. Name the file using the [customer profile naming conventions](/customer-profile-naming-conventions).
+
+<Note>
+  This isn't legal advice. Confirm data rights, consent, and current policy requirements with your legal or privacy team before uploading customer data to any ad platform.
+</Note>
+
+## File format
+
+- CSV or TXT file, one row per person, with a header row identifying each column.
+- Meta hashes raw (unhashed) values automatically on upload. You can also pre-hash with MD5 or SHA-256 yourself.
+- A Custom Audience needs at least 100 people before Meta will let you use it for targeting. Check Meta's current per-file size limit before a very large upload, since oversized files need to be split into batches.
+
+## Column template
+
+Meta matches on any of the columns below. Include only the identifiers you actually have; more matched columns generally means a better match rate.
+
+| Column header | Identifier | Example |
+| :-- | :-- | :-- |
+| `em` | Email | [jamie.rivera@example.com](mailto:jamie.rivera@example.com) |
+| `ph` | Phone | 14155550142 |
+| `fn` | First name | jamie |
+| `ln` | Last name | rivera |
+| `ct` | City | sanfrancisco |
+| `st` | State or province | ca |
+| `zip` | Zip or postal code | 94103 |
+| `country` | Country | us |
+| `doby` | Year of birth | 1991 |
+| `dob` | Full date of birth | 19910604 |
+| `gen` | Gender | f |
+| `madid` | Mobile advertiser ID (IDFA/AAID) | _(device ID string)_ |
+| `external_id` | Your own customer or CRM ID | cust\_10432 |
+
+## Format rules
+
+| Field | Rule |
+| :-- | :-- |
+| `em` | Lowercase, trimmed of whitespace. Don't otherwise alter the address. |
+| `ph` | Digits only, country code always included, no leading `+` or punctuation. |
+| `country` | ISO 3166-1 alpha-2, lowercase, two letters. `us`, not "United States" or "USA." |
+| `ct` / `st` | Lowercase, no spaces or punctuation. |
+| `dob` | `YYYYMMDD`, numeric only. |
+| `gen` | A single lowercase letter, `m` or `f`. Meta's downloadable template is the source of truth here; confirm before a large upload since column specs can change between template revisions. |
+
+If you pre-hash a column yourself, normalize it first (lowercase, trimmed), then hash with SHA-256. Mixed capitalization before hashing is a common cause of a match rate that's lower than it should be.
+
+## Data and compliance rules
+
+<Warning>
+  - You need a lawful basis, and for EU/UK data subjects, documented consent, to use each person's data for advertising. Meta's Custom Audience Terms require you to certify this before the audience can be created.
+  - Don't upload data tied to sensitive categories: health conditions, financial status, ethnicity, political beliefs, religious affiliation, sexual orientation, or union membership.
+  - Don't upload data obtained from scraping or from a data broker without the rights to use it for advertising.
+  - If this audience will run a housing, employment, or credit ad, it falls under Meta's Special Ad Category rules. You must certify the campaign, and as of March 2025 a Special Ad Category customer list can no longer be shared across business portfolios: upload it directly to each ad account that needs it.
+</Warning>
+
+## Official documentation
+
+- [Create a customer list Custom Audience](https://www.facebook.com/business/help/170456843145568)
+- [Customer list formatting guidelines](https://www.facebook.com/business/help/2082575038703844)
+- [About hashing customer information](https://www.facebook.com/business/help/112061095610075)
+- [Custom Audiences Terms](https://www.facebook.com/legal/terms/customaudience)
 
 ## Related resources
 
 - [Customer profile naming conventions](/customer-profile-naming-conventions)
-- [Customer profile CSV template (Google)](/customer-profile-csv-template-google)
 - [Customer profile brief](/customer-profile-brief)
+- [Customer profile CSV template (Google)](/customer-profile-csv-template-google)
+- [Customer profile CSV template (LinkedIn)](/customer-profile-csv-template-linkedin)
+- [Customer profile CSV template (TikTok)](/customer-profile-csv-template-tiktok)
