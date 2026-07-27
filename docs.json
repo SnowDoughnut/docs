@@ -576,6 +576,7 @@
           {
             "group": "TikTok",
             "pages": [
+              "customer-profile-csv-template-tiktok",
               {
                 "group": "Copy templates",
                 "pages": [
@@ -591,6 +592,8 @@
           {
             "group": "LinkedIn",
             "pages": [
+              "customer-profile-csv-template-linkedin",
+              "linkedin-company-list-csv-template",
               {
                 "group": "Copy templates",
                 "pages": [

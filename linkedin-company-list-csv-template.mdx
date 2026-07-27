@@ -1,0 +1,55 @@
+---
+title: "Company list CSV template (LinkedIn)"
+description: "The column format and requirements for uploading a company list to build a LinkedIn Matched Audiences account-based audience, with a filled-in example row and links to LinkedIn's official documentation. A company list carries no personal data."
+---
+
+Use this template for account-based targeting: an audience built from a list of companies rather than people. It carries no personal data, so the consent and data-subject rules on the [customer profile CSV template (LinkedIn)](/customer-profile-csv-template-linkedin) don't apply here. If you're targeting individual contacts instead of accounts, use that page.
+
+<Warning>
+  Start from LinkedIn's own downloadable company list template inside Campaign Manager, rather than building the header row by hand. A changed or removed header causes the upload to fail, the same as it does for a contact list.
+</Warning>
+
+## File format
+
+- CSV only.
+- At least 300 rows to upload. LinkedIn recommends at least 1,000 companies, since not every company in a list matches to a LinkedIn company page, and a campaign needs at least 300 matched companies before it can serve.
+- Maximum file size 20MB, or 300,000 rows.
+
+## Column template
+
+| Column | Format | Example |
+| :-- | :-- | :-- |
+| Company Name | Plain text | Doughnut Labs |
+| Website | Domain, no protocol needed | doughnutlabs.example |
+| LinkedIn Company Page URL | Full LinkedIn company page URL | [https://www.linkedin.com/company/doughnutlabs](https://www.linkedin.com/company/doughnutlabs) |
+| Industry | Plain text | Software |
+| City | Plain text | San Francisco |
+| State | Plain text | CA |
+| Company Country | Plain text or ISO code | US |
+| Zip | Postal code | 94103 |
+
+<Tip>
+  The LinkedIn Company Page URL is the single strongest match field. Include it whenever you have it, even alongside company name and website, since it outperforms matching on name and domain combined.
+</Tip>
+
+## Format rules
+
+- A LinkedIn Company Page URL should end in the company's name, not a numeric ID, for the best match.
+- Company name and website alone will match at a lower rate than a list that also includes industry, city, state, company country, or zip. Fill in what you have.
+
+## Data and compliance rules
+
+<Note>
+  A company list carries firmographic data (company name, industry, location), not personal data about individuals, so it doesn't trigger the same consent obligations as a contact list. The usual data-quality expectations still apply: only upload companies you have a legitimate reason to target, and follow LinkedIn's advertising policies for the campaign itself.
+</Note>
+
+## Official documentation
+
+- [Company list targeting in Campaign Manager](https://www.linkedin.com/help/lms/answer/a423102)
+- [Upload company and contact targeting lists for LinkedIn Ads](https://www.linkedin.com/help/lms/answer/a421822)
+
+## Related resources
+
+- [Customer profile CSV template (LinkedIn)](/customer-profile-csv-template-linkedin)
+- [Customer profile naming conventions](/customer-profile-naming-conventions)
+- [Customer profile brief (B2B)](/customer-profile-brief)

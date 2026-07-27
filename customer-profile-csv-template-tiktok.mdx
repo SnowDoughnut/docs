@@ -1,0 +1,58 @@
+---
+title: "Customer profile CSV template (TikTok)"
+description: "The column format, hashing rules, and compliance requirements for uploading a customer list to build a TikTok Custom Audience, with a filled-in example row and links to TikTok's official documentation."
+---
+
+Use this template to format a customer profile segment for upload to TikTok Ads Manager as a Customer File Custom Audience. Name the file using the [customer profile naming conventions](/customer-profile-naming-conventions).
+
+<Note>
+  This isn't legal advice. Confirm data rights, consent, and current policy requirements with your legal or privacy team before uploading customer data to any ad platform.
+</Note>
+
+## File format
+
+- CSV or TXT file, under 1GB, with at least 1,000 entries.
+- One header row naming the identifier in the file, and one identifier per row below it.
+- TikTok's customer file takes a single identifier type per file (email, phone, or mobile advertiser ID), unlike Meta or Google, which accept several identifier columns combined in one file. To match on more than one identifier, upload a separate file per type.
+
+## Column template
+
+| File | Column header | Format | Example |
+| :-- | :-- | :-- | :-- |
+| Email file | `Email` | Lowercase, no spaces | [jamie.rivera@example.com](mailto:jamie.rivera@example.com) |
+| Phone file | `Phone` | E.164 format | \+14155550142 |
+| Mobile ID file | `MAID` | IDFA (iOS) or GAID (Android) | _(device advertising ID)_ |
+
+## Format rules
+
+| Field | Rule |
+| :-- | :-- |
+| Email | Lowercase, all spaces removed. |
+| Phone | E.164: leading `+`, country code, then digits only, no spaces or dashes. |
+| MAID | IDFA and GAID values can sit in the same file, but keep capitalization consistent across every row (all uppercase or all lowercase). |
+
+TikTok accepts MD5 or SHA-256 pre-hashed values, or raw values, which TikTok hashes automatically on upload. If you pre-hash, normalize the value (lowercase, trimmed) first.
+
+## Data and compliance rules
+
+<Warning>
+  - TikTok acts as a data processor for the contact details in a Customer File audience. You, as the advertiser, remain the controller and are responsible for the legal basis, consent or legitimate interest, for every person on the list.
+  - Your privacy policy needs to disclose that you share personal data with TikTok for ad targeting, and you need to be able to honor deletion and opt-out requests, under TikTok's Business Products (Data) Terms and applicable law (GDPR, CCPA, and similar state and regional privacy laws).
+  - Don't upload sensitive personal data (racial or ethnic origin, political opinions, religious beliefs, trade union membership, specific health information) without written approval from a TikTok sales representative.
+  - If you advertise in a regulated vertical (financial services, health, supplements, cryptocurrency), keep your licensing and certification documentation on file. TikTok can request it.
+</Warning>
+
+## Official documentation
+
+- [How to create a Custom Audience with a customer file](https://ads.tiktok.com/help/article/how-to-create-a-custom-audience-with-a-customer-file)
+- [About Customer File audiences](https://ads.tiktok.com/help/article/customer-file)
+- [About guidelines for customer files](https://ads.tiktok.com/help/article/customer-file-faq)
+- [Advertiser tools and related terms](https://ads.tiktok.com/help/article/tiktok-advertiser-tools-and-related-terms)
+
+## Related resources
+
+- [Customer profile naming conventions](/customer-profile-naming-conventions)
+- [Customer profile brief](/customer-profile-brief)
+- [Customer profile CSV template (Meta)](/customer-profile-csv-template-meta)
+- [Customer profile CSV template (Google)](/customer-profile-csv-template-google)
+- [Customer profile CSV template (LinkedIn)](/customer-profile-csv-template-linkedin)
