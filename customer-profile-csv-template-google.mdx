@@ -1,12 +1,67 @@
 ---
 title: "Customer profile CSV template (Google)"
-description: "Downloadable CSV template for uploading customer profile segments to Google Ads."
+description: "The column format, hashing rules, and compliance requirements for uploading a customer list to build a Google Ads Customer Match audience, with a filled-in example row and links to Google's official documentation."
 ---
 
-Use this template to format customer profile segments for upload to Google Ads customer match audiences. Fill in one row per profile member identifier, following the [customer profile naming conventions](/customer-profile-naming-conventions) for the segment name.
+Use this template to format a customer profile segment for upload to Google Ads as a Customer Match audience. Name the file using the [customer profile naming conventions](/customer-profile-naming-conventions).
+
+<Note>
+  This isn't legal advice. Confirm data rights, consent, and current policy requirements with your legal or privacy team before uploading customer data to any ad platform.
+</Note>
+
+## File format
+
+- CSV file, encoded in ASCII or UTF-8. UTF-16 isn't supported.
+- One row per person, separated by a standard line break.
+- At least 100 records to upload a file. The number of matched users an audience needs before it can actually serve varies by campaign type and has changed before (Search campaigns currently need fewer matched users than Display, YouTube, or Gmail campaigns), so confirm the current minimum for your campaign type rather than assuming a fixed number.
+
+## Column template
+
+For combined email, phone, and mailing-address matching, use these six exact column headers, in English:
+
+| Email | Phone | First Name | Last Name | Country | Zip |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| [jamie.rivera@example.com](mailto:jamie.rivera@example.com) | \+14155550142 | Jamie | Rivera | US | 94103 |
+
+You don't have to fill every column. A file with only an Email column is valid; add Phone, First Name, Last Name, Country, and Zip only for the customers you have that data for, keeping each row's values matched to the same person.
+
+<Info>
+  Google also accepts Customer Match lists keyed on a mobile device ID or a Google Ads user ID, uploaded through the Google Ads API. Those formats aren't covered here since they don't apply to a hand-built customer list CSV.
+</Info>
+
+## Format rules
+
+| Field | Rule |
+| :-- | :-- |
+| Email | Lowercase. |
+| Phone | E.164 format: an optional leading `+`, country code, then digits only. `+14155550142`, not `(415) 555-0142`. Always include the country code, even if every customer is in the same country. |
+| Country | ISO 3166-1 alpha-2, two letters. `US`, not "United States" or "USA." Required on every row that includes a mailing address. |
+| Zip | The base postal code only. Leave off a ZIP\+4 extension. |
+| First Name / Last Name | Plain text, trimmed of extra whitespace. |
+
+If you pre-hash email or phone yourself, use SHA-256 and verify the hash matches Google's normalization before uploading. If you upload raw values instead, Google Ads hashes them for you.
+
+## Data and compliance rules
+
+<Warning>
+  - Your account needs a clean policy-compliance history to use Customer Match at all. Google can restrict access for accounts that don't meet its eligibility criteria.
+  - Don't upload data tied to sensitive categories: health conditions, negative financial status, religion, or adult or dating-related interests, or anything else covered by Google's personalized advertising policy.
+  - Don't upload data about anyone under 13, or data collected from a site or app directed at children.
+  - For lists that include EEA residents, Google's EU User Consent Policy applies. Uploads through the Google Ads API must set both required consent fields to `GRANTED`; uploads through the Google Ads UI require you to confirm consent has been obtained before the list can be created.
+</Warning>
+
+## Official documentation
+
+- [Format your customer data file](https://support.google.com/google-ads/answer/7659867)
+- [Create a Customer Match list by uploading a data file](https://support.google.com/google-ads/answer/10589050)
+- [Customer Match policy](https://support.google.com/google-ads/answer/6299717)
+- [Customer data policies](https://support.google.com/google-ads/answer/7475709)
+- [EU user consent policy for Customer Match, FAQ](https://support.google.com/google-ads/answer/14310715)
 
 ## Related resources
 
 - [Customer profile naming conventions](/customer-profile-naming-conventions)
-- [Customer profile CSV template (Meta)](/customer-profile-csv-template-meta)
 - [Customer profile brief](/customer-profile-brief)
+- [Customer profile CSV template (Meta)](/customer-profile-csv-template-meta)
+- [Customer profile CSV template (LinkedIn)](/customer-profile-csv-template-linkedin)
+- [Customer profile CSV template (TikTok)](/customer-profile-csv-template-tiktok)
