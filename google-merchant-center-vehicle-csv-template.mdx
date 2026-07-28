@@ -1,0 +1,63 @@
+---
+title: "Vehicle ads feed CSV template (Google Merchant Center)"
+description: "The column format and compliance rules for a Google Merchant Center vehicle ads feed, with a filled-in example row and links to Google's official documentation. A separate feed from the primary Products feed, for dealership inventory."
+---
+
+Use this template for a car dealership's vehicle inventory, used with Google Vehicle ads. This is a separate feed from the primary Products feed, not an extension of it; see the [Google Merchant Center feed templates](/google-merchant-center-overview) overview if you need the core Products feed instead.
+
+<Note>
+  This isn't legal advice. Confirm pricing accuracy and any state-level auto advertising disclosure requirements with your legal or compliance team before publishing.
+</Note>
+
+## File format
+
+- CSV, TSV, XML, or a Google Sheet.
+- Files are typically delivered to a designated SFTP dropbox on a recurring schedule rather than uploaded once.
+- Update at least once a day; Google recommends every four hours for dealerships with high inventory turnover.
+- If a CSV field contains a double quote, escape it by doubling it and wrapping the whole field in quotes.
+
+## Column template
+
+| Column | Required | Example |
+| :-- | :-- | :-- |
+| `vin` | Yes | 1HGCM82633A004352 |
+| `store_code` | Yes, unique per dealership location | SF-DOWNTOWN |
+| `make` | Yes | Doughnut Labs |
+| `model` | Yes | Torque Wagon |
+| `year` | Yes | 2025 |
+| `condition` | Yes | used |
+| `price` | Yes | 28995.00 USD |
+| `availability` | Yes | in stock |
+| `link` | Yes | [https://doughnutlabs.example/inventory/torque-wagon-2025](https://doughnutlabs.example/inventory/torque-wagon-2025) |
+| `mileage` | Recommended | 12000 mi |
+| `image_link` | Recommended | [https://doughnutlabs.example/images/torque-wagon.jpg](https://doughnutlabs.example/images/torque-wagon.jpg) |
+| `exterior_color` / `interior_color` | Recommended | Doughnut Blue / Charcoal |
+
+<Info>
+  This is a representative subset. Google's vehicle ads spec also covers trim, transmission, drivetrain, fuel type, and body style; confirm the complete current list against Google's feed specification linked below.
+</Info>
+
+## Format rules
+
+- `vin` is the standard 17-character vehicle identification number and is the field Google (and most other platforms) uses to identify a specific vehicle.
+- `store_code` identifies the dealership location and needs to be unique across every location in your account, not just within one feed file.
+- `price` follows the same number-plus-currency-code pattern as the Products feed.
+
+## Data and compliance rules
+
+<Warning>
+  - Listed price and availability need to match what's actually quotable at the dealership; a mismatch is treated as a misrepresentation issue the same as it is on the Products feed, and can trigger the same immediate suspension.
+  - Vehicle advertising is subject to state-level and FTC disclosure rules in the US (for example, the FTC's Motor Vehicle Advertising Rule) governing what pricing and fee information has to be disclosed. That's a legal obligation separate from Google's feed accuracy requirement.
+</Warning>
+
+## Official documentation
+
+- [Vehicle ads overview](https://support.google.com/merchants/answer/11189169)
+- [Feed specification, Vehicle listings on Google](https://developers.google.com/vehicle-listings/reference/feed-specification)
+- [Vehicle ads activation](https://support.google.com/merchants/answer/15312145)
+
+## Related resources
+
+- [Google Merchant Center feed templates](/google-merchant-center-overview)
+- [Product feed CSV template (Google Merchant Center)](/google-merchant-center-product-csv-template)
+- [Vehicle catalog CSV template (Meta)](/meta-commerce-vehicle-csv-template)

@@ -553,6 +553,18 @@
                   "meta-lead-ad-copy-template",
                   "meta-carousel-copy-template"
                 ]
+              },
+              {
+                "group": "Meta Commerce",
+                "pages": [
+                  "meta-commerce-overview",
+                  "meta-commerce-hotel-csv-template",
+                  "meta-commerce-product-csv-template",
+                  "meta-commerce-vehicle-csv-template",
+                  "meta-commerce-flight-csv-template",
+                  "meta-commerce-destination-csv-template",
+                  "meta-commerce-home-listing-csv-template"
+                ]
               }
             ]
           },
@@ -569,6 +581,22 @@
                   "google-demand-gen-copy-template",
                   "google-youtube-copy-template",
                   "google-app-campaign-copy-template"
+                ]
+              },
+              {
+                "group": "Google Merchant Center",
+                "pages": [
+                  "google-merchant-center-overview",
+                  "google-merchant-center-product-csv-template",
+                  "google-merchant-center-vehicle-csv-template",
+                  "google-merchant-center-local-inventory-csv-template",
+                  "google-merchant-center-promotions-csv-template"
+                ]
+              },
+              {
+                "group": "Google Hotel Center",
+                "pages": [
+                  "google-hotel-center-csv-template"
                 ]
               }
             ]

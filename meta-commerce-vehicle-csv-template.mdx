@@ -1,0 +1,65 @@
+---
+title: "Vehicle catalog CSV template (Meta)"
+description: "The column format and compliance rules for a Meta Commerce Manager vehicle catalog feed, with a filled-in example row and links to Meta's official documentation. One of six catalog types; see the Meta Commerce catalog overview to pick the right one."
+---
+
+Use this template for a dealership's vehicle inventory, used with Meta's automotive inventory ads. If you're listing ecommerce products, hotels, flights, destinations, or real estate instead, see the [Meta Commerce catalog templates](/meta-commerce-overview) overview for the matching type.
+
+<Note>
+  This isn't legal advice. Confirm pricing accuracy and any state-level auto advertising disclosure requirements with your legal or compliance team before publishing a vehicle catalog.
+</Note>
+
+## File format
+
+- CSV, TSV, RSS XML, or ATOM XML, one row per vehicle, with a header row naming each column.
+- Set up through Commerce Manager (feed upload), Meta Business Suite, or a supported third-party inventory provider.
+
+## Column template
+
+| Column | Example |
+| :-- | :-- |
+| `vehicle_id` | VIN1HGCM82633A004352 |
+| `title` | 2025 Doughnut Labs Torque Wagon |
+| `description` | One owner, clean title, 2025 model year |
+| `price` | 28995.00 USD |
+| `link` | [https://doughnutlabs.example/inventory/torque-wagon-2025](https://doughnutlabs.example/inventory/torque-wagon-2025) |
+| `image_link` | [https://doughnutlabs.example/images/torque-wagon.jpg](https://doughnutlabs.example/images/torque-wagon.jpg) |
+| `condition` | used |
+| `availability` | in stock |
+| `make` | Doughnut Labs |
+| `model` | Torque Wagon |
+| `year` | 2025 |
+| `vin` | 1HGCM82633A004352 |
+| `mileage` | 12000 mi |
+| `body_style` | wagon |
+| `state_of_vehicle` | used |
+
+<Info>
+  This isn't an exhaustive field list. Meta's automotive spec also includes trim, transmission, drivetrain, fuel type, exterior and interior color, and dealer/store fields; confirm the complete current list against Meta's own documentation before a first upload.
+</Info>
+
+## Format rules
+
+- `state_of_vehicle` and `condition` both describe new-vs-used; some tooling expects one, some the other. Fill in whichever your feed source (dealer management system or third-party provider) actually produces, and check for duplicated or conflicting values between the two if you're populating both.
+- `vin` is the standard 17-character vehicle identification number. It's the field most third-party tools use to de-duplicate listings across marketplaces, so keep it accurate rather than leaving it blank.
+- `price` follows the product pattern: a number plus a three-letter ISO 4217 currency code.
+
+## Data and compliance rules
+
+<Warning>
+  - Listed price and availability need to match what's actually quotable at the dealership. A vehicle shown as in stock after it's sold, or a price that doesn't match the real offer, is a misrepresentation issue.
+  - Vehicle advertising is subject to state-level and FTC disclosure rules in the US (for example, the FTC's Motor Vehicle Advertising Rule) that govern what pricing and fee information has to be disclosed. Meta's feed accuracy requirement doesn't replace that legal obligation; treat them as separate.
+  - Meta's general advertising standards, including its prohibitions on deceptive or misleading claims, apply to vehicle listings the same as any other catalog.
+</Warning>
+
+## Official documentation
+
+- [Set up a catalog for automotive inventory ads (overview)](https://www.facebook.com/business/help/143781049600895)
+- [Catalog, Automotive Ads, Meta for Developers](https://developers.facebook.com/docs/marketing-api/auto-ads/guides/catalog/)
+- [Advertising Standards, Transparency Center](https://transparency.meta.com/policies/ad-standards/)
+
+## Related resources
+
+- [Meta Commerce catalog templates](/meta-commerce-overview)
+- [Product catalog CSV template (Meta)](/meta-commerce-product-csv-template)
+- [Vehicle ads feed CSV template (Google Merchant Center)](/google-merchant-center-vehicle-csv-template)

@@ -1,0 +1,59 @@
+---
+title: "Flight catalog CSV template (Meta)"
+description: "The column format and compliance rules for a Meta Commerce Manager flight catalog feed, with a filled-in example row and links to Meta's official documentation. One of six catalog types; see the Meta Commerce catalog overview to pick the right one."
+---
+
+Use this template for a catalog of bookable flights, used with Meta's dynamic ads for travel. If you're listing ecommerce products, hotels, vehicles, destinations, or real estate instead, see the [Meta Commerce catalog templates](/meta-commerce-overview) overview for the matching type.
+
+<Warning>
+  Meta's own documentation has the authoritative, complete column list for this vertical, and it wasn't fully accessible while researching this page (Meta's help center blocks automated fetches). What's below reflects what's independently confirmed: the fields Meta generates a flight's ID from, and the general shape of a flight record. Confirm the full required and optional field list against [Meta's flight catalog documentation](https://www.facebook.com/business/help/120987771906806) before building a production feed.
+</Warning>
+
+<Note>
+  This isn't legal advice. Confirm fare and availability accuracy with your legal or compliance team before publishing a flight catalog.
+</Note>
+
+## File format
+
+- CSV, TSV, RSS XML, or ATOM XML, one row per flight (or per origin-destination-date combination), with a header row naming each column.
+- All column headers must be in US English.
+- Unlike the other five catalog types, flights don't have a dedicated ID column. Meta generates the ID automatically from the origin and destination airport codes.
+
+## Column template
+
+| Column | Example |
+| :-- | :-- |
+| `origin_airport` | SFO |
+| `destination_airport` | JFK |
+| `departure_date` | 2026-09-15 |
+| `return_date` | 2026-09-22 |
+| `price` | 249.00 USD |
+| `url` | [https://doughnutlabs.example/flights/sfo-jfk](https://doughnutlabs.example/flights/sfo-jfk) |
+
+<Info>
+  This is a representative subset, not the complete spec: Meta's flight feed also covers fields for number of stops, travel class, and one-way versus round-trip, plus a feedless option that skips the file entirely and pulls flight data from your site directly. Verify the full column list and both setup paths (feed-based and feedless) against Meta's documentation linked above.
+</Info>
+
+## Format rules
+
+- `price` follows the pattern used across every Meta catalog type: a number plus a three-letter ISO 4217 currency code.
+- Dates are typically expected in `YYYY-MM-DD`; confirm against the current template before a first upload, since Meta's exact date format expectations weren't independently verifiable for this page.
+
+## Data and compliance rules
+
+<Warning>
+  - Fares and availability need to match what's actually bookable at the point of click. Airline advertising is also subject to country-specific consumer protection and pricing-disclosure rules (in the US, DOT full-fare advertising rules for air travel); treat that as a separate legal obligation from Meta's own feed accuracy requirement.
+  - Meta's general advertising standards, including its prohibitions on deceptive or misleading claims, apply to flight listings the same as any other catalog.
+</Warning>
+
+## Official documentation
+
+- [Set up a Flight Catalog](https://www.facebook.com/business/help/120987771906806)
+- [Set up a Flight Catalog Using a Feedless Solution](https://www.facebook.com/business/help/1517137811731449)
+- [Advertising Standards, Transparency Center](https://transparency.meta.com/policies/ad-standards/)
+
+## Related resources
+
+- [Meta Commerce catalog templates](/meta-commerce-overview)
+- [Destination catalog CSV template (Meta)](/meta-commerce-destination-csv-template)
+- [Hotel catalog CSV template (Meta)](/meta-commerce-hotel-csv-template)

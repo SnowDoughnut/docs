@@ -1,0 +1,64 @@
+---
+title: "Home listing catalog CSV template (Meta)"
+description: "The column format and compliance rules for a Meta Commerce Manager real estate catalog feed, with a filled-in example row and links to Meta's official documentation. One of six catalog types; see the Meta Commerce catalog overview to pick the right one."
+---
+
+Use this template for real estate listings, for sale or for rent. If you're listing ecommerce products, hotels, vehicles, flights, or destinations instead, see the [Meta Commerce catalog templates](/meta-commerce-overview) overview for the matching type.
+
+<Warning>
+  Meta's own documentation has the authoritative, complete column list for this vertical, and it wasn't fully accessible while researching this page (Meta's help center blocks automated fetches). What's below covers the fields independently confirmed across multiple sources. Confirm the full field list against [Meta's real estate ads documentation](https://developers.facebook.com/documentation/ads-commerce/marketing-api/real-estate-ads/get-started) before building a production feed, since required fields also vary by market.
+</Warning>
+
+<Note>
+  This isn't legal advice. Confirm fair housing compliance with your legal or compliance team before publishing a home listing catalog.
+</Note>
+
+## File format
+
+- CSV, TSV, RSS XML, ATOM XML, or a Google Sheet, one row per listing, with a header row naming each column.
+- Required fields vary by market; confirm the current set for the countries you list in.
+
+## Column template
+
+| Column | Example |
+| :-- | :-- |
+| `home_listing_id` | LIST\_10391 |
+| `name` | 3BR Craftsman near Doughnut Labs HQ |
+| `availability` | for sale |
+| `address` | 250 Sourdough St, San Francisco, CA 94103 |
+| `latitude` | 37.7793 |
+| `longitude` | -122.4193 |
+| `price` | 899000.00 USD |
+| `image_url` | [https://doughnutlabs.example/images/craftsman-listing.jpg](https://doughnutlabs.example/images/craftsman-listing.jpg) |
+| `url` | [https://doughnutlabs.example/listings/craftsman-10391](https://doughnutlabs.example/listings/craftsman-10391) |
+| `num_beds` | 3 |
+| `num_baths` | 2 |
+
+<Info>
+  This is a representative subset, not the complete spec. Verify the full required and optional column list, and any market-specific requirements, against Meta's documentation linked above before a first upload.
+</Info>
+
+## Format rules
+
+- `home_listing_id` is this vertical's unique key; it isn't interchangeable with the other verticals' ID fields.
+- `price` follows the pattern used across every Meta catalog type: a number plus a three-letter ISO 4217 currency code.
+- `availability` should reflect actual listing status (for example, for sale, for rent, sold, off market) rather than being left static once a property transacts.
+
+## Data and compliance rules
+
+<Warning>
+  - Housing ads fall under Meta's Special Ad Category. You have to certify a campaign built on this catalog as a housing ad, and Meta then restricts age, gender, and zip code radius targeting for it, following the 2022 settlement with the US Department of Housing and Urban Development (HUD). This applies to the campaign built on top of the catalog, not the feed file itself, but it affects every ad account running housing ads.
+  - Meta's general advertising standards, including its prohibitions on deceptive or misleading claims, apply to real estate listings the same as any other catalog.
+  - Fair housing law (and equivalent rules outside the US) prohibits discriminatory advertising language regardless of platform; that's a legal obligation independent of Meta's Special Ad Category mechanism.
+</Warning>
+
+## Official documentation
+
+- [Real Estate Ads, Get Started, Meta for Developers](https://developers.facebook.com/documentation/ads-commerce/marketing-api/real-estate-ads/get-started)
+- [Advertising Standards, Transparency Center](https://transparency.meta.com/policies/ad-standards/)
+
+## Related resources
+
+- [Meta Commerce catalog templates](/meta-commerce-overview)
+- [Product catalog CSV template (Meta)](/meta-commerce-product-csv-template)
+- [Customer profile CSV template (Meta)](/customer-profile-csv-template-meta)

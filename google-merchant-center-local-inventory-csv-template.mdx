@@ -1,0 +1,52 @@
+---
+title: "Local inventory feed CSV template (Google Merchant Center)"
+description: "The column format and compliance rules for a Google Merchant Center local inventory feed, with a filled-in example row and links to Google's official documentation. Extends an existing primary Products feed; it doesn't stand alone."
+---
+
+Use this template to show in-store stock and pricing for products you already sell online. Every row has to match a product `id` that's already in your primary Products feed; this feed extends that one rather than replacing it. See the [Google Merchant Center feed templates](/google-merchant-center-overview) overview if you haven't set up the primary feed yet.
+
+<Note>
+  This isn't legal advice. Confirm pricing accuracy with your legal or compliance team before publishing.
+</Note>
+
+## File format
+
+- CSV, TSV, or XML, one row per product per store location.
+- Requires a linked, active primary Products feed; this feed won't work on its own.
+
+## Column template
+
+| Column | Required | Example |
+| :-- | :-- | :-- |
+| `id` | Yes, must match the primary feed's `id` | SKU\_10432 |
+| `store_code` | Yes | SF-DOWNTOWN |
+| `availability` | Yes | in stock |
+| `quantity` | Recommended | 14 |
+| `price` | Recommended | 18.00 USD |
+| `pickup_method` | Optional, for buy-online-pickup-in-store | buy |
+| `pickup_sla` | Required if `pickup_method` is set | same day |
+
+## Format rules
+
+- `id` has to match an item already present in the linked primary feed exactly; a local inventory row with no matching primary feed item is ignored.
+- `availability` uses this feed's own value set: `in_stock`, `limited_availability`, `on_display_to_order`, or `out_of_stock`, which is a different set of values than the Products feed's `availability` attribute uses.
+- `store_code` needs to match the store codes registered in your Business Profile / store locations, not an internal-only code nobody else recognizes.
+
+## Data and compliance rules
+
+<Warning>
+  - In-store price and stock need to reflect reality at each specific location. Showing an item as available when a specific store is sold out is the same category of misrepresentation issue as an inaccurate online price, and can affect account standing the same way.
+  - Because this feed is location-specific, keep it on a fresher update cycle than a slower-moving primary feed; stale local stock data is a common source of a poor in-store pickup experience.
+</Warning>
+
+## Official documentation
+
+- [How to upload your local inventory data to Merchant Center](https://support.google.com/merchants/answer/15182106)
+- [Local inventory data specification](https://support.google.com/merchants/answer/14819809)
+- [About the inventory feed specification](https://support.google.com/merchants/answer/7677785)
+
+## Related resources
+
+- [Google Merchant Center feed templates](/google-merchant-center-overview)
+- [Product feed CSV template (Google Merchant Center)](/google-merchant-center-product-csv-template)
+- [Promotions feed CSV template (Google Merchant Center)](/google-merchant-center-promotions-csv-template)

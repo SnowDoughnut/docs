@@ -1,0 +1,70 @@
+---
+title: "Product catalog CSV template (Meta)"
+description: "The column format and compliance rules for a Meta Commerce Manager product catalog feed, with a filled-in example row and links to Meta's official documentation. One of six catalog types; see the Meta Commerce catalog overview to pick the right one."
+---
+
+Use this template for a standard ecommerce product catalog: physical or digital products sold through Shops, Instagram Shopping, or catalog ads. If you're listing hotels, vehicles, flights, destinations, or real estate instead, see the [Meta Commerce catalog templates](/meta-commerce-overview) overview for the matching type.
+
+<Note>
+  This isn't legal advice. Confirm claims, pricing accuracy, and category eligibility with your legal or compliance team before publishing a catalog.
+</Note>
+
+## File format
+
+- CSV, TSV, RSS XML, ATOM XML, or a Google Sheet. CSV is the simplest to build and edit by hand.
+- One row per item, with a header row naming each column.
+- A single catalog holds one item type only. Don't mix products with hotels, vehicles, or any other catalog type.
+- Meta also supports JSON for programmatic uploads through the Marketing API's batch endpoints, but a hand-built or exported feed almost always uses CSV, TSV, or XML instead.
+
+## Column template
+
+| Column | Required | Example |
+| :-- | :-- | :-- |
+| `id` | Yes | SKU\_10432 |
+| `title` | Yes | Doughnut Labs Starter Mug |
+| `description` | Yes | Ceramic mug, 12oz, dishwasher safe |
+| `availability` | Yes | in stock |
+| `condition` | Yes | new |
+| `price` | Yes | 18.00 USD |
+| `link` | Yes | [https://doughnutlabs.example/products/starter-mug](https://doughnutlabs.example/products/starter-mug) |
+| `image_link` | Yes | [https://doughnutlabs.example/images/starter-mug.jpg](https://doughnutlabs.example/images/starter-mug.jpg) |
+| `brand` | Yes, unless `mpn` or `gtin` is provided instead | Doughnut Labs |
+| `gtin` | Recommended | 0012345678905 |
+| `mpn` | Recommended if no `gtin` | DL-MUG-01 |
+| `google_product_category` | Recommended | Home & Garden \> Kitchen & Dining \> Tableware \> Drinkware |
+| `item_group_id` | Optional, groups variants | mug-starter |
+| `sale_price` | Optional | 14.00 USD |
+| `size` / `color` / `pattern` / `material` | Optional, apparel and similar | / / / |
+
+## Format rules
+
+| Field | Rule |
+| :-- | :-- |
+| `availability` | One of `in stock`, `out of stock`, `preorder`, or `available for order`, exactly as written. |
+| `condition` | One of `new`, `refurbished`, or `used`. |
+| `price` / `sale_price` | Number plus a three-letter ISO 4217 currency code, space-separated: `18.00 USD`, not `$18.00`. |
+| `id` | A unique string up to 100 characters, stable across updates. Changing it drops the item's history and creates what looks like a new item. |
+| `brand`, `gtin`, `mpn` | Provide at least one. If the item has a manufacturer GTIN, provide it; don't guess one if you're not sure it's correct. |
+
+## Data and compliance rules
+
+<Warning>
+  - Meta prohibits fraudulent, misleading, or deceptive listings, and reviews for willful misrepresentation, exaggerated claims, and stolen or scammed payment flows.
+  - Don't list non-physical items (services, subscriptions, digital-only products, rentals) in a Marketplace-facing product catalog; that inventory belongs in a different surface.
+  - Keep pricing on the feed in sync with your actual checkout price. A mismatch is one of the most common causes of catalog items being disapproved.
+  - Repeated or severe violations can restrict your ability to advertise across your whole Business Account, not just the one catalog.
+</Warning>
+
+## Official documentation
+
+- [Catalog reference, Meta for Developers](https://developers.facebook.com/docs/marketing-api/catalog/reference/)
+- [About Commerce Manager](https://www.facebook.com/business/help/2371372636254534)
+- [Advertising Standards, Transparency Center](https://transparency.meta.com/policies/ad-standards/)
+- [Fraud, scams and deceptive practices](https://transparency.meta.com/policies/ad-standards/fraud-scams/fraud-scams-deceptive-practices/)
+
+## Related resources
+
+- [Meta Commerce catalog templates](/meta-commerce-overview)
+- [Hotel catalog CSV template (Meta)](/meta-commerce-hotel-csv-template)
+- [Vehicle catalog CSV template (Meta)](/meta-commerce-vehicle-csv-template)
+- [Product feed CSV template (Google Merchant Center)](/google-merchant-center-product-csv-template)

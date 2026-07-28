@@ -1,0 +1,58 @@
+---
+title: "Promotions feed CSV template (Google Merchant Center)"
+description: "The column format and compliance rules for a Google Merchant Center promotions feed, with a filled-in example row and links to Google's official documentation. Extends an existing primary Products feed; it doesn't stand alone."
+---
+
+Use this template to run a discount or offer tied to products you already sell. Like the local inventory feed, this one extends an existing primary Products feed rather than standing alone; every promotion has to map to product IDs already in that feed. See the [Google Merchant Center feed templates](/google-merchant-center-overview) overview if you haven't set up the primary feed yet.
+
+<Note>
+  This isn't legal advice. Confirm that discount claims are accurate and legally defensible (real reference prices, honest "eligible items" scope) with your legal or compliance team before publishing.
+</Note>
+
+## File format
+
+- CSV, TSV, or XML.
+- Requires a linked, active primary Products feed.
+
+## Column template
+
+| Column | Required | Example |
+| :-- | :-- | :-- |
+| `promotion_id` | Yes | FALL2026-MUGS |
+| `product_applicability` | Yes | specific\_products |
+| `offer_type` | Yes | generic\_code |
+| `generic_redemption_code` | Conditionally required | DOUGHNUT10 |
+| `long_title` | Yes | 10% off Doughnut Labs starter mugs |
+| `promotion_effective_dates` | Yes | 2026-09-01T00:00/2026-09-30T23:59 |
+| `promotion_display_dates` | Recommended | 2026-08-25T00:00/2026-09-30T23:59 |
+| `id` (item mapping) | Yes, per eligible item | SKU\_10432 |
+
+<Info>
+  This is a representative subset. Google's promotions spec has several conditionally required attributes depending on `offer_type` (percentage off, money off, buy-X-get-Y, and others); confirm the exact combination against Google's formatting and attributes FAQ linked below.
+</Info>
+
+## Format rules
+
+- `promotion_id` needs to be unique per promotion and is what ties eligible product rows together.
+- `product_applicability` is either `all_products` or `specific_products`; if it's specific, you also map the individual product `id` values the promotion applies to.
+- Date ranges use an ISO 8601-style start/end format; keep `promotion_effective_dates` (when the discount is actually live) distinct from `promotion_display_dates` (when the promo badge can show ahead of the live date).
+
+## Data and compliance rules
+
+<Warning>
+  - Advertised offers need to be genuinely achievable for a real shopper, not a "50% off" headline that only a small, unstated subset of products qualifies for. That's one of Google's specifically named misrepresentation examples, and it carries the same immediate-suspension risk as inaccurate pricing.
+  - The reference (pre-discount) price shown alongside a promotion needs to be a real, recently offered price, not an inflated one invented to make the discount look bigger. Several jurisdictions also regulate this directly as deceptive pricing, independent of Google's own policy.
+  - Keep the promotion's effective dates accurate. A promotion feed still marked active after the sale has ended is a common, avoidable compliance gap.
+</Warning>
+
+## Official documentation
+
+- [Promotions data specification](https://support.google.com/merchants/answer/2906014)
+- [Promotions feed formatting and attributes FAQ](https://support.google.com/merchants/answer/13507032)
+- [Misrepresentation](https://support.google.com/merchants/answer/6150127)
+
+## Related resources
+
+- [Google Merchant Center feed templates](/google-merchant-center-overview)
+- [Product feed CSV template (Google Merchant Center)](/google-merchant-center-product-csv-template)
+- [Local inventory feed CSV template (Google Merchant Center)](/google-merchant-center-local-inventory-csv-template)
