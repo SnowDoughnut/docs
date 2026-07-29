@@ -160,9 +160,19 @@
             "pages": [
               "ad-copy-standards",
               "creative-review-checklist",
-              "image-and-video-specs",
-              "google-pmax-creative-specs",
-              "google-display-creative-specs",
+              {
+                "group": "Image and video specs",
+                "pages": [
+                  "image-and-video-specs",
+                  "meta-creative-specs",
+                  "tiktok-creative-specs",
+                  "google-pmax-creative-specs",
+                  "linkedin-creative-specs",
+                  "google-display-creative-specs",
+                  "youtube-creative-specs",
+                  "google-search-demandgen-display-specs"
+                ]
+              },
               "landing-page-standards",
               "creative-brief"
             ]
