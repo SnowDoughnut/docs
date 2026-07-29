@@ -1,0 +1,88 @@
+---
+title: "Display creative specs"
+description: "Image, video, and text asset specs for Google responsive display ads, and how they differ from Performance Max."
+---
+
+Every figure on this page comes from Google's own specification pages, checked 28 July 2026. Sources are listed at the bottom.
+
+<Note>
+  Responsive display ads are asset-based. You supply headlines, descriptions, images, and logos; Google assembles them into layouts across the Display Network. You are designing components, not a finished banner.
+</Note>
+
+## Image assets
+
+| Ratio | Recommended | Minimum | Quantity | Required |
+| :-- | :-- | :-- | :-- | :-- |
+| Horizontal **1.91:1** | 1200 × 628 | 600 × 314 | 1–15 (5 recommended) | Yes |
+| Square **1:1** | 600 × 600 | 300 × 300 | 1–15 (5 recommended) | Yes |
+| Logo **1:1** | 1200 × 1200 | 128 × 128 | 1–5 (1 recommended) | No |
+| Logo **4:1** | 1200 × 300 | 512 × 128 | 1–5 (1 recommended) | No |
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1033 400" width="100%" role="img" aria-label="1.91:1 horizontal image asset at 1200 by 628 pixels with minimum size 600 by 314.">
+  <rect width="1033" height="400" fill="#ffffff" />
+
+  <text font-family="ui-sans-serif, system-ui, Segoe UI, Helvetica Neue, Arial, sans-serif" x="210" y="32" fill="#212529" font-weight="650" font-size="16">Responsive display — 1.91:1 image asset</text>
+
+  <rect x="210" y="56" width="573.2" height="300" fill="#f1f3f5" stroke="#adb5bd" stroke-width="2" />
+
+  <text font-family="ui-sans-serif, system-ui, Segoe UI, Helvetica Neue, Arial, sans-serif" x="496.6" y="210" fill="#868e96" font-weight="650" font-size="15" text-anchor="middle">1200 × 628</text>
+  <text font-family="ui-sans-serif, system-ui, Segoe UI, Helvetica Neue, Arial, sans-serif" x="190" y="62" fill="#212529" font-weight="650" font-size="26" text-anchor="end">1.91:1</text>
+  <text font-family="ui-sans-serif, system-ui, Segoe UI, Helvetica Neue, Arial, sans-serif" x="190" y="88" fill="#495057" font-size="15" text-anchor="end">1200 × 628 px</text>
+  <text font-family="ui-sans-serif, system-ui, Segoe UI, Helvetica Neue, Arial, sans-serif" x="190" y="118" fill="#868e96" font-size="11" text-anchor="end">No published safe zone.</text>
+  <text font-family="ui-sans-serif, system-ui, Segoe UI, Helvetica Neue, Arial, sans-serif" x="190" y="132" fill="#868e96" font-size="11" text-anchor="end">Centre the focal subject;</text>
+  <text font-family="ui-sans-serif, system-ui, Segoe UI, Helvetica Neue, Arial, sans-serif" x="190" y="146" fill="#868e96" font-size="11" text-anchor="end">the platform may crop.</text>
+  <text font-family="ui-sans-serif, system-ui, Segoe UI, Helvetica Neue, Arial, sans-serif" x="210" y="382" fill="#868e96" font-size="11.5">Required. Minimum 600 x 314. 1-15 images, 5 recommended.</text>
+</svg>
+
+<Warning>
+  The square recommendation here is **600 × 600**, not the 1200 × 1200 that Performance Max recommends. If you reuse one asset library across both, export the square at 1200 × 1200 — it satisfies both, since it clears the display minimum comfortably.
+</Warning>
+
+## Video assets
+
+| Ratio | Orientation | Length | Quantity | Required |
+| :-- | :-- | :-- | :-- | :-- |
+| **16:9** | Horizontal | Any, 30 seconds preferred | 1–5 (2 recommended) | No |
+| **1:1** | Square | Any, 30 seconds preferred | 1–5 (2 recommended) | No |
+
+## Text assets
+
+| Type | Limit | Quantity | Required |
+| :-- | :-- | :-- | :-- |
+| Headlines | 30 characters | 1–5 | Yes |
+| Long headline | 90 characters | 1 | Yes |
+| Descriptions | 90 characters | 1–5 | Yes |
+| Business name | 25 characters | 1 | Yes |
+| Call to action | Automated | 1 | Yes |
+
+## How display differs from Performance Max
+
+|  | Responsive display | Performance Max |
+| :-- | :-- | :-- |
+| Square recommended | 600 × 600 | 1200 × 1200 |
+| Vertical 4:5 | Not used | 960 × 1200 |
+| Headlines | 1–5 | Up to 15 (11\+ recommended) |
+| Video length | 30 seconds preferred | 10 seconds minimum |
+| Video orientations | 16:9, 1:1 | 16:9, 1:1, 9:16 |
+
+## Working notes
+
+- **Design for unknown crops.** Your assets are recombined into many layouts and sizes. Anything near an edge is at risk; centre the logo and focal subject.
+- **Avoid baked-in text.** Google adds its own headline and description. Text burned into the image competes with them and often reads as clutter at small sizes.
+- **Supply both required ratios properly.** Uploading only 1.91:1 leaves Google to crop a square itself, usually badly.
+
+## Sources
+
+All checked 28 July 2026:
+
+- [Responsive display ads specs and format requirements](https://support.google.com/google-ads/answer/17090561) — Google Ads Help
+- [Google Ads specs: ad formats, sizes, and best practices](https://support.google.com/google-ads/answer/13676244)
+- [Image assets format requirements](https://support.google.com/adspolicy/answer/10347108) — Advertising Policies Help
+
+## Related resources
+
+- [Image and video specs](/image-and-video-specs)
+- [Performance Max creative specs](/google-pmax-creative-specs)
+- [Google Display copy template](/google-display-copy-template)
+- [Creative brief](/creative-brief)
+- [Creative review checklist](/creative-review-checklist)
