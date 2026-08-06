@@ -1,0 +1,27 @@
+---
+title: "Meta Commerce catalog templates"
+description: "Which Meta Commerce Manager catalog type fits a given kind of inventory, and where to find the CSV template for each. Read this first, then open the specific catalog template you need."
+---
+
+Commerce Manager organizes inventory into catalogs, and every catalog holds exactly one type of item. Pick the type below that matches what you're selling, then open its template.
+
+<Warning>
+  A single catalog can only contain one item type. Don't mix products and hotels, or vehicles and home listings, in the same catalog. Create a separate catalog per type instead.
+</Warning>
+
+## Choose a catalog type
+
+| Catalog type | Use it when | ID field | Template |
+| :-- | :-- | :-- | :-- |
+| Products | You're selling physical or digital ecommerce products | `id` | [Product catalog CSV template](/meta-commerce-product-csv-template) |
+| Hotels | You're selling hotel room bookings | `hotel_id` | [Hotel catalog CSV template](/meta-commerce-hotel-csv-template) |
+| Vehicles | You're a dealership listing cars for sale | `vehicle_id` | [Vehicle catalog CSV template](/meta-commerce-vehicle-csv-template) |
+| Flights | You're an airline or travel seller listing flights | Auto-generated from airport codes | [Flight catalog CSV template](/meta-commerce-flight-csv-template) |
+| Destinations | You're promoting a travel destination, not a specific bookable hotel or flight | `destination_id` | [Destination catalog CSV template](/meta-commerce-destination-csv-template) |
+| Home listings | You're listing real estate for sale or rent | `home_listing_id` | [Home listing CSV template](/meta-commerce-home-listing-csv-template) |
+
+## Related resources
+
+- [About Commerce Manager](https://www.facebook.com/business/help/2371372636254534)
+- [Customer profile CSV template (Meta)](/customer-profile-csv-template-meta)
+- [Google Merchant Center feed templates](/google-merchant-center-overview)

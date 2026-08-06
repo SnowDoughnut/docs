@@ -160,7 +160,12 @@
             "pages": [
               "ad-copy-standards",
               "creative-review-checklist",
-              "image-and-video-specs",
+              {
+                "group": "Image and video specs",
+                "pages": [
+                  "image-and-video-specs"
+                ]
+              },
               "landing-page-standards",
               "creative-brief"
             ]
@@ -205,6 +210,12 @@
             "pages": [
               "meta-home",
               {
+                "group": "Creative Specifications",
+                "pages": [
+                  "meta-creative-specs"
+                ]
+              },
+              {
                 "group": "Tutorials",
                 "pages": []
               },
@@ -234,6 +245,15 @@
             "dropdown": "Google",
             "pages": [
               "google-home",
+              {
+                "group": "Creative Specifications",
+                "pages": [
+                  "google-pmax-creative-specs",
+                  "youtube-creative-specs",
+                  "google-display-creative-specs",
+                  "google-search-demandgen-display-specs"
+                ]
+              },
               {
                 "group": "Tutorials",
                 "pages": []
@@ -265,6 +285,12 @@
             "pages": [
               "linked-in-home",
               {
+                "group": "Creative Specifications",
+                "pages": [
+                  "linkedin-creative-specs"
+                ]
+              },
+              {
                 "group": "Tutorials",
                 "pages": []
               },
@@ -294,6 +320,12 @@
             "dropdown": "TikTok",
             "pages": [
               "tik-tok-home",
+              {
+                "group": "Creative Specifications",
+                "pages": [
+                  "tiktok-creative-specs"
+                ]
+              },
               {
                 "group": "Tutorials",
                 "pages": []
@@ -553,6 +585,18 @@
                   "meta-lead-ad-copy-template",
                   "meta-carousel-copy-template"
                 ]
+              },
+              {
+                "group": "Meta Commerce",
+                "pages": [
+                  "meta-commerce-overview",
+                  "meta-commerce-hotel-csv-template",
+                  "meta-commerce-product-csv-template",
+                  "meta-commerce-vehicle-csv-template",
+                  "meta-commerce-flight-csv-template",
+                  "meta-commerce-destination-csv-template",
+                  "meta-commerce-home-listing-csv-template"
+                ]
               }
             ]
           },
@@ -569,6 +613,22 @@
                   "google-demand-gen-copy-template",
                   "google-youtube-copy-template",
                   "google-app-campaign-copy-template"
+                ]
+              },
+              {
+                "group": "Google Merchant Center",
+                "pages": [
+                  "google-merchant-center-overview",
+                  "google-merchant-center-product-csv-template",
+                  "google-merchant-center-vehicle-csv-template",
+                  "google-merchant-center-local-inventory-csv-template",
+                  "google-merchant-center-promotions-csv-template"
+                ]
+              },
+              {
+                "group": "Google Hotel Center",
+                "pages": [
+                  "google-hotel-center-csv-template"
                 ]
               }
             ]

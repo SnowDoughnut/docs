@@ -1,0 +1,80 @@
+---
+title: "Meta creative specs"
+description: "Facebook and Instagram paid creative: Feed image and video, Stories and Reels, carousel, and in-stream, with the 4:5 master that crops to every placement."
+---
+
+Facebook and Instagram paid placements. Current as of 28 July 2026.
+
+## The 4:5 master
+
+Build the Feed asset at **1080 × 1350** and both other common ratios crop straight out of it. Keep anything that must survive inside the green core.
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 480" width="100%" role="img" aria-label="A 4:5 master at 1080 by 1350 with a 1:1 crop at 1080 by 1080 and a 9:16 crop at 759 by 1350 nested inside, leaving a 759 by 1080 core common to all three.">
+  <rect width="880" height="480" fill="#ffffff" />
+
+  <text font-family="ui-sans-serif, system-ui, Segoe UI, Arial, sans-serif" x="300" y="26" fill="#212529" font-weight="650" font-size="15">One 4:5 master → Feed, carousel and Stories/Reels</text>
+
+  <rect x="300" y="40" width="320" height="400" fill="#f1f3f5" stroke="#adb5bd" stroke-width="2" />
+
+  <rect x="300" y="80" width="320" height="320" fill="none" stroke="#1971c2" stroke-width="2" stroke-dasharray="7 5" />
+
+  <rect x="347.5" y="40" width="225" height="400" fill="none" stroke="#1971c2" stroke-width="2" stroke-dasharray="7 5" />
+
+  <rect x="347.5" y="80" width="225" height="320" fill="#2f9e44" fill-opacity=".08" />
+
+  <rect x="347.5" y="80" width="225" height="320" fill="none" stroke="#2f9e44" stroke-width="2.5" />
+
+  <text font-family="ui-sans-serif, system-ui, Segoe UI, Arial, sans-serif" x="460" y="232" fill="#2f9e44" font-weight="650" font-size="11.5" text-anchor="middle">SURVIVES EVERY CROP</text>
+  <text font-family="ui-sans-serif, system-ui, Segoe UI, Arial, sans-serif" x="460" y="249" fill="#2f9e44" font-size="11.5" text-anchor="middle">759 × 1080 px</text>
+  <text font-family="ui-sans-serif, system-ui, Segoe UI, Arial, sans-serif" x="280" y="52" fill="#212529" font-weight="650" font-size="26" text-anchor="end">4:5</text>
+  <text font-family="ui-sans-serif, system-ui, Segoe UI, Arial, sans-serif" x="280" y="76" fill="#495057" font-size="13" text-anchor="end">1080 × 1350 px master</text>
+  <text font-family="ui-sans-serif, system-ui, Segoe UI, Arial, sans-serif" x="280" y="106" fill="#1971c2" font-weight="650" font-size="12" text-anchor="end">1:1 carousel  1080 x 1080</text>
+  <text font-family="ui-sans-serif, system-ui, Segoe UI, Arial, sans-serif" x="280" y="124" fill="#1971c2" font-weight="650" font-size="12" text-anchor="end">9:16 vertical  759 x 1350</text>
+  <text font-family="ui-sans-serif, system-ui, Segoe UI, Arial, sans-serif" x="280" y="150" fill="#868e96" font-size="11" text-anchor="end">Keep logo, headline and CTA</text>
+  <text font-family="ui-sans-serif, system-ui, Segoe UI, Arial, sans-serif" x="280" y="164" fill="#868e96" font-size="11" text-anchor="end">inside the green box.</text>
+  <text font-family="ui-sans-serif, system-ui, Segoe UI, Arial, sans-serif" x="300" y="464" fill="#868e96" font-size="11.5">Geometry only. A 9:16 crop of a 4:5 master is 759 x 1350 — fine for reframing, but export Stories and Reels at 1080 x 1920 for full resolution.</text>
+</svg>
+
+<Warning>
+  Cropping gets you a correctly framed 9:16, not a full-resolution one. For Stories and Reels, shoot or export dedicated vertical creative at 1080 × 1920 rather than upscaling a 759 px crop.
+</Warning>
+
+## Placements
+
+| Format | Ratio | Build at | File | Notes |
+| :-- | :-- | :-- | :-- | :-- |
+| **Feed image** | 1.91:1 to 4:5 | 1080 × 1080 (1:1) or 1080 × 1350 (4:5) | JPG/PNG, max 30 MB | Minimum width 600 px |
+| **Feed video** | 4:5 for mobile, 1:1 supported | 1080 × 1350 | MP4/MOV/GIF | Minimum 1080 × 1080. H.264 video, stereo AAC audio |
+| **Stories / Reels** | 9:16 | 1080 × 1920 | MP4/MOV | Instagram Reels ads can run up to 15 minutes |
+| **Carousel** | 1:1 | 1080 × 1080 per card | JPG/PNG | Up to 10 cards. Same ratio on every card |
+| **In-stream video** | 16:9 | 1920 × 1080 | MP4/MOV | Cut a separate landscape edit |
+
+## Copy limits
+
+| Field | Recommended |
+| :-- | :-- |
+| Primary text | 50–150 characters |
+| Headline | 27 characters |
+
+## Safe zones
+
+On Stories and Reels, keep logos, pricing, disclaimers, and calls to action clear of the **top and bottom interface areas** — the profile row and username sit at the top, the caption and CTA at the bottom.
+
+<Note>
+  Exact pixel extents are not restated here. They vary by placement and by how long your caption runs, and Meta revises them. Check the live safe-zone guides in Ads Manager placement previews before a production run, and preview every placement rather than trusting one.
+</Note>
+
+## Working notes
+
+- **Do not auto-crop Feed creative into Stories.** Build dedicated vertical. Automatic crops put the subject behind the interface.
+- **Design for sound off.** Captions on Feed video are recommended; do not assume audio plays on start.
+- **Carousel cards truncate.** Card text is clipped differently per placement, so preview each one.
+- **Do not pillarbox.** For in-stream, cut a real 16:9 edit rather than adding borders to a vertical file.
+
+## Related resources
+
+- [Image and video specs](/image-and-video-specs)
+- [Meta Carousel copy template](/meta-carousel-copy-template)
+- [Meta static and video copy template](/meta-static-video-copy-template)
+- [Creative brief](/creative-brief)
+- [Creative review checklist](/creative-review-checklist)

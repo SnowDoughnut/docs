@@ -1,0 +1,56 @@
+---
+title: "Destination catalog CSV template (Meta)"
+description: "The column format and compliance rules for a Meta Commerce Manager destination catalog feed, with a filled-in example row and links to Meta's official documentation. One of six catalog types; see the Meta Commerce catalog overview to pick the right one."
+---
+
+Use this template to promote travel destinations broadly, a city or region, rather than a specific bookable hotel or flight. If you're listing ecommerce products, hotels, vehicles, flights, or real estate instead, see the [Meta Commerce catalog templates](/meta-commerce-overview) overview for the matching type.
+
+<Warning>
+  Meta's own documentation has the authoritative, complete column list for this vertical, and it wasn't fully accessible while researching this page (Meta's help center blocks automated fetches). What's below covers the ID field and the general shape of a destination record, independently confirmed. Confirm the full field list against [Meta's destination catalog documentation](https://www.facebook.com/business/help/2043383285936092) before building a production feed.
+</Warning>
+
+<Note>
+  This isn't legal advice. Confirm claims about a destination (safety, travel requirements, pricing) with your legal or compliance team before publishing.
+</Note>
+
+## File format
+
+- CSV, TSV, RSS XML, or ATOM XML, one row per destination, with a header row naming each column.
+- All column headers must be in US English.
+
+## Column template
+
+| Column | Example |
+| :-- | :-- |
+| `destination_id` | DEST\_SF001 |
+| `name` | San Francisco, California |
+| `description` | Explore the Bay Area with Doughnut Labs travel deals |
+| `url` | [https://doughnutlabs.example/destinations/san-francisco](https://doughnutlabs.example/destinations/san-francisco) |
+| `image_url` | [https://doughnutlabs.example/images/san-francisco.jpg](https://doughnutlabs.example/images/san-francisco.jpg) |
+
+<Info>
+  This is a representative subset, not the complete spec. Verify the full required and optional column list against Meta's documentation linked above before a first upload.
+</Info>
+
+## Format rules
+
+- `destination_id` is this vertical's unique key; it isn't interchangeable with `hotel_id`, `id`, or the other verticals' ID fields.
+- Keep `name` and `description` specific to one destination per row rather than combining several places into one listing.
+
+## Data and compliance rules
+
+<Warning>
+  - Meta's general advertising standards, including its prohibitions on deceptive or misleading claims, apply to destination listings the same as any other catalog.
+  - Travel and tourism advertising can be subject to destination-specific regulatory or disclosure requirements (health advisories, entry requirements) depending on where you're advertising; that's a legal question separate from Meta's feed format.
+</Warning>
+
+## Official documentation
+
+- [Set up a Destination catalogue](https://www.facebook.com/business/help/2043383285936092)
+- [Advertising Standards, Transparency Center](https://transparency.meta.com/policies/ad-standards/)
+
+## Related resources
+
+- [Meta Commerce catalog templates](/meta-commerce-overview)
+- [Flight catalog CSV template (Meta)](/meta-commerce-flight-csv-template)
+- [Hotel catalog CSV template (Meta)](/meta-commerce-hotel-csv-template)

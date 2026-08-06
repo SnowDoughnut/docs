@@ -1,0 +1,67 @@
+---
+title: "Hotel catalog CSV template (Meta)"
+description: "The column format and compliance rules for a Meta Commerce Manager hotel catalog feed, with a filled-in example row and links to Meta's official documentation. One of six catalog types; see the Meta Commerce catalog overview to pick the right one."
+---
+
+Use this template for a catalog of bookable hotel properties. If you're listing ecommerce products, vehicles, flights, destinations, or real estate instead, see the [Meta Commerce catalog templates](/meta-commerce-overview) overview for the matching type.
+
+<Note>
+  This isn't legal advice. Confirm pricing accuracy and availability claims with your legal or compliance team before publishing a hotel catalog.
+</Note>
+
+## File format
+
+- CSV, TSV, or XML, one row per hotel property, with a header row naming each column.
+- Fields containing a comma or whitespace need to be wrapped in double quotes.
+- Nested or multi-value fields (address, neighborhood, images) can be provided either as a JSON-encoded value in a single column, or split into separate "flattened" columns using JSON-path-style names (for example, `address.region` and `address.country`). Pick one convention and use it consistently; a hand-built CSV almost always uses the flattened columns.
+- Upload once or on a recurring schedule (hourly, daily, or weekly).
+
+## Column template
+
+| Column | Example |
+| :-- | :-- |
+| `hotel_id` | HTL\_1029 |
+| `name` | Doughnut Labs Grand Hotel |
+| `description` | Downtown hotel near the convention center |
+| `url` | [https://doughnutlabs.example/hotels/grand-hotel](https://doughnutlabs.example/hotels/grand-hotel) |
+| `image[0].url` | [https://doughnutlabs.example/images/grand-hotel-01.jpg](https://doughnutlabs.example/images/grand-hotel-01.jpg) |
+| `address.addr1` | 100 Batter Street |
+| `address.city` | San Francisco |
+| `address.region` | CA |
+| `address.country` | US |
+| `address.postal_code` | 94103 |
+| `latitude` | 37.7793 |
+| `longitude` | -122.4193 |
+| `base_price` | 189.00 USD |
+| `star_rating` | 4 |
+
+<Info>
+  This isn't an exhaustive field list. Meta's hotel spec includes additional optional attributes (amenities, neighborhood, brand affiliation, loyalty program details, and more); confirm the complete current list against Meta's own documentation before a first upload.
+</Info>
+
+## Format rules
+
+- `hotel_id` is the catalog's unique key for this vertical; other verticals use a different ID field (`id` for products, `vehicle_id` for vehicles, and so on), so don't reuse an ID scheme across catalog types.
+- `base_price` follows the same pattern as a product price: a number plus a three-letter ISO 4217 currency code.
+- `address.country` should be the two-letter ISO 3166-1 alpha-2 country code, consistent with how country is formatted elsewhere in this knowledge base's audience CSV templates.
+
+## Data and compliance rules
+
+<Warning>
+  - List rates and availability that actually match what a guest would be quoted at booking. A feed price that doesn't match the booking flow is a misrepresentation issue, the same category of violation that gets ecommerce listings disapproved.
+  - Meta's general advertising standards (fraud, scams, and deceptive practices) apply to hotel listings the same as any other catalog.
+  - Keep the catalog current. A stale feed showing rooms as available when they're sold out is a common source of a poor guest experience and platform enforcement.
+</Warning>
+
+## Official documentation
+
+- [Hotel Ads, Catalog & Feed, Meta for Developers](https://developers.facebook.com/docs/marketing-api/hotel-ads/catalog/)
+- [About Commerce Manager](https://www.facebook.com/business/help/2371372636254534)
+- [Advertising Standards, Transparency Center](https://transparency.meta.com/policies/ad-standards/)
+
+## Related resources
+
+- [Meta Commerce catalog templates](/meta-commerce-overview)
+- [Product catalog CSV template (Meta)](/meta-commerce-product-csv-template)
+- [Destination catalog CSV template (Meta)](/meta-commerce-destination-csv-template)
+- [Hotel properties feed CSV template (Google Hotel Center)](/google-hotel-center-csv-template)

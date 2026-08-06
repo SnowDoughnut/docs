@@ -1,0 +1,70 @@
+---
+title: "Product feed CSV template (Google Merchant Center)"
+description: "The column format and compliance rules for a Google Merchant Center primary product feed, with a filled-in example row and links to Google's official documentation. The foundation feed other Merchant Center feed types extend or sit alongside."
+---
+
+Use this template for the primary product feed that powers Shopping ads and free listings. It's the foundation feed other Merchant Center feed types build on; see the [Google Merchant Center feed templates](/google-merchant-center-overview) overview to check whether you actually need one of those instead.
+
+<Note>
+  This isn't legal advice. Confirm claims, pricing accuracy, and category eligibility with your legal or compliance team before publishing a feed.
+</Note>
+
+## File format
+
+- A text file, tab-separated (`.txt`) or comma-separated (`.csv`), or an XML file. Google's own guidance leans toward TSV or XML for a hand-built feed; a Google Sheet is also a supported source.
+- One row per product, with a header row using Google's exact attribute names.
+- Minimum submission frequency is every 30 days; Google recommends updating daily so price and availability stay accurate.
+- Google also accepts a direct content API (JSON) connection for programmatic uploads, and this is what most ecommerce platforms use behind the scenes. A hand-built or exported flat file uses TSV, CSV, or XML instead.
+
+## Column template
+
+| Attribute | Required | Example |
+| :-- | :-- | :-- |
+| `id` | Yes | SKU\_10432 |
+| `title` | Yes | Doughnut Labs Starter Mug |
+| `description` | Yes | Ceramic mug, 12oz, dishwasher safe |
+| `link` | Yes | [https://doughnutlabs.example/products/starter-mug](https://doughnutlabs.example/products/starter-mug) |
+| `image_link` | Yes | [https://doughnutlabs.example/images/starter-mug.jpg](https://doughnutlabs.example/images/starter-mug.jpg) |
+| `price` | Yes | 18.00 USD |
+| `availability` | Yes | in stock |
+| `brand` | Required for most categories | Doughnut Labs |
+| `gtin` | Required if the manufacturer assigned one | 0012345678905 |
+| `mpn` | Required if there's no `gtin` (with `brand`) | DL-MUG-01 |
+| `condition` | Recommended | new |
+| `google_product_category` | Recommended | Home & Garden \> Kitchen & Dining \> Tableware \> Drinkware |
+| `item_group_id` | Optional, groups variants | mug-starter |
+| `sale_price` | Optional | 14.00 USD |
+| `shipping` | Conditionally required, most countries | US:CA:Standard:5.00 USD |
+
+## Format rules
+
+| Field | Rule |
+| :-- | :-- |
+| `availability` | One of `in stock`, `out of stock`, or `preorder`. |
+| `condition` | Submitted in English: `new`, `refurbished`, or `used`. |
+| `price` / `sale_price` | Number plus a currency code, matching the currency of the country you're targeting. |
+| Identifiers | Provide an accurate `gtin` when the product genuinely has one. Don't submit a GTIN you're not sure is correct; an incorrect one is worse than none. If there's no GTIN, provide both `brand` and `mpn` instead. |
+| `weight` | Only needed if your account's shipping settings calculate cost by product weight. |
+
+## Data and compliance rules
+
+<Warning>
+  - Misrepresentation triggers immediate account suspension on detection, with no warning and no grace period. It covers inaccurate pricing (the feed price not matching what's shown at checkout), unachievable offers, and misleading claims about the product, seller, or transaction.
+  - Four content categories are flatly prohibited (no compliance path): counterfeit goods, dangerous products, products that enable dishonest behavior, and inappropriate content. Eight other categories are restricted, meaning they can run under specific conditions rather than being banned outright.
+  - Your account also needs consistent business information across your website and Merchant Center account, working links to shipping/refund/privacy policies, and a checkout flow that's fully functional and served over HTTPS.
+</Warning>
+
+## Official documentation
+
+- [Product data specification](https://support.google.com/merchants/answer/7052112)
+- [About unique product identifiers](https://support.google.com/merchants/answer/160161)
+- [Misrepresentation](https://support.google.com/merchants/answer/6150127)
+- [Fixing Merchant Center warnings and account suspensions](https://support.google.com/merchants/answer/13693195)
+
+## Related resources
+
+- [Google Merchant Center feed templates](/google-merchant-center-overview)
+- [Vehicle ads feed CSV template (Google Merchant Center)](/google-merchant-center-vehicle-csv-template)
+- [Local inventory feed CSV template (Google Merchant Center)](/google-merchant-center-local-inventory-csv-template)
+- [Promotions feed CSV template (Google Merchant Center)](/google-merchant-center-promotions-csv-template)
+- [Product catalog CSV template (Meta)](/meta-commerce-product-csv-template)

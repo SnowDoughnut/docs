@@ -1,0 +1,67 @@
+---
+title: "Hotel properties feed CSV template (Google Hotel Center)"
+description: "The column format and rules for a Google Hotel Center property feed, with a filled-in example row and links to Google's official documentation. This is a different Google product from Merchant Center, not a Merchant Center feed type."
+---
+
+<Warning>
+  This isn't a Merchant Center feed. Hotel inventory runs through a separate Google product, Hotel Center, feeding Hotel Ads and Performance Max for travel goals campaigns. If you're looking for the Products, Vehicle ads, Local inventory, or Promotions feed, see the [Google Merchant Center feed templates](/google-merchant-center-overview) instead. This page is the Google-side equivalent of the [Meta hotel catalog template](/meta-commerce-hotel-csv-template), not a sibling of the Merchant Center pages.
+</Warning>
+
+Use this template for a hotel property feed: the physical details of each property (name, address, location, rating), separate from live pricing and availability, which Hotel Ads and Performance Max for travel goals pull from your booking system or a connected rates feed.
+
+<Note>
+  This isn't legal advice. Confirm pricing and availability accuracy with your legal or compliance team before publishing.
+</Note>
+
+## File format
+
+- CSV or XML.
+- Columns can appear in any order, but column names have to match Google's expected names exactly, and every value in a row must be comma-separated in a CSV file.
+- If none of your properties have a value for an optional column, you can omit that column entirely; a required column can't be omitted even if it's sparsely populated.
+- Linking a Hotel Center account for use in a Performance Max for travel goals campaign is currently capped at 100 properties; larger portfolios need the Hotel API instead of a Hotel Center-linked feed.
+
+## Column template
+
+| Column | Example |
+| :-- | :-- |
+| Property ID | HTL\_1029 |
+| Name | Doughnut Labs Grand Hotel |
+| Address | 100 Batter Street |
+| City | San Francisco |
+| Country | US |
+| Latitude | 37.7793 |
+| Longitude | -122.4193 |
+| Phone number | \+14155550142 |
+| Website URL | [https://doughnutlabs.example/hotels/grand-hotel](https://doughnutlabs.example/hotels/grand-hotel) |
+| Star rating | 4 |
+
+<Info>
+  This is a representative subset, not the complete spec. Verify the full required and optional column list against Google's own hotel list feed documentation before a first upload, since exact column names and casing matter for a successful import.
+</Info>
+
+## Format rules
+
+- Country should follow the same two-letter ISO 3166-1 alpha-2 pattern used elsewhere in this knowledge base's platform templates.
+- Phone number is most reliably matched in E.164 format (leading `+`, country code, digits only), consistent with the format used on the audience CSV templates in this knowledge base.
+- This feed carries property details, not price. Rates and availability come from a separate connection (your booking engine or a rates feed), so don't expect a price column here the way there is on a Merchant Center or Meta commerce feed.
+
+## Data and compliance rules
+
+<Warning>
+  - Property details need to match reality: an address, star rating, or amenity claim that doesn't hold up is a misrepresentation risk, the same category of issue that affects Merchant Center listings.
+  - Rates shown through connected pricing need to match what a guest is actually quoted at booking.
+  - Performance Max for travel goals caps a Hotel Center-linked account at 100 properties; a larger portfolio silently won't work through this path and needs the Hotel API instead, which is worth confirming before you build a process around Hotel Center linkage.
+</Warning>
+
+## Official documentation
+
+- [How to set up your hotel inventory](https://support.google.com/hotelprices/answer/9218458)
+- [Set Up a Hotel List in XML](https://developers.google.com/hotels/hotel-prices/dev-guide/hlf)
+- [Integration overview, Hotel Prices](https://developers.google.com/hotels/hotel-prices/dev-guide/data-feeds)
+- [About Performance Max for travel goals](https://support.google.com/google-ads/answer/12200336)
+
+## Related resources
+
+- [Hotel catalog CSV template (Meta)](/meta-commerce-hotel-csv-template)
+- [Google Merchant Center feed templates](/google-merchant-center-overview)
+- [Meta Commerce catalog templates](/meta-commerce-overview)
