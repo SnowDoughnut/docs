@@ -1,0 +1,125 @@
+---
+title: "SEO and GEO concepts"
+description: "How search engines and AI answer engines choose what to show, what changes when a model writes the answer instead of listing links, and why a small set of deeply maintained articles beats a large library of thin ones. Read this before writing an article brief."
+---
+
+Search used to end with a list of links. Increasingly it ends with an answer, written by a model, that cites a handful of sources. Both still happen, often on the same query, so the work splits into two related jobs.
+
+**SEO** is the work of getting a page found, ranked, and clicked in a results list.
+
+**GEO**, generative engine optimization, is the work of getting a page retrieved, trusted, and cited when a model writes the answer instead.
+
+They overlap on most of the fundamentals. A page nobody can crawl, that answers nothing specific, written by nobody in particular, fails at both. Where they diverge is what the destination looks like: a ranked page competes for a click, a cited passage competes to be the source a model quotes. That difference changes how you structure a page, how you prove a claim, and how often you go back and update it.
+
+## How a generative engine picks a source
+
+The mechanism is worth understanding, because most GEO advice makes sense only once you can picture it.
+
+<Steps>
+  <Step title="A question comes in">
+    A person asks something in natural language. It is usually longer and more specific than a search query: not "doughnut logistics" but "how do I stop doughnuts going stale between the bakery and the customer."
+  </Step>
+  <Step title="The engine retrieves candidate passages">
+    It searches an index and pulls back chunks of text, not whole pages. A chunk might be one section of one article. The rest of your page is not in the room.
+  </Step>
+  <Step title="It assembles an answer from a few sources">
+    A typical answer draws on a small number of domains. Most of what was retrieved does not make it in.
+  </Step>
+  <Step title="It cites what it used">
+    The citation is the visible outcome. It goes to the source that supplied the specific fact, number, or phrasing the answer needed.
+  </Step>
+</Steps>
+
+Two consequences follow from this, and they drive most of what the [article standards](/article-standards) ask for.
+
+**You are optimizing passages, not pages.** A section that only makes sense after reading the three sections above it is a weak candidate for retrieval, because it will be pulled out of context. A section that opens by answering its own heading, then expands, survives extraction intact.
+
+**You are competing to be the most quotable source, not the most complete one.** A model assembling an answer needs a number, a definition, a named mechanism, or a sentence worth quoting. A page full of accurate but general prose gives it nothing to lift.
+
+## What actually moves citations
+
+Controlled testing on this is thinner than the volume of advice suggests, but the findings that do exist point in a consistent direction.
+
+The original GEO study tested content changes across roughly 10,000 queries and found that the tactics that lifted visibility most were **adding quotations from credible sources, adding relevant statistics, and citing sources for claims**. Keyword density did nothing. A later study on content structure found separate gains from how a page is organized: heading hierarchies three to five levels deep, sections in the 150 to 300 word range, and a meaningful share of content in lists and tables that a model can extract cleanly.
+
+The practical reading of this is unglamorous. Say something specific, attribute it, and structure it so a machine can lift one part without breaking it.
+
+<Warning>
+  Treat the specific numbers in this research as direction, not as targets to hit exactly. The engines change, the studies are young, and a page written to satisfy a word count rather than a reader will read like it. The [article standards](/article-standards) turn these findings into defaults your team can adjust.
+</Warning>
+
+## Topical and entity authority
+
+A single well-optimized page does not make a model trust you. Authority is built across your whole digital presence, and it comes in two forms that are easy to confuse.
+
+**Topical authority** is depth across a subject. It is what a model infers when your site covers a topic thoroughly, consistently, and in a way that connects: a cluster of related articles that link to each other and cover the question, its sub-questions, and its edges. One article on doughnut freshness is a page. Fifteen connected articles on doughnut logistics, storage, shipping tolerances, and shelf life is a claim to know the subject.
+
+**Entity authority** is whether the model can identify who you are and match you to a consistent set of facts across the web. An entity is a thing a model recognizes as a distinct object: a company, a person, a product. Entity authority is built by being described the same way everywhere: the same company name, the same author names, the same product names, on your site, your LinkedIn page, your company profiles, your press coverage.
+
+The two work together. Topical authority tells a model you know the subject. Entity authority tells it who "you" are, so the knowing attaches to something.
+
+<Info>
+  AI answer engines lean toward third-party sources over brand-owned pages. A neutral comparison or a review on a site you do not control is more likely to be cited than your own product page. That is a reason to invest in being mentioned elsewhere, not a reason to skip your own articles: your articles are what those third parties read, cite, and repeat.
+</Info>
+
+## The new information test
+
+The single most useful question to ask before writing anything is what a reader gets here that they cannot get from the model directly.
+
+A model can already summarize what is generally known. An article that restates general knowledge competes with the answer the model would have produced anyway, and it gives the model no reason to cite it. An article that carries something the model cannot generate is a different proposition.
+
+Information that qualifies:
+
+- Original data you collected, even in small quantity.
+- A number, benchmark, or price you can source and stand behind.
+- First-hand experience of doing the thing, with the specifics that only come from having done it.
+- A named framework, method, or way of deciding that did not exist before you wrote it down.
+- A direct quote from someone with standing to say it.
+- A position on something contested, argued rather than asserted.
+
+The [article brief](/article-brief) asks for this explicitly, in a field called new information, because an article that cannot answer it is usually an article that should not be written.
+
+## Hero articles: 20 areas of authority
+
+Most content libraries are built the wrong way round. A team picks topics with traffic potential, publishes as many as it can, then watches most of them decay untouched. The result is a large number of pages, each slightly out of date, that collectively make the site harder to trust rather than easier.
+
+The alternative is to work from a hard cap. Pick a maximum of 20 areas where you can genuinely be the best answer available, write one article for each, and maintain them properly and permanently. These are your **hero articles**. Everything else you publish is a **supporting article**: useful, but held to a lower maintenance bar.
+
+The selection test is not search volume. It is this:
+
+> What question or problem can we answer better than anyone else?
+
+Better means one of three things. You know something others do not, because of data you have or work you have done. You have done it more times than anyone writing about it. Or you have a genuine position on a contested question that nobody else is stating clearly.
+
+Twenty is a cap rather than a target. A team that can only defend six areas has six hero articles, and six well-maintained articles will outperform twenty that nobody has touched since launch.
+
+<Info>
+  Freshness is measurable and it is unforgiving. Analyses of AI citations on commercial queries put the large majority on pages updated within the past year, and well over half on pages updated within six months. A hero article that has not been touched in eighteen months is not a hero article, whatever the register says.
+</Info>
+
+The [article library](/article-library-overview) is where the areas get chosen and the articles get tracked, and the [article maintenance process](/article-maintenance-process) is the cycle that keeps them current.
+
+## How this connects to the rest of the system
+
+An article sits inside the same set of documents as every other piece of work here.
+
+| Document | What it contributes |
+| :-- | :-- |
+| [Marketing campaign brief](/marketing-campaign-brief) | The campaign an article supports, when it belongs to one |
+| [Customer profile library](/customer-profile-library-overview) | Who the article is written for, linked rather than re-described |
+| [Article brief](/article-brief) | The strategy for one article: the question, the new information, the outline |
+| [Article writing template](/article-writing-template) | Where the article is drafted, with the metadata that ships with it |
+| [Creative brief](/creative-brief) | Any diagram, illustration, or photography the article needs |
+| [Brand voice and tone](/brand-voice-and-tone) | How the article sounds |
+
+## Related resources
+
+- [**Article brief concepts**](/article-brief-concepts) The reasoning behind each section of the brief.
+- [**Article brief**](/article-brief) The fill-in workbook for a single article.
+- [**Article standards**](/article-standards) Length, heading hierarchy, structure, and metadata defaults.
+- [**Article library overview**](/article-library-overview) How hero and supporting articles are chosen, named, and tracked.
+- [**GEO checklist**](/geo-checklist) The pre-publish pass for citability.
+
+<Info>
+  The research referenced on this page: Aggarwal et al., [GEO: Generative Engine Optimization](https://arxiv.org/abs/2311.09735) (KDD 2024), the source of the quotation, statistics, and cited-sources findings. [Structural Feature Engineering for Generative Engine Optimization](https://arxiv.org/html/2603.29979v1), the source of the heading depth, section length, and structured-content findings. Freshness figures are drawn from published industry analyses of AI citations rather than from a controlled study, so treat them as an indication of direction.
+</Info>

@@ -1,0 +1,356 @@
+---
+title: "Article brief"
+description: "A fill-in workbook for a single article: the question it answers better than anyone, the new information it carries, who it is for, its outline, its proof, and the date it gets updated next. Fill this in before anyone starts writing."
+---
+
+_Fill in the workbook top to bottom. Each section has a concept review dropdown that explains why the section exists, so you can decide how to answer it, not what to answer._
+
+<Note>
+  Complete the core sections. They are the minimum a writer needs to draft without asking questions. Open the optional sections only where they apply. If a link does not exist yet, leave the field and note who owns creating it.
+</Note>
+
+_Greyed text marked_ `E.g. `_is an example. Delete it and replace it with your own. Examples throughout use Doughnut Labs, a company that sells Doughnut Technology, so you can see one filled-in version of the whole brief._
+
+<Steps>
+  <Step title="Answer the two hard questions first">
+    The authority question and the new information. If neither has a real answer, stop here: this article does not need to exist yet.
+  </Step>
+  <Step title="Fill in the core sections">
+    Reader, questions, entities, message, proof, outline, links, publishing plan, and maintenance plan.
+  </Step>
+  <Step title="Add the optional sections that apply">
+    Current answer audit, objections, author credibility, creative requirements, distribution.
+  </Step>
+  <Step title="File it and hand it over">
+    Save the brief to the [article brief library](/article-brief-library), add the article to the right register, then hand it to the writer with the [article writing template](/article-writing-template).
+  </Step>
+</Steps>
+
+## Core sections
+
+### Owner and team
+
+| Role | Fill in |
+| :-- | :-- |
+| [Owner](/glossary#owner) | _E.g. Priya Nadan_ |
+| Writer | _E.g. Jordan Bell_ |
+| Editor | _E.g. Sam Okafor_ |
+| Subject matter expert | _E.g. Lin Alvarez, Head of Platform_ |
+| \[add row\] |  |
+
+<Accordion title="Concept review: Owner and team">
+  One person owns the article from brief to published to maintained. That is a longer commitment than most briefs carry, because an article does not finish at publication. Someone has to answer questions during drafting, make the call when the outline and the draft disagree, and still be accountable when the update date comes round.
+
+  The subject matter expert is worth naming separately from the writer even when they are the same person. An article that rests on specialist knowledge needs a named source for that knowledge, both so the writer knows who to ask and so the published piece can credit someone real.
+</Accordion>
+
+### Article tier
+
+| Field | Fill in |
+| :-- | :-- |
+| Tier | _E.g. Hero_ |
+| Authority area (hero only) | _E.g. Deployment pipeline decay_ |
+| Register ID | _E.g. HERO-04_ |
+
+<Accordion title="Concept review: Article tier">
+  A [hero article](/glossary#hero-article) is one of a capped set the team commits to keeping current indefinitely. A [supporting article](/glossary#supporting-article) is everything else: useful, published, reviewed less often, and allowed to be retired.
+
+  The tier is a resourcing decision as much as an editorial one. It sets how much research the article gets, how often someone returns to it, and how hard the bar is for publishing it at all. Deciding it at brief stage rather than after publication is what keeps the hero set from quietly expanding until nothing in it is actually maintained. The [article library overview](/article-library-overview) covers how areas are chosen.
+</Accordion>
+
+### The authority question
+
+**What question or problem does this article answer better than anyone else, and why us?**
+
+_E.g. Question: why do deployment pipelines that worked at launch start failing months later, and how do you catch it early?_
+
+_E.g. Why us: we run pipeline telemetry for 400 engineering teams, so we can show the actual decay curve rather than describing the concept. Nobody publishing on this has the data._
+
+<Accordion title="Concept review: The authority question">
+  Most content planning starts with what people are searching for. That tells you a question is being asked. It does not tell you that you are the right one to answer it, and an article written without a claim to answer it well ends up restating what is already freely available.
+
+  Answering better tends to rest on one of three foundations: knowing something others do not because of data or access you have, having done the thing far more often than the people writing about it, or holding a clear position on a question that others hedge. Naming which one applies is what separates a topic from an article.
+
+  A brief that cannot fill this in has produced a useful result. It has found a topic that is not yet yours to own, which is worth knowing before a writer spends a week on it.
+</Accordion>
+
+### New information
+
+**What does a reader get here that they could not get by asking an AI model directly?**
+
+_E.g. The decay curve from our own telemetry: median time from green pipeline to first silent failure is 94 days across 400 teams. Nobody has published this number. Plus the four checks we run internally, named and explained._
+
+<Accordion title="Concept review: New information">
+  A language model can already summarize what is generally known, instantly and for free. An article that does the same thing is competing with the answer the reader would have got anyway, and it offers an answer engine nothing worth citing, because there is no fact in it that originated anywhere specific.
+
+  What qualifies varies a lot by team. Original data, a sourced number, first-hand experience with the specifics only doing the work produces, a named method, a direct quote from someone with standing, or an argued position on something contested. Size matters less than specificity: one benchmark from your own operations can carry an article that several paragraphs of accurate generality cannot.
+</Accordion>
+
+### Reader
+
+**Which customer profile is this article for? Link the entry from the [customer profile library](/customer-profile-library-overview).**
+
+_E.g. [Mid-market DevOps leads](https://link)_
+
+**What do they already know, and what do they believe that this article has to work against?**
+
+_E.g. They know pipelines need maintenance. They believe a passing build means a healthy pipeline, which is the belief the article has to dismantle._
+
+<Accordion title="Concept review: Reader">
+  Linking the profile rather than describing one keeps a single definition of that reader across every article, campaign, and page, so nobody maintains two drifting versions of the same person.
+
+  The second question does the work the profile cannot. A profile places someone in a segment. What they currently believe gives a writer something to push against, and it usually determines the opening: an article written for someone who already accepts the premise starts in a completely different place from one written for someone who does not.
+</Accordion>
+
+### The questions being asked
+
+| Field | Fill in |
+| :-- | :-- |
+| Primary question, in the reader's words | _E.g. "Why did my deploy pipeline start failing when nothing changed?"_ |
+| Related questions the article should answer | _E.g. "How often should I audit a pipeline?" "What does silent failure look like?"_ |
+| Search terms | _E.g. deployment pipeline failure, pipeline decay, CI pipeline maintenance_ |
+| \[add row\] |  |
+
+<Accordion title="Concept review: The questions being asked">
+  Someone typing three words into a search box and someone typing a full sentence into a chat window usually want the same thing, but the sentence reveals far more about what they actually need. Writing the question in the reader's own words gives the writer something to answer and often supplies the article's opening line.
+
+  The terms and the questions do different jobs downstream. Terms shape the title, the slug, and the metadata. Questions shape the headings, since a heading that poses a real question and then answers it directly underneath is the unit an answer engine can lift cleanly.
+</Accordion>
+
+### Entities
+
+| Field | Fill in |
+| :-- | :-- |
+| Primary entity | _E.g. Doughnut Technology (product)_ |
+| Supporting entities | _E.g. Doughnut Labs (company), deployment pipeline (concept), Priya Nadan (author)_ |
+| Terms this article must define | _E.g. Silent failure, pipeline decay_ |
+
+<Accordion title="Concept review: Entities">
+  An [entity](/glossary#entity) is something an engine recognizes as a distinct object with facts attached: a company, a person, a product, a concept. Listing them serves two purposes.
+
+  It keeps naming consistent. A product called three different things across five articles produces three weakly-supported entities rather than one well-supported one, and consistency across your site and your external profiles is what entity authority is built from.
+
+  It also surfaces what the article has to define. A term used throughout an article but never explained assumes context the reader may not have, and gives a retrieval system nothing to match the passage against.
+</Accordion>
+
+### Key message and angle
+
+| Field | Fill in |
+| :-- | :-- |
+| The one thing a reader should leave with | _E.g. A passing build tells you nothing about pipeline health. Decay is silent and it starts around three months._ |
+| The angle | _E.g. Contrarian: the green checkmark is the problem, not the reassurance._ |
+| What this article is not about | _E.g. Choosing a CI tool. Migration. Cost optimization._ |
+
+<Accordion title="Concept review: Key message and angle">
+  The message is the one idea a reader should carry away, not a list of everything true the article could say. Articles that try to land four messages usually land none, and they are hard to structure because nothing is clearly the spine.
+
+  The "not about" line does more work than it looks like it should. Articles sprawl during drafting, usually because a related and genuinely interesting subject shows up halfway through. Naming the boundary in advance gives the writer and the editor a shared basis for cutting it, and often reveals the second article that should be written instead.
+</Accordion>
+
+### Proof
+
+**What specific evidence will this article rest on? Gather it before drafting.**
+
+| Type | Detail | Source |
+| :-- | :-- | :-- |
+| Statistic | _E.g. Median 94 days to first silent failure_ | _E.g. Doughnut Labs internal telemetry, 400 teams, 2027_ |
+| Quote | _E.g. "We had green builds for four months while the deploy step did nothing."_ | _E.g. VP Engineering, named customer, permission granted_ |
+| External citation | _E.g. 2027 State of DevOps report, pipeline reliability section_ | _E.g. [link](https://link)_ |
+| Original data | _E.g. Decay curve chart, teams by month_ | _E.g. Owned by Lin Alvarez, needs creative brief_ |
+| \[add row\] |  |  |
+
+<Accordion title="Concept review: Proof">
+  Proof gathered after a draft exists tends to be proof found to support sentences that are already written, which is how an article ends up with a citation that does not quite say what the sentence claims. Gathering it first shapes what the article can honestly say, and sometimes changes the argument.
+
+  This is also the section with the clearest evidence behind it. In controlled testing across roughly 10,000 queries, adding credible quotations, relevant statistics, and citations for claims produced the largest measured gains in whether content was used in generated answers. Keyword density produced nothing. Listing proof here is what makes it likely to actually appear in the finished piece.
+
+  Note what still needs permission or verification. A testimonial without sign-off and a statistic you cannot source are both liabilities that are much cheaper to catch now.
+</Accordion>
+
+### Outline
+
+**The working H1 and the H2 sections underneath it. One H1, always.**
+
+| Level | Heading | What this section answers |
+| :-- | :-- | :-- |
+| H1 | _E.g. Why deployment pipelines fail after 94 days_ | _E.g. The whole article_ |
+| H2 | _E.g. What silent pipeline failure looks like_ | _E.g. How do I recognize it?_ |
+| H2 | _E.g. The 94-day decay curve_ | _E.g. When does it start?_ |
+| H2 | _E.g. Four checks that catch it early_ | _E.g. What do I do about it?_ |
+| H2 | _E.g. How often to audit a pipeline_ | _E.g. How often should I check?_ |
+| \[add row\] |  |  |
+
+<Accordion title="Concept review: Outline">
+  Agreeing the structure at brief stage is cheaper than agreeing it at draft stage, where a structural disagreement means rewriting rather than rearranging. It also puts the shape of the argument in the open early, where a missing section, or a section that does not belong, is easy to see.
+
+  There is a retrieval reason as well. Sections are the unit an answer engine pulls out and quotes, so an outline is a decision about which self-contained answers the article will contain. Headings that each pose and answer a real question produce a very different article from headings that only make sense read in sequence. The third column exists to test that: a heading with no question behind it is usually a heading that will not stand alone.
+
+  The [article standards](/article-standards) cover hierarchy rules and how deep to go.
+</Accordion>
+
+### Internal links
+
+| Direction | Page | Why |
+| :-- | :-- | :-- |
+| Link out to | _E.g. [Pipeline audit checklist](https://link)_ | _E.g. The natural next action_ |
+| Link out to | _E.g. [What is Doughnut Technology](https://link)_ | _E.g. Defines the primary entity_ |
+| Link in from | _E.g. [CI/CD hub page](https://link)_ | _E.g. Cluster parent_ |
+| \[add row\] |  |  |
+
+<Accordion title="Concept review: Internal links">
+  A connected cluster of articles is what topical authority looks like in practice, and links are the connection. Deciding them here means the cluster gets built on purpose rather than assembled later out of whatever happened to get published, and it catches the case where a planned article overlaps one that already exists.
+
+  The inbound links matter at least as much as the outbound ones. An article nothing points at is isolated however good it is, and the pages that should point at it are usually obvious at brief stage and forgotten by publication.
+</Accordion>
+
+### Publishing plan
+
+| Field | Fill in |
+| :-- | :-- |
+| Target publish date | _E.g. 2027-10-14_ |
+| Category or cluster | _E.g. Pipeline reliability_ |
+| Intended slug | _E.g. /blog/deployment-pipeline-decay_ |
+| Target length | _E.g. 1,800 to 2,400 words_ |
+| Format | _E.g. Long-form explainer with one original chart_ |
+
+<Accordion title="Concept review: Publishing plan">
+  These are the decisions a writer needs before drafting and a developer needs before publishing. Fixing the slug and the category early keeps the article inside a coherent structure, so it does not end up filed wherever there was room on the day.
+
+  The full metadata that ships with the page, meta title, meta description, schema type, author, and the rest, is written in the [article writing template](/article-writing-template) rather than here, so the published values live in one place with the draft they belong to.
+
+  Length is a target. It is worth setting because it tells a writer roughly what depth is expected, and because an article that runs to three times its brief usually contains a second article. The [article standards](/article-standards) hold the defaults by article type.
+</Accordion>
+
+### Maintenance plan
+
+| Field | Fill in |
+| :-- | :-- |
+| Review cadence | _E.g. Quarterly_ |
+| First review date | _E.g. 2028-01-14_ |
+| What will go out of date first | _E.g. The 94-day figure, once we have a full year of telemetry_ |
+| Maintenance owner | _E.g. Priya Nadan_ |
+
+<Accordion title="Concept review: Maintenance plan">
+  Content decays quietly. Rankings and citations slide as facts age, intent shifts, and someone else publishes something more current, and none of that announces itself. Published analyses of AI citations put the large majority on pages updated within the past year, which makes an unmaintained article a depreciating asset rather than a stable one.
+
+  Setting the cadence now also makes the cost of the article honest. A hero article is a commitment to keep something true indefinitely, not a one-off piece of work, and that is worth agreeing before the article exists. Discovering it eighteen months later is the expensive version.
+
+  Naming what will go out of date first is the part that makes a review efficient. A reviewer who knows the one number to check can do a real review in ten minutes instead of rereading the whole piece.
+</Accordion>
+
+### Linked documents
+
+| Resource | Link |
+| :-- | :-- |
+| Marketing campaign brief | _E.g. [Fresh Batch Q3 campaign brief](https://link)_ |
+| Customer profile | _E.g. [Mid-market DevOps leads](https://link)_ |
+| Creative brief(s) | _E.g. [Decay curve chart brief](https://link)_ |
+| Copy brief (promotion) | _E.g. [Launch email copy brief](https://link)_ |
+| Published article | _E.g. [Live URL](https://link)_ |
+| \[add row\] |  |
+
+<Accordion title="Concept review: Linked documents">
+  An article sits inside a system of documents that each have their own owner and their own update schedule. Linking to them rather than copying their contents in is what stops this brief from carrying a stale second version of something.
+
+  A link with no destination yet tells you something useful. It shows what still has to be produced before the article can ship, and the published-article link is what closes the loop later, so anyone who finds the piece can trace it back to the thinking behind it.
+</Accordion>
+
+### Success measures
+
+| Measure | Target |
+| :-- | :-- |
+| _E.g. Cited in AI answers for the primary question_ | _E.g. Appearing in 3 of 5 test prompts by month 3_ |
+| _E.g. Organic sessions_ | _E.g. 800 a month by month 6_ |
+| _E.g. Referenced by a third-party source_ | _E.g. At least 2 external citations in year 1_ |
+| \[add row\] |  |
+
+<Accordion title="Concept review: Success measures">
+  Naming the measure before publishing keeps "did the article work" from becoming a matter of opinion afterwards, and it shapes what gets written. An article judged on being cited by answer engines is written differently from one judged on time on page.
+
+  Citation-based measures are newer and less settled than traffic measures, and the tooling for them is uneven. A simple manual version, running the same set of prompts on a schedule and recording whether you appear, is worth more than nothing while the tooling matures. The [KPI definitions](/kpi-definitions) hold the metrics your team has already agreed on.
+</Accordion>
+
+## Optional sections
+
+<Tip>
+  Fill these in where they sharpen the article. Skip any that do not apply.
+</Tip>
+
+### Current answer audit
+
+**What already answers this question, and why is it not good enough?**
+
+| Existing source | What it covers | What it misses |
+| :-- | :-- | :-- |
+| _E.g. Competitor guide, ranks 1_ | _E.g. Generic pipeline maintenance advice_ | _E.g. No data, no timeline, no way to detect it early_ |
+| _E.g. What ChatGPT says today_ | _E.g. Correct but generic checklist_ | _E.g. No numbers, no sources, no specifics_ |
+| \[add row\] |  |  |
+
+<Accordion title="Concept review: Current answer audit">
+  Reading what is already there, including the answer a model gives today, sets a concrete bar. It is the difference between planning to write something good and planning to write something better than a specific thing you have read.
+
+  It occasionally produces the more useful result of showing that the existing answers are fine and the article does not need to exist. That is a cheap discovery at brief stage.
+</Accordion>
+
+### Objections
+
+| Objection | How the article answers it |
+| :-- | :-- |
+| _E.g. "Our builds are green, this is not our problem."_ | _E.g. Open with the silent failure case: green builds, nothing deploying._ |
+| \[add row\] |  |
+
+<Accordion title="Concept review: Objections">
+  An article making a case the reader is inclined to resist has to deal with the resistance somewhere, and doing that deliberately beats hoping the argument is persuasive enough on its own.
+
+  Articles that simply explain something rarely need this section. It earns its place when the article is arguing rather than describing, which is most often the case for the contrarian and position-taking pieces that tend to become hero articles.
+</Accordion>
+
+### Author and credibility
+
+| Field | Fill in |
+| :-- | :-- |
+| Bylined author | _E.g. Priya Nadan, Head of Reliability, Doughnut Labs_ |
+| Why they are credible here | _E.g. Built and ran the telemetry platform this data comes from_ |
+| Author page or bio link | _E.g. [link](https://link)_ |
+
+<Accordion title="Concept review: Author and credibility">
+  Both search and answer engines lean on signals about who produced something and whether they have standing to say it. An article bylined to a real, identifiable person with relevant experience carries weight that an unattributed post does not, and the author is themselves an entity that accumulates authority across everything they publish.
+
+  The credibility line is for the writer as much as the engine. Knowing why this author has standing usually reveals the first-hand detail that makes the article specific.
+</Accordion>
+
+### Creative requirements
+
+| Asset | Purpose | Creative brief |
+| :-- | :-- | :-- |
+| _E.g. Decay curve chart_ | _E.g. Shows the 94-day finding_ | _E.g. [link](https://link)_ |
+| _E.g. Diagram of the four checks_ | _E.g. Makes the method scannable_ | _E.g. [link](https://link)_ |
+| \[add row\] |  |  |
+
+<Accordion title="Concept review: Creative requirements">
+  Anything an article needs beyond text, a chart, a diagram, illustration, original photography, is produced through the [creative brief process](/creative-brief-process) like any other asset, with its own brief and its own creator.
+
+  Listing the assets here keeps the dependency visible. An article waiting on a chart that nobody has briefed is a common reason a finished draft sits unpublished.
+</Accordion>
+
+### Distribution and off-site plan
+
+| Action | Owner | Detail |
+| :-- | :-- | :-- |
+| _E.g. Pitch the data to two industry newsletters_ | _E.g. Sam Okafor_ | _E.g. The 94-day figure is the hook_ |
+| _E.g. Post the chart with commentary on LinkedIn_ | _E.g. Priya Nadan_ | _E.g. Author account, not brand account_ |
+| \[add row\] |  |  |
+
+<Accordion title="Concept review: Distribution and off-site plan">
+  Answer engines lean toward third-party sources over brand-owned pages, so an article that gets discussed, quoted, or cited elsewhere builds authority that the same article sitting alone on your site does not.
+
+  Original data is what makes this realistic. It is difficult to get anyone to reference a general explainer, and comparatively straightforward to get them to reference a number nobody else has, which is one more reason the new information section sits so early in this brief.
+</Accordion>
+
+## Related resources
+
+- [**Article brief concepts**](/article-brief-concepts) The reasoning behind each section here.
+- [**Article writing template**](/article-writing-template) Where the article gets drafted, with its published metadata.
+- [**Article standards**](/article-standards) Length, hierarchy, and structure defaults.
+- [**Article process**](/article-process) How this brief becomes a published article.
+- [**Article brief library**](/article-brief-library) Where completed briefs are filed.

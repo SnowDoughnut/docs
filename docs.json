@@ -114,6 +114,13 @@
               "report-writing-concepts",
               "data-quality-and-rollup-concepts"
             ]
+          },
+          {
+            "group": "Content and SEO",
+            "pages": [
+              "seo-and-geo-concepts",
+              "article-brief-concepts"
+            ]
           }
         ]
       },
@@ -168,6 +175,13 @@
               },
               "landing-page-standards",
               "creative-brief"
+            ]
+          },
+          {
+            "group": "Article standards",
+            "pages": [
+              "article-brief",
+              "article-standards"
             ]
           },
           {
@@ -434,7 +448,10 @@
               },
               {
                 "group": "SOPs",
-                "pages": []
+                "pages": [
+                  "article-process",
+                  "article-maintenance-process"
+                ]
               },
               {
                 "group": "How-tos",
@@ -450,7 +467,11 @@
               },
               {
                 "group": "Checklists",
-                "pages": []
+                "pages": [
+                  "article-pre-publish-checklist",
+                  "geo-checklist",
+                  "article-update-checklist"
+                ]
               }
             ]
           },
@@ -564,7 +585,13 @@
                 "group": "Creative",
                 "pages": []
               },
-              "landing-page-skeleton"
+              "landing-page-skeleton",
+              {
+                "group": "Articles",
+                "pages": [
+                  "article-writing-template"
+                ]
+              }
             ]
           },
           {
@@ -734,6 +761,15 @@
             "group": "Creative Brief Library",
             "pages": [
               "creative-briefs"
+            ]
+          },
+          {
+            "group": "Article Library",
+            "pages": [
+              "article-library-overview",
+              "hero-article-register",
+              "supporting-article-register",
+              "article-brief-library"
             ]
           }
         ]

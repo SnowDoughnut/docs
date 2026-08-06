@@ -1,0 +1,186 @@
+---
+title: "Article standards"
+description: "The defaults every article is held to: heading hierarchy, length by article type, section and structure ratios, slugs, metadata limits, internal linking, images, schema, and dates. Set these once as a team, then edit them as you learn what works."
+---
+
+_These are starting defaults, not laws. Fill in the right-hand column with what your team agrees, and edit any row that does not fit how you publish. Each section has a concept review dropdown explaining what the standard is for._
+
+<Note>
+  Numbers on this page come from two places: published research on how content structure affects citation in AI answers, and ordinary publishing convention. Where research exists it is named in the concept review. Where it does not, the number is a convention worth having, not a finding.
+</Note>
+
+_Greyed text marked_ `E.g. `_is an example. Examples use Doughnut Labs, a company that sells Doughnut Technology._
+
+## Heading hierarchy
+
+| Rule | Our standard |
+| :-- | :-- |
+| H1 per page | _E.g. Exactly one, always. It is the article title._ |
+| Level skipping | _E.g. Never. H2 follows H1, H3 follows H2._ |
+| Maximum depth | _E.g. H3 normally, H4 only in reference material._ |
+| Heading style | _E.g. Sentence case. No trailing colons._ |
+| Question headings | _E.g. Preferred where the section answers a real question._ |
+| \[add rule\] |  |
+
+<Accordion title="Concept review: Heading hierarchy">
+  A heading structure serves a reader scanning for the part they came for, a screen reader announcing document structure, and a retrieval system deciding where one passage stops and the next starts. All three read the same markup, which is why a hierarchy chosen for visual reasons tends to break something invisible.
+
+  Two H1s on a page is the most common version of this. It leaves both the page and any system parsing it without a single clear subject.
+
+  On depth, the structural citation research found three to five levels of hierarchy outperformed both flatter and deeper structures, with too little offering no organizational signal and too much diluting attention across structural markers. In practice most articles land at H1, H2, and some H3, and a section reaching for H4 is often a section that wants to be its own page.
+</Accordion>
+
+## Article length
+
+Length follows the question. These are the ranges a type of article usually needs to answer its question properly, not word counts to hit.
+
+| Article type | Typical range | Our standard |
+| :-- | :-- | :-- |
+| Hero, definitive guide | 2,000 to 3,500 words | _E.g. 2,500 target_ |
+| Hero, explainer or position piece | 1,200 to 2,000 words | _E.g. 1,500 target_ |
+| Supporting, how-to | 800 to 1,500 words | _E.g. 1,000 target_ |
+| Supporting, comparison | 1,200 to 2,000 words | _E.g. 1,400 target_ |
+| Supporting, news or update | 400 to 800 words | _E.g. 600 target_ |
+| Definition or glossary page | 300 to 800 words | _E.g. 500 target_ |
+| \[add type\] |  |  |
+
+<Accordion title="Concept review: Article length">
+  There is no length that ranks better, and the correlation people cite between long articles and good performance mostly reflects that thorough treatments of complex questions tend to be long, not that length causes anything.
+
+  What length is useful for is agreeing expectations before someone writes. A brief that says 1,000 words and a draft that arrives at 4,000 represent a disagreement about scope that nobody had out loud, and it is far cheaper to have that conversation at brief stage.
+
+  The failure mode in both directions is worth naming. Padding a thin answer to reach a number produces exactly the general, unsourced prose that neither readers nor answer engines have any use for. Cutting a genuinely complex answer to fit a range produces something that answers the question incompletely, which is worse. A range is a signal about expected depth, and an article that has a good reason to sit outside it should sit outside it.
+</Accordion>
+
+## Section and structure ratios
+
+| Element | Default | Our standard |
+| :-- | :-- | :-- |
+| Words per section between headings | 150 to 300 | _E.g. Aim for 200_ |
+| Share of content as lists or tables | 25 to 35 percent | _E.g. Around a third_ |
+| Bold or emphasized text | 5 to 10 percent | _E.g. Sparing, key terms only_ |
+| Position of a section's direct answer | First sentence under the heading | _E.g. Always_ |
+| \[add element\] |  |  |
+
+<Accordion title="Concept review: Section and structure ratios">
+  These come from research on how content structure, independent of what the content says, affects whether a generative engine uses a passage. Sections of roughly 150 to 300 words performed best, with longer sections showing measurable attention loss across their middle and much shorter ones splitting a single idea across too many fragments. Lists and tables were extracted substantially more accurately than the same information in prose, with content around a quarter to a third structured outperforming either extreme.
+
+  The reason the high end has a limit is editorial rather than technical. An article that is nearly all bullets has usually stopped arguing, because the connective reasoning between points is the first thing lost when everything becomes a list. Prose carries reasoning, lists carry parallel items, and the ratio takes care of itself when each is used for what it does.
+
+  Treat all four numbers as direction. They come from a young field studying systems that change frequently, and an article written to satisfy a ratio rather than a reader will read like one.
+</Accordion>
+
+## Slugs
+
+| Rule | Our standard |
+| :-- | :-- |
+| Case | _E.g. Lowercase only_ |
+| Word separator | _E.g. Hyphens, never underscores_ |
+| Length | _E.g. Three to five words, under 60 characters_ |
+| Stop words | _E.g. Drop the, a, and, of, for where the meaning survives_ |
+| Dates and numbers | _E.g. No years in the slug, so the article can be updated in place_ |
+| Changing a live slug | _E.g. Only with a 301 redirect from the old URL_ |
+| \[add rule\] |  |
+
+<Accordion title="Concept review: Slugs">
+  A slug is read by people deciding whether to click and by systems working out what a page is about, and it is the part of a page that is most awkward to change later. Every inbound link, citation, and bookmark points at it.
+
+  The date rule is the one that costs teams most often. A slug containing a year commits you to either publishing a new URL every year, which splits the authority the old one accumulated, or maintaining a page whose URL contradicts its content. An article meant to be updated indefinitely is easier to run from a URL that never had a date in it.
+</Accordion>
+
+## Metadata limits
+
+| Field | Limit | Our standard |
+| :-- | :-- | :-- |
+| Meta title | Under 60 characters before truncation | _E.g. 55 including the brand suffix_ |
+| Meta description | 140 to 160 characters | _E.g. 155_ |
+| H1 | No hard limit, but under 70 reads better | _E.g. Under 65_ |
+| Image alt text | Under 125 characters | _E.g. Describe the content, not the file_ |
+| \[add field\] |  |  |
+
+<Accordion title="Concept review: Metadata limits">
+  These are display limits, not rules: search engines truncate at a pixel width, not a character count, and they rewrite descriptions when they judge a different snippet more relevant. Writing to the limit means the sentence you wrote is the sentence most people see.
+
+  The meta description is worth more attention than its lack of ranking influence suggests. It is the pitch that decides a click, and answer engines sometimes use it as a ready-made summary of the page. Writing it after the article is finished, rather than as a placeholder at the start, tends to produce a real summary instead of a guess.
+</Accordion>
+
+## Internal linking
+
+| Rule | Default | Our standard |
+| :-- | :-- | :-- |
+| Links out to other pages on our site | 3 to 6 per article | _E.g. At least 3_ |
+| Links in from existing pages | At least 2, added at publish | _E.g. At least 2_ |
+| Anchor text | Describes the destination | _E.g. Never "click here" or a bare URL_ |
+| Hero article links | Every supporting article in a cluster links to its hero | _E.g. Required_ |
+| \[add rule\] |  |  |
+
+<Accordion title="Concept review: Internal linking">
+  Internal links do the structural work that makes a set of separate articles read as coverage of a subject rather than a pile of pages. They also route a reader onward, and they distribute whatever authority the site has accumulated.
+
+  The inbound rule is the one most often skipped, because it is work on pages other than the one being published. An article with nothing pointing at it is isolated regardless of its quality, and the pages that should point at it are usually obvious at brief stage and forgotten by launch day.
+
+  Descriptive anchor text matters for a plainer reason than most link advice: it is what a screen reader announces when a user tabs through the links on a page, and a list of "click here" tells them nothing.
+</Accordion>
+
+## Images and media
+
+| Rule | Our standard |
+| :-- | :-- |
+| Alt text | _E.g. Required on every image that carries meaning_ |
+| Decorative images | _E.g. Empty alt attribute so screen readers skip them_ |
+| File naming | _E.g. Per [file naming conventions](/file-naming-conventions)_ |
+| Charts with data | _E.g. The underlying numbers also stated in text_ |
+| Original visuals | _E.g. Briefed through the [creative brief process](/creative-brief-process)_ |
+| \[add rule\] |  |
+
+<Accordion title="Concept review: Images and media">
+  Alt text exists first for people using screen readers, and the fact that it is also machine-readable text about the image is a secondary benefit rather than its purpose. Written as a description of what the image shows, it serves both. Written as a list of keywords, it serves neither and makes the page worse for the people it was meant for.
+
+  Stating a chart's key numbers in the body text as well is the practical version of the same idea. A finding that exists only inside an image cannot be read by a screen reader, quoted by an answer engine, or found by anyone searching for the number.
+</Accordion>
+
+## Schema and structured data
+
+| Page type | Schema | Our standard |
+| :-- | :-- | :-- |
+| Any article | `Article` | _E.g. Required_ |
+| Article with an FAQ section | `FAQPage` | _E.g. Required where an FAQ exists_ |
+| Step-by-step guide | `HowTo` | _E.g. Where the article is genuinely procedural_ |
+| Site-wide | `Organization` with `sameAs` links | _E.g. Required, maintained by web_ |
+| Author | `Person`, linked from the article | _E.g. Required for hero articles_ |
+| \[add type\] |  |  |
+
+<Accordion title="Concept review: Schema and structured data">
+  Schema is a machine-readable statement of what a page is and what it contains, sitting alongside the human-readable version. It removes guesswork from systems trying to work out whether a block of text is a step, a question, an author, or a date.
+
+  The `Organization` markup with `sameAs` links is the piece most directly connected to entity authority. It states, in a form a machine can act on, that the company on this site is the same company as the one on your other profiles, which is what lets separate mentions accumulate into one recognized entity instead of several unconnected ones.
+
+  Schema describes what is on the page. Markup claiming a review, an author, or an FAQ that does not exist in the visible content is a misrepresentation that search engines act against, so the safe version is to mark up what is there.
+</Accordion>
+
+## Dates and freshness
+
+| Rule | Default | Our standard |
+| :-- | :-- | :-- |
+| Visible last-updated date | On every article | _E.g. Required_ |
+| Hero article review cadence | Quarterly | _E.g. Every 3 months_ |
+| Supporting article review cadence | Every 6 to 12 months | _E.g. Every 6 months_ |
+| Fast-moving topics | Every 1 to 3 months | _E.g. Monthly for anything with pricing_ |
+| What counts as an update | A substantive change, not a date bump | _E.g. New data, new sections, corrected facts_ |
+| \[add rule\] |  |  |
+
+<Accordion title="Concept review: Dates and freshness">
+  Freshness has become one of the clearer signals in how AI answers select sources. Published analyses of citations on commercial queries put the large majority on pages updated within the past year and well over half on pages updated within six months. The figures vary by who is measuring, but the direction is consistent enough to plan around.
+
+  The distinction between an update and a date bump is what keeps the practice honest. Changing a timestamp without changing anything else is visible to readers who have seen the page before, and it removes the one signal that would otherwise tell your own team which articles genuinely need attention.
+
+  Cadence is where teams reasonably differ. A quarterly cycle on a large hero set is real recurring work, and a team that can only sustain twice-yearly reviews is better served by an honest twice-yearly cadence than by a quarterly one it silently misses. The [article maintenance process](/article-maintenance-process) covers how the cycle runs.
+</Accordion>
+
+## Related resources
+
+- [**Article writing template**](/article-writing-template) Where these standards get applied.
+- [**Article brief**](/article-brief) Where length, slug, and cadence are decided.
+- [**SEO and GEO concepts**](/seo-and-geo-concepts) The reasoning behind the structure and freshness standards.
+- [**Pre-publish checklist**](/article-pre-publish-checklist)
+- [**File naming conventions**](/file-naming-conventions)

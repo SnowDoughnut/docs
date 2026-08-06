@@ -1,0 +1,181 @@
+---
+title: "Article writing template"
+description: "The template an article is drafted in: the metadata that ships with the page, a heading skeleton built around one H1 and a clean hierarchy, and section-by-section prompts. Copy it once per article after the brief is approved."
+---
+
+_Copy this page for each article and write directly into it. The fields on the left are what gets published. Each section has a concept review dropdown that explains what the field is for._
+
+<Note>
+  Do not start here. Fill in the [article brief](/article-brief) first: this template assumes the question, the angle, the proof, and the outline are already decided. Everything on this page is execution.
+</Note>
+
+_Greyed text marked_ `E.g. `_is an example. Delete it and replace it with your own. Examples use Doughnut Labs, a company that sells Doughnut Technology._
+
+<Steps>
+  <Step title="Copy the metadata block and fill what you know">
+    Slug, category, and author come from the brief. The titles and descriptions get written last, once the article exists.
+  </Step>
+  <Step title="Lay out the heading skeleton">
+    Transfer the outline from the brief. One H1, then H2s, then H3s only where a section genuinely splits.
+  </Step>
+  <Step title="Draft section by section">
+    Answer each heading directly underneath it, then expand.
+  </Step>
+  <Step title="Finish the metadata and run the checks">
+    Write the meta title and description last, then work through the [pre-publish checklist](/article-pre-publish-checklist) and the [GEO checklist](/geo-checklist).
+  </Step>
+</Steps>
+
+## Publishing metadata
+
+Everything in this table ships with the page. Limits and rules are in the [article standards](/article-standards).
+
+| Field | Fill in | Notes |
+| :-- | :-- | :-- |
+| Page name (H1) | _E.g. Why deployment pipelines fail after 94 days_ | The one H1 on the page |
+| Meta title | _E.g. Why deployment pipelines fail after 94 days \| Doughnut Labs_ | Aim for under 60 characters |
+| Slug | _E.g. deployment-pipeline-decay_ | Lowercase, hyphens, no dates, no stop words |
+| Full URL | _E.g. doughnutlabs.com/blog/deployment-pipeline-decay_ |  |
+| Category or cluster | _E.g. Pipeline reliability_ | Matches the register |
+| Meta description | _E.g. Pipelines pass their builds for months while silently failing to deploy. Our telemetry across 400 teams puts the median at 94 days. Here are the four checks that catch it._ | Aim for 140 to 160 characters |
+| Tier and register ID | _E.g. Hero, HERO-04_ | From the [register](/hero-article-register) |
+| Author | _E.g. Priya Nadan, Head of Reliability_ | A real named person |
+| Author bio link | _E.g. [link](https://link)_ |  |
+| Published date | _E.g. 2027-10-14_ |  |
+| Last updated date | _E.g. 2028-01-20_ | Shown on the page, not just in the CMS |
+| Next review date | _E.g. 2028-04-20_ | Also recorded in the register |
+| Canonical URL | _E.g. Self_ | Only differs if this duplicates another page |
+| Schema type | _E.g. Article, plus FAQPage for the FAQ section_ |  |
+| Primary entity | _E.g. Doughnut Technology_ | From the brief |
+| Featured image | _E.g. [link](https://link)_ | Alt text written, not left blank |
+| \[add row\] |  |  |
+
+<Accordion title="Concept review: Publishing metadata">
+  Two of these fields do a job most teams underuse. The meta description is not a ranking factor, but it is the sentence a person reads before deciding whether to click, and answer engines sometimes lift it as a summary. Writing it last, once the article exists, tends to produce a real summary rather than a guess at one.
+
+  The visible last-updated date matters more than it used to. Freshness is one of the clearer signals in how AI answers select sources, and a date buried in a CMS field that never renders on the page cannot be read by anything crawling it. Teams differ on whether to show both published and updated dates or only the most recent, and both are defensible as long as the choice is consistent across the site.
+
+  The canonical URL is usually the page itself. It earns attention in the cases where it is not: syndicated pieces, near-duplicate regional versions, or an article that supersedes an older one still sitting at another URL.
+</Accordion>
+
+## Heading skeleton
+
+One H1. Every heading below it steps down one level at a time. Fill in the headings before writing any body copy.
+
+| Level | Heading | The question this answers |
+| :-- | :-- | :-- |
+| H1 | _E.g. Why deployment pipelines fail after 94 days_ | _E.g. The whole article_ |
+| H2 | _E.g. What silent pipeline failure looks like_ | _E.g. How do I recognize it?_ |
+| H3 | _E.g. The green build problem_ | _E.g. Why does a passing build mislead me?_ |
+| H2 | _E.g. The 94-day decay curve_ | _E.g. When does it start?_ |
+| H2 | _E.g. Four checks that catch it early_ | _E.g. What do I do about it?_ |
+| H3 | _E.g. Check 1: deploy step exit codes_ | _E.g. What is the first check?_ |
+| H2 | _E.g. How often to audit a pipeline_ | _E.g. How often should I check?_ |
+| H2 | _E.g. Frequently asked questions_ | _E.g. The leftover specifics_ |
+| \[add row\] |  |  |
+
+<Accordion title="Concept review: Heading skeleton">
+  A heading hierarchy does two separate jobs. For a person, it is the map: it lets someone scan the page and jump to the part they came for. For a machine, it is the structure that defines where one passage ends and the next begins, which is what makes a section retrievable on its own.
+
+  Skipping a level, an H2 followed by an H4, breaks both jobs at once. Screen readers announce a gap that is not there, and the nesting an engine infers stops matching the nesting you intended.
+
+  Depth is a judgment call with a rough range behind it. Analysis of how content structure affects citation found three to five levels of hierarchy worked better than either flatter or deeper structures: too flat and there are no organizational cues to read, too deep and attention spreads thin across structural markers. Most articles need H1, H2, and occasional H3, and reaching for H4 is usually a sign a section wants to be its own article.
+
+  The third column is a working aid rather than something you publish. A heading with no real question behind it tends to be a heading that will not stand alone once it is pulled out of the page.
+</Accordion>
+
+## The article
+
+### Opening
+
+**Answer the primary question in the first two or three sentences, before any setup.**
+
+_E.g. Deployment pipelines fail silently. Across 400 engineering teams we monitor, the median time from a healthy pipeline to its first silent failure is 94 days, and in most cases the build stayed green throughout. This is what that failure looks like, why it starts around the three-month mark, and the four checks that catch it before a release goes missing._
+
+<Accordion title="Concept review: Opening">
+  A conventional article opens with context and arrives at the answer several paragraphs down. That order was built for a reader who had already committed to reading, and it works badly in two of the places articles now get read.
+
+  A person scanning decides in seconds whether the page has what they came for. A retrieval system pulling an opening passage gets the setup and none of the substance. Leading with the answer serves both, and it does not prevent the article from expanding afterwards: the context still gets written, it just stops being the thing standing between the reader and the point.
+</Accordion>
+
+### Body sections
+
+For each H2 in the skeleton, draft the section here. Repeat this block per section.
+
+| Element | Fill in |
+| :-- | :-- |
+| Heading | _E.g. The 94-day decay curve_ |
+| Direct answer, first sentence | _E.g. Pipeline reliability degrades on a predictable curve, with the first silent failure landing at a median of 94 days after the last substantive change._ |
+| Supporting detail | _E.g. The curve is flat for the first two months, then bends sharply. Teams deploying daily hit it later than teams deploying weekly, because frequent deploys surface breakage earlier._ |
+| Proof used here | _E.g. Internal telemetry, 400 teams, 2027. Decay curve chart._ |
+| Link out | _E.g. [Pipeline audit checklist](https://link)_ |
+
+<Accordion title="Concept review: Body sections">
+  Each section is written to survive being read on its own, because that is frequently how it will be encountered: lifted into an answer, surfaced as a jump link, or landed on directly from a search result.
+
+  Section length has a workable range behind it. The structural research on generative citation found sections of roughly 150 to 300 words performed best, with longer sections losing attention across their middle and much shorter ones fragmenting an idea across too many pieces. That range is a useful default rather than a rule, and a section that genuinely needs 400 words is better at 400 words than padded or split arbitrarily.
+
+  The proof row is there to catch the section that has quietly become assertion. A section with nothing in that row is not necessarily wrong, but it is worth a second look.
+</Accordion>
+
+### Lists, tables, and emphasis
+
+**What in this article is better as a table or a list than as prose?**
+
+_E.g. The four checks become a numbered list. The audit cadence by deploy frequency becomes a table. The decay curve stays as prose plus the chart._
+
+<Accordion title="Concept review: Lists, tables, and emphasis">
+  Structured content is easier for both a scanning reader and an extraction system to use accurately. In the structural citation research, lists and tables were extracted substantially more accurately than the same information written as prose, and content around a quarter to a third structured performed better than either extreme.
+
+  The failure mode at the high end is real, though. An article that is almost entirely bullets has usually stopped making an argument, because the connective reasoning that held the points together is exactly what gets deleted when everything becomes a list. Prose carries reasoning; lists carry parallel items. Matching the format to which of those you have is more reliable than aiming at a ratio.
+</Accordion>
+
+### Frequently asked questions
+
+| Question | Answer |
+| :-- | :-- |
+| _E.g. Does this affect pipelines that deploy daily?_ | _E.g. Yes, but later. Daily deploys surface breakage sooner, pushing the median past 120 days._ |
+| _E.g. Can monitoring catch this automatically?_ | _E.g. Only if it checks deploy outcomes rather than build status. Most setups check the build._ |
+| \[add row\] |  |
+
+<Accordion title="Concept review: Frequently asked questions">
+  A question-and-answer block is the closest thing on a page to the shape an answer engine is working in, which is why these sections get cited disproportionately often. Each pair is self-contained by construction.
+
+  It also catches the specifics that would clutter the main argument: the edge cases, the "does this apply to me" variants, the follow-up a reader would ask if they could. Real questions from support tickets, sales calls, and comments produce a better section than invented ones, and they have the side benefit of being questions people demonstrably ask.
+</Accordion>
+
+### Author note
+
+**Who wrote this and why they have standing to.**
+
+_E.g. Priya Nadan is Head of Reliability at Doughnut Labs, where she built the telemetry platform the data in this article comes from._
+
+<Accordion title="Concept review: Author note">
+  An identifiable author with relevant experience is a signal both to a reader deciding whether to trust the piece and to engines assessing whether the source has standing. The author is also an entity in their own right, accumulating credibility across everything they publish, which is why consistent naming and a linked bio matter more than they appear to.
+
+  The note works best when it explains the connection to this specific subject rather than listing a job title. "Built the platform this data comes from" tells a reader something. A title alone usually does not.
+</Accordion>
+
+### Next step
+
+**What should a reader do after finishing?**
+
+_E.g. Run the four checks against your own pipeline using the audit checklist, or start a Doughnut Technology trial to get the telemetry automatically._
+
+<Accordion title="Concept review: Next step">
+  An article that ends with no route onward asks the reader to work out for themselves what to do with what they have just learned, and most will not.
+
+  How hard the ask should be depends on where the article sits. A piece written to establish authority on a contested question can be undermined by a heavy sales close, while a piece aimed at someone actively comparing options can reasonably be direct. The [customer profile](/customer-profile-library-overview) and the awareness level in the brief are usually what settle it.
+</Accordion>
+
+## Before you publish
+
+Work through the [pre-publish checklist](/article-pre-publish-checklist) and the [GEO checklist](/geo-checklist), then record the article in the [hero](/hero-article-register) or [supporting](/supporting-article-register) register with its next review date.
+
+## Related resources
+
+- [**Article brief**](/article-brief) The strategy this template executes.
+- [**Article standards**](/article-standards) Length, hierarchy, slug, and metadata rules.
+- [**Pre-publish checklist**](/article-pre-publish-checklist)
+- [**GEO checklist**](/geo-checklist)
+- [**Brand voice and tone**](/brand-voice-and-tone) How the article should sound.
