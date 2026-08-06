@@ -114,6 +114,13 @@
               "report-writing-concepts",
               "data-quality-and-rollup-concepts"
             ]
+          },
+          {
+            "group": "Content and SEO",
+            "pages": [
+              "seo-and-geo-concepts",
+              "article-brief-concepts"
+            ]
           }
         ]
       },
@@ -163,6 +170,12 @@
               "image-and-video-specs",
               "landing-page-standards",
               "creative-brief"
+            ]
+          },
+          {
+            "group": "Article standards",
+            "pages": [
+              "article-brief"
             ]
           },
           {
@@ -532,7 +545,11 @@
                 "group": "Creative",
                 "pages": []
               },
-              "landing-page-skeleton"
+              "landing-page-skeleton",
+              {
+                "group": "Articles",
+                "pages": []
+              }
             ]
           },
           {
@@ -675,6 +692,10 @@
             "pages": [
               "creative-briefs"
             ]
+          },
+          {
+            "group": "Article Library",
+            "pages": []
           }
         ]
       }
