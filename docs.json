@@ -416,7 +416,10 @@
               },
               {
                 "group": "SOPs",
-                "pages": []
+                "pages": [
+                  "article-process",
+                  "article-maintenance-process"
+                ]
               },
               {
                 "group": "How-tos",
