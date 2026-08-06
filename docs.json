@@ -163,14 +163,7 @@
               {
                 "group": "Image and video specs",
                 "pages": [
-                  "image-and-video-specs",
-                  "meta-creative-specs",
-                  "tiktok-creative-specs",
-                  "google-pmax-creative-specs",
-                  "linkedin-creative-specs",
-                  "google-display-creative-specs",
-                  "youtube-creative-specs",
-                  "google-search-demandgen-display-specs"
+                  "image-and-video-specs"
                 ]
               },
               "landing-page-standards",
@@ -217,6 +210,12 @@
             "pages": [
               "meta-home",
               {
+                "group": "Creative Specifications",
+                "pages": [
+                  "meta-creative-specs"
+                ]
+              },
+              {
                 "group": "Tutorials",
                 "pages": []
               },
@@ -246,6 +245,15 @@
             "dropdown": "Google",
             "pages": [
               "google-home",
+              {
+                "group": "Creative Specifications",
+                "pages": [
+                  "google-pmax-creative-specs",
+                  "youtube-creative-specs",
+                  "google-display-creative-specs",
+                  "google-search-demandgen-display-specs"
+                ]
+              },
               {
                 "group": "Tutorials",
                 "pages": []
@@ -277,6 +285,12 @@
             "pages": [
               "linked-in-home",
               {
+                "group": "Creative Specifications",
+                "pages": [
+                  "linkedin-creative-specs"
+                ]
+              },
+              {
                 "group": "Tutorials",
                 "pages": []
               },
@@ -306,6 +320,12 @@
             "dropdown": "TikTok",
             "pages": [
               "tik-tok-home",
+              {
+                "group": "Creative Specifications",
+                "pages": [
+                  "tiktok-creative-specs"
+                ]
+              },
               {
                 "group": "Tutorials",
                 "pages": []
