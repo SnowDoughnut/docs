@@ -698,7 +698,10 @@
           },
           {
             "group": "Article Library",
-            "pages": []
+            "pages": [
+              "article-library-overview",
+              "hero-article-register"
+            ]
           }
         ]
       }

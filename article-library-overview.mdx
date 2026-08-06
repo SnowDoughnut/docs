@@ -1,0 +1,137 @@
+---
+title: "Article library overview"
+description: "How the article library works: the difference between hero and supporting articles, the test for choosing a maximum of 20 authority areas, how articles are named and numbered, and the review cadence each tier is held to."
+---
+
+This library holds every article we publish and the record of how each one is maintained. It has three parts: the [hero article register](/hero-article-register) for the capped set we commit to keeping current, the [supporting article register](/supporting-article-register) for everything else, and the [article brief library](/article-brief-library) where the briefs behind them are filed.
+
+_The authority areas section below is a fill-in exercise. Work through it as a team before anything goes in the hero register._
+
+## Hero and supporting articles
+
+Most content libraries grow by publishing. A team picks topics with traffic potential, publishes as many as it can, and then watches most of them decay untouched. The result is a large number of pages, each slightly out of date, that collectively make a site harder to trust rather than easier.
+
+This library works from a cap instead.
+
+|  | Hero article | Supporting article |
+| :-- | :-- | :-- |
+| How many | Maximum 20 | No limit |
+| Chosen by | An area where we can answer better than anyone | A real question inside a cluster we already cover |
+| Depth | Original data, first-hand experience, or an argued position | Useful and accurate |
+| Review cadence | Every quarter | Every 6 to 12 months |
+| Retired | Only by being replaced or demoted | Freely, when it stops earning its place |
+| Register | [Hero register](/hero-article-register) | [Supporting register](/supporting-article-register) |
+
+Twenty is a ceiling, not a target. A team that can defend six areas has six hero articles, and six well-maintained articles will outperform twenty nobody has touched since launch.
+
+Supporting articles are not lesser work, they are differently committed work. They answer real questions, they link to their hero, and they build the cluster that makes the hero credible. What separates them is the maintenance promise attached to each tier.
+
+## Choosing your authority areas
+
+A hero article is not chosen by search volume. It is chosen by answering one question:
+
+> What question or problem can we answer better than anyone else?
+
+Better rests on one of three foundations. Name which applies to each area, because an area that fits none of them is not yet yours.
+
+| Foundation | What it means | Test |
+| :-- | :-- | :-- |
+| **We know something others do not** | Data, telemetry, results, or access nobody else has | Can we publish a number that does not exist anywhere else? |
+| **We have done it more than anyone** | Volume of first-hand experience | Can we describe what actually happens on the twentieth attempt, not the first? |
+| **We have a position others hedge on** | A clear, argued stance on a contested question | Could someone reasonably disagree with our conclusion? |
+
+<Accordion title="Concept review: Why the test is not search volume">
+  Search volume tells you a question is being asked. It says nothing about whether you have any business answering it, and when volume is the only input, the library fills with articles restating what is already available in a hundred places. That is exactly the material an answer engine has least reason to cite, because there is no fact in it that came from anywhere in particular.
+
+  The three foundations are not equally available to every team. A company with a product generating data has an easier route to the first than a young agency, which may find its strongest ground in the second or third. The point of naming which foundation an area rests on is that it makes the claim checkable: an area listed under "we know something others do not" that cannot produce a number is an area that has not really qualified yet.
+
+  The third foundation, holding a position, is the one teams tend to skip because it carries risk. An argued stance that someone could disagree with is also the thing most likely to be quoted, referenced, and linked to, which is worth weighing against the discomfort.
+</Accordion>
+
+### Fill in your authority areas
+
+**List the areas where one of the three foundations genuinely applies. Stop at 20. Most teams should stop well before.**
+
+| # | Authority area | Foundation | What we know that others do not | Hero article | Status |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| 1 | _E.g. Deployment pipeline decay_ | _E.g. We know something others do not_ | _E.g. Telemetry across 400 teams, including the 94-day median_ | _E.g. HERO-04_ | _E.g. Published_ |
+| 2 | _E.g. Migrating off legacy batch systems_ | _E.g. We have done it more than anyone_ | _E.g. 60 migrations, including the ones that failed_ | _E.g. HERO-07_ | _E.g. Brief written_ |
+| 3 | _E.g. Whether build status is a useful health metric_ | _E.g. We have a position others hedge on_ | _E.g. We argue it is actively misleading and can show why_ | _E.g. Not started_ | _E.g. Area agreed_ |
+| 4 |  |  |  |  |  |
+| \[add row, up to 20\] |  |  |  |  |  |
+
+<Accordion title="Concept review: Filling this in as a team">
+  This exercise usually produces two uncomfortable results, and both are useful.
+
+  The first is a list much shorter than twenty. That is the normal outcome, and a short list is a finding about where the team actually has standing rather than a failure to brainstorm hard enough. Areas can be added later as the team earns them.
+
+  The second is an area everyone assumed was ours that turns out to rest on nothing checkable. The "what we know that others do not" column is where that surfaces, because it is difficult to fill in with something vague. An area that produces "we have a lot of experience here" without a specific example is worth parking until someone can name the example.
+
+  Teams differ on who should be in the room. Some run it with marketing alone, some involve sales and support because they hear the questions, and some involve the technical or operational people who hold the knowledge the articles would rest on. The wider version takes longer and tends to produce areas with more substance behind them.
+</Accordion>
+
+## Naming and IDs
+
+Every article gets an ID before it is written, so the brief, the draft, the register row, and the published page can all be traced to each other.
+
+| Tier | Pattern | Example |
+| :-- | :-- | :-- |
+| Hero | `HERO-` plus two digits | `HERO-04` |
+| Supporting | `SUP-` plus three digits | `SUP-018` |
+
+IDs are permanent. An article promoted from supporting to hero keeps its original ID in the register notes so its history stays traceable, and a retired ID is never reused.
+
+Brief files follow the [file naming conventions](/file-naming-conventions), with `ART` as the prefix:
+
+`ART_deployment-pipeline-decay_2027-10-14_v01.md`
+
+The same two rules do most of the work here as everywhere else. Writing the date as `YYYY-MM-DD` means an alphabetical sort is also a date sort, and padding the version to two digits keeps `v10` sorting after `v09`.
+
+## What the registers track
+
+Both registers carry the same core columns. The two that matter most are the last two.
+
+| Column | What it holds |
+| :-- | :-- |
+| ID | `HERO-04` or `SUP-018` |
+| Title | The published H1 |
+| URL | The live page |
+| Authority area or cluster | Which area or topic group it belongs to |
+| Customer profile | Linked from the [customer profile library](/customer-profile-library-overview) |
+| Owner | One named person, accountable after publication |
+| Status | Live, draft, consolidated, retired, or frozen |
+| Published | The original publish date |
+| **Last updated** | The date of the last substantive change |
+| **Next review** | When it comes due |
+| Notes | What changed at the last review, in one line |
+
+A last-updated date only counts when something actually changed. A date bumped without a change removes the one signal that tells the team which articles genuinely need attention, and readers who have seen the page before can tell.
+
+## Working with the library
+
+<Steps>
+  <Step title="Agree the authority areas first">
+    Fill in the table above as a team before any hero article is briefed.
+  </Step>
+  <Step title="Brief before you write">
+    Every article, both tiers, starts with an [article brief](/article-brief) filed in the [brief library](/article-brief-library).
+  </Step>
+  <Step title="Register at publication">
+    No article is finished until it has a register row with an owner and a next-review date.
+  </Step>
+  <Step title="Run the maintenance cycle">
+    Work the [article maintenance process](/article-maintenance-process) on a fixed schedule.
+  </Step>
+  <Step title="Review the hero set annually">
+    Confirm the areas are still yours. Promoting one in means moving one out.
+  </Step>
+</Steps>
+
+## Related resources
+
+- [**Hero article register**](/hero-article-register) The capped set.
+- [**Supporting article register**](/supporting-article-register) Everything else.
+- [**Article brief library**](/article-brief-library) Where completed briefs are filed.
+- [**Article maintenance process**](/article-maintenance-process) The recurring review cycle.
+- [**SEO and GEO concepts**](/seo-and-geo-concepts) Why a capped, maintained set beats a large one.
+- [**File naming conventions**](/file-naming-conventions)
