@@ -432,7 +432,11 @@
               },
               {
                 "group": "Checklists",
-                "pages": []
+                "pages": [
+                  "article-pre-publish-checklist",
+                  "geo-checklist",
+                  "article-update-checklist"
+                ]
               }
             ]
           },

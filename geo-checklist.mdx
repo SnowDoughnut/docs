@@ -1,0 +1,79 @@
+---
+title: "GEO checklist"
+description: "The pass that checks whether an article can be retrieved, trusted, and cited when an AI model writes the answer instead of listing links. Run it alongside the pre-publish checklist."
+---
+
+A separate pass from the [pre-publish checklist](/article-pre-publish-checklist), because it tests something different: not whether the article is good, but whether a model can find one part of it, trust it, and quote it. The reasoning behind each group is in [SEO and GEO concepts](/seo-and-geo-concepts).
+
+## Can a passage stand alone?
+
+An answer engine retrieves chunks, not pages. Each section has to survive being pulled out of context.
+
+- Every section answers its heading in the first sentence, before context or setup.
+- No section depends on having read the section above it to make sense.
+- Pronouns near the start of a section refer to something named in that section, not in the previous one.
+- Headings are specific enough to identify the section's subject without the page around it.
+- The FAQ section exists, and its questions are ones people actually ask.
+
+## Is there anything worth quoting?
+
+A model assembling an answer needs a fact, a number, or a phrasing it can lift. In controlled testing, adding quotations, statistics, and cited sources produced the largest measured gains in whether content was used.
+
+- At least one statistic that is specific, sourced, and dated.
+- At least one quotation from someone with standing on the subject.
+- Every claim that could be challenged has a citation next to it.
+- Original data, if we have it, is stated as a plain number in the body text and not only shown in a chart.
+- Definitions of key terms are written as definitions, in a sentence that would work quoted alone.
+- The article contains something a model could not generate without it.
+
+## Is the entity clear?
+
+- The company name is written exactly as it appears on every other profile we control.
+- The product name is consistent with the rest of the site, with no informal variants.
+- The author is a real named person, with a bio and a link, matching how they are named elsewhere.
+- Key terms the article assumes are defined in the article.
+- `Organization` schema with `sameAs` links is in place site-wide.
+- `Article` schema is applied, with the author and dates populated.
+
+## Is it fresh, and does that show?
+
+- The last-updated date is visible on the page, not only in the CMS.
+- The date reflects a substantive change, not a bump.
+- Every statistic carries the year it refers to.
+- Nothing in the article contradicts something we published more recently.
+- The next review date is set in the register.
+
+## Is it structured for extraction?
+
+- Roughly a quarter to a third of the content is lists or tables, where the content is genuinely parallel.
+- Tables have header rows and are not used for layout.
+- Heading depth is three to five levels overall, without skipping.
+- Emphasis is used on key terms rather than scattered.
+- Numbered lists are used for sequences, bullets for unordered sets.
+
+## Can it be crawled at all?
+
+- The page is not blocked in `robots.txt`.
+- AI crawlers are not blocked unless that is a deliberate decision the team has made: `GPTBot`, `ClaudeBot`, `PerplexityBot`, `Google-Extended`.
+- The content is in the HTML, not rendered only by client-side JavaScript.
+- The canonical URL points where it should.
+
+<Info>
+  Blocking AI crawlers is a legitimate position for some businesses, and it is a decision to make deliberately rather than discover. A site that blocks them is choosing not to be cited by those engines, which is a coherent choice if the traffic tradeoff works out and an expensive accident if nobody meant to make it.
+</Info>
+
+## Off the page
+
+These are not article-level checks, but they decide how much weight the article carries. Review them per cluster rather than per article.
+
+- The company appears with consistent naming across the profiles we control.
+- The author has a presence beyond this article.
+- Something in the article, usually original data, gives a third party a reason to reference it.
+- The distribution actions from the brief have owners and dates.
+
+## Related resources
+
+- [**SEO and GEO concepts**](/seo-and-geo-concepts) Why each of these checks exists.
+- [**Article pre-publish checklist**](/article-pre-publish-checklist) The general quality pass.
+- [**Article standards**](/article-standards) The structure defaults.
+- [**Article brief**](/article-brief) Where the proof and entities are decided.
