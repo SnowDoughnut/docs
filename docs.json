@@ -549,7 +549,9 @@
               "landing-page-skeleton",
               {
                 "group": "Articles",
-                "pages": []
+                "pages": [
+                  "article-writing-template"
+                ]
               }
             ]
           },
