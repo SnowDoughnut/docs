@@ -700,7 +700,9 @@
             "group": "Article Library",
             "pages": [
               "article-library-overview",
-              "hero-article-register"
+              "hero-article-register",
+              "supporting-article-register",
+              "article-brief-library"
             ]
           }
         ]
