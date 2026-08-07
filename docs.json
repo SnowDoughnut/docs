@@ -271,7 +271,9 @@
               "google-home",
               {
                 "group": "Briefs",
-                "pages": []
+                "pages": [
+                  "google-campaign-brief"
+                ]
               },
               {
                 "group": "Creative Specifications",
@@ -288,7 +290,9 @@
               },
               {
                 "group": "SOPs",
-                "pages": []
+                "pages": [
+                  "google-campaign-process"
+                ]
               },
               {
                 "group": "How-tos",
@@ -304,7 +308,9 @@
               },
               {
                 "group": "Checklists",
-                "pages": []
+                "pages": [
+                  "google-pre-launch-checklist"
+                ]
               }
             ]
           },
