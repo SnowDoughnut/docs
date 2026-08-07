@@ -224,6 +224,12 @@
             "pages": [
               "meta-home",
               {
+                "group": "Briefs",
+                "pages": [
+                  "meta-campaign-brief"
+                ]
+              },
+              {
                 "group": "Creative Specifications",
                 "pages": [
                   "meta-creative-specs"
@@ -235,7 +241,9 @@
               },
               {
                 "group": "SOPs",
-                "pages": []
+                "pages": [
+                  "meta-campaign-process"
+                ]
               },
               {
                 "group": "How-tos",
@@ -251,7 +259,9 @@
               },
               {
                 "group": "Checklists",
-                "pages": []
+                "pages": [
+                  "meta-pre-launch-checklist"
+                ]
               }
             ]
           },
@@ -259,6 +269,10 @@
             "dropdown": "Google",
             "pages": [
               "google-home",
+              {
+                "group": "Briefs",
+                "pages": []
+              },
               {
                 "group": "Creative Specifications",
                 "pages": [
