@@ -1,0 +1,252 @@
+---
+title: "Meta campaign brief"
+description: "A fill-in workbook for a single Meta campaign: objective, conversion action, budget, bid strategy, attribution, structure, targeting, placements, and the briefs and assets it runs on. Sits under the marketing campaign brief and above Ads Manager."
+---
+
+_This page is a workbook. Fill it in top to bottom before anything is built in Ads Manager. Each section has a "Concept review" dropdown explaining what the section is for. The dropdowns explain the thinking; the decision is yours._
+
+<Note>
+  This brief sits between the [marketing campaign brief](/marketing-campaign-brief), which covers strategy across every channel, and Ads Manager, where the campaign is built. One marketing campaign usually generates several platform briefs: a Meta one, a Google one, and so on.
+
+  Greyed `E.g.` text is a placeholder. Delete it and replace it with your own. Examples use **Doughnut Labs**, a SaaS company that sells disruptive Doughnut Technology.
+</Note>
+
+<Tip>
+  Record the decision and the reason, not the click path. This brief fixes objective, budget, bid strategy, attribution, and structure so they can be reviewed before spend starts. Everything below that line, which creative to scale, when to consolidate ad sets, how to adjust a cost goal in flight, stays with the media buyer.
+</Tip>
+
+## Setup
+
+| Field | Fill in |
+| :-- | :-- |
+| [Owner](/glossary#owner) | _E.g. Tom Reyes_ |
+| Media buyer | _E.g. Tom Reyes_ |
+| [Marketing campaign brief](/marketing-campaign-brief) | _E.g. [Doughnut Labs "Fresh Batch" spring trial push](https://link)_ |
+| Ad account | _E.g. Doughnut Labs US (act\_000000000)_ |
+| Brief name ([file naming conventions](/file-naming-conventions)) | _E.g._ `DOC_meta-fresh-batch-trial_2026-08-07_v01` |
+| Flight dates | _E.g. 22 Apr to 20 Jun 2026_ |
+
+<Accordion title="Concept review: Setup">
+  The owner is accountable for this campaign brief end to end. The media buyer is whoever builds and manages it in Ads Manager. On a small team these are the same person, and keeping the fields separate only matters once they are not.
+
+  The link to the marketing campaign brief is what stops this document reading as a standalone plan. It places the Meta spend inside the campaign it serves, so anyone can trace a line of spend back to the objective that justified it.
+</Accordion>
+
+## Objective and conversion action
+
+**What is this campaign optimizing for, and what event counts as a result?**
+
+| Field | Fill in |
+| :-- | :-- |
+| Campaign objective | _E.g. Sales_ |
+| Conversion location | _E.g. Website_ |
+| Optimization event | _E.g. Complete registration_ |
+| Conversion action, from the [event tracking plan](/event-tracking-plan) | _E.g._ `Trial Started` |
+| Is the event live and firing? | _E.g. Yes, verified in Events Manager 4 Apr_ |
+| Sending value with the event? | _E.g. No. Trials have no purchase value at signup_ |
+
+Meta's six campaign objectives:
+
+| Objective | Optimizes for |
+| :-- | :-- |
+| Awareness | Reach, impressions, brand recall lift |
+| Traffic | Link clicks or landing page views |
+| Engagement | Post engagement, video views, messages |
+| Leads | On-platform lead forms, or website conversions |
+| App promotion | Installs and in-app events |
+| Sales | Website, app, or catalogue conversions |
+
+<Warning>
+  The optimization event has to be live and firing before launch, not after. A campaign optimizing toward an event that never fires spends its budget on the platform's fallback signal, and the data collected during that period is not comparable to anything measured afterward.
+</Warning>
+
+<Accordion title="Concept review: Objective and conversion action">
+  The objective sets the auction the campaign competes in and the set of optimization events available to it. It is a structural choice rather than a preference, which is why it belongs in a brief that gets reviewed rather than in a dropdown someone picks at build time.
+
+  Naming the conversion action against the [event tracking plan](/event-tracking-plan), rather than describing it loosely, is what keeps the platform's numbers reconcilable with your own analytics. When the brief says the campaign optimizes toward `Trial Started` and the tracking plan defines exactly when `Trial Started` fires, a gap between Ads Manager and your dashboard becomes a question with an answer rather than a standing mystery.
+</Accordion>
+
+## Budget and bid strategy
+
+**How much, allocated how, and bid toward what?**
+
+| Field | Fill in |
+| :-- | :-- |
+| Budget level | _E.g. Advantage\+ campaign budget_ |
+| Budget type | _E.g. Daily_ |
+| Amount | _E.g. \$600 per day, \$18,000 total_ |
+| Bid strategy | _E.g. Cost per result goal_ |
+| Goal or cap value | _E.g. \$33 cost per trial signup_ |
+| Why this strategy | _E.g. Proven CPA baseline from Q1; need volume held near a known cost_ |
+
+Meta's bid strategies, as of 7 August 2026:
+
+| Strategy | What it does | Typically used when |
+| :-- | :-- | :-- |
+| Highest volume | Spends the budget for the most results, no cost constraint | Launching, or no reliable CPA baseline yet |
+| Highest value | Spends the budget for the most conversion value | Purchase values vary and value is passed with the event |
+| Cost per result goal | Holds average cost per result near a target | Scaling against a known CPA |
+| ROAS goal | Holds return on ad spend near a target | Value data is reliable and margin has to be protected |
+| Bid cap | Sets a hard ceiling on each auction bid | Strict per-auction control, accepting lower delivery |
+
+<Accordion title="Concept review: Budget and bid strategy">
+  Budget level decides who allocates money between ad sets. Campaign-level budget hands that decision to Meta, which will move spend toward whichever ad set is performing. Ad set budget holds each one to a fixed amount, which is what you want when an ad set exists to be measured rather than to win.
+
+  Bid strategy is where the campaign's tolerance for cost gets written down. A cost or value goal constrains delivery, and a constraint set too tight reads as a delivery problem later even though it was a planning decision. Recording the number and the reason next to it means the next person can tell the difference between a target that was hit and a target that was never realistic.
+</Accordion>
+
+## Attribution
+
+**Which conversions get credited to this campaign?**
+
+| Field | Fill in |
+| :-- | :-- |
+| Attribution setting | _E.g. 7-day click, 1-day engage-through, 1-day view_ |
+| Incremental attribution | _E.g. Off_ |
+| Why | _E.g. Matches the default our Q1 benchmarks were measured on, so results stay comparable_ |
+
+<Warning>
+  Meta retired the 7-day view and 28-day view windows on 12 January 2026. One day is the longest view window still available, and "click" now counts link clicks only. Any benchmark from before that date was measured on a different definition and is not directly comparable.
+</Warning>
+
+<Accordion title="Concept review: Attribution">
+  The attribution setting decides which conversions Meta claims, which changes every reported number downstream: cost per result, ROAS, and the comparison between this campaign and the last one. It is a measurement decision, not an optimization one, and it belongs in the brief because changing it mid-flight quietly rewrites the campaign's history.
+
+  Incremental attribution is a different question from window length. It holds back a portion of the audience and reports only the conversions that would not have happened without the ads, which usually reports fewer conversions than standard attribution and a truer picture of what the spend caused. Turning it on replaces the standard attribution setting rather than sitting alongside it, so a campaign measured this way cannot be compared like-for-like with one that is not. Decide once, at brief stage, and note which basis the numbers are on.
+</Accordion>
+
+## Campaign structure
+
+**What ad sets does this campaign contain, and what is each one for?**
+
+| Ad set | Customer profile | Budget | What it tests or proves |
+| :-- | :-- | :-- | :-- |
+| _E.g. Prospecting, RevOps lookalike_ | _E.g. [Mid-market RevOps lead](https://link)_ | _E.g. Campaign-level_ | _E.g. Main cold-traffic volume driver_ |
+| _E.g. Retargeting, site visitors 180d_ | _E.g. [Mid-market RevOps lead](https://link)_ | _E.g. Campaign-level_ | _E.g. Recovers trial abandoners_ |
+| \[add ad set\] |  |  |  |
+
+<Accordion title="Concept review: Campaign structure">
+  Structure is the part of a Meta campaign that is expensive to change once it is running, because splitting or merging ad sets resets learning and breaks the continuity of the data. Deciding it on paper, where a change costs nothing, is cheaper than discovering the problem three weeks in.
+
+  The last column is the one that keeps structure honest. An ad set that exists for a stated reason can be judged against that reason. An ad set that exists because the account has always had one like it tends to survive reviews it should not, and quietly takes budget from the ones doing work.
+</Accordion>
+
+## Targeting
+
+**Which [customer profiles](/customer-profile-library-overview) does this campaign reach, and how are they built on Meta?**
+
+| Customer profile | Link | Built as | Source |
+| :-- | :-- | :-- | :-- |
+| _E.g. Mid-market RevOps lead_ | _E.g. [CP\_midmarket-revops\_2026-03-02\_v02](https://link)_ | _E.g. 3% lookalike_ | _E.g. HubSpot lead list, uploaded via [Meta CSV template](/customer-profile-csv-template-meta)_ |
+| \[add profile\] |  |  |  |
+
+<Accordion title="Concept review: Targeting">
+  A customer profile is the definition of who you are trying to reach. A Meta audience is one implementation of that definition inside one ad account. They are not the same thing, and the gap between them is where a lot of performance goes missing: a well-researched profile can be built as an audience that reaches almost nobody it describes.
+
+  Recording both, side by side, is what makes that gap visible. It also means a result can be attributed to the profile or to the way it was built, which are different lessons and lead to different next moves.
+</Accordion>
+
+## Placements
+
+| Field | Fill in |
+| :-- | :-- |
+| Placement setting | _E.g. Advantage\+ placements_ |
+| Exclusions, if any | _E.g. Audience Network excluded; historically low-quality trial signups_ |
+| Why | _E.g. Broad placements with dedicated 9:16 creative for Stories and Reels_ |
+
+<Accordion title="Concept review: Placements">
+  Placement decisions and creative decisions are the same decision made twice. Broad placements only work when the creative exists in every shape they call for, so a campaign set to run everywhere with one square asset is not really running everywhere; it is running cropped.
+
+  Recording exclusions with a reason matters more than recording the setting. An exclusion carried forward from an account audit two years ago is indistinguishable from a deliberate one unless somebody wrote down why.
+</Accordion>
+
+## Creative and copy
+
+**Link every brief and asset this campaign runs on.**
+
+| Deliverable | Link |
+| :-- | :-- |
+| [Creative brief](/creative-brief) | _E.g. [Fresh Batch paid social creative brief](https://link)_ |
+| [Copy brief](/ad-copy-standards) | _E.g. [COPY\_fresh-batch-meta\_2026-04-02\_v01](https://link)_ |
+| Copy template | _E.g._ [Meta static and video](/meta-static-video-copy-template) |
+| Finished creative | _E.g. [Fresh Batch Meta creative, final](https://link)_ |
+| Landing page | _E.g. [doughnutlabs.com/lp/fresh-batch-trial](https://link)_ |
+
+Creative has to meet the [Meta creative specs](/meta-creative-specs) for every placement the campaign runs on.
+
+<Accordion title="Concept review: Creative and copy">
+  This section is an index, not a description. Each linked document has its own owner and changes on its own schedule, so restating its contents here would create a second version that goes stale the moment the real one is edited.
+
+  An empty row late in the build is useful information rather than a paperwork gap. It shows what has not shipped yet, while there is still time to chase it.
+</Accordion>
+
+## Naming and tracking
+
+| Level | Name | Convention |
+| :-- | :-- | :-- |
+| Campaign | _E.g._ `Meta-Instagram-Conversions-CBO-TOFU` | [Campaign naming conventions](/campaign-naming-conventions) |
+| Ad set | _E.g._ `20260401-LLA3-HSL` | [Ad set / ad group / variant](/ad-set-group-naming-conventions) |
+| Ad | _E.g._ `AutoGlaze-STATIC-FREETRIAL-TRY-LP` | [Ad naming conventions](/ad-name-conventions) |
+| UTMs | _E.g._ `?utm_source=meta&utm_medium=paid-social&utm_campaign=fresh-batch-trial` | [UTM standards](/utm-standards) |
+
+<Accordion title="Concept review: Naming and tracking">
+  Names are what let a report group spend by anything other than the campaign it sat in. Assembling all three levels in the brief, before the build, means the person clicking through Ads Manager is copying a decided string rather than inventing one under time pressure, which is when conventions break.
+
+  UTMs do the same job on the other side of the click. Without them the traffic lands in your analytics as unattributed, and the platform's own numbers become the only account of what happened.
+</Accordion>
+
+## Experiment
+
+<Tip>
+  Optional: fill this in only if part of this campaign is a controlled test.
+</Tip>
+
+| Field | Fill in |
+| :-- | :-- |
+| [Experiment ID](/experiment-ids) | _E.g._ `TEST01` |
+| [Experiment brief](/experiment-brief) | _E.g. [Creative format test brief](https://link)_ |
+| Level the ID is applied at | _E.g. Ad name_ |
+
+<Accordion title="Concept review: Experiment">
+  A change with no control is not an experiment, and does not need this section. Running two creatives and keeping the better one is optimization; it belongs in the media buyer's judgment rather than in a brief.
+
+  When a campaign does carry a real test, the ID recorded here is what connects the spend to the [experiment brief](/experiment-brief) and, later, to the review in the learning library. Register it before launch, because an ID added afterward will not match the data already collected.
+</Accordion>
+
+## Measurement
+
+| KPI | Target | Actual |
+| :-- | :-- | :-- |
+| _E.g. Trial signups_ | _E.g. 500_ | (blank until launch) |
+| _E.g. Cost per signup_ | _E.g. ≤ \$33_ | (blank until launch) |
+| \[add KPI\] |  |  |
+
+**Where this campaign is reported:** _E.g. [Paid media dashboard](https://link), rolled into the weekly report_
+
+<Accordion title="Concept review: Measurement">
+  These targets come down from the marketing campaign brief rather than being invented here. This section's job is to state the share of the campaign-level goal that Meta is expected to carry, so the platform can be judged on its own contribution instead of on the campaign's total.
+
+  Fixing the targets before launch is what makes the later judgment honest. A target set after results are in is a description of what happened, not a standard.
+</Accordion>
+
+## Post-launch
+
+| Item | Link or date |
+| :-- | :-- |
+| Pre-launch checklist run | _E.g. 21 Apr, Tom Reyes_ |
+| Launch date | _E.g. 22 Apr_ |
+| Mid-flight review date | _E.g. 13 May_ |
+| Filed in the [campaign library](/campaign-library-overview) | _E.g. Meta folder, 22 Apr_ |
+
+<Info>
+  Platform settings on this page were checked on 7 August 2026. Meta changes objective names, bid strategy labels, and attribution options regularly. Confirm the current options in Ads Manager before filling in a brief, and update this page when they move.
+</Info>
+
+## Related resources
+
+- [**Launching a Meta campaign**](/meta-campaign-process) The process this brief runs on.
+- [**Meta pre-launch checklist**](/meta-pre-launch-checklist) The pass to run before setting live.
+- [**Marketing campaign brief**](/marketing-campaign-brief) The parent brief this one sits under.
+- [**Meta creative specs**](/meta-creative-specs) and the [**Meta copy templates**](/meta-static-video-copy-template)
+- [**Event tracking plan**](/event-tracking-plan) Where the conversion action is defined.
+- [**Campaign library**](/campaign-library-overview) Where this brief is filed.

@@ -1,0 +1,173 @@
+---
+title: "Launching a Meta campaign"
+description: "The process for standing up a Meta campaign in our framework: gather the inputs, fill in the Meta campaign brief, assemble names and UTMs, build the campaign, ad sets, and ads, run the pre-launch checklist, and file the brief."
+---
+
+Take a Meta campaign from an approved marketing campaign to a live, correctly named, correctly tracked build. This process covers all three levels, campaign, ad set, and ad, because the inputs are gathered once for the whole build.
+
+This is not a guide to clicking through Ads Manager. It is the set of things our framework requires to exist before a campaign goes live, and the order to produce them in.
+
+<Info>
+  This process uses the [**Meta campaign brief**](/meta-campaign-brief), the [**marketing campaign brief**](/marketing-campaign-brief), the three [naming conventions](/naming-conventions-overview), the [**UTM standards**](/utm-standards), the [**Meta creative specs**](/meta-creative-specs), the [**Meta copy templates**](/meta-static-video-copy-template), and the [**Meta pre-launch checklist**](/meta-pre-launch-checklist).
+</Info>
+
+## What you'll end up with
+
+Three things that point at each other:
+
+- A completed [**Meta campaign brief**](/meta-campaign-brief), filed in the [campaign library](/campaign-library-overview) under the Meta folder.
+- A **live campaign** in Ads Manager, named per the three naming conventions, pointing at a tagged landing page, optimizing toward a conversion action defined in the [event tracking plan](/event-tracking-plan).
+- **Links back** from the marketing campaign brief to this campaign's brief, finished creative, and finished copy.
+
+One person, the [**owner**](/glossary#owner), is accountable for all three. The **media buyer** builds and runs the campaign. Where they are the same person, the roles still separate at review time: the brief is what the build gets checked against.
+
+## Before you start
+
+Every input below has to exist, or be deliberately marked as not applicable, before the build starts. Each one names where it comes from and what to do if it doesn't exist yet.
+
+| Input | Where it comes from | Required | If it doesn't exist yet |
+| :-- | :-- | :-- | :-- |
+| Parent marketing campaign | [Marketing campaign brief](/marketing-campaign-brief) | Always | Stop. Run the [campaign brief process](/campaign-brief-process) first |
+| Customer profile | [Customer profile library](/customer-profile-library-overview) | Always | Build it with the [B2B](/customer-profile-brief) or [B2C](/b2-c-customer-profiles) brief |
+| Conversion action | [Event tracking plan](/event-tracking-plan) | Always for Sales, Leads, Traffic | Add a row using the [tracking plan overview](/event-tracking-plan-overview), then verify it fires |
+| Destination | [Landing page library](/landing-page-library) | Always | Pick an existing page, or run [building a landing page](/landing-page-process) |
+| Creative | [Creative brief process](/creative-brief-process), [creative drive](/creative-drive) | Always | Brief it. Allow production time before the launch date |
+| Copy | [Copy brief](/ad-copy-standards), [Meta copy templates](/meta-static-video-copy-template) | Always | Brief it via the [copywriting process](/copywriting-process) |
+| Names, all three levels | [Campaign](/campaign-naming-conventions), [ad set](/ad-set-group-naming-conventions), [ad](/ad-name-conventions) | Always | Assemble from the dictionaries. Add a value if one is missing |
+| UTMs | [UTM standards](/utm-standards) | Always | Build them from the standard before the URLs go anywhere |
+| Budget | Marketing campaign brief, [budget planning](/budget-planning) | Always | Confirm the Meta line item and its amount |
+| Experiment ID | [Experiment ID conventions](/experiment-ids) | Only if testing | Register one via [creating an experiment](/creating-an-experiment) |
+
+<Warning>
+  A missing input is a schedule problem, not a paperwork problem. Creative and landing pages are the two that most often push a launch date, because both need production time from someone who isn't the media buyer. Check those two first.
+</Warning>
+
+## The process at a glance
+
+<Steps>
+  <Step title="Confirm the campaign has a parent">
+    Every Meta campaign belongs to a marketing campaign brief. No parent, no build.
+  </Step>
+  <Step title="Gather the inputs">
+    Work the table above. Pick what exists, brief what doesn't.
+  </Step>
+  <Step title="Fill in the Meta campaign brief">
+    Objective, conversion action, budget, bid strategy, attribution, structure, targeting, placements.
+  </Step>
+  <Step title="Assemble names and UTMs">
+    All three naming levels and the tagged URLs, written down before anything is built.
+  </Step>
+  <Step title="Register an experiment, if you're testing">
+    Only if there is a control. Register the ID before launch.
+  </Step>
+  <Step title="Build the campaign, ad sets, and ads">
+    Copy the decided values in. Don't invent new ones at the keyboard.
+  </Step>
+  <Step title="Run the pre-launch checklist">
+    The last pass before spend starts.
+  </Step>
+  <Step title="Launch and link back">
+    Set live, then link the campaign and its assets into the marketing campaign brief.
+  </Step>
+  <Step title="File the brief">
+    Into the campaign library, Meta folder.
+  </Step>
+</Steps>
+
+## 1. Confirm the campaign has a parent
+
+Open the [marketing campaign brief](/marketing-campaign-brief) this spend belongs to and confirm Meta is listed in its channels table, with a reason and a budget line.
+
+A Meta campaign with no parent brief has no recorded objective, no agreed customer profile, and no KPI target to be judged against later. If the request arrived as "we need to be on Facebook this quarter," the missing document is the marketing campaign brief, not this one.
+
+## 2. Gather the inputs
+
+Work down the table in **Before you start**. Most of this step is deciding what already exists versus what has to be produced.
+
+**Customer profiles.** Link them from the [customer profile library](/customer-profile-library-overview). If the profile you need isn't there, build it before the campaign rather than describing it in an ad set name. Note how each profile will be built as a Meta audience, since a profile and its implementation are different things and both affect the result.
+
+**Conversion action.** Find the event in the [event tracking plan](/event-tracking-plan) and confirm it is firing in Events Manager. An optimization event that does not fire sends the campaign to a fallback signal, and the spend that happens before anyone notices is not comparable to anything measured afterward.
+
+**Destination.** Check the [landing page library](/landing-page-library) for a page that already serves this offer and customer profile. Reusing a proven page is usually better than building a new one, and the library exists so that reuse is a lookup rather than a memory. If nothing fits, run [building a landing page](/landing-page-process) and put its production time on the campaign timeline.
+
+**Creative and copy.** Both are briefed, not requested informally. Creative goes through the [creative brief process](/creative-brief-process); copy goes through the [copywriting process](/copywriting-process). Check the [creative drive](/creative-drive) and the [copy drive](/copy-drive) first, because an approved asset that already fits is faster than a new brief.
+
+Creative has to cover every placement the campaign will run on. See the [Meta creative specs](/meta-creative-specs) for the 4:5 master and what crops out of it.
+
+## 3. Fill in the Meta campaign brief
+
+Copy the [**Meta campaign brief**](/meta-campaign-brief) and work down it. Every campaign gets its own.
+
+The brief fixes the decisions that are expensive to change once spend has started: objective, conversion action, budget level, bid strategy, attribution setting, and ad set structure. Those get reviewed before the build.
+
+Everything below that line stays with the media buyer. Which creative to scale, when to consolidate ad sets, how to move a cost goal in flight, these are judgment calls made against live data, and a brief that tries to pre-decide them just gets ignored.
+
+<Warning>
+  Decide the attribution setting at brief stage and leave it alone. Changing it mid-flight rewrites the campaign's reported history, and the numbers from before and after the change cannot be compared. Meta retired the 7-day and 28-day view windows in January 2026, so benchmarks from before that date are already on a different basis.
+</Warning>
+
+## 4. Assemble names and UTMs
+
+Write all three names and the tagged URLs into the brief before opening Ads Manager.
+
+| Level | Convention |
+| :-- | :-- |
+| Campaign | [Campaign naming conventions](/campaign-naming-conventions) |
+| Ad set | [Ad set / ad group / variant naming conventions](/ad-set-group-naming-conventions) |
+| Ad | [Ad naming conventions](/ad-name-conventions) |
+| URLs | [UTM standards](/utm-standards) |
+
+If a value you need isn't in a dictionary, add it to the convention page rather than inventing a one-off. A value used once and never recorded is the way a naming convention stops being one.
+
+## 5. Register an experiment, if you're testing
+
+Only if there is a control. Two creatives running against each other with no hypothesis and no planned sample is optimization, and needs nothing here.
+
+If it is a real test, follow [creating an experiment](/creating-an-experiment): register the ID, apply it at the level the hypothesis targets, and don't change it after launch.
+
+## 6. Build the campaign, ad sets, and ads
+
+Build from the brief. The values are already decided, so this step is transcription rather than decision-making.
+
+Work down the levels:
+
+1. **Campaign:** objective, buying type, budget level and amount, bid strategy, attribution setting, campaign name.
+2. **Ad sets:** one per row of the brief's structure table. Audience, placements, optimization event, ad set name.
+3. **Ads:** creative from the approved files, copy from the filled [copy template](/meta-static-video-copy-template), destination URL with UTMs attached, ad name.
+
+<Warning>
+  If a decision you didn't expect comes up during the build, stop and add it to the brief rather than settling it in the interface. A value that only exists in Ads Manager is invisible at review and lost at retrospective.
+</Warning>
+
+## 7. Run the pre-launch checklist
+
+Run the [**Meta pre-launch checklist**](/meta-pre-launch-checklist) with the campaign built and paused. It checks naming at all three levels, UTMs on every URL, the conversion event firing, budget and bid values, and creative previewed in every placement.
+
+## 8. Launch and link back
+
+Set the campaign live, then do the parts that are easy to skip on launch day:
+
+- Paste the finished creative and finished copy links into the [marketing campaign brief](/marketing-campaign-brief).
+- Add the campaign to the reporting dashboard named in the brief.
+- Record the launch date and the mid-flight review date in the brief.
+
+## 9. File the brief
+
+File the completed [Meta campaign brief](/meta-campaign-brief) in the [campaign library](/campaign-library-overview), under the Meta folder, named per the [file naming conventions](/file-naming-conventions).
+
+Filing it at launch rather than at close means the next person building a Meta campaign can see how the last one was structured while it is still running.
+
+## Exceptions
+
+- **The campaign is a small always-on retargeting build.** It still gets a brief, but sections like experiment and mid-flight review may not apply. Keep the core: objective, conversion action, budget, bid strategy, attribution, and structure.
+- **You are adding an ad to a live campaign.** Skip steps 1 to 5. Confirm the creative and copy are approved, name the ad per the [ad naming conventions](/ad-name-conventions), attach the UTMs, and run the ad-level rows of the pre-launch checklist.
+- **The campaign is cancelled before launch.** File the brief with a short note on why it stopped. The targeting and creative decisions in it usually get reused.
+
+## Related resources
+
+- [**Meta campaign brief**](/meta-campaign-brief) The workbook this process runs on.
+- [**Meta pre-launch checklist**](/meta-pre-launch-checklist) The pass before spend starts.
+- [**Campaign brief process**](/campaign-brief-process) The parent process, one level up.
+- [**Creative brief process**](/creative-brief-process) and [**copywriting process**](/copywriting-process)
+- [**Building a landing page**](/landing-page-process) When no existing page fits.
+- [**Creating an experiment**](/creating-an-experiment) When the campaign carries a controlled test.
