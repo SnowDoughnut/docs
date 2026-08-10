@@ -3,10 +3,55 @@ title: "Campaign library overview"
 description: "Where completed marketing campaign briefs are filed once a campaign launches, so past campaigns stay findable and comparable."
 ---
 
-This library holds completed [marketing campaign briefs](/marketing-campaign-brief), filed using [campaign naming conventions](/campaign-naming-conventions) once a campaign is planned and running. Use it to find how a past campaign was structured, what it targeted, and how it performed.
+This library holds completed [marketing campaign briefs](/marketing-campaign-brief) and the platform campaign briefs underneath them, filed using [campaign naming conventions](/campaign-naming-conventions) once a campaign is planned and running. Use it to find how a past campaign was structured, what it targeted, and how it performed.
+
+Briefs are filed at launch rather than at close, so the next person building a campaign can see how the last one was structured while it is still running.
+
+## How it's organized
+
+The marketing campaign brief sits at the top. Each platform campaign brief it generates is filed in a folder for that platform.
+
+```text
+campaigns/
+└── 2026-fresh-batch-trial/
+    ├── marketing-campaign-brief
+    ├── meta/
+    ├── google/
+    ├── tiktok/
+    ├── linkedin/
+    ├── email/
+    └── organic-social/
+```
+
+One marketing campaign usually generates several platform briefs. Keeping them in platform folders under their parent means you can read a campaign two ways: everything one campaign did, or everything one platform has been used for.
+
+## What gets filed here
+
+| Document | Filed as | Produced by |
+| :-- | :-- | :-- |
+| [Marketing campaign brief](/marketing-campaign-brief) | One per campaign, at the top level | [Campaign brief process](/campaign-brief-process) |
+| [Meta campaign brief](/meta-campaign-brief) | In the Meta folder | [Launching a Meta campaign](/meta-campaign-process) |
+| [Google campaign brief](/google-campaign-brief) | In the Google folder | [Launching a Google campaign](/google-campaign-process) |
+| [TikTok campaign brief](/tiktok-campaign-brief) | In the TikTok folder | [Launching a TikTok campaign](/tiktok-campaign-process) |
+| [LinkedIn campaign brief](/linkedin-campaign-brief) | In the LinkedIn folder | [Launching a LinkedIn campaign](/linkedin-campaign-process) |
+| [Email campaign brief](/email-campaign-brief) | In the Email folder | [Launching an email campaign](/email-campaign-process) |
+| [Organic social post brief](/organic-social-post-brief) | In the Organic social folder | [Publishing an organic social post](/organic-social-post-process) |
+
+Cancelled campaigns are filed too, with a short note on why they stopped. The targeting, creative, and structure decisions in them usually get reused.
+
+## What doesn't get filed here
+
+| Document | Goes in |
+| :-- | :-- |
+| Creative briefs | [Creative brief library](/creative-briefs) |
+| Copy briefs | [Copy brief library](/copy-brief-library) |
+| Article briefs | [Article brief library](/article-brief-library) |
+| Experiment reviews | [Experiment learning library](/experirment-learning-home) |
+| Finished creative and copy | The [creative](/creative-drive), [video](/video-drive), and [copy](/copy-drive) drives |
 
 ## Related resources
 
-- [Marketing campaign brief](/marketing-campaign-brief)
+- [Marketing campaign brief](/marketing-campaign-brief) and the [campaign brief process](/campaign-brief-process)
 - [Campaign naming conventions](/campaign-naming-conventions)
-- [Campaign brief process](/campaign-brief-process)
+- [File naming conventions](/file-naming-conventions)
+- [Asset directory](/asset-directory) Every asset location in one index.
