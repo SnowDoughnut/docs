@@ -107,7 +107,11 @@ _Grayed_ `E.g.` _text is a placeholder. Delete it and replace it with your own. 
 | _E.g. Trial to paid rate_ | _E.g. Guardrail. Paid conversions ÷ trials, 30-day window_ | _E.g. 18% blended_ | _E.g. Not below 12%_ |
 | \[add metric\] |  |  |  |
 
-**How this pilot is identified in reporting:** _E.g. Pilot ID in the campaign name and in_ `utm_campaign`_, so its rows separate cleanly in the [flat file](/flat-file-template)._
+**How this pilot is identified in reporting:** _E.g. Pilot ID in the campaign name and in_ `utm_campaign`_, landing in the flat file's_ [`experiment_id` column](/flat-file-template#dimension-columns) _at campaign grain, so the pilot's rows filter cleanly._
+
+<Note>
+  This only works if your [flat file](/flat-file-template) stores campaign grain. At channel grain the pilot's spend is mixed in with everything else on that channel and cannot be separated afterwards. Confirm the grain before launch, not at the read.
+</Note>
 
 <Accordion title="Concept review: What you'll measure">
   A pilot has no control, so every metric here is being read against something else: a historical baseline, another channel, or a target derived from unit economics. Naming which of the three, per metric, is what stops the read turning into an argument about whether \$45 is good.
@@ -173,7 +177,7 @@ _Grayed_ `E.g.` _text is a placeholder. Delete it and replace it with your own. 
     Issue the pilot ID and add a row to your experiment log, so the ID cannot be reused. See [experiment ID convention](/experiment-id-convention).
   </Step>
   <Step title="Apply the ID to every surface">
-    Campaign names, `utm_campaign`, and any dashboard filter, so the pilot's rows separate from ordinary spend in the [flat file](/flat-file-template).
+    Campaign names, `utm_campaign`, and any dashboard filter, so the pilot's rows arrive in the flat file's [`experiment_id` column](/flat-file-template#dimension-columns) and separate from ordinary spend.
   </Step>
   <Step title="File the brief when it is written">
     Into the [campaign library](/campaign-library-overview), named per the [file naming conventions](/file-naming-conventions).

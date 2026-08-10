@@ -187,7 +187,23 @@ Creative has to meet the [Meta creative specs](/meta-creative-specs) for every p
 | Campaign | _E.g._ `Meta-Instagram-Conversions-CBO-TOFU` | [Campaign naming conventions](/campaign-naming-conventions) |
 | Ad set | _E.g._ `20260401-LLA3-HSL` | [Ad set / ad group / variant](/ad-set-group-naming-conventions) |
 | Ad | _E.g._ `AutoGlaze-STATIC-FREETRIAL-TRY-LP` | [Ad naming conventions](/ad-name-conventions) |
-| UTMs | _E.g._ `?utm_source=meta&utm_medium=paid-social&utm_campaign=fresh-batch-trial` | [UTM standards](/utm-standards) |
+| UTMs | See the table below | [UTM standards](/utm-standards) |
+
+### UTMs
+
+One tagged URL per ad set, not one per campaign. `utm_content` carries the ad set name, so ad sets that share a tag report as one row.
+
+| Parameter | Value | Where it comes from |
+| :-- | :-- | :-- |
+| `utm_source` | _E.g._ `meta` | Source list, [section A](/utm-standards#a-source-standard-utm_source) |
+| `utm_medium` | _E.g._ `paid_social` | Medium list, [section B](/utm-standards#b-medium-standard-utm_medium). Match the spelling in your standard exactly |
+| `utm_campaign` | _E.g._ `Meta-Instagram-Conversions-CBO-TOFU` | The **platform campaign name** above, character for character |
+| `utm_content` | _E.g._ `20260401-LLA3-HSL` | The ad set name. One per ad set |
+| `utm_term` | _E.g._ `AutoGlaze-STATIC-FREETRIAL-TRY-LP` | The ad name, per your [section D](/utm-standards#d-content-and-term-standard-utm_content-utm_term) rule for Meta |
+
+<Warning>
+  `utm_campaign` carries the platform campaign name, not the marketing campaign name and not the brief's file name. The three are set out in [which name is which](/campaign-naming-conventions#which-name-is-which). A slug like `fresh-batch-trial` in this field will not join to anything in your platform export.
+</Warning>
 
 <Accordion title="Concept review: Naming and tracking">
   Names are what let a report group spend by anything other than the campaign it sat in. Assembling all three levels in the brief, before the build, means the person clicking through Ads Manager is copying a decided string rather than inventing one under time pressure, which is when conventions break.

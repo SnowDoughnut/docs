@@ -140,7 +140,23 @@ Creative has to meet the [TikTok creative specs](/tiktok-creative-specs).
 | Campaign | _E.g._ `TikTok-InFeed-Conversions-ABO-TOFU` | [Campaign naming conventions](/campaign-naming-conventions) |
 | Ad group | _E.g._ `20260401-LLA3-HSL` | [Ad set / ad group / variant](/ad-set-group-naming-conventions) |
 | Ad | _E.g._ `AutoGlaze-VIDEO-FREETRIAL-TRY-LP` | [Ad naming conventions](/ad-name-conventions) |
-| UTMs | _E.g._ `?utm_source=tiktok&utm_medium=paid-social&utm_campaign=fresh-batch-trial` | [UTM standards](/utm-standards) |
+| UTMs | See the table below | [UTM standards](/utm-standards) |
+
+### UTMs
+
+One tagged URL per ad group, not one per campaign. `utm_content` carries the ad group name, so ad groups that share a tag report as one row.
+
+| Parameter | Value | Where it comes from |
+| :-- | :-- | :-- |
+| `utm_source` | _E.g._ `tiktok` | Source list, [section A](/utm-standards#a-source-standard-utm_source) |
+| `utm_medium` | _E.g._ `paid_social` | Medium list, [section B](/utm-standards#b-medium-standard-utm_medium). Match the spelling in your standard exactly |
+| `utm_campaign` | _E.g._ `TikTok-InFeed-Conversions-ABO-TOFU` | The **platform campaign name** above, character for character |
+| `utm_content` | _E.g._ `20260401-LLA3-HSL` | The ad group name. One per ad group |
+| `utm_term` | _E.g._ `AutoGlaze-VIDEO-FREETRIAL-TRY-LP` | The ad name, per your [section D](/utm-standards#d-content-and-term-standard-utm_content-utm_term) rule |
+
+<Warning>
+  `utm_campaign` carries the platform campaign name, not the marketing campaign name and not the brief's file name. The three are set out in [which name is which](/campaign-naming-conventions#which-name-is-which). A slug like `fresh-batch-trial` in this field will not join to anything in your platform export.
+</Warning>
 
 ## Experiment
 

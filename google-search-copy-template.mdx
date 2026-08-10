@@ -5,6 +5,10 @@ description: "A blank fill-in template for responsive search ad copy: headlines,
 
 Fill in every field below before handing this off for setup.
 
+<Note>
+  One filled copy of this template is one responsive search ad. Running several ads in an ad group means several filled copies, each with its own ad name. The variant block below is what ties them together and marks which one is the control.
+</Note>
+
 ## Setup
 
 | Field | Fill in |
@@ -14,7 +18,41 @@ Fill in every field below before handing this off for setup.
 | Copy brief link |  |
 | [Campaign name](/campaign-naming-conventions) |  |
 | [Ad group name](/ad-set-group-naming-conventions) |  |
+| [Ad name](/ad-name-conventions) |  |
 | Final URL |  |
+
+## Variant
+
+Fill this in on every copy, including the control. Leave the experiment ID blank if this ad is not part of a test.
+
+| Field | Fill in |
+| :-- | :-- |
+| Variant label | _E.g._ `A` |
+| Control or variant | _E.g. Control_ |
+| [Experiment ID](/experiment-id-convention) | _E.g._ `TEST07` |
+| What differs from the control | _E.g. Nothing, this is the control_ |
+
+**Every ad in this set.** Copy this table onto each filled template so any one of them shows the whole picture.
+
+| Variant | Ad name | Control? | What differs | Template link |
+| :-- | :-- | :-- | :-- | :-- |
+| _E.g. A_ | _E.g._ `AutoGlaze-RSA-FREETRIAL-TRY-LP-A` | _E.g. Yes_ | _E.g. Baseline_ | _E.g. [link](https://link)_ |
+| _E.g. B_ | _E.g._ `AutoGlaze-RSA-FREETRIAL-TRY-LP-B` | _E.g. No_ | _E.g. Headline 1 leads on price, not speed_ | _E.g. [link](https://link)_ |
+| \[add variant\] |  |  |  |  |
+
+<Warning>
+  A headline test only measures what you pinned. A responsive search ad assembles its own combinations, so an unpinned test headline may not serve at all in one variant and may dominate in another, and the result then reflects the auction rather than the headline. Pin the field under test to the same position in every variant, and change nothing else. Record the pins below.
+</Warning>
+
+## Pinning
+
+| Field | Pinned to | Why |
+| :-- | :-- | :-- |
+| _E.g. Headline 1_ | _E.g. Position 1_ | _E.g. The variable under test in `TEST07`_ |
+| _E.g. Headline 3_ | _E.g. Position 2_ | _E.g. "No card required", required by [legal review](/legal-review-process) 12 Apr_ |
+| \[add pin\] |  |  |
+
+Unpinned fields rotate freely. Pinning narrows the combinations Google can test, which usually lowers ad strength; that trade is deliberate when a claim is required or a variable is under test, and worth writing down so the next person doesn't remove the pin to lift the rating.
 
 ## Display path
 
@@ -89,3 +127,6 @@ Minimum 2, up to 4.
 - [Ad set / ad group / variant naming conventions](/ad-set-group-naming-conventions)
 - [Creative brief](/creative-brief)
 - [Marketing campaign brief](/marketing-campaign-brief)
+- [Experiment ID convention](/experiment-id-convention) Where the ID in the variant block comes from.
+- [Creating an experiment](/creating-an-experiment) The process a copy test runs on.
+- [Legal review](/legal-review-process#conditions-have-to-survive-the-format) Why a required claim gets pinned.
