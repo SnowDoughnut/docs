@@ -156,7 +156,6 @@
           {
             "group": "Brand guidelines",
             "pages": [
-              "brand-system-overview",
               "brand-guidelines",
               "positioning",
               "messaging",
@@ -814,6 +813,11 @@
     {
       "source": "/experirment-learning-home",
       "destination": "/experiment-learning-home",
+      "permanent": true
+    },
+    {
+      "source": "/brand-system-overview",
+      "destination": "/brand-guidelines",
       "permanent": true
     }
   ]
