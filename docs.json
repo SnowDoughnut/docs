@@ -319,6 +319,12 @@
             "pages": [
               "linked-in-home",
               {
+                "group": "Briefs",
+                "pages": [
+                  "linkedin-campaign-brief"
+                ]
+              },
+              {
                 "group": "Creative Specifications",
                 "pages": [
                   "linkedin-creative-specs"
@@ -330,7 +336,9 @@
               },
               {
                 "group": "SOPs",
-                "pages": []
+                "pages": [
+                  "linkedin-campaign-process"
+                ]
               },
               {
                 "group": "How-tos",
@@ -346,7 +354,9 @@
               },
               {
                 "group": "Checklists",
-                "pages": []
+                "pages": [
+                  "linkedin-pre-launch-checklist"
+                ]
               }
             ]
           },
@@ -354,6 +364,12 @@
             "dropdown": "TikTok",
             "pages": [
               "tik-tok-home",
+              {
+                "group": "Briefs",
+                "pages": [
+                  "tiktok-campaign-brief"
+                ]
+              },
               {
                 "group": "Creative Specifications",
                 "pages": [
@@ -366,7 +382,9 @@
               },
               {
                 "group": "SOPs",
-                "pages": []
+                "pages": [
+                  "tiktok-campaign-process"
+                ]
               },
               {
                 "group": "How-tos",
@@ -382,7 +400,9 @@
               },
               {
                 "group": "Checklists",
-                "pages": []
+                "pages": [
+                  "tiktok-pre-launch-checklist"
+                ]
               }
             ]
           },

@@ -1,0 +1,186 @@
+---
+title: "TikTok campaign brief"
+description: "A fill-in workbook for a single TikTok campaign: objective, optimization event, budget, bid strategy, structure, targeting, creative, and the briefs it runs on. Sits under the marketing campaign brief and above TikTok Ads Manager."
+---
+
+_This page is a workbook. Fill it in top to bottom before anything is built in TikTok Ads Manager. Each section has a "Concept review" dropdown explaining what the section is for. The dropdowns explain the thinking; the decision is yours._
+
+<Note>
+  This brief sits between the [marketing campaign brief](/marketing-campaign-brief), which covers strategy across every channel, and TikTok Ads Manager, where the campaign is built.
+
+  Greyed `E.g.` text is a placeholder. Delete it and replace it with your own. Examples use **Doughnut Labs**, a SaaS company that sells disruptive Doughnut Technology.
+</Note>
+
+<Tip>
+  Record the decision and the reason, not the click path. This brief fixes objective, optimization event, budget, bid strategy, and structure so they can be reviewed before spend starts. Creative rotation, in-flight bid adjustments, and which hooks to scale stay with the media buyer.
+</Tip>
+
+## Setup
+
+| Field | Fill in |
+| :-- | :-- |
+| [Owner](/glossary#owner) | _E.g. Tom Reyes_ |
+| Media buyer | _E.g. Tom Reyes_ |
+| [Marketing campaign brief](/marketing-campaign-brief) | _E.g. [Doughnut Labs "Fresh Batch" spring trial push](https://link)_ |
+| Ad account | _E.g. Doughnut Labs US_ |
+| Brief name ([file naming conventions](/file-naming-conventions)) | _E.g._ `DOC_tiktok-fresh-batch-trial_2026-08-07_v01` |
+| Flight dates | _E.g. 22 Apr to 20 Jun 2026_ |
+
+## Objective and optimization event
+
+| Field | Fill in |
+| :-- | :-- |
+| Campaign objective | _E.g. Sales_ |
+| Optimization event | _E.g. Complete registration_ |
+| Conversion action, from the [event tracking plan](/event-tracking-plan) | _E.g._ `Trial Started` |
+| Tracking method | _E.g. TikTok Pixel plus Events API_ |
+| Is the event live and firing? | _E.g. Yes, verified 4 Apr_ |
+| Sending value with the event? | _E.g. No_ |
+
+TikTok's campaign objectives, as of 7 August 2026:
+
+| Objective | Optimizes for |
+| :-- | :-- |
+| Reach | Impressions against as many people as possible |
+| Traffic | Clicks or landing page views |
+| Video views | Views and watch time |
+| Community interaction | Follows and profile visits |
+| Brand consideration | Consideration and engagement at scale |
+| Lead generation | On-platform instant forms, or website leads |
+| App promotion | Installs and in-app events |
+| Sales | Website, app, or catalogue conversions |
+
+<Warning>
+  The objective decides which bidding method is available. Reach is bought on CPM, Traffic on CPC, and Sales on oCPM against a pixel or event signal. Picking the objective is therefore also picking how the campaign will be charged, which is not obvious at the point you choose it.
+</Warning>
+
+<Accordion title="Concept review: Objective and optimization event">
+  On TikTok the objective locks more downstream settings than it does on most platforms. It sets the auction the campaign competes in, the optimization events available, and the billing method, and none of those can be changed later without rebuilding.
+
+  Naming the conversion action against the [event tracking plan](/event-tracking-plan) keeps the platform's numbers reconcilable with your analytics. Running the Events API alongside the pixel matters more here than the setup effort suggests, because signal loss on a single-pixel setup shows up as weak optimization rather than as a tracking error anyone notices.
+</Accordion>
+
+## Budget and bid strategy
+
+| Field | Fill in |
+| :-- | :-- |
+| Budget level | _E.g. Ad group level_ |
+| Budget type | _E.g. Daily_ |
+| Amount | _E.g. \$400 per day_ |
+| Bid strategy | _E.g. Cost cap_ |
+| Cost cap value | _E.g. \$33 per trial signup_ |
+| Campaign type | _E.g. Standard, not Smart\+_ |
+| Why this strategy | _E.g. Known CPA from Meta prospecting; cap set to protect it while volume builds_ |
+
+TikTok's bid strategies, as of 7 August 2026:
+
+| Strategy | What it does | Typically used when |
+| :-- | :-- | :-- |
+| Maximum delivery | Spends the budget for the most results, no cost target | Launching, or no reliable CPA baseline |
+| Cost cap | Holds cost per result near a target, underspending rather than overshooting | Scaling against a known CPA |
+| Value-based optimization | Bids toward conversion value rather than volume | Values vary and are passed with the event |
+
+<Warning>
+  A cost cap campaign needs enough daily budget to explore the auction. TikTok's guidance is a daily budget of at least 50 times the bid, and Smart\+ app campaigns call for around 30 times target CPA on cost cap. Below that, delivery becomes erratic in a way that reads as a targeting problem rather than a budget one.
+</Warning>
+
+<Accordion title="Concept review: Budget and bid strategy">
+  Cost cap on TikTok fails differently from a cost goal on other platforms. Rather than overspending against the target, it underspends: the system holds cost down by simply not delivering. A campaign that looks like it has a reach problem is often a campaign whose cap and budget were set too tight relative to each other.
+
+  Smart\+ campaigns automate targeting, bidding, and creative selection together. They can work well and they also remove most of the levers this brief exists to record, so the choice to use one belongs in the brief with a reason next to it.
+</Accordion>
+
+## Campaign structure
+
+| Ad group | Customer profile | Budget | What it tests or proves |
+| :-- | :-- | :-- | :-- |
+| _E.g. Broad prospecting_ | _E.g. [Mid-market RevOps lead](https://link)_ | _E.g. \$250 per day_ | _E.g. Main cold volume driver_ |
+| _E.g. Creator content, Spark_ | _E.g. [Mid-market RevOps lead](https://link)_ | _E.g. \$150 per day_ | _E.g. Whether creator-led beats brand-led_ |
+| \[add ad group\] |  |  |  |
+
+## Targeting
+
+| Customer profile | Link | Built as | Source |
+| :-- | :-- | :-- | :-- |
+| _E.g. Mid-market RevOps lead_ | _E.g. [CP\_midmarket-revops\_2026-03-02\_v02](https://link)_ | _E.g. Lookalike from customer list_ | _E.g. HubSpot export via [TikTok CSV template](/customer-profile-csv-template-tiktok)_ |
+| \[add profile\] |  |  |  |
+
+<Accordion title="Concept review: Targeting">
+  TikTok's delivery system tends to reward broad targeting with strong creative over narrow targeting with weak creative, more than most platforms do. That makes the creative section of this brief load-bearing in a way the targeting section is not, and it is worth being honest in the brief about which of the two the campaign is actually relying on.
+
+  Recording the profile and the way it was built still matters. A result that came from a customer-list lookalike and a result that came from broad targeting teach different lessons, and neither is recoverable from the ad group name alone.
+</Accordion>
+
+## Creative and copy
+
+| Deliverable | Link |
+| :-- | :-- |
+| [Creative brief](/creative-brief) | _E.g. [Fresh Batch TikTok creative brief](https://link)_ |
+| [Copy brief](/ad-copy-standards) | _E.g. [COPY\_fresh-batch-tiktok\_2026-04-02\_v01](https://link)_ |
+| Copy template | _E.g._ [TikTok in-feed](/tiktok-in-feed-copy-template) |
+| Finished creative | _E.g. [Fresh Batch TikTok cuts, final](https://link)_ |
+| Landing page | _E.g. [doughnutlabs.com/lp/fresh-batch-trial](https://link)_ |
+
+**Number of creative variants at launch:** _E.g. Six. Four brand-led, two creator-led._
+
+**Spark Ads authorization:** _E.g. Creator post authorization code received from @creatorhandle, valid to 30 Jun._
+
+Creative has to meet the [TikTok creative specs](/tiktok-creative-specs).
+
+<Accordion title="Concept review: Creative and copy">
+  TikTok burns through creative faster than the other paid platforms, so the number of variants at launch is a real planning input rather than a detail. A campaign launched with one video will usually stall on frequency before its budget is spent, and the fix at that point is a production timeline nobody scheduled.
+
+  Spark Ads add a dependency that lives outside your team: they run against a creator's or your own organic post and need an authorization code with an expiry date. Recording the code and its expiry in the brief is what stops a campaign quietly losing its best-performing ad mid-flight.
+</Accordion>
+
+## Naming and tracking
+
+| Level | Name | Convention |
+| :-- | :-- | :-- |
+| Campaign | _E.g._ `TikTok-InFeed-Conversions-ABO-TOFU` | [Campaign naming conventions](/campaign-naming-conventions) |
+| Ad group | _E.g._ `20260401-LLA3-HSL` | [Ad set / ad group / variant](/ad-set-group-naming-conventions) |
+| Ad | _E.g._ `AutoGlaze-VIDEO-FREETRIAL-TRY-LP` | [Ad naming conventions](/ad-name-conventions) |
+| UTMs | _E.g._ `?utm_source=tiktok&utm_medium=paid-social&utm_campaign=fresh-batch-trial` | [UTM standards](/utm-standards) |
+
+## Experiment
+
+<Tip>
+  Optional: fill this in only if part of this campaign is a controlled test.
+</Tip>
+
+| Field | Fill in |
+| :-- | :-- |
+| [Experiment ID](/experiment-ids) | _E.g._ `TEST02` |
+| [Experiment brief](/experiment-brief) | _E.g. [Creator versus brand creative test](https://link)_ |
+| Level the ID is applied at | _E.g. Ad name_ |
+
+## Measurement
+
+| KPI | Target | Actual |
+| :-- | :-- | :-- |
+| _E.g. Trial signups_ | _E.g. 200_ | (blank until launch) |
+| _E.g. Cost per signup_ | _E.g. ≤ \$38_ | (blank until launch) |
+| \[add KPI\] |  |  |
+
+**Where this campaign is reported:** _E.g. [Paid media dashboard](https://link), rolled into the weekly report_
+
+## Post-launch
+
+| Item | Link or date |
+| :-- | :-- |
+| Pre-launch checklist run | _E.g. 21 Apr, Tom Reyes_ |
+| Launch date | _E.g. 22 Apr_ |
+| Mid-flight review date | _E.g. 13 May_ |
+| Filed in the [campaign library](/campaign-library-overview) | _E.g. TikTok folder, 22 Apr_ |
+
+<Info>
+  Platform settings on this page were checked on 7 August 2026. TikTok renames objectives and bid strategies regularly, and Smart\+ availability varies by objective and market. Confirm the current options in Ads Manager before filling in a brief, and update this page when they move.
+</Info>
+
+## Related resources
+
+- [**Launching a TikTok campaign**](/tiktok-campaign-process) The process this brief runs on.
+- [**TikTok pre-launch checklist**](/tiktok-pre-launch-checklist) The pass to run before setting live.
+- [**Marketing campaign brief**](/marketing-campaign-brief) The parent brief this one sits under.
+- [**TikTok creative specs**](/tiktok-creative-specs) and the [**TikTok copy templates**](/tiktok-in-feed-copy-template)
+- [**Campaign library**](/campaign-library-overview) Where this brief is filed.
