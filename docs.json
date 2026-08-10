@@ -33,6 +33,7 @@
             "group": "Start here",
             "pages": [
               "overview",
+              "what-this-framework-covers",
               "setup-checklist"
             ]
           },
@@ -83,26 +84,16 @@
           {
             "group": "Experimentation",
             "pages": [
-              "experiment-ids",
-              "test-brief-process",
+              "experiment-id-concepts",
+              "experiment-brief-concepts",
               "statistical-significance"
             ]
           },
           {
-            "group": "Dictionary",
+            "group": "Foundations",
             "pages": [
-              "glossary"
-            ]
-          },
-          {
-            "group": "Naming conventions",
-            "pages": [
-              "naming-conventions-overview"
-            ]
-          },
-          {
-            "group": "Tracking",
-            "pages": [
+              "glossary",
+              "naming-conventions-overview",
               "utm-parameters"
             ]
           },
@@ -116,7 +107,7 @@
           {
             "group": "Creative",
             "pages": [
-              "creative",
+              "creative-brief-concepts",
               "landing-page-brief-concepts",
               "copy-brief-concepts"
             ]
@@ -166,7 +157,7 @@
             ]
           },
           {
-            "group": "Naming conventions",
+            "group": "Naming and tracking",
             "pages": [
               "file-naming-conventions",
               "event-naming-conventions",
@@ -178,26 +169,16 @@
                   "ad-name-conventions"
                 ]
               },
-              "customer-profile-naming-conventions"
-            ]
-          },
-          {
-            "group": "Tracking & attribution",
-            "pages": [
+              "customer-profile-naming-conventions",
               "utm-standards"
             ]
           },
           {
             "group": "Creative standards",
             "pages": [
-              "ad-copy-standards",
-              {
-                "group": "Image and video specs",
-                "pages": [
-                  "image-and-video-specs"
-                ]
-              },
-              "landing-page-standards",
+              "copy-brief",
+              "image-and-video-specs",
+              "landing-page-brief",
               "creative-brief"
             ]
           },
@@ -218,10 +199,11 @@
             ]
           },
           {
-            "group": "Experiment standards",
+            "group": "Experiment and pilot standards",
             "pages": [
-              "experiment-id",
+              "experiment-id-convention",
               "experiment-brief",
+              "pilot-brief",
               "experiment-review-process"
             ]
           },
@@ -233,9 +215,10 @@
             ]
           },
           {
-            "group": "Marketing campaigns",
+            "group": "Campaigns and products",
             "pages": [
-              "marketing-campaign-brief"
+              "marketing-campaign-brief",
+              "product-catalog"
             ]
           }
         ]
@@ -247,117 +230,47 @@
             "dropdown": "Meta",
             "pages": [
               "meta-home",
-              {
-                "group": "Briefs",
-                "pages": [
-                  "meta-campaign-brief"
-                ]
-              },
-              {
-                "group": "Creative Specifications",
-                "pages": [
-                  "meta-creative-specs"
-                ]
-              },
-              {
-                "group": "SOPs",
-                "pages": [
-                  "meta-campaign-process"
-                ]
-              }
+              "meta-campaign-brief",
+              "meta-creative-specs",
+              "meta-campaign-process"
             ]
           },
           {
             "dropdown": "Google",
             "pages": [
               "google-home",
-              {
-                "group": "Briefs",
-                "pages": [
-                  "google-campaign-brief"
-                ]
-              },
-              {
-                "group": "Creative Specifications",
-                "pages": [
-                  "google-pmax-creative-specs",
-                  "youtube-creative-specs",
-                  "google-display-creative-specs",
-                  "google-search-demandgen-display-specs"
-                ]
-              },
-              {
-                "group": "SOPs",
-                "pages": [
-                  "google-campaign-process"
-                ]
-              }
+              "google-campaign-brief",
+              "google-pmax-creative-specs",
+              "youtube-creative-specs",
+              "google-display-creative-specs",
+              "google-search-demandgen-display-specs",
+              "google-campaign-process"
             ]
           },
           {
             "dropdown": "LinkedIn",
             "pages": [
               "linked-in-home",
-              {
-                "group": "Briefs",
-                "pages": [
-                  "linkedin-campaign-brief"
-                ]
-              },
-              {
-                "group": "Creative Specifications",
-                "pages": [
-                  "linkedin-creative-specs"
-                ]
-              },
-              {
-                "group": "SOPs",
-                "pages": [
-                  "linkedin-campaign-process"
-                ]
-              }
+              "linkedin-campaign-brief",
+              "linkedin-creative-specs",
+              "linkedin-campaign-process"
             ]
           },
           {
             "dropdown": "TikTok",
             "pages": [
               "tik-tok-home",
-              {
-                "group": "Briefs",
-                "pages": [
-                  "tiktok-campaign-brief"
-                ]
-              },
-              {
-                "group": "Creative Specifications",
-                "pages": [
-                  "tiktok-creative-specs"
-                ]
-              },
-              {
-                "group": "SOPs",
-                "pages": [
-                  "tiktok-campaign-process"
-                ]
-              }
+              "tiktok-campaign-brief",
+              "tiktok-creative-specs",
+              "tiktok-campaign-process"
             ]
           },
           {
             "dropdown": "Organic social",
             "pages": [
-              {
-                "group": "Briefs",
-                "pages": [
-                  "organic-social-post-brief"
-                ]
-              },
               "organic-social-home",
-              {
-                "group": "SOPs",
-                "pages": [
-                  "organic-social-post-process"
-                ]
-              }
+              "organic-social-post-brief",
+              "organic-social-post-process"
             ]
           },
           {
@@ -365,43 +278,23 @@
             "pages": [
               "email-home",
               "email-creative-specs",
-              {
-                "group": "Briefs",
-                "pages": [
-                  "email-campaign-brief"
-                ]
-              },
-              {
-                "group": "SOPs",
-                "pages": [
-                  "email-campaign-process"
-                ]
-              }
+              "email-campaign-brief",
+              "email-campaign-process"
             ]
           },
           {
             "dropdown": "SEO",
             "pages": [
               "seo-home",
-              {
-                "group": "SOPs",
-                "pages": [
-                  "article-process",
-                  "article-maintenance-process"
-                ]
-              }
+              "article-process",
+              "article-maintenance-process"
             ]
           },
           {
             "dropdown": "Website & landing pages",
             "pages": [
               "web-home",
-              {
-                "group": "SOPs",
-                "pages": [
-                  "landing-page-process"
-                ]
-              }
+              "landing-page-process"
             ]
           }
         ]
@@ -479,25 +372,15 @@
           {
             "group": "General",
             "pages": [
-              {
-                "group": "Reporting",
-                "pages": [
-                  "flat-file-template",
-                  "weekly-report-template",
-                  "monthly-report-template",
-                  "quarterly-report-template",
-                  "annual-report-template",
-                  "ecommerce-metrics-starter-pack",
-                  "sales-led-metrics-starter-pack"
-                ]
-              },
+              "flat-file-template",
+              "weekly-report-template",
+              "monthly-report-template",
+              "quarterly-report-template",
+              "annual-report-template",
+              "ecommerce-metrics-starter-pack",
+              "sales-led-metrics-starter-pack",
               "landing-page-skeleton",
-              {
-                "group": "Articles",
-                "pages": [
-                  "article-writing-template"
-                ]
-              }
+              "article-writing-template"
             ]
           },
           {
@@ -558,12 +441,7 @@
                   "google-merchant-center-promotions-csv-template"
                 ]
               },
-              {
-                "group": "Google Hotel Center",
-                "pages": [
-                  "google-hotel-center-csv-template"
-                ]
-              }
+              "google-hotel-center-csv-template"
             ]
           },
           {
@@ -608,62 +486,20 @@
         "tab": "Reports & Library",
         "groups": [
           {
-            "group": "Experiment Learning Library",
+            "group": "Libraries and registers",
             "pages": [
-              "experiment-learning-home"
-            ]
-          },
-          {
-            "group": "Weekly Reports",
-            "pages": [
-              "weekly-report-archive"
-            ]
-          },
-          {
-            "group": "Monthly Reports",
-            "pages": [
-              "monthly-report-archive"
-            ]
-          },
-          {
-            "group": "Quarterly Reports",
-            "pages": [
-              "quarterly-report-archive"
-            ]
-          },
-          {
-            "group": "Yearly Reports",
-            "pages": [
-              "annual-report-archive"
-            ]
-          },
-          {
-            "group": "Customer Profile Library",
-            "pages": [
-              "customer-profile-library-overview"
-            ]
-          },
-          {
-            "group": "Campaigns Library",
-            "pages": [
-              "campaign-library-overview"
-            ]
-          },
-          {
-            "group": "Event Library",
-            "pages": [
+              "campaign-library-overview",
+              "customer-profile-library-overview",
+              "creative-brief-library",
+              "copy-brief-library",
+              "landing-page-library",
+              "experiment-learning-home",
               "event-tracking-plan-overview",
               "event-tracking-plan"
             ]
           },
           {
-            "group": "Creative Brief Library",
-            "pages": [
-              "creative-briefs"
-            ]
-          },
-          {
-            "group": "Article Library",
+            "group": "Article library",
             "pages": [
               "article-library-overview",
               "hero-article-register",
@@ -672,24 +508,21 @@
             ]
           },
           {
-            "group": "Landing Page Library",
+            "group": "Report archives",
             "pages": [
-              "landing-page-library"
+              "weekly-report-archive",
+              "monthly-report-archive",
+              "quarterly-report-archive",
+              "annual-report-archive"
             ]
           },
           {
-            "group": "Asset Directories",
+            "group": "Asset directories",
             "pages": [
               "asset-directory",
               "creative-drive",
               "video-drive",
               "copy-drive"
-            ]
-          },
-          {
-            "group": "Copy Brief Library",
-            "pages": [
-              "copy-brief-library"
             ]
           }
         ]
@@ -818,6 +651,41 @@
     {
       "source": "/brand-system-overview",
       "destination": "/brand-guidelines",
+      "permanent": true
+    },
+    {
+      "source": "/ad-copy-standards",
+      "destination": "/copy-brief",
+      "permanent": true
+    },
+    {
+      "source": "/landing-page-standards",
+      "destination": "/landing-page-brief",
+      "permanent": true
+    },
+    {
+      "source": "/creative",
+      "destination": "/creative-brief-concepts",
+      "permanent": true
+    },
+    {
+      "source": "/creative-briefs",
+      "destination": "/creative-brief-library",
+      "permanent": true
+    },
+    {
+      "source": "/test-brief-process",
+      "destination": "/experiment-brief-concepts",
+      "permanent": true
+    },
+    {
+      "source": "/experiment-ids",
+      "destination": "/experiment-id-concepts",
+      "permanent": true
+    },
+    {
+      "source": "/experiment-id",
+      "destination": "/experiment-id-convention",
       "permanent": true
     }
   ]

@@ -36,6 +36,7 @@ Date is freeform, for example `20260601`, and doesn't need a table of its own.
 | Interest | INT | Platform interest or behavior targeting |  |
 | Customer match | CM | Matched against an uploaded customer list |  |
 | Prospecting | PROS | Broad, non-lookalike cold targeting |  |
+| Keyword | KW | Targeted by search query rather than by audience |  |
 | \[add customer profile type\] |  |  |  |
 
 ### Customer profile seed
@@ -87,6 +88,25 @@ Date is freeform, for example `20260601`, and doesn't need a table of its own.
 | Desktop | DESK | Desktop-only targeting or creative |  |
 | \[add device\] |  |  |  |
 
+### Ad group theme (search and shopping)
+
+<Tip>
+  Add this category if you run search or shopping, where an ad group is organized around a group of queries rather than around an audience. On these channels the theme takes the slot the customer profile seed occupies elsewhere.
+</Tip>
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. Reporting automation_ | _REPORTAUTO_ | _High-intent queries about automating reporting_ |  |
+| Competitor terms | COMPET | Competitor brand and comparison queries |  |
+| Brand | BRAND | Our own brand terms, including misspellings |  |
+| Category generic | CATEG | Unbranded category queries |  |
+| Problem aware | PROBLEM | Queries describing the problem, not the solution |  |
+| \[add theme\] |  |  |  |
+
+<Warning>
+  A keyword theme typed straight into the platform is the most common way this level's dictionary breaks, because a theme feels like a description rather than a value. Register the theme here first, then use its short form in the name.
+</Warning>
+
 ### List / segment type
 
 | Long form | Short form | Description | \[add value\] |
@@ -111,6 +131,11 @@ Spaces, `%`, and other special characters can break platform parsing or reportin
 - Long form: `20260601-3-Percent-LLA-HubSpot-Leads`
 - Short form (name jammed): `20260601-LLA3-HSL`
 
+On search and shopping, where the group is built around queries rather than an audience, the theme takes the seed's place:
+
+- Long form: `20260401-Keyword-Reporting-Automation`
+- Short form (name jammed): `20260401-KW-REPORTAUTO`
+
 <Info>
   This document covers ad set / ad group / variant-level identifiers, including this level's dictionary of values. See [Campaign naming conventions](/campaign-naming-conventions) and [Ad naming conventions](/ad-name-conventions) for the other two levels.
 </Info>
@@ -125,7 +150,7 @@ Testing identifiers mark a hypothesis you're currently running, for example an A
 
 - With a testing identifier appended: `20260601-3-Percent-LLA-HubSpot-Leads-TEST01`
 
-This document only covers where a testing identifier sits in the name. It doesn't cover how an [experiment ID](/glossary#experiment-id) gets created, how long it stays on an ad, or where the result gets logged once the test ends. Visit the [Experiment ID SOP](/experiment-ids) for that.
+This document only covers where a testing identifier sits in the name. It doesn't cover how an [experiment ID](/glossary#experiment-id) gets created, how long it stays on an ad, or where the result gets logged once the test ends. Visit the [Experiment ID concepts](/experiment-id-concepts) for that.
 
 ## Related resources
 

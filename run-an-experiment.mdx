@@ -5,11 +5,15 @@ description: "How a test gets briefed, given an ID, launched, monitored, reviewe
 
 Use this whenever you're changing something to find out whether it works, rather than because you already know it does.
 
+<Note>
+  This path assumes a control to compare against. If you're spending to find out whether a new channel, product line, or market is worth continuing, there is nothing to compare it to and this process doesn't fit. Use the [pilot brief](/pilot-brief) instead: it sets a read date and a kill or scale rule in place of a control, and its result files into the same [learning library](/experiment-learning-home).
+</Note>
+
 ## Before you start
 
 | You need | Where it lives |
 | :-- | :-- |
-| An ID pattern | [Experiment ID](/experiment-id) |
+| An ID pattern | [Experiment ID](/experiment-id-convention) |
 | A metric definition you trust | [Marketing reporting data dictionary](/marketing-reporting-data-dictionary) |
 | Enough traffic to detect a change | [Statistical significance](/statistical-significance) |
 
@@ -17,7 +21,7 @@ Use this whenever you're changing something to find out whether it works, rather
 
 <Steps>
   <Step title="1. Read the concepts once">
-    [Experiment IDs](/experiment-ids) explains why every test needs a traceable identifier. [Statistical significance](/statistical-significance) explains what a result can and can't tell you, including why checking early changes what the number means.
+    [Experiment IDs](/experiment-id-concepts) explains why every test needs a traceable identifier. [Statistical significance](/statistical-significance) explains what a result can and can't tell you, including why checking early changes what the number means.
   </Step>
   <Step title="2. Fill in the experiment brief">
     Copy the [experiment brief](/experiment-brief) and fill in the hypothesis, the primary metric, the guardrail metrics, the sample needed, and the decision rule you'll follow either way.
@@ -25,7 +29,7 @@ Use this whenever you're changing something to find out whether it works, rather
     Write the decision rule before launch. Deciding what counts as a win after seeing the data is how a flat test becomes a success story.
   </Step>
   <Step title="3. Register the ID">
-    Issue an ID from your [experiment ID](/experiment-id) pattern and record it before launch.
+    Issue an ID from your [experiment ID](/experiment-id-convention) pattern and record it before launch.
   </Step>
   <Step title="4. Apply the ID everywhere">
     The ID goes on every surface the test touches: campaign and ad names ([conventions](/ad-set-group-naming-conventions)), [UTM values](/utm-standards), and the analytics events. This is what makes results traceable later.
@@ -57,6 +61,7 @@ Use this whenever you're changing something to find out whether it works, rather
 ## Related resources
 
 - [**Experiment brief**](/experiment-brief) The workbook.
+- [**Pilot brief**](/pilot-brief) The workbook to use instead when there's no control.
 - [**Creating an experiment**](/creating-an-experiment) The detailed process.
 - [**Experiment review process**](/experiment-review-process) How results get judged.
 - [**Statistical significance**](/statistical-significance) What the numbers mean.

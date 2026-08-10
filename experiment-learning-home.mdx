@@ -3,9 +3,11 @@ title: "Experiment learning library"
 description: "The register of every finished test: what was tried, what happened, and what was decided. Search it before designing a test, so an idea that was already tried gets built on rather than repeated."
 ---
 
-Every completed [experiment review](/experiment-review-process) gets a row here, linked back to its [experiment brief](/experiment-brief).
+Every completed [experiment review](/experiment-review-process) gets a row here, linked back to its [experiment brief](/experiment-brief). So does every [pilot](/pilot-brief) that reaches its read date.
 
 The library exists for one reason: a test whose result nobody can find gets run again. The second run costs the same as the first and produces the same answer, and nobody realises until someone remembers halfway through.
+
+Pilots are filed alongside experiments because the question "have we tried this?" doesn't distinguish between the two. Someone asking whether Google Search works for you needs the pilot's read whether or not it had a control, and a library holding only controlled tests sends them to repeat it.
 
 <Warning>
   Null and negative results are filed with exactly the same care as wins. They are the rows most often skipped and the ones that save the most work, because "we tried that and it did nothing" is only useful if it is written down somewhere findable.
@@ -20,18 +22,23 @@ _The first three rows are examples using Doughnut Labs, a company that sells Dou
 | _E.g. [EXP-2026-014](https://link)_ | _E.g. Naming the price on the ad raises trial quality_ | _E.g. Meta prospecting_ | _E.g. Trial-to-paid rate_ | _E.g. +11%_ | _E.g. Win_ | _E.g. Rolled into the copy brief as a default_ | _E.g. 2026-05-02_ |
 | _E.g. [EXP-2026-015](https://link)_ | _E.g. Social proof above the fold lifts demo bookings_ | _E.g. /lp/book-a-demo_ | _E.g. Demo booked rate_ | _E.g. +1.2%, not significant_ | _E.g. No result_ | _E.g. Reverted. Not worth retesting at current traffic_ | _E.g. 2026-05-20_ |
 | _E.g. [EXP-2026-016](https://link)_ | _E.g. Shorter form increases completions_ | _E.g. /lp/fresh-batch-trial_ | _E.g. Trial started_ | _E.g. +9% starts, minus 14% trial-to-paid_ | _E.g. Loss_ | _E.g. Reverted. Guardrail caught it_ | _E.g. 2026-06-11_ |
+| _E.g. [PILOT04](https://link)_ | _E.g. Can Google Search acquire trials at a workable cost?_ | _E.g. Google Search, new channel_ | _E.g. Cost per trial signup_ | _E.g. \$41 against a \$45 threshold_ | _E.g. Scaled_ | _E.g. 30% of LinkedIn budget moved to Search from Q3_ | _E.g. 2026-06-03_ |
 | \[add row\] |  |  |  |  |  |  |  |
 
 ## Status values
 
-Four values, so the register can be filtered rather than read.
+Six values, so the register can be filtered rather than read. The first four apply to experiments, the last two to [pilots](/pilot-brief).
 
-| Status | Means |
-| :-- | :-- |
-| **Win** | Beat the decision rule set before launch. Rolled out |
-| **Loss** | Moved the wrong way, or a guardrail metric was damaged. Reverted |
-| **No result** | Did not reach significance, or the difference was inside the noise |
-| **Invalid** | Something broke: tracking, a mid-flight change, insufficient sample. Not evidence either way |
+| Status | Applies to | Means |
+| :-- | :-- | :-- |
+| **Win** | Experiment | Beat the decision rule set before launch. Rolled out |
+| **Loss** | Experiment | Moved the wrong way, or a guardrail metric was damaged. Reverted |
+| **No result** | Experiment | Did not reach significance, or the difference was inside the noise |
+| **Invalid** | Either | Something broke: tracking, a mid-flight change, insufficient sample. Not evidence either way |
+| **Scaled** | Pilot | Cleared the threshold set before launch. Continued at higher spend |
+| **Stopped** | Pilot | Missed the threshold, or breached a guardrail. Discontinued |
+
+A pilot never gets **Win** or **Loss**. Those words claim a comparison that a pilot has no control to support, and using them here is how a first flight gets cited a year later as proof a channel works.
 
 **Invalid** matters as much as the other three. A test recorded as "no result" when it was actually broken tells the next person the idea doesn't work, which is not what happened.
 
@@ -49,7 +56,7 @@ Three outcomes, and all three are useful:
 
 The register is only as good as the discipline behind the rows.
 
-- **The ID**, matching the pattern in [experiment ID](/experiment-id), so the test can be traced to the campaigns and events that carried it.
+- **The ID**, matching the pattern in [experiment ID](/experiment-id-convention), so the test can be traced to the campaigns and events that carried it.
 - **The hypothesis as it was written before launch**, not a version rewritten to match the outcome.
 - **The decision rule's verdict**, not an interpretation. Whether it beat the bar is a fact; whether it was worth doing is an opinion, and belongs in the review.
 - **What actually changed as a result.** A win with no decision recorded is a test that ran for nothing.
@@ -63,5 +70,6 @@ Results age. A test won in a different market, at a different price, against a d
 - [**Run an experiment**](/run-an-experiment) The full path, ending with a row here.
 - [**Experiment review process**](/experiment-review-process) What produces the row.
 - [**Experiment brief**](/experiment-brief) The workbook each row links back to.
-- [**Experiment ID**](/experiment-id) The ID pattern and the issued-ID log.
+- [**Pilot brief**](/pilot-brief) The workbook behind a pilot row, where there was no control.
+- [**Experiment ID**](/experiment-id-convention) The ID pattern and the issued-ID log.
 - [**Experimentation best practices**](/experimentation-best-practices) Why nulls get recorded.

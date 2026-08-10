@@ -69,6 +69,18 @@ _E.g. Only the analytics lead. Request in the #marketing-ops channel; the list i
 
 `utm_campaign` carries the campaign name you built in [Campaign naming conventions](/campaign-naming-conventions). You do not invent a separate pattern here; you reuse the one you already defined at the campaign level.
 
+<Warning>
+  Three different things get called "the campaign name," and only one of them belongs in `utm_campaign`.
+
+  | What it is | Example | Goes in `utm_campaign`? |
+  | :-- | :-- | :-- |
+  | The **platform campaign name**, assembled from the naming dictionary and typed into the ad platform | `Google-Search-Leads-tROAS-TOFU` | Yes. This is the value |
+  | The **marketing campaign name**, the human name for the initiative across every channel | "Fresh Batch spring trial push" | No. It is carried as an identifier inside the platform name, see [campaign naming conventions](/campaign-naming-conventions#which-name-is-which) |
+  | The **brief file name**, from the [file naming conventions](/file-naming-conventions) | `DOC_google-fresh-batch-trial_2026-08-07_v01` | No. It names a document, not a campaign |
+
+  The value in `utm_campaign` has to match the name in the ad platform exactly, character for character. That match is what joins platform spend to analytics conversions.
+</Warning>
+
 **Confirm which value goes in `utm_campaign`, and show one filled-in example.**
 
 | Question | Your answer |
@@ -90,25 +102,43 @@ _E.g. Only the analytics lead. Request in the #marketing-ops channel; the list i
 
 These two parameters carry the names you built in the other two naming-convention documents. `utm_content` carries the ad set / ad group / variant name; `utm_term` carries the ad (creative) name. Reuse those names rather than inventing new values here.
 
-**Confirm which value goes in each parameter.**
+**Confirm which value goes in each parameter as your default.**
 
 | Parameter | Value to use | Example |
 | :-- | :-- | :-- |
 | `utm_content` | _E.g. The ad set / ad group / variant name from [Ad set / ad group / variant naming conventions](/ad-set-group-naming-conventions)._ | _E.g. `20260601-LLA3-HSL`_ |
 | `utm_term` | _E.g. The ad name from [Ad naming conventions](/ad-name-conventions)._ | _E.g. `AutoGlaze-STATIC-FREETRIAL-TRY-LP`_ |
 
-**Document what `utm_term` means on each platform you run, because it is not the same everywhere.**
+**Then document what each parameter holds on every platform you run, because the default does not survive contact with paid search.**
 
-| Platform | What `utm_term` holds | Example |
-| :-- | :-- | :-- |
-| Meta | _E.g. The ad (creative) name._ | _E.g. `AutoGlaze-STATIC-FREETRIAL-TRY-LP`_ |
-| Google Search | _E.g. The matched search term or keyword._ | _E.g. `{keyword}`_ |
-| \[add platform\] |  |  |
+| Platform | `utm_content` holds | `utm_term` holds | Ad-level reporting comes from |
+| :-- | :-- | :-- | :-- |
+| Meta | _E.g. The ad set name._ | _E.g. The ad name._ | _E.g. `utm_term`_ |
+| Google Search | _E.g. The ad group name._ | _E.g. `{keyword}`, the matched keyword._ | _E.g. Not available in UTMs. See below._ |
+| Google Demand Gen, Display, PMax | _E.g. The asset group name._ | _E.g. The ad name. No keyword exists._ | _E.g. `utm_term`_ |
+| \[add platform\] |  |  |  |
+
+<Warning>
+  `utm_term` holds one value. On Google Search you have to choose between the keyword and the ad name, and most teams choose the keyword because `{keyword}` is the only way to get that data into analytics at all.
+
+  The consequence is worth saying plainly: **if `utm_term` carries the keyword, your analytics cannot tell one Search ad from another.** Ad-level performance on Search is read in Google Ads, joined on the `gclid` from auto-tagging, or not read at all. Nothing downstream will warn you about this, so decide it here and write it in the row above.
+</Warning>
+
+**If you need ad-level Search reporting in analytics, pick one route and record it:**
+
+| Route | What you give up |
+| :-- | :-- |
+| _E.g. Accept it. Keyword in `utm_term`, ad-level read in Google Ads only._ | _E.g. Ad-level joins in our own dashboards on Search._ |
+| _E.g. Ad name in `utm_term`, keyword dropped._ | _E.g. Search term data in analytics, which is the more common need._ |
+| _E.g. Both, using a custom parameter for the ad name, e.g._ `ad_name`_._ | _E.g. Reliability. Custom parameters get stripped, see section E._ |
+| _E.g. Append the ad name to `utm_content` after the ad group, e.g._ `adgroup__adname`_._ | _E.g. A clean `utm_content` value. Reports have to split the string._ |
 
 <Accordion title="Concept review: Content and term standard">
   `utm_content` and `utm_term` add detail below the campaign level, and the cleanest way to fill them is to reuse the names you already built one level down. `utm_content` takes the ad set / ad group / variant name, so the customer profile layer of the click is captured; `utm_term` takes the ad name, so the exact creative is captured. Reusing those names keeps your UTM reports lined up with the structure inside the ad platform instead of describing it a second, slightly different way.
 
-  `utm_term` is worth documenting per platform, because the field does not mean the same thing everywhere. Its original use was the paid search keyword, and on Google Search that is still the natural fit. On Meta there is no keyword, so many teams repurpose `utm_term` for the ad name instead. Both are valid; what causes trouble is using it for the ad name on one platform and the keyword on another without writing that down, so a mixed report becomes impossible to read. The field can be used ad hoc, as long as each platform's meaning is recorded in the table above.
+  `utm_term` is worth documenting per platform, because the field does not mean the same thing everywhere. Its original use was the paid search keyword, and on Google Search that is still the natural fit. On Meta there is no keyword, so many teams repurpose `utm_term` for the ad name instead. Both are valid; what causes trouble is using it for the ad name on one platform and the keyword on another without writing that down, so a mixed report becomes impossible to read.
+
+  On Google Search the two uses collide, and there is no arrangement that gets both. Teams tend to discover this months in, when someone tries to compare two responsive search ads in a dashboard and finds every row grouped by keyword instead. The choice itself is unremarkable; the cost is entirely in making it by accident. Recording which value the field carries, and what that leaves unavailable, is what turns it back into a decision someone can revisit.
 </Accordion>
 
 ## E. Custom parameters
