@@ -1,0 +1,160 @@
+---
+title: "Launching an email campaign"
+description: "The process for standing up an email campaign or automated sequence in our framework: gather the inputs, fill in the email campaign brief, build the segment, write and design the send, test it, run the pre-send checklist, send, and file the brief."
+---
+
+Take an email campaign from an approved marketing campaign to a sent, correctly tracked, correctly segmented send. This process covers all three levels, campaign or flow, segment, and individual send, because the inputs are gathered once for the whole build.
+
+<Info>
+  This process uses the [**email campaign brief**](/email-campaign-brief), the [**marketing campaign brief**](/marketing-campaign-brief), the three [naming conventions](/naming-conventions-overview), the [**UTM standards**](/utm-standards), the [**email copy template**](/email-copy-template), the [**email creative specs**](/email-creative-specs), and the [**email pre-send checklist**](/email-pre-send-checklist).
+</Info>
+
+## What you'll end up with
+
+Three things that point at each other:
+
+- A completed [**email campaign brief**](/email-campaign-brief), filed in the [campaign library](/campaign-library-overview) under the Email folder.
+- A **sent campaign or a live sequence**, named per the three naming conventions, tagged with UTMs that distinguish each send, driving a conversion action defined in the [event tracking plan](/event-tracking-plan).
+- **Links back** from the marketing campaign brief to this campaign's brief and finished copy.
+
+One person, the [**owner**](/glossary#owner), is accountable for all three.
+
+## Before you start
+
+Every input below has to exist, or be deliberately marked as not applicable, before the build starts.
+
+| Input | Where it comes from | Required | If it doesn't exist yet |
+| :-- | :-- | :-- | :-- |
+| Parent marketing campaign | [Marketing campaign brief](/marketing-campaign-brief) | Always | Stop. Run the [campaign brief process](/campaign-brief-process) first |
+| Customer profile | [Customer profile library](/customer-profile-library-overview) | Always | Build it with the [B2B](/customer-profile-brief) or [B2C](/b2-c-customer-profiles) brief |
+| Segment definition | Your email platform | Always | Write the query into the brief before building it |
+| Consent basis | Your CRM or platform | Always | Stop. Do not send to contacts without a recorded basis |
+| Conversion action | [Event tracking plan](/event-tracking-plan) | Always | Add a row using the [tracking plan overview](/event-tracking-plan-overview) |
+| Destination | [Landing page library](/landing-page-library) | Always, unless the email has no link | Pick an existing page, or run [building a landing page](/landing-page-process) |
+| Copy | [Copy brief](/ad-copy-standards), [email copy template](/email-copy-template) | Always | Brief it via the [copywriting process](/copywriting-process) |
+| Design | [Creative brief process](/creative-brief-process), [email creative specs](/email-creative-specs) | If the email needs new design | Brief it, or use an existing template |
+| Authentication | Your sending domain | Always | Fix SPF, DKIM, and DMARC before sending anything |
+| Names, all three levels | [Campaign](/campaign-naming-conventions), [segment](/ad-set-group-naming-conventions), [send](/ad-name-conventions) | Always | Assemble from the dictionaries |
+| UTMs | [UTM standards](/utm-standards) | Always | Build them, including `utm_content` per send |
+| Experiment ID | [Experiment ID conventions](/experiment-ids) | Only if testing | Register one via [creating an experiment](/creating-an-experiment) |
+
+<Warning>
+  Consent basis and domain authentication are the two rows that stop a send rather than delay it. Neither is fixable in the hour before a scheduled send, so check both first.
+</Warning>
+
+## The process at a glance
+
+<Steps>
+  <Step title="Confirm the campaign has a parent">
+    Every email campaign belongs to a marketing campaign brief.
+  </Step>
+  <Step title="Gather the inputs">
+    Work the table above. Pick what exists, brief what doesn't.
+  </Step>
+  <Step title="Fill in the email campaign brief">
+    Send type, objective, conversion action, audience, content, send settings, deliverability.
+  </Step>
+  <Step title="Build the segment and its suppressions">
+    From the written definition, not from memory at send time.
+  </Step>
+  <Step title="Write the copy and build the email">
+    Copy from the copy brief into the email copy template, then into the platform.
+  </Step>
+  <Step title="Assemble names and UTMs">
+    All three naming levels, with utm\_content distinguishing each send.
+  </Step>
+  <Step title="Send test emails and render-check">
+    Real inboxes, real devices, light and dark mode.
+  </Step>
+  <Step title="Run the pre-send checklist">
+    The last pass before it goes out.
+  </Step>
+  <Step title="Send, then link back">
+    Send or activate, then link the finished copy into the marketing campaign brief.
+  </Step>
+  <Step title="File the brief and set a review date">
+    Into the campaign library. Sequences get a recurring review date.
+  </Step>
+</Steps>
+
+## 1. Confirm the campaign has a parent
+
+Open the [marketing campaign brief](/marketing-campaign-brief) this send belongs to and confirm email is listed in its channels table with a reason.
+
+## 2. Gather the inputs
+
+Work down the table in **Before you start**.
+
+**Segment.** Write the segment as a definition in the brief before building it in the platform. A written query can be checked by someone else; a segment built at send time usually cannot, and that is where wrong-audience sends come from.
+
+**Suppressions.** List them explicitly, including other campaigns sending in the same window. Overlapping sends are a deliverability problem as much as an experience one.
+
+**Consent.** Confirm every contact in the segment has a recorded basis for receiving marketing email. This is not a step to take on trust.
+
+**Destination.** Check the [landing page library](/landing-page-library) for a page that already serves this offer. The page has to carry the same offer and the same call-to-action wording as the email, or the click is wasted.
+
+## 3. Fill in the email campaign brief
+
+Copy the [**email campaign brief**](/email-campaign-brief) and work down it. Every campaign or sequence gets its own.
+
+If this is an automated sequence, pay particular attention to the trigger, the timing, and the exit condition. A sequence with no exit condition keeps asking a contact to do something they have already done.
+
+## 4. Build the segment and its suppressions
+
+Build the segment from the written definition. Then check the count against the estimate in the brief.
+
+A count that differs sharply from the estimate means the query does not say what you thought it said. Resolve that before sending rather than after.
+
+## 5. Write the copy and build the email
+
+Copy comes from the [copy brief](/ad-copy-standards), drafted into the [email copy template](/email-copy-template), and only then into the platform. Write the subject line and preview text together, since they are read together in the inbox.
+
+Design has to meet the [email creative specs](/email-creative-specs): body width, image weight, dark mode behaviour, and the total HTML size that keeps the message from being clipped.
+
+## 6. Assemble names and UTMs
+
+Write all three names and the tagged URLs into the brief.
+
+Use `utm_content` to distinguish each send in a sequence. Without it, three touches collapse into one line in reporting and you cannot tell which one did the work.
+
+## 7. Send test emails and render-check
+
+Send a real test to real inboxes, not just the platform's preview.
+
+- Check at least one webmail client, one mobile app, and one desktop client.
+- Check **light and dark mode**. Dark mode handling varies sharply between clients, and a logo that disappears against an inverted background is the most common failure.
+- Click every link in the test, including the unsubscribe link and any link inside an image.
+- Confirm personalization tokens resolve, and that the fallback is sensible when a field is empty.
+- Confirm the email is not clipped. See the [email creative specs](/email-creative-specs) for the size threshold.
+
+## 8. Run the pre-send checklist
+
+Run the [**email pre-send checklist**](/email-pre-send-checklist).
+
+## 9. Send, then link back
+
+Send the broadcast or activate the sequence, then:
+
+- Paste the finished copy link into the [marketing campaign brief](/marketing-campaign-brief) and file it in the [copy drive](/copy-drive).
+- Confirm the first conversions are attributing correctly rather than assuming they will.
+- Record the send date in the brief.
+
+## 10. File the brief and set a review date
+
+File the completed [email campaign brief](/email-campaign-brief) in the [campaign library](/campaign-library-overview), under the Email folder, named per the [file naming conventions](/file-naming-conventions).
+
+For an automated sequence, set a recurring review date. A sequence keeps sending to new contacts long after the campaign closes, and an unreviewed one is the most common way an expired offer stays in circulation.
+
+## Exceptions
+
+- **The send is transactional.** Order confirmations and account messages are not marketing sends and do not need a marketing consent basis. They still need correct authentication, working links, and a recorded owner.
+- **The send is a small internal or list-hygiene message.** It still gets a brief, but sections like creative, experiment, and KPI targets may not apply.
+- **The campaign is cancelled before sending.** File the brief with a short note on why it stopped. The segment definition and copy usually get reused.
+
+## Related resources
+
+- [**Email campaign brief**](/email-campaign-brief) The workbook this process runs on.
+- [**Email pre-send checklist**](/email-pre-send-checklist) The pass before it goes out.
+- [**Email creative specs**](/email-creative-specs) Width, image weight, dark mode, and clipping.
+- [**Email copy template**](/email-copy-template) Where the copy is drafted.
+- [**Campaign brief process**](/campaign-brief-process) The parent process, one level up.

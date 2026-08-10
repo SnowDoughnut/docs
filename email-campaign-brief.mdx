@@ -1,0 +1,214 @@
+---
+title: "Email campaign brief"
+description: "A fill-in workbook for a single email campaign or automated flow: objective, conversion action, segment and suppression, content, send settings, deliverability, and the briefs it runs on."
+---
+
+_This page is a workbook. Fill it in top to bottom before anything is built in your email platform. Each section has a "Concept review" dropdown explaining what the section is for. The dropdowns explain the thinking; the decision is yours._
+
+<Note>
+  This brief sits between the [marketing campaign brief](/marketing-campaign-brief), which covers strategy across every channel, and your email platform, where the send is built.
+
+  Greyed `E.g.` text is a placeholder. Delete it and replace it with your own. Examples use **Doughnut Labs**, a SaaS company that sells disruptive Doughnut Technology.
+</Note>
+
+<Tip>
+  Email maps onto the same three levels as the ad platforms: the campaign or flow is the campaign, the segment is the ad set, and the individual send is the ad. The [naming conventions](/naming-conventions-overview) apply at all three, using the list and segment type values in the [ad set / ad group / variant conventions](/ad-set-group-naming-conventions).
+</Tip>
+
+## Setup
+
+| Field | Fill in |
+| :-- | :-- |
+| [Owner](/glossary#owner) | _E.g. Aisha Bello_ |
+| Builder | _E.g. Aisha Bello_ |
+| [Marketing campaign brief](/marketing-campaign-brief) | _E.g. [Doughnut Labs "Fresh Batch" spring trial push](https://link)_ |
+| Email platform | _E.g. \[your ESP\]_ |
+| Brief name ([file naming conventions](/file-naming-conventions)) | _E.g._ `DOC_email-fresh-batch-nurture_2026-08-07_v01` |
+| Send or flight dates | _E.g. Three-touch sequence, 22 Apr to 6 May 2026_ |
+
+## Send type
+
+| Field | Fill in |
+| :-- | :-- |
+| Type | _E.g. Automated sequence_ |
+| Number of sends | _E.g. Three_ |
+| Trigger, if automated | _E.g. Contact enters "trial eligible" segment_ |
+| Timing between sends | _E.g. Day 0, day 4, day 10_ |
+| Exit condition | _E.g. Contact starts a trial_ |
+
+| Type | What it is |
+| :-- | :-- |
+| Broadcast | A one-off send to a segment at a chosen time |
+| Automated sequence | A fixed series of sends triggered by entry into a segment |
+| Triggered | A single send fired by one behaviour, such as an abandoned signup |
+| Transactional | An account or order message, sent regardless of marketing consent |
+
+<Warning>
+  An exit condition is not optional on an automated sequence. Without one, a contact who converts on send one still receives sends two and three, asking them to do something they have already done.
+</Warning>
+
+<Accordion title="Concept review: Send type">
+  The type decides how long the brief stays live. A broadcast is finished the day it sends. An automated sequence keeps running against new contacts for months, which means its copy, its links, and its offer all keep being seen long after the campaign that produced it has closed.
+
+  That difference is why the exit condition and the review date matter more on a sequence than on a broadcast. An unreviewed sequence is the most common way an expired offer keeps going out to new contacts.
+</Accordion>
+
+## Objective and conversion action
+
+| Field | Fill in |
+| :-- | :-- |
+| Objective | _E.g. Convert trial-eligible contacts into started trials_ |
+| Reader action | _E.g. Clicks through and completes the trial signup form_ |
+| Conversion action, from the [event tracking plan](/event-tracking-plan) | _E.g._ `Trial Started` |
+| How the conversion is attributed to the email | _E.g. UTMs plus platform click tracking_ |
+
+<Accordion title="Concept review: Objective and conversion action">
+  Open rate and click rate describe what happened inside the inbox. Neither says whether the email did its job, and open rate in particular has been unreliable since mail privacy features began pre-fetching images.
+
+  Naming a conversion action from the [event tracking plan](/event-tracking-plan) is what connects the send to the outcome it was meant to produce. It also makes email comparable to the paid channels in the same campaign, which is not possible when one channel reports conversions and the other reports opens.
+</Accordion>
+
+## Audience
+
+| Field | Fill in |
+| :-- | :-- |
+| [Customer profile](/customer-profile-library-overview) | _E.g. [Mid-market RevOps lead](https://link)_ |
+| Segment definition | _E.g. Signed up, no trial started, active in last 90 days_ |
+| Estimated size | _E.g. 4,200 contacts_ |
+| Suppressions | _E.g. Current customers, unsubscribed, hard bounced, contacts in the onboarding flow_ |
+| Consent basis | _E.g. Opted in at signup, consent date stored_ |
+
+<Warning>
+  List suppressions explicitly, including other campaigns sending in the same window. A contact receiving three unrelated emails from you in one day is a deliverability problem as much as an experience one.
+</Warning>
+
+<Accordion title="Concept review: Audience">
+  A segment is a query, and a query written into a brief can be checked by someone else before it sends. A segment built directly in the platform at send time usually cannot, and that is where the wrong-audience sends come from.
+
+  Consent basis belongs here because it governs whether the send is allowed at all, separately from whether it is a good idea. Recording where consent came from and when means a later question about a contact's inclusion has an answer that does not depend on anyone's memory.
+</Accordion>
+
+## Content
+
+| Field | Fill in |
+| :-- | :-- |
+| [Copy brief](/ad-copy-standards) | _E.g. [COPY\_fresh-batch-email\_2026-04-02\_v01](https://link)_ |
+| Copy template | _E.g._ [Email copy template](/email-copy-template) |
+| Subject line | _E.g. Your doughnut stack is one afternoon away_ |
+| Preview text | _E.g. No card. No sales call. Cancel any time._ |
+| Primary call to action | _E.g. Start free trial_ |
+| [Creative brief](/creative-brief), if the email needs design | _E.g. [Fresh Batch email header brief](https://link)_ |
+| Template | _E.g. Standard single-column promotional template_ |
+
+Design has to meet the [email creative specs](/email-creative-specs).
+
+<Accordion title="Concept review: Content">
+  Subject line and preview text are read together in the inbox and should be written together. Preview text left unset falls back to whatever the first line of the email happens to be, which is often an image alt tag or a "view in browser" link.
+
+  Keeping the copy in the [copy brief](/ad-copy-standards) and the [email copy template](/email-copy-template) rather than typing it into the platform means it gets reviewed against the campaign's message before it goes out, and stays findable in the [copy drive](/copy-drive) afterward.
+</Accordion>
+
+## Send settings
+
+| Field | Fill in |
+| :-- | :-- |
+| From name | _E.g. Priya at Doughnut Labs_ |
+| From address | _E.g. [priya@mail.doughnutlabs.example](mailto:priya@mail.doughnutlabs.example)_ |
+| Reply-to address | _E.g. [hello@doughnutlabs.example](mailto:hello@doughnutlabs.example), monitored_ |
+| Send time and timezone | _E.g. 09:00 in the recipient's local time_ |
+| Sending domain | _E.g. mail.doughnutlabs.example_ |
+
+<Accordion title="Concept review: Send settings">
+  The reply-to address is the field most often set to something nobody reads. A campaign that invites a reply and then discards it costs more than the replies were worth, and on some providers reply behaviour feeds into how your mail is treated.
+
+  From name and sending domain are recognition signals as much as technical settings. Changing either mid-campaign resets the familiarity a list has built with you, so both belong in a brief rather than in whatever the platform defaulted to.
+</Accordion>
+
+## Deliverability
+
+| Check | Fill in |
+| :-- | :-- |
+| SPF, DKIM, and DMARC pass on the sending domain | _E.g. Yes, verified 4 Apr_ |
+| List-Unsubscribe header present | _E.g. Yes, one-click_ |
+| Unsubscribe link in the body | _E.g. Yes, in the footer_ |
+| Physical address in the footer | _E.g. Yes_ |
+| Send volume against normal | _E.g. 4,200, within normal range for this domain_ |
+| Seed or inbox placement test run | _E.g. Yes, 3 Apr_ |
+
+<Warning>
+  Authentication is a hard requirement rather than a best practice. Major mailbox providers reject or filter bulk mail that fails SPF, DKIM, or DMARC, and a large send from a domain with no sending history can be throttled regardless of authentication. Warm a new domain before a large campaign rather than during one.
+</Warning>
+
+<Accordion title="Concept review: Deliverability">
+  Deliverability problems present as performance problems. A send with a weak subject line and a send that landed in spam both show a low open rate, and only one of those is fixed by rewriting copy.
+
+  Checking authentication and running a placement test before the send separates the two questions in advance. It is a short check that prevents a long argument about creative that was never the cause.
+</Accordion>
+
+## Landing page and destination
+
+| Field | Fill in |
+| :-- | :-- |
+| Destination | _E.g. [doughnutlabs.com/lp/fresh-batch-trial](https://link)_ |
+| From the [landing page library](/landing-page-library)? | _E.g. Yes, existing page_ |
+| Does the page match the email's offer and CTA? | _E.g. Yes, same offer and wording_ |
+
+## Naming and tracking
+
+| Level | Name | Convention |
+| :-- | :-- | :-- |
+| Campaign or flow | _E.g._ `Email-Nurture-Trial-TOFU` | [Campaign naming conventions](/campaign-naming-conventions) |
+| Segment | _E.g._ `20260401-ABTRIAL-ESUB` | [Ad set / ad group / variant](/ad-set-group-naming-conventions) |
+| Send | _E.g._ `FreshBatch-EMAIL-FREETRIAL-TRY-LP-01` | [Ad naming conventions](/ad-name-conventions) |
+| UTMs | _E.g._ `?utm_source=email&utm_medium=email&utm_campaign=fresh-batch-trial&utm_content=send-01` | [UTM standards](/utm-standards) |
+
+Use `utm_content` to tell the sends in a sequence apart. Without it, three touches collapse into one line in reporting.
+
+## Experiment
+
+<Tip>
+  Optional: fill this in only if the send carries a controlled test with a planned sample.
+</Tip>
+
+| Field | Fill in |
+| :-- | :-- |
+| [Experiment ID](/experiment-ids) | _E.g._ `TEST04` |
+| [Experiment brief](/experiment-brief) | _E.g. [Subject line test brief](https://link)_ |
+| What varies | _E.g. Subject line only. Body identical_ |
+| Split and sample | _E.g. 50/50, full list, 4,200 contacts_ |
+
+<Warning>
+  A platform's built-in subject line test that picks a winner after a few hours is not the same as a controlled experiment. It stops early by design, which is the [peeking](/glossary#peeking) problem. If the result is going into the learning library, run it through [creating an experiment](/creating-an-experiment) instead.
+</Warning>
+
+## Measurement
+
+| KPI | Target | Actual |
+| :-- | :-- | :-- |
+| _E.g. Click-through rate_ | _E.g. ≥ 3%_ | (blank until send) |
+| _E.g. Trial signups_ | _E.g. 120_ | (blank until send) |
+| _E.g. Unsubscribe rate_ | _E.g. ≤ 0.3%_ | (blank until send) |
+| \[add KPI\] |  |  |
+
+**Where this campaign is reported:** _E.g. [Lifecycle dashboard](https://link), rolled into the weekly report_
+
+## Post-send
+
+| Item | Link or date |
+| :-- | :-- |
+| Pre-send checklist run | _E.g. 21 Apr, Aisha Bello_ |
+| Send date | _E.g. 22 Apr_ |
+| Review date, for sequences | _E.g. 22 Jul, quarterly_ |
+| Filed in the [campaign library](/campaign-library-overview) | _E.g. Email folder, 22 Apr_ |
+
+<Info>
+  Set a review date for every automated sequence. A sequence with no review date keeps sending an offer that may have expired, to contacts who joined the list long after the campaign closed.
+</Info>
+
+## Related resources
+
+- [**Launching an email campaign**](/email-campaign-process) The process this brief runs on.
+- [**Email pre-send checklist**](/email-pre-send-checklist) The pass to run before hitting send.
+- [**Email copy template**](/email-copy-template) and the [**email creative specs**](/email-creative-specs)
+- [**Marketing campaign brief**](/marketing-campaign-brief) The parent brief this one sits under.
+- [**Campaign library**](/campaign-library-overview) Where this brief is filed.

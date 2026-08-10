@@ -1,0 +1,155 @@
+---
+title: "Launching a TikTok campaign"
+description: "The process for standing up a TikTok campaign in our framework: gather the inputs, fill in the TikTok campaign brief, assemble names and UTMs, build the campaign, ad groups, and ads, run the pre-launch checklist, and file the brief."
+---
+
+Take a TikTok campaign from an approved marketing campaign to a live, correctly named, correctly tracked build. This process covers all three levels, campaign, ad group, and ad, because the inputs are gathered once for the whole build.
+
+<Info>
+  This process uses the [**TikTok campaign brief**](/tiktok-campaign-brief), the [**marketing campaign brief**](/marketing-campaign-brief), the three [naming conventions](/naming-conventions-overview), the [**UTM standards**](/utm-standards), the [**TikTok creative specs**](/tiktok-creative-specs), the [**TikTok copy templates**](/tiktok-in-feed-copy-template), and the [**TikTok pre-launch checklist**](/tiktok-pre-launch-checklist).
+</Info>
+
+## What you'll end up with
+
+Three things that point at each other:
+
+- A completed [**TikTok campaign brief**](/tiktok-campaign-brief), filed in the [campaign library](/campaign-library-overview) under the TikTok folder.
+- A **live campaign** in TikTok Ads Manager, named per the three naming conventions, pointing at a tagged landing page, optimizing toward a conversion action defined in the [event tracking plan](/event-tracking-plan).
+- **Links back** from the marketing campaign brief to this campaign's brief, finished creative, and finished copy.
+
+One person, the [**owner**](/glossary#owner), is accountable for all three. The **media buyer** builds and runs the campaign.
+
+## Before you start
+
+Every input below has to exist, or be deliberately marked as not applicable, before the build starts.
+
+| Input | Where it comes from | Required | If it doesn't exist yet |
+| :-- | :-- | :-- | :-- |
+| Parent marketing campaign | [Marketing campaign brief](/marketing-campaign-brief) | Always | Stop. Run the [campaign brief process](/campaign-brief-process) first |
+| Customer profile | [Customer profile library](/customer-profile-library-overview) | Always | Build it with the [B2B](/customer-profile-brief) or [B2C](/b2-c-customer-profiles) brief |
+| Conversion action | [Event tracking plan](/event-tracking-plan) | Always for Sales, Leads, Traffic | Add a row using the [tracking plan overview](/event-tracking-plan-overview), then verify pixel and Events API fire |
+| Destination | [Landing page library](/landing-page-library) | Always | Pick an existing page, or run [building a landing page](/landing-page-process) |
+| Creative, several variants | [Creative brief process](/creative-brief-process), [video drive](/video-drive) | Always | Brief it. Plan for more variants than other platforms need |
+| Copy | [Copy brief](/ad-copy-standards), [TikTok copy templates](/tiktok-in-feed-copy-template) | Always | Brief it via the [copywriting process](/copywriting-process) |
+| Spark Ads authorization | The creator or your own organic account | Spark Ads only | Request the authorization code and record its expiry |
+| Names, all three levels | [Campaign](/campaign-naming-conventions), [ad group](/ad-set-group-naming-conventions), [ad](/ad-name-conventions) | Always | Assemble from the dictionaries |
+| UTMs | [UTM standards](/utm-standards) | Always | Build them from the standard before the URLs go anywhere |
+| Budget | Marketing campaign brief, [budget planning](/budget-planning) | Always | Confirm the TikTok line item and its amount |
+| Experiment ID | [Experiment ID conventions](/experiment-ids) | Only if testing | Register one via [creating an experiment](/creating-an-experiment) |
+
+<Warning>
+  Creative volume is the input that most often gets underestimated here. TikTok exhausts a creative faster than the other paid platforms, and a campaign launched with one video usually stalls on frequency well before its budget is spent. Decide the number of variants at brief stage, not when performance drops.
+</Warning>
+
+## The process at a glance
+
+<Steps>
+  <Step title="Confirm the campaign has a parent">
+    Every TikTok campaign belongs to a marketing campaign brief.
+  </Step>
+  <Step title="Gather the inputs">
+    Work the table above. Pick what exists, brief what doesn't.
+  </Step>
+  <Step title="Fill in the TikTok campaign brief">
+    Objective, optimization event, budget, bid strategy, structure, targeting, creative count.
+  </Step>
+  <Step title="Clear Spark Ads authorization, if you're using it">
+    Get the code and record its expiry before the build.
+  </Step>
+  <Step title="Assemble names and UTMs">
+    All three naming levels and the tagged URLs.
+  </Step>
+  <Step title="Register an experiment, if you're testing">
+    Only if there is a control.
+  </Step>
+  <Step title="Build the campaign, ad groups, and ads">
+    Copy the decided values in.
+  </Step>
+  <Step title="Run the pre-launch checklist">
+    The last pass before spend starts.
+  </Step>
+  <Step title="Launch and link back">
+    Set live, then link the campaign and its assets into the marketing campaign brief.
+  </Step>
+  <Step title="File the brief">
+    Into the campaign library, TikTok folder.
+  </Step>
+</Steps>
+
+## 1. Confirm the campaign has a parent
+
+Open the [marketing campaign brief](/marketing-campaign-brief) this spend belongs to and confirm TikTok is listed in its channels table, with a reason and a budget line.
+
+## 2. Gather the inputs
+
+Work down the table in **Before you start**.
+
+**Customer profiles.** Link them from the [customer profile library](/customer-profile-library-overview) and note how each is built on TikTok. Be honest in the brief about whether the campaign is relying on targeting or on creative, because on TikTok the second is usually doing more of the work.
+
+**Conversion action.** Find the event in the [event tracking plan](/event-tracking-plan) and confirm both the pixel and the Events API are firing. Running the API alongside the pixel matters more than the setup effort suggests: signal loss on a pixel-only setup shows up as weak optimization rather than as a tracking error anyone spots.
+
+**Destination.** Check the [landing page library](/landing-page-library) first. TikTok traffic arrives colder and faster than search traffic, so a page that opens by establishing the problem usually outperforms one written for high intent.
+
+**Creative.** Brief it through the [creative brief process](/creative-brief-process), and check the [video drive](/video-drive) for cuts that already exist. Decide the number of variants at launch here. Creative has to meet the [TikTok creative specs](/tiktok-creative-specs), including the safe areas, which move with caption length.
+
+## 3. Fill in the TikTok campaign brief
+
+Copy the [**TikTok campaign brief**](/tiktok-campaign-brief) and work down it. Every campaign gets its own.
+
+The brief fixes objective, optimization event, budget, bid strategy, and structure. Creative rotation and in-flight bid adjustments stay with the media buyer.
+
+<Warning>
+  Check the cost cap against the daily budget before launch. TikTok's guidance is a daily budget of at least 50 times the bid. Below that, a cost cap campaign holds cost down by simply not delivering, which reads as a targeting problem rather than a budget one.
+</Warning>
+
+## 4. Clear Spark Ads authorization, if you're using it
+
+Spark Ads run against a real organic post, yours or a creator's, and need an authorization code with an expiry date.
+
+Request the code, record it in the brief, and record when it expires. An expiry that lands mid-flight will take the ad down without warning, and it is usually the best-performing one.
+
+## 5. Assemble names and UTMs
+
+Write all three names and the tagged URLs into the brief before opening Ads Manager.
+
+## 6. Register an experiment, if you're testing
+
+Only if there is a control. Follow [creating an experiment](/creating-an-experiment).
+
+## 7. Build the campaign, ad groups, and ads
+
+Build from the brief. Work down the levels:
+
+1. **Campaign:** objective, budget level, campaign type, campaign name.
+2. **Ad groups:** one per row of the brief's structure table. Placements, audience, optimization event, budget, bid strategy, ad group name.
+3. **Ads:** video from the approved files, copy from the filled [copy template](/tiktok-in-feed-copy-template), destination URL with UTMs attached, ad name.
+
+## 8. Run the pre-launch checklist
+
+Run the [**TikTok pre-launch checklist**](/tiktok-pre-launch-checklist) with the campaign built and paused.
+
+## 9. Launch and link back
+
+Set the campaign live, then:
+
+- Paste the finished creative and finished copy links into the [marketing campaign brief](/marketing-campaign-brief).
+- Add the campaign to the reporting dashboard named in the brief.
+- Record the launch date and the mid-flight review date in the brief.
+
+## 10. File the brief
+
+File the completed [TikTok campaign brief](/tiktok-campaign-brief) in the [campaign library](/campaign-library-overview), under the TikTok folder, named per the [file naming conventions](/file-naming-conventions).
+
+## Exceptions
+
+- **The campaign is a creator test with no conversion goal.** It still gets a brief, but the conversion action and landing page rows may not apply. Record what the test is meant to prove instead.
+- **You are adding a creative variant to a live ad group.** Skip steps 1 to 6. Confirm the video and copy are approved, name the ad per the [ad naming conventions](/ad-name-conventions), attach the UTMs, and run the ad-level rows of the pre-launch checklist.
+- **The campaign is cancelled before launch.** File the brief with a short note on why it stopped.
+
+## Related resources
+
+- [**TikTok campaign brief**](/tiktok-campaign-brief) The workbook this process runs on.
+- [**TikTok pre-launch checklist**](/tiktok-pre-launch-checklist) The pass before spend starts.
+- [**Campaign brief process**](/campaign-brief-process) The parent process, one level up.
+- [**TikTok creative specs**](/tiktok-creative-specs) Including safe areas and caption interference.
+- [**Creative brief process**](/creative-brief-process) and [**copywriting process**](/copywriting-process)

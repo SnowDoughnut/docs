@@ -1,0 +1,175 @@
+---
+title: "Launching a Google campaign"
+description: "The process for standing up a Google Ads campaign in our framework: pick the campaign type, gather the inputs, fill in the Google campaign brief, assemble names and UTMs, build, check, launch, and file."
+---
+
+Take a Google campaign from an approved marketing campaign to a live, correctly named, correctly tracked build. This process covers all three levels, campaign, ad group or asset group, and ad, because the inputs are gathered once for the whole build.
+
+It applies to every Google campaign type. The type changes which assets and copy templates you need, not the order of the work.
+
+<Info>
+  This process uses the [**Google campaign brief**](/google-campaign-brief), the [**marketing campaign brief**](/marketing-campaign-brief), the three [naming conventions](/naming-conventions-overview), the [**UTM standards**](/utm-standards), the Google [creative specs](/image-and-video-specs) and [copy templates](/google-search-copy-template), and the [**Google pre-launch checklist**](/google-pre-launch-checklist).
+</Info>
+
+## What you'll end up with
+
+Three things that point at each other:
+
+- A completed [**Google campaign brief**](/google-campaign-brief), filed in the [campaign library](/campaign-library-overview) under the Google folder.
+- A **live campaign** in Google Ads, named per the three naming conventions, pointing at a tagged landing page, optimizing toward a conversion action defined in the [event tracking plan](/event-tracking-plan).
+- **Links back** from the marketing campaign brief to this campaign's brief, finished assets, and finished copy.
+
+One person, the [**owner**](/glossary#owner), is accountable for all three. The **media buyer** builds and runs the campaign.
+
+## Before you start
+
+Every input below has to exist, or be deliberately marked as not applicable, before the build starts.
+
+| Input | Where it comes from | Required | If it doesn't exist yet |
+| :-- | :-- | :-- | :-- |
+| Parent marketing campaign | [Marketing campaign brief](/marketing-campaign-brief) | Always | Stop. Run the [campaign brief process](/campaign-brief-process) first |
+| Customer profile | [Customer profile library](/customer-profile-library-overview) | Always | Build it with the [B2B](/customer-profile-brief) or [B2C](/b2-c-customer-profiles) brief |
+| Conversion action | [Event tracking plan](/event-tracking-plan) | Always | Add a row using the [tracking plan overview](/event-tracking-plan-overview), then verify it imports and fires |
+| Destination | [Landing page library](/landing-page-library) | Always | Pick an existing page, or run [building a landing page](/landing-page-process) |
+| Creative or assets | [Creative brief process](/creative-brief-process), [creative drive](/creative-drive) | Always except text-only Search | Brief it. Allow production time before the launch date |
+| Copy | [Copy brief](/ad-copy-standards), Google [copy templates](/google-search-copy-template) | Always | Brief it via the [copywriting process](/copywriting-process) |
+| Names, all three levels | [Campaign](/campaign-naming-conventions), [ad group](/ad-set-group-naming-conventions), [ad](/ad-name-conventions) | Always | Assemble from the dictionaries. Add a value if one is missing |
+| UTMs | [UTM standards](/utm-standards) | Always | Build them from the standard before the URLs go anywhere |
+| Budget | Marketing campaign brief, [budget planning](/budget-planning) | Always | Confirm the Google line item and its amount |
+| Product feed | [Merchant Center](/google-merchant-center-overview) | Shopping and retail PMax only | Build the feed from the [product CSV template](/google-merchant-center-product-csv-template) |
+| Experiment ID | [Experiment ID conventions](/experiment-ids) | Only if testing | Register one via [creating an experiment](/creating-an-experiment) |
+
+<Warning>
+  Asset coverage is the input most often underestimated on Performance Max and Demand Gen. A missing ratio or logo size doesn't throw an error, it silently removes the placements those assets would have served on. Check the [creative specs](/image-and-video-specs) for the type you're building before you promise a launch date.
+</Warning>
+
+## The process at a glance
+
+<Steps>
+  <Step title="Confirm the campaign has a parent">
+    Every Google campaign belongs to a marketing campaign brief.
+  </Step>
+  <Step title="Pick the campaign type">
+    The type decides which assets, copy templates, and structure the rest of the build needs.
+  </Step>
+  <Step title="Gather the inputs">
+    Work the table above. Pick what exists, brief what doesn't.
+  </Step>
+  <Step title="Fill in the Google campaign brief">
+    Conversion goal, budget, bid strategy, structure, targeting, assets.
+  </Step>
+  <Step title="Assemble names and UTMs">
+    All three naming levels and the tagged URLs, written down before anything is built.
+  </Step>
+  <Step title="Register an experiment, if you're testing">
+    Only if there is a control. Register the ID before launch.
+  </Step>
+  <Step title="Build the campaign, groups, and ads">
+    Copy the decided values in.
+  </Step>
+  <Step title="Run the pre-launch checklist">
+    The last pass before spend starts.
+  </Step>
+  <Step title="Launch and link back">
+    Set live, then link the campaign and its assets into the marketing campaign brief.
+  </Step>
+  <Step title="File the brief">
+    Into the campaign library, Google folder.
+  </Step>
+</Steps>
+
+## 1. Confirm the campaign has a parent
+
+Open the [marketing campaign brief](/marketing-campaign-brief) this spend belongs to and confirm Google is listed in its channels table, with a reason and a budget line.
+
+## 2. Pick the campaign type
+
+The campaign type is the first real decision, because everything downstream depends on it: which assets you need, which copy template applies, and how the campaign is structured.
+
+| If the campaign needs to | Brief it as |
+| :-- | :-- |
+| Capture demand that already exists as search queries | Search |
+| Run one budget across every Google surface, conversion-led | Performance Max |
+| Create demand visually before anyone searches | Demand Gen |
+| Sell a retail catalogue | Shopping, fed by [Merchant Center](/google-merchant-center-overview) |
+| Reach or persuade on YouTube | Video |
+| Drive app installs or in-app events | App |
+
+<Warning>
+  Don't brief a new standalone Display campaign. Google began migrating Display into Demand Gen in June 2026 and is phasing out new standalone Display campaigns. Brief visual campaigns as Demand Gen. Responsive display assets still follow the [Display creative specs](/google-display-creative-specs).
+</Warning>
+
+## 3. Gather the inputs
+
+Work down the table in **Before you start**.
+
+**Customer profiles.** Link them from the [customer profile library](/customer-profile-library-overview), and note how each is implemented on Google: a Customer Match list, an in-market segment, or an audience signal. On Performance Max and Demand Gen, record explicitly that signals are signals and not restrictions, so nobody later reads broader delivery as a fault.
+
+**Conversion action.** Find the event in the [event tracking plan](/event-tracking-plan) and confirm it is importing and firing. Then check which conversion actions are set as **primary** for this campaign. Smart Bidding optimizes toward every primary action, so a campaign inheriting account defaults will chase conversions that have nothing to do with its objective.
+
+**Destination.** Check the [landing page library](/landing-page-library) first. On Search in particular, the match between the query, the ad, and the page is doing real work, so a page built for a different offer usually costs more than it saves.
+
+**Assets and copy.** Both are briefed. Check the [creative drive](/creative-drive) and [copy drive](/copy-drive) before commissioning anything new, then run the [creative brief process](/creative-brief-process) and the [copywriting process](/copywriting-process) for what's missing.
+
+## 4. Fill in the Google campaign brief
+
+Copy the [**Google campaign brief**](/google-campaign-brief) and work down it. Every campaign gets its own.
+
+The brief fixes campaign type, conversion goal, budget, bid strategy, and structure. Those get reviewed before the build. Keyword additions and negatives, target adjustments, and asset rotation stay with the media buyer, who is making those calls against live data.
+
+<Warning>
+  A target-based bid strategy needs conversion volume behind it. Setting a target CPA or target ROAS on a campaign with a handful of monthly conversions gives the system too little signal to bid against, which shows up as erratic delivery rather than an obvious error. Start on a maximize strategy and record when you plan to switch.
+</Warning>
+
+## 5. Assemble names and UTMs
+
+Write all three names and the tagged URLs into the brief before opening Google Ads.
+
+Decide auto-tagging and manual UTMs together. Auto-tagging adds a `gclid` for Google Ads reporting; it does not fill the `utm_source` and `utm_medium` fields your analytics groups by. Most accounts run both, and the brief is where that decision gets recorded rather than re-argued.
+
+## 6. Register an experiment, if you're testing
+
+Only if there is a control. Follow [creating an experiment](/creating-an-experiment): register the ID, apply it at the level the hypothesis targets, and don't change it after launch.
+
+## 7. Build the campaign, groups, and ads
+
+Build from the brief. Work down the levels:
+
+1. **Campaign:** type, networks, conversion goals, budget, bid strategy, locations and languages, campaign name.
+2. **Ad groups or asset groups:** one per row of the brief's structure table. Keywords and match types, or audience signals and assets. Group name.
+3. **Ads:** copy from the filled [copy template](/google-search-copy-template), assets from the approved files, final URL with UTMs attached, ad name.
+
+<Warning>
+  If a decision you didn't expect comes up during the build, stop and add it to the brief rather than settling it in the interface. A value that only exists in Google Ads is invisible at review and lost at retrospective.
+</Warning>
+
+## 8. Run the pre-launch checklist
+
+Run the [**Google pre-launch checklist**](/google-pre-launch-checklist) with the campaign built and paused.
+
+## 9. Launch and link back
+
+Set the campaign live, then:
+
+- Paste the finished assets and finished copy links into the [marketing campaign brief](/marketing-campaign-brief).
+- Add the campaign to the reporting dashboard named in the brief.
+- Record the launch date and the mid-flight review date in the brief.
+
+## 10. File the brief
+
+File the completed [Google campaign brief](/google-campaign-brief) in the [campaign library](/campaign-library-overview), under the Google folder, named per the [file naming conventions](/file-naming-conventions).
+
+## Exceptions
+
+- **The campaign is always-on brand defence.** It still gets a brief, but experiment and mid-flight review may not apply. Keep the core: type, conversion goal, budget, bid strategy, and structure.
+- **You are adding an ad or asset to a live campaign.** Skip steps 1 to 6. Confirm the copy and assets are approved, name the ad per the [ad naming conventions](/ad-name-conventions), attach the UTMs, and run the ad-level rows of the pre-launch checklist.
+- **The campaign is cancelled before launch.** File the brief with a short note on why it stopped.
+
+## Related resources
+
+- [**Google campaign brief**](/google-campaign-brief) The workbook this process runs on.
+- [**Google pre-launch checklist**](/google-pre-launch-checklist) The pass before spend starts.
+- [**Campaign brief process**](/campaign-brief-process) The parent process, one level up.
+- [**Creative brief process**](/creative-brief-process) and [**copywriting process**](/copywriting-process)
+- [**Google Merchant Center**](/google-merchant-center-overview) For Shopping and retail Performance Max.
+- [**Creating an experiment**](/creating-an-experiment) When the campaign carries a controlled test.

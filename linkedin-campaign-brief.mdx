@@ -1,0 +1,192 @@
+---
+title: "LinkedIn campaign brief"
+description: "A fill-in workbook for a single LinkedIn campaign: objective, conversion action, budget, bid strategy, structure, targeting, ad format, and the briefs it runs on. Sits under the marketing campaign brief and above Campaign Manager."
+---
+
+_This page is a workbook. Fill it in top to bottom before anything is built in Campaign Manager. Each section has a "Concept review" dropdown explaining what the section is for. The dropdowns explain the thinking; the decision is yours._
+
+<Note>
+  This brief sits between the [marketing campaign brief](/marketing-campaign-brief), which covers strategy across every channel, and Campaign Manager, where the campaign is built.
+
+  Greyed `E.g.` text is a placeholder. Delete it and replace it with your own. Examples use **Doughnut Labs**, a SaaS company that sells disruptive Doughnut Technology.
+</Note>
+
+<Tip>
+  Record the decision and the reason, not the click path. This brief fixes objective, conversion action, budget, bid strategy, audience definition, and format so they can be reviewed before spend starts. In-flight bid adjustments and creative rotation stay with the media buyer.
+</Tip>
+
+## Setup
+
+| Field | Fill in |
+| :-- | :-- |
+| [Owner](/glossary#owner) | _E.g. Tom Reyes_ |
+| Media buyer | _E.g. Tom Reyes_ |
+| [Marketing campaign brief](/marketing-campaign-brief) | _E.g. [Doughnut Labs "Fresh Batch" spring trial push](https://link)_ |
+| Ad account | _E.g. Doughnut Labs (Campaign Manager)_ |
+| Campaign group | _E.g. FY26 demand generation_ |
+| Brief name ([file naming conventions](/file-naming-conventions)) | _E.g._ `DOC_linkedin-fresh-batch-trial_2026-08-07_v01` |
+| Flight dates | _E.g. 22 Apr to 20 Jun 2026_ |
+
+## Objective and conversion action
+
+| Field | Fill in |
+| :-- | :-- |
+| Campaign objective | _E.g. Website conversions_ |
+| Conversion action, from the [event tracking plan](/event-tracking-plan) | _E.g._ `Trial Started` |
+| Tracking method | _E.g. Insight Tag plus Conversions API_ |
+| Is the conversion live and firing? | _E.g. Yes, verified 4 Apr_ |
+| Lead form used? | _E.g. No. Traffic goes to the landing page_ |
+
+LinkedIn's campaign objectives, as of 7 August 2026:
+
+| Stage | Objectives |
+| :-- | :-- |
+| Awareness | Brand awareness |
+| Consideration | Website visits, Engagement, Video views |
+| Conversions | Lead generation, Website conversions, Job applicants |
+
+<Warning>
+  The objective and the ad format together decide which bid strategies are available. Not every strategy appears for every combination, so confirm the pairing in Campaign Manager before committing a bid approach in this brief.
+</Warning>
+
+<Accordion title="Concept review: Objective and conversion action">
+  On LinkedIn the objective narrows both the available ad formats and the available bid strategies, so it is a structural decision made early rather than a label applied at the end.
+
+  There is a real choice between a native lead form and a landing page, and it is a trade rather than a preference. Lead forms convert at a higher rate because they pre-fill from the member's profile, and they produce leads who never saw your page and may be less qualified. Recording which one this campaign uses, and why, is what makes a later argument about lead quality resolvable.
+</Accordion>
+
+## Budget and bid strategy
+
+| Field | Fill in |
+| :-- | :-- |
+| Budget type | _E.g. Daily_ |
+| Amount | _E.g. \$300 per day, \$9,000 total_ |
+| Bid strategy | _E.g. Cost cap_ |
+| Cost cap value | _E.g. \$180 per trial signup_ |
+| Why this strategy | _E.g. Known cost per signup from Q1; cap protects it while audience is narrow_ |
+
+LinkedIn's bid strategies, as of 7 August 2026:
+
+| Strategy | What it does | Charged by |
+| :-- | :-- | :-- |
+| Maximum delivery | Spends the full budget for the most results, no bid input | Impressions |
+| Cost cap | Holds cost per key result near a target you set | Impressions |
+| Manual bidding | You set the bid for each auction | Varies by objective and format |
+
+<Accordion title="Concept review: Budget and bid strategy">
+  LinkedIn costs more per click and per lead than the other paid platforms in this knowledge base, usually by a wide margin. That changes what a sensible test budget looks like: a budget that would produce a clear read on Meta can produce almost no data here, and a campaign that ends "inconclusive" was often just underfunded.
+
+  Maximum delivery gives up cost control in exchange for spending the budget. Cost cap keeps a ceiling and will underdeliver to hold it. Which failure you prefer is the actual decision, and it is easier to make deliberately at brief stage than in week three.
+</Accordion>
+
+## Campaign structure
+
+| Campaign | Audience | Format | Budget | What it tests or proves |
+| :-- | :-- | :-- | :-- | :-- |
+| _E.g. RevOps job titles, single image_ | _E.g. [Mid-market RevOps lead](https://link)_ | _E.g. Single image_ | _E.g. \$200 per day_ | _E.g. Core volume driver_ |
+| _E.g. Target account list, document_ | _E.g. [Named account list](https://link)_ | _E.g. Document ad_ | _E.g. \$100 per day_ | _E.g. Whether gated content beats direct trial_ |
+| \[add campaign\] |  |  |  |  |
+
+<Accordion title="Concept review: Campaign structure">
+  On LinkedIn the campaign is the targeting unit, not the ad set, so structure decisions here are really audience decisions. Splitting one audience across several campaigns divides an already small pool and slows every one of them out of learning.
+
+  Audience overlap is the specific risk. Two campaigns targeting job titles that substantially overlap will bid against each other in the same auctions, which raises your own costs. Listing the audiences side by side in one table is the cheapest way to notice that before it happens.
+</Accordion>
+
+## Targeting
+
+| Customer profile | Link | Built as | Source |
+| :-- | :-- | :-- | :-- |
+| _E.g. Mid-market RevOps lead_ | _E.g. [CP\_midmarket-revops\_2026-03-02\_v02](https://link)_ | _E.g. Job title plus company size_ | _E.g. Native LinkedIn targeting_ |
+| _E.g. Named target accounts_ | _E.g. [Q2 target account list](https://link)_ | _E.g. Company list upload_ | _E.g. [LinkedIn company list CSV template](/linkedin-company-list-csv-template)_ |
+| \[add profile\] |  |  |  |
+
+| Setting | Fill in |
+| :-- | :-- |
+| Estimated audience size | _E.g. 68,000_ |
+| Audience expansion | _E.g. Off. Keeps delivery inside the defined account list_ |
+| LinkedIn Audience Network | _E.g. Off_ |
+| Exclusions | _E.g. Existing customers, current employees_ |
+
+<Warning>
+  Audience expansion and the LinkedIn Audience Network are both on by default in some setups. Both widen delivery beyond the audience you defined. Set each one deliberately and record why, so a later change in cost per lead can be traced to a decision rather than a default.
+</Warning>
+
+<Accordion title="Concept review: Targeting">
+  LinkedIn's targeting is the reason to be on the platform and the reason it is expensive. Firmographic and job-title targeting reaches people you cannot reliably reach elsewhere, and the auction prices that access accordingly.
+
+  Audience size is worth recording because it sets the ceiling on what the campaign can do. Too narrow and delivery stalls regardless of budget; too broad and the targeting advantage that justified the cost has been given away. The number belongs in the brief so the trade is visible before launch rather than inferred afterward.
+</Accordion>
+
+## Creative and copy
+
+| Deliverable | Link |
+| :-- | :-- |
+| [Creative brief](/creative-brief) | _E.g. [Fresh Batch LinkedIn creative brief](https://link)_ |
+| [Copy brief](/ad-copy-standards) | _E.g. [COPY\_fresh-batch-linkedin\_2026-04-02\_v01](https://link)_ |
+| Copy template | _E.g._ [Single image](/linkedin-single-image-copy-template) |
+| Finished creative | _E.g. [Fresh Batch LinkedIn creative, final](https://link)_ |
+| Landing page or lead form | _E.g. [doughnutlabs.com/lp/fresh-batch-trial](https://link)_ |
+
+Copy templates by format: [Single image](/linkedin-single-image-copy-template), [Video](/linkedin-video-copy-template), [Carousel](/linkedin-carousel-copy-template), [Document](/linkedin-document-copy-template), [Message ad](/linkedin-message-ad-copy-template), [Conversation ad](/linkedin-conversation-ad-copy-template), [Text ad](/linkedin-text-ad-copy-template), [Follower ad](/linkedin-follower-ad-copy-template).
+
+Creative has to meet the [LinkedIn creative specs](/linkedin-creative-specs).
+
+## Naming and tracking
+
+| Level | Name | Convention |
+| :-- | :-- | :-- |
+| Campaign group | _E.g._ `LinkedIn-FY26-DemandGen` | [Campaign naming conventions](/campaign-naming-conventions) |
+| Campaign | _E.g._ `LinkedIn-Feed-Conversions-CostCap-MOFU` | [Campaign naming conventions](/campaign-naming-conventions) |
+| Audience / variant | _E.g._ `20260401-JT-revops-midmarket` | [Ad set / ad group / variant](/ad-set-group-naming-conventions) |
+| Ad | _E.g._ `AutoGlaze-STATIC-FREETRIAL-TRY-LP` | [Ad naming conventions](/ad-name-conventions) |
+| UTMs | _E.g._ `?utm_source=linkedin&utm_medium=paid-social&utm_campaign=fresh-batch-trial` | [UTM standards](/utm-standards) |
+
+## Experiment
+
+<Tip>
+  Optional: fill this in only if part of this campaign is a controlled test.
+</Tip>
+
+| Field | Fill in |
+| :-- | :-- |
+| [Experiment ID](/experiment-ids) | _E.g._ `TEST03` |
+| [Experiment brief](/experiment-brief) | _E.g. [Lead form versus landing page test](https://link)_ |
+| Level the ID is applied at | _E.g. Campaign name_ |
+
+<Warning>
+  Check the sample size before committing to a test here. LinkedIn's cost per result means a test that would reach significance on another platform inside a week can take a quarter, and the [experiment brief](/experiment-brief) will surface that during the design step rather than after the budget is spent.
+</Warning>
+
+## Measurement
+
+| KPI | Target | Actual |
+| :-- | :-- | :-- |
+| _E.g. Trial signups_ | _E.g. 50_ | (blank until launch) |
+| _E.g. Cost per signup_ | _E.g. ≤ \$180_ | (blank until launch) |
+| _E.g. Qualified lead rate_ | _E.g. ≥ 40%_ | (blank until launch) |
+| \[add KPI\] |  |  |
+
+**Where this campaign is reported:** _E.g. [Paid media dashboard](https://link), rolled into the weekly report_
+
+## Post-launch
+
+| Item | Link or date |
+| :-- | :-- |
+| Pre-launch checklist run | _E.g. 21 Apr, Tom Reyes_ |
+| Launch date | _E.g. 22 Apr_ |
+| Mid-flight review date | _E.g. 13 May_ |
+| Filed in the [campaign library](/campaign-library-overview) | _E.g. LinkedIn folder, 22 Apr_ |
+
+<Info>
+  Platform settings on this page were checked on 7 August 2026. LinkedIn changes objective names, bid strategy availability, and Accelerate campaign coverage regularly. Confirm the current options in Campaign Manager before filling in a brief, and update this page when they move.
+</Info>
+
+## Related resources
+
+- [**Launching a LinkedIn campaign**](/linkedin-campaign-process) The process this brief runs on.
+- [**LinkedIn pre-launch checklist**](/linkedin-pre-launch-checklist) The pass to run before setting live.
+- [**Marketing campaign brief**](/marketing-campaign-brief) The parent brief this one sits under.
+- [**LinkedIn creative specs**](/linkedin-creative-specs) and the [**LinkedIn copy templates**](/linkedin-single-image-copy-template)
+- [**LinkedIn company list CSV template**](/linkedin-company-list-csv-template) For account list uploads.
+- [**Campaign library**](/campaign-library-overview) Where this brief is filed.

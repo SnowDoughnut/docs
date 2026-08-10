@@ -1,0 +1,105 @@
+---
+title: "Email creative specs"
+description: "Email design specs: body width, image sizes and formats, HTML weight before Gmail clips the message, dark mode behaviour by client, and what Outlook's rendering engine will and won't support."
+---
+
+Design specs for HTML email. Current as of 7 August 2026.
+
+Referenced from the [email campaign brief](/email-campaign-brief) and used alongside the [email copy template](/email-copy-template).
+
+## Layout
+
+| Element | Spec | Notes |
+| :-- | :-- | :-- |
+| Body width | 600 px | 600 to 640 px renders correctly everywhere without testing |
+| Full-width background | 100% with a 600 px inner table | Background colours need VML for classic Outlook |
+| Minimum tap target | 44 × 44 px | Applies to every button and link on mobile |
+| Font size, body | 14 to 16 px | Below 14 px, some clients scale text up unpredictably |
+| Font size, headings | 22 to 30 px |  |
+
+Single column is the default. Multi-column layouts need table-based markup to survive classic Outlook, and stack unreliably on mobile without media query support.
+
+## HTML weight
+
+| Threshold | What happens |
+| :-- | :-- |
+| Under 75 KB | Safe target |
+| Above 102 KB | **Gmail clips the message**, hiding everything after the cut, including the unsubscribe link and any tracking pixel |
+
+<Warning>
+  The clipping threshold applies to HTML weight only. Images are referenced by URL and loaded separately, so they don't count toward it. What pushes an email over the limit is markup: long inline styles, repeated table nesting, and copy-pasted blocks from a builder.
+
+  A clipped email hides the unsubscribe link, which is a compliance problem as well as a rendering one.
+</Warning>
+
+## Images
+
+| Field | Spec |
+| :-- | :-- |
+| Format for photographs | JPEG, quality 78 to 82, progressive, EXIF stripped |
+| Format for flat graphics and logos | PNG |
+| Format for simple animation | GIF |
+| Retina export | Two times the display width, then set the display width in the markup |
+| Per-image weight | Under 200 KB |
+| Total image weight | Under 1 MB across the email |
+
+**Format support, as of August 2026:** JPEG, PNG, and GIF are the universally safe set. WebP renders in Apple Mail and recent Outlook builds but fails in older Outlook desktop versions. AVIF is essentially unsupported across the major clients.
+
+Every image needs alt text. Several clients block images by default, and an email that only makes sense once images load will not make sense to those readers.
+
+<Warning>
+  Never put the offer, the price, or the call to action only inside an image. With images blocked, that email says nothing. Keep every critical message in live text.
+</Warning>
+
+## Dark mode
+
+Dark mode handling varies more between clients than any other part of email rendering, and there is no setting that produces consistent results.
+
+| Client | Behaviour |
+| :-- | :-- |
+| Apple Mail | Inverts aggressively, including colours you set explicitly |
+| Gmail | Partially inverts, and only some palettes |
+| Classic Outlook on Windows | Applies no dark-mode transformation. Your light palette renders as-is |
+| New Outlook and Outlook.com | Inverts, closer to Gmail's behaviour |
+
+What holds up across all four:
+
+- Export logos as **transparent PNG with an outline or stroke** that stays visible against both a light and a dark background.
+- Add 20 to 30 px of background padding around logos and icons, so an inverted background doesn't sit flush against the mark.
+- Avoid pure white (`#FFFFFF`) and pure black (`#000000`) as large fills. Both invert to the most jarring possible result.
+- Avoid text baked into images. Inverted backgrounds behind fixed-colour text is the most common dark mode failure.
+- Test in light and dark before every send. It is in the [email pre-send checklist](/email-pre-send-checklist) for a reason.
+
+## Rendering engines
+
+| Client | Engine | What this means |
+| :-- | :-- | :-- |
+| Classic Outlook 365, Windows | Word | No CSS grid, no flexbox, no background images without VML, unreliable padding and margins |
+| New Outlook, Outlook.com | WebView | Modern CSS support |
+| Apple Mail | WebKit | Strong CSS support, aggressive dark mode |
+| Gmail web and app | Custom | Strips `<style>` blocks in some contexts. Inline your CSS |
+
+Classic Outlook sets the floor. Build with tables and inline styles, and treat modern CSS as progressive enhancement rather than as the base layout.
+
+## Accessibility
+
+- Contrast ratio of at least 4.5:1 for body text against its background.
+- Semantic heading structure, not text sized up to look like a heading.
+- Descriptive link text. "Start your free trial" rather than "click here".
+- Alt text on every image, empty (`alt=""`) on purely decorative ones.
+- A single-column layout at mobile widths.
+
+## Working notes
+
+- **Inline every style.** Gmail strips `<style>` blocks in several contexts, and an email that depends on a stylesheet will lose its formatting there.
+- **Set preview text explicitly.** Left unset, it falls back to whatever text comes first in the HTML, which is usually a "view in browser" link or an image alt tag.
+- **Build the email to work with images off.** Not as a fallback, as the base case.
+- **Test on real devices.** Platform previews render approximations and miss client-specific failures, particularly in Outlook and in dark mode.
+
+## Related resources
+
+- [**Email campaign brief**](/email-campaign-brief) Where the design decisions are recorded.
+- [**Email copy template**](/email-copy-template) Where the copy is drafted.
+- [**Email pre-send checklist**](/email-pre-send-checklist) The render checks before sending.
+- [**Launching an email campaign**](/email-campaign-process) The process these specs sit inside.
+- [**Image and video specs**](/image-and-video-specs) Specs for the paid platforms.

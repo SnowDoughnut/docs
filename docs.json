@@ -45,6 +45,7 @@
               "google",
               "linkedin",
               "meta",
+              "tiktok",
               "email"
             ]
           },
@@ -224,6 +225,12 @@
             "pages": [
               "meta-home",
               {
+                "group": "Briefs",
+                "pages": [
+                  "meta-campaign-brief"
+                ]
+              },
+              {
                 "group": "Creative Specifications",
                 "pages": [
                   "meta-creative-specs"
@@ -235,7 +242,9 @@
               },
               {
                 "group": "SOPs",
-                "pages": []
+                "pages": [
+                  "meta-campaign-process"
+                ]
               },
               {
                 "group": "How-tos",
@@ -251,7 +260,9 @@
               },
               {
                 "group": "Checklists",
-                "pages": []
+                "pages": [
+                  "meta-pre-launch-checklist"
+                ]
               }
             ]
           },
@@ -259,6 +270,12 @@
             "dropdown": "Google",
             "pages": [
               "google-home",
+              {
+                "group": "Briefs",
+                "pages": [
+                  "google-campaign-brief"
+                ]
+              },
               {
                 "group": "Creative Specifications",
                 "pages": [
@@ -274,7 +291,9 @@
               },
               {
                 "group": "SOPs",
-                "pages": []
+                "pages": [
+                  "google-campaign-process"
+                ]
               },
               {
                 "group": "How-tos",
@@ -290,7 +309,9 @@
               },
               {
                 "group": "Checklists",
-                "pages": []
+                "pages": [
+                  "google-pre-launch-checklist"
+                ]
               }
             ]
           },
@@ -298,6 +319,12 @@
             "dropdown": "LinkedIn",
             "pages": [
               "linked-in-home",
+              {
+                "group": "Briefs",
+                "pages": [
+                  "linkedin-campaign-brief"
+                ]
+              },
               {
                 "group": "Creative Specifications",
                 "pages": [
@@ -310,7 +337,9 @@
               },
               {
                 "group": "SOPs",
-                "pages": []
+                "pages": [
+                  "linkedin-campaign-process"
+                ]
               },
               {
                 "group": "How-tos",
@@ -326,7 +355,9 @@
               },
               {
                 "group": "Checklists",
-                "pages": []
+                "pages": [
+                  "linkedin-pre-launch-checklist"
+                ]
               }
             ]
           },
@@ -334,6 +365,12 @@
             "dropdown": "TikTok",
             "pages": [
               "tik-tok-home",
+              {
+                "group": "Briefs",
+                "pages": [
+                  "tiktok-campaign-brief"
+                ]
+              },
               {
                 "group": "Creative Specifications",
                 "pages": [
@@ -346,7 +383,9 @@
               },
               {
                 "group": "SOPs",
-                "pages": []
+                "pages": [
+                  "tiktok-campaign-process"
+                ]
               },
               {
                 "group": "How-tos",
@@ -362,13 +401,21 @@
               },
               {
                 "group": "Checklists",
-                "pages": []
+                "pages": [
+                  "tiktok-pre-launch-checklist"
+                ]
               }
             ]
           },
           {
             "dropdown": "Organic social",
             "pages": [
+              {
+                "group": "Briefs",
+                "pages": [
+                  "organic-social-post-brief"
+                ]
+              },
               "organic-social-home",
               {
                 "group": "Tutorials",
@@ -376,7 +423,9 @@
               },
               {
                 "group": "SOPs",
-                "pages": []
+                "pages": [
+                  "organic-social-post-process"
+                ]
               },
               {
                 "group": "How-tos",
@@ -392,7 +441,9 @@
               },
               {
                 "group": "Checklists",
-                "pages": []
+                "pages": [
+                  "organic-social-pre-publish-checklist"
+                ]
               },
               {
                 "group": "Content calender",
@@ -404,13 +455,22 @@
             "dropdown": "Email",
             "pages": [
               "email-home",
+              "email-creative-specs",
+              {
+                "group": "Briefs",
+                "pages": [
+                  "email-campaign-brief"
+                ]
+              },
               {
                 "group": "Tutorials",
                 "pages": []
               },
               {
                 "group": "SOPs",
-                "pages": []
+                "pages": [
+                  "email-campaign-process"
+                ]
               },
               {
                 "group": "How-tos",
@@ -426,7 +486,9 @@
               },
               {
                 "group": "Checklists",
-                "pages": []
+                "pages": [
+                  "email-pre-send-checklist"
+                ]
               },
               {
                 "group": "Automations",
@@ -485,7 +547,9 @@
               },
               {
                 "group": "SOPs",
-                "pages": []
+                "pages": [
+                  "landing-page-process"
+                ]
               },
               {
                 "group": "How-tos",
@@ -770,6 +834,27 @@
               "hero-article-register",
               "supporting-article-register",
               "article-brief-library"
+            ]
+          },
+          {
+            "group": "Landing Page Library",
+            "pages": [
+              "landing-page-library"
+            ]
+          },
+          {
+            "group": "Asset Directories",
+            "pages": [
+              "asset-directory",
+              "creative-drive",
+              "video-drive",
+              "copy-drive"
+            ]
+          },
+          {
+            "group": "Copy Brief Library",
+            "pages": [
+              "copy-brief-library"
             ]
           }
         ]
