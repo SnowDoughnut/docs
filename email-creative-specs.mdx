@@ -1,6 +1,6 @@
 ---
 title: "Email creative specs"
-description: "Email design specs: body width, image sizes and formats, HTML weight before Gmail clips the message, dark mode behaviour by client, and what Outlook's rendering engine will and won't support."
+description: "Email design specs: body width, image sizes and formats, HTML weight before Gmail clips the message, dark mode behavior by client, and what Outlook's rendering engine will and won't support."
 ---
 
 Design specs for HTML email. Current as of 7 August 2026.
@@ -12,7 +12,7 @@ Referenced from the [email campaign brief](/email-campaign-brief) and used along
 | Element | Spec | Notes |
 | :-- | :-- | :-- |
 | Body width | 600 px | 600 to 640 px renders correctly everywhere without testing |
-| Full-width background | 100% with a 600 px inner table | Background colours need VML for classic Outlook |
+| Full-width background | 100% with a 600 px inner table | Background colors need VML for classic Outlook |
 | Minimum tap target | 44 × 44 px | Applies to every button and link on mobile |
 | Font size, body | 14 to 16 px | Below 14 px, some clients scale text up unpredictably |
 | Font size, headings | 22 to 30 px |  |
@@ -55,19 +55,19 @@ Every image needs alt text. Several clients block images by default, and an emai
 
 Dark mode handling varies more between clients than any other part of email rendering, and there is no setting that produces consistent results.
 
-| Client | Behaviour |
+| Client | Behavior |
 | :-- | :-- |
-| Apple Mail | Inverts aggressively, including colours you set explicitly |
+| Apple Mail | Inverts aggressively, including colors you set explicitly |
 | Gmail | Partially inverts, and only some palettes |
 | Classic Outlook on Windows | Applies no dark-mode transformation. Your light palette renders as-is |
-| New Outlook and Outlook.com | Inverts, closer to Gmail's behaviour |
+| New Outlook and Outlook.com | Inverts, closer to Gmail's behavior |
 
 What holds up across all four:
 
 - Export logos as **transparent PNG with an outline or stroke** that stays visible against both a light and a dark background.
 - Add 20 to 30 px of background padding around logos and icons, so an inverted background doesn't sit flush against the mark.
 - Avoid pure white (`#FFFFFF`) and pure black (`#000000`) as large fills. Both invert to the most jarring possible result.
-- Avoid text baked into images. Inverted backgrounds behind fixed-colour text is the most common dark mode failure.
+- Avoid text baked into images. Inverted backgrounds behind fixed-color text is the most common dark mode failure.
 - Test in light and dark before every send. It is in the [email pre-send checklist](/email-pre-send-checklist) for a reason.
 
 ## Rendering engines

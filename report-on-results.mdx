@@ -1,0 +1,63 @@
+---
+title: "Report on results"
+description: "How reporting works end to end: one flat file feeding every report, one definition per metric, and a fixed cadence from weekly through to annual."
+---
+
+Use this to produce a report, or to set reporting up for the first time.
+
+<Note>
+  Every report reads from the [flat file](/flat-file-template), not from the ad platforms. If two reports pull from two places, they will eventually disagree and nobody will know which is right.
+</Note>
+
+## Setting it up (once)
+
+<Steps>
+  <Step title="1. Read the framework">
+    [Reporting framework concepts](/reporting-framework-concepts) covers the north star, counter-metrics, and how the layers relate. [Data quality and rollup concepts](/data-quality-and-rollup-concepts) covers what breaks when weekly numbers don't add up to the monthly ones.
+  </Step>
+  <Step title="2. Define every metric once">
+    Fill in the [marketing reporting data dictionary](/marketing-reporting-data-dictionary): one definition, one owner, one grain per metric. Then agree the headline set in [KPI definitions](/kpi-definitions).
+
+    If a starter pack fits, begin there: [ecommerce](/ecommerce-metrics-starter-pack) or [sales-led](/sales-led-metrics-starter-pack).
+  </Step>
+  <Step title="3. Build the flat file">
+    Set up the [flat file](/flat-file-template). Its grain and its column names come from the data dictionary, and its campaign column joins on your [naming conventions](/campaign-naming-conventions) and [UTM values](/utm-standards).
+  </Step>
+  <Step title="4. Set the cadence and the dashboards">
+    Agree who reports what, to whom, how often in [reporting cadence](/reporting-cadence), and how it's presented in [dashboard standards](/dashboard-standards).
+  </Step>
+</Steps>
+
+## Producing a report
+
+| Cadence | Template | Process | Archive |
+| :-- | :-- | :-- | :-- |
+| Weekly | [Weekly report template](/weekly-report-template) | [Weekly reporting process](/weekly-reporting-process) | [Weekly archive](/weekly-report-archive) |
+| Monthly | [Monthly report template](/monthly-report-template) | [Monthly reporting process](/monthly-reporting-process) | [Monthly archive](/monthly-report-archive) |
+| Quarterly | [Quarterly report template](/quarterly-report-template) | [Quarterly reporting process](/quarterly-reporting-process) | [Quarterly archive](/quarterly-report-archive) |
+| Annual | [Annual report template](/annual-report-template) | [Yearly reporting process](/yearly-reporting-process) | [Annual archive](/annual-report-archive) |
+
+Each period rolls up into the next. A monthly report is not written from scratch; it's assembled from weeks that already reconciled.
+
+<Steps>
+  <Step title="1. Load and check the rows">
+    Add the period's rows to the flat file and check them against the rules in [data quality and rollup concepts](/data-quality-and-rollup-concepts). Catch the gaps before writing, not after someone questions a number.
+  </Step>
+  <Step title="2. Check the change log">
+    Anything that changed mid-period (a budget shift, a tracking fix, a naming correction) explains a movement that otherwise looks like performance.
+  </Step>
+  <Step title="3. Write it">
+    Use the template for the period. [Report writing concepts](/report-writing-concepts) covers how to say what happened without overclaiming a cause.
+  </Step>
+  <Step title="4. File it">
+    Save to the archive for that period. The archive is what makes a quarterly report possible without re-deriving three months of numbers.
+  </Step>
+</Steps>
+
+## Related resources
+
+- [**Marketing reporting data dictionary**](/marketing-reporting-data-dictionary) One definition per metric.
+- [**Flat file**](/flat-file-template) The single source every report reads.
+- [**Reporting framework concepts**](/reporting-framework-concepts) The reasoning behind the structure.
+- [**Report writing concepts**](/report-writing-concepts) How to write the narrative.
+- [**Set up tracking**](/set-up-tracking) What has to be right upstream for any of this to work.

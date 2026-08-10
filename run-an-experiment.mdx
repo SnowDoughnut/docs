@@ -1,0 +1,63 @@
+---
+title: "Run an experiment"
+description: "How a test gets briefed, given an ID, launched, monitored, reviewed, and recorded as a learning, so the result is findable after the people who ran it have moved on."
+---
+
+Use this whenever you're changing something to find out whether it works, rather than because you already know it does.
+
+## Before you start
+
+| You need | Where it lives |
+| :-- | :-- |
+| An ID pattern | [Experiment ID](/experiment-id) |
+| A metric definition you trust | [Marketing reporting data dictionary](/marketing-reporting-data-dictionary) |
+| Enough traffic to detect a change | [Statistical significance](/statistical-significance) |
+
+## The path
+
+<Steps>
+  <Step title="1. Read the concepts once">
+    [Experiment IDs](/experiment-ids) explains why every test needs a traceable identifier. [Statistical significance](/statistical-significance) explains what a result can and can't tell you, including why checking early changes what the number means.
+  </Step>
+  <Step title="2. Fill in the experiment brief">
+    Copy the [experiment brief](/experiment-brief) and fill in the hypothesis, the primary metric, the guardrail metrics, the sample needed, and the decision rule you'll follow either way.
+
+    Write the decision rule before launch. Deciding what counts as a win after seeing the data is how a flat test becomes a success story.
+  </Step>
+  <Step title="3. Register the ID">
+    Issue an ID from your [experiment ID](/experiment-id) pattern and record it before launch.
+  </Step>
+  <Step title="4. Apply the ID everywhere">
+    The ID goes on every surface the test touches: campaign and ad names ([conventions](/ad-set-group-naming-conventions)), [UTM values](/utm-standards), and the analytics events. This is what makes results traceable later.
+  </Step>
+  <Step title="5. Launch and leave it alone">
+    Run to the sample size you calculated. Monitor the guardrail metrics for damage, not the primary metric for good news. See [creating an experiment](/creating-an-experiment) for the full process.
+  </Step>
+  <Step title="6. Review against the decision rule">
+    Run the [experiment review process](/experiment-review-process). Compare the result to the rule you wrote in step 2, not to what you hoped for.
+  </Step>
+  <Step title="7. Record the learning">
+    File the outcome in the [experiment learning library](/experirment-learning-home), including the tests that showed nothing. A null result stops someone re-running the same test next quarter.
+  </Step>
+  <Step title="8. Roll it out or roll it back">
+    A win becomes the new default and gets written into the relevant standard. A loss gets reverted and recorded. Either way the brief in the library carries the outcome.
+  </Step>
+</Steps>
+
+## The mistakes worth naming
+
+| Mistake | What it does |
+| :-- | :-- |
+| Deciding the win condition after seeing data | Any flat test can be read as a win |
+| Checking significance repeatedly ([peeking](/glossary#peeking)) | Inflates false positives |
+| No guardrail metric | A lift in one number hides damage in another |
+| No ID on the surfaces | The result can't be traced back to what changed |
+| Not recording null results | The same test gets run again |
+
+## Related resources
+
+- [**Experiment brief**](/experiment-brief) The workbook.
+- [**Creating an experiment**](/creating-an-experiment) The detailed process.
+- [**Experiment review process**](/experiment-review-process) How results get judged.
+- [**Statistical significance**](/statistical-significance) What the numbers mean.
+- [**Experiment learning library**](/experirment-learning-home) Where outcomes are recorded.

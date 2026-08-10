@@ -16,18 +16,28 @@
     "timestamp": true
   },
   "contextual": {
-    "options": ["copy", "view", "assistant", "mcp", "add-mcp"]
+    "options": [
+      "copy",
+      "view",
+      "assistant",
+      "mcp",
+      "add-mcp"
+    ]
   },
   "navigation": {
     "tabs": [
       {
         "tab": "Get started",
-        "pages": [
-          "overview",
-          "quick-starts",
-          "how-to-use-this-knowledge-base",
+        "groups": [
           {
-            "group": "Onbaording",
+            "group": "Start here",
+            "pages": [
+              "overview",
+              "setup-checklist"
+            ]
+          },
+          {
+            "group": "Onboarding",
             "pages": [
               "new-member-onboarding",
               "brand-onboarding",
@@ -38,35 +48,31 @@
       },
       {
         "tab": "Find what you need",
-        "dropdowns": [
+        "groups": [
           {
-            "dropdown": "By Platform",
+            "group": "Set up once",
             "pages": [
-              "google",
-              "linkedin",
-              "meta",
-              "tiktok",
-              "email"
+              "set-up-your-brand",
+              "name-something",
+              "set-up-tracking",
+              "define-a-customer-profile"
             ]
           },
           {
-            "dropdown": "By Document Type",
+            "group": "Make something",
             "pages": [
-              "sops",
-              "how-tos",
-              "brand-documents",
-              "reports",
-              "tools"
+              "make-a-campaign",
+              "brief-creative",
+              "write-copy",
+              "build-a-landing-page",
+              "write-an-article"
             ]
           },
           {
-            "dropdown": "By Marketing Type",
+            "group": "Test and measure",
             "pages": [
-              "paid-search",
-              "paid-social",
-              "content-marketing",
-              "analytics",
-              "organic-social-marketing"
+              "run-an-experiment",
+              "report-on-results"
             ]
           }
         ]
@@ -174,7 +180,6 @@
             "group": "Creative standards",
             "pages": [
               "ad-copy-standards",
-              "creative-review-checklist",
               {
                 "group": "Image and video specs",
                 "pages": [
@@ -244,31 +249,9 @@
                 ]
               },
               {
-                "group": "Tutorials",
-                "pages": []
-              },
-              {
                 "group": "SOPs",
                 "pages": [
                   "meta-campaign-process"
-                ]
-              },
-              {
-                "group": "How-tos",
-                "pages": []
-              },
-              {
-                "group": "Best practices",
-                "pages": []
-              },
-              {
-                "group": "Reports",
-                "pages": []
-              },
-              {
-                "group": "Checklists",
-                "pages": [
-                  "meta-pre-launch-checklist"
                 ]
               }
             ]
@@ -293,31 +276,9 @@
                 ]
               },
               {
-                "group": "Tutorials",
-                "pages": []
-              },
-              {
                 "group": "SOPs",
                 "pages": [
                   "google-campaign-process"
-                ]
-              },
-              {
-                "group": "How-tos",
-                "pages": []
-              },
-              {
-                "group": "Best practices",
-                "pages": []
-              },
-              {
-                "group": "Reports",
-                "pages": []
-              },
-              {
-                "group": "Checklists",
-                "pages": [
-                  "google-pre-launch-checklist"
                 ]
               }
             ]
@@ -339,31 +300,9 @@
                 ]
               },
               {
-                "group": "Tutorials",
-                "pages": []
-              },
-              {
                 "group": "SOPs",
                 "pages": [
                   "linkedin-campaign-process"
-                ]
-              },
-              {
-                "group": "How-tos",
-                "pages": []
-              },
-              {
-                "group": "Best practices",
-                "pages": []
-              },
-              {
-                "group": "Reports",
-                "pages": []
-              },
-              {
-                "group": "Checklists",
-                "pages": [
-                  "linkedin-pre-launch-checklist"
                 ]
               }
             ]
@@ -385,31 +324,9 @@
                 ]
               },
               {
-                "group": "Tutorials",
-                "pages": []
-              },
-              {
                 "group": "SOPs",
                 "pages": [
                   "tiktok-campaign-process"
-                ]
-              },
-              {
-                "group": "How-tos",
-                "pages": []
-              },
-              {
-                "group": "Best practices",
-                "pages": []
-              },
-              {
-                "group": "Reports",
-                "pages": []
-              },
-              {
-                "group": "Checklists",
-                "pages": [
-                  "tiktok-pre-launch-checklist"
                 ]
               }
             ]
@@ -425,36 +342,10 @@
               },
               "organic-social-home",
               {
-                "group": "Tutorials",
-                "pages": []
-              },
-              {
                 "group": "SOPs",
                 "pages": [
                   "organic-social-post-process"
                 ]
-              },
-              {
-                "group": "How-tos",
-                "pages": []
-              },
-              {
-                "group": "Best practices",
-                "pages": []
-              },
-              {
-                "group": "Reports",
-                "pages": []
-              },
-              {
-                "group": "Checklists",
-                "pages": [
-                  "organic-social-pre-publish-checklist"
-                ]
-              },
-              {
-                "group": "Content calender",
-                "pages": []
               }
             ]
           },
@@ -470,40 +361,10 @@
                 ]
               },
               {
-                "group": "Tutorials",
-                "pages": []
-              },
-              {
                 "group": "SOPs",
                 "pages": [
                   "email-campaign-process"
                 ]
-              },
-              {
-                "group": "How-tos",
-                "pages": []
-              },
-              {
-                "group": "Best practices",
-                "pages": []
-              },
-              {
-                "group": "Reports",
-                "pages": []
-              },
-              {
-                "group": "Checklists",
-                "pages": [
-                  "email-pre-send-checklist"
-                ]
-              },
-              {
-                "group": "Automations",
-                "pages": []
-              },
-              {
-                "group": "Segmentation",
-                "pages": []
               }
             ]
           },
@@ -512,34 +373,10 @@
             "pages": [
               "seo-home",
               {
-                "group": "Tutorials",
-                "pages": []
-              },
-              {
                 "group": "SOPs",
                 "pages": [
                   "article-process",
                   "article-maintenance-process"
-                ]
-              },
-              {
-                "group": "How-tos",
-                "pages": []
-              },
-              {
-                "group": "Best practices",
-                "pages": []
-              },
-              {
-                "group": "Reports",
-                "pages": []
-              },
-              {
-                "group": "Checklists",
-                "pages": [
-                  "article-pre-publish-checklist",
-                  "geo-checklist",
-                  "article-update-checklist"
                 ]
               }
             ]
@@ -549,30 +386,10 @@
             "pages": [
               "web-home",
               {
-                "group": "Tutorials",
-                "pages": []
-              },
-              {
                 "group": "SOPs",
                 "pages": [
                   "landing-page-process"
                 ]
-              },
-              {
-                "group": "How-tos",
-                "pages": []
-              },
-              {
-                "group": "Best practices",
-                "pages": []
-              },
-              {
-                "group": "Reports",
-                "pages": []
-              },
-              {
-                "group": "Checklists",
-                "pages": []
               }
             ]
           }
@@ -585,8 +402,6 @@
             "dropdown": "Campaign planning",
             "pages": [
               "campaign-brief-process",
-              "campaign-launch-checklist",
-              "campaign-qa-checklist",
               "campaign-retrospect-process"
             ]
           },
@@ -627,6 +442,23 @@
               "legal-review-process",
               "brand-approval-process"
             ]
+          },
+          {
+            "dropdown": "Checklists",
+            "pages": [
+              "campaign-qa-checklist",
+              "campaign-launch-checklist",
+              "meta-pre-launch-checklist",
+              "google-pre-launch-checklist",
+              "linkedin-pre-launch-checklist",
+              "tiktok-pre-launch-checklist",
+              "organic-social-pre-publish-checklist",
+              "email-pre-send-checklist",
+              "creative-review-checklist",
+              "article-pre-publish-checklist",
+              "article-update-checklist",
+              "geo-checklist"
+            ]
           }
         ]
       },
@@ -636,10 +468,6 @@
           {
             "group": "General",
             "pages": [
-              {
-                "group": "Campaign",
-                "pages": []
-              },
               {
                 "group": "Reporting",
                 "pages": [
@@ -651,10 +479,6 @@
                   "ecommerce-metrics-starter-pack",
                   "sales-led-metrics-starter-pack"
                 ]
-              },
-              {
-                "group": "Creative",
-                "pages": []
               },
               "landing-page-skeleton",
               {
@@ -766,15 +590,8 @@
                 ]
               }
             ]
-          },
-          {
-            "group": "Organic Social",
-            "pages": []
           }
         ]
-      },
-      {
-        "tab": "Tools and Systems"
       },
       {
         "tab": "Reports & Library",
@@ -890,5 +707,97 @@
       "x": "https://x.com/yourcompany",
       "linkedin": "https://linkedin.com/company/yourcompany"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/google",
+      "destination": "/google-home",
+      "permanent": true
+    },
+    {
+      "source": "/linkedin",
+      "destination": "/linked-in-home",
+      "permanent": true
+    },
+    {
+      "source": "/meta",
+      "destination": "/meta-home",
+      "permanent": true
+    },
+    {
+      "source": "/tiktok",
+      "destination": "/tik-tok-home",
+      "permanent": true
+    },
+    {
+      "source": "/email",
+      "destination": "/email-home",
+      "permanent": true
+    },
+    {
+      "source": "/sops",
+      "destination": "/overview",
+      "permanent": true
+    },
+    {
+      "source": "/how-tos",
+      "destination": "/make-a-campaign",
+      "permanent": true
+    },
+    {
+      "source": "/brand-documents",
+      "destination": "/brand-guidelines",
+      "permanent": true
+    },
+    {
+      "source": "/reports",
+      "destination": "/report-on-results",
+      "permanent": true
+    },
+    {
+      "source": "/tools",
+      "destination": "/asset-directory",
+      "permanent": true
+    },
+    {
+      "source": "/paid-search",
+      "destination": "/google-home",
+      "permanent": true
+    },
+    {
+      "source": "/paid-social",
+      "destination": "/meta-home",
+      "permanent": true
+    },
+    {
+      "source": "/content-marketing",
+      "destination": "/write-an-article",
+      "permanent": true
+    },
+    {
+      "source": "/analytics",
+      "destination": "/report-on-results",
+      "permanent": true
+    },
+    {
+      "source": "/organic-social-marketing",
+      "destination": "/organic-social-home",
+      "permanent": true
+    },
+    {
+      "source": "/quick-starts",
+      "destination": "/overview",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-use-this-knowledge-base",
+      "destination": "/overview",
+      "permanent": true
+    },
+    {
+      "source": "/test",
+      "destination": "/overview",
+      "permanent": true
+    }
+  ]
 }

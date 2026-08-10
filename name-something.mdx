@@ -1,0 +1,53 @@
+---
+title: "Name something"
+description: "Which naming convention applies to what you're naming, where the pattern lives, and what breaks downstream if you name it after the fact."
+---
+
+Six conventions cover everything that gets named. Pick the row that matches what you're naming.
+
+| What you're naming | Convention | Decide before |
+| :-- | :-- | :-- |
+| A campaign in a platform | [Campaign naming conventions](/campaign-naming-conventions) | You build it |
+| An ad set, ad group, or variant | [Ad set, ad group and variant](/ad-set-group-naming-conventions) | You build it |
+| An individual ad | [Ad name conventions](/ad-name-conventions) | You upload it |
+| A customer profile or audience | [Customer profile naming conventions](/customer-profile-naming-conventions) | You save it to the library |
+| A file or creative asset | [File naming conventions](/file-naming-conventions) | You save it |
+| A tracked event | [Event naming conventions](/event-naming-conventions) | You implement it |
+| An experiment | [Experiment ID](/experiment-id) | It launches |
+
+<Warning>
+  Name things at build time, not afterwards. A renamed campaign breaks the join between platform spend and analytics conversions, and historical rows keep the old name forever.
+</Warning>
+
+## The path
+
+<Steps>
+  <Step title="1. Read the overview once">
+    [Naming conventions overview](/naming-conventions-overview) explains how the conventions relate and why the field values have to be closed lists. Read it once, not every time.
+  </Step>
+  <Step title="2. Find the pattern">
+    Open the convention from the table above. Each one gives the field order, the separator, and the allowed values per field.
+  </Step>
+  <Step title="3. Check the value exists">
+    Every field draws from a closed list. If the value you need isn't on the list, that's a decision, not a typing problem. Add it to the convention document first, then use it.
+  </Step>
+  <Step title="4. Apply it everywhere at once">
+    A campaign name has to match its UTM values, or the two datasets won't join. Build the name and the [UTM](/utm-standards) together, from the same values.
+  </Step>
+  <Step title="5. Don't rename">
+    If a name is wrong, the cost of fixing it rises every day it collects data. Fix it immediately or leave it and note the exception.
+  </Step>
+</Steps>
+
+## Why the closed lists matter
+
+Naming conventions look like formatting. They're really the join key between systems: platform reporting, analytics, and the [flat file](/flat-file-template) all match on these values. An open field where anyone can type produces `paid_social`, `Paid Social`, and `paidsocial` as three different channels in the same report.
+
+[Name jamming](/glossary#name-jamming) covers the related failure: cramming so much into a name that nobody keeps it accurate.
+
+## Related resources
+
+- [**Naming conventions overview**](/naming-conventions-overview) How the six conventions fit together.
+- [**UTM standards**](/utm-standards) The values that have to match your campaign names.
+- [**Make a campaign**](/make-a-campaign) Where naming sits in the campaign path.
+- [**Glossary**](/glossary) Definitions for the field values used in patterns.
