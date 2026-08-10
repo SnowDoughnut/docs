@@ -1,0 +1,92 @@
+---
+title: "Video drive"
+description: "Where finished video lives: platform cuts, master edits, source footage, and captions. How the folders are organized, how files are named, and what to check before pulling a cut."
+---
+
+The video drive holds finished video: the master edit, the platform-specific cuts made from it, the source footage, and the caption files.
+
+Check here before briefing new video. Video is the most expensive creative to produce and the most reusable once made, so an existing cut, or a recut of an existing master, usually beats a new shoot.
+
+<Note>
+  Fill in the link, folder structure, and rows below with your own. Examples use **Doughnut Labs**, a SaaS company that sells disruptive Doughnut Technology.
+</Note>
+
+## Where it is
+
+| Field | Fill in |
+| :-- | :-- |
+| Location | _E.g. \[link\]_ |
+| Owner | _E.g. Marco Silva_ |
+| Who has access | _E.g. Marketing team, video editor, agency partners_ |
+| How to request access | _E.g. Ask the owner_ |
+
+## What's in it
+
+| Belongs here | Doesn't belong here |
+| :-- | :-- |
+| Master edits | Static images, which go in the [creative drive](/creative-drive) |
+| Platform cuts at each ratio | Unreviewed rough cuts |
+| Source footage worth keeping | Screen recordings with no export |
+| Caption and subtitle files | Scripts, which go in the [copy drive](/copy-drive) |
+| Thumbnails and end cards |  |
+
+## How it's organized
+
+_Replace this structure with your own._
+
+```text
+video/
+├── campaigns/
+│   └── 2026-fresh-batch-trial/
+│       ├── masters/
+│       ├── cuts/
+│       │   ├── 9x16/
+│       │   ├── 1x1/
+│       │   └── 16x9/
+│       ├── captions/
+│       └── source/
+├── evergreen/
+│   ├── product-demo/
+│   ├── customer-stories/
+│   └── founder-and-team/
+└── archive/
+```
+
+Keeping masters, cuts, and source separate is what makes a recut cheap. A campaign folder with only finished cuts and no master means the next ratio needs a new edit from scratch.
+
+## Naming
+
+Every file follows the [file naming conventions](/file-naming-conventions). Video usually needs the format field and, when localized, the language field:
+
+`VID_q3-launch-hero_16x9_en-CA_2027-09-15_v05_FINAL.mp4`
+
+The descriptor should match the creative name used in the [ad naming conventions](/ad-name-conventions).
+
+## Notable assets
+
+_The first rows are examples. Delete them and fill in your own._
+
+| Asset | Descriptor | Ratios available | Owner | Approved |
+| :-- | :-- | :-- | :-- | :-- |
+| _E.g. One-afternoon setup demo_ | _E.g._ `setup-demo` | _E.g. 9:16, 1:1, 16:9_ | _E.g. Marco Silva_ | _E.g. 2026-04-02_ |
+| _E.g. Customer story, RevOps lead_ | _E.g._ `story-revops` | _E.g. 16:9, 9:16 cutdown_ | _E.g. Marco Silva_ | _E.g. 2026-01-20_ |
+| \[add row\] |  |  |  |  |
+
+## Before you pull a cut
+
+- **Check the ratio exists.** A vertical cut made by cropping a 16:9 master is correctly framed but not full resolution. Export vertical from the master rather than upscaling a crop. See the [image and video specs](/image-and-video-specs).
+- **Check captions exist.** Most viewers watch with sound off, and several platforms need a separate caption file rather than burned-in text.
+- **Check the length against the placement.** Platform maximums differ, and a cut that fits one placement may need trimming for another.
+- **Check usage rights.** Music licences, creator agreements, and appearance releases all expire.
+
+<Warning>
+  Licensed music is the most common reason a video has to be pulled after it ran. Record the licence and its expiry alongside the asset, and check it before reusing a cut on a new campaign or a new platform, since licences are often scoped to one of each.
+</Warning>
+
+## Related resources
+
+- [**Asset directory**](/asset-directory) Every location in one index.
+- [**Creative drive**](/creative-drive) For static assets.
+- [**File naming conventions**](/file-naming-conventions) The convention every file here follows.
+- [**Image and video specs**](/image-and-video-specs) Ratios, lengths, and safe areas by platform.
+- [**Creative brief process**](/creative-brief-process) How new video gets produced.

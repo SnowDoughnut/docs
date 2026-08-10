@@ -1,0 +1,77 @@
+---
+title: "Landing page library"
+description: "The register of every published landing page: URL, offer, customer profile, conversion action, owner, and review date. Check it before briefing a new page, so an existing page gets reused rather than duplicated."
+---
+
+Every published landing page gets a row here. Check the register before briefing a new page.
+
+Two near-identical pages split the traffic between them, so both take twice as long to produce a reliable read and neither accumulates the performance history that would let you improve it. The register exists so that reuse is a lookup rather than a memory.
+
+<Info>
+  Pages are added at the end of the [landing page process](/landing-page-process), with their owner and next review date. A page with no row will not be found by the next person building a campaign, who will brief a near-duplicate instead.
+</Info>
+
+## The register
+
+_The first two rows are examples using Doughnut Labs, a company that sells Doughnut Technology. Delete them and fill in your own._
+
+| Page | URL | Offer | Customer profile | Conversion action | Owner | Published | Next review |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| _E.g. Fresh Batch trial_ | _E.g. [/lp/fresh-batch-trial](https://link)_ | _E.g. 30-day free trial, no card_ | _E.g. [Mid-market RevOps lead](https://link)_ | _E.g._ `Trial Started` | _E.g. Priya Nadan_ | _E.g. 2026-04-22_ | _E.g. 2026-10-22_ |
+| _E.g. Demo booking_ | _E.g. [/lp/book-a-demo](https://link)_ | _E.g. 30-minute demo with an engineer_ | _E.g. [SaaS founder, 50–200 staff](https://link)_ | _E.g._ `Demo Booked` | _E.g. Priya Nadan_ | _E.g. 2026-02-10_ | _E.g. 2026-08-10_ |
+| \[add row\] |  |  |  |  |  |  |  |
+
+## Which page to use
+
+Match on two things, in this order:
+
+1. **The offer.** A page built for a free trial will not work for a demo booking, whatever else it has in common.
+2. **The customer profile.** A page speaking to one profile's objections usually reads as irrelevant to another.
+
+If both match, use the existing page. If the offer matches but the profile does not, adapting the existing page is usually cheaper than building a new one, and keeps the performance history in one place.
+
+If neither matches, run the [landing page process](/landing-page-process).
+
+## Campaigns pointing at each page
+
+Knowing what points at a page is what makes it safe to change.
+
+| Page | Campaigns using it | Last changed |
+| :-- | :-- | :-- |
+| _E.g. Fresh Batch trial_ | _E.g. Meta prospecting, Google Search, email nurture_ | _E.g. 2026-05-14_ |
+| \[add row\] |  |  |
+
+<Warning>
+  Check this table before editing a live page. A page serving four campaigns will change the results of all four at once, and a change made for one campaign's benefit can quietly damage the others. Where the page carries meaningful spend, treat the change as an [experiment](/creating-an-experiment) rather than an edit.
+</Warning>
+
+## Reviewing a page
+
+Every page carries a review date, in the same way an article does. A landing page is not finished when it ships.
+
+At review, check:
+
+- The offer is still current. An expired offer on a live page is the most common failure here.
+- The conversion action still fires, confirmed with a test submission.
+- The proof is still true: statistics current, testimonials still permitted, logos still customers.
+- The page still gets traffic. A page nothing points at should be retired or redirected rather than left to age.
+- Performance against the target recorded in the [landing page brief](/landing-page-standards).
+
+## Retiring a page
+
+When a page is retired, keep its row and mark it retired rather than deleting it. Record where the URL now redirects.
+
+A deleted row means the next person cannot tell whether a page existed and failed, or never existed at all, and those lead to different decisions.
+
+| Retired page | URL | Redirects to | Retired | Why |
+| :-- | :-- | :-- | :-- | :-- |
+| _E.g. Spring 2025 promo_ | _E.g. /lp/spring-promo_ | _E.g. /lp/fresh-batch-trial_ | _E.g. 2026-01-30_ | _E.g. Offer ended_ |
+| \[add row\] |  |  |  |  |
+
+## Related resources
+
+- [**Building a landing page**](/landing-page-process) The process that adds a row here.
+- [**Landing page brief**](/landing-page-standards) The workbook behind each page.
+- [**Page skeleton**](/landing-page-skeleton) Where structure and final copy get filled in.
+- [**Asset directory**](/asset-directory) Every asset location in one index.
+- [**Event tracking plan**](/event-tracking-plan) Where each conversion action is defined.

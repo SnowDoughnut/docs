@@ -45,6 +45,7 @@
               "google",
               "linkedin",
               "meta",
+              "tiktok",
               "email"
             ]
           },
@@ -833,6 +834,27 @@
               "hero-article-register",
               "supporting-article-register",
               "article-brief-library"
+            ]
+          },
+          {
+            "group": "Landing Page Library",
+            "pages": [
+              "landing-page-library"
+            ]
+          },
+          {
+            "group": "Asset Directories",
+            "pages": [
+              "asset-directory",
+              "creative-drive",
+              "video-drive",
+              "copy-drive"
+            ]
+          },
+          {
+            "group": "Copy Brief Library",
+            "pages": [
+              "copy-brief-library"
             ]
           }
         ]
