@@ -1,15 +1,96 @@
 ---
 title: "Dashboard standards"
-description: "How dashboards should be structured and named so KPIs are reported consistently."
+description: "Which dashboards exist, who owns each one, how they're named, how often they refresh, and when one gets retired. Fill this in once so dashboards stay a small governed set rather than an accumulating pile."
 ---
 
-Standards for how reporting dashboards are structured and named, so the [KPIs](/kpi-definitions) they surface stay consistent across teams and tools.
+How a dashboard should be *designed* is covered in [report writing concepts](/report-writing-concepts#dashboards-answer-a-question-in-under-30-seconds). This page is the governance around them: which ones exist, who owns them, and what stops the set growing without limit.
 
-See [report writing concepts](/report-writing-concepts#dashboards-answer-a-question-in-under-30-seconds) for how to scope a dashboard, lay it out, and decide what earns a place on it. A dashboard reads from the same [flat file](/flat-file-template) every report is built from, and every number on it should trace back to a definition in the [data dictionary](/marketing-reporting-data-dictionary).
+<Note>
+  Fill in the register and the rules below once, as a team. Everything here is a decision, not a rule handed down.
+</Note>
+
+## The rules
+
+Four hold across every dashboard.
+
+1. **Every dashboard reads from the [flat file](/flat-file-template).** Not from a platform connector, not from a separate export. A dashboard on its own data source will eventually disagree with a report, and there is no way to settle which is right.
+2. **Every number traces to a row in the [data dictionary](/marketing-reporting-data-dictionary).** A metric on a dashboard that isn't defined anywhere is a metric being invented in public.
+3. **Every dashboard has one named owner.** Not a team. Dashboards with no owner are the ones that break silently and stay broken.
+4. **Every dashboard answers a stated question.** Written on the dashboard itself, so a viewer knows what it's for and a reviewer can tell whether it still does its job.
+
+## The register
+
+One row per dashboard. This is the list that gets reviewed.
+
+_Examples use Doughnut Labs, a company that sells Doughnut Technology. Delete them and fill in your own._
+
+| Dashboard | Question it answers | Tier | Audience | Owner | Refresh | Last reviewed |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| _E.g. [Daily trading](https://link)_ | _E.g. Is today tracking normal?_ | _E.g. Tier 1_ | _E.g. Growth team_ | _E.g. Priya Nadan_ | _E.g. Hourly_ | _E.g. 2026-07-01_ |
+| _E.g. [Paid media](https://link)_ | _E.g. Which channels are on plan this week?_ | _E.g. Tier 2_ | _E.g. Paid media lead_ | _E.g. Sam Okafor_ | _E.g. Daily_ | _E.g. 2026-07-01_ |
+| _E.g. [Executive summary](https://link)_ | _E.g. Are we hitting the quarter?_ | _E.g. Tier 1_ | _E.g. Leadership_ | _E.g. Marketing lead_ | _E.g. Daily_ | _E.g. 2026-06-15_ |
+| \[add dashboard\] |  |  |  |  |  |  |
+
+Tiers match the [KPI tiers](/marketing-reporting-data-dictionary#kpi-tiers) in the dictionary. A dashboard mixing tier 1 outcomes with tier 3 diagnostics usually needs splitting, because the two have different audiences and different refresh needs.
+
+## Naming
+
+A consistent name makes a dashboard findable in a tool that lists forty of them alphabetically.
+
+_E.g. `{account}_{scope}_{cadence}`, lowercase with underscores: `doughnutlabs_paid-media_daily`. Scope is the area, not the tool. A dashboard named "Looker Studio copy 3" is a dashboard nobody will open._
+
+## Refresh and lag
+
+| Field | Fill in |
+| :-- | :-- |
+| Refresh frequency | _E.g. Hourly for trading, daily for everything else_ |
+| Data lag shown on screen | _E.g. Yes, a timestamp on every dashboard_ |
+| Metrics that settle late | _E.g. Conversions settle over 7 days; the last 3 days are marked provisional_ |
+| What happens when a refresh fails | _E.g. The dashboard shows the failure rather than the stale number, and the owner is notified_ |
+
+<Warning>
+  A dashboard that silently serves stale data is worse than one that is visibly broken. People act on it. Showing the failure is the safer default.
+</Warning>
+
+## Access
+
+| Group | Can view | Can edit |
+| :-- | :-- | :-- |
+| _E.g. Marketing team_ | _E.g. All dashboards_ | _E.g. No_ |
+| _E.g. Analytics owner_ | _E.g. All_ | _E.g. Yes_ |
+| _E.g. Leadership_ | _E.g. Tier 1 only_ | _E.g. No_ |
+| _E.g. Agencies_ | _E.g. Their scope only_ | _E.g. No, expires with the contract_ |
+| \[add group\] |  |  |
+
+Broad view access is usually right. Broad edit access is how a shared dashboard acquires someone's private filter.
+
+## Reviewing and retiring
+
+Dashboards need maintenance in the opposite direction from most documents: the work is removing tiles, not adding them.
+
+At each review, per dashboard:
+
+- Does it still answer its stated question?
+- Has anyone opened it this quarter? Most tools can tell you.
+- Which tiles have not changed a decision in a quarter? Delete them.
+- Do the numbers still match the flat file? Check one figure by hand.
+- Is the owner still the right person, and still here?
+
+Retire rather than delete. Mark it retired, note what replaced it, and keep the row. Otherwise the same dashboard gets rebuilt in six months by someone who assumed it never existed.
+
+| Retired dashboard | Replaced by | Retired | Why |
+| :-- | :-- | :-- | :-- |
+| _E.g. Weekly channel mix_ | _E.g. Paid media dashboard_ | _E.g. 2026-03-04_ | _E.g. Duplicated three tiles, nobody opened it_ |
+| \[add row\] |  |  |  |
+
+## Before you build a new one
+
+Check the register first. Most requests for a new dashboard are answered by an existing one, or by adding a filter to it. A near-duplicate dashboard splits the audience and doubles the maintenance, in the same way a near-duplicate landing page splits traffic.
 
 ## Related resources
 
-- [Report writing concepts](/report-writing-concepts)
-- [Flat file template](/flat-file-template)
-- [KPI definitions](/kpi-definitions)
-- [Reporting cadence](/reporting-cadence)
+- [**Report writing concepts**](/report-writing-concepts#dashboards-answer-a-question-in-under-30-seconds) How to design what goes on a dashboard.
+- [**Marketing reporting data dictionary**](/marketing-reporting-data-dictionary) Where every metric is defined.
+- [**KPI definitions**](/kpi-definitions) Which KPI a given piece of work is judged on.
+- [**Flat file**](/flat-file-template) The single source every dashboard reads.
+- [**Reporting best practices**](/reporting-best-practices) Why one source matters.

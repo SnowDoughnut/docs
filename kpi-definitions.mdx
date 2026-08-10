@@ -1,16 +1,96 @@
 ---
 title: "KPI definitions"
-description: "The named, tracked performance metrics every campaign and report measures against."
+description: "Which KPI a given piece of work is judged on, and how a new one gets added or retired. The definitions and formulas themselves live in the data dictionary; this is how you pick the right one."
 ---
 
-The list of [KPIs](/glossary#kpi) the team tracks, each defined once so everyone reports it the same way. Referenced from the [marketing campaign brief](/marketing-campaign-brief) KPI section and [dashboard standards](/dashboard-standards).
+Every campaign, experiment, and report has to name what it is judged on. This page is how that choice gets made.
 
-KPI definitions, formulas, and targets are fully specified in the [marketing reporting data dictionary](/marketing-reporting-data-dictionary), including the [north star metric and KPI tiers](/marketing-reporting-data-dictionary#kpi-tiers) and a [metric formula block](/marketing-reporting-data-dictionary#metric-formulas) per KPI. Start from the [ecommerce](/ecommerce-metrics-starter-pack) or [sales-led](/sales-led-metrics-starter-pack) starter pack rather than a blank page.
+<Info>
+  The definitions, formulas, targets, floors, and owners all live in the [marketing reporting data dictionary](/marketing-reporting-data-dictionary), including the [north star and KPI tiers](/marketing-reporting-data-dictionary#kpi-tiers). Set that up first, starting from the [ecommerce](/ecommerce-metrics-starter-pack) or [sales-led](/sales-led-metrics-starter-pack) starter pack. Nothing on this page repeats it.
+</Info>
+
+## One primary KPI per piece of work
+
+Two primaries is no primary. Work judged on two numbers will be reported against whichever one moved favorably, which is how everything succeeds and nothing improves.
+
+Name one primary, then name the counter-metric that catches damage done in pursuit of it. Both go in the brief before launch.
+
+_E.g. A trial-acquisition campaign is judged on trial starts, with trial-to-paid rate as the counter-metric. Starts can always be bought by loosening the offer; the counter-metric is what stops that reading as a win._
+
+## Which KPI applies to what
+
+| Work | Primary KPI comes from | Typical counter-metric |
+| :-- | :-- | :-- |
+| A campaign | The objective in the [marketing campaign brief](/marketing-campaign-brief) | Quality or cost measure for the same action |
+| An experiment | The hypothesis in the [experiment brief](/experiment-brief) | A guardrail the change could plausibly damage |
+| A landing page | The one action in [landing page standards](/landing-page-standards) | Downstream quality of that action |
+| An article | The job named in the [article brief](/article-brief) | Nothing usually needed |
+| A weekly report | Tier 2 drivers | Tier 1 outcomes as context |
+| A monthly or quarterly report | Tier 1 outcomes | The north star's counter-metric |
+
+| Level | Fill in |
+| :-- | :-- |
+| North star | _E.g. Contribution margin_ |
+| Its counter-metric | _E.g. New customer count_ |
+| Default campaign primary | _E.g. Cost per trial start_ |
+| Default experiment primary | _E.g. Whatever the hypothesis names, always tier 2 or 3_ |
+
+## Match the metric to the cadence
+
+A metric that cannot move inside the reporting period cannot be reported on usefully. This is the most common mismatch in the whole system.
+
+| Cadence | Judge on | Because |
+| :-- | :-- | :-- |
+| Weekly | Tier 2 drivers, leading indicators | Tier 1 outcomes barely move in a week and the noise swamps the signal |
+| Monthly | Tier 1 outcomes against target | Long enough for the outcome to be real |
+| Quarterly | Tier 1 plus the north star trend | Long enough to judge strategy rather than execution |
+| Annual | North star, and whether the tier structure still fits | The only period where changing the KPI set is sensible |
+
+## What disqualifies a metric
+
+A metric belongs in the dictionary. It does not automatically belong as a KPI. Cut it if any of these are true:
+
+- A 20% move in either direction would not change what you do.
+- Nobody owns it.
+- No one can state its definition without looking it up twice.
+- It is a rate whose denominator nobody agrees on.
+- It only ever moves up, which usually means it is a count of activity rather than a measure of result.
+- It duplicates another KPI closely enough that they always move together.
+
+The cap in the dictionary is under 15 total across all tiers. Every addition past that is a decision to remove something, not an exception.
+
+## Adding a KPI
+
+<Steps>
+  <Step title="1. Name the decision it changes">
+    If nobody can say which decision this metric would change, and at what threshold, it is a diagnostic rather than a KPI. Diagnostics belong in the dictionary and on dashboards; they do not need a target.
+  </Step>
+  <Step title="2. Define it in the dictionary first">
+    Formula, grain, source, owner, target, floor. A KPI adopted before it is defined gets defined differently by each person who reports it.
+  </Step>
+  <Step title="3. Name what it replaces">
+    The list is capped. Adding without removing is how a set of 8 useful KPIs becomes 20 that nobody reads.
+  </Step>
+  <Step title="4. Backfill before you adopt it">
+    A KPI with no history has no normal range, so nobody can tell whether this week's figure is good. Backfill at least a full seasonal cycle where the data allows.
+  </Step>
+  <Step title="5. Record the change">
+    In the decisions and changes section of the dictionary, with the date. A trend line that shifts because the metric changed, with no record of the change, reads as performance.
+  </Step>
+</Steps>
+
+## Retiring a KPI
+
+Keep the definition in the dictionary and mark it retired, with the date and what replaced it. Reports covering earlier periods still reference it, and deleting the definition makes those reports unreadable.
+
+## Review
+
+Review the KPI set annually, alongside the dictionary. Mid-year changes should be rare: a KPI set that changes often cannot show a trend, which is most of what it is for.
 
 ## Related resources
 
-- [Marketing reporting data dictionary](/marketing-reporting-data-dictionary)
-- [Reporting framework concepts](/reporting-framework-concepts)
-- [Dashboard standards](/dashboard-standards)
-- [Reporting cadence](/reporting-cadence)
-- [Marketing campaign brief](/marketing-campaign-brief)
+- [**Marketing reporting data dictionary**](/marketing-reporting-data-dictionary) Definitions, formulas, targets, owners.
+- [**Reporting framework concepts**](/reporting-framework-concepts) Why the tiers and the north star exist.
+- [**Dashboard standards**](/dashboard-standards) Which dashboards surface which tier.
+- [**Reporting cadence**](/reporting-cadence) How often each report runs.
+- [**Report on results**](/report-on-results) The full reporting path.
