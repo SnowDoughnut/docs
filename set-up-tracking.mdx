@@ -1,0 +1,56 @@
+---
+title: "Set up tracking"
+description: "How UTM tagging and event tracking get defined once and applied to every campaign, so platform spend and analytics conversions join to the same rows."
+---
+
+Tracking is two separate systems that have to agree: UTM parameters tag the inbound link, event tracking records what happens after the click. Both are defined once in setup stage 4 of [get started](/overview).
+
+## Before you start
+
+Naming conventions have to be decided first. UTM values are drawn from the same closed lists as [campaign names](/campaign-naming-conventions), and event names come from [event naming conventions](/event-naming-conventions).
+
+## The path
+
+<Steps>
+  <Step title="1. Understand what a UTM does">
+    Read [UTM parameters](/utm-parameters) once. It covers what each parameter is for and why the values have to be consistent rather than descriptive.
+  </Step>
+  <Step title="2. Fill in your UTM standard">
+    Fill in [UTM standards](/utm-standards): a closed list of allowed values per parameter, the case rule, and the separator.
+
+    **Rule that matters most:** the `utm_campaign` value has to match the campaign name field it corresponds to. If they diverge, spend and conversions cannot be joined.
+  </Step>
+  <Step title="3. Name your events">
+    Decide the event pattern in [event naming conventions](/event-naming-conventions). Do this before anything is implemented, because renaming an event splits its history in two.
+  </Step>
+  <Step title="4. Build the event tracking plan">
+    Fill in the [event tracking plan](/event-tracking-plan): every event, its properties, where it fires, and who owns it.
+
+    **Then:** save it to the [event library](/event-tracking-plan-overview) so there's one version rather than one per implementation ticket.
+  </Step>
+  <Step title="5. Connect it to reporting">
+    The [marketing reporting data dictionary](/marketing-reporting-data-dictionary) defines what each metric means. The [flat file](/flat-file-template) is where tagged clicks and recorded events meet as rows. Check that the dictionary's grain matches what your events actually produce.
+  </Step>
+  <Step title="6. Apply it per campaign">
+    From then on, every campaign tags its links from the standard at build time. See step 3 of [make a campaign](/make-a-campaign).
+  </Step>
+</Steps>
+
+## The join that has to hold
+
+| Where | Field | Has to match |
+| :-- | :-- | :-- |
+| Ad platform | Campaign name | [Campaign naming conventions](/campaign-naming-conventions) |
+| Destination link | `utm_campaign` | The same value as the campaign name |
+| Analytics | Event name | [Event naming conventions](/event-naming-conventions) |
+| [Flat file](/flat-file-template) | Campaign column | The joined value from all three |
+
+If any one of these drifts, the row splits and every report downstream is wrong in a way that's hard to spot, because both halves still look plausible.
+
+## Related resources
+
+- [**UTM standards**](/utm-standards) The workbook for step 2.
+- [**Event tracking plan**](/event-tracking-plan) The workbook for step 4.
+- [**Data quality and rollup concepts**](/data-quality-and-rollup-concepts) What breaks when tracking and reporting disagree.
+- [**Report on results**](/report-on-results) What this tracking feeds.
+- [**Name something**](/name-something) The conventions UTM values draw from.
