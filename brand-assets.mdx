@@ -1,11 +1,164 @@
 ---
 title: "Brand assets"
-description: "The current logo files, product screenshots, photography, and other approved source assets."
+description: "A fill-in register of the approved source files (logos, fonts, photography, templates) plus the rules that govern them: formats, storage, access, licensing, and retirement. Use it to find the current file and to know whether you're allowed to use it."
 ---
 
-The current, approved source files (logos, product screenshots, photography) that creative work should draw from. See [logo usage](/logo-usage) for the rules on how the logo specifically may be used.
+_Fill in this workbook as you go. Each section has a "Concept review" dropdown underneath it. These explain the concept behind the section, not a rule to follow. Your brand might land somewhere different than the examples show, and that's fine._
+
+_Examples throughout use Doughnut Labs, an invented SaaS company selling doughnut technology. Delete the grayed example text as you fill each section in._
+
+<Note>
+  This page records what the files are and who may use them. The rules for how they may be used live in [visual identity](/visual-identity) and [logo usage](/logo-usage).
+</Note>
+
+<Steps>
+  <Step title="Name one source of truth first">
+    Everything else on this page depends on there being a single place the current file lives.
+  </Step>
+  <Step title="Fill in the register">
+    An asset with no owner and no location is one somebody will recreate from scratch.
+  </Step>
+  <Step title="Record rights alongside the file">
+    Licensing questions arrive at the moment of use. Answering them in the same table stops that becoming a separate hunt.
+  </Step>
+  <Step title="Set review dates as you go">
+    A register with no review dates is accurate on the day it's written and degrades from there.
+  </Step>
+</Steps>
+
+---
+
+## Core sections
+
+### 1. Source of truth
+
+**Where do the current files live, and what is the rule about using files from anywhere else?**
+
+_E.g. Everything approved lives in the Doughnut Labs brand folder in Google Drive, mirrored to a public press kit for logos only. Files pulled from a deck, a screenshot, a website, or an email attachment are not approved, however recent they look. If it isn't in the brand folder, it isn't current._
+
+<Accordion title="Concept review: Source of truth">
+  Duplicate copies are the mechanism by which a brand quietly goes out of date. A file gets attached to an email, saved to a desktop, dropped into a shared deck, and each copy keeps working long after the original has been replaced. Nothing signals to the person holding the copy that it's stale.
+
+  A single location only holds when it's convenient. If the approved path is slower than reusing a file someone already has, the copies win, and the register becomes a description of what should be happening.
+
+  Brands differ on how open that location should be. A fully public press kit removes almost all friction and removes control over who downloads what. A gated system does the reverse. Most end up splitting the two, with the logo treated as public and everything else gated.
+</Accordion>
+
+### 2. Asset register
+
+One row per asset. Add rows for whatever the brand actually holds.
+
+| Asset | Formats | Location | Owner | Approved for | Review |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| _E.g. Primary logo_ | _SVG, PNG, EPS, PDF_ | _/brand/logo/primary_ | _Brand lead_ | _All use_ | _Annually_ |
+| _E.g. Symbol_ | _SVG, PNG, ICO_ | _/brand/logo/symbol_ | _Brand lead_ | _Avatars, favicons, app icons_ | _Annually_ |
+| _E.g. Brand typefaces_ | _WOFF2, OTF_ | _/brand/type_ | _Design lead_ | _Internal and contracted agencies only_ | _At license renewal_ |
+| _E.g. Color tokens_ | _JSON, ASE, CLR_ | _/brand/color_ | _Design lead_ | _All use_ | _Annually_ |
+| _E.g. Product screenshots_ | _PNG_ | _/brand/product_ | _Product marketing_ | _Marketing and sales_ | _Every release_ |
+| _E.g. Customer photography_ | _JPG, RAW_ | _/brand/photography_ | _Brand lead_ | _See rights table_ | _At consent expiry_ |
+| _E.g. Slide template_ | _PPTX, Google Slides_ | _/brand/templates_ | _Brand lead_ | _All internal use_ | _Annually_ |
+| _E.g. Icon library_ | _SVG, Figma_ | _Figma: Doughnut Labs Icons_ | _Design lead_ | _All use_ | _Quarterly_ |
+| \[add asset\] |  |  |  |  |  |
+
+<Accordion title="Concept review: Asset register">
+  The owner column carries more weight than it appears to. An asset without a named owner has no one to ask when it needs updating, no one to notice when it's wrong, and no one to say yes or no to an unusual request. It ends up maintained by whoever last happened to touch it.
+
+  Review cadence differs by what actually drives an asset out of date, which is why one blanket schedule tends not to fit. A logo changes when the brand changes, which is rare. Product screenshots go stale every time the interface ships. Photography can expire on a date fixed by a consent form regardless of whether anyone looks at it.
+
+  A register is also the only practical way to answer "does this exist?" Without one, the default answer is to remake the thing, which is how a brand ends up with four slightly different versions of the same diagram.
+</Accordion>
+
+### 3. File formats
+
+| Use case | Format | Notes |
+| :-- | :-- | :-- |
+| Web and interface | _SVG_ | _Scales cleanly, small, recolorable in code_ |
+| Web raster fallback | _PNG_ | _Transparent background, supply at 1x and 2x_ |
+| Print | _EPS or PDF_ | _Vector, CMYK, fonts outlined_ |
+| Photography | _JPG_ | _Quality 80 for web, uncompressed for print_ |
+| Office documents | _PNG_ | _Slides and documents mishandle SVG_ |
+| Editable source | _AI, Figma_ | _Master files. Never distributed outside the design team_ |
+| \[add use case\] |  |  |
+
+**Naming**
+
+_E.g. Files follow the pattern `doughnutlabs_logo_primary_mono-light_2026.svg`: brand, asset, variant, color version, year. Lowercase, underscores between fields, hyphens inside a field, no spaces. See [file naming conventions](/file-naming-conventions)._
+
+<Accordion title="Concept review: File formats">
+  Supplying several formats of the same asset is a way of removing a conversion step from whoever uses it. A person who needs a print-ready logo and finds only a PNG will either convert it badly or ask, and the conversion is the more common outcome.
+
+  Separating master files from exports matters for a different reason. A master is editable, which means it's also breakable, and a version that's been edited by three people in three tools has usually drifted from the original without anyone deciding to change it. Keeping masters out of general circulation costs an export step and prevents that.
+
+  Naming does its work at the moment of retrieval. A name carrying the variant and the year lets someone confirm they have the right file without opening it, which is exactly the check people skip when the filename is `logo_final_v3`.
+</Accordion>
+
+### 4. Access
+
+| Group | Can view | Can download | Can edit masters |
+| :-- | :-- | :-- | :-- |
+| _E.g. Design team_ | _Everything_ | _Everything_ | _Yes_ |
+| _E.g. Marketing_ | _Everything_ | _Everything except masters_ | _No_ |
+| _E.g. Sales and CS_ | _Logos, templates, screenshots_ | _Same_ | _No_ |
+| _E.g. Contracted agencies_ | _Scoped to their project_ | _Same, access expires with the contract_ | _No_ |
+| _E.g. Partners and press_ | _Public press kit_ | _Public press kit_ | _No_ |
+| \[add group\] |  |  |  |
+
+<Accordion title="Concept review: Access">
+  Access controls here are aimed less at secrecy than at preventing accidental edits to shared originals. Most brand files are not confidential. What causes damage is a master being overwritten by someone who meant to save a copy, and the version history nobody checks until months later.
+
+  The agency row is where access most often outlives its purpose. Permissions granted for a project tend to remain after the project ends, because revoking them is nobody's task. Tying expiry to the contract at the point of granting is what avoids relying on someone to remember.
+
+  How far to open the view layer is a real trade-off. Broad visibility means people find what exists and reuse it. Narrow visibility means fewer files leaking into places nobody tracks. Which cost is worse depends on how much of the brand is public anyway.
+</Accordion>
+
+### 5. Rights and licensing
+
+| Asset | License type | Restrictions | Expires |
+| :-- | :-- | :-- | :-- |
+| _E.g. Brand typefaces_ | _Commercial, 5 desktop and 500k web pageviews_ | _Not redistributed to partners. Agencies work under our seats_ | _Renews annually in March_ |
+| _E.g. Stock photography_ | _Standard license_ | _No use in paid social above 500k impressions_ | _Perpetual_ |
+| _E.g. Customer photography_ | _Signed release_ | _Named customer, marketing use only, no paid media_ | _Two years from shoot date_ |
+| _E.g. Commissioned illustration_ | _Full buyout_ | _None_ | _Perpetual_ |
+| _E.g. Licensed music_ | _Per-project_ | _Named campaign only. Re-license for any reuse_ | _End of campaign_ |
+| \[add asset\] |  |  |  |
+
+**Who checks rights before an asset is used in paid media?**
+
+_E.g. The person building the campaign checks this table. Anything marked with a restriction or an expiry goes to the brand lead before it runs._
+
+<Accordion title="Concept review: Rights and licensing">
+  Rights problems surface at the point of scale, not at the point of use. An image sits fine on a blog post for a year and becomes a problem the day it runs as a paid ad, because the license was scoped to something the ad exceeded. Nothing about the file changes; the use does.
+
+  The expiry column is the part with a real deadline attached. A consent release with an end date keeps working technically long after it has stopped working legally, and the file gives no indication. This is the single most common reason a register needs a date field.
+
+  Where brands differ is in how much they buy up front. Full buyouts cost more and remove the tracking burden entirely. Scoped licenses cost less and require somebody to keep checking. Neither is wrong, but choosing the second without assigning the checking to a person is how the cost shows up later anyway.
+</Accordion>
+
+### 6. Versioning and retirement
+
+**How is a new version released, and what happens to the old one?**
+
+_E.g. The new file is uploaded to the brand folder with the year in the filename, and the previous version moves to `/brand/archive` with `_retired` appended. Retired files are kept for reference and never used in new work. Retiring anything used externally is announced in the team channel with a date by which the old version should be gone._
+
+**What's currently retired, and where do old versions still appear?**
+
+| Retired asset | Replaced by | Still appears in | Removal owner |
+| :-- | :-- | :-- | :-- |
+| _E.g. 2019 wordmark_ | _2024 primary logo_ | _Partner directory listings, old case study PDFs_ | _Brand lead_ |
+| \[add asset\] |  |  |  |
+
+<Accordion title="Concept review: Versioning and retirement">
+  Replacing an asset is fast. Removing the previous one from everywhere it already landed is the slow part, and it's the part that determines whether a rebrand actually completes. Old logos persist in partner sites, printed material, email signatures, and third-party directories long after the new one ships.
+
+  Deleting the retired file outright seems tidy and creates a different problem: someone maintaining an old artifact needs to identify what they're looking at, and nothing is worse for that than an asset that no longer exists anywhere. Archiving with a clear marker keeps the reference without keeping it in circulation.
+
+  Tracking where an old version still appears turns retirement from an event into a task with an end. A list with owners can be worked through. An unwritten intention to clean it up eventually usually isn't.
+</Accordion>
 
 ## Related resources
 
-- [Visual identity](/visual-identity)
-- [Logo usage](/logo-usage)
+- [**Logo usage**](/logo-usage) The rules for the logo files listed in the register.
+- [**Visual identity**](/visual-identity) Color, typography, and layout rules the assets implement.
+- [**File naming conventions**](/file-naming-conventions) The naming pattern referenced in section 3.
+- [**Visual identity concepts**](/visual-identity-concepts) Why the asset register carries owners and expiry dates.
+- [**Brand guidelines**](/brand-guidelines) The map of every brand document.

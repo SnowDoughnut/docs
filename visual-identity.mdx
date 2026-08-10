@@ -1,12 +1,228 @@
 ---
 title: "Visual identity"
-description: "Color, typography, and grid rules that apply to every layout."
+description: "A fill-in workbook for the visual system: color, typography, layout, imagery, and iconography, with the values and usage rules a designer needs to build a layout without asking. Logo rules live in a separate document."
 ---
 
-Visual identity rules (color, type, grid) apply across every layout and get linked from individual briefs rather than restated. See [logo usage](/logo-usage) for logo-specific rules.
+_Fill in this workbook as you go. Each section has a "Concept review" dropdown underneath it. These explain the concept behind the section, not a rule to follow. Your brand might land somewhere different than the examples show, and that's fine._
+
+_Examples throughout use Doughnut Labs, an invented SaaS company selling doughnut technology. Delete the grayed example text as you fill each section in._
+
+<Note>
+  This page covers everything visual except the logo, which has enough rules of its own to warrant a separate document. See [logo usage](/logo-usage).
+</Note>
+
+<Steps>
+  <Step title="Record exact values, not descriptions">
+    "Warm off-white" is not a color. A hex code is. Anything a designer has to interpret will be interpreted differently by the next designer.
+  </Step>
+  <Step title="Say where each element is used, not just what it is">
+    A palette without usage rules produces layouts that are technically on-palette and look nothing alike.
+  </Step>
+  <Step title="Check contrast as you fill in the palette">
+    It's cheaper to reject a color pairing here than to discover it fails on a shipped page.
+  </Step>
+  <Step title="Add optional sections only where the brand actually shows up">
+    Motion rules matter if the brand animates. Delete them if it doesn't.
+  </Step>
+</Steps>
+
+---
+
+## Core sections
+
+### 1. Color palette
+
+One row per color. Include every value anyone will need, so nobody eyedroppers a screenshot.
+
+| Role | Name | HEX | RGB | CMYK | Pantone |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| Primary | _E.g. Glaze Pink_ | _#E8547C_ | _232, 84, 124_ | _0, 64, 47, 9_ | _191 C_ |
+| Secondary | _E.g. Deep Cocoa_ | _#2B1A17_ | _43, 26, 23_ | _0, 40, 47, 83_ | _476 C_ |
+| Neutral (dark) | _E.g. Ink_ | _#141414_ | _20, 20, 20_ | _0, 0, 0, 92_ | _Black 6 C_ |
+| Neutral (light) | _E.g. Sugar_ | _#FBF7F2_ | _251, 247, 242_ | _0, 2, 4, 2_ | _11-0602 TCX_ |
+| Accent | _E.g. Sprinkle Blue_ | _#3D7BFF_ | _61, 123, 255_ | _76, 52, 0, 0_ | _2726 C_ |
+| Success | _E.g. Proof Green_ | _#1F8A5B_ | _31, 138, 91_ | _78, 0, 34, 46_ | _7724 C_ |
+| Warning / error | _E.g. Burnt_ | _#C0392B_ | _192, 57, 43_ | _0, 70, 78, 25_ | _1795 C_ |
+| \[add color\] |  |  |  |  |  |
+
+**How much of each color should a layout use?**
+
+_E.g. Roughly 60% Sugar, 30% Ink, 10% Glaze Pink. Glaze Pink is for one focal element per layout, usually the primary action. Accent and status colors never carry brand meaning, only function._
+
+<Accordion title="Concept review: Color palette">
+  Recording every color space up front is about who has to use the file later. A hex code is useless to a printer and a Pantone reference is useless in CSS, and the person who needs the missing one is rarely the person who built the palette. Filling all the columns once removes a recurring interruption.
+
+  The proportion question is separate from the palette itself and is often what actually distinguishes two brands using similar colors. A palette lists what's allowed. Proportion describes what the brand looks like, which is why two designers can both stay inside the palette and produce layouts that don't look related.
+
+  How tightly to specify proportion varies a lot. Some brands fix ratios precisely, which produces strong consistency and limits what a designer can respond to. Others give a dominant color and leave the rest open, trading some consistency for range.
+</Accordion>
+
+### 2. Color usage and contrast
+
+Approved pairings only. Anything not listed needs checking before use.
+
+| Foreground | Background | Contrast ratio | Approved for |
+| :-- | :-- | :-- | :-- |
+| _E.g. Ink_ | _Sugar_ | _15.9:1_ | _Body text, all sizes_ |
+| _E.g. Sugar_ | _Deep Cocoa_ | _14.1:1_ | _Body text, all sizes_ |
+| _E.g. Sugar_ | _Glaze Pink_ | _3.4:1_ | _Large text and buttons only, not body copy_ |
+| _E.g. Glaze Pink_ | _Sugar_ | _3.6:1_ | _Headlines 24px and above, not body copy_ |
+| \[add pairing\] |  |  |  |
+
+**What contrast standard does the brand hold itself to?**
+
+_E.g. WCAG 2.2 AA: 4.5:1 for body text, 3:1 for text 24px and above or 19px bold, and 3:1 for interactive elements and their focus states._
+
+<Accordion title="Concept review: Color usage and contrast">
+  Contrast fails late and expensively. A pairing that looked fine on a designer's calibrated screen shows up as a legibility complaint months later, by which point it's on a hundred pages, and the fix is a palette change, which touches everything.
+
+  Putting the ratios in the palette document changes when the constraint gets applied. A designer choosing from a table of approved pairings is working inside the constraint. A designer choosing freely and being corrected afterwards is working against it, and the correction gets negotiated.
+
+  Where brands genuinely differ is in how much of the palette they're willing to restrict. A vivid brand color that fails on body text can be kept and confined to large text and shapes, or the palette can be adjusted so it passes everywhere. Both preserve accessibility; they cost different things.
+</Accordion>
+
+### 3. Typography
+
+| Role | Typeface | Weights used | Fallback stack | License |
+| :-- | :-- | :-- | :-- | :-- |
+| Display / headline | _E.g. Sifted Grotesk_ | _Bold 700_ | _Helvetica Neue, Arial, sans-serif_ | _Desktop \+ web, 5 seats_ |
+| Body | _E.g. Sifted Grotesk_ | _Regular 400, Medium 500_ | _Helvetica Neue, Arial, sans-serif_ | _Desktop \+ web, 5 seats_ |
+| Monospace | _E.g. IBM Plex Mono_ | _Regular 400_ | _ui-monospace, monospace_ | _Open source (OFL)_ |
+| \[add role\] |  |  |  |  |
+
+**Type scale**
+
+| Level | Size / line height | Weight | Use |
+| :-- | :-- | :-- | :-- |
+| H1 | _48 / 56_ | _Bold_ | _One per page, page title only_ |
+| H2 | _32 / 40_ | _Bold_ | _Section headings_ |
+| H3 | _24 / 32_ | _Medium_ | _Subsections_ |
+| Body | _16 / 26_ | _Regular_ | _Default for all running text_ |
+| Small | _14 / 20_ | _Regular_ | _Captions, labels, legal_ |
+| \[add level\] |  |  |  |
+
+**Anything else a designer needs to know about setting type?**
+
+_E.g. Headlines are set tight, with letter-spacing at minus 2%. Body copy is never justified. Maximum line length is 75 characters. Never set body copy below 14px._
+
+<Accordion title="Concept review: Typography">
+  The fallback stack is the part most often left blank and the part most visible when it's wrong. A licensed typeface fails to load for reasons nobody controls: a blocked font host, an email client, a partner's template. What renders instead is either a considered fallback or whatever the system reaches for, and the second one is where a brand suddenly appears in Times New Roman.
+
+  Licensing belongs in this table for a similar reason. Font licenses are scoped by use (desktop, web, app, broadcast) and by volume, and the gap tends to surface at the worst moment: an agency building an ad, a partner producing a deck, a new hire installing the file. Recording the scope next to the typeface makes the limit visible before somebody exceeds it.
+
+  A scale does something different from the two columns beside it. Listing sizes fixes the relationships between them, so a layout with three heading levels reads as a hierarchy. Sizes picked ad hoc read as three arbitrary numbers. Brands vary in how strictly they enforce it, and a scale treated as fixed and one treated as a starting point produce visibly different amounts of variation.
+</Accordion>
+
+### 4. Layout and spacing
+
+**Grid**
+
+_E.g. 12 columns on desktop with 24px gutters and a 1200px maximum content width. 6 columns on tablet, 4 on mobile. Content never spans edge to edge on screens above 1400px._
+
+**Spacing scale**
+
+_E.g. All spacing is a multiple of 8: 8, 16, 24, 32, 48, 64, 96. 4px is allowed only for optical adjustment inside a component._
+
+**Corner radius, borders, elevation**
+
+_E.g. 8px radius on cards and inputs, 4px on buttons, full round on avatars. Borders are 1px in Ink at 12% opacity. One shadow only: 0 2px 8px Ink at 8%._
+
+<Accordion title="Concept review: Layout and spacing">
+  A spacing scale works by removing a decision. When the options are 16 or 24, a designer picks one and moves on. When the options are every integer, the gap between two elements becomes a small judgment made hundreds of times, and those judgments don't agree across people or across weeks.
+
+  The compounding effect is the reason to write it down. Individually, a 22px gap where the pattern says 24 is invisible. Across a page, and then across pages built by different people, the accumulated near-misses read as a layout that feels slightly unresolved without anyone being able to point at the reason.
+
+  Radius, border, and shadow behave like a very small vocabulary. Two shadow values look deliberate; nine look like nobody was tracking them. The number a brand settles on is a genuine choice about how much variety the system needs, and the count matters more than which values get picked.
+</Accordion>
+
+### 5. Photography and illustration
+
+**Photography direction**
+
+_E.g. Real workspaces, natural light, and people mid-task. Shot slightly wide with room for text overlay. Color-graded warm to sit next to Sugar and Glaze Pink._
+
+**What photography should avoid**
+
+_E.g. Stock imagery of people laughing at laptops. Heavy filters. Empty desks. Anything shot on a pure white background, which clashes with the off-white palette._
+
+**Illustration direction**
+
+_E.g. Flat two-color line work in Ink and Glaze Pink, 2px strokes, no gradients. Used for empty states and explanatory diagrams, never as decoration next to photography._
+
+**When to use which**
+
+_E.g. Photography for anything about customers or teams. Illustration for anything about how the product works. Never both in the same layout._
+
+<Accordion title="Concept review: Photography and illustration">
+  Image direction resists specification in a way color and type don't, since there's no hex code for "feels like us." The negative half usually does the work. "Natural light, real workspaces" describes a very large set of possible photos. "No posed groups, no pure white backgrounds" removes most of the ones that would have been wrong, and does it in fewer words.
+
+  The choice between photography and illustration carries meaning of its own, separately from the style of either. Photography implicitly claims something happened. Illustration signals that the thing being shown is a model or a simplification. A product diagram rendered as a photorealistic screenshot and one rendered as a drawing make different promises to a reader about how literal to take them.
+
+  Brands land in different places on how much room to leave here. Tight direction produces a coherent library and a narrow one. Loose direction produces range and, over enough contributors, drift.
+</Accordion>
+
+### 6. Iconography
+
+| Property | Fill in |
+| :-- | :-- |
+| Style | _E.g. Outlined, 2px stroke, rounded caps and joins_ |
+| Grid | _E.g. 24x24 with 2px padding, drawn on a 20px live area_ |
+| Sizes | _E.g. 16, 20, 24, 32. Never scaled to an off-grid size_ |
+| Color | _E.g. Inherits text color. Glaze Pink only for the single focal icon in a layout_ |
+| Source | _E.g. Doughnut Labs icon library in Figma. New icons are requested, not drawn ad hoc_ |
+| Never | _E.g. Filled icons, multicolor icons, or icons used as decoration without a label_ |
+
+<Accordion title="Concept review: Iconography">
+  Icons drift faster than most other elements because each one is added individually, usually under deadline, by whoever needed it. Nobody sets out to build an inconsistent set. It happens one urgent icon at a time, and the inconsistency only becomes visible once forty of them sit on a page together.
+
+  Specifying the grid and stroke lets a new icon match without the person drawing it having to study the existing ones. It also makes the request path meaningful: "ask for an icon" is only reasonable advice if the person fulfilling the request has a spec to work from.
+
+  The size rule is quieter but does real work. A 24px icon scaled to 19px puts strokes on half pixels, which is a large part of why some interfaces look slightly soft without an obvious cause.
+</Accordion>
+
+---
+
+## Optional sections
+
+### A. Motion
+
+<Tip>
+  Optional: include if the brand appears in interfaces, video, or animated ads
+</Tip>
+
+| Property | Fill in |
+| :-- | :-- |
+| Default duration | _E.g. 200ms for state changes, 320ms for anything entering or leaving_ |
+| Easing | _E.g. cubic-bezier(0.2, 0, 0, 1) for entrances, linear for loading only_ |
+| What moves | _E.g. Opacity and position. Never scale text, never rotate the logo_ |
+| Reduced motion | _E.g. Honor prefers-reduced-motion: cross-fade instead of moving, no parallax, no autoplay_ |
+
+<Accordion title="Concept review: Motion">
+  Motion reads as personality faster than most static choices, which cuts both ways. Consistent timing across an interface is barely noticed and feels considered. Inconsistent timing is noticed as sloppiness, even by people who couldn't say what they noticed.
+
+  The reduced-motion row is doing something different from the rest of the table. For some people, large or parallax movement causes actual physical discomfort, and the operating system already exposes a preference for it. Deciding once what the brand does when that preference is set is easier than resolving it per component.
+</Accordion>
+
+### B. Sub-brand and product theming
+
+<Tip>
+  Optional: include if products, tiers, or regions vary the visual system
+</Tip>
+
+**What can a sub-brand change, and what stays fixed?**
+
+_E.g. A Doughnut Labs product can change the accent color and its illustration subject matter. Typography, spacing scale, iconography, and the neutral palette are fixed. Glaze Pink is reserved for the master brand and never becomes a product accent._
+
+<Accordion title="Concept review: Sub-brand and product theming">
+  This section is really about drawing a line between the parts of the system that carry recognition and the parts that carry differentiation. Typography and spacing tend to sit on the recognition side, since they're what makes two layouts feel related even when nothing else matches. Color often sits on the other side, because it's the fastest thing to tell apart.
+
+  Where the line falls is a strategy question, and it usually gets answered by whoever owns the portfolio. A brand that wants its products read as one family draws it tightly. A brand whose products serve different buyers who don't overlap can afford to draw it loosely, and gains room to make each one feel native to its own market.
+</Accordion>
 
 ## Related resources
 
-- [Brand system overview](/brand-system-overview)
-- [Logo usage](/logo-usage)
-- [Brand guidelines](/brand-guidelines)
+- [**Logo usage**](/logo-usage) Clear space, minimum sizes, and misuse rules for the logo.
+- [**Brand assets**](/brand-assets) Where the files described here actually live.
+- [**Visual identity concepts**](/visual-identity-concepts) The thinking behind the visual system and how its documents fit together.
+- [**Image and video specs**](/image-and-video-specs) Platform-level size and format requirements for creative.
+- [**Brand guidelines**](/brand-guidelines) The map of every brand document.
