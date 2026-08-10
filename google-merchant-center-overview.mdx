@@ -2,3 +2,51 @@
 title: "Google Merchant Center feed templates"
 description: "Which Merchant Center feed to use: the primary Products feed, plus its Vehicle ads, local inventory, and promotions subtypes. Read this first, then open the specific feed template you need."
 ---
+
+Merchant Center is built around one primary feed with optional feeds layered on top of it. That structure is the thing to get right first, because two of the four feeds below do nothing on their own.
+
+<Warning>
+  Local inventory and promotions **extend** an existing primary Products feed. They match on `id` and add information to products already in it. Uploading either without a primary feed in place produces a feed that validates and shows nothing.
+</Warning>
+
+## Choose a feed
+
+| Feed | Use it when | Key field | Stands alone | Template |
+| :-- | :-- | :-- | :-- | :-- |
+| Products | You're selling physical or digital products online. This is the foundation | `id` | Yes | [Product feed CSV](/google-merchant-center-product-csv-template) |
+| Local inventory | You want to show in-store stock and prices for products already in the primary feed | `id` plus `store_code` | No, extends Products | [Local inventory CSV](/google-merchant-center-local-inventory-csv-template) |
+| Promotions | You want a discount or offer badge on products already in the primary feed | `promotion_id` | No, extends Products | [Promotions CSV](/google-merchant-center-promotions-csv-template) |
+| Vehicle ads | You're a dealership listing vehicle inventory | `vin` plus `store_code` | Yes, separate from Products | [Vehicle ads CSV](/google-merchant-center-vehicle-csv-template) |
+
+## The order to build them in
+
+<Steps>
+  <Step title="1. Products first, always">
+    Everything except vehicle ads depends on it. Get it validating cleanly before adding anything on top, because errors in the primary feed surface as unexplained gaps in the others.
+  </Step>
+  <Step title="2. Then the extensions you need">
+    Local inventory if you have physical stores. Promotions if you run offers. Both match on the `id` values already in the primary feed, so those IDs have to be stable.
+  </Step>
+  <Step title="3. Keep IDs stable">
+    An `id` that changes between uploads reads as a new product. It loses its performance history and any review status attached to it. Set the ID from something permanent, not from a title or a URL that can be edited.
+  </Step>
+</Steps>
+
+## Hotels are a different product
+
+[Google Hotel Center](/google-hotel-center-csv-template) is a separate Google product, not a Merchant Center feed type. If you're listing hotel properties, that's where the feed goes. Nothing on this page applies to it.
+
+## Before you upload
+
+- Product IDs match what's used in your own systems, so a feed row can be traced back to a real product.
+- Landing page URLs are tagged to [UTM standards](/utm-standards), or Shopping traffic lands in reporting as untagged.
+- The file is named per [file naming conventions](/file-naming-conventions), with the feed type and date in the name.
+- Prices and availability match the landing page. This is the most common cause of item disapproval.
+
+## Related resources
+
+- [**Google**](/google-home) Campaign process, specs, and copy templates.
+- [**Meta Commerce catalog templates**](/meta-commerce-overview) The equivalent structure on Meta.
+- [**Google Hotel Center feed**](/google-hotel-center-csv-template) A separate product, for hotel properties.
+- [**UTM standards**](/utm-standards) Tagging feed landing pages.
+- [About Merchant Center feeds](https://support.google.com/merchants/answer/7439058) Google Merchant Center Help.
