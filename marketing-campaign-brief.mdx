@@ -34,14 +34,42 @@ _This page is a workbook. You fill it in top to bottom, and each section has a "
 
 ## Campaign name
 
-**What is this campaign called?**
+**What is this campaign called, and what short form do platform names carry?**
 
-_E.g. Doughnut Labs "Fresh Batch" spring trial push_
+| Field | Fill in |
+| :-- | :-- |
+| Marketing campaign name | _E.g. Doughnut Labs "Fresh Batch" spring trial push_ |
+| Short form for naming | _E.g._ `FBS`_, registered in [campaign naming conventions](/campaign-naming-conventions)_ |
+
+<Warning>
+  This is the human name for the initiative, not the name typed into an ad platform and not the name of this document. Those are three different strings and mixing them up breaks the join between platform spend and analytics. See [which name is which](/campaign-naming-conventions#which-name-is-which).
+</Warning>
 
 <Accordion title="Concept review: Campaign name">
   The campaign name is the label that follows the campaign everywhere: across every channel, every ad set, every experiment, and every report. When the name is consistent, anyone can trace a specific ad, a spike in a dashboard, or a line in a budget back to the campaign it belongs to.
 
   Names tend to drift when different people invent their own shorthand, and that drift is what makes reporting hard to reconcile later. A name that is distinctive and easy to repeat is doing its main job, which is being the same word in every place the campaign shows up.
+
+  The short form is what carries that name down into the platform. A marketing campaign that spawns six platform campaigns across four channels can only be added back up in a report if each of those six carries the same identifier, and a readable sentence is not something a campaign name field can hold.
+</Accordion>
+
+## Product
+
+**What is this campaign selling?**
+
+| Field | Fill in |
+| :-- | :-- |
+| Product or product line | _E.g. Doughnut Analytics Pro_ |
+| Identifier, from the [product catalog](/product-catalog) | _E.g._ `DAPRO` |
+| Offer, if any | _E.g. 14-day free trial,_ `FREETRIAL` |
+| Per-product positioning, if it differs from brand level | _E.g. [Analytics Pro positioning line](/product-catalog#d-per-product-positioning)_ |
+
+<Accordion title="Concept review: Product">
+  A campaign brief that names its objective, its audience, and its message but not its product leaves one question unanswerable later: what did we spend on each thing we sell? Objective and audience are both properties of how the campaign ran. Product is a property of what it was selling, and no combination of the others recovers it.
+
+  The identifier matters more than the name here, because the identifier is what travels. It goes into the campaign name, through `utm_campaign`, into the flat file, and out the other side as a column a report can group by. A product named in prose stays in the brief.
+
+  Campaigns that genuinely sell nothing specific, brand campaigns and category-building work, are real and should say so rather than picking a product to satisfy the field. The catalog carries a `BRAND` value for exactly that case.
 </Accordion>
 
 ## Owner
@@ -171,7 +199,7 @@ Each channel listed here gets its own platform campaign brief, filed under this 
 
 ## Creative briefs
 
-**Link every [creative brief](/creative-brief) created for this campaign.** The creative brief (see [creative brief concepts](/creative) for the reasoning) is where the visual and creative direction for an asset is defined. Link them here; don't restate them.
+**Link every [creative brief](/creative-brief) created for this campaign.** The creative brief (see [creative brief concepts](/creative-brief-concepts) for the reasoning) is where the visual and creative direction for an asset is defined. Link them here; don't restate them.
 
 - _E.g. LinkedIn ad creative brief: \[link\] (owner: Marco Silva)_
 - _E.g. Landing page creative brief: \[link\] (owner: Marco Silva)_
@@ -380,7 +408,7 @@ _E.g. Doughnut Labs spring trial post-mortem: \[link\] (added after campaign clo
 ## Related resources
 
 - [Customer profile brief](/customer-profile-brief) and the [customer profile library](/customer-profile-library-overview)
-- [Creative brief](/creative-brief) and [creative brief concepts](/creative)
+- [Creative brief](/creative-brief) and [creative brief concepts](/creative-brief-concepts)
 - [Article brief](/article-brief) and the [article library overview](/article-library-overview)
 - [KPI definitions](/kpi-definitions)
 - [Campaign library](/campaign-library-overview)

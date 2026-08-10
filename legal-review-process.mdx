@@ -71,6 +71,18 @@ An approval that nobody can find later is an approval that gets sought again.
 - If a claim was approved, add it to that table so nobody re-submits it.
 - If a claim was rejected, record that too. Rejections get forgotten and re-proposed more often than approvals do.
 
+## Conditions have to survive the format
+
+An approval with a condition attached is only met if the format can guarantee the condition. Several ad formats assemble their own combinations at serve time and will drop any individual element, which means a required qualifier can simply not appear.
+
+| Format | How it can drop a required element | How the condition gets met |
+| :-- | :-- | :-- |
+| Responsive search ads | Assembles headlines and descriptions per auction; any unpinned asset can be left out | Pin the asset carrying the claim or qualifier to a fixed position |
+| Performance Max and Demand Gen | Mixes headlines, descriptions, images, and video per placement | Put the qualifier in every asset that carries the claim, since pinning is unavailable |
+| Carousel and collection formats | A viewer may only see the first card | Keep the claim and its qualifier on the same card |
+
+Record which mechanism was used, next to the condition, on the brief. An unexplained pin reads as a mistake to the next person optimizing the ad, and removing it silently breaks the approval.
+
 ## Claims expire even when the wording doesn't
 
 The sentence stays the same while the number behind it moves. A claim cleared last year on data from the year before is not cleared today.

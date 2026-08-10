@@ -14,17 +14,22 @@ Run this with the campaign built and paused, before it goes live. Every row is s
 - The [Google campaign brief](/google-campaign-brief) is complete and every linked document resolves.
 - The parent [marketing campaign brief](/marketing-campaign-brief) lists Google in its channels table with a budget line.
 - Campaign type matches the brief.
+- The product this campaign sells is named in the brief, using an identifier from the [product catalog](/product-catalog).
 - Every [customer profile](/customer-profile-library-overview) targeted is linked from the library.
 - Copy is approved and sits within the character limits in the [copy template](/google-search-copy-template) for this campaign type.
 
 ## Conversion tracking
 
 - The conversion action is **importing and firing**, not just created.
+- **How that was verified is written in the brief**, with a name and a date. "Verified" with no method behind it is not a check anyone can repeat.
 - The action matches a row in the [event tracking plan](/event-tracking-plan) by name.
 - **Primary and secondary conversion goals are set deliberately for this campaign**, not inherited from account defaults.
 - Only the actions the campaign should optimize toward are marked primary.
 - Conversion value is being sent, if the bid strategy needs it.
 - Every final URL carries [UTMs](/utm-standards) built to the standard.
+- `utm_campaign` is the platform campaign name, character for character, not the marketing campaign name or a slug of it.
+- `utm_content` is different for every ad group. Three groups sharing one tag report as one.
+- `utm_medium` uses the exact spelling in your [medium list](/utm-standards#b-medium-standard-utm_medium), including underscores.
 - Auto-tagging is set as the brief specifies.
 - Clicking each ad's URL lands on a live page with no redirect chain.
 
@@ -38,13 +43,14 @@ Run this with the campaign built and paused, before it goes live. Every row is s
 - Every ad group or asset group name matches the [ad set / ad group / variant conventions](/ad-set-group-naming-conventions).
 - Every ad name matches the [ad naming conventions](/ad-name-conventions).
 - Any value not already in a naming dictionary has been added to the convention page.
-- If the campaign carries a test, the [experiment ID](/experiment-ids) is appended at the level the hypothesis targets.
+- If the campaign carries a test, the [experiment ID](/experiment-id-concepts) is appended at the level the hypothesis targets.
 
 ## Settings
 
-- Daily budget matches the brief.
+- Daily budget matches the brief, and it is the **daily** figure (monthly ÷ 30.4), not the monthly one.
 - Bid strategy and its target value match the brief.
-- If a target strategy is set, the campaign has the conversion volume to support it.
+- If a target strategy is set, the campaign has the conversion volume to support it: roughly 30 conversions in 30 days for Target CPA, 50 for Target ROAS. See [the thresholds](/google-campaign-brief#conversion-volume-a-bid-strategy-needs).
+- No shared budget or portfolio bid strategy is silently overriding the campaign-level values in the brief.
 - Networks and surfaces match the brief. Search Partners and Display Network are set deliberately, not left on by default.
 - Locations, languages, and ad schedule match the brief.
 - Location targeting is set to presence rather than interest, unless the brief says otherwise.
@@ -52,16 +58,20 @@ Run this with the campaign built and paused, before it goes live. Every row is s
 
 ## Keywords and targeting
 
-- Match types match the brief.
-- The standing negative keyword list is applied.
+- Match types match the match type policy in the brief.
+- Every negative keyword list named in the brief is applied, by name rather than pasted in. Lists live in Google Ads under **Tools > Shared library**; see [keeping negatives in shared lists](/campaign-structure-best-practices#keep-negatives-in-shared-lists).
+- If your account has no standing negative list yet, this is the campaign that starts one. Record its name in the brief.
 - Brand terms are negated where the brief says they should be.
 - Audience signals on Performance Max and Demand Gen are attached, and understood as signals rather than restrictions.
+- Auto-applied recommendations are set as the brief specifies. Anything left on can rewrite copy, add keywords, and change the bid strategy after this checklist passes.
 
 ## Assets and copy
 
-- Every required asset ratio and logo size for this campaign type is uploaded. See the [creative specs](/image-and-video-specs).
-- Headlines and descriptions come from the approved [copy brief](/ad-copy-standards), not written at the keyboard.
+- Every required asset ratio and logo size for this campaign type is uploaded. Use the [specs for your campaign type](/google-campaign-brief#assets-creative-and-copy); Search needs no image or video assets.
+- Headlines and descriptions come from the approved [copy brief](/copy-brief), not written at the keyboard.
 - Character limits are respected in every field.
+- On Search, every pin named in the brief is applied, and any claim [legal review](/legal-review-process) required is pinned so it appears in every serve.
+- On Search, each responsive search ad has a distinct name per the [ad naming conventions](/ad-name-conventions), and its filled copy template is filed.
 - Ad strength has been reviewed, and any weak rating is a deliberate choice rather than an oversight.
 - For Shopping and retail Performance Max, the [Merchant Center](/google-merchant-center-overview) feed is approved and free of disapprovals.
 

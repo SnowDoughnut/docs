@@ -1,0 +1,193 @@
+---
+title: "Pilot brief"
+description: "A fill-in workbook for spend that is buying information rather than results: a new channel, a new product line, or a new market with no control to test against. Sets the budget, the read date, and the kill or scale rule before the money goes out."
+---
+
+_This page is a workbook. Fill in sections A to E before the pilot launches, and section F on the read date. Each section has a concept review dropdown explaining what it is for._
+
+_Grayed_ `E.g.` _text is a placeholder. Delete it and replace it with your own. Examples use **Doughnut Labs**, a SaaS company that sells disruptive Doughnut Technology._
+
+<Note>
+  Use this when you are spending to find out whether something works and there is no control to compare against. If you have a control, you are running an experiment: use the [experiment brief](/experiment-brief) and [creating an experiment](/creating-an-experiment) instead.
+</Note>
+
+## Pilot or experiment?
+
+| | Experiment | Pilot |
+| :-- | :-- | :-- |
+| There is a control | Yes | No |
+| The question is | Does this change beat the current version? | Is this worth continuing at all? |
+| The answer comes from | A comparison, at significance | A judgement against a threshold you set in advance |
+| Typical subject | A headline, an audience, a bid strategy | A new channel, product line, market, or partner |
+| Record | [Experiment brief](/experiment-brief) | This page |
+| ID prefix | _E.g._ `TEST` | _E.g._ `PILOT` |
+| Filed in | [Experiment learning library](/experiment-learning-home) | [Experiment learning library](/experiment-learning-home) |
+
+<Accordion title="Concept review: Why a pilot needs its own record">
+  A pilot cannot produce the thing an experiment produces. There is no control, so there is no lift, no significance, and no defensible claim that the result was caused by the change rather than by the month it ran in. Treating a pilot as an experiment invites exactly that overclaim, which is why the experiment process turns it away at the door.
+
+  What a pilot can produce is a decision made against a threshold nobody could move afterwards. That is a weaker form of evidence, and it is still worth a great deal more than the usual alternative, which is a channel that quietly continues because nobody remembers what it was supposed to prove.
+
+  The two records share a library for a practical reason. The question "did we already try this?" does not distinguish between a controlled test and a first flight, and an answer that only covers one of them sends someone to repeat the other.
+</Accordion>
+
+## A. Setup
+
+| Field | Fill in |
+| :-- | :-- |
+| [Owner](/glossary#owner) | _E.g. Priya Nadel_ |
+| Pilot ID | _E.g._ `PILOT04` |
+| What is being piloted | _E.g. Google Search as a second paid channel alongside LinkedIn_ |
+| Type | _E.g. New channel_ |
+| Parent [marketing campaign brief](/marketing-campaign-brief), if any | _E.g. [Fresh Batch spring trial push](https://link)_ |
+| Brief name ([file naming conventions](/file-naming-conventions)) | _E.g._ `DOC_pilot-google-search_2026-08-07_v01` |
+| Start date | _E.g. 22 Apr 2026_ |
+| Read date | _E.g. 3 Jun 2026_ |
+
+**Pilot ID source:** _E.g. Issued from the same log as experiment IDs, using the_ `PILOT` _prefix so the two can't collide. See [experiment ID convention](/experiment-id-convention)._
+
+<Accordion title="Concept review: Setup">
+  The pilot ID does the same job as an experiment ID: it is the string that ties this record to the campaigns, the rows in the flat file, and the eventual decision. Without one, the pilot's spend is indistinguishable from ordinary spend three months later, and the question of what it cost gets answered by reconstruction.
+
+  Issuing it from the same log as experiment IDs, with a different prefix, avoids the failure where two systems independently generate `04`. It also means one search finds every deliberate piece of learning spend, whichever form it took.
+
+  The read date is filled in here, at setup, rather than left to be picked later. A read date chosen after seeing the numbers is not a read date.
+</Accordion>
+
+## B. The question
+
+**What are you buying information about, and what would change depending on the answer?**
+
+| Field | Fill in |
+| :-- | :-- |
+| The question | _E.g. Can Google Search acquire trial signups at a cost that works, at a volume that matters?_ |
+| Why we don't already know | _E.g. No paid search history. LinkedIn CPL doesn't transfer, different intent and different auction._ |
+| What we'd do if the answer is yes | _E.g. Move 30% of the LinkedIn budget to Search from Q3 and hire a search specialist._ |
+| What we'd do if the answer is no | _E.g. Stop. Revisit only if organic search volume for the category grows._ |
+| What we are not asking | _E.g. Which keywords work best. That's a media buyer's question inside a running channel, not a reason to run a pilot._ |
+
+<Accordion title="Concept review: The question">
+  The last two rows are what separate a pilot from spending money and seeing what happens. A pilot whose "no" answer leads to "run it another quarter and see" was never a pilot, and the budget would have been better spent on the thing already working.
+
+  Writing the "yes" action down in advance also sizes the pilot correctly. If a positive answer would move a tenth of the budget, a pilot that costs a third of the budget has already lost, whatever it finds. That check is only available before launch.
+
+  The "what we are not asking" row is there because pilots attract scope. Every question that would be interesting to answer arrives during setup, and each one added is another reason the read will be inconclusive.
+</Accordion>
+
+## C. Budget and duration
+
+| Field | Fill in |
+| :-- | :-- |
+| Total pilot budget | _E.g. \$15,000 over 6 weeks_ |
+| Monthly rate | _E.g. \$10,000 per month_ |
+| Daily rate | _E.g. \$333 per day, from \$10,000 ÷ 30.4_ |
+| Media vs production split | _E.g. \$13,000 media, \$2,000 landing page and copy_ |
+| Is this budget enough to answer the question? | _E.g. Yes. At a \$40 target CPL, \$13,000 buys ~325 conversions, well past the volume a target strategy needs._ |
+| Where the budget came from | _E.g. Q2 reserve, released by the head of growth on 14 Apr_ |
+| Ceiling | _E.g. Hard stop at \$15,000. No top-up before the read date._ |
+
+<Warning>
+  Check the budget against the volume the question needs before launching, not after. A pilot that ends with "too few conversions to tell" has spent its whole budget buying nothing. The platform brief for your channel carries the volume thresholds: see [budget sufficiency on Google](/google-campaign-brief#budget-and-bid-strategy) or the equivalent section in the [TikTok](/tiktok-campaign-brief), [Meta](/meta-campaign-brief), or [LinkedIn](/linkedin-campaign-brief) brief.
+</Warning>
+
+<Accordion title="Concept review: Budget and duration">
+  The sufficiency row is the one that most often turns a planned pilot into a different plan. A budget picked because it is what was available, rather than because it buys enough events to read, produces a number with an error bar wider than the decision it is meant to inform. Working backwards from the volume the question needs is the same arithmetic [budget planning](/budget-planning) applies to a campaign target, run against information rather than results.
+
+  The ceiling exists because pilots drift. Spend rises to keep a promising signal alive, the read date moves with it, and eighteen months later the pilot is a channel nobody decided to run. A stated hard stop is what makes the read date real.
+
+  Separating media from production matters more on a pilot than on a campaign, because production is a larger share of a small budget. A \$15,000 pilot that spends \$5,000 on a landing page is a \$10,000 pilot, and judging it on \$15,000 of spend understates it.
+</Accordion>
+
+## D. What you'll measure
+
+| Metric | Definition | Baseline or comparison | Target |
+| :-- | :-- | :-- | :-- |
+| _E.g. Cost per trial signup_ | _E.g. [CPL as defined here](/marketing-reporting-data-dictionary)_ | _E.g. LinkedIn at \$62_ | _E.g. ≤ \$45_ |
+| _E.g. Trial signups_ | _E.g. `Trial Started` from the [event tracking plan](/event-tracking-plan)_ | _E.g. 210 per month, all channels_ | _E.g. ≥ 250 in the flight_ |
+| _E.g. Trial to paid rate_ | _E.g. Guardrail. Paid conversions ÷ trials, 30-day window_ | _E.g. 18% blended_ | _E.g. Not below 12%_ |
+| \[add metric\] |  |  |  |
+
+**How this pilot is identified in reporting:** _E.g. Pilot ID in the campaign name and in_ `utm_campaign`_, so its rows separate cleanly in the [flat file](/flat-file-template)._
+
+<Accordion title="Concept review: What you'll measure">
+  A pilot has no control, so every metric here is being read against something else: a historical baseline, another channel, or a target derived from unit economics. Naming which of the three, per metric, is what stops the read turning into an argument about whether \$45 is good.
+
+  The guardrail row is the one most often left out and the one that most often matters. A new channel can deliver cheap signups that convert to paid at half the rate, and a pilot measuring only cost per signup will read that as a win and scale it.
+
+  Definitions link out rather than getting restated. A pilot that invents its own version of cost per lead produces a number that cannot be compared to the channel it is being judged against, which was the entire point of measuring it.
+</Accordion>
+
+## E. The decision rule
+
+**Write the rule before launch. On the read date you apply it; you do not revisit it.**
+
+| Outcome | Condition | Action |
+| :-- | :-- | :-- |
+| Scale | _E.g. CPL ≤ \$45 and ≥ 250 signups and trial-to-paid ≥ 12%_ | _E.g. Move 30% of LinkedIn budget to Search from Q3_ |
+| Continue | _E.g. CPL \$45 to \$62, volume on track, guardrail held_ | _E.g. One more 6-week flight at the same rate, second read 15 Jul_ |
+| Stop | _E.g. CPL > \$62, or guardrail breached, or under 150 signups_ | _E.g. Pause, file the learning, revisit no earlier than Q1 2027_ |
+
+**Who decides:** _E.g. Head of growth, on the read date, against this table._
+
+**Number of extensions allowed:** _E.g. One, and only into the "continue" branch above._
+
+<Warning>
+  A "continue" outcome with no second read date and no extension limit is how a pilot becomes permanent without a decision. Fill in both.
+</Warning>
+
+<Accordion title="Concept review: The decision rule">
+  This table is the whole point of the page. Everything above it is setup; this is the part that has to exist before the numbers do, because a threshold written after seeing the data is not a threshold, it is a description.
+
+  Three outcomes tends to work better than two. A pure pass or fail forces a promising but unclear result into one bucket or the other, and the honest answer for a first flight is often "the signal is real but the read is not clean yet." Naming that as its own branch, with a limit on how many times it can be taken, keeps it from becoming the default.
+
+  Naming the decider matters as much as naming the condition. A rule with no owner gets applied by whoever is most invested in the answer.
+</Accordion>
+
+## F. The read
+
+<Tip>
+  Fill this in on the read date, not before.
+</Tip>
+
+| Field | Fill in |
+| :-- | :-- |
+| Read date | _E.g. 3 Jun 2026_ |
+| Actual spend | _E.g. \$14,180_ |
+| Result per metric | _E.g. CPL \$41, 346 signups, trial-to-paid 15%_ |
+| Outcome, per the rule in section E | _E.g. Scale_ |
+| Decision taken, and by whom | _E.g. Move 30% of LinkedIn budget to Search from 1 Jul. Head of growth, 3 Jun._ |
+| What we learned that we didn't expect | _E.g. Competitor terms carried a third of volume at twice the CPL. Worth separating next flight._ |
+| What we'd do differently | _E.g. Set up the trial-to-paid join before launch. Reconstructing it cost a week._ |
+| Filed in the [learning library](/experiment-learning-home) | _E.g. 4 Jun 2026_ |
+
+<Accordion title="Concept review: The read">
+  Recording the outcome against the rule, rather than describing what happened, is what makes a pilot findable later. Someone asking "have we tried Google Search?" needs the outcome and the threshold it was judged against, not a paragraph.
+
+  The two open rows at the bottom carry most of the value that survives a year. A pilot that hits its number still teaches you what the number hid, and a pilot that misses is frequently more useful than one that succeeds, provided somebody wrote down why. Both belong in the library, in the same place experiment results go, because the person searching does not know in advance which form the answer took.
+</Accordion>
+
+## Filing
+
+<Steps>
+  <Step title="Register the ID before launch">
+    Issue the pilot ID and add a row to your experiment log, so the ID cannot be reused. See [experiment ID convention](/experiment-id-convention).
+  </Step>
+  <Step title="Apply the ID to every surface">
+    Campaign names, `utm_campaign`, and any dashboard filter, so the pilot's rows separate from ordinary spend in the [flat file](/flat-file-template).
+  </Step>
+  <Step title="File the brief when it is written">
+    Into the [campaign library](/campaign-library-overview), named per the [file naming conventions](/file-naming-conventions).
+  </Step>
+  <Step title="File the read into the learning library">
+    Once section F is complete, add it to the [experiment learning library](/experiment-learning-home) with its outcome, so the next person asking finds it.
+  </Step>
+</Steps>
+
+## Related resources
+
+- [**Budget planning process**](/budget-planning) Where a learning budget is set and a reserve is released.
+- [**Experiment brief**](/experiment-brief) The record to use instead when there is a control.
+- [**Creating an experiment**](/creating-an-experiment) The process for a controlled test.
+- [**Experiment learning library**](/experiment-learning-home) Where both pilots and experiments are filed.
+- [**Marketing campaign brief**](/marketing-campaign-brief) The parent brief, if the pilot sits inside a campaign.
+- [**What this framework covers**](/what-this-framework-covers) The line between a briefed decision and a media buyer's call.

@@ -14,6 +14,7 @@ Use this when you're planning a campaign that will run in a paid platform. It's 
 | You need | Where it lives |
 | :-- | :-- |
 | A positioning statement and message pillars | [Positioning](/positioning), [messaging](/messaging) |
+| The product this campaign sells, with an identifier | [Product catalog](/product-catalog) |
 | A named customer profile | [Customer profile library](/customer-profile-library-overview) |
 | Naming conventions decided | [Naming conventions overview](/naming-conventions-overview) |
 | UTM standard decided | [UTM standards](/utm-standards) |
@@ -33,7 +34,9 @@ Use this when you're planning a campaign that will run in a paid platform. It's 
     Then name the ad sets or ad groups from [ad set, ad group and variant naming conventions](/ad-set-group-naming-conventions), and the ads from [ad name conventions](/ad-name-conventions).
   </Step>
   <Step title="3. Build the tracking">
-    Tag every destination link using [UTM standards](/utm-standards). The UTM values have to match the campaign name values, or platform spend and analytics conversions cannot be joined.
+    Tag every destination link using [UTM standards](/utm-standards). `utm_campaign` carries the **platform campaign name** you built in step 2, character for character, not the human name of the marketing campaign and not the brief's file name. See [which name is which](/campaign-naming-conventions#which-name-is-which).
+
+    Build one tagged URL per ad set or ad group, not one per campaign. `utm_content` carries the ad set name, so groups that share a tag report as one row.
 
     If the campaign fires new events, add them to the [event tracking plan](/event-tracking-plan) first.
   </Step>
@@ -41,7 +44,7 @@ Use this when you're planning a campaign that will run in a paid platform. It's 
     Before briefing anything new, check the [asset directory](/asset-directory). An approved asset that already exists, or crops to fit, is faster than a brief and has cleared review. Same for words: search the [copy drive](/copy-drive) before writing fresh.
   </Step>
   <Step title="5. Brief the creative and copy">
-    Creative concept goes in a [creative brief](/creative-brief), following the [creative brief process](/creative-brief-process). The words go in a [copy brief](/ad-copy-standards). Both link back to the campaign brief rather than restating the strategy.
+    Creative concept goes in a [creative brief](/creative-brief), following the [creative brief process](/creative-brief-process). The words go in a [copy brief](/copy-brief). Both link back to the campaign brief rather than restating the strategy.
 
     Walkthroughs: [brief creative](/brief-creative) and [write copy](/write-copy).
 
@@ -66,7 +69,7 @@ Use this when you're planning a campaign that will run in a paid platform. It's 
     Run the [campaign QA checklist](/campaign-qa-checklist) and the [campaign launch checklist](/campaign-launch-checklist) across the whole campaign, alongside the platform's own pre-launch pass.
   </Step>
   <Step title="9. File everything">
-    Save the campaign brief to the [campaigns library](/campaign-library-overview). Save the creative brief to the [creative brief library](/creative-briefs) and the copy brief to the [copy brief library](/copy-brief-library). A brief nobody filed is a campaign nobody can learn from.
+    Save the campaign brief to the [campaigns library](/campaign-library-overview). Save the creative brief to the [creative brief library](/creative-brief-library) and the copy brief to the [copy brief library](/copy-brief-library). A brief nobody filed is a campaign nobody can learn from.
   </Step>
   <Step title="10. Report and close out">
     The campaign's rows flow into the [flat file](/flat-file-template) and appear in [weekly reports](/weekly-reporting-process) automatically if the naming and UTMs are right.

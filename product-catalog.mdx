@@ -1,0 +1,193 @@
+---
+title: "Product catalog"
+description: "A fill-in workbook that gives every product and offer a name, a short identifier, and a description, so campaigns can be built and reported on per product instead of only per brand."
+---
+
+_This page is a workbook. Fill it in top to bottom, and expand a concept review if you want the reasoning behind a section before you answer. The dropdowns explain the tradeoffs; the decision is yours._
+
+_Grayed_ `E.g.` _text is a placeholder. Delete it and replace it with your own. Examples use **Doughnut Labs**, a SaaS company that sells disruptive Doughnut Technology._
+
+<Note>
+  Fill in sections A to D for every product you advertise. Section E is only needed if you run offers that are not products in their own right. Section F is what connects this catalog to your campaign names, and it is the section that makes per-product reporting possible.
+</Note>
+
+<Steps>
+  <Step title="Decide what counts as a product">
+    Section A. Get this wrong and the catalog either lists three things or three hundred.
+  </Step>
+  <Step title="Register every product and give it an identifier">
+    Section B. The identifier is short, permanent, and the thing campaign names carry.
+  </Step>
+  <Step title="Fill in the detail for each one">
+    Sections C and D: the copy, the destination, and the positioning line each product owns.
+  </Step>
+  <Step title="Wire the identifier into your naming">
+    Section F. Until this is done, no report can group spend by product.
+  </Step>
+</Steps>
+
+## A. What counts as a product
+
+**Define the unit this catalog lists, and the level above and below it.**
+
+| Question | Your answer |
+| :-- | :-- |
+| A product in this catalog is | _E.g. A separately purchasable plan or add-on with its own price._ |
+| A product line is | _E.g. A group of products sold to the same buyer under one name, e.g. Doughnut Analytics._ |
+| Not a product | _E.g. A feature inside a plan, a free tool, or a seasonal discount. Those are offers, see section E._ |
+| Who adds a product to this catalog | _E.g. Product marketing. Requested in #marketing-ops, added before the campaign is briefed._ |
+
+<Accordion title="Concept review: What counts as a product">
+  The unit you pick here decides how coarse or fine every downstream report can be. Set the bar at "product line" and you can compare Analytics against Automation but never tell which plan inside Analytics carried the spend. Set it at every SKU and variant and the catalog becomes a second copy of your billing system that nobody maintains.
+
+  Most teams land on the level at which they would actually reallocate budget. If nobody would ever move money between two things, they probably do not need to be two rows. If someone would ask "what did we spend on that one?" and expect an answer, it needs its own row and its own identifier.
+
+  The line between a product and an offer is worth setting explicitly, because the two get conflated constantly. A trial, a bundle, and a seasonal discount are ways of selling something. They are not separate things to sell, and giving each one a product identifier is how a catalog of eight products becomes a catalog of forty.
+</Accordion>
+
+## B. Product register
+
+**One row per product. The identifier is what campaign names, ad group names, and reports carry, so keep it short and never change it.**
+
+| Product name | Identifier | Product line | Status | Owner |
+| :-- | :-- | :-- | :-- | :-- |
+| _E.g. Doughnut Analytics Pro_ | _E.g._ `DAPRO` | _E.g. Doughnut Analytics_ | _E.g. Live_ | _E.g. Priya Nadel_ |
+| _E.g. Doughnut Analytics Starter_ | _E.g._ `DASTART` | _E.g. Doughnut Analytics_ | _E.g. Live_ | _E.g. Priya Nadel_ |
+| _E.g. Doughnut Automation_ | _E.g._ `DAUTO` | _E.g. Doughnut Automation_ | _E.g. Beta_ | _E.g. Tom Reyes_ |
+| \[add product\] |  |  |  |  |
+
+**Status values in use:** _E.g. Live, Beta, Sunsetting, Retired. A retired product keeps its row and its identifier so historical reports still resolve._
+
+<Warning>
+  Never reuse or rename an identifier. A retired product's identifier stays reserved forever, because campaigns, exports, and dashboards from its lifetime still reference it. Add a new one instead.
+</Warning>
+
+<Accordion title="Concept review: Product register">
+  The identifier is doing the same job here that a campaign naming dictionary does one level up: it turns a name someone typed into a value a report can group by. Without one, "which products did we spend on last quarter?" is answered by reading campaign names and guessing, which is why the question usually goes unanswered.
+
+  Short matters more than readable. The identifier gets concatenated into names that already carry channel, objective, bid type, and funnel position, and platforms enforce character limits on all three naming levels. Teams that start with `doughnut-analytics-pro` end up truncating it inconsistently within a quarter.
+
+  Keeping retired products in the register is the part most teams skip and later regret. The row costs nothing and it is the only thing that makes a two-year-old report legible after the product is gone.
+</Accordion>
+
+## C. Product detail
+
+**Fill in one block per product. These are the fields a copywriter, a media buyer, and a feed build all pull from, so they are written once here rather than three times downstream.**
+
+| Field | Fill in |
+| :-- | :-- |
+| Product name | _E.g. Doughnut Analytics Pro_ |
+| Identifier | _E.g._ `DAPRO` |
+| One-line description | _E.g. Reporting automation for teams that outgrew spreadsheets._ |
+| Long description | _E.g. Connects your ad platforms, CRM, and billing into one flat file, refreshed nightly, with the metric definitions your team already agreed on._ |
+| Who it is for | _E.g. [Mid-market RevOps lead](https://link), from the customer profile library_ |
+| Price and billing | _E.g. \$180 per seat per month, billed annually_ |
+| SKU or plan code | _E.g._ `DL-AN-PRO-A` |
+| Destination URL | _E.g._ `doughnutlabs.com/analytics/pro` |
+| Catalogs it belongs to | _E.g. Google Merchant Center: Software. Meta Commerce: not listed._ |
+| Tags | _E.g._ `analytics`, `reporting`, `mid-market`, `annual` |
+| Image and asset folder | _E.g. [Creative drive, /products/analytics-pro](https://link)_ |
+| Approved claims | _E.g. "Cuts reporting time 60%", evidence filed in [messaging](/messaging)_ |
+| Status | _E.g. Live_ |
+
+<Accordion title="Concept review: Product detail">
+  These fields exist because the same handful of facts get asked for by every downstream process, and each one currently gets answered from memory. A copywriter needs the one-liner and the approved claims. A media buyer needs the destination and the price. A feed build needs the SKU, the tags, and the catalog membership. When each of those is sourced separately, three slightly different versions of the product go live at once.
+
+  Tags and catalog membership are worth filling in even if you do not run a shopping feed today. They are the fields that decide which products a feed picks up when you do, and retrofitting them across a catalog is considerably slower than writing them down as each product is added.
+
+  Approved claims sit here rather than in the copy brief for one reason: a claim is a property of the product, and it survives the campaign that first used it. Pointing at [messaging](/messaging) rather than restating the evidence keeps one copy of the substantiation, which is what [legal review](/legal-review-process) checks against.
+</Accordion>
+
+## D. Per-product positioning
+
+<Tip>
+  Fill this in only where a product needs a line that differs from brand-level positioning. A single-product company can leave it blank and point at [positioning](/positioning).
+</Tip>
+
+| Product | Positioning line | Primary message pillar | Main alternative |
+| :-- | :-- | :-- | :-- |
+| _E.g. Doughnut Analytics Pro_ | _E.g. For RevOps leads drowning in manual reporting, the fastest route to one number everyone trusts._ | _E.g. Pillar 2: one source of truth_ | _E.g. A spreadsheet and a Friday afternoon_ |
+| \[add product\] |  |  |  |
+
+<Accordion title="Concept review: Per-product positioning">
+  Brand-level [positioning](/positioning) answers why anyone should buy from you at all. It cannot also answer why someone should buy the Pro plan rather than Starter, and campaigns that need the second answer tend to invent one at copy-brief time.
+
+  A per-product line is not a second positioning statement, and writing one as though it were produces a brand with four competing identities. What it records is narrower: who this specific product is for, and what it is being chosen instead of. The "main alternative" column is often the most useful of the three, because the real alternative is frequently not a competitor product but doing nothing, or doing it manually.
+
+  Teams selling one product, or several that share a buyer and a pitch, genuinely do not need this section. Leaving it blank and linking to brand positioning is a complete answer.
+</Accordion>
+
+## E. Offers
+
+<Tip>
+  Optional: fill this in if you run trials, bundles, or discounts that campaigns are built around. An offer attaches to a product; it does not replace one.
+</Tip>
+
+| Offer | Identifier | Applies to | Terms | Runs until |
+| :-- | :-- | :-- | :-- | :-- |
+| _E.g. 14-day free trial_ | _E.g._ `FREETRIAL` | _E.g._ `DAPRO`, `DASTART` | _E.g. No card required, auto-expires_ | _E.g. Always on_ |
+| _E.g. Spring 20% annual_ | _E.g._ `SPRING20` | _E.g._ `DAPRO` | _E.g. Annual plans only, new customers_ | _E.g. 20 Jun 2026_ |
+| \[add offer\] |  |  |  |  |
+
+<Accordion title="Concept review: Offers">
+  An offer and a product answer different questions in a report. "What did we spend on Analytics Pro?" and "what did the free trial offer cost us across every product?" are both reasonable, and they need two separate identifiers to be answerable at the same time.
+
+  The offer identifier already has a home in the naming system: the offer field in [ad naming conventions](/ad-name-conventions) sits at the ad level, which is usually the right level, since the same ad group frequently carries several offers. Registering offers here rather than only in the naming dictionary gives them the terms and the expiry date, which is what [legal review](/legal-review-process) needs and what stops an expired discount running for another six weeks.
+</Accordion>
+
+## F. Where the identifier goes
+
+**Decide which naming levels carry the product identifier, and add it to those dictionaries.**
+
+| Level | Carries the product identifier? | Your answer |
+| :-- | :-- | :-- |
+| Campaign | _E.g. Yes. Added as a Product row in [campaign naming conventions](/campaign-naming-conventions)._ | |
+| Ad group / ad set | _E.g. Only where one campaign covers several products._ | |
+| Ad | _E.g. No. The ad's offer field already covers the variable that changes._ | |
+| `utm_campaign` | _E.g. Yes, because it comes through in the campaign name._ | |
+
+**Filled-in example.** A Search campaign for Analytics Pro, carrying the product identifier at campaign level:
+
+`Google-Search-Trial-tCPA-DAPRO-TOFU`
+
+<Warning>
+  Adding a product identifier to a naming level is a change to a live dictionary. Add the new category to [campaign naming conventions](/campaign-naming-conventions) and apply it to campaigns built from that point on. Don't rename campaigns that are already running, which splits their history in two.
+</Warning>
+
+<Accordion title="Concept review: Where the identifier goes">
+  This is the section that decides whether the catalog is a reference document or a reporting capability. A product register nobody encodes into names is a list; a product identifier sitting in every campaign name is a column every report can group by.
+
+  Campaign level is the usual answer, because campaign is the level at which most teams already separate products, and because `utm_campaign` inherits it for free. Pushing it down to the ad group level is worth it when one campaign genuinely spans products, which is common on Performance Max and on Search accounts built around themes rather than products. Putting it at every level is redundant and eats character limits.
+
+  Whichever levels you pick, the dictionary lives in the naming convention pages, not here. This catalog is the list of valid values; the naming pages are where the values become part of a name.
+</Accordion>
+
+## G. Adding and retiring a product
+
+<Steps>
+  <Step title="Register it before it is briefed">
+    A new product gets its row and its identifier in section B before any campaign brief references it. A campaign briefed against an unregistered product produces a one-off value typed into a platform, which is how a closed list stops being closed.
+  </Step>
+  <Step title="Fill in the detail block">
+    Section C. A product with no description and no approved claims sends the copywriter to guess, and the guess is what runs.
+  </Step>
+  <Step title="Add the identifier to the naming dictionary">
+    Add the value to the Product table in [campaign naming conventions](/campaign-naming-conventions), so it is available the first time someone assembles a name.
+  </Step>
+  <Step title="On retirement, change the status only">
+    Set the status to Retired. Keep the row, the identifier, and the detail block. Historical reports still resolve against them.
+  </Step>
+</Steps>
+
+<Info>
+  This catalog is the product layer that [positioning](/positioning), [messaging](/messaging), and the campaign briefs all reference. Keep it as the single copy: briefs link to a product by name and identifier rather than restating its description, in the same way they link to a customer profile.
+</Info>
+
+## Related resources
+
+- [**Campaign naming conventions**](/campaign-naming-conventions) Where the product identifier becomes part of a name.
+- [**Ad naming conventions**](/ad-name-conventions) Where the offer identifier sits.
+- [**Positioning**](/positioning) and [**messaging**](/messaging) The brand level above this one.
+- [**Customer profile library**](/customer-profile-library-overview) The other list briefs link to rather than restate.
+- [**Marketing campaign brief**](/marketing-campaign-brief) Where a campaign names the product it is selling.
+- [**Google Merchant Center**](/google-merchant-center-overview) and [**Meta Commerce**](/meta-commerce-overview) Where catalog and tag values end up in a feed.

@@ -13,7 +13,13 @@ Six conventions cover everything that gets named. Pick the row that matches what
 | A customer profile or audience | [Customer profile naming conventions](/customer-profile-naming-conventions) | You save it to the library |
 | A file or creative asset | [File naming conventions](/file-naming-conventions) | You save it |
 | A tracked event | [Event naming conventions](/event-naming-conventions) | You implement it |
-| An experiment | [Experiment ID](/experiment-id) | It launches |
+| An experiment | [Experiment ID](/experiment-id-convention) | It launches |
+| A product or offer | [Product catalog](/product-catalog) | It appears in any brief |
+| A pilot | [Pilot brief](/pilot-brief), using the experiment ID log | It launches |
+
+<Note>
+  Three different strings get called "the campaign name": the human name of the marketing campaign, the name typed into the ad platform, and the brief's file name. Only the second goes in `utm_campaign`. See [which name is which](/campaign-naming-conventions#which-name-is-which).
+</Note>
 
 <Warning>
   Name things at build time, not afterwards. A renamed campaign breaks the join between platform spend and analytics conversions, and historical rows keep the old name forever.

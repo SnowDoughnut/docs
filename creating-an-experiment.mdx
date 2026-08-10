@@ -6,7 +6,7 @@ description: "The process for running a single digital marketing test."
 Run a digital marketing test from first idea to logged result. Copy the brief, fill it in, register an experiment ID, apply that ID everywhere the test appears, launch, and set up a review that links back to the brief.
 
 <Info>
-  Each step uses one of these documents: the [experiment brief](/experiment-brief), the [experiment ID conventions](/experiment-ids), the [campaign](/campaign-naming-conventions), [ad set / ad group / variant](/ad-set-group-naming-conventions), and [ad](/ad-name-conventions) naming conventions, and the [experiment review](/experiment-review-process).
+  Each step uses one of these documents: the [experiment brief](/experiment-brief), the [experiment ID conventions](/experiment-id-concepts), the [campaign](/campaign-naming-conventions), [ad set / ad group / variant](/ad-set-group-naming-conventions), and [ad](/ad-name-conventions) naming conventions, and the [experiment review](/experiment-review-process).
 </Info>
 
 ## What you'll end up with
@@ -25,8 +25,8 @@ Confirm these before you copy a new brief:
 
 - Your team has agreed on an experiment brief template. If not, set that up first in the [experiment brief](/experiment-brief).
 - You have a hypothesis: a change you can make, an outcome you expect, and a reason you expect it.
-- You're comparing a control against at least one variant. A change with no control isn't an experiment, and this process doesn't apply.
-- Your team has agreed on an experiment ID pattern and keeps one experiment log. If not, set that up first in the [experiment ID conventions](/experiment-ids).
+- You're comparing a control against at least one variant. A change with no control isn't an experiment, and this process doesn't apply. If the spend exists to find out whether something works and there's nothing to compare it against, use the [pilot brief](/pilot-brief).
+- Your team has agreed on an experiment ID pattern and keeps one experiment log. If not, set that up first in the [experiment ID conventions](/experiment-id-concepts).
 - Your team has agreed on a review template. If not, set that up first in the [experiment review](/experiment-review-process).
 
 ## The process at a glance
@@ -75,7 +75,7 @@ Work down the top of the brief. Record who owns the test and what kind of test i
 - **Hypothesis:** the change you're making, the outcome you expect, and why.
 - **Metrics:** the single primary metric, any secondary metrics, the guardrail metrics that must not degrade, and the baseline.
 
-See the [experiment brief concept SOP](/test-brief-process) for how to write a hypothesis with a reason attached and how to pick a single primary metric.
+See the [experiment brief concepts](/experiment-brief-concepts) for how to write a hypothesis with a reason attached and how to pick a single primary metric.
 
 ## 3. Design the test
 
@@ -93,7 +93,7 @@ Finish the design section of the brief before anything goes live. This is where 
 
 Create the short code that ties the test together and save it in the brief. Register it at the brief stage, before launch, so it links the brief, the live campaign, and every report from the start.
 
-1. Generate a new ID using [your team's pattern](/experiment-id) (sequential, date-based, or random alphanumeric).
+1. Generate a new ID using [your team's pattern](/experiment-id-convention) (sequential, date-based, or random alphanumeric).
 2. Check it against your experiment log to confirm it isn't already in use.
 3. Save the ID in the brief's setup section.
 4. Add a row to the experiment log.
@@ -102,7 +102,7 @@ Create the short code that ties the test together and save it in the brief. Regi
   Don't change an experiment ID after the test launches. Once it's live, the campaign, your dashboards, and data already collected all reference it. Changing it breaks the link between the brief, the campaign, and the reports.
 </Warning>
 
-See the [experiment ID conventions](/experiment-ids) for how to choose a pattern, the formatting rules, and how the experiment log keeps IDs unique.
+See the [experiment ID conventions](/experiment-id-concepts) for how to choose a pattern, the formatting rules, and how the experiment log keeps IDs unique.
 
 ## 5. Apply the ID to every surface
 
@@ -151,13 +151,14 @@ Save the finished review to the [learning library](/experiment-learning-home), t
 ## Exceptions
 
 - **The test is cancelled mid-flight.** If tracking breaks, a launch goes wrong, or a business change makes the test moot, stop it and mark it cancelled. A cancelled test needs only a short note on why it stopped, not a full review.
-- **You're not comparing to a control.** If you're shipping a change with no control, you're not running an experiment. Skip this process; no brief or ID is needed.
+- **You're not comparing to a control, and you already know it works.** Shipping a change you're confident in is not an experiment. Skip this process; no brief or ID is needed.
+- **You're not comparing to a control, but you're spending to find out.** A new channel, product line, or market with no baseline cannot be tested against a control, and it still needs a record. Use the [pilot brief](/pilot-brief) instead: it sets the budget ceiling, the read date, and the kill or scale rule in advance, and its result files into the same [learning library](/experiment-learning-home).
 
 ## Related resources
 
 [**Experiment brief**](/experiment-brief) The record of a single test.
 
-[**Experiment ID SOP**](/experiment-ids) How to create, format, and register the short code that ties the test together. Fill in your own convention in the [experiment ID workbook](/experiment-id).
+[**Experiment ID concepts**](/experiment-id-concepts) How to create, format, and register the short code that ties the test together. Fill in your own convention in the [experiment ID workbook](/experiment-id-convention).
 
 [**Campaign naming conventions**](/campaign-naming-conventions) Where the experiment ID sits on a campaign name, for tests about channel, objective, budget, or bid strategy.
 

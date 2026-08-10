@@ -12,8 +12,12 @@ _This page is a workbook. Fill it in top to bottom before anything is built in G
 </Note>
 
 <Tip>
-  Record the decision and the reason, not the click path. This brief fixes campaign type, conversion goal, budget, bid strategy, and structure so they can be reviewed before spend starts. Everything below that line, which keywords to add or negate, when to adjust a target, how to rotate assets, stays with the media buyer.
+  Record the decision and the reason, not the click path. This brief fixes campaign type, conversion goal, budget, bid strategy, and structure so they can be reviewed before spend starts. Everything below that line, which keywords to add or negate, when to adjust a target, how to rotate assets, stays with the media buyer. See [what this framework covers](/what-this-framework-covers) for where the line sits and why.
 </Tip>
+
+<Note>
+  This brief assumes a working Google Ads account: created, billed, with conversion tracking installed and access granted. Setting one up is out of scope here. What the brief records is which account this campaign runs in and what was confirmed about it before launch.
+</Note>
 
 ## Setup
 
@@ -22,9 +26,18 @@ _This page is a workbook. Fill it in top to bottom before anything is built in G
 | [Owner](/glossary#owner) | _E.g. Tom Reyes_ |
 | Media buyer | _E.g. Tom Reyes_ |
 | [Marketing campaign brief](/marketing-campaign-brief) | _E.g. [Doughnut Labs "Fresh Batch" spring trial push](https://link)_ |
+| Product, from the [product catalog](/product-catalog) | _E.g. Doughnut Analytics Pro,_ `DAPRO` |
 | Google Ads account | _E.g. Doughnut Labs US (000-000-0000)_ |
+| Account is under an MCC | _E.g. Yes, Doughnut Labs Group (000-000-0000)_ |
+| Shared or portfolio settings this campaign inherits | _E.g. None. Budget and bid strategy are campaign-level_ |
 | Brief name ([file naming conventions](/file-naming-conventions)) | _E.g._ `DOC_google-fresh-batch-trial_2026-08-07_v01` |
 | Flight dates | _E.g. 22 Apr to 20 Jun 2026_ |
+
+<Accordion title="Concept review: Setup">
+  The product row is what lets a report answer "what did we spend on Analytics Pro?" without someone reading campaign names and guessing. It is filled from the [product catalog](/product-catalog) rather than typed, because a product identifier invented here is a value no dictionary recognizes and no report can group by.
+
+  The two account rows exist for a narrower reason. A shared budget or a portfolio bid strategy set at account level silently overrides what this brief says about budget and bidding, and the override is invisible from inside the campaign. Recording that none apply takes a moment; discovering one applies after two weeks of unexplained pacing takes considerably longer.
+</Accordion>
 
 ## Campaign type
 
@@ -68,11 +81,18 @@ Google campaign types, as of 7 August 2026:
 | Account-default or campaign-specific goals | _E.g. Campaign-specific. Only trial signup counts as primary_ |
 | Secondary conversions, observed only | _E.g. Newsletter signup, pricing page view_ |
 | Is the conversion action importing and firing? | _E.g. Yes, verified 4 Apr_ |
+| How that was verified, and by whom | _E.g. Test signup on staging and production, conversion appeared in Google Ads within 3 hours. Priya Nadel, 4 Apr_ |
+| Attribution model and conversion window | _E.g. Data-driven, 30-day click, 1-day engaged view_ |
 | Sending conversion value? | _E.g. No. Trials have no value at signup_ |
+| Anything this campaign depends on that isn't standard | _E.g. Consent mode v2 is live; EEA traffic relies on modelled conversions. Enhanced conversions on. No offline import._ |
 
 <Warning>
   Confirm which conversion actions are set as primary for this campaign. A campaign inheriting account-default goals will optimize toward every primary action in the account, including ones that have nothing to do with this campaign's objective.
 </Warning>
+
+<Info>
+  Installing conversion tracking is out of scope for this framework: tag setup, enhanced conversions, consent mode, and offline import all live with whoever owns your analytics stack. See [what this framework covers](/what-this-framework-covers). What this brief records is which action counts, that someone confirmed it works, and how.
+</Info>
 
 <Accordion title="Concept review: Conversion goal">
   Smart Bidding optimizes toward whatever is marked primary. That makes the primary and secondary split the single most consequential tracking decision in a Google campaign, and it is set in a place most people never open.
@@ -84,11 +104,48 @@ Google campaign types, as of 7 August 2026:
 
 | Field | Fill in |
 | :-- | :-- |
-| Daily budget | _E.g. \$400 per day_ |
+| Monthly budget | _E.g. \$12,000 per month_ |
+| Daily budget entered in Google | _E.g. \$395, from \$12,000 ÷ 30.4_ |
 | Total for the flight | _E.g. \$12,000_ |
 | Bid strategy | _E.g. Target CPA_ |
 | Target value | _E.g. \$33 per trial signup_ |
+| Expected conversions per month at this budget | _E.g. ~360, from \$12,000 ÷ \$33_ |
+| Does that clear the threshold for this strategy? | _E.g. Yes, comfortably past 30 a month_ |
 | Why this strategy | _E.g. Stable CPA baseline from Q1 Search; enough monthly conversions to support a target_ |
+
+### How Google spends a daily budget
+
+Google treats the daily budget as an average, not a cap, and the arithmetic catches people out at exactly the moment they check spend for the first time.
+
+| Mechanic | What it means |
+| :-- | :-- |
+| Monthly to daily | Divide the monthly budget by **30.4**, the average days in a month. \$5,000 a month is \$164 a day, not \$166 |
+| Daily overspend | Google can spend up to **2× the daily budget** on a single day when it sees opportunity. A \$164 daily budget can spend \$328 on Tuesday |
+| Monthly cap | Total spend is capped at **daily budget × 30.4** per month. Overspend on one day is balanced by underspend on another |
+| What you'll see | Days above budget in week one, and a monthly total that lands at or below the daily budget × 30.4 |
+
+<Warning>
+  Enter the daily figure, not the monthly one. Google's budget field is always a daily average, so typing a monthly budget into it authorizes roughly thirty times the intended spend, at up to twice that on any given day.
+</Warning>
+
+### Conversion volume a bid strategy needs
+
+A target strategy set below these thresholds does not throw an error. It delivers erratically, which reads as a targeting or creative problem rather than a bidding one. Google's guidance, as of 7 August 2026:
+
+| Strategy | Conversions it needs before a target is worth setting |
+| :-- | :-- |
+| Maximize conversions | None. This is the strategy to launch on |
+| Maximize clicks | None. Traffic goals, or seeding a new campaign |
+| Target CPA | Around **30 conversions in the last 30 days** |
+| Target ROAS | Around **50 conversions in the last 30 days**, with reliable value data |
+| Maximize conversion value | Enough value variation to bid against, no stated minimum |
+| Performance Max | Around **30 conversions a month** before a target is worth setting |
+
+**If the budget cannot buy that volume:** _E.g. Launch on Maximize conversions, review at 30 days, switch to Target CPA once the campaign clears 30 conversions in a rolling 30-day window._
+
+<Info>
+  Multiply the expected conversion count out before launch. A \$5,000 monthly budget at a \$120 target CPA buys about 42 conversions a month, which clears Target CPA and does not clear Target ROAS. The same budget at a \$300 CPA buys 17, and neither target applies.
+</Info>
 
 Google bid strategies, as of 7 August 2026:
 
@@ -109,23 +166,36 @@ Google bid strategies, as of 7 August 2026:
 <Accordion title="Concept review: Budget and bid strategy">
   A target-based strategy needs conversion volume to work with. Set a target on a campaign that converts a handful of times a month and the system has too little signal to bid against, which shows up as erratic delivery rather than as an obvious error. Starting on a maximize strategy and moving to a target once volume is steady is the usual sequence, and worth writing down as a plan rather than leaving to be noticed later.
 
-  Budget and bid strategy also interact. A campaign that is budget-limited behaves differently from one that is target-limited, and the two get diagnosed differently. Recording both values here means the next person can tell which constraint was actually binding.
+  The thresholds above are the reason the budget and the bid strategy have to be decided together rather than in sequence. A budget is not "enough" in the abstract; it is enough for a particular target CPA and a particular strategy, and the same number can clear the bar at one CPA and fall well short at another. Running the multiplication before launch is what turns "we have \$5,000" into a decision about which strategy the campaign can actually support.
+
+  Budget and bid strategy also interact after launch. A campaign that is budget-limited behaves differently from one that is target-limited, and the two get diagnosed differently. Recording both values here means the next person can tell which constraint was actually binding.
+
+  Where there is no history to set a target from, and no control to test against, the spend is buying information rather than results. That is a [pilot](/pilot-brief), and it wants a read date and a kill or scale rule set in advance rather than a target it has no basis for.
 </Accordion>
 
 ## Campaign structure
 
 **What ad groups or asset groups does this campaign contain, and what is each one for?**
 
-| Ad group / asset group | Theme | Customer profile | What it proves |
-| :-- | :-- | :-- | :-- |
-| _E.g. Reporting automation, exact_ | _E.g. High-intent reporting keywords_ | _E.g. [Mid-market RevOps lead](https://link)_ | _E.g. Core intent volume_ |
-| _E.g. Competitor terms_ | _E.g. Competitor brand keywords_ | _E.g. [Mid-market RevOps lead](https://link)_ | _E.g. Switching demand, watched for cost_ |
-| \[add group\] |  |  |  |
+One row per group. The name and the `utm_content` value are filled in here, not at build time, because every group getting the same tag is the most common way a campaign organized around three groups reports as one.
+
+| Group name ([convention](/ad-set-group-naming-conventions)) | Theme | Customer profile | `utm_content` | What it proves |
+| :-- | :-- | :-- | :-- | :-- |
+| _E.g._ `20260401-KW-REPORTAUTO` | _E.g. High-intent reporting queries, exact and phrase_ | _E.g. [Mid-market RevOps lead](https://link)_ | _E.g._ `20260401-KW-REPORTAUTO` | _E.g. Core intent volume_ |
+| _E.g._ `20260401-KW-COMPET` | _E.g. Competitor brand queries_ | _E.g. [Mid-market RevOps lead](https://link)_ | _E.g._ `20260401-KW-COMPET` | _E.g. Switching demand, watched for cost_ |
+| _E.g._ `20260401-KW-BRAND` | _E.g. Our own brand terms_ | _E.g. All_ | _E.g._ `20260401-KW-BRAND` | _E.g. Defence, held at low cost_ |
+| \[add group\] |  |  |  |  |
+
+<Warning>
+  Every group needs its own `utm_content` value. Tagging three ad groups with one campaign-level URL means analytics sees one undifferentiated bucket, and the join fails at exactly the level the campaign was structured around. Theme values come from the [ad group theme dictionary](/ad-set-group-naming-conventions#ad-group-theme-search-and-shopping); a theme typed straight into Google is a value no report recognizes.
+</Warning>
 
 <Accordion title="Concept review: Campaign structure">
   On Search, an ad group is a promise that the keywords inside it are close enough in intent to share one set of ads. Groups that drift wide force the ads to be generic, which weakens both relevance and the landing page match.
 
-  On Performance Max and Demand Gen the equivalent unit is the asset group, and the same logic applies to audience signals and creative rather than keywords. In both cases the last column keeps a group accountable to a stated purpose instead of surviving on habit.
+  On Performance Max and Demand Gen the equivalent unit is the asset group, and the same logic applies to audience signals and creative rather than keywords. In both cases the "what it proves" column keeps a group accountable to a stated purpose instead of surviving on habit.
+
+  The `utm_content` column sits in this table rather than in the tracking section for a practical reason: it is the only place where every group is listed at once, which is where a duplicate or a missing value is actually visible. Filling it in three sections later, one group at a time, is how three ad groups end up sharing one tag.
 </Accordion>
 
 ## Targeting
@@ -135,14 +205,22 @@ Google bid strategies, as of 7 August 2026:
 | _E.g. Mid-market RevOps lead_ | _E.g. [CP\_midmarket-revops\_2026-03-02\_v02](https://link)_ | _E.g. Customer Match list plus in-market segment_ | _E.g. HubSpot export via [Google CSV template](/customer-profile-csv-template-google)_ |
 | \[add profile\] |  |  |  |
 
-**Keywords, match types, and negatives (Search and Shopping):** _E.g. Exact and phrase only. Broad off until CPA is stable. Standing negative list applied._
+**Match type policy (Search and Shopping):** _E.g. Exact and phrase only. Broad off until CPA is stable for two consecutive months._
 
 **Audience signals (Performance Max and Demand Gen):** _E.g. Customer Match list plus site visitors 180d, used as a signal not a restriction._
+
+**Negative keyword lists applied:** _E.g. "DL standing negatives" (account-level shared list, owned by Tom Reyes) plus a campaign-level list for competitor terms._
+
+<Info>
+  Which keywords to add and which to negate is the media buyer's call, made against live data. Negative keyword lists live in Google Ads under **Tools > Shared library > Negative keyword lists**, not in this knowledge base. What the brief records is which lists this campaign has applied, so the pre-launch check has something to check. See [what this framework covers](/what-this-framework-covers).
+</Info>
 
 <Accordion title="Concept review: Targeting">
   Match type is a spend-control decision as much as a targeting one, which is why it belongs in a brief that gets reviewed. Broad match with a target-based bid strategy can work well and can also spend a budget on queries nobody would have chosen, and which of those happens depends on conversion signal quality rather than on the setting alone.
 
   Audience signals on Performance Max and Demand Gen are not the same as targeting. They tell the system where to start looking, and it will go beyond them. Writing down which they are prevents the common misreading that a signal has restricted delivery when it has not.
+
+  Negatives are named here as lists rather than as keywords for a reason worth stating. A negative typed into one campaign protects one campaign; the same term typed into four campaigns by four people, spelled three ways, protects none of them reliably and cannot be audited. A shared list applied by name is one object to maintain and one row to check. See [campaign structure best practices](/campaign-structure-best-practices#keep-negatives-in-shared-lists) for the working default.
 </Accordion>
 
 ## Assets, creative, and copy
@@ -150,35 +228,92 @@ Google bid strategies, as of 7 August 2026:
 | Deliverable | Link |
 | :-- | :-- |
 | [Creative brief](/creative-brief) | _E.g. [Fresh Batch paid search creative brief](https://link)_ |
-| [Copy brief](/ad-copy-standards) | _E.g. [COPY\_fresh-batch-google\_2026-04-02\_v01](https://link)_ |
+| [Copy brief](/copy-brief) | _E.g. [COPY\_fresh-batch-google\_2026-04-02\_v01](https://link)_ |
 | Copy template | _E.g._ [Google Search copy template](/google-search-copy-template) |
 | Finished assets | _E.g. [Fresh Batch Google assets, final](https://link)_ |
 | Landing page | _E.g. [doughnutlabs.com/lp/fresh-batch-trial](https://link)_ |
 
-Copy templates by campaign type: [Search](/google-search-copy-template), [Performance Max](/google-pmax-copy-template), [Demand Gen](/google-demand-gen-copy-template), [Display](/google-display-copy-template), [YouTube](/google-youtube-copy-template), [App](/google-app-campaign-copy-template).
+| Campaign type | Copy template | Creative specs |
+| :-- | :-- | :-- |
+| Search | [Search copy template](/google-search-copy-template) | [Responsive search ads](/google-search-demandgen-display-specs#responsive-search-ads). Text only, no image or video required |
+| Performance Max | [PMax copy template](/google-pmax-copy-template) | [Performance Max specs](/google-pmax-creative-specs) |
+| Demand Gen | [Demand Gen copy template](/google-demand-gen-copy-template) | [Demand Gen specs](/google-search-demandgen-display-specs#demand-gen) |
+| Display (responsive) | [Display copy template](/google-display-copy-template) | [Display specs](/google-display-creative-specs) |
+| YouTube | [YouTube copy template](/google-youtube-copy-template) | [YouTube specs](/youtube-creative-specs) |
+| App | [App copy template](/google-app-campaign-copy-template) | [Performance Max specs](/google-pmax-creative-specs) for asset ratios |
 
-Creative specs by campaign type: [Performance Max](/google-pmax-creative-specs), [Display](/google-display-creative-specs), [Search, Demand Gen and uploaded display](/google-search-demandgen-display-specs), [YouTube](/youtube-creative-specs).
+### Responsive search ads
+
+<Tip>
+  Search only. Skip this block for every other campaign type.
+</Tip>
+
+| Field | Fill in |
+| :-- | :-- |
+| RSAs per ad group | _E.g. 2. One primary, one variant on the same offer_ |
+| Ad naming for multiple RSAs | _E.g._ `AutoGlaze-RSA-FREETRIAL-TRY-LP-A` _and_ `-B`_, per [ad naming conventions](/ad-name-conventions)_ |
+| Where each filled copy template is filed | _E.g. [Copy drive, /fresh-batch/google-search](https://link), one document per RSA_ |
+| Pinned assets, and why | _E.g. Headline position 1 pinned to "14-day free trial, no card". Required by legal, see below_ |
+| Claims that must appear in every serve | _E.g. "No card required", from [legal review](/legal-review-process) 12 Apr_ |
+
+<Warning>
+  A responsive search ad assembles its own combinations, so an unpinned headline can be left out of any given serve. If [legal review](/legal-review-process) requires a claim, qualifier, or disclaimer to appear, pinning is the only way to guarantee it does. Record the pin and the reason here, because an unexplained pin gets removed by the next person optimizing ad strength.
+</Warning>
+
+<Accordion title="Concept review: Responsive search ads">
+  Pinning trades performance for control. Google rates ad strength partly on how many combinations it can test, so every pinned position narrows that set, and the rating drops. That trade is often worth making and sometimes has to be made, which is why the field asks for the reason rather than just the position.
+
+  The link to legal review is the part that is easy to miss. A claim approved on the condition that a qualifier runs alongside it is not approved if the qualifier can be dropped from the combination, and nothing in the platform will flag that. Where an approval carries a condition, the pin is what implements it.
+
+  How many ads a group runs is a media buying decision, not a framework one. What the brief pins down is that the number was chosen, that each ad has a name that follows the convention, and that each filled template was filed. Three copies of one template with no names is how an ad ends up in a report that nobody can trace to an approved document.
+</Accordion>
 
 <Accordion title="Concept review: Assets, creative, and copy">
   Performance Max and Demand Gen judge a campaign partly on asset coverage. Missing a ratio or a logo size does not produce an error; it produces a campaign that cannot serve on the placements those assets would have unlocked, which reads as weak performance rather than as a missing file.
 
-  Search has the opposite failure mode. Its assets are cheap to produce, so the risk is headlines written at the keyboard during setup rather than briefed and approved. Both routes end with copy that never went through the [copy brief](/ad-copy-standards), and both show up later as ads nobody can trace to a decision.
+  Search has the opposite failure mode. Its assets are cheap to produce, so the risk is headlines written at the keyboard during setup rather than briefed and approved. Both routes end with copy that never went through the [copy brief](/copy-brief), and both show up later as ads nobody can trace to a decision.
 </Accordion>
 
 ## Naming and tracking
 
 | Level | Name | Convention |
 | :-- | :-- | :-- |
-| Campaign | _E.g._ `Google-Search-Leads-tROAS-TOFU` | [Campaign naming conventions](/campaign-naming-conventions) |
-| Ad group | _E.g._ `20260401-INT-reporting-automation` | [Ad set / ad group / variant](/ad-set-group-naming-conventions) |
+| Campaign | _E.g._ `Google-FBS-Search-Trial-tCPA-DAPRO-TOFU` | [Campaign naming conventions](/campaign-naming-conventions) |
+| Ad group | _E.g._ `20260401-KW-REPORTAUTO` | [Ad set / ad group / variant](/ad-set-group-naming-conventions) |
 | Ad | _E.g._ `AutoGlaze-RSA-FREETRIAL-TRY-LP` | [Ad naming conventions](/ad-name-conventions) |
-| UTMs | _E.g._ `?utm_source=google&utm_medium=paid-search&utm_campaign=fresh-batch-trial` | [UTM standards](/utm-standards) |
-| Auto-tagging | _E.g. On, alongside manual UTMs_ |  |
+| Auto-tagging | _E.g. On, alongside manual UTMs_ | |
+| Auto-applied recommendations | _E.g. All off. Reviewed 18 Apr, Tom Reyes_ | |
+
+### UTMs
+
+Build these from the [UTM standards](/utm-standards) before any URL goes anywhere. Values come from the names above, not from a fresh description of the campaign.
+
+| Parameter | Value | Where it comes from |
+| :-- | :-- | :-- |
+| `utm_source` | _E.g._ `google` | Source list, [section A](/utm-standards#a-source-standard-utm_source) |
+| `utm_medium` | _E.g._ `paid_search` | Medium list, [section B](/utm-standards#b-medium-standard-utm_medium). Match the spelling in your standard exactly |
+| `utm_campaign` | _E.g._ `Google-FBS-Search-Trial-tCPA-DAPRO-TOFU` | The **platform campaign name** above, character for character |
+| `utm_content` | _E.g._ `20260401-KW-REPORTAUTO` | The ad group name. One per group, from the structure table |
+| `utm_term` | _E.g._ `{keyword}` _on Search_ | Your per-platform rule, [section D](/utm-standards#d-content-and-term-standard-utm_content-utm_term) |
+
+**Full tagged URL, one per ad group:**
+
+`https://doughnutlabs.com/lp/fresh-batch-trial?utm_source=google&utm_medium=paid_search&utm_campaign=Google-FBS-Search-Trial-tCPA-DAPRO-TOFU&utm_content=20260401-KW-REPORTAUTO&utm_term={keyword}`
+
+<Warning>
+  `utm_campaign` carries the platform campaign name, not the marketing campaign name and not the brief's file name. The three are set out in [which name is which](/campaign-naming-conventions#which-name-is-which). A slug like `fresh-batch-trial` in this field will not join to anything in your platform export.
+</Warning>
+
+<Note>
+  On Search, `utm_term` carrying `{keyword}` means analytics cannot tell one ad from another in this campaign. That is the usual trade and it is a real one: ad-level performance is read in Google Ads instead. If this campaign needs ad-level reporting in your own dashboards, pick a route from [section D](/utm-standards#d-content-and-term-standard-utm_content-utm_term) and record it here.
+</Note>
 
 <Accordion title="Concept review: Naming and tracking">
   Google auto-tagging adds a `gclid` that links a click to Google Ads reporting. It does not populate the `utm_source` and `utm_medium` fields your own analytics groups by, which is why most accounts run both. Recording the decision here prevents the recurring argument about whether manual tags are redundant.
 
-  The three naming levels do the same job on Google as anywhere else: they let a report group spend by offer, funnel position, or creative type rather than only by the campaign it sat in.
+  The three naming levels do the same job on Google as anywhere else: they let a report group spend by product, offer, funnel position, or creative type rather than only by the campaign it sat in.
+
+  Auto-applied recommendations sit in this section because of what they do to everything above it. Left on, Google can rewrite ad copy, add keywords, and change the bid strategy without anyone approving the change, which means the value in this brief and the value running in the account quietly stop matching. Which recommendations are on is the media buyer's call and is out of scope for this framework to decide. Whether anyone knows is not: an unrecorded answer is how a reviewed brief becomes a description of a campaign that no longer exists.
 </Accordion>
 
 ## Experiment
@@ -189,7 +324,7 @@ Creative specs by campaign type: [Performance Max](/google-pmax-creative-specs),
 
 | Field | Fill in |
 | :-- | :-- |
-| [Experiment ID](/experiment-ids) | _E.g._ `TEST01` |
+| [Experiment ID](/experiment-id-concepts) | _E.g._ `TEST01` |
 | [Experiment brief](/experiment-brief) | _E.g. [Bid strategy test brief](https://link)_ |
 | Level the ID is applied at | _E.g. Campaign name_ |
 

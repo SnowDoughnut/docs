@@ -8,8 +8,12 @@ Take a Google campaign from an approved marketing campaign to a live, correctly 
 It applies to every Google campaign type. The type changes which assets and copy templates you need, not the order of the work.
 
 <Info>
-  This process uses the [**Google campaign brief**](/google-campaign-brief), the [**marketing campaign brief**](/marketing-campaign-brief), the three [naming conventions](/naming-conventions-overview), the [**UTM standards**](/utm-standards), the Google [creative specs](/image-and-video-specs) and [copy templates](/google-search-copy-template), and the [**Google pre-launch checklist**](/google-pre-launch-checklist).
+  This process uses the [**Google campaign brief**](/google-campaign-brief), the [**marketing campaign brief**](/marketing-campaign-brief), the three [naming conventions](/naming-conventions-overview), the [**UTM standards**](/utm-standards), the creative specs and copy templates [for your campaign type](/google-campaign-brief#assets-creative-and-copy), and the [**Google pre-launch checklist**](/google-pre-launch-checklist).
 </Info>
+
+<Note>
+  This is an operations process, not Google Ads training. It assumes a working account with conversion tracking installed, and it leaves keyword selection, negatives, bid adjustments, and asset rotation with the media buyer. See [what this framework covers](/what-this-framework-covers) for the full line.
+</Note>
 
 ## What you'll end up with
 
@@ -28,19 +32,21 @@ Every input below has to exist, or be deliberately marked as not applicable, bef
 | Input | Where it comes from | Required | If it doesn't exist yet |
 | :-- | :-- | :-- | :-- |
 | Parent marketing campaign | [Marketing campaign brief](/marketing-campaign-brief) | Always | Stop. Run the [campaign brief process](/campaign-brief-process) first |
+| Product being sold | [Product catalog](/product-catalog) | Always | Register it, with an identifier, before the brief references it |
 | Customer profile | [Customer profile library](/customer-profile-library-overview) | Always | Build it with the [B2B](/customer-profile-brief) or [B2C](/b2-c-customer-profiles) brief |
 | Conversion action | [Event tracking plan](/event-tracking-plan) | Always | Add a row using the [tracking plan overview](/event-tracking-plan-overview), then verify it imports and fires |
 | Destination | [Landing page library](/landing-page-library) | Always | Pick an existing page, or run [building a landing page](/landing-page-process) |
 | Creative or assets | [Creative brief process](/creative-brief-process), [creative drive](/creative-drive) | Always except text-only Search | Brief it. Allow production time before the launch date |
-| Copy | [Copy brief](/ad-copy-standards), Google [copy templates](/google-search-copy-template) | Always | Brief it via the [copywriting process](/copywriting-process) |
+| Copy | [Copy brief](/copy-brief), Google [copy templates](/google-search-copy-template) | Always | Brief it via the [copywriting process](/copywriting-process) |
 | Names, all three levels | [Campaign](/campaign-naming-conventions), [ad group](/ad-set-group-naming-conventions), [ad](/ad-name-conventions) | Always | Assemble from the dictionaries. Add a value if one is missing |
 | UTMs | [UTM standards](/utm-standards) | Always | Build them from the standard before the URLs go anywhere |
 | Budget | Marketing campaign brief, [budget planning](/budget-planning) | Always | Confirm the Google line item and its amount |
 | Product feed | [Merchant Center](/google-merchant-center-overview) | Shopping and retail PMax only | Build the feed from the [product CSV template](/google-merchant-center-product-csv-template) |
-| Experiment ID | [Experiment ID conventions](/experiment-ids) | Only if testing | Register one via [creating an experiment](/creating-an-experiment) |
+| Experiment ID | [Experiment ID concepts](/experiment-id-concepts) | Only if there's a control | Register one via [creating an experiment](/creating-an-experiment) |
+| Pilot brief | [Pilot brief](/pilot-brief) | Only if there's no control and no baseline | Set the read date and the kill or scale rule before launch |
 
 <Warning>
-  Asset coverage is the input most often underestimated on Performance Max and Demand Gen. A missing ratio or logo size doesn't throw an error, it silently removes the placements those assets would have served on. Check the [creative specs](/image-and-video-specs) for the type you're building before you promise a launch date.
+  Asset coverage is the input most often underestimated on Performance Max and Demand Gen. A missing ratio or logo size doesn't throw an error, it silently removes the placements those assets would have served on. Check the [specs for the campaign type you're building](/google-campaign-brief#assets-creative-and-copy) before you promise a launch date. Search is the exception: it is text only and needs no image or video assets.
 </Warning>
 
 ## The process at a glance
@@ -117,19 +123,46 @@ Copy the [**Google campaign brief**](/google-campaign-brief) and work down it. E
 
 The brief fixes campaign type, conversion goal, budget, bid strategy, and structure. Those get reviewed before the build. Keyword additions and negatives, target adjustments, and asset rotation stay with the media buyer, who is making those calls against live data.
 
+**Check the budget against the strategy before going further.** Two pieces of arithmetic decide whether the rest of the brief is realistic:
+
+1. **Daily, not monthly.** Google's budget field is a daily average. Divide the monthly budget by 30.4 to get it. Google can spend up to twice that figure on a single day and caps the month at daily × 30.4.
+2. **Enough conversions for the strategy.** Divide the monthly budget by the target cost per conversion. Target CPA wants roughly 30 conversions in 30 days; Target ROAS wants roughly 50. Below that, launch on a maximize strategy and record when you plan to switch.
+
+The full tables are in the brief, under [budget and bid strategy](/google-campaign-brief#budget-and-bid-strategy).
+
 <Warning>
-  A target-based bid strategy needs conversion volume behind it. Setting a target CPA or target ROAS on a campaign with a handful of monthly conversions gives the system too little signal to bid against, which shows up as erratic delivery rather than an obvious error. Start on a maximize strategy and record when you plan to switch.
+  A target-based bid strategy needs conversion volume behind it. Setting a target CPA or target ROAS on a campaign with a handful of monthly conversions gives the system too little signal to bid against, which shows up as erratic delivery rather than an obvious error.
 </Warning>
+
+<Note>
+  If the budget cannot buy enough conversions to judge the campaign at all, and there is no history to set a target from, you are running a [pilot](/pilot-brief) rather than a campaign. Give it a read date and a kill or scale rule before it launches.
+</Note>
 
 ## 5. Assemble names and UTMs
 
 Write all three names and the tagged URLs into the brief before opening Google Ads.
 
+**One tagged URL per ad group, not one per campaign.** `utm_content` carries the ad group name, so a campaign with three ad groups has three URLs. Tagging all three identically collapses them into one row in analytics, at exactly the level the campaign was organized around.
+
+Three values are worth checking against the standard rather than typing from memory:
+
+| Parameter | Value | Common error |
+| :-- | :-- | :-- |
+| `utm_campaign` | The platform campaign name, character for character | A slug of the marketing campaign name, which joins to nothing. See [which name is which](/campaign-naming-conventions#which-name-is-which) |
+| `utm_medium` | The exact spelling from your [medium list](/utm-standards#b-medium-standard-utm_medium) | `paid-search` where the standard says `paid_search` |
+| `utm_term` | Your per-platform rule | Assuming it carries the ad name on Search, where it usually carries `{keyword}` |
+
 Decide auto-tagging and manual UTMs together. Auto-tagging adds a `gclid` for Google Ads reporting; it does not fill the `utm_source` and `utm_medium` fields your analytics groups by. Most accounts run both, and the brief is where that decision gets recorded rather than re-argued.
 
-## 6. Register an experiment, if you're testing
+Record the auto-applied recommendations setting at the same time. Recommendations left on can rewrite ad copy, add keywords, and change the bid strategy after launch, which means the reviewed brief and the running campaign stop matching. Which ones are on is the media buyer's call; that somebody made the call is the brief's.
 
-Only if there is a control. Follow [creating an experiment](/creating-an-experiment): register the ID, apply it at the level the hypothesis targets, and don't change it after launch.
+## 6. Register an experiment or a pilot, if either applies
+
+**If there is a control**, follow [creating an experiment](/creating-an-experiment): register the ID, apply it at the level the hypothesis targets, and don't change it after launch.
+
+**If there is no control** and the spend exists to find out whether something works, it is a pilot. Fill in a [pilot brief](/pilot-brief): a read date, a budget ceiling, and the kill or scale rule, all set before launch. A new channel, a new product line, or a new market with no history usually falls here.
+
+**If it is neither**, skip this step.
 
 ## 7. Build the campaign, groups, and ads
 

@@ -39,9 +39,30 @@ _Examples below continue the Doughnut Labs brand introduced in [Naming conventio
 
 ### Marketing Campaign Name
 
+The initiative this campaign belongs to, as named in its [marketing campaign brief](/marketing-campaign-brief). One marketing campaign usually spawns several platform campaigns across several channels, and this is the identifier that lets a report add them back up.
+
 | Long form | Short form | Description | \[add value\] |
 | :-- | :-- | :-- | :-- |
 | _E.g. BFCM2027_ | _BC7_ | _Black Friday Cyber Monday Marketing Campaign 2027_ |  |
+| Fresh Batch spring trial | FBS | Spring 2026 trial acquisition push |  |
+| Always-on | AO | Not part of a time-boxed marketing campaign |  |
+| \[add marketing campaign\] |  |  |  |
+
+### Product
+
+The product or product line this campaign sells, using the identifier registered in the [product catalog](/product-catalog). Skip it if you sell one thing, or if the campaign is brand-level rather than product-level.
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. Doughnut Analytics Pro_ | _DAPRO_ | _Mid-market reporting automation plan_ |  |
+| Doughnut Analytics Starter | DASTART | Entry plan, self-serve |  |
+| Doughnut Automation | DAUTO | Workflow automation product line |  |
+| Brand | BRAND | Not selling a specific product |  |
+| \[add product\] |  |  |  |
+
+<Warning>
+  Add a value here only after it exists in the [product catalog](/product-catalog). An identifier invented at build time is a one-off value typed into a platform, which is how a closed list stops being closed.
+</Warning>
 
 ### Placement type
 
@@ -101,20 +122,50 @@ _Examples below continue the Doughnut Labs brand introduced in [Naming conventio
 | \[add funnel position\] |  |  |  |
 
 <Accordion title="Concept review: campaign-level identifiers">
-  These six categories describe the strategy behind a campaign, not its creative or its customer profile. That's what makes one campaign distinguishable from another at a glance: which channel it runs on, what it's optimizing for, and where it sits in the funnel. Not every channel uses every category. A Google Search campaign is often optimized through bid type rather than a platform-level budget type, while Meta's campaign budget optimization makes budget type the meaningful field and leaves bid type blank. When you assemble an actual name, skip whichever category a given channel doesn't use rather than inserting a placeholder into the string.
+  These eight categories describe the strategy behind a campaign, not its creative or its customer profile. That's what makes one campaign distinguishable from another at a glance: which channel it runs on, which initiative and product it belongs to, what it's optimizing for, and where it sits in the funnel.
 
-  If your program needs a seventh category, add a new table here following the same long form, short form, description pattern. Don't rename or remove one of the six above once a live campaign is using it.
+  Not every channel or campaign uses every category. A Google Search campaign is often optimized through bid type rather than a platform-level budget type, while Meta's campaign budget optimization makes budget type the meaningful field and leaves bid type blank. An always-on campaign belongs to no marketing campaign, and a single-product company has nothing to put in the product field. When you assemble an actual name, skip whichever category doesn't apply rather than inserting a placeholder into the string.
+
+  Marketing Campaign Name and Product are the two that decide what a report can total up. Without the first, spend can be grouped by channel and objective but never by the initiative that spans them, so "what did the spring push cost?" gets answered by hand. Without the second, spend can never be grouped by what it was selling, which is the question that arrives the moment a company has more than one thing to sell.
+
+  If your program needs a ninth category, add a new table here following the same long form, short form, description pattern. Don't rename or remove one of the eight above once a live campaign is using it.
 </Accordion>
+
+## Which name is which
+
+Three different strings get called "the campaign name," and mixing them up is the most common source of a broken join between platform spend and analytics.
+
+| Name | Where it comes from | Example | Used for |
+| :-- | :-- | :-- | :-- |
+| **Marketing campaign name** | The human name of the initiative, from its [marketing campaign brief](/marketing-campaign-brief) | "Fresh Batch spring trial push" | Talking about the work. Enters platform names as its short form, `FBS` |
+| **Platform campaign name** | This page. Assembled from the dictionaries above, typed into the ad platform | `Google-FBS-Search-Trial-tCPA-DAPRO-TOFU` | The name in the platform, and the value in `utm_campaign` |
+| **Brief file name** | [File naming conventions](/file-naming-conventions) | `DOC_google-fresh-batch-trial_2026-08-07_v01` | Naming the document, in the drive |
+
+<Warning>
+  Only the platform campaign name goes in `utm_campaign`, and it has to match the platform character for character. Putting the marketing campaign name or a slug of it in `utm_campaign` breaks the join that [UTM standards](/utm-standards) exists to protect.
+</Warning>
 
 ## Assemble the name
 
-Not every channel uses every category. Google Search leans on bid type, so its name skips budget type:
+Concatenate one value from each category that applies, in the order the tables appear above:
+
+`Channel - Marketing campaign - Placement - Objective - Budget type - Bid type - Product - Funnel position`
+
+A Search campaign for one product inside a named marketing campaign, using every category that applies:
+
+`Google-FBS-Search-Trial-tCPA-DAPRO-TOFU`
+
+Google Search leans on bid type, so its name skips budget type. Drop the marketing campaign and product identifiers too, for an always-on brand campaign at a single-product company, and the same convention produces:
 
 `Google-Search-Leads-tROAS-TOFU`
 
 Meta's campaign budget optimization makes budget type the meaningful field instead, so its name skips bid type:
 
 `Meta-Instagram-Awareness-CBO-TOFU`
+
+<Info>
+  Keep the order fixed even when categories are skipped. A name that omits budget type still lists bid type where bid type always sits, so a report can split the string on the delimiter and know which field it is reading.
+</Info>
 
 <Info>
   This document covers campaign-level identifiers, including this level's dictionary of values. See [Ad set / ad group / variant naming conventions](/ad-set-group-naming-conventions) and [Ad naming conventions](/ad-name-conventions) for the other two levels.
@@ -130,7 +181,7 @@ Testing identifiers mark a hypothesis you're currently running, for example a ca
 
 - With a testing identifier appended: `Meta-Instagram-Awareness-CBO-TOFU-TEST01`
 
-This document only covers where a testing identifier sits in the name. It doesn't cover how an [experiment ID](/glossary#experiment-id) gets created, how long it stays on an ad, or where the result gets logged once the test ends. Visit the [Experiment ID SOP](/experiment-ids) for that.
+This document only covers where a testing identifier sits in the name. It doesn't cover how an [experiment ID](/glossary#experiment-id) gets created, how long it stays on an ad, or where the result gets logged once the test ends. Visit the [Experiment ID concepts](/experiment-id-concepts) for that.
 
 ## Related resources
 
