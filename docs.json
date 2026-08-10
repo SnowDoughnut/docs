@@ -409,6 +409,12 @@
           {
             "dropdown": "Organic social",
             "pages": [
+              {
+                "group": "Briefs",
+                "pages": [
+                  "organic-social-post-brief"
+                ]
+              },
               "organic-social-home",
               {
                 "group": "Tutorials",
@@ -416,7 +422,9 @@
               },
               {
                 "group": "SOPs",
-                "pages": []
+                "pages": [
+                  "organic-social-post-process"
+                ]
               },
               {
                 "group": "How-tos",
@@ -432,7 +440,9 @@
               },
               {
                 "group": "Checklists",
-                "pages": []
+                "pages": [
+                  "organic-social-pre-publish-checklist"
+                ]
               },
               {
                 "group": "Content calender",
@@ -536,7 +546,9 @@
               },
               {
                 "group": "SOPs",
-                "pages": []
+                "pages": [
+                  "landing-page-process"
+                ]
               },
               {
                 "group": "How-tos",
