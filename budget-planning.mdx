@@ -1,12 +1,84 @@
 ---
 title: "Budget planning process"
-description: "How a campaign's budget is set and broken into line items before launch."
+description: "How a campaign budget gets set, split into line items, and tied to a target before launch, so pacing has something to pace against and the report at the end has something to judge."
 ---
 
-How the budget in a [marketing campaign brief](/marketing-campaign-brief) gets set and broken into line items before launch. See [budget pacing](/budget-pacing) for tracking spend once the campaign is live.
+Budget planning happens once per campaign, before anything is built. It produces the numbers that [budget pacing](/budget-pacing) tracks against and that [budget reporting](/budget-reporting-process) reports on.
+
+## What you'll end up with
+
+- A total budget with a flight window.
+- A split by channel, each line traceable to a reason.
+- A target for the primary KPI, so the spend can be judged as worth it or not.
+- A reserve, and a stated rule for what may draw on it.
+
+All four live in the Budget section of the [marketing campaign brief](/marketing-campaign-brief). This page is how you arrive at them.
+
+## Before you start
+
+| You need | Where it lives |
+| :-- | :-- |
+| The campaign objective | [Marketing campaign brief](/marketing-campaign-brief) |
+| A defined primary KPI | [Marketing reporting data dictionary](/marketing-reporting-data-dictionary), [KPI definitions](/kpi-definitions) |
+| Historical cost per result, if you have it | [Flat file](/flat-file-template) |
+| The channels in scope | The channels table in the brief |
+
+## The process
+
+<Steps>
+  <Step title="1. Start from the target, not the money">
+    Work backwards. If the campaign needs 400 signups and your historical cost per signup is \$45, the budget is roughly \$18,000 before you argue about it. Starting from an available number and asking what it can buy produces a budget nobody can judge afterwards.
+
+    Where there's no history, say so in the brief and treat the first flight as a learning budget with a smaller number and an explicit read date.
+  </Step>
+  <Step title="2. Split by channel, with a reason per line">
+    Every line item carries a reason, because "roughly 45%" is not a reason and cannot be revisited sensibly later.
+
+    | Line item | Amount | Reason |
+    | :-- | :-- | :-- |
+    | _E.g. LinkedIn ad spend_ | _E.g. \$18,000_ | _E.g. Only channel that reaches the named profile at useful volume_ |
+    | _E.g. Google search_ | _E.g. \$7,000_ | _E.g. Captures existing demand, lowest historical cost per lead_ |
+    | _E.g. Creative production_ | _E.g. \$4,000_ | _E.g. Three concepts, two formats each_ |
+    | _E.g. Reserve_ | _E.g. \$3,000_ | _E.g. 10%, released only on a positive read at week 3_ |
+    | \[add line\] |  |  |
+  </Step>
+  <Step title="3. Separate media from production">
+    Production is spent once, up front, and buys nothing directly. Media is spent over the flight and is what pacing tracks. Blending them makes a campaign look like it's overspending in week one every time.
+  </Step>
+  <Step title="4. Set the flight and the daily rate">
+    Divide the media budget by the flight length to get the expected daily rate. This single number is what [pacing](/budget-pacing) compares against, and it doesn't exist unless someone writes it down here.
+
+    _E.g. \$25,000 media over 50 days is \$500 a day. Platforms front-load, so expect week 1 to run above that and plan for it rather than reacting to it._
+  </Step>
+  <Step title="5. Hold a reserve, and say what releases it">
+    A reserve with no release rule gets either spent immediately or never. Name the condition and the person who decides.
+
+    _E.g. 10% reserve. Released by the head of growth if cost per signup at the week-3 read is at or below target. Otherwise it stays unspent._
+  </Step>
+  <Step title="6. Get budget approval, then record it">
+    Budget sign-off runs through the [approval process](/approval-process). Record the approved figure and date on the brief in the [campaigns library](/campaign-library-overview), because the question "what did we agree?" arrives at the retrospective.
+  </Step>
+</Steps>
+
+## What makes a budget hard to judge later
+
+| Choice | What it costs |
+| :-- | :-- |
+| Line items with percentages instead of reasons | Nobody can revisit the split intelligently |
+| Media and production blended | Pacing looks wrong every week 1 |
+| No daily rate | Pacing has no baseline |
+| No target for the KPI | Spend can't be judged as good or bad |
+| Reserve with no release rule | Spent by accident or never used |
+| Budget agreed in a message thread | Disputed at the retrospective |
+
+## Exceptions
+
+Always-on budgets don't have a flight, so set a monthly rate and a review date instead of an end date. Everything else on this page still applies: the split needs reasons, media stays separate from production, and the rate is what pacing checks against.
 
 ## Related resources
 
-- [Budget pacing](/budget-pacing)
-- [Budget reporting process](/budget-reporting-process)
-- [Marketing campaign brief](/marketing-campaign-brief)
+- [**Budget pacing process**](/budget-pacing) Tracking spend against this plan once live.
+- [**Budget reporting process**](/budget-reporting-process) Reporting both on a cadence.
+- [**Marketing campaign brief**](/marketing-campaign-brief) Where the budget is recorded.
+- [**Approval process**](/approval-process) Who signs the budget off.
+- [**Make a campaign**](/make-a-campaign) Where budget planning sits in the campaign path.

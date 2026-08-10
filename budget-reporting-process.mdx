@@ -1,12 +1,75 @@
 ---
 title: "Budget reporting process"
-description: "How spend and pacing get reported against the campaign budget on a recurring cadence."
+description: "How spend, pace, and efficiency get reported on a cadence: what each period covers, where the numbers come from, and how to report a variance without turning it into a story."
 ---
 
-How spend and [pacing](/budget-pacing) get reported against the [budget](/budget-planning) on a recurring cadence. See [reporting cadence](/reporting-cadence) for how often each report runs.
+Budget reporting answers three questions every period: what did we spend, are we on plan, and did the spend do anything. It reads from the same [flat file](/flat-file-template) as every other report, so the spend figure in a budget report and the spend figure in a performance report cannot disagree.
+
+## What each period covers
+
+| Period | Reports | Sits in |
+| :-- | :-- | :-- |
+| Weekly | Spend to date, [pace](/budget-pacing), cost per result, changes made | [Weekly report](/weekly-report-template) |
+| Monthly | The above, plus channel split against plan and reserve status | [Monthly report](/monthly-report-template) |
+| Quarterly | Total against approved budget, forecast to year end | [Quarterly report](/quarterly-report-template) |
+| Annual | Spend against the year's plan, and what the plan got wrong | [Annual report](/annual-report-template) |
+
+Cadence and ownership are set in [reporting cadence](/reporting-cadence). Each period is assembled from the one below it, not re-derived. See [reporting best practices](/reporting-best-practices).
+
+## What a budget report contains
+
+| Field | Source |
+| :-- | :-- |
+| Budget approved | The brief in the [campaigns library](/campaign-library-overview) |
+| Spend this period | [Flat file](/flat-file-template) |
+| Spend to date | Flat file, cumulative |
+| Pace | [Calculated](/budget-pacing) against the daily rate |
+| Forecast at flight end | Daily rate to date × days remaining, plus spend to date |
+| Cost per primary result | Defined in the [data dictionary](/marketing-reporting-data-dictionary) |
+| Changes made this period | The change log |
+| Reserve status | Untouched, released, or spent |
+
+## The process
+
+<Steps>
+  <Step title="1. Pull spend from the flat file">
+    Never from a platform dashboard. Platform figures move after the fact as billing reconciles, and a report built from them disagrees with itself a week later.
+  </Step>
+  <Step title="2. Reconcile against the approved budget">
+    Compare against the figure recorded on the brief, not against what people remember agreeing. If they differ, the budget was changed without being recorded, which is the finding.
+  </Step>
+  <Step title="3. Calculate pace and forecast">
+    Both from [budget pacing](/budget-pacing). The forecast is the number people act on, since it says what will happen rather than what has.
+  </Step>
+  <Step title="4. Read the change log before writing anything">
+    Most variances have a recorded cause. A budget shifted between channels on Tuesday explains Wednesday's movement, and reporting it as a performance change is simply wrong.
+  </Step>
+  <Step title="5. State the variance, then the cause, separately">
+    _Blurred:_ "Spend was 12% under because LinkedIn underperformed."
+
+    _Separated:_ "Spend finished 12% under plan. LinkedIn delivered 60% of its allocated budget; the audience was smaller than the platform estimate suggested."
+
+    The reader can then disagree with your explanation without disputing your number.
+  </Step>
+  <Step title="6. File it">
+    Into the archive for that period. The archive is what makes the next period assemblable without re-deriving anything.
+  </Step>
+</Steps>
+
+## Reporting an underspend honestly
+
+Underspend gets softened more often than overspend, because it feels like the safer error. It usually isn't: it means a plan was wrong, or a campaign couldn't deliver, and both are worth knowing.
+
+Report the amount, whether the cause was delivery or a deliberate decision, and whether the money was reallocated or simply not spent. "Came in under budget" without those three is not a finding.
+
+## Exceptions
+
+A campaign still in flight at period end reports spend to date and forecast, not a final figure. Mark it as in-flight so a later report showing a different total doesn't read as a contradiction.
 
 ## Related resources
 
-- [Budget planning process](/budget-planning)
-- [Budget pacing process](/budget-pacing)
-- [Reporting cadence](/reporting-cadence)
+- [**Budget planning process**](/budget-planning) Where the approved figure and daily rate come from.
+- [**Budget pacing process**](/budget-pacing) The calculation behind pace and forecast.
+- [**Report on results**](/report-on-results) The full reporting path.
+- [**Reporting best practices**](/reporting-best-practices) One source, separated observation and cause.
+- [**Reporting cadence**](/reporting-cadence) Who reports what, how often.
