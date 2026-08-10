@@ -100,6 +100,13 @@
             ]
           },
           {
+            "group": "Brand",
+            "pages": [
+              "brand-strategy-concepts",
+              "visual-identity-concepts"
+            ]
+          },
+          {
             "group": "Creative",
             "pages": [
               "creative",
@@ -132,12 +139,12 @@
             "pages": [
               "brand-system-overview",
               "brand-guidelines",
+              "positioning",
+              "messaging",
+              "brand-voice-and-tone",
               "visual-identity",
               "logo-usage",
-              "messaging",
-              "positioning",
-              "brand-assets",
-              "brand-voice-and-tone"
+              "brand-assets"
             ]
           },
           {

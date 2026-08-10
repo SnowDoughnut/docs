@@ -1,0 +1,105 @@
+---
+title: "Visual identity concepts"
+description: "The thinking behind the visual system: why logo rules are separated from the rest of the identity, why the asset register carries owners and expiry dates, and what causes a visual system to drift even when everyone follows it."
+---
+
+Three documents define what the brand looks like: [visual identity](/visual-identity), [logo usage](/logo-usage), and [brand assets](/brand-assets). The split isn't arbitrary. Each holds a different kind of information, and the kinds behave differently over time.
+
+This page explains the reasoning behind that structure and the failure modes each document is built to prevent. It isn't a fill-in workbook. Read it to understand the thinking, then fill in the three documents themselves.
+
+## What each document holds
+
+| Document | Holds | Nature of the content |
+| --- | --- | --- |
+| Visual identity | Color, typography, layout, imagery, iconography | Values and usage rules. Applied constantly, by many people |
+| Logo usage | Variants, clear space, sizes, backgrounds, misuse, co-branding | Constraints on one fixed object. Rarely changes, frequently broken |
+| Brand assets | The file register, formats, access, licensing, retirement | Inventory and governance. Goes out of date on its own |
+
+The logo gets its own document because it's the one element with more rules than uses. Everything else in the visual system is a set of ingredients a designer combines freely. The logo is a finished object that must not be combined with anything, and the rules protecting it (clear space, minimum size, no effects, no recoloring, no retyping) would swamp a general visual identity page if they sat inside it.
+
+Assets get their own document for the opposite reason. Nothing on that page is a design decision. It's a record of what exists, where it lives, who owns it, and what the license permits. Keeping it accurate is maintenance work.
+
+## Specification is the whole point
+
+A visual identity described in adjectives isn't a system. "Warm off-white" produces a different color in every hand it passes through, and after four designers have interpreted it, no two layouts share a background.
+
+The rule that makes the difference is that anything a reader has to interpret will be interpreted differently by the next reader. So the visual identity workbook asks for hex codes, a numbered type scale, and an 8-point spacing scale. "Warm off-white" and "generous whitespace" are descriptions, and each reader converts them into a different number.
+
+### Values in every color space
+
+Recording HEX, RGB, CMYK, and Pantone for each color looks redundant until you notice who needs each one. A printer cannot use a hex code. A developer cannot use a Pantone reference. A brand that records only its own team's format hands everyone else a conversion problem, and conversions between color spaces are lossy in ways that produce visibly different results.
+
+### Proportion is not the palette
+
+A palette lists what's allowed. Proportion describes what the brand actually looks like, and it's the part most often left unwritten.
+
+Two designers working from the same palette can produce layouts that share no visual relationship if one uses the brand color for large areas and the other uses it for a single button. Writing down a rough ratio, or at minimum naming which color dominates and which is reserved for a focal point, is what makes the palette produce a recognizable result. Without it, layouts come out compliant and unrelated.
+
+### Fallbacks and licenses belong with the typeface
+
+The two columns most often left blank in a typography table are the ones that cause visible problems. A licensed typeface will fail to load somewhere: a blocked font host, an email client, a partner's template. What renders instead is either a chosen fallback or a system default, and the second is how a brand ends up in Times New Roman.
+
+Licensing is scoped by use and by volume, and the limit tends to surface at the moment someone external needs the file. Recording the scope next to the typeface makes the boundary visible before it's crossed.
+
+## Accessibility is a palette constraint, not a review step
+
+Contrast checked at review time gets negotiated. A designer who has built a page around a color pairing has sunk work into it, and the conversation becomes about whether this particular case is really a problem.
+
+Contrast recorded in the palette, as a table of approved foreground and background pairings with their ratios, changes the shape of the decision. The designer is choosing from combinations that already pass, which means the constraint never becomes an obstacle to argue with.
+
+Brands differ on how they resolve a brand color that fails on body text. It can be kept and restricted to large text, headlines, and shapes, or the palette can be adjusted until it passes everywhere. Both approaches preserve accessibility. They cost different things, and the choice is worth making before launch.
+
+## Why the logo breaks most often
+
+Logo rules are violated by people acting reasonably. Nobody sets out to distort a logo. They set out to fit it into a space it doesn't fit, or to make it visible on a photograph where it disappears, and the distortion is the byproduct.
+
+That's why a misuse list works better than a general instruction. "Use the logo correctly" can be read as permission for whatever someone was about to do. "Do not stretch the logo to fill a space" names the specific impulse.
+
+Two cases deserve particular attention because they don't look like errors:
+
+**Retyping the wordmark.** Wordmarks are almost always customized after being set, with adjusted kerning or a modified letterform. A version retyped in the brand typeface looks close enough to pass review and enters circulation as a second logo.
+
+**Old files.** A logo pulled from a search result, a partner's site, or an old deck works perfectly well and may be several years out of date. Nothing about the file signals this, which is why the [brand assets](/brand-assets) register and the logo rules have to be read together.
+
+### Clear space defined as a proportion
+
+Clear space tied to a pixel value breaks at every other size. Tied to a letterform, the height of a capital letter in the wordmark, it scales by itself from a business card to a billboard. This is a small piece of specification that removes an entire class of exception.
+
+Minimum size works differently, because the floor is set by production method. Ink spreads on uncoated stock, embroidery cannot hold fine detail, and a thin stroke renders differently at different device pixel ratios. One minimum across all contexts is either too conservative for screens or too optimistic for anything physical.
+
+## Assets go stale whether or not anyone touches them
+
+The visual identity and logo documents describe rules, which stay true until someone changes them. The asset register describes a state of the world, which changes on its own.
+
+Product screenshots go out of date every time the interface ships. Photography consent expires on a date fixed in a release form. A font license renews or lapses. None of these produce a signal at the file itself, which is why the register carries owners and review dates alongside locations.
+
+### Duplicates are the failure mechanism
+
+A brand doesn't go out of date by having the wrong file in the right place. It goes out of date through copies: a logo attached to an email, saved to a desktop, embedded in a template, each one still working long after the original was replaced.
+
+A single source of truth only holds if reaching it is faster than reusing a copy someone already has. That makes convenience part of the governance design, and it's why most brands end up making logos publicly downloadable even when everything else is gated.
+
+### Retirement is the slow half of a rebrand
+
+Shipping a new asset takes a day. Removing the previous one from partner directories, printed material, email signatures, and third-party listings takes months, and it's the part that determines whether a visual change ever actually completes.
+
+Deleting the retired file seems tidy and creates a different problem, since someone maintaining an old artifact needs to identify what they're looking at. Archiving with a clear marker keeps the reference available without keeping it in circulation, and tracking where old versions still appear turns an open-ended intention into a list with owners.
+
+## Where the system connects to the work
+
+Downstream work links to the visual documents the same way it links to the verbal ones.
+
+| Downstream document | Pulls from |
+| --- | --- |
+| [Creative brief](/creative-brief) | The palette, type, imagery direction, and logo requirement for a specific deliverable |
+| [Image and video specs](/image-and-video-specs) | Platform dimensions, applied on top of the identity rules |
+| [Landing page standards](/landing-page-standards) | Type scale, spacing, and color usage |
+| [Brand approval process](/brand-approval-process) | What a review checks work against |
+
+## Related resources
+
+- [**Visual identity**](/visual-identity) The fill-in workbook for color, type, layout, and imagery.
+- [**Logo usage**](/logo-usage) The fill-in workbook for logo rules.
+- [**Brand assets**](/brand-assets) The fill-in register and governance rules for the files.
+- [**Brand strategy concepts**](/brand-strategy-concepts) The same layering applied to positioning, messaging, and voice.
+- [**Brand guidelines**](/brand-guidelines) The index to every brand document.
