@@ -1,11 +1,55 @@
 ---
 title: "Campaign QA checklist"
-description: "What to check on a live campaign: correct naming, working links, tracking firing, budget pacing on target."
+description: "What to check on a campaign that's already spending: first hour, first 48 hours, then weekly. Catches the failures that only appear once real traffic hits, and the ones that get quietly normalized if nobody looks."
 ---
 
-Checks to run once a campaign is live: names match the [naming conventions](/naming-conventions-overview), links resolve, [UTM parameters](/utm-parameters) fire correctly, and spend is [pacing](/budget-pacing) on target.
+Run this after launch, not instead of the [campaign launch checklist](/campaign-launch-checklist). A campaign can pass every pre-launch check and still be broken in ways only live traffic reveals.
+
+<Info>
+  Three passes with different jobs. The first hour catches things that are outright broken. The first 48 hours catches things that are working but wrong. The weekly pass catches drift.
+</Info>
+
+## First hour
+
+- Spend and impressions are registering on every platform. Zero after an hour usually means a rejected ad or an unmet audience condition, not a slow start.
+- No ads are in a rejected or limited state.
+- A real click on a live ad reaches the destination page.
+- The conversion event fires on that click, verified in the analytics tool rather than in the platform's own reporting.
+- The `utm_campaign` value arriving in analytics matches the campaign name exactly. Check the value that actually lands, not the one you intended.
+
+<Warning>
+  If the UTM value arriving in analytics differs in case or separator from the campaign name, stop and fix it now. Every hour it runs adds rows that will not join, and those rows cannot be repaired retrospectively.
+</Warning>
+
+## First 48 hours
+
+- The campaign appears as one row in the [flat file](/flat-file-template), not two. A split row means the naming and UTM join is broken.
+- Conversion counts in the platform and in analytics are in the same order of magnitude. They will not match exactly; they should not differ by a factor of ten.
+- Spend is [pacing](/budget-pacing) against the flight, not front-loading the whole budget into two days.
+- Every ad in the campaign has delivered something. An ad on zero impressions after two days is usually a placement or aspect ratio problem.
+- The destination page is holding up: no console errors, no broken form, no slow load on mobile.
+- If a test is running, the [experiment ID](/experiment-id) is present on the rows arriving in the flat file.
+
+## Weekly, while it runs
+
+- Names have not been edited in any platform. A renamed campaign splits its own history.
+- No new ad has been added outside the naming convention. Ads added mid-flight are where conventions usually break.
+- Budget changes have been recorded in the change log, so next week's report can explain the movement.
+- Creative is not being swapped without a brief. A new asset needs a [creative brief](/creative-brief) even mid-campaign.
+- Any claim added to new copy is still on the approved list in [messaging](/messaging).
+- Guardrail metrics are being watched, not just the primary one.
+
+## Before you call anything a result
+
+- The campaign has run long enough for the conversion window to close.
+- The numbers come from the flat file, not from a platform dashboard.
+- The metric being reported matches its definition in the [data dictionary](/marketing-reporting-data-dictionary).
+- Anything surprising has been checked against [data quality and rollup concepts](/data-quality-and-rollup-concepts) before it gets reported as performance.
 
 ## Related resources
 
-- [Campaign launch checklist](/campaign-launch-checklist)
-- [Budget pacing](/budget-pacing)
+- [**Campaign launch checklist**](/campaign-launch-checklist) The pass that runs before this one.
+- [**Make a campaign**](/make-a-campaign) The full campaign path.
+- [**Budget pacing**](/budget-pacing) How spend is expected to track.
+- [**Report on results**](/report-on-results) Turning a finished campaign into a report.
+- [**Campaign retrospective**](/campaign-retrospect-process) What happens when it ends.

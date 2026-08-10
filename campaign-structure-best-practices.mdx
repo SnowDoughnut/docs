@@ -1,0 +1,65 @@
+---
+title: "Campaign structure best practices"
+description: "How to structure a campaign so it stays readable in reporting and testable later: what belongs at each level, how many ad sets is too many, and the structural choices that quietly destroy your data."
+---
+
+Structure decisions get made in ten minutes at build time and are lived with for a year. These are the ones that tend to matter, drawn from the [naming conventions](/naming-conventions-overview), the [campaign brief process](/campaign-brief-process), and the per-platform processes.
+
+## Structure for the report you'll have to write
+
+The question to ask before building is not "what will perform?" but "what will I need to compare in six weeks?" Structure is what makes a comparison possible. If audience and creative both vary inside one ad set, no report can separate their effects, and no amount of analysis afterwards will recover the answer.
+
+One variable per level is the practical version:
+
+| Level | Varies by | Doesn't vary by |
+| :-- | :-- | :-- |
+| Campaign | Objective, funnel stage, market | Creative |
+| Ad set or ad group | Audience, placement, budget | Message |
+| Ad | Creative and copy execution | Audience |
+
+## Fewer, larger ad sets usually beat many small ones
+
+Splitting an audience across eight ad sets divides the conversion signal eight ways. Each one then takes longer to leave the learning phase, and several never leave it at all. The split feels like control and behaves like noise.
+
+Split when the split is a decision you'll act on: a different budget, a different bid, a genuinely different audience you would pause independently. Don't split to see a breakdown you could get from a report.
+
+## Name it before you build it
+
+Every convention assumes the name exists before the object does. Building first and naming later is where conventions break, because the platform is already collecting rows.
+
+- Assemble the name from [campaign naming conventions](/campaign-naming-conventions) in a document, then paste it in.
+- Build the [UTM](/utm-standards) from the same values at the same time, so the two cannot drift.
+- If a value you need isn't in the convention's list, add it to the convention first. A one-off value typed into a platform is how a closed list stops being closed.
+
+## Don't rename anything after launch
+
+A renamed campaign splits its own history: rows before the change carry the old name, rows after carry the new one, and every report treats them as two campaigns. There is no way to repair this retrospectively in most platforms.
+
+If a name is wrong, the cheapest moment to fix it is the first hour. After that, note the exception and live with it.
+
+## Give a test its ID before it exists
+
+If any part of the campaign is a test, register the [experiment ID](/experiment-id) first and apply it at the level the hypothesis targets. A variant built without an ID cannot be found again once the campaign is one of forty in an account.
+
+## Structural mistakes that cost the most
+
+| Mistake | What it costs |
+| :-- | :-- |
+| Audience and creative varying in the same ad set | The result is uninterpretable |
+| Eight ad sets where two would do | Signal split, learning phase never exits |
+| Naming after building | Broken join to analytics, forever |
+| Renaming mid-flight | History splits in two |
+| Ad added mid-campaign outside the convention | One row silently missing from every report |
+| No experiment ID on a variant | The winning variant can't be identified later |
+
+## Before you build
+
+Structure is downstream of the brief. If the [marketing campaign brief](/marketing-campaign-brief) doesn't name the objective, the profile, and the message, the structure is being invented at build time and will reflect whatever seemed reasonable that afternoon.
+
+## Related resources
+
+- [**Make a campaign**](/make-a-campaign) The full path from brief to live.
+- [**Naming conventions overview**](/naming-conventions-overview) How the conventions relate.
+- [**Campaign launch checklist**](/campaign-launch-checklist) The pass before anything spends.
+- [**Tracking best practices**](/tracking-best-practices) The other half of a readable report.
+- [**Experimentation best practices**](/experimentation-best-practices) If any of this is a test.

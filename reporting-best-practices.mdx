@@ -1,0 +1,69 @@
+---
+title: "Reporting best practices"
+description: "How to produce reports people trust: one source, one definition per metric, movements explained by the change log rather than by narrative, and the habits that stop a number being argued about every month."
+---
+
+Applied guidance for the [reporting framework](/reporting-framework-concepts) and the [report templates](/report-on-results). Most reporting problems are not analysis problems, they're agreement problems.
+
+## One source, always
+
+Every report reads from the [flat file](/flat-file-template). Not from a platform dashboard, not from an export someone made last week. Two sources produce two answers and no way to adjudicate between them, and the meeting becomes about which number is right instead of what to do.
+
+If a figure can't be produced from the flat file, that's a gap in the flat file, not a reason to go around it.
+
+## Define the metric before you report it
+
+Every metric in a report has a row in the [marketing reporting data dictionary](/marketing-reporting-data-dictionary) with one definition, one owner, and one grain. A metric invented for a single report is a metric nobody can reproduce next month.
+
+Where two teams already use the same word differently, the dictionary is where that gets settled once.
+
+## Check the change log before writing the narrative
+
+Most surprising movements have a boring cause: a budget shift, a tracking fix, a naming correction, a platform outage. Checking the change log first stops a reporting artifact being written up as performance, which is the fastest way to lose a report's credibility.
+
+## Say what happened, then what you think it means, separately
+
+Readers need to be able to disagree with your interpretation without disputing your numbers. Keeping the observation and the explanation in separate sentences makes that possible.
+
+_Blurred:_ "Conversions fell 12% because the new creative underperformed."
+_Separated:_ "Conversions fell 12% week on week. The new creative launched Tuesday and carries most of the drop, though spend also shifted to a new audience the same day."
+
+[Report writing concepts](/report-writing-concepts) covers this in more depth.
+
+## Roll up, don't rewrite
+
+A monthly report is assembled from weeks that already reconciled. A quarterly report is assembled from months. Re-deriving a period from raw data produces a number that disagrees with the reports already sent, and someone will notice.
+
+| Period | Built from |
+| :-- | :-- |
+| [Weekly](/weekly-reporting-process) | Flat file rows for the week |
+| [Monthly](/monthly-reporting-process) | The weeks, reconciled |
+| [Quarterly](/quarterly-reporting-process) | The months |
+| [Annual](/yearly-reporting-process) | The quarters |
+
+## Report the counter-metric next to the north star
+
+A number that only moves up is a number nobody is stress-testing. The [counter-metric](/glossary#counter-metric) doesn't need its own target, only visibility in the same report, so that improvement bought at a cost is visible as such.
+
+## File it, every time
+
+Save each report to its archive. The archive is what makes the next period's report possible without re-deriving anything, and it's the only record of what was believed at the time.
+
+## The habits that cause trouble
+
+| Habit | Consequence |
+| :-- | :-- |
+| Pulling a number from a platform "just this once" | Two sources, permanent disagreement |
+| A metric with no dictionary row | Argued about every month |
+| Explaining a movement without checking the change log | Artifact reported as performance |
+| Rebuilding a period from scratch | Contradicts a report already sent |
+| Reporting only the headline metric | Damage stays invisible |
+| Not filing the report | Next period costs three times as much |
+
+## Related resources
+
+- [**Report on results**](/report-on-results) The full path, setup and production.
+- [**Marketing reporting data dictionary**](/marketing-reporting-data-dictionary) One definition per metric.
+- [**Reporting framework concepts**](/reporting-framework-concepts) The reasoning.
+- [**Report writing concepts**](/report-writing-concepts) Writing the narrative.
+- [**Data quality and rollup concepts**](/data-quality-and-rollup-concepts) Why periods have to reconcile.

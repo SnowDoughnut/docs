@@ -1,0 +1,64 @@
+---
+title: "Experimentation best practices"
+description: "How to run tests whose results survive scrutiny: writing the decision rule before launch, sizing the test honestly, watching guardrails rather than the primary metric, and recording the tests that showed nothing."
+---
+
+Applied guidance for the [experiment brief](/experiment-brief) and [creating an experiment](/creating-an-experiment). Most bad experiments are not badly analyzed, they're badly committed to.
+
+## Write the decision rule before you launch
+
+Decide, in the brief, what result causes what action. Both directions.
+
+_E.g. If the variant lifts trial starts by 5% or more at 95% confidence, Doughnut Labs ships it. Below that, or if average order value drops more than 2%, it reverts._
+
+A rule written after seeing data is not a rule, it's a rationalization, and any flat test can be read as a win once you're allowed to pick the metric afterwards.
+
+## Size it before you run it
+
+Work out how long the test needs to run to detect the effect you care about, using [statistical significance](/statistical-significance). If the answer is longer than you're willing to wait, the honest options are to test a bigger change, accept a lower confidence level and say so, or not run it.
+
+Running an underpowered test and reporting the result as if it were conclusive is the most common failure in the whole discipline.
+
+## Don't peek
+
+Checking significance repeatedly and stopping when it crosses the threshold inflates false positives substantially. The result looks the same as a real one and isn't. [Peeking](/glossary#peeking) covers the mechanism.
+
+Watch the [guardrail metrics](/glossary#guardrail-metric) daily for damage. Watch the primary metric at the end.
+
+## One variable, or you learn nothing
+
+If the variant changes the headline and the image and the audience, a win tells you the bundle beat the control. It doesn't tell you which part to keep, and the next test starts from scratch.
+
+Bundled tests are legitimate when you genuinely want to know whether a whole new approach beats the old one. They're a mistake when someone wanted three answers and had time for one test.
+
+## Give it an ID before it exists
+
+Register the [experiment ID](/experiment-id) and apply it to every surface the test touches: campaign and ad names, [UTM values](/utm-standards), and the analytics events. A variant with no ID cannot be found again once the account has forty campaigns in it, which means the result cannot be reproduced or even located.
+
+## Record the nulls
+
+A test that showed nothing is a real finding, and the most commonly discarded one. File it in the [experiment learning library](/experirment-learning-home) with the same care as a win. Otherwise the same test gets re-run next quarter by someone who had the same good idea.
+
+## Roll the result into a standard
+
+A win that stays in a brief is a win that gets forgotten. If a test establishes that something works, write it into the standard it belongs to: the [copy brief](/ad-copy-standards), the [landing page standards](/landing-page-standards), the relevant convention. That's what turns one result into a default.
+
+## The failures, ranked by damage
+
+| Failure | Damage |
+| :-- | :-- |
+| Decision rule written after seeing data | Every result becomes a win |
+| Peeking until significance | False positives shipped as truth |
+| Underpowered test reported as conclusive | Confident decisions on noise |
+| No guardrail metric | Lift in one number hides loss in another |
+| Several variables at once | Result can't be acted on |
+| No ID on the surfaces | Result can't be traced or reproduced |
+| Nulls discarded | The same test runs again |
+
+## Related resources
+
+- [**Run an experiment**](/run-an-experiment) The full path.
+- [**Experiment brief**](/experiment-brief) The workbook.
+- [**Creating an experiment**](/creating-an-experiment) The detailed process.
+- [**Statistical significance**](/statistical-significance) Sizing and interpreting.
+- [**Experiment review process**](/experiment-review-process) Judging the result.

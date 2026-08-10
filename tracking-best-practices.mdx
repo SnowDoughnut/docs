@@ -1,0 +1,66 @@
+---
+title: "Tracking best practices"
+description: "How to keep platform spend, tagged clicks, and recorded events joining to the same rows: closed lists, case discipline, naming events before implementation, and the failures that only show up in a report weeks later."
+---
+
+Applied guidance for [UTM standards](/utm-standards) and the [event tracking plan](/event-tracking-plan). Tracking fails quietly, which is what makes these worth writing down.
+
+## Every parameter is a closed list
+
+An open field where anyone can type produces `paid_social`, `Paid Social`, and `paidsocial` as three channels in the same report. The values are not descriptions, they're keys.
+
+- Write the allowed values into [UTM standards](/utm-standards), one list per parameter.
+- Adding a value is a decision someone makes on the convention page, not something typed at build time.
+- Lowercase everything, and pick one separator. Most analytics tools are case sensitive and will not tell you they're splitting your data.
+
+## The campaign name and the utm_campaign value are one decision
+
+They have to match exactly. Build them together, from the same source values, in the same document, before either goes into a platform. If they're produced separately by different people at different times, they will diverge, and platform spend will never join to analytics conversions.
+
+## Name events before anyone implements them
+
+An event renamed after launch splits its history in two, and no amount of care afterwards merges it back. The pattern lives in [event naming conventions](/event-naming-conventions) and gets decided before the first implementation ticket.
+
+Record every event once in the [event tracking plan](/event-tracking-plan), with its properties, where it fires, and who owns it. An event that exists in three tickets and no plan will be implemented three slightly different ways.
+
+## Verify firing, not existence
+
+An event created in a tool is not an event firing on a page. Check the event arriving, with its properties populated, from a real click on the live page. This is the single most common gap between "tracking is set up" and "tracking works".
+
+Same for UTMs: check the value that actually lands in analytics, not the one you pasted into the builder. Redirects strip parameters.
+
+## Tag the channels people forget
+
+Paid links get tagged because someone builds them in a platform. The ones that get missed are the ones a person pastes by hand:
+
+- Email links, including in automated sequences and signatures.
+- Links in social bios and stories.
+- Partner and affiliate placements.
+- QR codes and print.
+
+Untagged traffic lands as direct, and the channel looks like it does nothing.
+
+## Match the grain to the dictionary
+
+The [marketing reporting data dictionary](/marketing-reporting-data-dictionary) declares the grain each metric lives at. If events arrive at a different grain than the dictionary assumes, the [flat file](/flat-file-template) will still populate and every number in it will be subtly wrong. Check the two agree before the first report, not after someone questions a figure.
+
+## The failures and when they surface
+
+| Failure | When you notice |
+| :-- | :-- |
+| Case mismatch between name and UTM | First report, as two rows for one campaign |
+| Renamed campaign or event | When a trend line breaks for no reason |
+| Untagged email or bio link | When direct traffic looks implausibly large |
+| Event created but not firing | When conversions are zero and spend isn't |
+| Redirect stripping parameters | When a specific channel reports no source |
+| New value typed at build time | When a report has a category nobody recognizes |
+
+Every one of these is cheap to prevent and expensive to repair, because the rows already collected cannot be recovered.
+
+## Related resources
+
+- [**Set up tracking**](/set-up-tracking) The full path.
+- [**UTM standards**](/utm-standards) The workbook for tagging.
+- [**Event tracking plan**](/event-tracking-plan) The workbook for events.
+- [**Data quality and rollup concepts**](/data-quality-and-rollup-concepts) What breaks downstream.
+- [**Campaign QA checklist**](/campaign-qa-checklist) Where most of this gets verified.

@@ -135,6 +135,18 @@
               "seo-and-geo-concepts",
               "article-brief-concepts"
             ]
+          },
+          {
+            "group": "Best practices",
+            "pages": [
+              "campaign-structure-best-practices",
+              "copy-best-practices",
+              "creative-best-practices",
+              "tracking-best-practices",
+              "reporting-best-practices",
+              "experimentation-best-practices",
+              "article-best-practices"
+            ]
           }
         ]
       },
