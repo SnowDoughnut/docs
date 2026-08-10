@@ -1,0 +1,88 @@
+---
+title: "Email pre-send checklist"
+description: "The last pass before an email goes out: segment and suppressions correct, authentication passing, every link working and tagged, rendering checked in light and dark mode, unsubscribe present."
+---
+
+Run this before sending a broadcast or activating a sequence. Email is the one channel here with no pause button: once a send goes out it cannot be recalled, corrected, or paused mid-flight.
+
+<Info>
+  This checklist assumes the [email campaign process](/email-campaign-process) has been followed and the [email campaign brief](/email-campaign-brief) is complete.
+</Info>
+
+## Brief and inputs
+
+- The [email campaign brief](/email-campaign-brief) is complete and every linked document resolves.
+- The parent [marketing campaign brief](/marketing-campaign-brief) lists email in its channels table.
+- Copy is approved and came from the [copy brief](/ad-copy-standards), not written in the platform.
+- Design meets the [email creative specs](/email-creative-specs).
+
+## Audience
+
+- The segment matches the definition written in the brief.
+- **The contact count matches the estimate in the brief.** A sharp difference means the query doesn't say what you think it says.
+- Every suppression in the brief is applied: customers, unsubscribes, hard bounces, and anyone in a competing send this week.
+- Every contact has a recorded consent basis.
+- The test recipients are excluded from the live send.
+
+<Warning>
+  Check the count before sending, every time. A segment that returns ten times the expected contacts is the single most expensive error in email, and it is visible in one number before anything goes out.
+</Warning>
+
+## Authentication and deliverability
+
+- SPF, DKIM, and DMARC pass on the sending domain.
+- The List-Unsubscribe header is present, one-click where supported.
+- An unsubscribe link is in the body and it works.
+- A physical postal address is in the footer.
+- Send volume is within the normal range for this domain, or the domain has been warmed for it.
+- An inbox placement or seed test has been run.
+
+## Content
+
+- Subject line matches the brief.
+- **Preview text is set**, not falling back to the first line of the email.
+- From name, from address, and reply-to match the brief.
+- **The reply-to address is monitored by someone.**
+- No placeholder text remains anywhere in the email.
+- Personalization tokens resolve, and empty-field fallbacks read correctly.
+- The offer and call-to-action wording match the landing page exactly.
+
+## Links and tracking
+
+- **Every link has been clicked in a test email**, including links inside images and buttons.
+- Every link carries [UTMs](/utm-standards) built to the standard.
+- `utm_content` distinguishes this send from the others in its sequence.
+- The conversion action matches a row in the [event tracking plan](/event-tracking-plan) by name.
+- No link points to a staging or preview URL.
+
+## Rendering
+
+- Tested in at least one webmail client, one mobile app, and one desktop client.
+- **Checked in both light and dark mode.** Logos and text remain legible against an inverted background.
+- The email is not clipped. Total HTML size is under the threshold in the [email creative specs](/email-creative-specs).
+- Images have alt text that reads sensibly when images are blocked.
+- The email is readable with images off entirely.
+
+## Naming
+
+- Campaign or flow name matches the [campaign naming conventions](/campaign-naming-conventions).
+- Segment name matches the [ad set / ad group / variant conventions](/ad-set-group-naming-conventions).
+- Send name matches the [ad naming conventions](/ad-name-conventions).
+
+## Send settings
+
+- Send time and timezone match the brief.
+- For a sequence: the trigger, the timing between sends, and the **exit condition** are all set.
+- Scheduled date and time are correct, including year.
+
+## Sign-off
+
+- Approvals recorded, per the [approval process](/approval-process), including any [legal](/legal-review-process) or [brand](/brand-approval-process) review the work needed.
+- The owner has confirmed the build against the brief.
+- For a sequence, a review date is recorded in the brief.
+
+## Related resources
+
+- [**Launching an email campaign**](/email-campaign-process) The process this checklist closes out.
+- [**Email campaign brief**](/email-campaign-brief) What the build is checked against.
+- [**Email creative specs**](/email-creative-specs) Size thresholds, dark mode, and image handling.

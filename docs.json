@@ -444,13 +444,22 @@
             "dropdown": "Email",
             "pages": [
               "email-home",
+              "email-creative-specs",
+              {
+                "group": "Briefs",
+                "pages": [
+                  "email-campaign-brief"
+                ]
+              },
               {
                 "group": "Tutorials",
                 "pages": []
               },
               {
                 "group": "SOPs",
-                "pages": []
+                "pages": [
+                  "email-campaign-process"
+                ]
               },
               {
                 "group": "How-tos",
@@ -466,7 +475,9 @@
               },
               {
                 "group": "Checklists",
-                "pages": []
+                "pages": [
+                  "email-pre-send-checklist"
+                ]
               },
               {
                 "group": "Automations",
