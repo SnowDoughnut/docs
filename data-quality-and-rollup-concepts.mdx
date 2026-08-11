@@ -73,6 +73,14 @@ Two ideas need to be visible on every row for a rollup to work without silently 
 
 **Granularity** distinguishes a daily row from a weekly one from a monthly one. Mixing granularities in the same file is genuinely useful, recent detail at the daily level and older history at the weekly level, but only if every calculation filters to a single granularity before adding anything up. Summing a week's row on top of the daily rows that made it up is the same double-counting mistake as summing a cumulative number, just in a different disguise.
 
+### The same problem exists sideways, and it is the one people miss
+
+Granularity is usually discussed as a question about time, but the identical trap opens along the entity axis. A file that stores spend per channel and spend per campaign holds the same money twice: once as one row, once as the forty rows that make it up. Nothing about the two looks different at a glance, and a pivot table that doesn't distinguish them will happily report double the spend that actually occurred.
+
+The fix is the same shape as the fix for time: name the level on every row and filter to one level before summing. In the [flat file](/flat-file-template) that column is `grain`, and it takes one of `channel`, `campaign`, `ad_group`, or `ad`.
+
+This is also what makes a naming convention pay off. The reason campaign, ad set, and ad names are built from closed lists is that each name is a join key, and a join key only works if it arrives in the reporting file as its own column rather than as a string somebody reads. A convention with no column to land in produces tidy names and no new answers.
+
 ### The rollup also carries the estimate flag forward
 
 A number calculated before its inputs have fully settled, spend before a platform's final reconciliation, cost of goods before a finance close, is legitimately useful for an early read, but it should be marked as an estimate everywhere it appears. When a monthly figure rolls up from four weekly figures and one of them was still an estimate at the time, the monthly figure inherits that same uncertainty until the underlying weekly number gets reconciled and the estimate flag comes off.

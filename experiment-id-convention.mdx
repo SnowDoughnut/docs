@@ -11,10 +11,10 @@ _This page is a workbook. You fill in each section to define your own experiment
 
 <Steps>
   <Step title="Define your pattern and rules first">
-    Sections A through C set the rules everyone will follow. Decide these as a team so the choices stick.
+    Sections A through D set the rules everyone will follow, including which arm of a test carries the ID. Decide these as a team so the choices stick.
   </Step>
   <Step title="Then define your process">
-    Sections D and E cover when to create an ID and how to log it, so the rules get applied the same way every time.
+    Sections E and F cover when to create an ID and how to log it, so the rules get applied the same way every time.
   </Step>
   <Step title="Read the concept reviews where a choice is unclear">
     Each dropdown explains why the section exists and what the tradeoffs are, so you can decide rather than guess.
@@ -54,7 +54,43 @@ _E.g. Random alphanumeric, four characters after a dash. Examples: `TEST-8H2P`, 
   The look-alike character rule matters only if a human ever reads or retypes an ID: `O` versus `0`, or `I`, `l`, and `1`, are easy to confuse by eye or by ear. If your IDs are always copied and pasted by machine, this one may not apply to you, which is exactly the kind of call this section is asking you to make.
 </Accordion>
 
-## C. What "unique" means for your team
+## C. Control and variants
+
+One test has one ID, and a test has at least two arms. This section decides which of them carries it.
+
+**The control keeps its ordinary name, with no test segment. Only the arms under test carry the ID.**
+
+| Object | What its name carries | Example |
+| :-- | :-- | :-- |
+| Control | Standard identifiers only. No test segment | `AutoGlaze-STATIC-DISCOUNT-TRY-LP` |
+| The variant | Standard identifiers, then the ID | `AutoGlaze-STATIC-SOCIALPROOF-TRY-LP-TEST-8H2P` |
+| A second or third variant | Standard identifiers, the ID, then a variant letter | `AutoGlaze-STATIC-URGENCY-TRY-LP-TEST-8H2P-C` |
+
+**Fill in your rules:**
+
+| Rule | Your decision |
+| :-- | :-- |
+| Does the control carry the ID? | _E.g. No. The control is whatever was already running, and it keeps the name it already has._ |
+| Do the variants carry it? | _E.g. Yes, appended after the standard identifiers._ |
+| More than one variant | _E.g. Append a letter after the ID: `TEST-8H2P-B`, `TEST-8H2P-C`. The first variant carries no letter._ |
+| Where the control is recorded | _E.g. In the [experiment brief](/experiment-brief) variants table and in the log below, by its exact platform name._ |
+| What makes two arms distinguishable | _E.g. A different [message angle](/ad-name-conventions#message-angle) value where only the copy changes._ |
+
+<Warning>
+  Never append an ID to an object that is already live. Adding `TEST-8H2P` to a running ad renames it, which splits its history in two: rows before the change carry the old name, rows after carry the new one, and every report treats them as two ads. That is precisely the ad you need an unbroken baseline for. See [don't rename anything after launch](/campaign-structure-best-practices#dont-rename-anything-after-launch).
+</Warning>
+
+<Accordion title="Concept review: Why the control stays untagged">
+  The two arms of a test are not symmetrical, even though a brief lists them side by side. The variant is a new object created for the test and destroyed or promoted when it ends. The control is usually the thing that was already running, and will keep running afterwards whatever the result.
+
+  Tagging both arms has an obvious appeal: one filter returns the whole test. It costs a rename of a live object, and a renamed object splits its own history at exactly the moment you need a clean before-and-after. Leaving the control alone keeps its history continuous and keeps the ID meaning something specific, which is "this exists because of a test."
+
+  What that costs is a one-step read. Filtering the [flat file](/flat-file-template) on `experiment_id` returns the variants, not the control, so the control's rows have to be pulled by its ad name over the same window. That is why the control's exact platform name is recorded in the brief and the log rather than left to be recognised later. A test whose control cannot be identified six weeks on has no result, only a number.
+
+  Teams that build both arms fresh, where nothing is being renamed because nothing was live, sometimes tag both and accept the extra object. That works too. What does not work is deciding per test, because then no filter means the same thing twice.
+</Accordion>
+
+## D. What "unique" means for your team
 
 **How will you guarantee no two tests share an ID? Describe your rule:**
 
@@ -66,7 +102,7 @@ _E.g. Every ID is checked against the experiment log before it's assigned. Becau
   How you protect uniqueness depends on your pattern. A sequential counter is self-protecting as long as one source owns the count. A date-based ID can collide when two tests launch the same day, so those teams usually add a suffix. Random codes rarely collide but can, which is why a pre-assignment check against a shared log is the common safeguard. The right rule is the one that matches the pattern you chose in section A.
 </Accordion>
 
-## D. When you create the ID
+## E. When you create the ID
 
 **Write the point in your process where the ID gets created, and the steps for creating it:**
 
@@ -78,7 +114,7 @@ _E.g. We create the ID when we set up the experiment brief, before the test laun
   The rule that carries the most weight here is not changing an ID after a test goes live. Once a test launches, the code is referenced by the live campaign, by any dashboard filter, and by data that's already been collected. Change it and you sever the link between the brief, the campaign, and the reports that already used the old code, and there's no clean way to stitch them back together.
 </Accordion>
 
-## E. Your experiment log
+## F. Your experiment log
 
 **Describe where your single experiment log lives and what each entry records. Fill in the columns you'll track:**
 
@@ -88,6 +124,8 @@ _E.g. We create the ID when we set up the experiment brief, before the test laun
 | Test name | _E.g. Instagram awareness CBO, top-of-funnel creative test_ |
 | Launch date | _E.g. 2026-07-14_ |
 | Brief link | _E.g. Link to the brief record in Notion_ |
+| Control object name | _E.g. `AutoGlaze-STATIC-DISCOUNT-TRY-LP`, the exact platform name_ |
+| Variant object names | _E.g. `AutoGlaze-STATIC-SOCIALPROOF-TRY-LP-TEST-8H2P`_ |
 | Status | _E.g. Live, complete, or archived_ |
 | \[add column\] |  |
 
@@ -104,10 +142,13 @@ _E.g. We create the ID when we set up the experiment brief, before the test laun
 **Confirm every place the ID needs to appear in your stack. Keep the ones that apply, add any that are specific to you:**
 
 - The experiment brief in your project management tool
-- The campaign, ad set, or ad name in the ad platform
+- The **variant** campaign, ad set, or ad name in the ad platform, per section C
+- The `experiment_id` column in the [flat file](/flat-file-template#dimension-columns)
 - Tags, filters, or dashboards in your BI tool
 - UTM parameters such as `utm_content` or `utm_campaign`, if the test links to a tracked landing page
 - \[add your own destination\]
+
+**Where it deliberately does not go:** the control. Its name stays as it is, and it is found by the name recorded in the brief and the log.
 
 <Accordion title="Concept review: One ID, every surface">
   An experiment ID only earns its keep if it appears everywhere the test shows up. The point is to trace one test across tools without searching by full campaign name and without confusing two similarly named campaigns.

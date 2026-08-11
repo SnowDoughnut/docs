@@ -75,6 +75,8 @@ Work down the top of the brief. Record who owns the test and what kind of test i
 - **Hypothesis:** the change you're making, the outcome you expect, and why.
 - **Metrics:** the single primary metric, any secondary metrics, the guardrail metrics that must not degrade, and the baseline.
 
+If the test changes words, brief them through the [copy brief](/copy-brief) and link it here: one brief covering every arm, following the [copywriting process](/copywriting-process). If it changes assets, the same applies to the [creative brief](/creative-brief). A test arm written outside those processes skips approval and lands in no library.
+
 See the [experiment brief concepts](/experiment-brief-concepts) for how to write a hypothesis with a reason attached and how to pick a single primary metric.
 
 ## 3. Design the test
@@ -112,12 +114,20 @@ Add the ID everywhere the test shows up. Where it goes on the ad platform depend
 | :-- | :-- | :-- |
 | Channel, objective, budget, or bid strategy | Campaign name | [Campaign naming conventions](/campaign-naming-conventions) |
 | Customer profile, segment, or targeting | Ad set / ad group / variant name | [Ad set / ad group / variant naming conventions](/ad-set-group-naming-conventions) |
+| **Copy**: primary text, headline, or message angle | Ad name | [Ad naming conventions](/ad-name-conventions) |
 | Creative, offer, CTA, or destination | Ad name | [Ad naming conventions](/ad-name-conventions) |
 | Page, email, or SMS content | Test name in your testing tool | Your testing tool's naming, plus the ID |
+
+<Warning>
+  **The ID goes on the variants, not the control.** The control keeps the name it already has. Appending an ID to a live object renames it, which splits its history at the moment you need a clean baseline. Record the control's exact platform name in the brief instead, so it can be found at review. See [control and variants](/experiment-id-convention#c-control-and-variants).
+
+  Where only the copy differs, the variants also need a [message angle](/ad-name-conventions#message-angle) value. Two ads running the same creative with different words otherwise assemble to the same name.
+</Warning>
 
 Then add the same ID everywhere else the test is measured:
 
 - Tags, filters, or dashboards in your BI tool.
+- The `experiment_id` column in the [flat file](/flat-file-template#dimension-columns), which is populated from the name at import.
 - UTM parameters such as `utm_content` or `utm_campaign`, if the test links to a tracked landing page.
 
 ## 6. Launch the test
@@ -159,6 +169,8 @@ Save the finished review to the [learning library](/experiment-learning-home), t
 [**Experiment brief**](/experiment-brief) The record of a single test.
 
 [**Experiment ID concepts**](/experiment-id-concepts) How to create, format, and register the short code that ties the test together. Fill in your own convention in the [experiment ID workbook](/experiment-id-convention).
+
+[**Copy brief**](/copy-brief) Where the words for each arm of a copy test are briefed, one brief for the whole test.
 
 [**Campaign naming conventions**](/campaign-naming-conventions) Where the experiment ID sits on a campaign name, for tests about channel, objective, budget, or bid strategy.
 

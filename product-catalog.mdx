@@ -22,7 +22,7 @@ _Grayed_ `E.g.` _text is a placeholder. Delete it and replace it with your own. 
     Sections C and D: the copy, the destination, and the positioning line each product owns.
   </Step>
   <Step title="Wire the identifier into your naming">
-    Section F. Until this is done, no report can group spend by product.
+    Section F. Until this is done, and until the [flat file](/flat-file-template#dimension-columns) carries a `product` column, no report can group spend by product.
   </Step>
 </Steps>
 
@@ -155,7 +155,7 @@ _Grayed_ `E.g.` _text is a placeholder. Delete it and replace it with your own. 
 </Warning>
 
 <Accordion title="Concept review: Where the identifier goes">
-  This is the section that decides whether the catalog is a reference document or a reporting capability. A product register nobody encodes into names is a list; a product identifier sitting in every campaign name is a column every report can group by.
+  This is the section that decides whether the catalog is a reference document or a reporting capability. A product register nobody encodes into names is a list; a product identifier encoded into campaign names and split out into the flat file's [`product` column](/flat-file-template#dimension-columns) is something every report can group by. Both halves are needed: the name carries the value, and the column is what receives it.
 
   Campaign level is the usual answer, because campaign is the level at which most teams already separate products, and because `utm_campaign` inherits it for free. Pushing it down to the ad group level is worth it when one campaign genuinely spans products, which is common on Performance Max and on Search accounts built around themes rather than products. Putting it at every level is redundant and eats character limits.
 

@@ -32,19 +32,71 @@ Nothing about this structure changes when a channel or a metric gets added. You 
 
 ## The schema
 
-Nine columns. Every row has all nine filled in.
+Fifteen columns, in two blocks. The **core** nine describe the measurement. The **dimension** six say what was being measured, and they are what every naming convention in this knowledge base exists to fill.
+
+### Core columns
+
+Always filled in, on every row.
 
 | Column | What it holds | Example |
 | :-- | :-- | :-- |
 | `week_start` | The Monday of the week this row covers | `2026-06-08` |
 | `week_end` | The Sunday of the week this row covers | `2026-06-14` |
+| `grain` | What this row measures: `channel`, `campaign`, `ad_group`, or `ad` | `campaign` |
 | `channel` | Lowercase channel name, or `blended` for business-level numbers | `meta` |
 | `metric` | Lowercase metric name, matching a metric in your [data dictionary](/marketing-reporting-data-dictionary) | `ad_spend` |
 | `value` | A bare number: no currency symbol, no comma, no percent sign | `172490.55` |
 | `unit` | `currency`, `count`, `ratio`, `percent`, or `days` | `currency` |
 | `source` | Where the number came from | `meta_ads` |
 | `is_estimate` | `true` or `false`; whether the number is still unreconciled | `false` |
-| `notes` | Optional, anything worth flagging on this specific row | _(blank unless needed)_ |
+
+### Dimension columns
+
+Filled down to the row's grain, blank below it. Leave them genuinely blank, not `n/a` or `-`, so a filter for "blank" works.
+
+| Column | What it holds | Filled at grain |
+| :-- | :-- | :-- |
+| `campaign` | The platform campaign name, exactly as it appears in the platform | `campaign` and below |
+| `ad_group` | The ad set / ad group / variant name | `ad_group` and below |
+| `ad` | The ad name | `ad` only |
+| `product` | The product identifier from the [product catalog](/product-catalog) | `campaign` and below |
+| `experiment_id` | The experiment or pilot ID, blank if the row is neither | Wherever the test runs |
+| `notes` | Optional, anything worth flagging on this specific row | Any |
+
+Each of these has exactly one source, and none of them is typed by hand at report time:
+
+| Column | Comes from |
+| :-- | :-- |
+| `campaign` | [Campaign naming conventions](/campaign-naming-conventions), matching `utm_campaign` character for character |
+| `ad_group` | [Ad set / ad group / variant naming conventions](/ad-set-group-naming-conventions), matching `utm_content` |
+| `ad` | [Ad naming conventions](/ad-name-conventions) |
+| `product` | The product segment of the campaign name, split out at import. See [product catalog](/product-catalog#f-where-the-identifier-goes) |
+| `experiment_id` | The [experiment ID](/experiment-id-convention) or [pilot ID](/pilot-brief) appended to the name at the level the test targets |
+
+<Warning>
+  **Never sum across grains.** A week has an `ad_spend` row at channel grain and several more at campaign grain, and they describe the same money. Adding them together double-counts it. Filter to a single `grain` value before adding anything up, every time, exactly as you already filter to a single period.
+</Warning>
+
+### Splitting the product out of the campaign name
+
+`product` duplicates something already inside `campaign`, which looks like it breaks the rule two sections down about never storing a value you can derive. It doesn't, and the difference is worth being precise about.
+
+That rule protects against a **derived metric** going stale: store `cost_per_click` and then correct `clicks`, and the two disagree with nothing to say which is right. Dimensions have no such failure mode, because [a name is never changed after launch](/campaign-structure-best-practices#dont-rename-anything-after-launch). The string the product was split out of cannot move underneath it.
+
+What you gain is that the split happens once, at import, under one rule, instead of every report re-parsing a compound string and each one drawing the boundary slightly differently. A report that has to run `SPLIT(campaign, "-")` before it can group by product is a report that will eventually group by the wrong segment.
+
+### Only store the grains you report on
+
+Every extra grain multiplies the row count: a week with 40 campaigns, 120 ad groups, and 400 ads carries roughly 560 rows per metric instead of one.
+
+| Store | If |
+| :-- | :-- |
+| `channel` | Always. Weekly, monthly, and business reporting all read this grain |
+| `campaign` | You report per campaign, per product, or on any pilot or experiment carried at campaign level |
+| `ad_group` | A recurring report or an experiment needs the ad set level |
+| `ad` | An experiment targets creative, or ad-level reporting is a standing need |
+
+Adding a grain later costs nothing structural. You start writing the extra rows from that week forward, and history stays at whatever grain it was collected at.
 
 ### Why weeks, not days
 
@@ -53,6 +105,8 @@ This framework reports on a weekly base grain, since that's the shortest cadence
 ### `blended` is a real channel value, not a summary row
 
 Business-level metrics, total revenue, total marketing spend, contribution margin, aren't attributable to one channel, so they get their own `blended` rows rather than living implicitly as a sum of the channel rows. This is what stops someone accidentally summing a per-channel ratio (like ROAS) into a meaningless blended number; ratios like that have to be recalculated from blended inputs, never summed from channel-level ratios.
+
+A blended row sits at `channel` grain with `channel` set to `blended`, and every dimension column blank. There is no campaign behind total revenue.
 
 ### Store the inputs, never the calculated numbers
 
@@ -69,17 +123,30 @@ See the [formula blocks in the data dictionary](/marketing-reporting-data-dictio
 
 ## A worked week
 
-Two channels plus blended, one week. A real file has every metric for every channel.
+One week at two grains, showing how the same money appears once per grain. Dimension columns are trimmed to the four that carry values here; a real file keeps all six.
 
-| week\_start | week\_end | channel | metric | value | unit | source | is\_estimate |
-| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| 2026-06-08 | 2026-06-14 | meta | ad\_spend | 61400.00 | currency | meta\_ads | false |
-| 2026-06-08 | 2026-06-14 | meta | clicks | 19840 | count | meta\_ads | false |
-| 2026-06-08 | 2026-06-14 | meta | purchases | 712 | count | meta\_ads | false |
-| 2026-06-08 | 2026-06-14 | meta | conversion\_value | 84920.00 | currency | meta\_ads | false |
-| 2026-06-08 | 2026-06-14 | blended | total\_revenue | 103000.00 | currency | shopify | false |
-| 2026-06-08 | 2026-06-14 | blended | total\_marketing\_spend | 89200.00 | currency | manual | false |
-| 2026-06-08 | 2026-06-14 | blended | cogs | 37100.00 | currency | finance\_export | true |
+**Channel grain.** What weekly and monthly reporting reads.
+
+| week\_start | grain | channel | metric | value | unit | source | campaign | product |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| 2026-06-08 | channel | meta | ad\_spend | 61400.00 | currency | meta\_ads |  |  |
+| 2026-06-08 | channel | meta | purchases | 712 | count | meta\_ads |  |  |
+| 2026-06-08 | channel | google\_search | ad\_spend | 28900.00 | currency | google\_ads |  |  |
+| 2026-06-08 | channel | blended | total\_revenue | 103000.00 | currency | shopify |  |  |
+| 2026-06-08 | channel | blended | cogs | 37100.00 | currency | finance\_export |  |  |
+
+**Campaign grain.** The same Google spend, split across the campaigns that make it up.
+
+| week\_start | grain | channel | metric | value | unit | source | campaign | product | experiment\_id |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| 2026-06-08 | campaign | google\_search | ad\_spend | 17300.00 | currency | google\_ads | Google-FBS-Search-Trial-tCPA-DAPRO-TOFU | DAPRO | |
+| 2026-06-08 | campaign | google\_search | ad\_spend | 8200.00 | currency | google\_ads | Google-FBS-Search-Trial-tCPA-DASTART-TOFU | DASTART | |
+| 2026-06-08 | campaign | google\_search | ad\_spend | 3400.00 | currency | google\_ads | Google-AO-Search-Leads-tCPA-BRAND-BOFU | BRAND | PILOT04 |
+| 2026-06-08 | campaign | google\_search | purchases | 214 | count | google\_ads | Google-FBS-Search-Trial-tCPA-DAPRO-TOFU | DAPRO | |
+
+The three campaign-grain `ad_spend` rows add to 28,900, the channel-grain figure. **That is why they are never summed together.** A pivot that doesn't filter on `grain` reports 57,800 of Google spend in a week that had 28,900.
+
+With the `product` column populated, "what did we spend on Analytics Pro this week?" is a filter on one column: `grain = campaign`, `product = DAPRO`. Without it, that question needs someone to read campaign names and add up by hand.
 
 Note what's absent: no `cost_per_click`, `roas`, or `contribution_margin` rows. Those get calculated when a report needs them, not stored.
 
@@ -89,11 +156,21 @@ A monthly total is every matching row, filtered to the weeks that fall in that m
 
 1. Select the whole flat file range.
 2. Insert a pivot table.
-3. Set **rows** to `metric`, **columns** to `week_start` (or filter to a channel first if you want one channel's view).
-4. Set **values** to sum of `value`.
-5. Filter `channel` to the one you want, or leave it as a row field to compare channels side by side.
+3. **Filter `grain` to a single value.** Do this first, before anything else. A pivot spanning two grains double-counts every number it touches.
+4. Set **rows** to `metric`, **columns** to `week_start` (or filter to a channel first if you want one channel's view).
+5. Set **values** to sum of `value`.
+6. Filter `channel` to the one you want, or leave it as a row field to compare channels side by side.
 
-That gives you the wide, human-readable table. For a monthly rollup, filter the pivot's date range to the weeks in that month, and let the sum do the adding up. Then recalculate every ratio (ROAS, conversion rate, contribution margin) from the summed totals shown in the pivot, exactly as the [monthly report template](/monthly-report-template) walks through.
+That gives you the wide, human-readable table.
+
+To report per product, per campaign, or on a single test, keep step 3 and change step 4:
+
+| Question | Filter | Rows |
+| :-- | :-- | :-- |
+| Spend by product | `grain = campaign` | `product` |
+| Spend by campaign | `grain = campaign` | `campaign` |
+| One pilot's or experiment's rows | `grain = campaign`, `experiment_id = PILOT04` | `metric` |
+| Creative performance in a test | `grain = ad`, `experiment_id = TEST01` | `ad` | For a monthly rollup, filter the pivot's date range to the weeks in that month, and let the sum do the adding up. Then recalculate every ratio (ROAS, conversion rate, contribution margin) from the summed totals shown in the pivot, exactly as the [monthly report template](/monthly-report-template) walks through.
 
 See [data quality and rollup concepts](/data-quality-and-rollup-concepts) for a worked example of why summing first and recalculating after is the only version of this that produces a correct number.
 
@@ -103,12 +180,21 @@ Run through this list before using a week's data in a report. None of it require
 
 **Structural**
 
-- Every row has all nine columns filled in.
+- Every row has all nine core columns filled in.
 - `week_end` is six days after `week_start`.
+- `grain` is one of `channel`, `campaign`, `ad_group`, `ad`.
+- Dimension columns are filled down to the row's grain and blank below it. A campaign-grain row with an `ad` value is a row at the wrong grain.
 - `channel` matches your approved list in the data dictionary's source of truth section.
 - `metric` matches a metric defined in the data dictionary's formula blocks.
-- No duplicate rows for the same week, channel, and metric.
+- No duplicate rows for the same week, grain, channel, metric, and dimension set.
 - `value` is a bare number: no `$`, no `%`, no commas.
+
+**Dimensions**
+
+- Every `campaign` value matches a live campaign name character for character, and matches its `utm_campaign`. A near-match is a broken join, not a typo.
+- Every `product` value exists in the [product catalog](/product-catalog). A value that doesn't is a product somebody invented at build time.
+- Every `experiment_id` matches a registered ID in the experiment log. An unregistered ID belongs to a test nobody briefed.
+- The dimension columns were split at import under one rule, not typed in per report.
 
 **Logical**
 
@@ -123,6 +209,7 @@ Run through this list before using a week's data in a report. None of it require
 - Spend matches what the ad platforms themselves report for the week.
 - `total_revenue` matches your approved source of truth.
 - Sum of channel-level `conversion_value` sits within the normal gap you recorded against `total_revenue` in the data dictionary; it should be lower, never higher by an unusual margin.
+- For any grain you store below `channel`, its rows sum to the channel-grain figure for the same week and metric. A gap means a campaign is missing from the file or one is being counted twice.
 
 If a check fails, fix it before building anything on top of that week's data. An error caught here costs a few minutes. The same error found after it's already shaped a report costs a great deal more.
 
@@ -133,3 +220,5 @@ If a check fails, fix it before building anything on top of that week's data. An
 - [Ecommerce metrics starter pack](/ecommerce-metrics-starter-pack)
 - [Sales-led metrics starter pack](/sales-led-metrics-starter-pack)
 - [Weekly report template](/weekly-report-template)
+- [Campaign naming conventions](/campaign-naming-conventions) The source of the `campaign` column.
+- [Product catalog](/product-catalog) The source of the `product` column.

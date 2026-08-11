@@ -92,6 +92,23 @@ _E.g. Only the analytics lead. Request in the #marketing-ops channel; the list i
 
 **When an ID replaces the readable name, see section F.**
 
+### Channels with no platform campaign
+
+Email and organic social have no ad platform campaign object, so there is no platform name to match. `utm_campaign` there carries the marketing campaign identifier instead, and that is the one place the rule above bends.
+
+**Record what these channels use, so the exception is deliberate rather than assumed:**
+
+| Channel | What `utm_campaign` carries | Example |
+| :-- | :-- | :-- |
+| Paid channels | _E.g. The platform campaign name, matching the platform exactly._ | _E.g. `Meta-Instagram-Awareness-CBO-TOFU`_ |
+| Email | _E.g. The marketing campaign short form, plus the send._ | _E.g. `FBS`, with the send in `utm_content`_ |
+| Organic social | _E.g. The marketing campaign short form._ | _E.g. `FBS`_ |
+| Posts outside any campaign | _E.g. `always-on`, so the rows still group._ | _E.g. `always-on`_ |
+
+<Warning>
+  Use the registered short form from your [campaign naming dictionary](/campaign-naming-conventions), not a fresh slug typed for the occasion. `FBS` and `fresh-batch-trial` and `freshbatch` are three campaigns to an analytics tool, and the whole point of the exception is that these rows still join to the paid rows for the same initiative.
+</Warning>
+
 <Accordion title="Concept review: Campaign standard">
   `utm_campaign` ties a set of links back to a single promotion, launch, or initiative so you can measure it as one thing across every channel that carried it. Reusing your campaign naming convention here, rather than inventing a second pattern, is what keeps the UTM value and the campaign in your ad platform pointing at the same thing. If the two drift apart, a report built on UTMs no longer lines up with a report built in the ad platform.
 

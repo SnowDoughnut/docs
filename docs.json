@@ -372,6 +372,7 @@
           {
             "group": "General",
             "pages": [
+              "copy-templates",
               "flat-file-template",
               "weekly-report-template",
               "monthly-report-template",
