@@ -45,6 +45,25 @@ Each row below is a topic our briefs and checklists refer to without explaining.
   Auto-applied recommendations are the one out-of-scope item that can quietly undo in-scope work. Left on, they can rewrite ad copy, add keywords, and change bid strategies without anyone approving the change, which breaks the rule that a briefed value is what is actually running. Deciding they stay on is fine. Not knowing is not.
 </Warning>
 
+## The other line: core versus business model
+
+The split above is about scope. There is a second line worth knowing, because it explains why a page can be present and still not fit you.
+
+Most of this framework is business-model neutral: naming, tracking, briefs, approvals, experiments, and the libraries all work the same whether you sell a \$40 product or a \$40,000 contract. The reporting layer is not neutral, and it cannot be. A business whose revenue arrives the same week as the spend needs a different schema from one whose deals close two quarters later.
+
+| Layer | Same for everyone? |
+| :-- | :-- |
+| Naming conventions, UTMs, briefs, approvals, experiments, libraries | Yes |
+| Metric definitions | No. Pick a [starter pack](/marketing-reporting-data-dictionary) |
+| Flat file columns | Mostly. The [core nine](/flat-file-template#core-columns) are fixed; some dimension columns are business-model specific |
+| Report template shape | No. The channel table differs by model |
+
+The framework ships an **ecommerce default** because it is the simpler case, and a **sales-led extension** on top of it. Where you are sales-led, four things change, and the [sales-led starter pack](/sales-led-metrics-starter-pack#what-this-pack-needs-from-the-rest-of-the-system) lists them in one place.
+
+<Info>
+  If something in the reporting layer does not fit your business, check that list before assuming the page is wrong or missing. If your model is neither ecommerce nor sales-led, marketplace and usage-based businesses being the common third and fourth cases, the extension point is [which columns your business needs](/flat-file-template#which-columns-your-business-needs) and the pattern to copy is the sales-led pack.
+</Info>
+
 ## Why the boundary sits here
 
 Two reasons, and both are practical rather than principled.
@@ -74,7 +93,7 @@ What survives is the layer above: the decision was made deliberately, it was wri
 
 ## Related resources
 
-- [**Get started**](/overview) The seven setup stages, in order.
+- [**Get started**](/overview) The eight setup stages, in order.
 - [**Setup checklist**](/setup-checklist) Track your progress through them.
 - [**Make a campaign**](/make-a-campaign) The most common task once setup is done.
 - [**Campaign structure best practices**](/campaign-structure-best-practices) The defaults that sit just inside the line.

@@ -8,7 +8,7 @@ _This page is a workbook. You fill it in to define your own UTM standards, and e
 _Examples throughout use one invented company, **Doughnut Labs**, a SaaS company that sells disruptive Doughnut Technology. Wherever you see grayed `E.g.` text, that is Doughnut Labs' filled-in answer. Delete it and write your own._
 
 <Note>
-  Fill in the core parameter sections first (A through C). They apply to every link your team ships. The optional sections (D and E) only matter if you run paid search or add custom parameters. Section F sets your ID policy and applies to everyone.
+  Fill in the core parameter sections first (A through C). They apply to every link your team ships. The optional sections (D and E) only matter if you run paid search or add custom parameters. Section F sets your ID policy and applies to everyone. Section G matters if a conversion is recorded in a CRM rather than only in analytics, which is every sales-led business.
 </Note>
 
 <Steps>
@@ -20,6 +20,9 @@ _Examples throughout use one invented company, **Doughnut Labs**, a SaaS company
   </Step>
   <Step title="Set your ID policy">
     Section F decides when a link carries an ID instead of a readable name.
+  </Step>
+  <Step title="Say where the values get stored">
+    Section G, if conversions are recorded in a CRM rather than only in analytics.
   </Step>
   <Step title="Publish and enforce">
     Move the finished standards into a shared builder or template so no one hand-types links.
@@ -203,6 +206,51 @@ _E.g. Use an ID wherever the readable name would leak strategy or could be renam
   Readable names reveal strategy. A campaign named `us_doughnutpro_launch_2026` tells anyone who inspects the link the region, product, promotion, and timing, and a name like `purchasedlist_enterprise` would tell them how the customer profile was sourced. Anyone who inspects the link, including the visitor and any competitor, sees it. An ID reveals none of it. Readable names also change: a person can rename a campaign or ad set at any time, sometimes by accident, and the moment a name changes, historical reports keyed on it split in two. A platform ID stays fixed for the life of the campaign, so the data stitches together even when someone edits a label.
 
   The cost of IDs is readability, since a raw ID means nothing to a human reading a report. That is why teams that tag with IDs usually map them back to friendly names inside the reporting tool, keeping stable values in the link and readable labels on the dashboard. Where a value is already a fixed, public category, like source and medium, a name carries no strategy and cannot drift, so there is often little to gain from an ID. Where you land on each parameter is yours to set here.
+</Accordion>
+
+## G. Where the values get stored
+
+<Tip>
+  Fill this in if a conversion is recorded somewhere other than your analytics platform: a CRM, a CDP, or a billing system. Sales-led businesses always need this; ecommerce businesses often do not.
+</Tip>
+
+A tagged link only pays off if the values survive the visit. On a same-session purchase, analytics holds them and nothing more is needed. On a deal that closes four months later, the link between the click and the deal exists only if the values were **written onto the record** at the moment of conversion, and are still there when the deal closes.
+
+**Name the field each parameter lands in, and whether it holds the first or last touch.**
+
+| Parameter | CRM or CDP field | First or last touch | Set when |
+| :-- | :-- | :-- | :-- |
+| `utm_source` | _E.g._ `Source_First__c` _and_ `Source_Last__c` | _E.g. Both, in two fields_ | _E.g. On lead creation, and on every later form fill_ |
+| `utm_medium` | _E.g._ `Medium_First__c` | _E.g. First_ | _E.g. On lead creation, never overwritten_ |
+| `utm_campaign` | _E.g._ `Campaign_First__c` | _E.g. First_ | _E.g. On lead creation, never overwritten_ |
+| `utm_content` | _E.g._ `Content_First__c` | _E.g. First_ | _E.g. On lead creation_ |
+| First touch date | _E.g._ `First_Touch_Date__c` | _E.g. Not applicable_ | _E.g. On lead creation. This becomes `attributed_week`_ |
+| \[add field\] |  |  |  |
+
+**Fields that travel from lead to deal:** _E.g. All source fields copy from the lead to the opportunity on conversion, so a closed deal still carries where it came from._
+
+**Who owns these fields:** _E.g. RevOps. Changes go through them, because a renamed field breaks the import silently._
+
+<Warning>
+  Store first touch and last touch in **separate fields**, and never let one overwrite the other. A single source field overwritten on each visit ends up holding the last thing that happened before someone converted, which on a long sales cycle is usually a branded search or a direct visit. That is how paid channels appear to generate nothing while brand search appears to generate everything.
+</Warning>
+
+**How the values come back into the [flat file](/flat-file-template):**
+
+| Flat file column | Comes from |
+| :-- | :-- |
+| `channel` | The stored source and medium fields, mapped to your channel list |
+| `campaign` | The stored campaign field, matching the platform campaign name |
+| `attributed_week` | The week containing the first touch date |
+| `week_start` | The week the deal actually closed |
+| `value` | 1.0 for single-touch, or the fraction your attribution model assigns |
+
+<Accordion title="Concept review: Where the values get stored">
+  This section exists because the UTM system has an endpoint that the parameters themselves cannot reach. A tag survives as long as the session does. A B2B deal outlives the session by months, and everything the tag knew is gone unless something wrote it down.
+
+  Which is why the field names matter as much as the parameter names one level up. A source value written to a field nobody agreed on, or overwritten on the next visit, produces a CRM full of data that cannot be joined to anything. The failure is quiet: reports still run, they just credit the wrong channels, and the pattern they produce is consistent enough to look real.
+
+  First versus last touch is the choice with the most consequence, and both are defensible. First touch answers "what brought them in," which is what a prospecting budget is buying. Last touch answers "what closed them," which is what a retargeting budget is buying. What does not work is one field holding whichever fired most recently, because the answer it gives then depends on how long the sales cycle was rather than on anything about the channels.
 </Accordion>
 
 ## Build order recap

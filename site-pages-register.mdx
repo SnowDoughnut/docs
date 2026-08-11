@@ -1,0 +1,98 @@
+---
+title: "Site pages register"
+description: "The register of standing pages on your own site: homepage, pricing, product and contact pages. Records who owns each, what conversion action it carries, what depends on it, and when it was last reviewed."
+---
+
+Standing pages are the pages that exist because the company exists: the homepage, pricing, product and feature pages, contact and demo request. They are not built for a campaign and they do not retire when one ends.
+
+This register is where they get an owner, a review date, and a record of what depends on them.
+
+<Note>
+  Campaign landing pages are a different object with a different lifecycle, and they live in the [landing page library](/landing-page-library). Use that register for anything built for one campaign or one offer, typically at a `/lp/` URL, that retires when the offer does.
+</Note>
+
+## Which register a page belongs in
+
+| | Standing page | Campaign landing page |
+| :-- | :-- | :-- |
+| Exists because | The company does | A campaign or a standing offer does |
+| Retires when | It is replaced or the product changes | The offer ends |
+| Offer | Several, or none specific | Exactly one |
+| Customer profile | Several | Usually one |
+| Built through | Not built through a process; it predates most campaigns | [Building a landing page](/landing-page-process) |
+| Register | This page | [Landing page library](/landing-page-library) |
+
+<Info>
+  The entry gate on [building a landing page](/landing-page-process) asks for "a reason the page exists: a marketing campaign brief, or a standing offer." That gate governs briefing a **new** page. A standing page does not clear it and does not need to, because nobody is deciding whether to build a homepage. What it needs is the ownership and change control on this page.
+</Info>
+
+## The register
+
+_The first rows are examples using Doughnut Labs, a company that sells Doughnut Technology. Delete them and fill in your own._
+
+| Page | URL | What it is for | Primary conversion action | Owner | Last changed | Next review |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| _E.g. Homepage_ | _E.g._ `/` | _E.g. Orient anyone arriving cold, and route them to the right product_ | _E.g._ `Trial Started` | _E.g. Priya Nadan_ | _E.g. 2026-05-14_ | _E.g. 2026-11-14_ |
+| _E.g. Pricing_ | _E.g._ `/pricing` | _E.g. Answer cost and plan questions, and convert evaluation traffic_ | _E.g._ `Trial Started` | _E.g. Priya Nadan_ | _E.g. 2026-06-02_ | _E.g. 2026-12-02_ |
+| _E.g. Analytics Pro_ | _E.g._ `/analytics/pro` | _E.g. Product detail for_ `DAPRO`_, from the [product catalog](/product-catalog)_ | _E.g._ `Trial Started` | _E.g. Tom Reyes_ | _E.g. 2026-04-30_ | _E.g. 2026-10-30_ |
+| _E.g. Book a demo_ | _E.g._ `/demo` | _E.g. Standing demo request, used by sales and paid alike_ | _E.g._ `Demo Booked` | _E.g. Priya Nadan_ | _E.g. 2026-03-11_ | _E.g. 2026-09-11_ |
+| \[add page\] |  |  |  |  |  |  |
+
+**What counts as a standing page here:** _E.g. Any page carrying a conversion action or receiving campaign traffic that is not a campaign landing page. Blog posts and articles are covered by the [article library](/article-library-overview) instead._
+
+<Accordion title="Concept review: Why standing pages need a register at all">
+  Campaign pages get a register because they multiply. Nobody forgets the homepage exists, so the argument for registering it is different: it is not about finding the page, it is about knowing who owns it and what breaks when it changes.
+
+  A campaign page usually serves one campaign, so changing it affects one thing. A homepage may be the destination for every brand campaign, several product campaigns, the email footer, and every organic bio link at once. The blast radius is larger and completely invisible from inside the page.
+
+  Review dates do a different job here too. A campaign page is reviewed because its offer expires. A standing page is reviewed because the product moved underneath it: a plan renamed, a claim that is no longer true, a screenshot two versions out of date. Nothing prompts that, which is why it needs a date.
+</Accordion>
+
+## What points at each page
+
+The table that makes a change safe. Fill it in per page, and keep it current as campaigns launch.
+
+| Page | Paid campaigns | Organic and email | Other |
+| :-- | :-- | :-- | :-- |
+| _E.g. Homepage_ | _E.g. All brand search, Meta prospecting_ | _E.g. Every social bio link, email footer_ | _E.g. Sales decks, partner listings_ |
+| _E.g. Pricing_ | _E.g. Google Search BOFU, retargeting_ | _E.g. Nurture sequence step 4_ | _E.g. In-product upgrade prompts_ |
+| \[add page\] |  |  |  |
+
+<Warning>
+  Check this table before changing a standing page. A homepage serving every campaign changes the results of all of them at once, and a change made to help one can quietly damage the rest. Where the page carries meaningful traffic, treat the change as an [experiment](/creating-an-experiment) rather than an edit.
+
+  The equivalent table for campaign pages is in the [landing page library](/landing-page-library#campaigns-pointing-at-each-page). Check whichever register the page you are changing sits in.
+</Warning>
+
+## Changing a standing page
+
+| The change is | Treat it as |
+| :-- | :-- |
+| A copy or layout change you expect to improve results, on a page with meaningful traffic | An [experiment](/creating-an-experiment). Control is the current page, and the result decides whether it ships |
+| A factual correction: wrong price, expired claim, dead link | An edit. Make it, record it in Last changed, no test needed |
+| A change forced by something else: a product rename, a legal requirement | An edit. Record what forced it |
+| A rebuild or a new page template | Brief it. Use the [landing page brief](/landing-page-brief), and keep the row here |
+
+<Info>
+  The distinction is whether you are testing a belief or correcting a fact. A hero rewrite you think will convert better is a belief, and beliefs about high-traffic pages are worth testing rather than shipping. A price that changed is a fact, and testing it would be absurd.
+</Info>
+
+## Reviewing a standing page
+
+At each review date, check:
+
+- The claims are still true and still approved, against [messaging](/messaging).
+- Product names and screenshots match what ships today.
+- The conversion action still fires, confirmed with a test submission.
+- Every link resolves, including the ones in the footer nobody looks at.
+- The page still matches the [product catalog](/product-catalog) entry for whatever it sells.
+- What points at it, in the table above, is still accurate.
+
+## Related resources
+
+- [**Landing page library**](/landing-page-library) The register for campaign pages.
+- [**Building a landing page**](/landing-page-process) The process for a new campaign page.
+- [**Landing page block library**](/landing-page-skeleton) Structure and copy length guidance.
+- [**Creating an experiment**](/creating-an-experiment) For a change to a page with meaningful traffic.
+- [**Product catalog**](/product-catalog) What a product page is selling.
+- [**Website and landing pages**](/web-home) What governs pages on your own site.
