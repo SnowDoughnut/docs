@@ -26,16 +26,21 @@ Every input below has to exist, or be deliberately marked as not applicable, bef
 | Input | Where it comes from | Required | If it doesn't exist yet |
 | :-- | :-- | :-- | :-- |
 | Parent marketing campaign | [Marketing campaign brief](/marketing-campaign-brief) | Always | Stop. Run the [campaign brief process](/campaign-brief-process) first |
-| Customer profile | [Customer profile library](/customer-profile-library-overview) | Always | Build it with the [B2B brief](/customer-profile-brief) |
+| Customer profile | [Customer profile library](/customer-profile-library-overview) | Always | Build it with the [B2B brief](/customer-profile-brief). A named account list is not a profile, see below |
 | Conversion action | [Event tracking plan](/event-tracking-plan) | Always for conversion objectives | Add a row using the [tracking plan overview](/event-tracking-plan-overview), then verify the Insight Tag fires |
 | Destination or lead form | [Landing page library](/landing-page-library) | Always | Pick an existing page, or run [building a landing page](/landing-page-process) |
-| Account list | [LinkedIn company list CSV template](/linkedin-company-list-csv-template) | Account-based targeting only | Build the list to the template and allow time for matching |
+| Account list, **uploaded and matched** | [Audience list store](/audience-list-store), built to the [company list template](/linkedin-company-list-csv-template) | Account-based targeting only | Upload it first. A list below the match floor stops the campaign, and you want to know before creative is briefed |
+| List provenance and refresh date | [Audience list store register](/audience-list-store#the-register) | Whenever a list is used | Record who supplied it, on what criteria, as of when, and when it expires |
 | Creative | [Creative brief process](/creative-brief-process), [creative drive](/creative-drive) | Always except text ads | Brief it. Allow production time before the launch date |
 | Copy | [Copy brief](/copy-brief), [LinkedIn copy templates](/linkedin-single-image-copy-template) | Always | Brief it via the [copywriting process](/copywriting-process) |
 | Names, all three levels | [Campaign](/campaign-naming-conventions), [audience](/ad-set-group-naming-conventions), [ad](/ad-name-conventions) | Always | Assemble from the dictionaries |
 | UTMs | [UTM standards](/utm-standards) | Always | Build them from the standard before the URLs go anywhere |
 | Budget | Marketing campaign brief, [budget planning](/budget-planning) | Always | Confirm the LinkedIn line item, sized for LinkedIn's cost per result |
 | Experiment ID | [Experiment ID conventions](/experiment-id-concepts) | Only if testing | Register one via [creating an experiment](/creating-an-experiment) |
+
+<Warning>
+  **A named account list is not a customer profile.** A profile describes a type of buyer and lives in the [customer profile library](/customer-profile-library-overview); a list of specific named accounts is a data file and lives in the [audience list store](/audience-list-store), behind access control. A list handed over by sales does not need a profile written before it can run, and it does need an owner, a recorded source, and an expiry date. Never paste account names into a brief.
+</Warning>
 
 <Warning>
   Budget is the input to check hardest here. LinkedIn's cost per click and cost per lead run well above the other paid platforms, so a budget that would produce a clear read elsewhere can produce almost no usable data. Size it against LinkedIn's own benchmarks, not against the Meta line item.
@@ -53,7 +58,7 @@ Every input below has to exist, or be deliberately marked as not applicable, bef
   <Step title="Fill in the LinkedIn campaign brief">
     Objective, conversion action, budget, bid strategy, structure, targeting, format.
   </Step>
-  <Step title="Check audience size and overlap">
+  <Step title="Check audience size, match rate, and overlap">
     Before building, confirm each audience is big enough to deliver and doesn't compete with the others.
   </Step>
   <Step title="Assemble names and UTMs">
@@ -98,13 +103,18 @@ Copy the [**LinkedIn campaign brief**](/linkedin-campaign-brief) and work down i
 
 The brief fixes objective, conversion action, budget, bid strategy, audience definition, and format. In-flight bid adjustments and creative rotation stay with the media buyer.
 
-## 4. Check audience size and overlap
+## 4. Check audience size, match rate, and overlap
 
-Do this before building, while changing it is free.
+Do this before building, while changing it is free, and before creative and copy are briefed.
 
+- **Match rate, on any uploaded list.** Upload the list and record how many companies matched. LinkedIn needs **at least 300 matched companies** before a campaign can serve, whatever the row count was. A 400-row list that matches 180 cannot run, and finding that out at the pre-launch checklist means finished creative with nowhere to go. Record the matched count and rate in the [audience list store register](/audience-list-store#the-register); it is the baseline the next refresh gets compared against.
 - **Size.** Record the estimated audience for each campaign. Too narrow and delivery stalls regardless of budget. Too broad and the targeting precision that justified LinkedIn's cost has been given away.
 - **Overlap.** Compare the audiences across campaigns in the structure table. Two campaigns targeting substantially overlapping job titles will bid against each other in the same auctions and raise your own costs.
 - **Expansion settings.** Audience expansion and the LinkedIn Audience Network both widen delivery beyond what you defined. Set each one deliberately and record why.
+
+<Warning>
+  Fix the audience at brief stage and leave it alone, the same way attribution and bid strategy are fixed. On account-based campaigns the audience **is** the campaign: adding forty accounts in week three changes what is being measured, and the numbers from before and after cannot be compared. Nothing in Campaign Manager flags it and the spend line looks continuous. If a list genuinely has to change, upload a new version and record the date the audience changed, so the report can be split at it. See [when a list changes mid-flight](/audience-list-store#when-a-list-changes-mid-flight).
+</Warning>
 
 ## 5. Assemble names and UTMs
 
@@ -141,7 +151,7 @@ File the completed [LinkedIn campaign brief](/linkedin-campaign-brief) in the [c
 
 ## Exceptions
 
-- **The campaign is always-on account-based targeting.** It still gets a brief, but the experiment section may not apply. Refresh the account list on a recorded schedule rather than leaving it to age.
+- **The campaign is always-on account-based targeting.** It still gets a brief, but the experiment section may not apply. Refresh the account list on the schedule recorded in the [audience list store register](/audience-list-store#the-register) rather than leaving it to age, and upload each refresh as a new version rather than editing the old one.
 - **You are adding an ad to a live campaign.** Skip steps 1 to 5. Confirm the creative and copy are approved, name the ad per the [ad naming conventions](/ad-name-conventions), attach the UTMs, and run the ad-level rows of the pre-launch checklist.
 
   **Do not skip step 6.** If the new ad is a variant running against the existing one to find out which performs better, that is an experiment and it needs a registered ID before it goes live. A variant added without one is indistinguishable from an ordinary creative refresh a month later, and the result cannot be traced back to what changed.

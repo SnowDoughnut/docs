@@ -57,8 +57,15 @@ Two small rules do most of the work. Writing the date as `YYYY-MM-DD` means an a
   A customer profile describes a type of customer, not a single named person or account. The individuals you talk to inside a B2B account are buyer personas, which are a separate document from these profiles.
 </Info>
 
+<Warning>
+  **A named account list does not belong in this library.** A list of specific companies or contacts, whether exported from a profile or handed over by sales, is a data file: it goes in the [audience list store](/audience-list-store), behind access control, with its source and expiry recorded. This library holds descriptions, not data.
+
+  Both directions are normal. A profile can generate a list, and a list can arrive first with no profile behind it. A list arriving first does not have to wait for a profile to be written before it can run.
+</Warning>
+
 ## Related resources
 
 - [Customer profile brief (B2B)](/customer-profile-brief)
 - [Customer profile brief (B2C)](/b2-c-customer-profiles)
 - [Customer profile naming conventions](/customer-profile-naming-conventions)
+- [Audience list store](/audience-list-store) Where the uploaded files themselves live.

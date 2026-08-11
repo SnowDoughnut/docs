@@ -1,0 +1,154 @@
+---
+title: "Audience list store"
+description: "Where uploaded audience files live: named account lists, customer match files, and suppression lists. Records who supplied each list, on what criteria, when it expires, and how it matched, without the list itself ever entering this knowledge base."
+---
+
+The audience list store holds the files you upload to an ad platform to build an audience: named account lists, customer match files, contact lists, and suppression lists.
+
+It works the way the [creative drive](/creative-drive) does. The files live in one secure location; this page records where that is and what is in it. The difference is that these files usually contain company or personal data, so what gets written down here is deliberately limited to the metadata.
+
+<Warning>
+  **Never paste a list into a document, a brief, or this knowledge base.** No company names, no email addresses, no domains, no row-level data of any kind. A brief links to the list by name; the file itself stays in the store, behind its own access control. Everything on this page is a description of a list, never its contents.
+</Warning>
+
+<Note>
+  Fill in the link, rules, and rows below with your own. Examples use **Doughnut Labs**, a SaaS company that sells disruptive Doughnut Technology.
+</Note>
+
+## Why lists are not customer profiles
+
+These are two different things, and the [customer profile library](/customer-profile-library-overview) is explicit that a profile "describes a type of customer, not a single named person or account."
+
+| | Customer profile | Audience list |
+| :-- | :-- | :-- |
+| What it is | A description of a type of buyer | A file of specific named accounts or people |
+| Where it lives | [Customer profile library](/customer-profile-library-overview) | This store, behind access control |
+| Contains data about real people or companies | No | Yes |
+| Direction of travel | Profile defines the criteria, list is exported from it | List arrives first, criteria may be someone else's |
+| Versioned as | `CP_descriptor_date_version` | See naming below |
+
+Both directions are legitimate. A profile can generate a list, which is what [define a customer profile](/define-a-customer-profile) describes. A list can also arrive from sales, from an event, or from a data provider with no profile behind it, and that list still needs a home, an owner, and an expiry. This store is for the file either way.
+
+<Info>
+  A list that arrived without a profile behind it is worth writing a profile for eventually, because a profile is what lets you rebuild the list next quarter. It is not a precondition for launching. Record the selection criteria in the register below and move.
+</Info>
+
+## Where it is
+
+| Field | Fill in |
+| :-- | :-- |
+| Location | _E.g. \[link\], a restricted folder separate from the marketing drive_ |
+| Owner | _E.g. Priya Nadel, marketing ops_ |
+| Who has access | _E.g. Marketing ops and the media buyer only. Not the wider marketing team, not agencies_ |
+| How to request access | _E.g. Ask the owner. Access is granted per person, not per team_ |
+| Where the access list is reviewed | _E.g. Quarterly, in the marketing ops review_ |
+
+## Handling rules
+
+Set these once with whoever owns data protection at your company, then follow them per list.
+
+| Rule | Your decision |
+| :-- | :-- |
+| Who may upload a list to a platform | _E.g. Media buyer only, after the owner confirms the source is recorded_ |
+| Who may download or export a list | _E.g. Nobody. Files are uploaded from the store and not copied out_ |
+| Where lists may be sent | _E.g. The ad platform only. Never email, never a shared doc, never a chat message_ |
+| Default retention | _E.g. 12 months from the as-of date, then deleted from the store and the platform_ |
+| Deletion on request | _E.g. Handled by the data protection owner within the statutory window_ |
+| What is recorded in the register | _E.g. Metadata only. Never a row from the list itself_ |
+
+<Warning>
+  Deleting a list from this store does not delete it from the ad platform. An uploaded audience persists in the platform until it is removed there too. Whoever owns retention needs both steps on the same schedule, or the deletion is only half done.
+</Warning>
+
+## Upload templates
+
+Build every list to the template for the platform before uploading it. A list assembled ad hoc matches at a lower rate and fails in ways that only show up after the file is in.
+
+| Platform | Template | Carries personal data? |
+| :-- | :-- | :-- |
+| LinkedIn, account-based | [Company list CSV template](/linkedin-company-list-csv-template) | No, companies only |
+| LinkedIn, contacts | [Customer profile CSV template (LinkedIn)](/customer-profile-csv-template-linkedin) | Yes |
+| Meta | [Customer profile CSV template (Meta)](/customer-profile-csv-template-meta) | Yes |
+| Google | [Customer profile CSV template (Google)](/customer-profile-csv-template-google) | Yes |
+| TikTok | [Customer profile CSV template (TikTok)](/customer-profile-csv-template-tiktok) | Yes |
+
+## The register
+
+One row per list. Metadata only.
+
+**Identity and provenance.** Where the list came from and who chose what went in it.
+
+| List name | What it is | Supplied by | Selection criteria | As of | Owner |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| _E.g._ `LIST_q2-target-accounts_2026-04-01_v01` | _E.g. Named accounts for the Q2 ABM push_ | _E.g. Dana Ortiz, sales ops_ | _E.g. Open opportunities over \$50k, plus closed-lost in the last 18 months_ | _E.g. 2026-04-01_ | _E.g. Priya Nadel_ |
+| _E.g._ `LIST_customers-suppress_2026-04-01_v03` | _E.g. Existing customers, excluded from acquisition_ | _E.g. Stripe export, marketing ops_ | _E.g. Any account with an active subscription_ | _E.g. 2026-04-01_ | _E.g. Priya Nadel_ |
+| \[add list\] |  |  |  |  |  |
+
+**Size, match, and expiry.** What the platform actually did with it, and when it stops being true.
+
+| List name | Rows | Matched | Match rate | Platform | Refresh due | Retention ends |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| _E.g._ `LIST_q2-target-accounts_2026-04-01_v01` | _E.g. 1,240_ | _E.g. 892_ | _E.g. 72%_ | _E.g. LinkedIn_ | _E.g. 2026-07-01, quarterly_ | _E.g. 2027-04-01_ |
+| _E.g._ `LIST_customers-suppress_2026-04-01_v03` | _E.g. 4,100_ | _E.g. 3,050_ | _E.g. 74%_ | _E.g. LinkedIn, Meta_ | _E.g. Monthly_ | _E.g. Rolling, replaced each month_ |
+| \[add list\] |  |  |  |  |  |  |
+
+<Info>
+  The matched count and match rate are the baseline for next quarter's refresh. A list that matched at 72% and now matches at 51% has decayed, and without the first number nobody can tell.
+</Info>
+
+## Naming
+
+Every file follows the [file naming conventions](/file-naming-conventions), using the same four-part shape as a customer profile:
+
+`LIST_q2-target-accounts_2026-04-01_v01.csv`
+
+| Part | What it is |
+| :-- | :-- |
+| `LIST` | Marks an audience file, so it never sorts in with profiles or creative |
+| `descriptor` | Lowercase, hyphens, no personal or account names |
+| `date` | The **as-of** date: when the list was selected, not when the file was saved |
+| `version` | `v` plus two digits |
+
+The as-of date is doing real work here. It is what the [ad set / ad group / variant naming conventions](/ad-set-group-naming-conventions) date identifier refers to, and it is why an audience built in April is comparable to itself and not to the same list refreshed in October.
+
+<Warning>
+  A refreshed list is a new version and a new upload, not an edit. Overwriting `v01` with new rows means the audience changed underneath a running campaign with no record that it did.
+</Warning>
+
+## Before you upload
+
+<Steps>
+  <Step title="Check the row count against the platform floor">
+    Every platform has a minimum, and a list below it cannot serve. LinkedIn needs at least 300 rows to upload and at least 300 **matched** companies to run, recommending 1,000. Check the [template](/linkedin-company-list-csv-template) for your platform before promising a launch date.
+  </Step>
+  <Step title="Record the provenance while the supplier is still in the room">
+    Who picked these accounts, on what criteria, as of when. This is the field that becomes unrecoverable fastest, because the person who knows moves on to the next quarter.
+  </Step>
+  <Step title="Upload and record the match rate before anything else is briefed">
+    Matching takes time and can fail the campaign outright. Doing it first means a short list is a scheduling problem, not a write-off of finished creative.
+  </Step>
+  <Step title="Set the refresh date and the retention date">
+    Both, at upload. A list with no refresh date ages silently; a list with no retention date is a data protection problem waiting to be found by somebody else.
+  </Step>
+</Steps>
+
+## When a list changes mid-flight
+
+Treat the audience the same way you treat attribution and bid strategy: decided at brief stage, left alone after launch.
+
+On account-based campaigns the audience is the campaign. Adding forty accounts in week three changes what the campaign is, and the results from before and after cannot be compared. Nothing in the platform flags this, and the spend line looks continuous.
+
+| If a list has to change | Do this |
+| :-- | :-- |
+| Accounts were added by the supplier | Upload as a new version, and either start a new campaign or record the change date in the brief so the report can be split at it |
+| Accounts have to be removed urgently | Remove them, record the date and the reason. Urgency is a real exception |
+| The list is being refreshed on schedule | New version, new upload, recorded in the register, and note the date the audience changed |
+
+## Related resources
+
+- [**Asset directory**](/asset-directory) Every location in one index.
+- [**Customer profile library**](/customer-profile-library-overview) The profiles that describe types of buyer, not named accounts.
+- [**Define a customer profile**](/define-a-customer-profile) The path from a profile to an exported list.
+- [**File naming conventions**](/file-naming-conventions) The convention every file here follows.
+- [**LinkedIn company list CSV template**](/linkedin-company-list-csv-template) The account-based upload format.
+- [**Launching a LinkedIn campaign**](/linkedin-campaign-process) Where the match check gates the build.
