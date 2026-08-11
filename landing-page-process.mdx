@@ -23,7 +23,7 @@ One person, the [**owner**](/glossary#owner), is accountable for all three, and 
 
 | Input | Where it comes from | Required | If it doesn't exist yet |
 | :-- | :-- | :-- | :-- |
-| A reason the page exists | [Marketing campaign brief](/marketing-campaign-brief), or a standing offer | Always | Stop. A page with no campaign and no standing offer has no job |
+| A reason the page exists | [Marketing campaign brief](/marketing-campaign-brief), or a standing offer | Always, for a new campaign page | Stop. A campaign page with no campaign and no standing offer has no job. Standing pages like the homepage are not built here: see the [site pages register](/site-pages-register) |
 | Nothing already covers it | [Landing page library](/landing-page-library) | Always | Check first. Reusing a proven page usually beats building a new one |
 | Customer profile | [Customer profile library](/customer-profile-library-overview) | Always | Build it with the [B2B](/customer-profile-brief) or [B2C](/b2-c-customer-profiles) brief |
 | Conversion action | [Event tracking plan](/event-tracking-plan) | Always | Add a row using the [tracking plan overview](/event-tracking-plan-overview) |
@@ -54,6 +54,9 @@ One person, the [**owner**](/glossary#owner), is accountable for all three, and 
   </Step>
   <Step title="Build the skeleton">
     Structure and final copy, agreed before anything is built.
+  </Step>
+  <Step title="Register an experiment, if there is a control">
+    A variant tested against an existing page is an experiment, not an edit.
   </Step>
   <Step title="Set up the conversion action">
     Defined in the tracking plan, implemented, and tested.
@@ -111,7 +114,26 @@ Agree the structure before the page is built. At skeleton stage a disagreement a
 
 The message priorities in the brief decide the order: what leads, what supports, and what gets cut if the page runs long.
 
-## 6. Set up the conversion action
+## 6. Register an experiment, if there is a control
+
+If the page, or a block on it, is being tested against a version already running, that is an experiment. Follow [creating an experiment](/creating-an-experiment): register the ID before launch and apply it at the level the hypothesis targets.
+
+On-site tests differ from paid tests in two ways worth settling here rather than at build time.
+
+| Question | Where the answer goes |
+| :-- | :-- |
+| What the arms are called | The testing tool's own naming, plus the experiment ID. There is no naming convention for page variants, because the tool owns the object |
+| How traffic is split | Recorded in the [experiment brief](/experiment-brief#on-site-tests), because a page test has no campaign structure table to carry it |
+| Which URL each arm serves | Recorded in the brief. One URL with a tool-served variant, or separate URLs with a split, behave differently in analytics and in search |
+| What the control is | The page as it stands today, unchanged and not renamed |
+
+<Warning>
+  The control is the current page, left exactly as it is. Do not rename it, do not append an experiment ID to its URL, and do not "tidy it up" while building the variant. A control that changed during the test is not a control. See [control and variants](/experiment-id-convention#c-control-and-variants).
+</Warning>
+
+If the change is a factual correction rather than a belief about what performs better, it is an edit and this step does not apply. Fix it and record it.
+
+## 7. Set up the conversion action
 
 The page's conversion action has to exist in the [event tracking plan](/event-tracking-plan) before the page goes live, not after.
 
@@ -123,13 +145,13 @@ The page's conversion action has to exist in the [event tracking plan](/event-tr
   A page that publishes before its conversion action fires produces a period of traffic with no recorded conversions. Every campaign pointing at it during that window looks like it failed, and the data cannot be recovered afterward.
 </Warning>
 
-## 7. Build the page
+## 8. Build the page
 
 Build from the skeleton and the approved assets. The structure and copy are already decided, so this step should not be generating new copy.
 
 Confirm the URL matches what the brief recorded, since ads and emails may already reference it.
 
-## 8. Check it
+## 9. Check it
 
 Check the page against the brief and against the campaigns that will point at it:
 
@@ -141,7 +163,7 @@ Check the page against the brief and against the campaigns that will point at it
 - Form fields match what the [lead qualification](/landing-page-brief) section of the brief called for.
 - Legal and privacy requirements are met: consent, privacy policy link, and any claims review the page needed.
 
-## 9. Publish and link back
+## 10. Publish and link back
 
 Publish, then:
 
@@ -149,7 +171,7 @@ Publish, then:
 - Paste it into the [marketing campaign brief](/marketing-campaign-brief) and any platform campaign brief pointing at it.
 - Confirm the [UTM](/utm-standards) parameters arriving from each campaign are being recorded.
 
-## 10. Add it to the library
+## 11. Add it to the library
 
 Add the page to the [**landing page library**](/landing-page-library) with its URL, owner, offer, customer profile, conversion action, published date, and next review date.
 
@@ -157,7 +179,9 @@ The library row is what makes the page reusable. A page with no row will not be 
 
 ## Exceptions
 
-- **The page is a small variant of an existing page.** It does not need a new brief. Update the existing library row, note what changed, and keep the same conversion action unless the offer changed.
+- **The page is a small variant of an existing page, with no control.** You are shipping a change you are confident in. It does not need a new brief. Update the existing library row, note what changed, and keep the same conversion action unless the offer changed.
+- **The page is a variant running against the existing page.** That is an experiment, not an edit. Don't skip to shipping: run step 6, register the ID before either arm goes live, and record the split and the arm URLs in the [experiment brief](/experiment-brief#on-site-tests). A variant built without an ID cannot be found again once the page has had three more changes.
+- **The page is a standing page, not a campaign page.** The homepage, pricing, and product pages are not built through this process and do not clear the entry gate above. They live in the [site pages register](/site-pages-register), which covers who owns them and how a change gets made.
 - **The page is a temporary event or seasonal page.** It still gets a brief and a library row, with a planned retirement date so it can be taken down rather than left to age.
 - **The build is abandoned.** File the brief with a note on why it stopped. The proof and objections research is usually reusable.
 

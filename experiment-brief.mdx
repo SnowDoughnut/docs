@@ -199,6 +199,37 @@ _E.g. Start 2026-07-14, end 2026-07-28. End date set by the sample math (18,000 
   The control's exact platform name is the only way to find its rows at review, because the control carries no experiment ID. Copy it in character for character rather than describing it. See [control and variants](/experiment-id-convention#c-control-and-variants).
 </Warning>
 
+### On-site tests
+
+<Tip>
+  Fill this in only for a test on your own site: a page, a block, a form, or an in-product flow. Skip it for ad platform tests.
+</Tip>
+
+A page variant has no name in any of the [naming conventions](/naming-conventions-overview), because those cover ad platform objects and a testing tool owns its own. What fills the **platform object name** column above is the tool's experiment and variation name, plus the ID.
+
+| Field | Fill in |
+| :-- | :-- |
+| Testing tool | _E.g. \[your tool\], or "developer-built, split at the CDN"_ |
+| Experiment name in the tool | _E.g._ `homepage-hero-TEST-4K9M` |
+| Variation names in the tool | _E.g._ `control`_,_ `variant-a` |
+| How traffic is split | _E.g. 50/50, tool-served on one URL_ |
+| Control URL | _E.g._ `/` |
+| Variant URL, if different | _E.g. Same URL. The tool swaps the block_ |
+| Who can see the variant | _E.g. All traffic. Not restricted by source_ |
+| Page's register row | _E.g. [Site pages register](/site-pages-register), homepage_ |
+
+<Warning>
+  Two arms on two different URLs behave differently from two arms on one URL, and the difference is not cosmetic. Separate URLs split your analytics, can split search signals, and need a canonical decision. One URL with a tool-served variant keeps both in one row but depends on the tool rendering before the visitor sees the page. Pick deliberately and write down which, because the read at the end depends on it.
+</Warning>
+
+<Accordion title="Concept review: Naming an on-site test">
+  Every other level in this framework has a naming convention because your team owns the object being named. A campaign name is yours to build from a dictionary. A testing tool's variation is not: the tool creates it, names it in its own scheme, and reports on it under that name.
+
+  Inventing a parallel convention would produce a name that exists in the brief and nowhere in the tool, which is worse than no convention at all. What matters instead is that the tool's name is written down here, exactly as the tool has it, with the experiment ID in it somewhere so the two systems can be joined.
+
+  The URL question sits in this section rather than in the process because it is a measurement decision more than a build decision. It determines whether the test produces one row or two in your analytics, and that is not something to discover after the test has run.
+</Accordion>
+
 <Accordion title="Concept review: Listing the control and the splits">
   The control belongs in this list as explicitly as any variant. It's the thing every result is measured against, and leaving it implicit is how tests end up without a clear reference point. Giving it its own row keeps the comparison legible.
 
