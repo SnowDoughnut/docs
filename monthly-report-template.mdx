@@ -74,10 +74,38 @@ _E.g. Contribution margin held at target despite the bundle launch pulling avera
 
 **One line of commentary per channel that moved meaningfully. Say nothing about channels that didn't.**
 
+**Ecommerce shape.** Use this where revenue lands in the same period as the spend.
+
 | Channel | Spend | Revenue | Efficiency | vs. last month | Contribution |
 | :-- | :-- | :-- | :-- | :-- | :-- |
 | _E.g. Meta_ | _E.g. \$172,000_ | _E.g. \$236,800_ | _E.g. 1.38x ROAS_ | _E.g. Efficiency down slightly, volume up_ | _E.g. Positive, above break-even_ |
 | \[add channel\] |  |  |  |  |  |
+
+**Sales-led shape.** Use this where deals close months after the spend. Two tables, because the two answer different questions and merging them produces a number that is wrong in both directions.
+
+_This month's activity: what the spend bought, in the period it was spent._
+
+| Channel | Spend | Leads | MQLs | SQLs | Cost per SQL | vs. last month |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| _E.g. LinkedIn_ | _E.g. \$48,000_ | _E.g. 210_ | _E.g. 96_ | _E.g. 34_ | _E.g. \$1,412_ | _E.g. Volume flat, quality up_ |
+| _E.g. Google Search_ | _E.g. \$31,000_ | _E.g. 180_ | _E.g. 61_ | _E.g. 19_ | _E.g. \$1,632_ | _E.g. Cost per SQL up 12%_ |
+| \[add channel\] |  |  |  |  |  |  |
+
+_Deals that closed this month, credited to the cohort that generated them._
+
+| Channel | Closed-won (credited) | Value | Cohort | Cohort spend | Cost per closed-won |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| _E.g. LinkedIn_ | _E.g. 4.6_ | _E.g. \$161,000_ | _E.g. Mar 2026_ | _E.g. \$44,000_ | _E.g. \$9,565_ |
+| _E.g. Google Search_ | _E.g. 2.4_ | _E.g. \$84,000_ | _E.g. Mar 2026_ | _E.g. \$29,000_ | _E.g. \$12,083_ |
+| \[add channel\] |  |  |  |  |  |
+
+<Warning>
+  Closed-won counts are fractional where an attribution model splits a deal across channels, which is why the example shows 4.6 rather than 5. See [fractional credit](/flat-file-template#fractional-credit). The cohort columns come from `attributed_week`, not from the close date, so this month's spend is never credited with deals that pipeline built two quarters ago.
+</Warning>
+
+<Info>
+  Pick one shape and use it consistently. A subscription business usually wants the ecommerce shape plus a payback column; a business running both motions reports them as two sections rather than one blended table, since blending them hides which motion is working.
+</Info>
 
 ## Tests
 
