@@ -150,6 +150,8 @@ Testing identifiers mark a hypothesis you're currently running, for example an A
 
 - With a testing identifier appended: `20260601-3-Percent-LLA-HubSpot-Leads-TEST01`
 
+**The control does not carry a testing identifier.** It keeps the name it already has, because appending one to a live object renames it and splits its history in two. Only the arms under test carry the ID. See [control and variants](/experiment-id-convention#c-control-and-variants).
+
 This document only covers where a testing identifier sits in the name. It doesn't cover how an [experiment ID](/glossary#experiment-id) gets created, how long it stays on an ad, or where the result gets logged once the test ends. Visit the [Experiment ID concepts](/experiment-id-concepts) for that.
 
 ## Related resources

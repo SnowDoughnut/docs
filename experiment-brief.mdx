@@ -35,6 +35,8 @@ The examples below all describe one invented test, a pricing-page CTA color test
 | [Experiment ID](/experiment-id-convention) | _E.g. `TEST-8H2P`_ |
 | Test type | _E.g. A/B (one control, one variant)_ |
 | [Marketing campaign brief](/marketing-campaign-brief) | _E.g. Black Friday Cyber Monday 2027_ |
+| [Copy brief](/copy-brief), if the test changes words | _E.g. [COPY\_socialproof-test\_2026-07-10\_v01](https://link)_ |
+| [Creative brief](/creative-brief), if the test changes assets | _E.g. Not applicable, same creative in both arms_ |
 | \[add setup field\] |  |
 
 <Accordion title="Concept review: Setup fields">
@@ -187,14 +189,20 @@ _E.g. Start 2026-07-14, end 2026-07-28. End date set by the sample math (18,000 
 
 **List every variant, including the control, and how traffic, budget, or customer profile divides between them. Splits should total 100%. Add a row per variant for A/B/n or multivariate tests:**
 
-| Variant | Description | Split |
-| :-- | :-- | :-- |
-| Control | _E.g. Existing gray CTA button_ | _E.g. 50%_ |
-| Variant A | _E.g. Orange CTA button_ | _E.g. 50%_ |
-| \[add variant\] |  |  |
+| Arm | Description | Platform object name | Carries the ID? | Split |
+| :-- | :-- | :-- | :-- | :-- |
+| Control | _E.g. Existing gray CTA button_ | _E.g._ `AutoGlaze-STATIC-DISC-ANNUAL20-TRY-LP` | _E.g. No, already live_ | _E.g. 50%_ |
+| Variant A | _E.g. Orange CTA button_ | _E.g._ `AutoGlaze-STATIC-SOCPROOF-ANNUAL20-TRY-LP-TEST-8H2P` | _E.g. Yes_ | _E.g. 50%_ |
+| \[add arm\] |  |  |  |  |
+
+<Warning>
+  The control's exact platform name is the only way to find its rows at review, because the control carries no experiment ID. Copy it in character for character rather than describing it. See [control and variants](/experiment-id-convention#c-control-and-variants).
+</Warning>
 
 <Accordion title="Concept review: Listing the control and the splits">
   The control belongs in this list as explicitly as any variant. It's the thing every result is measured against, and leaving it implicit is how tests end up without a clear reference point. Giving it its own row keeps the comparison legible.
+
+  The platform name column is what makes the row usable rather than just descriptive. "Existing gray CTA button" identifies the control to someone who already remembers the test; the exact object name identifies it to someone reading the brief a year later with forty ads in the account. Since the control deliberately carries no experiment ID, this column is the only pointer to it.
 
   Splits totaling 100% is the accounting check that traffic is actually divided the way you intended. A split that doesn't add up is often a sign that a variant is missing from the list or that the allocation in the tool has drifted from the plan on the page. The row count grows with the test: two rows for an A/B, more for A/B/n or multivariate.
 </Accordion>

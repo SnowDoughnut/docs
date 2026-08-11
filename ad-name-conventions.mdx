@@ -25,7 +25,11 @@ _Examples below continue the Doughnut Labs brand introduced in [Naming conventio
 
 ## Standard identifiers
 
-Creative name is freeform, for example `AutoGlaze`, and doesn't need a table of its own; every creative has a unique name. Whenever possible, the creative name should match the file name. [See File naming conventions](/file-naming-conventions) for more information.
+Creative name is freeform, for example `AutoGlaze`, and doesn't need a table of its own. Whenever possible, the creative name should match the file name. [See File naming conventions](/file-naming-conventions) for more information.
+
+<Warning>
+  Creative name alone does not make an ad name unique. Two ads running the same image with different primary text share a creative, a file, and every other standard identifier, so they assemble to the same string. Where copy is the thing that differs, the [message angle](#message-angle) category below is what separates them.
+</Warning>
 
 ### Ad type
 
@@ -74,7 +78,9 @@ Creative name is freeform, for example `AutoGlaze`, and doesn't need a table of 
 | \[add destination\] |  |  |  |
 
 <Accordion title="Concept review: ad-level identifiers">
-  Creative name, together with ad type, offer, CTA, and destination, is what lets you run creative analysis. When two ads are identical except for one field, for example the same creative and CTA but a different offer, the naming convention is what makes that comparison visible in a report without having to open each ad individually. Creative name is the one freeform field here; it doesn't need a table of its own, since every creative has a unique name. Ad type, offer, CTA, and destination are the enumerable ones worth standardizing and logging above.
+  Creative name, together with ad type, offer, CTA, and destination, is what lets you run creative analysis. When two ads are identical except for one field, for example the same creative and CTA but a different offer, the naming convention is what makes that comparison visible in a report without having to open each ad individually. Ad type, offer, CTA, and destination are the enumerable ones worth standardizing and logging above.
+
+  Creative name is the one freeform field, and it carries less weight than it looks like it does. It identifies the asset, not the ad. One image can run under four different offers, three CTAs, and two message angles, which is eleven ads sharing one creative name, and the other fields are what tell them apart. The case that catches teams out is copy: change only the words and every standard field matches, which is why a copy test needs either a message angle value or a testing identifier before the two ads can coexist in the same ad set with different names.
 </Accordion>
 
 ## Additional categories many teams add
@@ -82,6 +88,24 @@ Creative name is freeform, for example `AutoGlaze`, and doesn't need a table of 
 <Tip>
   Optional: add this if you run display ads with fixed creative dimensions.
 </Tip>
+
+### Message angle
+
+<Tip>
+  Optional, and the one to add first if you ever test copy. It is what makes two ads with the same creative and different words distinguishable, and what lets a report group performance by the argument the copy made rather than only by the picture.
+</Tip>
+
+| Long form | Short form | Description | \[add value\] |
+| :-- | :-- | :-- | :-- |
+| _E.g. Social proof_ | _SOCPROOF_ | _Leads on customer count, testimonial, or named logos_ |  |
+| Discount | DISC | Leads on a price reduction or promotional offer |  |
+| Urgency | URG | Leads on a deadline or limited availability |  |
+| Problem | PROB | Leads on the pain, not the solution |  |
+| Outcome | OUTC | Leads on the result the customer gets |  |
+| Feature | FEAT | Leads on a specific capability |  |
+| \[add angle\] |  |  |  |
+
+Message angle sits after ad type and before offer. It describes the argument the copy makes; offer describes what is on the table. They move independently: a social proof ad and a discount ad can carry the same free-trial offer.
 
 ### Ad format / size
 
@@ -98,6 +122,7 @@ Ad format / size only matters for channels with fixed creative dimensions, mainl
 ## Assemble the name
 
 - Standard only: `AutoGlaze-STATIC-FREETRIAL-TRY-LP`
+- With message angle: `AutoGlaze-STATIC-SOCPROOF-FREETRIAL-TRY-LP`
 
 <Info>
   This document covers ad-level identifiers, including this level's dictionary of values. See [Campaign naming conventions ](/campaign-naming-conventions)and [Ad set / ad group / variant naming conventions](/ad-set-group-naming-conventions) for the other two levels.
@@ -109,11 +134,20 @@ Ad format / size only matters for channels with fixed creative dimensions, mainl
   Optional: append only to ads that are part of an active test.
 </Tip>
 
-Testing identifiers mark a hypothesis you're currently running, for example a creative format test or an offer test. Because a test only applies to some ads for a limited time, testing identifiers aren't part of the standard identifier set: append one to the end of the ad name, after the standard identifiers, instead of building it into a table above.
+Testing identifiers mark a hypothesis you're currently running, for example a creative format test or a copy test. Because a test only applies to some ads for a limited time, testing identifiers aren't part of the standard identifier set: append one to the end of the ad name, after the standard identifiers, instead of building it into a table above.
 
 - With a testing identifier appended: `AutoGlaze-STATIC-FREETRIAL-TRY-LP-TEST01`
 
-This document only covers where a testing identifier sits in the name. It doesn't cover how an [experiment ID](/glossary#experiment-id) gets created, how long it stays on an ad, or where the result gets logged once the test ends. Visit the [Experiment ID concepts](/experiment-id-concepts) for that.
+**The control does not carry a testing identifier.** It keeps the name it already has, because appending one to a live ad renames it and splits its history in two. Only the arms under test carry the ID. A copy test on the same creative then looks like this:
+
+| Arm | Name |
+| :-- | :-- |
+| Control, already running | `AutoGlaze-STATIC-DISC-ANNUAL20-TRY-LP` |
+| Variant | `AutoGlaze-STATIC-SOCPROOF-ANNUAL20-TRY-LP-TEST-8H2P` |
+
+The two differ twice over: the message angle says what changed, and the testing identifier says why. The angle survives the test; the identifier comes off when it ends.
+
+This document only covers where a testing identifier sits in the name. Which arm carries it, how it gets created, and where the result gets logged are in the [experiment ID convention](/experiment-id-convention#c-control-and-variants) and the [Experiment ID concepts](/experiment-id-concepts).
 
 ## Related resources
 

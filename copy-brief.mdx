@@ -32,12 +32,16 @@ _Grayed_ `E.g. ` _text is an example to delete. Every example on this page uses 
 | Copy brief name ([file naming conventions](/file-naming-conventions)) | _E.g._ `COPY_q3-trial-push_2027-08-20_v01` |
 | [Marketing campaign brief](/marketing-campaign-brief) | _E.g. Doughnut Labs "Fresh Batch" spring trial push_ |
 | [Creative brief](/creative-brief)(s) | _E.g. link to the paid social creative brief_ |
+| [Experiment brief](/experiment-brief), if this copy is a test arm | _E.g. [TEST-8H2P, social proof vs discount](https://link)_ |
+| Which arm this brief covers | _E.g. Both. Control is the running discount ad, variant is the social proof rewrite_ |
 | \[add setup field\] |  |
 
 <Accordion title="Concept review: Setup fields">
   The owner is accountable for this piece of copy end to end; the writer is whoever's drafting it, and on a small team those can be the same person. Keeping the fields separate matters once they're not.
 
   The campaign and creative brief links are what keep this piece of copy from reading as a standalone document. They place it inside the job it's actually part of, so a reader can trace it back to the strategy and the visual direction it has to sit alongside.
+
+  The experiment row exists because a copy test is one of the most common tests a team runs, and it is the case where this brief behaves differently from every other time it is filled in. A brief written for a test is producing deliberately competing messages, which section 3 otherwise treats as a fault. Naming the test up front is what tells the reader which of the two situations they are in.
 </Accordion>
 
 ## 1. Objective and reader action
@@ -84,8 +88,30 @@ _Grayed_ `E.g. ` _text is an example to delete. Every example on this page uses 
 - _E.g. 2,000\+ teams live_
 - \[add proof point\]
 
+### If this copy is a test arm
+
+<Tip>
+  Fill this in only when the setup section names an experiment brief. One brief covers the whole test, with a message per arm.
+</Tip>
+
+| Arm | Core message | [Message angle](/ad-name-conventions#message-angle) | Ad name |
+| :-- | :-- | :-- | :-- |
+| Control | _E.g. 20% off your first annual plan_ | _E.g._ `DISC` | _E.g._ `AutoGlaze-STATIC-DISC-ANNUAL20-TRY-LP` |
+| Variant | _E.g. 2,000\+ teams already ship reporting this way_ | _E.g._ `SOCPROOF` | _E.g._ `AutoGlaze-STATIC-SOCPROOF-ANNUAL20-TRY-LP-TEST-8H2P` |
+| \[add arm\] |  |  |  |
+
+**What is deliberately held constant across arms:** _E.g. Creative file, CTA, destination, offer, audience. Only the primary text changes._
+
+<Warning>
+  One copy brief covers the whole test, not one per arm. Two briefs give two writers two sets of instructions with nothing tying them together, and the thing you are testing then differs by more than one variable.
+</Warning>
+
 <Accordion title="Concept review: Key message and proof">
   This message should come from the campaign brief's messaging, not get reinvented for this one piece. When two assets in the same campaign carry two different "most important" messages, the campaign stops reading like one campaign.
+
+  A test is the deliberate exception, and it is worth being precise about why it is not a contradiction. Competing messages are a problem when they run alongside each other permanently and neither was chosen. In a test they run against each other temporarily, for a fixed window, with a decision rule that ends with one of them becoming the message and the other being dropped. The test is the mechanism for arriving at one message, not a suspension of the rule.
+
+  What still applies inside a test is the single-variable discipline. If the variant changes the message and the CTA and the image, the result says something won and nothing about which change did it, which is why the constants line matters as much as the arms table.
 
   Proof is what makes the message credible instead of just asserted. A number, a specific mechanism, a demonstration, or a customer's own words all do more work than an adjective.
 </Accordion>
