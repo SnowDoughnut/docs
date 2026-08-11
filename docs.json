@@ -523,7 +523,8 @@
               "asset-directory",
               "creative-drive",
               "video-drive",
-              "copy-drive"
+              "copy-drive",
+              "audience-list-store"
             ]
           }
         ]

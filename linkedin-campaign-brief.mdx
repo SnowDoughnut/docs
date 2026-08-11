@@ -95,18 +95,49 @@ LinkedIn's bid strategies, as of 7 August 2026:
 
 ## Targeting
 
-| Customer profile | Link | Built as | Source |
-| :-- | :-- | :-- | :-- |
-| _E.g. Mid-market RevOps lead_ | _E.g. [CP\_midmarket-revops\_2026-03-02\_v02](https://link)_ | _E.g. Job title plus company size_ | _E.g. Native LinkedIn targeting_ |
-| _E.g. Named target accounts_ | _E.g. [Q2 target account list](https://link)_ | _E.g. Company list upload_ | _E.g. [LinkedIn company list CSV template](/linkedin-company-list-csv-template)_ |
-| \[add profile\] |  |  |  |
+**Targeting built from a customer profile.** Attribute-based: job title, company size, industry, seniority.
+
+| Customer profile | Link | Built as |
+| :-- | :-- | :-- |
+| _E.g. Mid-market RevOps lead_ | _E.g. [CP\_midmarket-revops\_2026-03-02\_v02](https://link)_ | _E.g. Job title plus company size, native LinkedIn targeting_ |
+| \[add profile\] |  |  |
+
+**Targeting built from an uploaded list.** Named accounts or contacts. The file lives in the [audience list store](/audience-list-store), never in this brief.
+
+| List name | What it is | Supplied by | Selection criteria | As of | Refresh due |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| _E.g._ `LIST_q2-target-accounts_2026-04-01_v01` | _E.g. Named accounts for the Q2 ABM push_ | _E.g. Dana Ortiz, sales ops_ | _E.g. Open opportunities over \$50k, plus closed-lost in the last 18 months_ | _E.g. 2026-04-01_ | _E.g. 2026-07-01_ |
+| \[add list\] |  |  |  |  |  |
+
+<Warning>
+  Reference a list by its name only. No account names, domains, or contact details in this brief. See the [audience list store](/audience-list-store) for where the file lives and who may access it.
+</Warning>
+
+**Match check.** Fill this in before creative and copy are briefed, not at the pre-launch checklist.
+
+| Field | Fill in |
+| :-- | :-- |
+| Rows uploaded | _E.g. 1,240_ |
+| Companies matched | _E.g. 892_ |
+| Match rate | _E.g. 72%_ |
+| Clears the 300 matched floor? | _E.g. Yes_ |
+| Date checked, by whom | _E.g. 3 Apr, Tom Reyes_ |
+| Previous refresh's match rate | _E.g. 78% in Q1. Slight decay, list is due a refresh in July_ |
 
 | Setting | Fill in |
 | :-- | :-- |
 | Estimated audience size | _E.g. 68,000_ |
 | Audience expansion | _E.g. Off. Keeps delivery inside the defined account list_ |
 | LinkedIn Audience Network | _E.g. Off_ |
-| Exclusions | _E.g. Existing customers, current employees_ |
+| Exclusions | _E.g. Existing customers, current employees, via_ `LIST_customers-suppress_2026-04-01_v03` |
+| Audience locked from | _E.g. Launch date. Any change after that is a new version and a recorded split point_ |
+
+<Warning>
+  A LinkedIn campaign needs **at least 300 matched companies** to serve, whatever the row count was. Check this before anything is produced. A list that matches short is a scheduling problem caught early and a write-off of finished creative caught late.
+</Warning>
+
+<Warning>
+  Fix the audience at brief stage and leave it alone, the same way you fix the bid strategy. On account-based campaigns the audience is the campaign, so adding accounts mid-flight rewrites what the numbers mean and the periods either side stop being comparable. See [when a list changes mid-flight](/audience-list-store#when-a-list-changes-mid-flight).
 
 <Warning>
   Audience expansion and the LinkedIn Audience Network are both on by default in some setups. Both widen delivery beyond the audience you defined. Set each one deliberately and record why, so a later change in cost per lead can be traced to a decision rather than a default.
@@ -116,6 +147,10 @@ LinkedIn's bid strategies, as of 7 August 2026:
   LinkedIn's targeting is the reason to be on the platform and the reason it is expensive. Firmographic and job-title targeting reaches people you cannot reliably reach elsewhere, and the auction prices that access accordingly.
 
   Audience size is worth recording because it sets the ceiling on what the campaign can do. Too narrow and delivery stalls regardless of budget; too broad and the targeting advantage that justified the cost has been given away. The number belongs in the brief so the trade is visible before launch rather than inferred afterward.
+
+  Profile-based and list-based targeting are split into two tables because they answer to different things. A profile is a description your team owns and can restate; a list is a file somebody selected on a date, and the useful facts about it are who chose it, on what basis, and when it stops being current. Collapsing both into one row loses exactly the provenance that a list handed over from another team most needs, since the person who knows the answer is usually not the person running the campaign.
+
+  The match rate sits in the brief rather than only in the checklist because of when it is actionable. At the checklist a short match is a campaign that cannot launch after the money has been spent on creative. At brief stage it is a list that needs more rows, which is a conversation with whoever supplied it. Recording the previous rate alongside it is what turns a number into a trend, so a list decaying from 78% to 51% is visible before it becomes a delivery problem nobody can explain.
 </Accordion>
 
 ## Creative and copy
@@ -205,4 +240,5 @@ One tagged URL per audience or variant, not one per campaign. `utm_content` carr
 - [**Marketing campaign brief**](/marketing-campaign-brief) The parent brief this one sits under.
 - [**LinkedIn creative specs**](/linkedin-creative-specs) and the [**LinkedIn copy templates**](/linkedin-single-image-copy-template)
 - [**LinkedIn company list CSV template**](/linkedin-company-list-csv-template) For account list uploads.
+- [**Audience list store**](/audience-list-store) Where uploaded lists live, and what is recorded about them.
 - [**Campaign library**](/campaign-library-overview) Where this brief is filed.
