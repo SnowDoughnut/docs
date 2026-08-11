@@ -124,7 +124,8 @@
             "group": "Content and SEO",
             "pages": [
               "seo-and-geo-concepts",
-              "article-brief-concepts"
+              "article-brief-concepts",
+              "content-calendar-concepts"
             ]
           },
           {
@@ -183,10 +184,11 @@
             ]
           },
           {
-            "group": "Article standards",
+            "group": "Content standards",
             "pages": [
               "article-brief",
-              "article-standards"
+              "article-standards",
+              "content-calendar"
             ]
           },
           {
@@ -270,6 +272,7 @@
             "pages": [
               "organic-social-home",
               "organic-social-post-brief",
+              "organic-social-creative-specs",
               "organic-social-post-process"
             ]
           },
@@ -306,7 +309,8 @@
             "dropdown": "Campaign planning",
             "pages": [
               "campaign-brief-process",
-              "campaign-retrospect-process"
+              "campaign-retrospect-process",
+              "content-calendar-process"
             ]
           },
           {
@@ -388,6 +392,12 @@
             "group": "Email",
             "pages": [
               "email-copy-template"
+            ]
+          },
+          {
+            "group": "Organic social",
+            "pages": [
+              "organic-social-copy-template"
             ]
           },
           {
