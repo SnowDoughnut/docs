@@ -25,7 +25,7 @@ _The grayed_ `E.g. `_lines are examples to delete. They all follow one invented 
 
 ## Setup
 
-**Fill in the fields that identify the test and who owns it. Keep the rows that fit, add any your team relies on:**
+**Fill in the fields that identify this piece of work and who owns it. Keep the rows that fit, add any your team relies on:**
 
 | Field | Fill in |
 | :-- | :-- |
@@ -35,6 +35,8 @@ _The grayed_ `E.g. `_lines are examples to delete. They all follow one invented 
 | Creative Type | _E.g. Video_ |
 | [Marketing campaign brief](/marketing-campaign-brief) | _E.g. Black Friday Cyber Monday 2027_ |
 | Finished creative | _E.g. [https://drive.google.com/drive/u/0/folders/1234](https://drive.google.com/drive/u/0/folders/1234)_ |
+| [Experiment brief](/experiment-brief), if this creative is a test arm | _E.g. [TEST-4K9M, new direction vs incumbent](https://link)_ |
+| Which arm this brief covers | _E.g. The variant. Control is the incumbent set, already produced and briefed_ |
 | \[add setup field\] |  |
 
 <Accordion title="Concept review: Setup fields">
@@ -180,6 +182,34 @@ _E.g. Confident and plain-spoken, never hypey. Show the real product UI, not abs
   This section sets the feel of the work, and it is where adjectives quietly fail. "Modern," "bold," and "premium" mean something different to everyone who reads them, so on their own they transfer almost no direction. What carries is an explanation of what those words mean in practice, or an example that shows it.
 
   References work best when each one is annotated, because a bare link invites copying the whole thing, including the parts you did not mean. A note on what to take and what to leave turns a reference into direction instead of a template. This section also points outward: the full brand voice, color, and identity rules live in the brand system you link in Part 3, and repeating them here only creates two versions that can drift apart.
+</Accordion>
+
+### If this creative is a test arm
+
+<Tip>
+  Fill this in only when the setup section names an experiment brief. One brief covers the whole test; the control is recorded here rather than re-briefed.
+</Tip>
+
+| Arm | Direction | Status | Platform object name |
+| :-- | :-- | :-- | :-- |
+| Control | _E.g. Product UI on white, plain-spoken captions. The incumbent set_ | _E.g. Live since Feb, already briefed and approved_ | _E.g._ `AutoGlaze-STATIC-DISC-ANNUAL20-TRY-LP` |
+| Variant | _E.g. Documentary-style customer footage, handheld, no UI_ | _E.g. This brief_ | _E.g._ `Fieldwork-VIDEO-DISC-ANNUAL20-TRY-LP-TEST-4K9M` |
+| \[add arm\] |  |  |  |
+
+**Held constant across arms:** _E.g. Message, offer, CTA, destination, audience, placement, and budget split. Only the creative execution varies._
+
+**What is being varied, in one line:** _E.g. Execution style only: documentary footage against product UI._
+
+<Warning>
+  On a direction test the held-constant line is the whole discipline. A new direction is tempting to ship with a new message, a fresh offer, and a better landing page attached, and the result then says something won without saying which change did it. If more than one thing has to change, that is a different and larger test, and it needs to be designed as one rather than discovered at the review.
+</Warning>
+
+<Accordion title="Concept review: Briefing a creative test">
+  A creative test is the case where this brief behaves differently from every other time it is filled in. Ordinarily it describes one piece of work. Here it describes a comparison, and the comparison is only meaningful if everything except the thing under test is identical.
+
+  The control usually needs no briefing at all, because it already exists and was briefed when it was made. What it needs is to be written down: which asset it is, what direction it represents, and its exact platform object name, since the control carries no experiment ID and that name is the only way to find its rows at review. Recording it here rather than trusting anyone to remember which of forty ads was the baseline is the point of the row.
+
+  Direction tests fail more often on scope than on execution. "New direction" is a large enough phrase to smuggle in a new message and a new offer without anyone noticing, and each addition costs the test its ability to attribute the result. Naming what is held constant, before production starts, is what keeps the answer usable.
 </Accordion>
 
 ### 10. Mandatories and guardrails
