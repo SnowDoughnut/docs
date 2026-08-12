@@ -2,7 +2,7 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "sequoia",
   "name": "Knowledge base",
-  "description": "Onboarding, employee handbook, HR guides, IT help, company policies, and department runbooks.",
+  "description": "Naming conventions, briefs, templates, checklists, and reporting standards for running marketing campaigns. Fill each workbook in once, then reuse it across every campaign.",
   "colors": {
     "primary": "#166E3F",
     "light": "#26BD6C",
@@ -143,7 +143,7 @@
         ]
       },
       {
-        "tab": "Shared Standards & Briefs",
+        "tab": "Shared standards and briefs",
         "groups": [
           {
             "group": "Brand guidelines",
@@ -163,7 +163,7 @@
               "file-naming-conventions",
               "event-naming-conventions",
               {
-                "group": "Campaigns naming conventions",
+                "group": "Campaign, ad set, and ad",
                 "pages": [
                   "campaign-naming-conventions",
                   "ad-set-group-naming-conventions",
@@ -226,7 +226,7 @@
         ]
       },
       {
-        "tab": "Platforms & Channels",
+        "tab": "Platforms and channels",
         "dropdowns": [
           {
             "dropdown": "Meta",
@@ -294,7 +294,7 @@
             ]
           },
           {
-            "dropdown": "Website & landing pages",
+            "dropdown": "Website and landing pages",
             "pages": [
               "web-home",
               "landing-page-process"
@@ -494,7 +494,7 @@
         ]
       },
       {
-        "tab": "Reports & Library",
+        "tab": "Reports and library",
         "groups": [
           {
             "group": "Libraries and registers",
