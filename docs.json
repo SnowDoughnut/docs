@@ -92,88 +92,149 @@
       },
       {
         "tab": "Concepts",
-        "groups": [
+        "dropdowns": [
           {
-            "group": "Experimentation",
-            "pages": [
-              "experiment-id-concepts",
-              "experiment-brief-concepts",
-              "statistical-significance"
+            "dropdown": "Experimentation",
+            "groups": [
+              {
+                "group": "Core concepts",
+                "pages": [
+                  "experiment-id-concepts",
+                  "experiment-brief-concepts",
+                  "statistical-significance"
+                ]
+              }
             ]
           },
           {
-            "group": "Foundations",
-            "pages": [
-              "glossary",
-              "naming-conventions-overview",
-              "utm-parameters"
+            "dropdown": "Foundations",
+            "groups": [
+              {
+                "group": "Core concepts",
+                "pages": [
+                  "glossary",
+                  "naming-conventions-overview",
+                  "utm-parameters"
+                ]
+              }
             ]
           },
           {
-            "group": "Brand",
-            "pages": [
-              "brand-strategy-concepts",
-              "visual-identity-concepts"
+            "dropdown": "Brand",
+            "groups": [
+              {
+                "group": "Core concepts",
+                "pages": [
+                  "brand-strategy-concepts",
+                  "visual-identity-concepts"
+                ]
+              }
             ]
           },
           {
-            "group": "Creative",
-            "pages": [
-              "creative-brief-concepts",
-              "landing-page-brief-concepts",
-              "copy-brief-concepts"
+            "dropdown": "Creative",
+            "groups": [
+              {
+                "group": "Core concepts",
+                "pages": [
+                  "creative-brief-concepts",
+                  "landing-page-brief-concepts",
+                  "copy-brief-concepts"
+                ]
+              }
             ]
           },
           {
-            "group": "Reporting",
-            "pages": [
-              "reporting-framework-concepts",
-              "report-writing-concepts",
-              "data-quality-and-rollup-concepts"
+            "dropdown": "Reporting",
+            "groups": [
+              {
+                "group": "Core concepts",
+                "pages": [
+                  "reporting-framework-concepts",
+                  "report-writing-concepts",
+                  "data-quality-and-rollup-concepts"
+                ]
+              }
             ]
           },
           {
-            "group": "Content and SEO",
-            "pages": [
-              "seo-and-geo-concepts",
-              "article-brief-concepts",
-              "content-calendar-concepts"
+            "dropdown": "Content and SEO",
+            "groups": [
+              {
+                "group": "Core concepts",
+                "pages": [
+                  "seo-and-geo-concepts",
+                  "article-brief-concepts",
+                  "content-calendar-concepts"
+                ]
+              }
             ]
           },
           {
-            "group": "Best practices",
-            "pages": [
-              "campaign-structure-best-practices",
-              "copy-best-practices",
-              "creative-best-practices",
-              "tracking-best-practices",
-              "reporting-best-practices",
-              "experimentation-best-practices",
-              "article-best-practices"
+            "dropdown": "Best practices",
+            "groups": [
+              {
+                "group": "Campaigns and creative",
+                "pages": [
+                  "campaign-structure-best-practices",
+                  "creative-best-practices",
+                  "copy-best-practices"
+                ]
+              },
+              {
+                "group": "Measurement",
+                "pages": [
+                  "tracking-best-practices",
+                  "reporting-best-practices",
+                  "experimentation-best-practices"
+                ]
+              },
+              {
+                "group": "Content",
+                "pages": [
+                  "article-best-practices"
+                ]
+              }
             ]
           }
         ]
       },
       {
         "tab": "Shared standards and briefs",
-        "groups": [
+        "dropdowns": [
           {
-            "group": "Brand guidelines",
-            "pages": [
-              "brand-guidelines",
-              "positioning",
-              "messaging",
-              "brand-voice-and-tone",
-              "visual-identity",
-              "logo-usage",
-              "brand-assets"
+            "dropdown": "Brand guidelines",
+            "groups": [
+              {
+                "group": "Brand foundations",
+                "pages": [
+                  "brand-guidelines",
+                  "positioning",
+                  "messaging",
+                  "brand-voice-and-tone"
+                ]
+              },
+              {
+                "group": "Visual identity",
+                "pages": [
+                  "visual-identity",
+                  "logo-usage",
+                  "brand-assets"
+                ]
+              }
             ]
           },
           {
-            "group": "Naming and tracking",
-            "pages": [
-              "file-naming-conventions",
-              "event-naming-conventions",
+            "dropdown": "Naming and tracking",
+            "groups": [
+              {
+                "group": "Naming conventions",
+                "pages": [
+                  "file-naming-conventions",
+                  "event-naming-conventions",
+                  "customer-profile-naming-conventions"
+                ]
+              },
               {
                 "group": "Campaign, ad set, and ad",
                 "pages": [
@@ -182,57 +243,111 @@
                   "ad-name-conventions"
                 ]
               },
-              "customer-profile-naming-conventions",
-              "utm-standards"
+              {
+                "group": "Tracking",
+                "pages": [
+                  "utm-standards"
+                ]
+              }
             ]
           },
           {
-            "group": "Creative standards",
-            "pages": [
-              "copy-brief",
-              "image-and-video-specs",
-              "landing-page-brief",
-              "creative-brief"
+            "dropdown": "Creative standards",
+            "groups": [
+              {
+                "group": "Briefs",
+                "pages": [
+                  "creative-brief",
+                  "copy-brief",
+                  "landing-page-brief"
+                ]
+              },
+              {
+                "group": "Specs",
+                "pages": [
+                  "image-and-video-specs"
+                ]
+              }
             ]
           },
           {
-            "group": "Content standards",
-            "pages": [
-              "article-brief",
-              "article-standards",
-              "content-calendar"
+            "dropdown": "Content standards",
+            "groups": [
+              {
+                "group": "Articles",
+                "pages": [
+                  "article-brief",
+                  "article-standards"
+                ]
+              },
+              {
+                "group": "Planning",
+                "pages": [
+                  "content-calendar"
+                ]
+              }
             ]
           },
           {
-            "group": "Reporting standards",
-            "pages": [
-              "marketing-reporting-data-dictionary",
-              "kpi-definitions",
-              "reporting-cadence",
-              "dashboard-standards"
+            "dropdown": "Reporting standards",
+            "groups": [
+              {
+                "group": "Metrics and definitions",
+                "pages": [
+                  "marketing-reporting-data-dictionary",
+                  "kpi-definitions"
+                ]
+              },
+              {
+                "group": "Cadence and dashboards",
+                "pages": [
+                  "reporting-cadence",
+                  "dashboard-standards"
+                ]
+              }
             ]
           },
           {
-            "group": "Experiment and pilot standards",
-            "pages": [
-              "experiment-id-convention",
-              "experiment-brief",
-              "pilot-brief",
-              "experiment-review-process"
+            "dropdown": "Experiments and pilots",
+            "groups": [
+              {
+                "group": "Experiments",
+                "pages": [
+                  "experiment-id-convention",
+                  "experiment-brief",
+                  "experiment-review-process"
+                ]
+              },
+              {
+                "group": "Pilots",
+                "pages": [
+                  "pilot-brief"
+                ]
+              }
             ]
           },
           {
-            "group": "Customer profiles",
-            "pages": [
-              "customer-profile-brief",
-              "b2-c-customer-profiles"
+            "dropdown": "Customer profiles",
+            "groups": [
+              {
+                "group": "Briefs and profiles",
+                "pages": [
+                  "customer-profile-brief",
+                  "b2-c-customer-profiles"
+                ]
+              }
             ]
           },
           {
-            "group": "Campaigns and products",
-            "pages": [
-              "marketing-campaign-brief",
-              "product-catalog"
+            "dropdown": "Campaigns and products",
+            "groups": [
+              {
+                "group": "Briefs and catalogs",
+                "pages": [
+                  "marketing-campaign-brief",
+                  "product-catalog"
+                ]
+              }
             ]
           }
         ]
@@ -242,74 +357,184 @@
         "dropdowns": [
           {
             "dropdown": "Meta",
-            "pages": [
-              "meta-home",
-              "meta-campaign-brief",
-              "meta-creative-specs",
-              "meta-campaign-process"
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "meta-home"
+                ]
+              },
+              {
+                "group": "Briefs and specs",
+                "pages": [
+                  "meta-campaign-brief",
+                  "meta-creative-specs"
+                ]
+              },
+              {
+                "group": "Processes",
+                "pages": [
+                  "meta-campaign-process"
+                ]
+              }
             ]
           },
           {
             "dropdown": "Google",
-            "pages": [
-              "google-home",
-              "google-campaign-brief",
-              "google-pmax-creative-specs",
-              "youtube-creative-specs",
-              "google-display-creative-specs",
-              "google-search-demandgen-display-specs",
-              "google-campaign-process"
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "google-home"
+                ]
+              },
+              {
+                "group": "Briefs and specs",
+                "pages": [
+                  "google-campaign-brief",
+                  "google-pmax-creative-specs",
+                  "youtube-creative-specs",
+                  "google-display-creative-specs",
+                  "google-search-demandgen-display-specs"
+                ]
+              },
+              {
+                "group": "Processes",
+                "pages": [
+                  "google-campaign-process"
+                ]
+              }
             ]
           },
           {
             "dropdown": "LinkedIn",
-            "pages": [
-              "linked-in-home",
-              "linkedin-campaign-brief",
-              "linkedin-creative-specs",
-              "linkedin-campaign-process"
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "linked-in-home"
+                ]
+              },
+              {
+                "group": "Briefs and specs",
+                "pages": [
+                  "linkedin-campaign-brief",
+                  "linkedin-creative-specs"
+                ]
+              },
+              {
+                "group": "Processes",
+                "pages": [
+                  "linkedin-campaign-process"
+                ]
+              }
             ]
           },
           {
             "dropdown": "TikTok",
-            "pages": [
-              "tik-tok-home",
-              "tiktok-campaign-brief",
-              "tiktok-creative-specs",
-              "tiktok-campaign-process"
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "tik-tok-home"
+                ]
+              },
+              {
+                "group": "Briefs and specs",
+                "pages": [
+                  "tiktok-campaign-brief",
+                  "tiktok-creative-specs"
+                ]
+              },
+              {
+                "group": "Processes",
+                "pages": [
+                  "tiktok-campaign-process"
+                ]
+              }
             ]
           },
           {
             "dropdown": "Organic social",
-            "pages": [
-              "organic-social-home",
-              "organic-social-post-brief",
-              "organic-social-creative-specs",
-              "organic-social-post-process"
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "organic-social-home"
+                ]
+              },
+              {
+                "group": "Briefs and specs",
+                "pages": [
+                  "organic-social-post-brief",
+                  "organic-social-creative-specs"
+                ]
+              },
+              {
+                "group": "Processes",
+                "pages": [
+                  "organic-social-post-process"
+                ]
+              }
             ]
           },
           {
             "dropdown": "Email",
-            "pages": [
-              "email-home",
-              "email-creative-specs",
-              "email-campaign-brief",
-              "email-campaign-process"
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "email-home"
+                ]
+              },
+              {
+                "group": "Briefs and specs",
+                "pages": [
+                  "email-campaign-brief",
+                  "email-creative-specs"
+                ]
+              },
+              {
+                "group": "Processes",
+                "pages": [
+                  "email-campaign-process"
+                ]
+              }
             ]
           },
           {
             "dropdown": "SEO",
-            "pages": [
-              "seo-home",
-              "article-process",
-              "article-maintenance-process"
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "seo-home"
+                ]
+              },
+              {
+                "group": "Processes",
+                "pages": [
+                  "article-process",
+                  "article-maintenance-process"
+                ]
+              }
             ]
           },
           {
             "dropdown": "Website and landing pages",
-            "pages": [
-              "web-home",
-              "landing-page-process"
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "web-home"
+                ]
+              },
+              {
+                "group": "Processes",
+                "pages": [
+                  "landing-page-process"
+                ]
+              }
             ]
           }
         ]
@@ -319,103 +544,170 @@
         "dropdowns": [
           {
             "dropdown": "Campaign planning",
-            "pages": [
-              "campaign-brief-process",
-              "campaign-retrospect-process",
-              "content-calendar-process"
+            "groups": [
+              {
+                "group": "Planning",
+                "pages": [
+                  "campaign-brief-process",
+                  "content-calendar-process"
+                ]
+              },
+              {
+                "group": "Review",
+                "pages": [
+                  "campaign-retrospect-process"
+                ]
+              }
             ]
           },
           {
             "dropdown": "Creative production",
-            "pages": [
-              "creative-brief-process",
-              "copywriting-process",
-              "approval-process"
+            "groups": [
+              {
+                "group": "Production",
+                "pages": [
+                  "creative-brief-process",
+                  "copywriting-process"
+                ]
+              },
+              {
+                "group": "Approvals",
+                "pages": [
+                  "approval-process"
+                ]
+              }
             ]
           },
           {
             "dropdown": "Budgeting",
-            "pages": [
-              "budget-planning",
-              "budget-pacing",
-              "budget-reporting-process"
+            "groups": [
+              {
+                "group": "Planning and pacing",
+                "pages": [
+                  "budget-planning",
+                  "budget-pacing"
+                ]
+              },
+              {
+                "group": "Reporting",
+                "pages": [
+                  "budget-reporting-process"
+                ]
+              }
             ]
           },
           {
             "dropdown": "Reporting",
-            "pages": [
-              "weekly-reporting-process",
-              "monthly-reporting-process",
-              "quarterly-reporting-process",
-              "yearly-reporting-process"
+            "groups": [
+              {
+                "group": "Recurring reports",
+                "pages": [
+                  "weekly-reporting-process",
+                  "monthly-reporting-process",
+                  "quarterly-reporting-process",
+                  "yearly-reporting-process"
+                ]
+              }
             ]
           },
           {
             "dropdown": "Experiments",
-            "pages": [
-              "creating-an-experiment"
+            "groups": [
+              {
+                "group": "Running experiments",
+                "pages": [
+                  "creating-an-experiment"
+                ]
+              }
             ]
           },
           {
             "dropdown": "Compliance and approval",
-            "pages": [
-              "legal-review-process",
-              "brand-approval-process"
+            "groups": [
+              {
+                "group": "Reviews",
+                "pages": [
+                  "legal-review-process",
+                  "brand-approval-process"
+                ]
+              }
             ]
           },
           {
             "dropdown": "Checklists",
-            "pages": [
-              "campaign-qa-checklist",
-              "campaign-launch-checklist",
-              "meta-pre-launch-checklist",
-              "google-pre-launch-checklist",
-              "linkedin-pre-launch-checklist",
-              "tiktok-pre-launch-checklist",
-              "organic-social-pre-publish-checklist",
-              "email-pre-send-checklist",
-              "creative-review-checklist",
-              "article-pre-publish-checklist",
-              "article-update-checklist",
-              "geo-checklist"
+            "groups": [
+              {
+                "group": "Campaign",
+                "pages": [
+                  "campaign-qa-checklist",
+                  "campaign-launch-checklist"
+                ]
+              },
+              {
+                "group": "Channel pre-launch",
+                "pages": [
+                  "meta-pre-launch-checklist",
+                  "google-pre-launch-checklist",
+                  "linkedin-pre-launch-checklist",
+                  "tiktok-pre-launch-checklist",
+                  "organic-social-pre-publish-checklist",
+                  "email-pre-send-checklist"
+                ]
+              },
+              {
+                "group": "Creative and content",
+                "pages": [
+                  "creative-review-checklist",
+                  "article-pre-publish-checklist",
+                  "article-update-checklist",
+                  "geo-checklist"
+                ]
+              }
             ]
           }
         ]
       },
       {
         "tab": "Templates",
-        "groups": [
+        "dropdowns": [
           {
-            "group": "General",
-            "pages": [
-              "copy-templates",
-              "flat-file-template",
-              "weekly-report-template",
-              "monthly-report-template",
-              "quarterly-report-template",
-              "annual-report-template",
-              "ecommerce-metrics-starter-pack",
-              "sales-led-metrics-starter-pack",
-              "landing-page-skeleton",
-              "article-writing-template"
+            "dropdown": "General",
+            "groups": [
+              {
+                "group": "Copy and content",
+                "pages": [
+                  "copy-templates",
+                  "landing-page-skeleton",
+                  "article-writing-template"
+                ]
+              },
+              {
+                "group": "Reporting",
+                "pages": [
+                  "weekly-report-template",
+                  "monthly-report-template",
+                  "quarterly-report-template",
+                  "annual-report-template"
+                ]
+              },
+              {
+                "group": "Metrics starter packs",
+                "pages": [
+                  "ecommerce-metrics-starter-pack",
+                  "sales-led-metrics-starter-pack"
+                ]
+              },
+              {
+                "group": "Data files",
+                "pages": [
+                  "flat-file-template"
+                ]
+              }
             ]
           },
           {
-            "group": "Email",
-            "pages": [
-              "email-copy-template"
-            ]
-          },
-          {
-            "group": "Organic social",
-            "pages": [
-              "organic-social-copy-template"
-            ]
-          },
-          {
-            "group": "Meta",
-            "pages": [
-              "customer-profile-csv-template-meta",
+            "dropdown": "Meta",
+            "groups": [
               {
                 "group": "Copy templates",
                 "pages": [
@@ -436,13 +728,18 @@
                   "meta-commerce-destination-csv-template",
                   "meta-commerce-home-listing-csv-template"
                 ]
+              },
+              {
+                "group": "Customer profiles",
+                "pages": [
+                  "customer-profile-csv-template-meta"
+                ]
               }
             ]
           },
           {
-            "group": "Google",
-            "pages": [
-              "customer-profile-csv-template-google",
+            "dropdown": "Google",
+            "groups": [
               {
                 "group": "Copy templates",
                 "pages": [
@@ -464,30 +761,23 @@
                   "google-merchant-center-promotions-csv-template"
                 ]
               },
-              "google-hotel-center-csv-template"
-            ]
-          },
-          {
-            "group": "TikTok",
-            "pages": [
-              "customer-profile-csv-template-tiktok",
               {
-                "group": "Copy templates",
+                "group": "Google Hotel Center",
                 "pages": [
-                  "tiktok-in-feed-copy-template",
-                  "tiktok-spark-ad-copy-template",
-                  "tiktok-carousel-copy-template",
-                  "tiktok-video-shopping-copy-template",
-                  "tiktok-topview-copy-template"
+                  "google-hotel-center-csv-template"
+                ]
+              },
+              {
+                "group": "Customer profiles",
+                "pages": [
+                  "customer-profile-csv-template-google"
                 ]
               }
             ]
           },
           {
-            "group": "LinkedIn",
-            "pages": [
-              "customer-profile-csv-template-linkedin",
-              "linkedin-company-list-csv-template",
+            "dropdown": "LinkedIn",
+            "groups": [
               {
                 "group": "Copy templates",
                 "pages": [
@@ -500,54 +790,154 @@
                   "linkedin-text-ad-copy-template",
                   "linkedin-follower-ad-copy-template"
                 ]
+              },
+              {
+                "group": "Customer profiles and lists",
+                "pages": [
+                  "customer-profile-csv-template-linkedin",
+                  "linkedin-company-list-csv-template"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "TikTok",
+            "groups": [
+              {
+                "group": "Copy templates",
+                "pages": [
+                  "tiktok-in-feed-copy-template",
+                  "tiktok-spark-ad-copy-template",
+                  "tiktok-carousel-copy-template",
+                  "tiktok-video-shopping-copy-template",
+                  "tiktok-topview-copy-template"
+                ]
+              },
+              {
+                "group": "Customer profiles",
+                "pages": [
+                  "customer-profile-csv-template-tiktok"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "Email",
+            "groups": [
+              {
+                "group": "Copy templates",
+                "pages": [
+                  "email-copy-template"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "Organic social",
+            "groups": [
+              {
+                "group": "Copy templates",
+                "pages": [
+                  "organic-social-copy-template"
+                ]
               }
             ]
           }
         ]
       },
       {
-        "tab": "Reports and library",
-        "groups": [
+        "tab": "Reports",
+        "dropdowns": [
           {
-            "group": "Libraries and registers",
-            "pages": [
-              "campaign-library-overview",
-              "customer-profile-library-overview",
-              "creative-brief-library",
-              "copy-brief-library",
-              "landing-page-library",
-              "site-pages-register",
-              "experiment-learning-home",
-              "event-tracking-plan-overview",
-              "event-tracking-plan"
+            "dropdown": "Report archives",
+            "groups": [
+              {
+                "group": "Recurring reports",
+                "pages": [
+                  "weekly-report-archive",
+                  "monthly-report-archive",
+                  "quarterly-report-archive",
+                  "annual-report-archive"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Library",
+        "dropdowns": [
+          {
+            "dropdown": "Libraries and registers",
+            "groups": [
+              {
+                "group": "Campaigns and profiles",
+                "pages": [
+                  "campaign-library-overview",
+                  "customer-profile-library-overview"
+                ]
+              },
+              {
+                "group": "Creative and copy",
+                "pages": [
+                  "creative-brief-library",
+                  "copy-brief-library"
+                ]
+              },
+              {
+                "group": "Web pages",
+                "pages": [
+                  "landing-page-library",
+                  "site-pages-register"
+                ]
+              },
+              {
+                "group": "Experiments and tracking",
+                "pages": [
+                  "experiment-learning-home",
+                  "event-tracking-plan-overview",
+                  "event-tracking-plan"
+                ]
+              }
             ]
           },
           {
-            "group": "Article library",
-            "pages": [
-              "article-library-overview",
-              "hero-article-register",
-              "supporting-article-register",
-              "article-brief-library"
+            "dropdown": "Article library",
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "article-library-overview",
+                  "article-brief-library"
+                ]
+              },
+              {
+                "group": "Registers",
+                "pages": [
+                  "hero-article-register",
+                  "supporting-article-register"
+                ]
+              }
             ]
           },
           {
-            "group": "Report archives",
-            "pages": [
-              "weekly-report-archive",
-              "monthly-report-archive",
-              "quarterly-report-archive",
-              "annual-report-archive"
-            ]
-          },
-          {
-            "group": "Asset directories",
-            "pages": [
-              "asset-directory",
-              "creative-drive",
-              "video-drive",
-              "copy-drive",
-              "audience-list-store"
+            "dropdown": "Asset directories",
+            "groups": [
+              {
+                "group": "Drives",
+                "pages": [
+                  "creative-drive",
+                  "video-drive",
+                  "copy-drive"
+                ]
+              },
+              {
+                "group": "Directories",
+                "pages": [
+                  "asset-directory",
+                  "audience-list-store"
+                ]
+              }
             ]
           }
         ]
