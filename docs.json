@@ -145,6 +145,17 @@
             ]
           },
           {
+            "dropdown": "Paid search",
+            "groups": [
+              {
+                "group": "Core concepts",
+                "pages": [
+                  "google-search-theme-concepts"
+                ]
+              }
+            ]
+          },
+          {
             "dropdown": "Reporting",
             "groups": [
               {
@@ -401,11 +412,7 @@
               {
                 "group": "Search themes",
                 "pages": [
-                  "google-search-theme-concepts",
-                  "google-search-theme-brief",
-                  "google-search-theme-template",
-                  "google-search-theme-register",
-                  "google-search-theme-glossary"
+                  "google-search-theme-brief"
                 ]
               },
               {
@@ -762,6 +769,12 @@
                 ]
               },
               {
+                "group": "Search themes",
+                "pages": [
+                  "google-search-theme-template"
+                ]
+              },
+              {
                 "group": "Google Merchant Center",
                 "pages": [
                   "google-merchant-center-overview",
@@ -878,35 +891,56 @@
         "tab": "Library",
         "dropdowns": [
           {
-            "dropdown": "Libraries and registers",
+            "dropdown": "Campaign library",
             "groups": [
               {
-                "group": "Campaigns and profiles",
+                "group": "Overview",
                 "pages": [
-                  "campaign-library-overview",
+                  "campaign-library-overview"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "Search themes",
+            "groups": [
+              {
+                "group": "Registers",
+                "pages": [
+                  "google-search-theme-register"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "Customer profile library",
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
                   "customer-profile-library-overview"
                 ]
-              },
+              }
+            ]
+          },
+          {
+            "dropdown": "Creative brief library",
+            "groups": [
               {
-                "group": "Creative and copy",
+                "group": "Overview",
                 "pages": [
-                  "creative-brief-library",
+                  "creative-brief-library"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "Copy brief library",
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
                   "copy-brief-library"
-                ]
-              },
-              {
-                "group": "Web pages",
-                "pages": [
-                  "landing-page-library",
-                  "site-pages-register"
-                ]
-              },
-              {
-                "group": "Experiments and tracking",
-                "pages": [
-                  "experiment-learning-home",
-                  "event-tracking-plan-overview",
-                  "event-tracking-plan"
                 ]
               }
             ]
@@ -917,8 +951,7 @@
               {
                 "group": "Overview",
                 "pages": [
-                  "article-library-overview",
-                  "article-brief-library"
+                  "article-library-overview"
                 ]
               },
               {
@@ -927,12 +960,69 @@
                   "hero-article-register",
                   "supporting-article-register"
                 ]
+              },
+              {
+                "group": "Briefs",
+                "pages": [
+                  "article-brief-library"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "Web page registers",
+            "groups": [
+              {
+                "group": "Landing pages",
+                "pages": [
+                  "landing-page-library"
+                ]
+              },
+              {
+                "group": "Site pages",
+                "pages": [
+                  "site-pages-register"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "Experiment learning library",
+            "groups": [
+              {
+                "group": "Registers",
+                "pages": [
+                  "experiment-learning-home"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "Event tracking plan",
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "event-tracking-plan-overview"
+                ]
+              },
+              {
+                "group": "Registers",
+                "pages": [
+                  "event-tracking-plan"
+                ]
               }
             ]
           },
           {
             "dropdown": "Asset directories",
             "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "asset-directory"
+                ]
+              },
               {
                 "group": "Drives",
                 "pages": [
@@ -942,9 +1032,8 @@
                 ]
               },
               {
-                "group": "Directories",
+                "group": "Audience lists",
                 "pages": [
-                  "asset-directory",
                   "audience-list-store"
                 ]
               }
@@ -1136,6 +1225,11 @@
     {
       "source": "/experiment-id",
       "destination": "/experiment-id-convention",
+      "permanent": true
+    },
+    {
+      "source": "/google-search-theme-glossary",
+      "destination": "/glossary",
       "permanent": true
     }
   ]

@@ -9,6 +9,14 @@ Terms are listed alphabetically. Where a term has its own full page, this entry 
 
 Google's term for a group of ads that share the same customer profiles, keywords, and bids within a campaign. Equivalent to a Meta [ad set](#ad-set). See [ad set / ad group / variant naming conventions](/ad-set-group-naming-conventions).
 
+### Ad group negative
+
+A negative keyword applied to one ad group rather than to the whole campaign or account. The instrument that keeps two neighbouring themes out of each other's auctions, because it blocks a term inside one theme without affecting anything else. Recorded in the boundaries section of the [search theme brief](/google-search-theme-brief).
+
+### Ad relevance
+
+One of the three components of [Quality Score](#quality-score). Google defines it as how closely an ad matches the intent behind a search. Google's stated fix for a low rating is to organize keywords by theme and split ad groups holding mismatched keywords, which is the same test as the [one-ad test](#one-ad-test).
+
 ### Ad set
 
 Meta's term for a group of ads that share the same customer profile, budget, schedule, and placements within a campaign. Equivalent to a Google [ad group](#ad-group). See [ad set / ad group / variant naming conventions](/ad-set-group-naming-conventions).
@@ -37,6 +45,10 @@ Platform settings that let the ad platform change a live campaign on its own: re
 
 The 40 to 60 word third-person description of the company used on press releases, About pages, and directory listings. The longest item in the message set, and the one most often left to drift. See [messaging](/messaging).
 
+### Broad match
+
+The match type that uses the most signals to read intent, matching queries related in meaning rather than in wording. Google's current account structure guidance pairs it with themed ad groups and Smart Bidding. Which match types a theme runs on is the media buyer's decision.
+
 ### Campaign
 
 The top-level container for ads in a platform account: it sets the objective, budget type, and funnel position that everything underneath it inherits. See [campaign naming conventions](/campaign-naming-conventions).
@@ -52,6 +64,10 @@ A passage of a page that a retrieval system pulls out and works with on its own,
 ### Clear space
 
 The protected empty area around a logo that nothing may enter: no text, no other marks, no page edge. Defined as a proportion of the logo itself, usually a letterform's height, so one rule holds at every size. See [logo usage](/logo-usage).
+
+### Close variant
+
+A query Google treats as equivalent to a keyword: misspellings, plurals, reordered words, and same-meaning phrasings. Close variants loosening over time is one of the reasons a [single keyword ad group](#single-keyword-ad-group-skag) no longer receives a single query.
 
 ### Co-branding
 
@@ -109,6 +125,14 @@ The spoken 30-second version of the value proposition: customer, problem, soluti
 
 A thing an engine recognizes as a distinct object with facts attached: a company, a person, a product, a place, a concept. Entity authority is built by describing the same entity consistently everywhere it appears, on your own site and on the profiles you control elsewhere. See [SEO and GEO concepts](/seo-and-geo-concepts).
 
+### Exact match
+
+The match type that matches a keyword and its [close variants](#close-variant). Narrower than [phrase](#phrase-match) or [broad](#broad-match), and no longer restricted to the exact words typed.
+
+### Expected clickthrough rate
+
+One of the three components of [Quality Score](#quality-score): how likely an ad is to be clicked when it is shown. Google's guidance notes that an ad mentioning what the person searched for reads as more relevant than one that does not, which is why a theme records a phrase for its ads to carry.
+
 ### Experiment ID
 
 The short, structured identifier assigned to a test when its hypothesis is approved, appended to the names of everything that belongs to that test. See the [experiment ID concepts](/experiment-id-concepts) and [experiment ID workbook](/experiment-id-convention).
@@ -137,13 +161,29 @@ One of a capped set of at most 20 articles, one per [authority area](#authority-
 
 The opening line, subject, or first moment of a piece of copy, written to earn the reader's attention before anything else gets read. See [copy brief concepts](/copy-brief-concepts#sections-that-earn-their-place-conditionally).
 
+### Intent statement
+
+The one sentence in a [search theme brief](/google-search-theme-brief#1-the-intent) describing what every searcher in the theme is trying to do. Distinct from a topic: "gold" is a topic, "find today's gold price" is an intent. Every later decision in the theme is checked against it.
+
+### Keyword cannibalization
+
+Two of your own ad groups or campaigns competing for the same query, so Google chooses between your own ads and the conversion data for that query splits across both. The failure mode that theme [boundaries](#theme-boundary) exist to prevent.
+
 ### KPI
 
 Key performance indicator: a specific, named metric a campaign or test is measured against, defined once so everyone reports it the same way (for example, CPA or ROAS). "Metric" is the general word for any measured number; "KPI" is reserved for the metrics defined in [KPI definitions](/kpi-definitions).
 
+### Landing page experience
+
+One of the three components of [Quality Score](#quality-score): how relevant and useful the landing page is to someone who clicked. Google's stated fix is to deliver content matching the search and keep messaging consistent from ad to landing page. See [message match](#message-match).
+
 ### Lockup
 
 A fixed, pre-approved combination of logo elements, such as the mark plus a tagline or a partner's mark. Supplied as a single file and never rebuilt by hand. See [logo usage](/logo-usage).
+
+### Match type
+
+The setting that controls how closely a query must relate to a keyword before it can trigger an ad. [Exact](#exact-match), [phrase](#phrase-match), and [broad](#broad-match). Match type policy for a campaign is set in the [Google campaign brief](/google-campaign-brief); which types a specific keyword runs on is the media buyer's call.
 
 ### MER
 
@@ -151,7 +191,7 @@ Marketing efficiency ratio: total revenue divided by total marketing spend. A bl
 
 ### Message match
 
-The continuity between the query, the ad, and the landing page: the promise the ad made is the first thing the page addresses. Not repeating the ad headline on the page word for word. One of the things a [search theme](#search-theme) exists to hold together. See [search theme concepts](/google-search-theme-concepts#message-match-is-the-theme-surviving-the-click).
+The continuity between the query, the ad, and the landing page. Not repeating the ad headline on the page word for word, but making the promise the ad made the first thing the page addresses. The [search theme brief](/google-search-theme-brief#5-landing-page) records the phrase both have to carry.
 
 ### Message pillar
 
@@ -177,6 +217,10 @@ The rules that define how campaign, ad set/ad group, and ad names are built from
 
 The single metric a team optimizes for when two reasonable options conflict. Not the most important [KPI](#kpi); the tiebreaker. There can be many KPIs and exactly one north star. See [reporting framework concepts](/reporting-framework-concepts#the-north-star-metric) and the [data dictionary](/marketing-reporting-data-dictionary#north-star-metric).
 
+### One-ad test
+
+The test that decides where a theme stops: could one responsive search ad be genuinely relevant to every keyword in the group? If writing a headline that suits one keyword makes it wrong for another, the group is two themes. More reliable than any keyword count. See [search theme concepts](/google-search-theme-concepts#the-one-ad-test-decides-the-boundary).
+
 ### Owner
 
 The one person accountable for a piece of work from start to finish. The owner drives it forward, makes the calls it needs, coordinates anyone else involved, and answers for the result. Ownership is singular: one named person, not a team or a role, so there's never a question of who to ask.
@@ -188,6 +232,10 @@ Tracking spend against a budget over time to confirm a campaign will land on-tar
 ### Peeking
 
 Checking a running test repeatedly and stopping it the moment the result looks significant. Each extra look gives the result another chance to cross the threshold by luck, so stopping on a good day inflates the false-positive rate: the test reports a winner that isn't real. Avoid it by setting the sample size and end date before launch and letting the test run to that plan, whatever the numbers do along the way. Extending is only valid for an external reason (a traffic drop, a tracking break, a seasonal shift), never because the result hasn't reached significance yet.
+
+### Phrase match
+
+The match type that matches queries including the meaning of the keyword, with additional words before or after. Sits between [exact](#exact-match) and [broad](#broad-match).
 
 ### Pilot
 
@@ -211,11 +259,15 @@ The short, permanent code assigned to a product in the [product catalog](/produc
 
 ### Quality Score
 
-Google's diagnostic estimate of ad quality, built from three components: expected clickthrough rate, ad relevance, and landing page experience. A [search theme](#search-theme) touches all three, which is why it holds the keywords, the copy, and the landing page as one unit. See the [search theme glossary](/google-search-theme-glossary#quality-score).
+Google's diagnostic estimate of ad quality, built from three components: [expected clickthrough rate](#expected-clickthrough-rate), [ad relevance](#ad-relevance), and [landing page experience](#landing-page-experience). A theme touches all three, which is why it holds the keywords, the copy, and the landing page as one unit rather than three separate decisions.
 
 ### Reason to believe
 
 The evidence that makes a [point of difference](#point-of-difference) credible: a number, a mechanism, or a named customer. The part that fails quietly when a claim outlives its source. See [positioning](/positioning).
+
+### Responsive search ad
+
+The Search ad format that assembles its own combinations from a pool of headlines and descriptions. Because any individual asset can be left out of a given serve, a phrase a theme depends on is only guaranteed to appear if it is [pinned](/glossary#pinning). See the [Google Search copy template](/google-search-copy-template#pinning).
 
 ### ROAS
 
@@ -233,9 +285,31 @@ Machine-readable statements about what a page is and what it contains, sitting a
 
 What someone is actually trying to accomplish with a query, as opposed to the words they typed. A full question typed into a chat window usually reveals it more clearly than three words typed into a search box. See [article brief concepts](/article-brief-concepts).
 
+### Search term
+
+What a person actually typed, as opposed to the keyword that matched it. Keywords are what you bid on; search terms are what you receive. The gap between the two is where a theme drifts.
+
+### Search terms report
+
+The Google Ads report listing the queries that triggered your ads. The place a boundary problem becomes visible, because the same search term appearing under two themes means those themes are competing.
+
 ### Search theme
 
-One search intent held together as a single unit of planning: the queries that express it, the customer profile behind them, the landing page they go to, and the ads written to match. On Google Search it becomes one [ad group](#ad-group). Not the same as Google's Performance Max field of the same name. See [search theme concepts](/google-search-theme-concepts) and the [search theme brief](/google-search-theme-brief).
+In this framework, one search intent held together as a single unit of planning: the intent statement, the keywords that express it, the customer profile behind them, the landing page they go to, and the ads written to match. On Google Search it becomes one ad group. Not the same as [Google's search themes](#search-themes-performance-max). See [search theme concepts](/google-search-theme-concepts).
+
+### Search themes (Performance Max)
+
+A Google Ads field inside a Performance Max asset group where you add words and phrases customers use to find you. Google allows up to 50 per asset group (raised from 25 in 2025) and gives them the same prioritization as phrase and broad match keywords in a Search campaign. Exclusions and negative keywords still apply, and semantic duplicates such as "car" and "automobile" reach the same audience.
+
+This is a platform input, not a planning document. Our [search theme](#search-theme) is the unit that decides what an ad group targets, who it speaks to, and where it sends them. The two share a name and do different jobs. Checked 13 August 2026.
+
+### Single keyword ad group (SKAG)
+
+An ad group built around one keyword, with its own ads and bid. Once standard practice, now a narrow exception rather than a default: [close variants](#close-variant) loosened, [broad match](#broad-match) improved, and Smart Bidding needs conversion signal pooled rather than split. Still defensible for a single query with enough volume and value to justify its own page and ads, recorded as a deliberate choice.
+
+### Single theme ad group (STAG)
+
+An ad group built around one intent and the several keywords that express it. The industry term for what this framework calls a [search theme](#search-theme) at the platform level.
 
 ### Slug
 
@@ -273,9 +347,17 @@ A 3 to 8 word line that reinforces the position. Judged on memorability, where a
 
 An identifier appended to a name only while a hypothesis is actively being tested, marking which campaigns, ad sets, or ads belong to that test. See [naming conventions overview](/naming-conventions-overview#how-a-name-is-built) and the [experiment ID concepts](/experiment-id-concepts).
 
+### Theme boundary
+
+What one theme deliberately does not cover, and which theme covers it instead. Recorded in the [boundaries section](/google-search-theme-brief#3-boundaries) of the brief along with the terms negated at ad group level to enforce it.
+
+### Theme short form
+
+The registered abbreviation for a theme, for example `REPORTAUTO`, used in the ad group name and the `utm_content` value. Comes from the [ad group theme dictionary](/ad-set-group-naming-conventions#ad-group-theme-search-and-shopping). A theme described in prose at build time produces a value no report can group by.
+
 ### Themed ad group
 
-An ad group organized around one search intent rather than one keyword, holding the several queries that express that intent. Google's current account structure guidance recommends it over single-keyword ad groups. The platform-level result of filling in a [search theme](#search-theme) brief. See [search theme concepts](/google-search-theme-concepts#why-themes-replaced-single-keyword-ad-groups).
+An ad group organized around one intent rather than one keyword. Google's current [account structure guidance](https://support.google.com/google-ads/answer/14752782) recommends it over single-keyword groups, on the reasoning that grouping keywords into similar themes makes it easier to understand the keywords, select the best one, and decide which ad should serve for each query.
 
 ### Tier 1 / 2 / 3
 
@@ -300,6 +382,7 @@ One sentence, in the reader's language, saying what the brand does, for whom, an
 ### Voice trait
 
 A named characteristic of how a brand sounds, paired with a contrast that says where it stops ("direct, not blunt"). Without the contrast a trait stretches to justify anything. See [brand voice and tone](/brand-voice-and-tone).
+
 
 ## Related resources
 
