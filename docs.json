@@ -137,6 +137,7 @@
               {
                 "group": "Core concepts",
                 "pages": [
+                  "angle-concepts",
                   "creative-brief-concepts",
                   "landing-page-brief-concepts",
                   "copy-brief-concepts"
@@ -268,6 +269,7 @@
               {
                 "group": "Briefs",
                 "pages": [
+                  "angle-brief",
                   "creative-brief",
                   "copy-brief",
                   "landing-page-brief"
@@ -693,6 +695,7 @@
               {
                 "group": "Copy and content",
                 "pages": [
+                  "angle-template",
                   "copy-templates",
                   "landing-page-skeleton",
                   "article-writing-template"
@@ -919,6 +922,17 @@
                 "group": "Overview",
                 "pages": [
                   "customer-profile-library-overview"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "Angle library",
+            "groups": [
+              {
+                "group": "Registers",
+                "pages": [
+                  "angle-library"
                 ]
               }
             ]
