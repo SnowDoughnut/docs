@@ -179,16 +179,20 @@ Google bid strategies, as of 7 August 2026:
 
 One row per group. The name and the `utm_content` value are filled in here, not at build time, because every group getting the same tag is the most common way a campaign organized around three groups reports as one.
 
-| Group name ([convention](/ad-set-group-naming-conventions)) | Theme | Customer profile | `utm_content` | What it proves |
-| :-- | :-- | :-- | :-- | :-- |
-| _E.g._ `20260401-KW-REPORTAUTO` | _E.g. High-intent reporting queries, exact and phrase_ | _E.g. [Mid-market RevOps lead](https://link)_ | _E.g._ `20260401-KW-REPORTAUTO` | _E.g. Core intent volume_ |
-| _E.g._ `20260401-KW-COMPET` | _E.g. Competitor brand queries_ | _E.g. [Mid-market RevOps lead](https://link)_ | _E.g._ `20260401-KW-COMPET` | _E.g. Switching demand, watched for cost_ |
-| _E.g._ `20260401-KW-BRAND` | _E.g. Our own brand terms_ | _E.g. All_ | _E.g._ `20260401-KW-BRAND` | _E.g. Defence, held at low cost_ |
-| \[add group\] |  |  |  |  |
+| Group name ([convention](/ad-set-group-naming-conventions)) | Theme | [Theme brief](/google-search-theme-brief) | Customer profile | `utm_content` | What it proves |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| _E.g._ `20260401-KW-REPORTAUTO` | _E.g. High-intent reporting queries, exact and phrase_ | _E.g. [link](https://link)_ | _E.g. [Mid-market RevOps lead](https://link)_ | _E.g._ `20260401-KW-REPORTAUTO` | _E.g. Core intent volume_ |
+| _E.g._ `20260401-KW-COMPET` | _E.g. Competitor brand queries_ | _E.g. [link](https://link)_ | _E.g. [Mid-market RevOps lead](https://link)_ | _E.g._ `20260401-KW-COMPET` | _E.g. Switching demand, watched for cost_ |
+| _E.g._ `20260401-KW-BRAND` | _E.g. Our own brand terms_ | _E.g. [link](https://link)_ | _E.g. All_ | _E.g._ `20260401-KW-BRAND` | _E.g. Defence, held at low cost_ |
+| \[add group\] |  |  |  |  |  |
 
 <Warning>
   Every group needs its own `utm_content` value. Tagging three ad groups with one campaign-level URL means analytics sees one undifferentiated bucket, and the join fails at exactly the level the campaign was structured around. Theme values come from the [ad group theme dictionary](/ad-set-group-naming-conventions#ad-group-theme-search-and-shopping); a theme typed straight into Google is a value no report recognizes.
 </Warning>
+
+<Note>
+  On Search, each row above is a [search theme](/google-search-theme-concepts) and gets its own [search theme brief](/google-search-theme-brief), which is where its keywords, landing page, and copy are pinned down. This table records that the group exists and what it is for. The theme brief records what it targets and where it sends people. Every live theme also gets a row in the [search theme register](/google-search-theme-register).
+</Note>
 
 <Accordion title="Concept review: Campaign structure">
   On Search, an ad group is a promise that the keywords inside it are close enough in intent to share one set of ads. Groups that drift wide force the ads to be generic, which weakens both relevance and the landing page match.
@@ -354,6 +358,7 @@ Build these from the [UTM standards](/utm-standards) before any URL goes anywher
 ## Related resources
 
 - [**Launching a Google campaign**](/google-campaign-process) The process this brief runs on.
+- [**Search theme brief**](/google-search-theme-brief) One per ad group on Search, filled in after this brief fixes the structure.
 - [**Google pre-launch checklist**](/google-pre-launch-checklist) The pass to run before setting live.
 - [**Marketing campaign brief**](/marketing-campaign-brief) The parent brief this one sits under.
 - [**Image and video specs**](/image-and-video-specs) and the Google copy templates.

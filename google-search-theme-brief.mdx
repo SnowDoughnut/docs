@@ -1,0 +1,285 @@
+---
+title: "Search theme brief"
+description: "A fill-in workbook for one Google Search theme: the intent, the keywords, the customer profile, the landing page, and the ads. Fill one in per ad group before it is built."
+---
+
+_This page is a workbook. Fill in each section, and expand a concept review if you want the reasoning behind a section before you answer. You can complete the whole brief without opening one._
+
+_Grayed_ `E.g.` _text is an example to delete. Every example uses one invented company, **Doughnut Labs**, a SaaS company that sells disruptive Doughnut Technology, working on a single theme so you can see one brief taking shape._
+
+<Note>
+  One filled copy of this brief is one theme, which becomes one ad group. A campaign running four themes has four filled copies. Fill this in before the ad group is built, not after.
+
+  Once the sections here are familiar, the [search theme template](/google-search-theme-template) is the same structure with the explanations stripped out.
+</Note>
+
+<Steps>
+  <Step title="Name the intent">
+    One sentence on what every searcher in this theme is trying to do. Everything else is checked against it.
+  </Step>
+  <Step title="List the keywords and draw the boundary">
+    The queries that express that intent, and what this theme deliberately does not cover.
+  </Step>
+  <Step title="Link the profile, the page, and the copy">
+    Who it targets, where it sends them, and who is writing the ads.
+  </Step>
+  <Step title="Assemble the name and the tag, then file it">
+    The ad group name and `utm_content` come from the theme's registered short form.
+  </Step>
+</Steps>
+
+## Setup
+
+| Field | Fill in |
+| :-- | :-- |
+| [Owner](/glossary#owner) | _E.g. Tom Reyes_ |
+| Media buyer | _E.g. Tom Reyes_ |
+| Theme name | _E.g. Reporting automation_ |
+| Theme short form ([dictionary](/ad-set-group-naming-conventions#ad-group-theme-search-and-shopping)) | _E.g._ `REPORTAUTO` |
+| [Google campaign brief](/google-campaign-brief) | _E.g. [DOC\_google-fresh-batch-trial\_2026-08-07\_v01](https://link)_ |
+| Campaign this theme runs in | _E.g._ `Google-FBS-Search-Trial-tCPA-DAPRO-TOFU` |
+| Brief name ([file naming conventions](/file-naming-conventions)) | _E.g._ `DOC_theme-reporting-automation_2026-08-13_v01` |
+| Date created | _E.g. 13 Aug 2026_ |
+| \[add setup field\] |  |
+
+<Accordion title="Concept review: Setup">
+  The short form row is the one that has consequences beyond this page. A theme name is prose, and prose typed into Google at build time produces a value that no report can group by and no second person can spell the same way twice. Registering the short form in the shared dictionary first is what makes the theme a value rather than a description.
+
+  The campaign row places the theme inside a campaign whose budget, bid strategy, and conversion goal are already fixed. A theme is not free to choose those. Knowing which campaign it belongs to is also what tells you which other themes it is sharing a budget with, which matters later when two of them start competing.
+</Accordion>
+
+## 1. The intent
+
+**In one sentence, what is every searcher in this theme trying to do?**
+
+_E.g. Find a way to stop building the same weekly report by hand._
+
+| Field | Fill in |
+| :-- | :-- |
+| Funnel stage | _E.g. Middle. Problem is known, solution is not chosen_ |
+| What they already know | _E.g. That reporting takes too long. Not that a tool can fix it_ |
+| What they do not know yet | _E.g. That setup takes hours rather than a quarter_ |
+| Why this theme is worth its own ad group | _E.g. Highest-intent queries in the account, and they need a different promise from the competitor terms_ |
+
+<Accordion title="Concept review: The intent">
+  Intent and topic get used as if they were the same thing, and they behave very differently. A topic is what the query is about. An intent is what the person wants to happen next. "Gold" is a topic that holds a spot-price checker, a jewellery buyer, and a student writing an essay, and no ad can serve all three. "Find today's gold price" is an intent, and one ad can serve everyone who has it.
+
+  Writing the intent as a full sentence is what makes the rest of the brief checkable. A keyword either expresses that sentence or it does not. A landing page either answers it or it does not. Without the sentence, every later decision is being argued from taste.
+
+  The funnel stage line matters because two themes can share a topic and sit at different stages. Someone comparing two named tools and someone who has not yet realized a tool exists are at different points, and an ad that treats them the same will underperform for both.
+</Accordion>
+
+## 2. Keywords
+
+**List the queries that express the intent above. Ten to fifteen is the usual range. Stop when the intent stops, not when the table fills.**
+
+| # | Keyword | Match type | Note |
+| :-- | :-- | :-- | :-- |
+| 1 | _E.g. reporting automation software_ | _E.g. Phrase_ | _E.g. Core term, highest volume_ |
+| 2 | _E.g. automate weekly reports_ | _E.g. Phrase_ |  |
+| 3 | _E.g. automated reporting tool_ | _E.g. Exact_ |  |
+| 4 |  |  |  |
+| 5 |  |  |  |
+| 6 |  |  |  |
+| 7 |  |  |  |
+| 8 |  |  |  |
+| 9 |  |  |  |
+| 10 |  |  |  |
+| 11 |  |  |  |
+| 12 |  |  |  |
+| 13 |  |  |  |
+| 14 |  |  |  |
+| 15 |  |  |  |
+
+**The one-ad test.** Could one responsive search ad be genuinely relevant to every keyword above?
+
+_E.g. Yes. Every term describes automating a report that is currently manual, so one headline about cutting the weekly report to minutes fits all of them._
+
+<Warning>
+  If the answer is no, this is two themes. Split it now and fill in a second brief. A group holding two intents forces every ad to sit between them, which is the condition Google's own guidance describes as a reason to split an ad group.
+</Warning>
+
+<Accordion title="Concept review: Keywords">
+  The count is a symptom rather than a target. A theme that reaches fifteen because fifteen queries genuinely say the same thing is working correctly. A theme padded to fifteen with near-duplicates has been diluted to hit a number, and a theme that stops at six because only six queries fit the intent is finished, not unfinished.
+
+  The one-ad test does the work a count cannot. It asks the question Google is grading anyway: ad relevance measures how closely an ad matches the intent behind a search, so a group that makes a single relevant ad impossible to write has already lost that comparison before anyone bids.
+
+  Which terms go in, and which match types they run on, sits with the media buyer and gets revised against live search term data. What this table records is the theme they were chosen to serve, so a term that drifts away from the intent has something to be measured against later.
+</Accordion>
+
+## 3. Boundaries
+
+**What does this theme deliberately not cover, and which theme covers it instead?**
+
+| Neighbouring theme | What separates them | Terms negated here |
+| :-- | :-- | :-- |
+| _E.g. Competitor terms (_`COMPET`_)_ | _E.g. They name a rival product; this theme names the problem_ | _E.g._ `[competitor name]`_, exact_ |
+| _E.g. Brand (_`BRAND`_)_ | _E.g. They already know us; this theme assumes they do not_ | _E.g._ `doughnut labs`_, phrase_ |
+| \[add neighbour\] |  |  |
+
+**Terms that look like they belong here but do not:**
+
+- _E.g._ `free reporting template`_. Wants a spreadsheet, not software._
+- _E.g._ `reporting automation jobs`_. Job seekers, already on the account-level negative list._
+- \[add term\]
+
+<Accordion title="Concept review: Boundaries">
+  Themes compete with each other more often than most teams expect. When two ad groups can both match a query, Google chooses between your own ads in that auction, and the conversion data for that query splits across both groups. Neither one then accumulates enough signal to show which ad and keyword pairing actually works, which reads as two mediocre themes rather than as one boundary problem.
+
+  Ad group level negatives are the instrument that fixes it, because they block a term inside one theme without touching anything else in the campaign. That is a different job from the shared negative lists that carry the terms wrong for the whole account, such as jobs, free, and categories you do not sell into.
+
+  The reason this section sits in the brief rather than in a later audit is arithmetic. Drawing a boundary against two neighbours while writing theme three takes a minute. Reconstructing the boundaries between twelve overlapping themes after they have been running for a quarter is a restructure, and by then the search terms report reflects the overlap it created.
+</Accordion>
+
+## 4. Customer profile
+
+**Link the [customer profile](/customer-profile-library-overview) behind these queries, and note what they believe that the ads have to work against.**
+
+| Customer profile | Link | Insight the copy pushes against |
+| :-- | :-- | :-- |
+| _E.g. Mid-market RevOps lead_ | _E.g. [CP\_midmarket-revops\_2026-03-02\_v02](https://link)_ | _E.g. They have tried automating this before with a script that broke, so "automated" reads as "fragile" until proven otherwise._ |
+| \[add profile\] |  |  |
+
+**If no profile in the library fits:** _E.g. Closest is mid-market RevOps lead. Gap is company size; these queries skew smaller. Flagged to Priya, 13 Aug._
+
+<Accordion title="Concept review: Customer profile">
+  On Search the profile is inferred rather than targeted. Nobody selected this person from an audience builder; they arrived because of what they typed. That makes the profile row easy to treat as decoration, and it is the opposite: it is the only record of who the team believed was behind these queries when they chose the words.
+
+  Teams handle the link between query and person in two defensible ways. Some hold one profile per theme, so the ads can speak to a single reader and any query attracting someone else is treated as evidence the theme has drifted. Others accept that a broad commercial query pulls several profiles and write to what those profiles share. Both work when chosen deliberately. What tends not to work is leaving the row blank, because the ads then get written for whoever the copywriter pictured that afternoon.
+
+  The insight column is doing different work from the profile itself. A profile tells a buyer which queries are worth bidding on. An insight tells a writer what the first line has to overcome.
+</Accordion>
+
+## 5. Landing page
+
+**Where does this theme's traffic go, and what does that page have to promise?**
+
+| Field | Fill in |
+| :-- | :-- |
+| Landing page URL | _E.g._ `doughnutlabs.com/lp/reporting-automation` |
+| [Landing page brief](/landing-page-brief) | _E.g. [LP\_reporting-automation\_2026-07-30\_v01](https://link)_ |
+| Page exists, or needs building | _E.g. Exists, last updated 30 Jul_ |
+| The promise this page has to carry | _E.g. Your weekly report builds itself, and setup takes an afternoon_ |
+| Phrase that must appear in both the ad and the page | _E.g. "weekly report"_ |
+| Page owner | _E.g. Priya Nadel_ |
+
+**Message match check.** Read the intent in section 1, then read the page's first screen. Does the page answer that intent before anything else?
+
+_E.g. Yes. H1 is "Stop rebuilding your weekly report", which is the intent almost word for word._
+
+<Warning>
+  A theme pointing at a homepage or a general product page is a theme without a landing page. It will still run, and it will carry the cost in landing page experience and in conversion rate. If no page fits, record that here and either brief one or note the deliberate trade before launch.
+</Warning>
+
+<Accordion title="Concept review: Landing page">
+  Landing page experience is one of the three components Quality Score is built from, and Google describes the fix for it in terms of continuity: the page should deliver content matching the search, and messaging should stay consistent from ad to landing page so the page follows through on the ad's offer.
+
+  Message match is the practical name for that continuity, and it is more often misread as repetition than as continuity. Copying the ad headline onto the page verbatim satisfies the letter of it. What actually matters is that the promise the ad made is the first thing the page addresses, so a visitor never has to work out whether they are in the right place.
+
+  Naming the shared phrase here is what lets a copywriter and a page owner work in parallel and still arrive at the same place. Left to be coordinated later, the two documents agree only by luck, and the mismatch stays invisible until someone clicks the live ad.
+</Accordion>
+
+## 6. Copy
+
+**Which brief governs the ads for this theme, and what has to be true of them?**
+
+| Field | Fill in |
+| :-- | :-- |
+| [Copy brief](/copy-brief) | _E.g. [COPY\_reporting-automation\_2026-08-05\_v01](https://link)_ |
+| Copy template | _E.g._ [Google Search copy template](/google-search-copy-template) |
+| Writer | _E.g. Jordan Bell_ |
+| Number of responsive search ads in this group | _E.g. 2. One primary, one variant on the same offer_ |
+| Where the filled templates are filed | _E.g. [Copy drive, /fresh-batch/google-search](https://link)_ |
+
+**Theme language the ads have to carry:**
+
+| Element | Fill in |
+| :-- | :-- |
+| Theme phrase to appear in headlines | _E.g. "weekly report"_ |
+| Angle this theme takes | _E.g. Time saved, not features_ |
+| What the ads must not claim | _E.g. "Instant setup". Legal has not cleared it_ |
+
+<Accordion title="Concept review: Copy">
+  Search copy is the one format where the words in the ad and the words in the query are compared directly. Google's guidance on expected clickthrough rate says as much: when two ads appear and one mentions what the person searched for, the one that mentions it reads as more relevant. That is why a theme carries a phrase rather than only a topic.
+
+  This is also the point where responsive search ads complicate the picture. The format assembles its own combinations, so a phrase written into one headline is not guaranteed to appear in any given serve. Where a theme depends on the phrase showing up, pinning is the mechanism that guarantees it, and pinning trades ad strength for that guarantee. The [copy template](/google-search-copy-template#pinning) is where that decision gets recorded.
+
+  The copy brief stays a link here for a specific reason. It owns the message, the proof, and the mandatories across every channel this campaign runs on, and a second copy of any of that would only be somewhere for the two versions to drift apart. What this section adds is the part only the theme knows: which words tie these particular ads to these particular queries.
+</Accordion>
+
+## 7. Naming and tracking
+
+**Assemble the ad group name and the tag from the values already registered above.**
+
+| Field | Value | Where it comes from |
+| :-- | :-- | :-- |
+| Ad group name | _E.g._ `20260401-KW-REPORTAUTO` | [Ad set / ad group / variant conventions](/ad-set-group-naming-conventions) |
+| `utm_content` | _E.g._ `20260401-KW-REPORTAUTO` | The ad group name, character for character |
+| `utm_term` | _E.g._ `{keyword}` | [UTM standards, section D](/utm-standards#d-content-and-term-standard-utm_content-utm_term) |
+| Full tagged URL | _E.g._ `doughnutlabs.com/lp/reporting-automation?utm_source=google&utm_medium=paid_search&utm_campaign=Google-FBS-Search-Trial-tCPA-DAPRO-TOFU&utm_content=20260401-KW-REPORTAUTO&utm_term={keyword}` | [UTM standards](/utm-standards) |
+
+<Warning>
+  Every theme needs its own `utm_content` value. Four themes sharing one tag means analytics sees one bucket, and the join fails at exactly the level the campaign was structured around.
+</Warning>
+
+<Accordion title="Concept review: Naming and tracking">
+  The theme is the level at which a search campaign is actually organized, so it is also the level a report has to be able to see. If the tag does not change per theme, every downstream question about which intent produced the revenue becomes unanswerable, no matter how carefully the themes were planned.
+
+  Assembling the name from values registered earlier is what keeps the ad group name, the tag, and the register agreeing with each other. Describe the theme afresh in this field and you have added one more place to type something slightly different, and a report joins on exact strings.
+</Accordion>
+
+## 8. Measurement
+
+| KPI | Target | Actual |
+| :-- | :-- | :-- |
+| _E.g. Trial signups from this theme_ | _E.g. 90_ | (blank until launch) |
+| _E.g. Cost per signup_ | _E.g. ≤ \$33_ | (blank until launch) |
+| \[add KPI\] |  |  |
+
+**What this theme is meant to prove:** _E.g. That problem-aware queries convert at a comparable cost to brand terms, which decides whether the next two themes are built on the same pattern._
+
+<Accordion title="Concept review: Measurement">
+  A theme is a hypothesis about a group of people, so it can be wrong in a way a keyword cannot. The keywords might deliver traffic at an acceptable cost while the intent behind them turns out not to convert, and those are different findings with different responses.
+
+  The line about what the theme proves is what makes a theme reviewable rather than permanent. Themes accumulate: an account tends to gain them and rarely loses them, because nothing in the platform ever suggests that a group has stopped earning its place. A stated purpose gives the next review something to judge against.
+</Accordion>
+
+## 9. Status
+
+| Item | Fill in |
+| :-- | :-- |
+| Added to the [theme register](/google-search-theme-register) | _E.g. 13 Aug 2026_ |
+| Built in Google Ads | _E.g. 15 Aug 2026, paused_ |
+| [Pre-launch checklist](/google-pre-launch-checklist) run | _E.g. 21 Aug 2026, Tom Reyes_ |
+| Live date | _E.g. 22 Aug 2026_ |
+| Review date | _E.g. 22 Sep 2026_ |
+
+## Build order recap
+
+<Steps>
+  <Step title="Intent is one sentence, and the keywords pass the one-ad test">
+    If one ad cannot serve every keyword, it is two themes.
+  </Step>
+  <Step title="Boundaries name every neighbouring theme">
+    Each one has a stated difference and any crossover terms negated at ad group level.
+  </Step>
+  <Step title="Profile, landing page, and copy brief are all linked">
+    No blanks. A missing page or profile is recorded as a gap, not left empty.
+  </Step>
+  <Step title="Name and tag are assembled from the registered short form">
+    The ad group name and `utm_content` match character for character.
+  </Step>
+  <Step title="Filed in the theme register">
+    So the next person planning a theme can see what this one already covers.
+  </Step>
+</Steps>
+
+## Related resources
+
+- [**Search theme concepts**](/google-search-theme-concepts) Why themes replaced single-keyword ad groups, and what decides a boundary.
+- [**Search theme template**](/google-search-theme-template) The same structure without the concept reviews.
+- [**Search theme register**](/google-search-theme-register) Every live theme in one table.
+- [**Search theme glossary**](/google-search-theme-glossary) Definitions for the terms used here.
+- [**Google campaign brief**](/google-campaign-brief) The campaign this theme sits inside.
+- [**Google Search copy template**](/google-search-copy-template) Where the ads get written.
+- [**Landing page brief**](/landing-page-brief) and [**copy brief**](/copy-brief) The two documents this theme hands off to.
