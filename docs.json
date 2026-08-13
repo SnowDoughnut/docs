@@ -399,6 +399,16 @@
                 ]
               },
               {
+                "group": "Search themes",
+                "pages": [
+                  "google-search-theme-concepts",
+                  "google-search-theme-brief",
+                  "google-search-theme-template",
+                  "google-search-theme-register",
+                  "google-search-theme-glossary"
+                ]
+              },
+              {
                 "group": "Processes",
                 "pages": [
                   "google-campaign-process"

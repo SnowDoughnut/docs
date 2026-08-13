@@ -65,6 +65,9 @@ Every input below has to exist, or be deliberately marked as not applicable, bef
   <Step title="Fill in the Google campaign brief">
     Conversion goal, budget, bid strategy, structure, targeting, assets.
   </Step>
+  <Step title="Fill in a search theme brief per ad group">
+    Search only. One theme per ad group: intent, keywords, profile, landing page, copy.
+  </Step>
   <Step title="Assemble names and UTMs">
     All three naming levels and the tagged URLs, written down before anything is built.
   </Step>
@@ -139,7 +142,31 @@ The full tables are in the brief, under [budget and bid strategy](/google-campai
   If the budget cannot buy enough conversions to judge the campaign at all, and there is no history to set a target from, you are running a [pilot](/pilot-brief) rather than a campaign. Give it a read date and a kill or scale rule before it launches.
 </Note>
 
-## 5. Assemble names and UTMs
+## 5. Fill in a search theme brief per ad group
+
+<Tip>
+  Search only. Performance Max asset groups and Shopping product groups are organized around signals and products rather than keyword intent, so skip this step for them.
+</Tip>
+
+The campaign brief's structure table lists the ad groups. This step decides what each one actually targets. Copy the [**search theme brief**](/google-search-theme-brief) once per ad group, or the [search theme template](/google-search-theme-template) if the team already knows the sections.
+
+Check the [search theme register](/google-search-theme-register) first. A theme that already exists elsewhere in the account is usually better extended than duplicated, and two themes covering the same intent will compete in the same auction.
+
+Each theme fixes five things together:
+
+| Part | What it fixes |
+| :-- | :-- |
+| Intent | One sentence on what every searcher in the theme is trying to do |
+| Keywords | The queries that express it, usually 10 to 15 |
+| Customer profile | Who is behind those queries, from the [profile library](/customer-profile-library-overview) |
+| Landing page | Where the click goes, and the promise that page has to carry |
+| Copy | The [copy brief](/copy-brief) governing the ads, and the phrase they have to carry |
+
+**Apply the one-ad test before moving on.** If a single responsive search ad could not be genuinely relevant to every keyword in the group, it is two themes. Splitting now costs a second brief. Splitting after launch splits the group's history as well.
+
+Register the theme's short form in the [ad group theme dictionary](/ad-set-group-naming-conventions#ad-group-theme-search-and-shopping) at this point, because the next step builds the ad group name and the `utm_content` value from it.
+
+## 6. Assemble names and UTMs
 
 Write all three names and the tagged URLs into the brief before opening Google Ads.
 
@@ -157,7 +184,7 @@ Decide auto-tagging and manual UTMs together. Auto-tagging adds a `gclid` for Go
 
 Record the auto-applied recommendations setting at the same time. Recommendations left on can rewrite ad copy, add keywords, and change the bid strategy after launch, which means the reviewed brief and the running campaign stop matching. Which ones are on is the media buyer's call; that somebody made the call is the brief's.
 
-## 6. Register an experiment or a pilot, if either applies
+## 7. Register an experiment or a pilot, if either applies
 
 **If there is a control**, follow [creating an experiment](/creating-an-experiment): register the ID, apply it at the level the hypothesis targets, and don't change it after launch.
 
@@ -165,23 +192,23 @@ Record the auto-applied recommendations setting at the same time. Recommendation
 
 **If it is neither**, skip this step.
 
-## 7. Build the campaign, groups, and ads
+## 8. Build the campaign, groups, and ads
 
 Build from the brief. Work down the levels:
 
 1. **Campaign:** type, networks, conversion goals, budget, bid strategy, locations and languages, campaign name.
-2. **Ad groups or asset groups:** one per row of the brief's structure table. Keywords and match types, or audience signals and assets. Group name.
+2. **Ad groups or asset groups:** one per row of the brief's structure table. On Search, the keywords, match types, and ad group negatives come from that group's [search theme brief](/google-search-theme-brief). On Performance Max and Demand Gen, audience signals and assets. Group name.
 3. **Ads:** copy from the filled [copy template](/google-search-copy-template), assets from the approved files, final URL with UTMs attached, ad name.
 
 <Warning>
   If a decision you didn't expect comes up during the build, stop and add it to the brief rather than settling it in the interface. A value that only exists in Google Ads is invisible at review and lost at retrospective.
 </Warning>
 
-## 8. Run the pre-launch checklist
+## 9. Run the pre-launch checklist
 
 Run the [**Google pre-launch checklist**](/google-pre-launch-checklist) with the campaign built and paused.
 
-## 9. Launch and link back
+## 10. Launch and link back
 
 Set the campaign live, then:
 
@@ -189,21 +216,26 @@ Set the campaign live, then:
 - Add the campaign to the reporting dashboard named in the brief.
 - Record the launch date and the mid-flight review date in the brief.
 
-## 10. File the brief
+## 11. File the brief
 
 File the completed [Google campaign brief](/google-campaign-brief) in the [campaign library](/campaign-library-overview), under the Google folder, named per the [file naming conventions](/file-naming-conventions).
+
+On Search, add a row per theme to the [search theme register](/google-search-theme-register) and file each theme brief alongside the campaign brief. The register is what the next person checks before planning a theme, so a theme that runs without a row in it is invisible to everyone except the person who built it.
 
 ## Exceptions
 
 - **The campaign is always-on brand defence.** It still gets a brief, but experiment and mid-flight review may not apply. Keep the core: type, conversion goal, budget, bid strategy, and structure.
-- **You are adding an ad or asset to a live campaign.** Skip steps 1 to 5. Confirm the copy and assets are approved, name the ad per the [ad naming conventions](/ad-name-conventions), attach the UTMs, and run the ad-level rows of the pre-launch checklist.
+- **You are adding an ad or asset to a live campaign.** Skip steps 1 to 6. The ad group already has a theme, so read its [search theme brief](/google-search-theme-brief) rather than filling in a new one. Confirm the copy and assets are approved, name the ad per the [ad naming conventions](/ad-name-conventions), attach the UTMs, and run the ad-level rows of the pre-launch checklist.
 
-  **Do not skip step 6.** If the new ad is a variant running against the existing one to find out which performs better, that is an experiment and it needs a registered ID before it goes live. A variant added without one is indistinguishable from an ordinary creative refresh a month later, and the result cannot be traced back to what changed.
+  **Do not skip step 7.** If the new ad is a variant running against the existing one to find out which performs better, that is an experiment and it needs a registered ID before it goes live. A variant added without one is indistinguishable from an ordinary creative refresh a month later, and the result cannot be traced back to what changed.
+- **You are adding an ad group to a live campaign.** That is a new theme. Run step 5 in full, then steps 6 and 8 onward. A theme added straight into Google Ads is the most common way a register stops matching the account.
 - **The campaign is cancelled before launch.** File the brief with a short note on why it stopped.
 
 ## Related resources
 
 - [**Google campaign brief**](/google-campaign-brief) The workbook this process runs on.
+- [**Search theme brief**](/google-search-theme-brief) One per ad group on Search, filled in at step 5.
+- [**Search theme register**](/google-search-theme-register) Checked before a theme is planned, filed to after launch.
 - [**Google pre-launch checklist**](/google-pre-launch-checklist) The pass before spend starts.
 - [**Campaign brief process**](/campaign-brief-process) The parent process, one level up.
 - [**Creative brief process**](/creative-brief-process) and [**copywriting process**](/copywriting-process)

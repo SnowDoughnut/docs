@@ -1,0 +1,133 @@
+---
+title: "Search theme concepts"
+description: "What a search theme is, why Google Ads moved from single-keyword ad groups to themed ones, and what decides where one theme ends and the next begins. Read this before filling in your first theme brief."
+---
+
+A search theme is one search intent, held together as a single unit of planning: the queries that express that intent, the person behind them, the page they land on, and the ads written to match. On Google Search it becomes one ad group.
+
+"Price of gold" is a theme. "Gold" is not, because no single ad could speak to someone checking today's spot price and someone looking for a jeweller.
+
+This page explains the thinking. The fill-in workbook is the [search theme brief](/google-search-theme-brief), and the blank fast sheet for a buyer adding their fifth theme this month is the [search theme template](/google-search-theme-template).
+
+## The five things a theme holds together
+
+A theme is not a keyword list with a label on it. It is the smallest set of decisions that has to agree with itself for a search ad to work.
+
+| Part | What it fixes |
+| :-- | :-- |
+| Intent | The one thing every searcher in this theme is trying to do |
+| Keywords | The queries that express that intent, usually 10 to 15 |
+| Customer profile | Who is behind those queries, from the [profile library](/customer-profile-library-overview) |
+| Landing page | Where the click goes, and what that page promises |
+| Copy | The ads, written against this theme rather than against the campaign |
+
+Any one of those five can be filled in on its own. The point of the theme is that they are filled in together, so a page promising one thing cannot end up behind an ad promising another.
+
+## Why themes replaced single-keyword ad groups
+
+Single keyword ad groups gave each keyword its own group, its own ads, and its own bid. That bought precise control at a time when a keyword matched roughly what it said and bids were set by hand.
+
+Three changes removed most of that value:
+
+- **Close variants loosened.** An exact match keyword now matches queries with the same meaning, not the same words, so a group built around one keyword was never really receiving one query.
+- **Broad match got smarter.** Google's [account structure guidance](https://support.google.com/google-ads/answer/14752782) now treats broad match as the match type that uses the most signals to read intent.
+- **Smart Bidding needs pooled signal.** A bid strategy learns from conversions. Split one theme's conversions across eight ad groups and each group learns eight times slower, and several never gather enough to learn at all.
+
+Google's own guidance is now explicit about the direction. Its "ABCs of Account Structure" opens with moving from single-keyword ad groups to themed ad groups, on the reasoning that grouping keywords into similar themes makes it easier for Google to understand the keywords, select the best one, and decide which ad should serve for each query.
+
+Single keyword groups still have a narrow use: one query with enough volume and enough value to justify its own page and its own ads. That is a deliberate exception to record in the brief, not a default to build on.
+
+<Warning>
+  A search theme in this framework is not the same thing as **search themes** in Performance Max. Google's search themes are a field inside a PMax asset group where you add up to 50 phrases (raised from 25 in 2025) that get the same prioritization as phrase and broad match keywords in a Search campaign. Our search theme is the planning unit that decides what a whole ad group targets, who it speaks to, and where it sends them. One is an input to a campaign type. The other is a document. See the [search theme glossary](/google-search-theme-glossary#search-themes-performance-max) for both definitions side by side.
+</Warning>
+
+## The one-ad test decides the boundary
+
+The hardest question about a theme is not what to put in it. It is where it stops.
+
+The test that answers it: **could one responsive search ad be genuinely relevant to every keyword in this group?** If writing a headline that suits keyword 3 makes it wrong for keyword 11, the group is two themes wearing one name.
+
+That test is worth more than any keyword count, because it is the same standard Google grades on. Ad relevance measures how closely an ad matches the intent behind a search, and a group holding two intents forces the ad to sit between them.
+
+### How many keywords
+
+Ten to fifteen is a reasonable working range, and the wider practitioner range runs from about three to twenty. The number is a symptom, not a target.
+
+- A theme that reaches fifteen because fifteen queries genuinely say the same thing is fine.
+- A theme padded to fifteen with near-duplicates and loosely related terms has diluted itself for the sake of a number.
+- A theme that stops at six because only six queries fit the intent is a good theme, not an unfinished one.
+
+<Note>
+  Which keywords go in, which match types they run on, and which terms get negated is the media buyer's call, made against live search term data. This framework does not teach keyword research. What it records is the theme those keywords belong to, so the ads and the landing page can be held to it. See [what this framework covers](/what-this-framework-covers).
+</Note>
+
+## The relevance chain is what gets graded
+
+Quality Score has three components, and a theme touches all three:
+
+| Component | What it measures | What the theme contributes |
+| :-- | :-- | :-- |
+| Expected clickthrough rate | How likely the ad is to be clicked when shown | Ads written against one intent rather than an average of several |
+| Ad relevance | How closely the ad matches the intent behind the search | Keywords that share a meaning, so one ad can match all of them |
+| Landing page experience | How relevant and useful the page is to someone who clicked | A page chosen for this intent, carrying the ad's promise |
+
+Google's stated fix for weak ad relevance is to organize keywords by theme and split groups holding mismatched keywords. Its stated fix for landing page experience is to keep messaging consistent from ad to landing page, so the page follows through on the ad's offer.
+
+That is the whole argument for making the landing page and the copy brief part of the theme rather than separate downstream decisions. A theme that names its keywords but leaves the destination to whoever builds the campaign is only doing a third of the job.
+
+## Message match is the theme surviving the click
+
+Message match is the continuity between the query, the ad, and the page. Someone who searched for the price of gold, clicked an ad about the price of gold, and landed on a general precious metals homepage has to work out for themselves whether they are in the right place. Some of them do not bother.
+
+Matching does not mean repeating the headline word for word on the page. It means the promise the ad made is the first thing the page addresses.
+
+This is why the theme brief asks for the phrase that has to appear in both. Naming it once, in the theme, is what lets a copywriter and a landing page owner work separately and still land in the same place.
+
+## When two themes are really one
+
+Themes compete with each other more often than teams expect. Two groups whose intents overlap will both enter the same auction, and Google picks between your own ads. The result is split Quality Score data, so neither group learns which ad and keyword combination actually works.
+
+Signs a boundary has gone wrong:
+
+- The same search term shows up in the search terms report for two themes.
+- You had to write nearly the same ad twice.
+- Both themes point at the same landing page with the same promise.
+- You cannot state, in one sentence, what the second theme covers that the first does not.
+
+The fix is decided at planning time, not after. Each theme names the neighbouring themes it sits next to and what separates them, and any term that belongs to the neighbour goes in as an ad-group-level negative. Doing that at theme three is a note. Doing it at theme twelve is a restructure.
+
+<Note>
+  Ad group level negatives are the precise instrument here, because they block a term in one theme without touching the rest of the campaign. Shared negative lists still handle the terms that are wrong for the whole account. See [keep negatives in shared lists](/campaign-structure-best-practices#keep-negatives-in-shared-lists) for the split.
+</Note>
+
+## Where a theme sits in the rest of the framework
+
+A theme is smaller than a campaign and larger than an ad. It fills the gap between a [Google campaign brief](/google-campaign-brief), which fixes type, budget, and bid strategy, and a [copy brief](/copy-brief), which governs one piece of writing.
+
+| Level | Document | Decides |
+| :-- | :-- | :-- |
+| Campaign | [Google campaign brief](/google-campaign-brief) | Type, conversion goal, budget, bid strategy |
+| Ad group | [Search theme brief](/google-search-theme-brief) | Intent, keywords, profile, landing page, copy owner |
+| Ad | [Google Search copy template](/google-search-copy-template) | Headlines, descriptions, pins |
+
+The theme name itself comes from the [ad group theme dictionary](/ad-set-group-naming-conventions#ad-group-theme-search-and-shopping), not from a description typed into Google at build time. A theme with no registered short form is a value no report can group by.
+
+## What a theme does not cover
+
+- **Keyword research and match type selection.** The buyer's call, against live data.
+- **Bidding.** Set at campaign level in the [Google campaign brief](/google-campaign-brief).
+- **Performance Max and Shopping.** A PMax asset group is organized around audience signals and creative, and a Shopping group around products. Neither is a keyword theme, and this brief does not fit them.
+- **Building the landing page.** The theme links to a page and states what it has to promise. The page itself runs through the [landing page brief](/landing-page-brief).
+
+<Info>
+  Platform behavior on this page was checked on 13 August 2026. Google changes match type behavior, Quality Score reporting, and Performance Max inputs regularly. Confirm current behavior in Google Ads before relying on a specific limit, and update this page when it moves.
+</Info>
+
+## Related resources
+
+- [**Search theme brief**](/google-search-theme-brief) The fill-in workbook for one theme, with a concept review on every section.
+- [**Search theme template**](/google-search-theme-template) The blank sheet to copy per theme once the reasoning is familiar.
+- [**Search theme glossary**](/google-search-theme-glossary) Definitions for every term on this page.
+- [**Google campaign brief**](/google-campaign-brief) The campaign this theme sits inside.
+- [**Google Search copy template**](/google-search-copy-template) Where the theme's ads get written.
+- [**Campaign structure best practices**](/campaign-structure-best-practices) What varies at which level, across every platform.
