@@ -145,6 +145,17 @@
             ]
           },
           {
+            "dropdown": "Paid search",
+            "groups": [
+              {
+                "group": "Core concepts",
+                "pages": [
+                  "google-search-theme-concepts"
+                ]
+              }
+            ]
+          },
+          {
             "dropdown": "Reporting",
             "groups": [
               {
@@ -401,11 +412,7 @@
               {
                 "group": "Search themes",
                 "pages": [
-                  "google-search-theme-concepts",
-                  "google-search-theme-brief",
-                  "google-search-theme-template",
-                  "google-search-theme-register",
-                  "google-search-theme-glossary"
+                  "google-search-theme-brief"
                 ]
               },
               {
@@ -762,6 +769,12 @@
                 ]
               },
               {
+                "group": "Search themes",
+                "pages": [
+                  "google-search-theme-template"
+                ]
+              },
+              {
                 "group": "Google Merchant Center",
                 "pages": [
                   "google-merchant-center-overview",
@@ -884,6 +897,17 @@
                 "group": "Overview",
                 "pages": [
                   "campaign-library-overview"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "Search themes",
+            "groups": [
+              {
+                "group": "Registers",
+                "pages": [
+                  "google-search-theme-register"
                 ]
               }
             ]
@@ -1201,6 +1225,11 @@
     {
       "source": "/experiment-id",
       "destination": "/experiment-id-convention",
+      "permanent": true
+    },
+    {
+      "source": "/google-search-theme-glossary",
+      "destination": "/glossary",
       "permanent": true
     }
   ]
