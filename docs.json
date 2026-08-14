@@ -948,6 +948,31 @@
         "tab": "Library",
         "dropdowns": [
           {
+            "dropdown": "Asset directories",
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "asset-directory"
+                ]
+              },
+              {
+                "group": "Drives",
+                "pages": [
+                  "creative-drive",
+                  "video-drive",
+                  "copy-drive"
+                ]
+              },
+              {
+                "group": "Audience lists",
+                "pages": [
+                  "audience-list-store"
+                ]
+              }
+            ]
+          },
+          {
             "dropdown": "Campaign library",
             "groups": [
               {
@@ -1078,31 +1103,6 @@
                 "group": "Registers",
                 "pages": [
                   "event-tracking-plan"
-                ]
-              }
-            ]
-          },
-          {
-            "dropdown": "Asset directories",
-            "groups": [
-              {
-                "group": "Overview",
-                "pages": [
-                  "asset-directory"
-                ]
-              },
-              {
-                "group": "Drives",
-                "pages": [
-                  "creative-drive",
-                  "video-drive",
-                  "copy-drive"
-                ]
-              },
-              {
-                "group": "Audience lists",
-                "pages": [
-                  "audience-list-store"
                 ]
               }
             ]
