@@ -385,6 +385,12 @@
                 ]
               },
               {
+                "group": "Templates",
+                "pages": [
+                  "meta-template-directory"
+                ]
+              },
+              {
                 "group": "Processes",
                 "pages": [
                   "meta-campaign-process"
@@ -418,6 +424,12 @@
                 ]
               },
               {
+                "group": "Templates",
+                "pages": [
+                  "google-template-directory"
+                ]
+              },
+              {
                 "group": "Processes",
                 "pages": [
                   "google-campaign-process"
@@ -439,6 +451,12 @@
                 "pages": [
                   "linkedin-campaign-brief",
                   "linkedin-creative-specs"
+                ]
+              },
+              {
+                "group": "Templates",
+                "pages": [
+                  "linkedin-template-directory"
                 ]
               },
               {
@@ -466,6 +484,12 @@
                 ]
               },
               {
+                "group": "Templates",
+                "pages": [
+                  "tiktok-template-directory"
+                ]
+              },
+              {
                 "group": "Processes",
                 "pages": [
                   "tiktok-campaign-process"
@@ -487,6 +511,12 @@
                 "pages": [
                   "organic-social-post-brief",
                   "organic-social-creative-specs"
+                ]
+              },
+              {
+                "group": "Templates",
+                "pages": [
+                  "organic-social-template-directory"
                 ]
               },
               {
@@ -514,6 +544,12 @@
                 ]
               },
               {
+                "group": "Templates",
+                "pages": [
+                  "email-template-directory"
+                ]
+              },
+              {
                 "group": "Processes",
                 "pages": [
                   "email-campaign-process"
@@ -528,6 +564,12 @@
                 "group": "Overview",
                 "pages": [
                   "seo-home"
+                ]
+              },
+              {
+                "group": "Templates",
+                "pages": [
+                  "seo-template-directory"
                 ]
               },
               {
@@ -546,6 +588,12 @@
                 "group": "Overview",
                 "pages": [
                   "web-home"
+                ]
+              },
+              {
+                "group": "Templates",
+                "pages": [
+                  "web-template-directory"
                 ]
               },
               {
@@ -775,6 +823,12 @@
                 "group": "Search themes",
                 "pages": [
                   "google-search-theme-template"
+                ]
+              },
+              {
+                "group": "Page feeds",
+                "pages": [
+                  "google-ads-page-feed-csv-template"
                 ]
               },
               {
