@@ -1,0 +1,121 @@
+---
+title: "Page feed CSV template (Google Ads)"
+description: "The two-column format for a Google Ads page feed, with a filled-in example, custom label rules, and how the feed is targeted in Dynamic Search Ads and Performance Max. Use it to control which pages on your site can serve as landing pages."
+---
+
+Use this template for a page feed: the list of pages on your own site that Google Ads is allowed to use as landing pages, with optional labels that split the list into groups you can target separately. It's a Google Ads feed of URLs, uploaded under business data.
+
+<Warning>
+  This isn't a Merchant Center or Hotel Center feed. A page feed carries page URLs, not products or properties, and it uploads to a different place. For a retail catalog, see the [Google Merchant Center feed templates](/google-merchant-center-overview). For hotel properties, see the [Hotel Center feed](/google-hotel-center-csv-template).
+</Warning>
+
+## File format
+
+- A CSV file, or a Google Sheet connected as a scheduled upload.
+- Two columns, with a header row using Google's exact names: `Page URL` and `Custom label`.
+- One row per URL. A page that isn't in the feed can't be targeted through it.
+- `Custom label` is optional. A feed with no labels can only be targeted whole.
+
+## Column template
+
+| Page URL | Custom label |
+| :-- | :-- |
+| [https://doughnutlabs.example/products/starter-mug](https://doughnutlabs.example/products/starter-mug) | MUGS; DRINKWARE |
+| [https://doughnutlabs.example/products/travel-tumbler](https://doughnutlabs.example/products/travel-tumbler) | TUMBLERS; DRINKWARE |
+| [https://doughnutlabs.example/collections/gift-sets](https://doughnutlabs.example/collections/gift-sets) | GIFT\_SETS; SEASONAL |
+| [https://doughnutlabs.example/pricing](https://doughnutlabs.example/pricing) | PRICING |
+
+Each row carries a specific label and, where it helps, a broader one. That's what makes the same feed targetable at two levels: one ad group or asset group takes `DRINKWARE`, a narrower one takes `TUMBLERS`.
+
+## Format rules
+
+| Field | Rule |
+| :-- | :-- |
+| `Page URL` | The full URL including `https://`, one per row. |
+| Redirects | Put the final destination URL in the feed. A redirect that crosses domains gets the URL disapproved. |
+| Tracking parameters | None in the feed. Tagging happens on the ad, so a feed URL carrying UTMs produces a double-tagged landing page. See [UTM standards](/utm-standards). |
+| Page status | Every URL has to return a live page (HTTP 200). Dead and redirecting URLs are the most common cause of disapprovals in a feed. |
+| `Custom label` | Up to 20 labels per URL, separated by a semicolon. |
+| Label text | No semicolons or commas inside a label, since both break the parse. |
+| Duplicates | Check for duplicate URLs before uploading. |
+
+Name the file per [file naming conventions](/file-naming-conventions), with the feed type and date in the name.
+
+## Naming custom labels
+
+A label is a targeting handle, so add one only where you'd want to bid, budget, or write differently for that group of pages. A label nobody targets is a column nobody maintains.
+
+House convention for this knowledge base:
+
+- Uppercase, with underscores instead of spaces: `GIFT_SETS`, not `Gift sets`.
+- One casing convention across the whole feed, so a targeting rule matches what's actually in the file.
+- One specific label plus one parent label per URL, as in the example above. Deeper hierarchies are hard to keep accurate once the site changes.
+- Label by what you'd manage separately: product category, margin band, stock level, page type. The URL already says what the page is about.
+
+## Where the feed is used
+
+| Campaign type | What the feed does |
+| :-- | :-- |
+| Dynamic Search Ads | Sets the pages that can serve. Choose whether the campaign uses feed URLs only, or the feed plus Google's index of your site. Ad groups then target a condition on `Custom label`. |
+| Performance Max | Attaches at campaign level. Custom labels route URLs to a specific asset group, or exclude URLs from serving when final URL expansion is on. |
+
+With final URL expansion on, a Performance Max page feed confirms which URLs Google has indexed, and the campaign can still serve URLs outside the feed. With expansion off, the campaign only sends traffic to the URLs in your asset groups.
+
+<Warning>
+  Google begins auto-upgrading Dynamic Search Ads campaigns to AI Max in February 2027. AI Max documents its own URL inclusions and exclusions, and Google hasn't published how a page feed carries across, so confirm what happens to your dynamic ad targets before building a new process on DSA page feed targeting. Page feeds are current for Performance Max.
+</Warning>
+
+## Uploading
+
+<Steps>
+  <Step title="Build the file">
+    Two columns, exact headers, one row per URL. Pull the URLs from the [site pages register](/site-pages-register) and the [landing page library](/landing-page-library) so the feed matches pages someone owns.
+  </Step>
+  <Step title="Upload it">
+    In Google Ads, go to **Tools** \> **Business data**, add a new data source, and choose **Page feed**. Name the feed, choose the file, preview it, then apply.
+  </Step>
+  <Step title="Wait for the crawl">
+    Google takes an average of 2–14 days to crawl a new feed. Build that lead time into the launch date.
+  </Step>
+  <Step title="Target it">
+    Point the campaign or ad group at the feed, then add the label conditions. A feed that's uploaded but not targeted changes nothing.
+  </Step>
+</Steps>
+
+## Limits
+
+| Limit | Value |
+| :-- | :-- |
+| Custom labels per URL | 20 |
+| Page feeds per account | 180 |
+| Assets across all page feeds | 5 million by default |
+
+<Info>
+  Google's own help pages don't agree on the feed count: the account limits page states 180 page feeds per account, while the Dynamic Search Ads page still says 100. Plan against 100 if you're anywhere near either number.
+</Info>
+
+## Before you upload
+
+- Every URL returns a live page, checked as a batch with a crawler.
+- No tracking parameters in any URL.
+- No duplicate URLs.
+- Labels match the values your targeting rules use, character for character.
+- Pages in the feed are registered in the [site pages register](/site-pages-register) or [landing page library](/landing-page-library), so each one has an owner.
+- Landing pages meet the same standard as any other paid destination. A page feed makes it easy to send traffic to a page nobody briefed.
+
+## Official documentation
+
+- [Use a feed to target Dynamic Search Ads and Performance Max](https://support.google.com/google-ads/answer/7166527)
+- [How to use page feeds in Performance Max](https://support.google.com/google-ads/answer/13568488)
+- [About Dynamic Search Ads](https://support.google.com/google-ads/answer/2471185)
+- [About your Google Ads account limits](https://support.google.com/google-ads/answer/6372658)
+- [Dynamic Search Ads page feeds, Google Ads API](https://developers.google.com/google-ads/api/docs/dynamic-search-ads/dsa-page-feeds)
+
+## Related resources
+
+- [**Google**](/google-home) Campaign process, specs, and copy templates.
+- [**Google template directory**](/google-template-directory) Every Google template in one list.
+- [**Site pages register**](/site-pages-register) Where standing page URLs come from.
+- [**Landing page library**](/landing-page-library) Where campaign page URLs come from.
+- [**UTM standards**](/utm-standards) Tagging the ad, not the feed.
+- [**Google Merchant Center feed templates**](/google-merchant-center-overview) The product-feed equivalent.
