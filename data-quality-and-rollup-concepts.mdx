@@ -3,6 +3,8 @@ title: "Data quality and rollup concepts"
 description: "Why a flat file stores raw numbers instead of calculated ones, how a monthly report gets built from its weeklies without becoming a new report, and the naming and tracking habits that keep the whole thing trustworthy. Read this before filling in the flat file."
 ---
 
+import PageEndcap from "/snippets/page-endcap.mdx";
+
 Two ideas hold up everything else in this framework. First, a report is only as good as the data feeding it, and most data problems trace back to naming, not the numbers themselves. Second, a longer report shouldn't be written from scratch: it should be built from the shorter reports underneath it, the same way a month is built from its weeks. This page explains both, and the flat file is where they meet. Use it alongside [the flat file template](/flat-file-template).
 
 ## Keeping data clean
@@ -106,3 +108,5 @@ Tracking sometimes fails partway through a reporting period, a campaign gets mis
 - [**Flat file template**](/flat-file-template) The schema this page's reasoning is built for.
 - [**Reporting framework concepts**](/reporting-framework-concepts) How the metrics stored in the flat file get defined.
 - [**Report writing concepts**](/report-writing-concepts) How the rolled-up numbers become an actual report.
+
+<PageEndcap />
