@@ -128,3 +128,332 @@ html:not(.dark) button.bg-primary {
 .brand-accent {
   color: rgb(var(--brand-brick-oven));
 }
+
+/* ─────────────────────────────────────────────────────────────────
+   Page endcap
+
+   Two offers that close every page, rendered from the snippet at
+   /snippets/page-endcap.mdx. The markup carries class names only, so
+   copy and links are edited there and appearance is edited here.
+
+   The order is deliberate. The referral card is the loud one — dark,
+   textured, green CTA — because it is the offer that costs the reader
+   nothing and grows the list. The agency strip below it is quiet by
+   design: one line, one link, no button competing with the card above.
+
+   Every selector below is at least two classes deep. Mintlify's prose
+   styles land at one class plus one element, so class-on-class wins the
+   cascade without needing !important anywhere.
+   ───────────────────────────────────────────────────────────────── */
+
+.sd-endcap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgb(var(--gray-200));
+}
+
+html.dark .sd-endcap {
+  border-top-color: rgb(255 255 255 / 0.1);
+}
+
+/* Shared ─────────────────────────────────────────────────────── */
+
+.sd-endcap .sd-ad {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.sd-endcap .sd-eyebrow {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(var(--brand-brick-oven));
+}
+
+.sd-endcap .sd-eyebrow-quiet {
+  color: rgb(var(--brand-brooklyn-green));
+}
+
+.sd-endcap .sd-ad-title {
+  margin: 0.75rem 0 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.sd-endcap .sd-ad-title-sm {
+  font-size: 1.0625rem;
+  margin-top: 0.5rem;
+}
+
+.sd-endcap .sd-ad-copy {
+  margin: 0.75rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.sd-endcap .sd-arrow {
+  margin-left: 0.5rem;
+  transition: transform 0.15s ease;
+}
+
+/* Referral card ──────────────────────────────────────────────────
+
+   Subway Tile in light mode, so the card reads as a deliberate object
+   against Cream Cheese rather than another callout. In dark mode the
+   page is already Subway Tile, so the fill lifts a few steps and picks
+   up a green hairline — otherwise the card would vanish into the page.
+
+   The texture is generated rather than loaded. /images/texture.png is
+   345 KB and this card is on all 226 pages; an inline fractal-noise SVG
+   costs about 300 bytes and no extra request. Swap the background-image
+   below for url('/images/texture.png') if the real brand grain matters
+   more than the weight.
+   ───────────────────────────────────────────────────────────────── */
+
+.sd-endcap .sd-ad-os {
+  padding: 2rem;
+  background-color: rgb(var(--brand-subway-tile));
+  color: rgb(var(--brand-cream-cheese));
+}
+
+html.dark .sd-endcap .sd-ad-os {
+  background-color: rgb(46 49 65);
+  box-shadow: inset 0 0 0 1px rgb(var(--brand-brooklyn-green) / 0.28);
+}
+
+.sd-endcap .sd-ad-os::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.14;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.sd-endcap .sd-ad-os::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    120% 85% at 88% 0%,
+    rgb(var(--brand-brooklyn-green) / 0.32),
+    transparent 62%
+  );
+}
+
+/* Both washes above are pseudo-elements, so ::after is the card's last
+   child and would otherwise paint the green over the headline. The
+   content needs its own stacking level to sit above both. */
+.sd-endcap .sd-ad-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.sd-endcap .sd-ad-os .sd-ad-title {
+  color: rgb(var(--brand-cream-cheese));
+}
+
+.sd-endcap .sd-ad-os .sd-ad-copy {
+  max-width: 46rem;
+  color: rgb(var(--brand-cream-cheese) / 0.78);
+}
+
+/* Three doughnuts, three signups. The rings fill left to right on
+   hover so the price of the thing is legible before the button is. */
+
+.sd-endcap .sd-meter {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.375rem;
+}
+
+.sd-endcap .sd-rings {
+  display: inline-flex;
+  gap: 0.4375rem;
+}
+
+.sd-endcap .sd-ring {
+  width: 1.0625rem;
+  height: 1.0625rem;
+  border-radius: 50%;
+  border: 3px solid rgb(var(--brand-brooklyn-green));
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+}
+
+.sd-endcap .sd-ad-os:hover .sd-ring {
+  background-color: rgb(var(--brand-brooklyn-green));
+}
+
+.sd-endcap .sd-ad-os:hover .sd-ring:nth-child(2) {
+  transition-delay: 0.08s;
+}
+
+.sd-endcap .sd-ad-os:hover .sd-ring:nth-child(3) {
+  transition-delay: 0.16s;
+}
+
+.sd-endcap .sd-meter-label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgb(var(--brand-cream-cheese) / 0.62);
+}
+
+/* The label sits on Subway Tile rather than white, matching the primary
+   CTA rule above — same reasoning, same contrast tradeoff. */
+
+.sd-endcap a.sd-cta {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  margin-top: 1.625rem;
+  padding: 0.6875rem 1.25rem;
+  border-radius: 0.625rem;
+  background-color: rgb(var(--brand-brooklyn-green));
+  color: rgb(var(--brand-subway-tile));
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.sd-endcap a.sd-cta:hover {
+  color: rgb(var(--brand-subway-tile));
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgb(var(--brand-brooklyn-green) / 0.3);
+}
+
+.sd-endcap a.sd-cta:hover .sd-arrow {
+  transform: translateX(3px);
+}
+
+/* Agency strip ───────────────────────────────────────────────────
+
+   Bordered rather than filled, with a green edge instead of a button.
+   It has to be findable by anyone who wants it and ignorable by anyone
+   who doesn't, on a page they came to for a checklist.
+   ───────────────────────────────────────────────────────────────── */
+
+.sd-endcap .sd-ad-agency {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid rgb(var(--gray-200));
+  border-left: 3px solid rgb(var(--brand-brooklyn-green));
+  border-radius: 0.875rem;
+  background-color: rgb(255 255 255 / 0.55);
+}
+
+html.dark .sd-endcap .sd-ad-agency {
+  border-color: rgb(255 255 255 / 0.1);
+  border-left-color: rgb(var(--brand-brooklyn-green));
+  background-color: rgb(255 255 255 / 0.03);
+}
+
+.sd-endcap .sd-ad-agency .sd-ad-inner {
+  flex: 1 1 22rem;
+}
+
+.sd-endcap .sd-ad-agency .sd-ad-copy {
+  font-size: 0.875rem;
+  color: rgb(var(--gray-600));
+}
+
+html.dark .sd-endcap .sd-ad-agency .sd-ad-copy {
+  color: rgb(var(--gray-400));
+}
+
+.sd-endcap a.sd-link {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: rgb(var(--brand-brooklyn-green));
+  text-decoration: none;
+}
+
+.sd-endcap a.sd-link:hover {
+  color: rgb(var(--brand-brooklyn-green));
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+}
+
+.sd-endcap a.sd-link:hover .sd-arrow {
+  transform: translateX(3px);
+}
+
+/* Narrow viewports ───────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .sd-endcap .sd-ad-os {
+    padding: 1.5rem 1.25rem;
+  }
+
+  /* Scoped to the referral card. Unscoped, this would also outrank
+     .sd-ad-title-sm and blow the agency strip's heading up to match. */
+  .sd-endcap .sd-ad-os .sd-ad-title {
+    font-size: 1.3125rem;
+  }
+
+  .sd-endcap a.sd-cta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sd-endcap .sd-ad-agency {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.875rem;
+  }
+
+  /* The 22rem basis is a width while the strip is a row. Once it stacks,
+     the same value would reserve 22rem of height and leave a gap. */
+  .sd-endcap .sd-ad-agency .sd-ad-inner {
+    flex: 0 1 auto;
+  }
+}
+
+/* Motion and print ────────────────────────────────────────────────
+
+   The reduced-motion rule is the one the visual identity workbook asks
+   for: honor the preference, keep the state change, drop the movement.
+   ───────────────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .sd-endcap .sd-ring,
+  .sd-endcap .sd-arrow,
+  .sd-endcap a.sd-cta {
+    transition: none;
+  }
+
+  .sd-endcap a.sd-cta:hover {
+    transform: none;
+  }
+
+  .sd-endcap a.sd-cta:hover .sd-arrow,
+  .sd-endcap a.sd-link:hover .sd-arrow {
+    transform: none;
+  }
+}
+
+@media print {
+  .sd-endcap {
+    display: none;
+  }
+}
