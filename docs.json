@@ -4,9 +4,9 @@
   "name": "Snow Doughnut",
   "description": "Naming conventions, briefs, templates, checklists, and reporting standards for running marketing campaigns. Fill each workbook in once, then reuse it across every campaign.",
   "colors": {
-    "primary": "#1D6FA5",
-    "light": "#DAEBF6",
-    "dark": "#175882"
+    "primary": "#00A271",
+    "light": "#33B58D",
+    "dark": "#0B7D5F"
   },
   "favicon": "/favicon.png",
   "fonts": {
@@ -14,8 +14,8 @@
   },
   "background": {
     "color": {
-      "light": "#FAF9F6",
-      "dark": "#1C1B18"
+      "light": "#FAF8F2",
+      "dark": "#262835"
     }
   },
   "appearance": {

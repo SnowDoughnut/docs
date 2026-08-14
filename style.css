@@ -32,7 +32,7 @@ a[nav-tabs-item] {
 }
 
 .kb-feature-card {
-  background-color: rgb(var(--foreground-light, 17 24 39));
+  background-color: rgb(var(--brand-subway-tile));
 }
 
 .kb-feature-card::before {
@@ -43,4 +43,88 @@ a[nav-tabs-item] {
   background-position: center;
   background-size: cover;
   opacity: 0.875;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Brand palette
+
+     Cream Cheese    #FAF8F2   page background, large neutral surfaces
+     Subway Tile     #262835   primary text, headings, icons, borders
+     Brooklyn Green  #00A271   primary action colour
+     Brick Oven      #FF8931   rare accent only
+
+   docs.json carries the two slots its schema has fields for: the
+   accent (colors) and the page background (background.color). The
+   rules below cover what it has no field for — the neutral ramp
+   Mintlify derives from the accent, which is what actually paints
+   body text, icons and borders.
+
+   Mintlify reads these variables as space-separated RGB triples,
+   not hex, because it composes them through rgb(). Keep that form.
+   ───────────────────────────────────────────────────────────────── */
+
+:root {
+  --brand-cream-cheese: 250 248 242;
+  --brand-subway-tile: 38 40 53;
+  --brand-brooklyn-green: 0 162 113;
+  --brand-brick-oven: 255 137 49;
+
+  /* Neutral ramp, re-tinted from Mintlify's auto-derived green-tinted
+     grey onto Subway Tile's cooler slate. Every stop keeps the exact
+     luminance Mintlify ships, so contrast behaviour is unchanged in
+     both modes and the ramp stays monotonic — only the hue moves.
+     Light stops resolve toward Cream Cheese so borders and raised
+     surfaces sit against the warm white instead of fighting it. */
+  --gray-50: 247 246 240;
+  --gray-100: 242 241 235;
+  --gray-200: 226 224 221;
+  --gray-300: 210 208 206;
+  --gray-400: 161 160 162;
+  --gray-500: 114 114 121;
+  --gray-600: 81 82 92;
+  --gray-700: 63 65 75;
+  --gray-800: 37 39 52;
+  --gray-900: 24 25 33;
+  --gray-950: 12 12 17;
+}
+
+/* Primary text and headings sit on exact Subway Tile: 13.8:1 on Cream
+   Cheese. Scoped to light mode — in dark mode Mintlify resolves prose
+   colour to `inherit` against the Subway Tile background, and those
+   rules are left alone. */
+html:not(.dark) .prose {
+  color: rgb(var(--brand-subway-tile));
+  --tw-prose-headings: rgb(var(--brand-subway-tile));
+  --tw-prose-bold: rgb(var(--brand-subway-tile));
+  --tw-prose-quotes: rgb(var(--brand-subway-tile));
+  --tw-prose-code: rgb(var(--brand-subway-tile));
+  --tw-prose-kbd: rgb(var(--brand-subway-tile));
+}
+
+/* The page title renders outside .prose on a ramp utility rather than a
+   prose token, so it needs its own rule to land on the same Subway Tile
+   as every heading below it. Dark mode keeps Mintlify's light-on-dark
+   pairing. */
+html:not(.dark) h1.text-gray-900 {
+  color: rgb(var(--brand-subway-tile));
+}
+
+/* Primary CTA keeps the exact Brooklyn Green fill; the label is Subway
+   Tile rather than white, which lifts it from 3.28:1 to 4.46:1 — a hair
+   under the 4.5:1 AA needs at this size, but the closest a legible label
+   gets without moving the green off brand. Dark mode already pairs a
+   dark label with the lighter green and is left as is. */
+html:not(.dark) a.bg-primary,
+html:not(.dark) button.bg-primary {
+  color: rgb(var(--brand-subway-tile));
+}
+
+/* Brick Oven is a rare accent with no theme slot of its own — it is
+   deliberately not wired into any component default. Apply it by hand
+   for the occasional highlighted word or a CTA that has to outrank the
+   green ones. 6.2:1 on Subway Tile, 2.2:1 on Cream Cheese, so use it
+   for emphasis and decoration rather than for small text on the page
+   background. */
+.brand-accent {
+  color: rgb(var(--brand-brick-oven));
 }
