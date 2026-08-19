@@ -45,13 +45,14 @@ a[nav-tabs-item] {
   opacity: 0.875;
 }
 
-/* ─────────────────────────────────────────────────────────────────
+/* ───────────────────────────────────────────────────────────
    Brand palette
 
-     Surface   #F8F5EE   page background, large neutral surfaces
+     Cream     #FDFDFD   page background, large neutral surfaces
      Ink       #262835   primary text, headings, icons, borders
-     Primary   #3C66A5   primary action colour, links, active states
-     Accent    #ED92BC   rare accent only
+     Primary   #65A3D5   brand blue: links, active states, accents
+     Deep      #3179B4   Primary darkened for light-mode text and fills
+     Pink      #ED92BC   rare accent only
 
    docs.json carries the two slots its schema has fields for: the
    accent (colors) and the page background (background.color). The
@@ -59,27 +60,35 @@ a[nav-tabs-item] {
    Mintlify derives from the accent, which is what actually paints
    body text, icons and borders.
 
+   Primary is a light blue: 2.7:1 on Cream, so it clears neither AA
+   text (4.5:1) nor the 3:1 floor for interface elements. Deep is the
+   same hue and saturation dropped to 45% lightness, which lands at
+   4.5:1 on Cream and 4.6:1 against white. Light mode uses Deep
+   wherever the colour carries text or a filled control; dark mode
+   uses Primary as given, where it reads 5.4:1 on the Ink background.
+
    Mintlify reads these variables as space-separated RGB triples,
    not hex, because it composes them through rgb(). Keep that form.
-   ───────────────────────────────────────────────────────────────── */
+   ─────────────────────────────────────────────────────────── */
 
 :root {
-  --brand-surface: 248 245 238;
+  --brand-surface: 253 253 253;
   --brand-ink: 38 40 53;
-  --brand-primary: 60 102 165;
+  --brand-primary: 101 163 213;
+  --brand-primary-deep: 49 121 180;
   --brand-accent: 237 146 188;
 
   /* Neutral ramp, re-tinted off Mintlify's auto-derived primary-tinted
      grey and onto Ink's cooler slate. The ramp stays monotonic and each
      stop holds its luminance band, so contrast behaviour is unchanged in
-     both modes — only the hue moves. Light stops resolve toward Surface
-     so borders and raised surfaces sit against the warm cream instead of
-     fighting it. */
-  --gray-50: 245 243 236;
-  --gray-100: 240 238 231;
-  --gray-200: 224 221 217;
-  --gray-300: 208 205 202;
-  --gray-400: 161 160 162;
+     both modes — only the hue moves. The light stops carried a warm tint
+     to sit against the old cream background; Cream is now neutral, so
+     they resolve cool instead and stop reading yellow against it. */
+  --gray-50: 247 248 250;
+  --gray-100: 240 241 244;
+  --gray-200: 226 228 233;
+  --gray-300: 208 211 218;
+  --gray-400: 158 161 168;
   --gray-500: 114 114 121;
   --gray-600: 81 82 92;
   --gray-700: 63 65 75;
@@ -88,7 +97,7 @@ a[nav-tabs-item] {
   --gray-950: 12 12 17;
 }
 
-/* Primary text and headings sit on exact Ink: 13.4:1 on Surface. Scoped
+/* Primary text and headings sit on exact Ink: 14.4:1 on Cream. Scoped
    to light mode — in dark mode Mintlify resolves prose colour to
    `inherit` against the Ink background, and those rules are left
    alone. */
@@ -108,20 +117,21 @@ html:not(.dark) h1.text-gray-900 {
   color: rgb(var(--brand-ink));
 }
 
-/* Primary CTA: white label on the exact Primary fill, 5.78:1. The old
-   green needed a dark label to stay legible; Primary is dark enough to
-   clear AA against white, so the button goes back to Mintlify's default
-   pairing. Dark mode pairs a dark label with the lighter tint and is
-   left as is. */
+/* Primary CTA: white label on Deep, 4.6:1. The fill is pinned here
+   rather than left to the theme, because Mintlify resolves a filled
+   control to `colors.primary` in some slots and `colors.dark` in
+   others — and Primary under a white label is 2.7:1. Dark mode pairs a
+   dark label with Primary and is left as is. */
 html:not(.dark) a.bg-primary,
 html:not(.dark) button.bg-primary {
+  background-color: rgb(var(--brand-primary-deep));
   color: #fff;
 }
 
-/* Accent is rare and deliberately has no theme slot — it is wired into
+/* Pink is rare and deliberately has no theme slot — it is wired into
    no component default. Use it by hand and in small doses: handwritten
    eyebrow text, status dots, tiny icons, mascot details, the occasional
-   decorative mark. 6.6:1 on Ink but only 2.0:1 on Surface, so it is a
+   decorative mark. 6.6:1 on Ink but only 2.2:1 on Cream, so it is a
    decoration colour, not a text colour on the page background. */
 .brand-accent {
   color: rgb(var(--brand-accent));
