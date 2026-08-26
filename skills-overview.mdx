@@ -1,22 +1,24 @@
 ---
 title: "Skills"
-description: "The skills that run this framework: what a skill is, how one gets picked up, and which skills are published here."
+description: "The skills that run this framework: what a skill is, how an agent picks one up, and which skills are published here."
 ---
 
-A skill is a set of instructions Claude loads when a request matches it. Each one turns a document in this knowledge base into something that gets done the same way every time: the same intake questions, the same limits, the same output format.
+A skill is a set of instructions an AI agent loads when a request matches it. Each one turns a document in this knowledge base into something that gets done the same way every time: the same intake questions, the same limits, the same output format.
+
+Skills are portable. The format is a plain folder of markdown, so the same skill runs on any agent that supports them.
 
 The documents come first. A skill reads the workbooks you have already filled in, applies the rules the framework sets, and hands back finished work. Nothing here replaces a brief or a template, and no skill invents a fact your documents do not contain.
 
 ## How a skill gets picked up
 
-Every skill carries a description listing the requests it covers. Claude reads that description against what you asked for and loads the skill when the two match. You do not have to name it.
+Every skill carries a description listing the requests it covers. The agent reads that description against what you asked for and loads the skill when the two match. You do not have to name it.
 
 Both of these reach the same skill:
 
 - "Write me 15 PMax headlines from this brief."
 - "/google-ad-copy"
 
-Ask in your own words and the right skill loads. Name it with a slash command when you want to be certain.
+Ask in your own words and the right skill loads. Name it directly, which most agents accept as a slash command, when you want to be certain.
 
 ## What a skill is made of
 
@@ -38,12 +40,14 @@ A skill that can check its own work carries a script for it. The Google ad copy 
 
 ## Installing a skill
 
-Skills live in a folder per skill, named after the skill, with `SKILL.md` at the top level.
+Skills live in a folder per skill, named after the skill, with `SKILL.md` at the top level. That layout is the same everywhere, so one folder works across every agent you use.
 
-- **Claude Code.** Put the folder in `~/.claude/skills/` to use it everywhere, or in `.claude/skills/` inside a project to scope it to that project.
-- **Claude apps.** Upload the folder under Settings, in the skills section. It then applies to every conversation on your account.
+Where the folder goes depends on the agent:
 
-Restart or reload after adding a skill so its description is read. Run `/skills` in Claude Code to list what is currently loaded.
+- **Agents that read from disk**, such as command-line tools and editor extensions, take a skills directory. One in your home folder makes the skill available everywhere; one inside a project scopes it to that project.
+- **Agents you use in a browser or desktop app** take an upload under settings. The skill then applies to every conversation on your account.
+
+Check your agent's own documentation for the exact path or upload screen, since both differ by product. Reload the agent after adding a skill so it reads the new description, and use whatever command it offers for listing skills to confirm the skill is loaded.
 
 ## Related resources
 
