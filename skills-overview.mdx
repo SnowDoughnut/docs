@@ -1,0 +1,53 @@
+---
+title: "Skills"
+description: "The skills that run this framework: what a skill is, how one gets picked up, and which skills are published here."
+---
+
+A skill is a set of instructions Claude loads when a request matches it. Each one turns a document in this knowledge base into something that gets done the same way every time: the same intake questions, the same limits, the same output format.
+
+The documents come first. A skill reads the workbooks you have already filled in, applies the rules the framework sets, and hands back finished work. Nothing here replaces a brief or a template, and no skill invents a fact your documents do not contain.
+
+## How a skill gets picked up
+
+Every skill carries a description listing the requests it covers. Claude reads that description against what you asked for and loads the skill when the two match. You do not have to name it.
+
+Both of these reach the same skill:
+
+- "Write me 15 PMax headlines from this brief."
+- "/google-ad-copy"
+
+Ask in your own words and the right skill loads. Name it with a slash command when you want to be certain.
+
+## What a skill is made of
+
+| Part | What it holds |
+| :-- | :-- |
+| `SKILL.md` | The instructions themselves: the workflow, the rules, the output format |
+| `references/` | Detail too long for the main file, loaded only when the task needs it |
+| `scripts/` | Code that enforces a rule rather than trusting a judgement call |
+| `assets/` | Skeletons and starting files the skill fills in |
+
+A skill that can check its own work carries a script for it. The Google ad copy skill validates every character count before it renders anything, which is why its output never exceeds a limit.
+
+## Published skills
+
+| Skill | Use it when | Category |
+| :-- | :-- | :-- |
+| [Google ad copy](/skill-google-ad-copy) | You need headlines, descriptions, or a full asset group for any Google campaign type | Copy and ads |
+| [De-AI writing review](/skill-deai) | A draft reads as machine-written and you want the tells found and fixed | Writing and editing |
+
+## Installing a skill
+
+Skills live in a folder per skill, named after the skill, with `SKILL.md` at the top level.
+
+- **Claude Code.** Put the folder in `~/.claude/skills/` to use it everywhere, or in `.claude/skills/` inside a project to scope it to that project.
+- **Claude apps.** Upload the folder under Settings, in the skills section. It then applies to every conversation on your account.
+
+Restart or reload after adding a skill so its description is read. Run `/skills` in Claude Code to list what is currently loaded.
+
+## Related resources
+
+- [Google copy templates](/google-template-directory) The templates the Google ad copy skill fills.
+- [Brand voice and tone](/brand-voice-and-tone) The voice a review checks copy against.
+- [Copy best practices](/copy-best-practices) The standards that hold whether a skill wrote the copy or you did.
+- [What this framework covers](/what-this-framework-covers) The scope of the knowledge base these skills operate on.

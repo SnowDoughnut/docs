@@ -1,0 +1,105 @@
+---
+title: "De-AI writing review"
+description: "The skill that finds the patterns making a draft read as machine-written, rates them by severity, and rewrites them out without flattening the author's voice."
+---
+
+Reads a piece of writing, finds the patterns that make it read as AI-generated, and fixes them. The goal is not to strip all polish. It is to remove the specific tics that signal a machine wrote the text.
+
+## When it runs
+
+Ask for a draft to be checked, humanized, de-AI'd, or cleaned up and this skill loads. It also covers "does this sound like ChatGPT?", "make this less robotic", "why does this read as generated", and sharing a draft with a question about making it sound like a person wrote it.
+
+It works on any genre: essays, blog posts, emails, stories, reports, and marketing copy.
+
+## How it works
+
+<Steps>
+  <Step title="Read the whole piece first">
+    Voice, genre, and audience get established before any single sentence is judged. Bullet lists and section headers are a problem in a casual blog post and fine in a technical doc.
+  </Step>
+  <Step title="Scan category by category">
+    Each hit is quoted exactly and located, so you can find it in your own file.
+  </Step>
+  <Step title="Prioritize by severity">
+    Patterns are rated 1 to 5. Severity 4 and 5 findings lead. Lower ones get a brief mention rather than a lecture.
+  </Step>
+  <Step title="Report, then rewrite">
+    A short summary of the main issues, then a cleaned-up version, unless you only wanted the diagnosis.
+  </Step>
+</Steps>
+
+## What you get
+
+- A one-line verdict on how AI the text currently reads.
+- Findings grouped by severity, each with the offending quote and a suggested fix.
+- The rewritten text, if you want it cleaned up rather than just diagnosed.
+
+Findings are concrete. "This reads as AI" is useless. "The phrase 'delve into' in the opening line is a classic tell, try 'look at'" is useful.
+
+## The patterns it checks
+
+| Group | What it covers |
+| :-- | :-- |
+| Punctuation and grammar | Em dashes, dramatic ellipses, smart quotes |
+| Overused words | Delve syndrome, transition addiction, metaphor clichés, "is/are" avoidance, elegant variation |
+| Phrase patterns | "Not X but Y" and other negative parallelisms, rhetorical question-and-answer, the rule of three |
+| Structural issues | Bullet-point addiction, section headers, title case, boldface overuse, inline-header lists, preamble syndrome, emoji formatting |
+| Stylistic quirks | Over-polished prose, emphasis overload, dramatic fragments |
+| Content patterns | Unmotivated metaphors, telling not showing, redundant adjective pairs |
+| Significance and puffery | Undue emphasis on legacy, notability-hammering, superficial "-ing" analysis, promotional tone, vague attributions |
+| Communication leaks | Chatbot filler, knowledge-cutoff disclaimers, placeholder text, meta-commentary that leaks the request into the output |
+| Genre-specific | Romance clichés, repetitive dialogue |
+
+The highest-priority tells, rated severity 5, are em-dash overuse, "delve"-type academic vocabulary, "not X but Y" constructions, the rule of three, and unmotivated metaphors. Those get checked first.
+
+The skill also carries two calibration sections: **era-based vocabulary drift**, which words signal which generation of model, and **ineffective indicators**, the things people wrongly treat as tells. Perfect grammar, formal prose, and curly quotes on their own are not evidence of anything.
+
+## Calibration
+
+Not every instance of these patterns is a problem. A single em dash, one metaphor, or a list where a list genuinely belongs are all fine. What signals AI is the density and mechanical repetition of these moves, so a pattern gets flagged when it recurs or feels reflexive, not on first sight.
+
+Strictness matches your request. "Flag everything" means thorough. "Does this sound off?" means the worst offenders only.
+
+The author's voice is preserved. Removing machine tics is the job. Homogenizing the writing is not, and a device used deliberately that works gets left alone.
+
+## Call an editor
+
+Some of these patterns are only usually wrong. A landing page may genuinely want promotional warmth. A speech may want a rule-of-three cadence. A listicle may want emphatic boldface.
+
+So when the skill is about to *produce* writing and the best version of the task would use a flagged pattern, it stops and asks rather than silently applying or silently suppressing it. This holds across the whole conversation once the skill is active, not only on explicit review requests.
+
+It asks when:
+
+- The natural, best-fit draft leans on a flagged pattern.
+- It cannot tell whether a pattern is a deliberate choice or a tell to strip.
+- Your request and the de-AI guidance pull in opposite directions.
+
+<Note>
+  Once you have named the register you want, the skill honors it without asking again. One clear signal covers the whole piece.
+</Note>
+
+## The rewrite standard
+
+When rewriting, this is the target:
+
+> Write naturally without em dashes, the words delve, moreover, furthermore, albeit, and indeed, "not X but Y" constructions, rhetorical question-and-answer pairs, reflexive groups of three, bullet points in prose, section headers in short pieces, excessive bold or italics, metaphorical clichés like "symphony of" or "tapestry of", or explanatory tails like "which was surprising because". Use concrete descriptions, varied sentence structure, and a conversational tone with personality.
+
+Fixing a "not X but Y" needs more than swapping the halves, which leaves the same parallel shape behind. The sentence gets rebuilt around what the subject positively does or is. Where a contrast genuinely matters, it splits into two independent positive sentences rather than bridging them with "rather than", "instead of", or "while X, Y", all of which reintroduce the cadence.
+
+## Where it fits
+
+This skill checks whether writing reads as machine-generated. It does not check whether writing sounds like you, and it does not carry the house rules for documentation.
+
+| Question | Where it belongs |
+| :-- | :-- |
+| Does this read as AI-written? | This skill |
+| Does this sound like our brand? | [Brand voice and tone](/brand-voice-and-tone) |
+| Is this the right style for a docs page? | [Article standards](/article-standards) |
+
+## Related resources
+
+- [Brand voice and tone](/brand-voice-and-tone) The voice a draft is meant to land in once the tells are gone.
+- [Copy best practices](/copy-best-practices) What makes copy work, separate from what makes it read as generated.
+- [Article standards](/article-standards) The bar a published article has to clear.
+- [Article pre-publish checklist](/article-pre-publish-checklist) The last pass before anything goes out.
+- [Skills](/skills-overview) How skills load and where they are installed.
