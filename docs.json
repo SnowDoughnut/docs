@@ -926,6 +926,44 @@
         ]
       },
       {
+        "tab": "Skills",
+        "dropdowns": [
+          {
+            "dropdown": "About skills",
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "skills-overview"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "Copy and ads",
+            "groups": [
+              {
+                "group": "Google",
+                "pages": [
+                  "skill-google-ad-copy"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "Writing and editing",
+            "groups": [
+              {
+                "group": "Review",
+                "pages": [
+                  "skill-deai"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
         "tab": "Reports",
         "dropdowns": [
           {

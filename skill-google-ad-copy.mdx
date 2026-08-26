@@ -1,0 +1,149 @@
+---
+title: "Google ad copy"
+description: "The skill that fills a Snow Doughnut Google copy template for any campaign type, inside every character limit, with headlines that work in any combination."
+---
+
+Produces a filled Google copy template for one campaign type, written from the brand and campaign documents you already have. Search, Performance Max, Display, Demand Gen, YouTube, and App are all covered.
+
+## When it runs
+
+Ask for Google ad copy in any form and this skill loads. It covers requests like "write me some RSA headlines", "I need copy for a PMax asset group", "fill in the search copy template", and handing over a [marketing campaign brief](/marketing-campaign-brief), [Google campaign brief](/google-campaign-brief), [search theme brief](/google-search-theme-brief), or [angle brief](/angle-brief) and asking for the ads that come out of it.
+
+It applies to one headline as much as to a full asset group, because the limits and the combination rules do not scale down.
+
+It does not cover Meta, LinkedIn, TikTok, email, or organic social. Those have their own [copy templates](/copy-templates).
+
+## The three rules it enforces
+
+<Steps>
+  <Step title="No field ever exceeds its character limit">
+    Google rejects an asset that is one character over, and a rejected asset means the ad serves without it. Shorter than the limit is fine. Longer never is.
+  </Step>
+  <Step title="Every headline works in any combination">
+    Google assembles its own ads from the pool you give it. A headline that only reads correctly after another one will read badly in most of the ads that actually serve.
+  </Step>
+  <Step title="The copy advertises the actual business">
+    A search theme describes what someone looked for, not what you sell. The skill reasons from the query to the process the searcher is stuck in, then to the features that unstick it.
+  </Step>
+</Steps>
+
+The first two are checked by a script. The third is judgement, and it happens before any headline gets written.
+
+## What it asks you for
+
+The skill opens with a short intake, presented as tappable options rather than a list to type answers to.
+
+| Question | Why it needs the answer |
+| :-- | :-- |
+| Campaign type | Sets the template, the fields, and every character limit |
+| Which brand documents you have | [Positioning](/positioning), [messaging](/messaging), and [brand voice and tone](/brand-voice-and-tone) decide what the copy can claim and how it sounds |
+| Which campaign documents you have | The brief, search theme brief, or angle brief set the objective, offer, audience, and landing page |
+| How you want it exported | In chat, Google Doc, Word, or something else |
+
+If you have already supplied everything, the intake is skipped.
+
+### If you do not have the documents
+
+Missing documents are normal and do not stop the work. There are three ways in:
+
+- **Pull it from the landing page.** Give the URL. The skill reads the homepage, a product page, and pricing, drafts a quick brief, and asks you what is wrong with it. Correcting seven pre-filled lines takes about thirty seconds.
+- **Fill in a short form.** Seven fields: product, audience, offer, difference, proof, landing page, and anything you cannot say.
+- **Just describe it.** Talk, and the skill pulls the same seven fields out and reads them back before writing anything.
+
+Blanks are allowed. A missing proof line leaves the Social Proof and Value buckets unfilled and listed as gaps at handoff, which is better than a headline claiming customers nobody has counted.
+
+## What it will not do
+
+Two constraints in your documents are hard limits on the copy, not suggestions.
+
+- The **approved claims table** in [messaging](/messaging) bounds what can be said. A line that is not supported there cannot run, however good it is.
+- **What the angle or theme must not claim** is usually there because legal said so. See [legal review](/legal-review-process).
+
+The skill never manufactures a proof point. "Trusted by 4,000 teams" is only usable if someone can point at the 4,000.
+
+## Headline buckets
+
+Every headline is tagged with one bucket. The tag is how the skill keeps any three headlines from saying the same thing, and the script rejects an untagged headline.
+
+| Bucket | Does what | Example |
+| :-- | :-- | :-- |
+| Keyword-Focused | Matches the search terms | Emergency Plumber Near Me |
+| Feature-Focused | Names a specific product detail | Waterproof Leather Boots |
+| Urgency | Adds time pressure | Sale Ends Tonight |
+| Scarcity | Limited supply | Only 3 Seats Left |
+| Value-Related | Price, discount, saving | Plans Start At $19/mo |
+| Risk Reversal | Removes the hesitation | 30-Day Money-Back Guarantee |
+| Call-to-Action | Says what to do next | Book Your Free Demo |
+| Social Proof | Others already trust it | 3,500 Five-Star Reviews |
+| Benefit-Focused | What they actually get | 4,000 Songs In Your Pocket |
+
+Across 15 headlines it covers at least six buckets and keeps any single bucket to three or fewer. Keyword-Focused matters most on Search, where the headline answers a query someone typed. On Performance Max, Display, Demand Gen, and App there is no query to match, so the weight moves to Benefit, Value, Social Proof, and CTA.
+
+## Character limits by campaign type
+
+The script is authoritative. This table is what the copy is written against.
+
+| Type | Field | Limit | Count |
+| :-- | :-- | :-- | :-- |
+| **Search** | Headline | 30 | 3–15 |
+| | Description | 90 | 2–4 |
+| | Display path 1 / 2 | 15 | optional |
+| | Sitelink text | 25 | up to 4 |
+| | Sitelink description 1 / 2 | 35 | |
+| | Callout | 25 | up to 4 |
+| | Structured snippet value | 25 | 3 per header |
+| **Performance Max** | Headline | 30 | 3–15, one must be ≤15 |
+| | Long headline | 90 | 1–5 |
+| | Description 1 | **60** | |
+| | Descriptions 2–5 | 90 | 3–5 total |
+| | Business name | 25 | |
+| **Display** | Short headline | 30 | 1–5 |
+| | Long headline | 90 | 1 |
+| | Description | 90 | 1–5 |
+| | Business name | 25 | |
+| **Demand Gen** | Headline | 40 | 1–5 |
+| | Description | 90 | 1–5 |
+| | Business name | 25 | |
+| | Carousel card headline | 40 | up to 4 |
+| **YouTube** | Headline | 15 | |
+| | Long headline | 90 | |
+| | Description line 1 / 2 | 35 | |
+| | Companion banner headline | 15 | |
+| | CTA button text | 10 | |
+| **App** | Headline | 30 | 1–5 |
+| | Description | 90 | 1–5 |
+
+<Warning>
+  Performance Max description 1 is 60 characters, not 90. The [PMax copy template](/google-pmax-copy-template) currently lists all five descriptions at 90. Copy written by the skill respects the 60, and the handoff says so.
+</Warning>
+
+## What you get
+
+A filled markdown template for the campaign type, ready to paste into the ad platform or hand to whoever builds the campaign. It comes with:
+
+- Every field filled to its maximum count, because more assets means more combinations Google can test.
+- A **Working notes** section carrying per-headline character counts, bucket coverage, sample three-headline draws, and any combination flags. Delete it before handoff.
+- A list of what was left blank and the fact that would unlock it. Campaign, ad group, and ad names come from the [naming conventions](/naming-conventions-overview) and belong to whoever builds the campaign, so they stay empty unless you supplied them.
+
+## Templates it fills
+
+| Campaign type | Template |
+| :-- | :-- |
+| Search | [Search copy template](/google-search-copy-template) |
+| Performance Max | [PMax copy template](/google-pmax-copy-template) |
+| Display | [Display copy template](/google-display-copy-template) |
+| Demand Gen | [Demand Gen copy template](/google-demand-gen-copy-template) |
+| YouTube | [YouTube copy template](/google-youtube-copy-template) |
+| App | [App campaign copy template](/google-app-campaign-copy-template) |
+
+The docs site is the source of truth for template structure. The skill's script is the source of truth for enforcement.
+
+## Related resources
+
+- [Google campaign brief](/google-campaign-brief) Sets campaign type, conversion goal, structure, and landing pages.
+- [Search theme brief](/google-search-theme-brief) The theme phrase the Search copy is written against.
+- [Angle brief](/angle-brief) The proposition and hook, and what the angle must not claim.
+- [Copy brief](/copy-brief) The brief this copy answers.
+- [Copy best practices](/copy-best-practices) The standards that apply however the copy was written.
+- [Google pre-launch checklist](/google-pre-launch-checklist) The last pass before the copy spends money.
+- [Skills](/skills-overview) How skills load and where they are installed.
