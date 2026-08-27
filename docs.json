@@ -120,6 +120,17 @@
             ]
           },
           {
+            "dropdown": "Customer profiles",
+            "groups": [
+              {
+                "group": "Core concepts",
+                "pages": [
+                  "customer-profile-concepts"
+                ]
+              }
+            ]
+          },
+          {
             "dropdown": "Brand",
             "groups": [
               {
@@ -152,6 +163,17 @@
                 "group": "Core concepts",
                 "pages": [
                   "google-search-theme-concepts"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "Budgeting",
+            "groups": [
+              {
+                "group": "Core concepts",
+                "pages": [
+                  "budget-concepts"
                 ]
               }
             ]
