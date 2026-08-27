@@ -46,13 +46,11 @@ a[nav-tabs-item] {
 }
 
 /* ───────────────────────────────────────────────────────────
-   Brand palette
+   Brand palette — matches snowdoughnut.com
 
-     Cream     #FDFDFD   page background, large neutral surfaces
-     Ink       #262835   primary text, headings, icons, borders
-     Primary   #65A3D5   brand blue: links, active states, accents
-     Deep      #3179B4   Primary darkened for light-mode text and fills
-     Pink      #ED92BC   rare accent only
+     White     #FFFFFF   page background, large neutral surfaces
+     Ink       #222222   body text, headings, icons, borders, links
+     Yellow    #FFC91F   brand accent: filled buttons, highlights, marks
 
    docs.json carries the two slots its schema has fields for: the
    accent (colors) and the page background (background.color). The
@@ -60,44 +58,50 @@ a[nav-tabs-item] {
    Mintlify derives from the accent, which is what actually paints
    body text, icons and borders.
 
-   Primary is a light blue: 2.7:1 on Cream, so it clears neither AA
-   text (4.5:1) nor the 3:1 floor for interface elements. Deep is the
-   same hue and saturation dropped to 45% lightness, which lands at
-   4.5:1 on Cream and 4.6:1 against white. Light mode uses Deep
-   wherever the colour carries text or a filled control; dark mode
-   uses Primary as given, where it reads 5.4:1 on the Ink background.
+   Yellow is a light colour: 1.5:1 on White, so it clears neither AA
+   text (4.5:1) nor the 3:1 floor for interface elements, and darkening
+   it far enough to pass turns it brown and off-brand. So it is used the
+   way the site uses it — as a fill under Ink, never as ink on White.
+   Ink on Yellow is 10.3:1 and Yellow on Ink is 10.3:1, so the pairing
+   works in both directions and in both modes.
+
+   That splits the accent by mode, which is what docs.json's colors
+   block is for: `dark` (the light-mode accent) is Ink, so light-mode
+   links and active states resolve to text-safe black; `light` (the
+   dark-mode accent) is Yellow, which reads 10.3:1 on the Ink
+   background. Yellow re-enters light mode only through the rules
+   below, where it always sits under an Ink label.
 
    Mintlify reads these variables as space-separated RGB triples,
    not hex, because it composes them through rgb(). Keep that form.
    ─────────────────────────────────────────────────────────── */
 
 :root {
-  --brand-surface: 253 253 253;
-  --brand-ink: 38 40 53;
-  --brand-primary: 101 163 213;
-  --brand-primary-deep: 49 121 180;
-  --brand-accent: 237 146 188;
+  --brand-surface: 255 255 255;
+  --brand-ink: 34 34 34;
+  --brand-yellow: 255 201 31;
 
   /* Neutral ramp, re-tinted off Mintlify's auto-derived primary-tinted
-     grey and onto Ink's cooler slate. The ramp stays monotonic and each
+     grey and onto pure neutral grey. The ramp stays monotonic and each
      stop holds its luminance band, so contrast behaviour is unchanged in
-     both modes — only the hue moves. The light stops carried a warm tint
-     to sit against the old cream background; Cream is now neutral, so
-     they resolve cool instead and stop reading yellow against it. */
-  --gray-50: 247 248 250;
-  --gray-100: 240 241 244;
-  --gray-200: 226 228 233;
-  --gray-300: 208 211 218;
-  --gray-400: 158 161 168;
-  --gray-500: 114 114 121;
-  --gray-600: 81 82 92;
-  --gray-700: 63 65 75;
-  --gray-800: 37 39 52;
-  --gray-900: 24 25 33;
-  --gray-950: 12 12 17;
+     both modes — only the hue moves. Left tinted, the ramp would pull
+     Yellow's hue into every border and secondary label on the page and
+     read as a wash rather than an accent; Ink is a neutral grey, so the
+     ramp resolves neutral to sit under it. */
+  --gray-50: 250 250 250;
+  --gray-100: 244 244 244;
+  --gray-200: 231 231 231;
+  --gray-300: 213 213 213;
+  --gray-400: 161 161 161;
+  --gray-500: 116 116 116;
+  --gray-600: 85 85 85;
+  --gray-700: 67 67 67;
+  --gray-800: 40 40 40;
+  --gray-900: 26 26 26;
+  --gray-950: 14 14 14;
 }
 
-/* Primary text and headings sit on exact Ink: 14.4:1 on Cream. Scoped
+/* Primary text and headings sit on exact Ink: 15.9:1 on White. Scoped
    to light mode — in dark mode Mintlify resolves prose colour to
    `inherit` against the Ink background, and those rules are left
    alone. */
@@ -117,24 +121,54 @@ html:not(.dark) h1.text-gray-900 {
   color: rgb(var(--brand-ink));
 }
 
-/* Primary CTA: white label on Deep, 4.6:1. The fill is pinned here
-   rather than left to the theme, because Mintlify resolves a filled
-   control to `colors.primary` in some slots and `colors.dark` in
-   others — and Primary under a white label is 2.7:1. Dark mode pairs a
-   dark label with Primary and is left as is. */
-html:not(.dark) a.bg-primary,
-html:not(.dark) button.bg-primary {
-  background-color: rgb(var(--brand-primary-deep));
-  color: #fff;
+/* Primary CTA: Ink label on Yellow, 10.3:1. This is the one place the
+   accent is loud in both modes, and it is the button the site itself
+   paints yellow. The fill is pinned rather than left to the theme,
+   because Mintlify resolves a filled control to `colors.primary` in
+   some slots and `colors.dark`/`colors.light` in others — which would
+   otherwise give a black button in light mode and a yellow one in
+   dark. Both label colours are stated so neither mode inherits white
+   text onto Yellow, which is 1.5:1. */
+a.bg-primary,
+button.bg-primary,
+.dark a.bg-primary-light,
+.dark button.bg-primary-light {
+  background-color: rgb(var(--brand-yellow));
+  color: rgb(var(--brand-ink));
 }
 
-/* Pink is rare and deliberately has no theme slot — it is wired into
-   no component default. Use it by hand and in small doses: handwritten
-   eyebrow text, status dots, tiny icons, mascot details, the occasional
-   decorative mark. 6.6:1 on Ink but only 2.2:1 on Cream, so it is a
-   decoration colour, not a text colour on the page background. */
-.brand-accent {
-  color: rgb(var(--brand-accent));
+/* Inline prose links. The light-mode accent is Ink, so a link would
+   otherwise be the same black as the sentence around it with nothing
+   to mark it. Yellow does the marking as an underline, where it sits
+   under an Ink label rather than carrying text itself. Scoped to text
+   containers so Cards and other block-level anchors are untouched, and
+   to light mode — dark-mode links already resolve to Yellow. */
+html:not(.dark) .prose p a,
+html:not(.dark) .prose li a,
+html:not(.dark) .prose td a {
+  color: rgb(var(--brand-ink));
+  text-decoration-color: rgb(var(--brand-yellow));
+  text-decoration-thickness: 0.125em;
+  text-underline-offset: 0.2em;
+}
+
+/* Text selection, the cheapest place the brand colour can show up
+   without a contrast cost: Ink on Yellow either way round. */
+::selection {
+  background-color: rgb(var(--brand-yellow));
+  color: rgb(var(--brand-ink));
+}
+
+/* Yellow by hand, for the marks the theme has no slot for. Both put
+   Ink on Yellow rather than Yellow on White — as a text colour it is
+   1.5:1 on the page background, so it is a fill colour only. */
+.brand-mark {
+  background-color: rgb(var(--brand-yellow));
+  color: rgb(var(--brand-ink));
+  padding: 0.05em 0.3em;
+  border-radius: 0.2em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 /* Status dot — the accent at the size it is meant to be used. */
@@ -143,5 +177,5 @@ html:not(.dark) button.bg-primary {
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 9999px;
-  background-color: rgb(var(--brand-accent));
+  background-color: rgb(var(--brand-yellow));
 }
