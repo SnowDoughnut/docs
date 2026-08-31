@@ -143,6 +143,17 @@
             ]
           },
           {
+            "dropdown": "Competitive",
+            "groups": [
+              {
+                "group": "Core concepts",
+                "pages": [
+                  "battle-card-concepts"
+                ]
+              }
+            ]
+          },
+          {
             "dropdown": "Creative",
             "groups": [
               {
@@ -254,6 +265,17 @@
                   "visual-identity",
                   "logo-usage",
                   "brand-assets"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "Competitive intelligence",
+            "groups": [
+              {
+                "group": "Battle cards",
+                "pages": [
+                  "competitor-battle-card"
                 ]
               }
             ]
@@ -1072,6 +1094,17 @@
                 "group": "Registers",
                 "pages": [
                   "angle-library"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "Battle card library",
+            "groups": [
+              {
+                "group": "Registers",
+                "pages": [
+                  "battle-card-library"
                 ]
               }
             ]
