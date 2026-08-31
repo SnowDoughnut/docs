@@ -1,0 +1,126 @@
+---
+title: "Battle card library"
+description: "Every competitor with a card or a watch entry, with its tier, owner, deal count, and review date. Check the register before writing a new card, and check the coverage tables to see which competitors are winning on what."
+---
+
+One row per competitor. A card is not in circulation until it has a row here.
+
+The library answers a question no single card can: across every deal being worked right now, which competitors are actually in them, which cards are current, and where the same losing reason keeps repeating. Twelve cards written over two years look like coverage until they are listed with their review dates next to them.
+
+<Info>
+  Rows are filled from a completed [competitor battle card](/competitor-battle-card). Tier values are defined at the bottom of this page. The reasoning behind cards and tiering is in [battle card concepts](/battle-card-concepts).
+</Info>
+
+## Before you write a new card
+
+<Steps>
+  <Step title="Check the register below">
+    If the competitor already has a card, update it rather than starting a second one.
+  </Step>
+  <Step title="Check the deal count">
+    A competitor seen in a handful of deals gets a watch row here. A card carries maintenance cost forever, and an unmaintained card costs more credibility than it returns.
+  </Step>
+  <Step title="Fill in the card, then add the row">
+    A row with no card behind it is a name, not a card.
+  </Step>
+</Steps>
+
+## The register
+
+_Rows 1 to 3 show examples using Doughnut Labs, a SaaS company that sells disruptive Doughnut Technology, against two invented competitors. Delete them and fill in your own._
+
+| Competitor | Tier | How they position | Deals seen, last 2 quarters | Win rate against them | Owner | Status | Review date | Card |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| _E.g. Cruller Systems_ | _E.g. Tier 1_ | _E.g. Enterprise platform for regulated operations_ | _E.g. 23_ | _E.g. 38%_ | _E.g. Priya Nadel_ | _E.g. Current_ | _E.g. 12 Nov 2026_ | _E.g. [link](https://link)_ |
+| _E.g. Glazeworks_ | _E.g. Tier 1_ | _E.g. The fastest way to run one workflow_ | _E.g. 31_ | _E.g. 64%_ | _E.g. Tom Reyes_ | _E.g. Needs review_ | _E.g. 2 Sep 2026_ | _E.g. [link](https://link)_ |
+| _E.g. Spreadsheets and doing nothing_ | _E.g. Tier 1_ | _E.g. Free, already open_ | _E.g. 40_ | _E.g. 22%_ | _E.g. Priya Nadel_ | _E.g. Current_ | _E.g. 1 Dec 2026_ | _E.g. [link](https://link)_ |
+| \[add competitor\] |  |  |  |  |  |  |  |  |
+
+<Note>
+  The internal alternative belongs in the register. In many categories, a buyer keeping their spreadsheet is the most common outcome by a wide margin, and it loses to different arguments than a named vendor does. Leaving it off the register makes the competitive picture look tidier than it is.
+</Note>
+
+## What each competitor beats us on
+
+The pattern check. One row per competitor, holding the single reason that shows up most in losses.
+
+| Competitor | The reason we lose most often | Deals it decided, last 2 quarters | Fixable by |
+| :-- | :-- | :-- | :-- |
+| _E.g. Cruller Systems_ | _E.g. SOC 2 Type II gates the pilot_ | _E.g. 9_ | _E.g. Product. Certification in progress, Q1_ |
+| _E.g. Glazeworks_ | _E.g. Entry price, in deals under 20 seats_ | _E.g. 6_ | _E.g. Packaging. Nobody has owned this_ |
+| _E.g. Doing nothing_ | _E.g. No internal owner for the change_ | _E.g. 14_ | _E.g. Sales motion. Qualification question_ |
+| \[add competitor\] |  |  |  |
+
+<Warning>
+  A losing reason that appears against three or more competitors is not a competitive problem, and a card will not solve it. Route it to [positioning](/positioning) or to product, and note here where it went.
+</Warning>
+
+## Coverage
+
+The two tables that turn a list of cards into a health check. Fill them from the register above.
+
+### By tier
+
+| Tier | Competitors | Cards current | Cards overdue |
+| :-- | :-- | :-- | :-- |
+| Tier 1 | _E.g. 3_ | _E.g. 2_ | _E.g. 1_ |
+| Tier 2 | _E.g. 4_ | _E.g. 1_ | _E.g. 0_ |
+| Watch | _E.g. 6_ | _E.g. 0_ | _E.g. 0_ |
+
+An overdue Tier 1 card is the row that matters here. It is the card most likely to be opened and the one most likely to carry a claim a competitor has already made false.
+
+### By customer profile
+
+A profile where one competitor takes most of the deals is a profile where the argument is being decided by someone else.
+
+| Customer profile | Competitor seen most | Win rate | Note |
+| :-- | :-- | :-- | :-- |
+| _E.g. [Mid-market operations lead](https://link)_ | _E.g. Glazeworks_ | _E.g. 64%_ |  |
+| _E.g. [Regulated enterprise ops](https://link)_ | _E.g. Cruller Systems_ | _E.g. 18%_ | _E.g. Losing on certification, not on product_ |
+| \[add profile\] |  |  |  |
+
+## Tier values
+
+| Tier | Meaning | What it gets |
+| :-- | :-- | :-- |
+| Tier 1 | Appears in enough deals to move the forecast | A full card, a named owner, quarterly review |
+| Tier 2 | Appears regularly, rarely decides the deal | A short card covering sections 1 to 4, reviewed twice a year |
+| Watch | Seen occasionally, or new to the category | A register row and a note. No card |
+| Retired | No longer seen, acquired, or shut down | The row stays, with the date and what happened |
+
+<Note>
+  Retired rows stay in the library. A competitor that disappeared, and the reason, is the entry that stops someone rebuilding a card for a company that no longer sells the product.
+</Note>
+
+## Status values
+
+| Status | Meaning |
+| :-- | :-- |
+| Current | Reviewed within its interval, claims checked |
+| Needs review | Past its review date, or a claim on it is in question |
+| Draft | Being written, not yet in circulation |
+| Retired | Competitor no longer active or no longer seen |
+
+## Review
+
+Cards go stale without announcing it, so the review is scheduled rather than triggered by a loss.
+
+At each review, for every Tier 1 and Tier 2 card:
+
+- Has the competitor shipped anything that makes a claim on the card false? Check their changelog and pricing page, and note the date you read them.
+- Do the deal count and win rate still match what the card says about where they win?
+- Are the proof points still cleared, and are the named customers still customers?
+- Is the same losing reason now appearing against other competitors? See the warning above.
+- Is a Tier 2 competitor now appearing often enough to warrant a full card, or a Tier 1 few enough to drop?
+
+<Warning>
+  A rep who finds one stale claim on a card stops trusting the whole set, and that costs more than the individual claim ever did. If a card cannot be kept current, retire it and move the competitor to a watch row rather than leaving it in circulation.
+</Warning>
+
+## Related resources
+
+- [**Competitor battle card**](/competitor-battle-card) The workbook a row here is filled from.
+- [**Battle card concepts**](/battle-card-concepts) Why cards are tiered, and what makes one usable in a call.
+- [**Positioning**](/positioning) Where a losing reason that appears against every competitor belongs.
+- [**Customer profile library**](/customer-profile-library-overview) The profiles used in the coverage table above.
+- [**Messaging**](/messaging) The approved words, and which competitive claims have been cleared.
