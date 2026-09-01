@@ -136,6 +136,7 @@
               {
                 "group": "Core concepts",
                 "pages": [
+                  "brand-overview-concepts",
                   "brand-strategy-concepts",
                   "visual-identity-concepts"
                 ]
@@ -254,6 +255,7 @@
                 "group": "Brand foundations",
                 "pages": [
                   "brand-guidelines",
+                  "brand-overview",
                   "positioning",
                   "messaging",
                   "brand-voice-and-tone"
