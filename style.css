@@ -283,10 +283,15 @@ details.accordion {
   box-shadow: -6px 6px 0 0 rgb(var(--brand-yellow));
 }
 
-/* Primary CTA: same edge, with the smaller shadow. */
+/* Subscribe button: White fill with an Ink label (15.9:1), Ink edge
+   and the small Yellow shadow. The edge stays Ink in dark mode too,
+   because a White edge would vanish into the White fill; the fill
+   itself separates the button from the dark navbar. */
 #navbar a.bg-primary,
 #navbar a.bg-primary-light {
-  border: 2px solid rgb(var(--brand-edge));
+  background-color: rgb(255 255 255);
+  color: rgb(var(--brand-ink));
+  border: 2px solid rgb(var(--brand-ink));
   box-shadow: -3px 3px 0 0 rgb(var(--brand-yellow));
   transition: transform 150ms ease, box-shadow 150ms ease;
 }
