@@ -215,17 +215,6 @@ h1#page-title {
   border-radius: 0.15em;
 }
 
-/* Cards: Yellow border on hover. Mintlify paints it with an !important
-   utility that reads --primary, so swap the variable on the card and
-   hand Ink back to everything inside it, where the label and arrow
-   also read --primary and must stay text-safe. Dark mode already uses
-   Yellow here. */
-html:not(.dark) .card:hover {
-  --primary: var(--brand-yellow);
-}
-html:not(.dark) .card:hover * {
-  --primary: var(--brand-ink);
-}
 
 /* Prose furniture: Yellow for the lines that frame content. */
 .prose blockquote:not(.sr-only) {
@@ -244,6 +233,84 @@ html:not(.dark) .card:hover * {
 input[type="checkbox"],
 input[type="radio"] {
   accent-color: rgb(var(--brand-yellow));
+}
+
+/* ───────────────────────────────────────────────────────────
+   Outlined blocks with a hard Yellow shadow — the snowdoughnut.com
+   card style: 2px solid edge, no-blur Yellow shadow offset down and
+   to the left. The edge is Ink in light mode (15.9:1 on White) and
+   White in dark mode (15.9:1 on Ink), so the outline carries the
+   contrast and the shadow is decoration.
+   ─────────────────────────────────────────────────────────── */
+
+:root {
+  --brand-edge: var(--brand-ink);
+}
+html.dark {
+  --brand-edge: 255 255 255;
+}
+
+.card,
+#pagination a,
+details.accordion {
+  border: 2px solid rgb(var(--brand-edge)) !important;
+  box-shadow: -4px 4px 0 0 rgb(var(--brand-yellow));
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+/* Cards are the large blocks, so they take the site's bigger shadow. */
+.card {
+  box-shadow: -8px 8px 0 0 rgb(var(--brand-yellow));
+}
+
+/* Hover: the block lifts toward the top right and the shadow grows to
+   match, so it reads as rising off the page. Mintlify's card hover
+   swaps the border to the accent with an !important utility; hold it
+   on the edge colour instead, and hand the accent back to the card's
+   children, whose label and arrow read the same variable. */
+.card:hover {
+  --primary: var(--brand-edge);
+  --primary-light: var(--brand-edge);
+  transform: translate(2px, -2px);
+  box-shadow: -10px 10px 0 0 rgb(var(--brand-yellow));
+}
+.card:hover * {
+  --primary: var(--brand-ink);
+  --primary-light: var(--brand-yellow);
+}
+#pagination a:hover {
+  transform: translate(2px, -2px);
+  box-shadow: -6px 6px 0 0 rgb(var(--brand-yellow));
+}
+
+/* Primary CTA: same edge, with the smaller shadow. */
+#navbar a.bg-primary,
+#navbar a.bg-primary-light {
+  border: 2px solid rgb(var(--brand-edge));
+  box-shadow: -3px 3px 0 0 rgb(var(--brand-yellow));
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+#navbar a.bg-primary:hover,
+#navbar a.bg-primary-light:hover {
+  opacity: 1;
+  transform: translate(1px, -1px);
+  box-shadow: -4px 4px 0 0 rgb(var(--brand-yellow));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  #pagination a,
+  details.accordion,
+  #navbar a.bg-primary,
+  #navbar a.bg-primary-light {
+    transition: none;
+  }
+  .card:hover,
+  #pagination a:hover,
+  #navbar a.bg-primary:hover,
+  #navbar a.bg-primary-light:hover {
+    transform: none;
+  }
 }
 
 /* Text selection, the cheapest place the brand colour can show up
