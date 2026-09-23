@@ -17,13 +17,18 @@ toc-item[data-active-deepest] > a::before {
   pointer-events: none;
 }
 
-/* topbar logo: render smaller than its natural width */
-#navbar a[href="/"] img,
-#navbar a[href="/"] svg,
-#sidebar a[href="/"] img,
-#sidebar a[href="/"] svg {
-  max-width: 14rem;
-  height: auto;
+/* topbar logo: fixed height inside the 48px navbar. The SVG's natural
+   size is 482x126, so without a height it grows until it spills out of
+   the bar. */
+#navbar a[href="/"] img.nav-logo {
+  height: 2.75rem;
+  width: auto;
+  max-width: none;
+}
+
+/* tab row: center the tabs instead of packing them to the left */
+#navbar .nav-tabs {
+  margin-inline: auto;
 }
 
 a[nav-tabs-item] {
