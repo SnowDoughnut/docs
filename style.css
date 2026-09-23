@@ -157,6 +157,95 @@ html:not(.dark) .prose td a {
   text-underline-offset: 0.2em;
 }
 
+/* ───────────────────────────────────────────────────────────
+   Yellow accents. Each one is a fill, bar, border or underline that
+   sits beside or under an Ink label, never the label itself, and none
+   of them is the only thing marking a state: active items also change
+   text colour and weight, so the yellow is decoration on top.
+   ─────────────────────────────────────────────────────────── */
+
+/* Active top-nav tab: thicker Yellow bar in place of the thin accent
+   line. Both modes. */
+a.nav-tabs-item[data-active="true"] > div.bg-primary {
+  height: 3px;
+  background-color: rgb(var(--brand-yellow));
+}
+
+/* Active sidebar page: Yellow bar on the left edge over a pale Yellow
+   wash. Ink on the wash is 14:1 in light mode; dark mode keeps its
+   Yellow label, 8:1 on the darker wash. */
+.sidebar-group a[aria-current="page"] {
+  border-radius: 0.375rem;
+  background-color: rgb(var(--brand-yellow) / 0.16);
+  box-shadow: inset 3px 0 0 rgb(var(--brand-yellow));
+}
+
+/* Sidebar hover: Yellow underline under the Ink label. */
+.sidebar-group a:not([aria-current="page"]):hover span {
+  text-decoration: underline;
+  text-decoration-color: rgb(var(--brand-yellow));
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.25em;
+}
+
+/* Table of contents: the active-section chevron in Yellow. */
+toc-item[data-active-deepest] > a::before {
+  background-color: rgb(var(--brand-yellow));
+}
+
+/* Page title: short Yellow rule underneath. */
+h1#page-title {
+  padding-bottom: 0.75rem;
+  background: linear-gradient(rgb(var(--brand-yellow)), rgb(var(--brand-yellow)))
+    no-repeat left bottom / 3rem 5px;
+}
+
+/* Inline prose links: Mintlify underlines them with a 1px bottom
+   border in the accent, which is Ink in light mode. Make it a 2px
+   Yellow line in both modes, and fill the Yellow in behind the Ink
+   label on hover, 10.3:1. */
+.prose a.link {
+  border-bottom: 2px solid rgb(var(--brand-yellow));
+}
+.prose p a:hover,
+.prose li a:hover,
+.prose td a:hover {
+  background-color: rgb(var(--brand-yellow));
+  color: rgb(var(--brand-ink)) !important;
+  border-radius: 0.15em;
+}
+
+/* Cards: Yellow border on hover. Mintlify paints it with an !important
+   utility that reads --primary, so swap the variable on the card and
+   hand Ink back to everything inside it, where the label and arrow
+   also read --primary and must stay text-safe. Dark mode already uses
+   Yellow here. */
+html:not(.dark) .card:hover {
+  --primary: var(--brand-yellow);
+}
+html:not(.dark) .card:hover * {
+  --primary: var(--brand-ink);
+}
+
+/* Prose furniture: Yellow for the lines that frame content. */
+.prose blockquote:not(.sr-only) {
+  border-left-color: rgb(var(--brand-yellow));
+  border-left-width: 4px;
+}
+.prose hr {
+  border-top: 2px solid rgb(var(--brand-yellow));
+}
+.prose thead th {
+  border-bottom: 2px solid rgb(var(--brand-yellow));
+}
+
+/* Native checkboxes and radios in workbooks. Browsers draw a dark mark
+   on a light accent colour, so the tick stays Ink on Yellow. */
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: rgb(var(--brand-yellow));
+}
+
 /* Text selection, the cheapest place the brand colour can show up
    without a contrast cost: Ink on Yellow either way round. */
 ::selection {
