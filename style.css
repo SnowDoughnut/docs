@@ -21,7 +21,7 @@ toc-item[data-active-deepest] > a::before {
    size is 482x126, so without a height it grows until it spills out of
    the bar. */
 #navbar a[href="/"] img.nav-logo {
-  height: 2.75rem;
+  height: 2.0625rem;
   width: auto;
   max-width: none;
 }
