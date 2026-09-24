@@ -19,28 +19,29 @@ _The first three rows are examples using Doughnut Labs, a SaaS company that sell
 
 | ID | Hypothesis | Surface | Metric | Result | Status | Decision | Reviewed |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| _E.g. [EXP-2026-014](https://link)_ | _E.g. Naming the price on the ad raises trial quality_ | _E.g. Meta prospecting_ | _E.g. Trial-to-paid rate_ | _E.g. +11%_ | _E.g. Win_ | _E.g. Rolled into the copy brief as a default_ | _E.g. 2026-05-02_ |
-| _E.g. [EXP-2026-015](https://link)_ | _E.g. Social proof above the fold lifts demo bookings_ | _E.g. /lp/book-a-demo_ | _E.g. Demo booked rate_ | _E.g. +1.2%, not significant_ | _E.g. No result_ | _E.g. Reverted. Not worth retesting at current traffic_ | _E.g. 2026-05-20_ |
-| _E.g. [EXP-2026-016](https://link)_ | _E.g. Shorter form increases completions_ | _E.g. /lp/fresh-batch-trial_ | _E.g. Trial started_ | _E.g. +9% starts, minus 14% trial-to-paid_ | _E.g. Loss_ | _E.g. Reverted. Guardrail caught it_ | _E.g. 2026-06-11_ |
+| _E.g. [TEST10](https://link)_ | _E.g. Naming the price on the ad raises trial quality_ | _E.g. Meta prospecting_ | _E.g. Trial-to-paid rate_ | _E.g. +11%_ | _E.g. Win_ | _E.g. Rolled into the copy brief as a default_ | _E.g. 2026-05-02_ |
+| _E.g. [TEST11](https://link)_ | _E.g. Social proof above the fold lifts demo bookings_ | _E.g. /lp/book-a-demo_ | _E.g. Demo booked rate_ | _E.g. +1.2%, not significant_ | _E.g. Inconclusive_ | _E.g. Reverted. Not worth retesting at current traffic_ | _E.g. 2026-05-20_ |
+| _E.g. [TEST12](https://link)_ | _E.g. Shorter form increases completions_ | _E.g. /lp/fresh-batch-trial_ | _E.g. Trial started_ | _E.g. +9% starts, minus 14% trial-to-paid_ | _E.g. Loss_ | _E.g. Reverted. Guardrail caught it_ | _E.g. 2026-06-11_ |
 | _E.g. [PILOT04](https://link)_ | _E.g. Can Google Search acquire trials at a workable cost?_ | _E.g. Google Search, new channel_ | _E.g. Cost per trial signup_ | _E.g. \$41 against a \$45 threshold_ | _E.g. Scaled_ | _E.g. 30% of LinkedIn budget moved to Search from Q3_ | _E.g. 2026-06-03_ |
 | \[add row\] |  |  |  |  |  |  |  |
 
 ## Status values
 
-Six values, so the register can be filtered rather than read. The first four apply to experiments, the last two to [pilots](/pilot-brief).
+Seven values, so the register can be filtered rather than read. The first five apply to experiments, the last two to [pilots](/pilot-brief).
 
 | Status | Applies to | Means |
 | :-- | :-- | :-- |
 | **Win** | Experiment | Beat the decision rule set before launch. Rolled out |
 | **Loss** | Experiment | Moved the wrong way, or a guardrail metric was damaged. Reverted |
-| **No result** | Experiment | Did not reach significance, or the difference was inside the noise |
+| **Inconclusive** | Experiment | Did not reach significance, or the difference was inside the noise |
 | **Invalid** | Either | Something broke: tracking, a mid-flight change, insufficient sample. Not evidence either way |
+| **Cancelled** | Experiment | Stopped before its read; filed with a short note on why |
 | **Scaled** | Pilot | Cleared the threshold set before launch. Continued at higher spend |
 | **Stopped** | Pilot | Missed the threshold, or breached a guardrail. Discontinued |
 
 A pilot never gets **Win** or **Loss**. Those words claim a comparison that a pilot has no control to support, and using them here is how a first flight gets cited a year later as proof a channel works.
 
-**Invalid** matters as much as the other three. A test recorded as "no result" when it was actually broken tells the next person the idea doesn't work, which is not what happened.
+**Invalid** matters as much as the others. A test recorded as Inconclusive when it was actually broken tells the next person the idea doesn't work, which is not what happened.
 
 ## Before you design a test, search here
 

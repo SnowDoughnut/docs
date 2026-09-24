@@ -195,21 +195,21 @@ A [customer profile](/glossary#customer-profile) name is built from four parts, 
 | :-- | :-- | :-- |
 | `CP` | Marks the file as a customer profile | Always `CP`, so every profile groups together |
 | `descriptor` | A short, human-readable label for who the profile is for | Lowercase, hyphens between words, no spaces |
-| `date` | When this version was written, as `YYYY-MM-DD` | This format sorts by date on its own |
+| `date` | When this version was written, as `YYYYMMDD` | This format sorts by date on its own |
 | `version` | Which iteration this is, as `v` plus two digits | Start at `v01`; two digits keep `v10` sorting after `v09` |
 
 Add the file extension last. Some worked examples:
 
-`CP_midmarket-ecommerce_2027-09-15_v01.md`
+`CP_midmarket-ecommerce_20270915_v01.md`
 
-`CP_enterprise-retail_2027-09-15_v02.md`
+`CP_enterprise-retail_20270915_v02.md`
 
-`CP_dtc-apparel_2027-10-01_v01.md`
+`CP_dtc-apparel_20271001_v01.md`
 
 <Accordion title="Concept review: Name and save the profile">
   A naming pattern exists so that a profile is findable and recognizable months after whoever wrote it has moved on. The four parts each answer one question: what kind of file this is, who it's about, when it was written, and which version it is. Put in a fixed order with consistent formatting, those four turn a folder of profiles into something you can sort and scan instead of open one by one.
 
-  Two small rules carry most of the weight. Writing the date as `YYYY-MM-DD` means a plain alphabetical sort also sorts by date, so the newest profile is easy to find without any special setup. Padding the version to two digits (`v01`, not `v1`) keeps versions in order once you pass nine, because in a plain text sort `v10` would otherwise land next to `v01`. The pattern only works if everyone writes it the same way every time: a search for `CP` won't find a file someone saved as `cp` or `Customer-Profile`, so a convention that drifts is worse than a plain one that holds.
+  Two small rules carry most of the weight. Writing the date as `YYYYMMDD` means a plain alphabetical sort also sorts by date, so the newest profile is easy to find without any special setup. Padding the version to two digits (`v01`, not `v1`) keeps versions in order once you pass nine, because in a plain text sort `v10` would otherwise land next to `v01`. The pattern only works if everyone writes it the same way every time: a search for `CP` won't find a file someone saved as `cp` or `Customer-Profile`, so a convention that drifts is worse than a plain one that holds.
 </Accordion>
 
 ## Related resources

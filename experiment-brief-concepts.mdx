@@ -143,16 +143,17 @@ For A/B/n or multivariate tests, add a row for each variant.
 
 ## Results
 
-After the test ends, mark it with one of four statuses:
+After the test ends, mark it with one of five statuses:
 
 | Status | When to use it |
 | --- | --- |
-| Winner | Primary metric hit success criteria; no guardrails degraded |
-| Loser | Primary metric performed worse than control at the stated confidence level |
+| Win | Primary metric hit success criteria; no guardrails degraded |
+| Loss | Primary metric performed worse than control at the stated confidence level |
 | Inconclusive | Test ran to plan but did not reach significance, or results didn't meet criteria |
+| Invalid | Something broke: tracking, a mid-flight change, insufficient sample. Not evidence either way |
 | Cancelled | Test was stopped before completion (broken tracking, bad launch, business change) |
 
-For any test marked winner, loser, or inconclusive, create a report in the learning library and link it to this brief.
+For any test marked Win, Loss, or Inconclusive, create a report in the learning library and link it to this brief.
 
 Cancelled tests do not need a full report but should include a short note explaining why the test was stopped.
 

@@ -33,7 +33,7 @@ The examples below continue the one invented test from the brief, the Doughnut L
 
 | Field | Fill in |
 | :-- | :-- |
-| Experiment ID | _E.g. `TEST-8H2P`_ |
+| Experiment ID | _E.g. `TEST07`_ |
 | Test name | _E.g. Pricing-page CTA color test_ |
 | Owner | _E.g. Priya Shah_ |
 | Brief link | _E.g. Link to the brief record in Notion_ |
@@ -85,20 +85,21 @@ _E.g. For the CTA test, all four boxes are checked: \+6.2% beat the \+5% bar, 96
 
 ## Assign a status
 
-**Mark the test with one status. These four cover the common cases; add your own if your team distinguishes more:**
+**Mark the test with one status. These five cover the common cases; add your own if your team distinguishes more:**
 
 | Status | When to use it | Selected |
 | :-- | :-- | :-- |
-| _E.g. Winner_ | _Primary metric hit success criteria; no guardrails degraded_ | _E.g. Selected_ |
-| _E.g. Loser_ | _Primary metric performed worse than control at the stated confidence_ |  |
+| _E.g. Win_ | _Primary metric hit success criteria; no guardrails degraded_ | _E.g. Selected_ |
+| _E.g. Loss_ | _Primary metric performed worse than control at the stated confidence_ |  |
 | _E.g. Inconclusive_ | _Ran to plan but didn't reach significance, or missed criteria_ |  |
+| _E.g. Invalid_ | _Something broke: tracking, a mid-flight change, insufficient sample. Not evidence either way_ |  |
 | _E.g. Cancelled_ | _Stopped before completion (broken tracking, bad launch, business change)_ |  |
 | _\[add status\]_ | _\[when your team would use it\]_ |  |
 
-<Accordion title="Concept review: What the four statuses keep clean">
-  The statuses exist to make the outcome unambiguous, sorting each finished test into one clear bucket instead of a soft "sort of worked." The winner bucket usually carries the strictest test, both halves of the success criteria at once: the primary metric clearing its bar and no guardrail degrading. That pairing is what keeps a metric-up, revenue-down result from being logged as a win.
+<Accordion title="Concept review: What the five statuses keep clean">
+  The statuses exist to make the outcome unambiguous, sorting each finished test into one clear bucket instead of a soft "sort of worked." The Win bucket usually carries the strictest test, both halves of the success criteria at once: the primary metric clearing its bar and no guardrail degrading. That pairing is what keeps a metric-up, revenue-down result from being logged as a win.
 
-  Loser and inconclusive are worth keeping distinct, because they lead to different next steps: a loser tells you the change hurt, while an inconclusive tells you the test couldn't decide, often for lack of sample. Cancelled sits apart from all three, since it describes a test that never produced a trustworthy read at all. Some teams split these further, adding a partial win or a re-run flag, which is what the extra row is for.
+  Loss and Inconclusive are worth keeping distinct, because they lead to different next steps: a loss tells you the change hurt, while an inconclusive result tells you the test couldn't decide, often for lack of sample. Invalid and Cancelled sit apart from the other three, since each describes a test that never produced a trustworthy read at all. Some teams split these further, adding a partial win or a re-run flag, which is what the extra row is for.
 </Accordion>
 
 ## Interpret and decide the next action
@@ -110,7 +111,7 @@ _E.g. Orange CTA lifted click-through without touching revenue per session, whic
 <Accordion title="Concept review: Why interpretation and next action live together">
   A status label says whether the test succeeded; it doesn't say what you learned or what happens now. This is where the review earns its keep, by turning a result into a decision. Tying the interpretation to the hypothesis from the brief is what closes the loop: the test predicted something for a reason, and here you record whether that reason held up.
 
-  Pairing the interpretation with a concrete next action keeps a finished test from becoming a result nobody acted on. A winner usually implies a rollout and often a follow-up test; a loser or inconclusive result implies either a new hypothesis or a decision to stop pursuing the idea. What the right next step is depends entirely on your situation, so this field asks you to name it rather than suggesting one.
+  Pairing the interpretation with a concrete next action keeps a finished test from becoming a result nobody acted on. A win usually implies a rollout and often a follow-up test; a loss or inconclusive result implies either a new hypothesis or a decision to stop pursuing the idea. What the right next step is depends entirely on your situation, so this field asks you to name it rather than suggesting one.
 </Accordion>
 
 ## Save the review and link it back to the brief
@@ -136,7 +137,7 @@ Once the review is complete, it doesn't live here. Save it into the experiment l
     Hold the result to the success criteria the brief set in advance.
   </Step>
   <Step title="Status">
-    Assign one status: winner, loser, inconclusive, or cancelled.
+    Assign one status: Win, Loss, Inconclusive, Invalid, or Cancelled.
   </Step>
   <Step title="Decide, save, and link back">
     Interpret the result, name the next action, save the review in the experiment learning group, then post that link back in the brief.

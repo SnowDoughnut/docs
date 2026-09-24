@@ -35,13 +35,13 @@ These rules apply to every file name regardless of type. Decide each one once, w
 | Version format | _E.g. `v` plus two digits: `v01`_ | Leading zero keeps `v10` sorting after `v09`, not after `v01` |
 | Case | _E.g. Lowercase throughout_ | Avoids `File.jpg` and `file.jpg` being treated as different or identical depending on the system |
 | Spaces | _E.g. None, ever_ | Spaces break URLs, command-line tools, and sync scripts |
-| Forbidden characters | \_E.g. \`\< \> : " / \\ | Illegal or reserved on Windows, macOS, Linux, or in URLs |
+| Forbidden characters | _E.g._ `< > : " / \ \| ? *` | Illegal or reserved on Windows, macOS, Linux, or in URLs |
 | Maximum length | _E.g. Under 70 characters_ | Long paths get truncated or corrupted; Windows caps total path at 260 |
 
 <Accordion title="Concept review: Formatting rules">
   Everything else in this document is about which words go in a file name. This section is about the mechanics that make those words sortable and portable, and it is the part that quietly decides whether the convention survives contact with real operating systems.
 
-  Two choices do most of the work. The date format is one: `YYYY-MM-DD` is the only common format where sorting a folder alphabetically also sorts it by date, which is why archives and libraries standardize on it. The version format is the other: two digits with a leading zero (`v01`, not `v1`) keeps versions in order once you pass nine, because `v10` sorts before `v2` in a plain text sort. The rest (no spaces, no special characters, one consistent separator) exists because a name that works on one person's Mac can break the moment it is zipped, synced to a shared drive, or dropped into a URL. Picking one scheme and holding to it matters more than which scheme you pick.
+  Two choices do most of the work. The date format is one: `YYYYMMDD` is the only common format where sorting a folder alphabetically also sorts it by date, which is why archives and libraries standardize on it. The version format is the other: two digits with a leading zero (`v01`, not `v1`) keeps versions in order once you pass nine, because `v10` sorts before `v2` in a plain text sort. The rest (no spaces, no special characters, one consistent separator) exists because a name that works on one person's Mac can break the moment it is zipped, synced to a shared drive, or dropped into a URL. Picking one scheme and holding to it matters more than which scheme you pick.
 </Accordion>
 
 ## Standard fields
@@ -61,6 +61,13 @@ The kind of file. This is what lets someone group every deck, every image, or ev
 | Presentation | DECK | PowerPoint, Keynote, Google Slides |  |
 | Spreadsheet | XLS | Excel, Google Sheets, CSV |  |
 | Logo | LOGO | Brand marks and lockups |  |
+| Copy | COPY | Copy documents and copy briefs |  |
+| Creative brief | CRE | Creative briefs |  |
+| Article brief | ART | Article briefs |  |
+| Landing page brief | LP | Landing page briefs |  |
+| Audience list | LIST | Uploaded audience files |  |
+| Customer profile, B2B | CP | B2B customer profile documents |  |
+| Customer profile, B2C | CPB2C | B2C customer profile documents |  |
 | \[add asset type\] |  |  |  |
 
 <Accordion title="Concept review: Asset type">
@@ -93,15 +100,15 @@ When the file was created or dated, in the ISO format you locked above. Gives ev
 
 | Long form | Short form | Description | \[add value\] |
 | :-- | :-- | :-- | :-- |
-| _E.g. 2027-09-15_ | _2027-09-15_ | _Full date: creation or publish date_ |  |
+| _E.g. 20270915_ | _20270915_ | _Full date: creation or publish date_ |  |
 | 2027-Q3 | 2027-Q3 | Quarter, for files that cover a whole quarter |  |
-| 2027-09 | 2027-09 | Month, for files dated to a month not a day |  |
+| 202709 | 202709 | Month, for files dated to a month not a day |  |
 | \[add date form\] |  |  |  |
 
 <Accordion title="Concept review: Date">
-  A date in the name does something folders alone cannot: it makes a file identifiable and sortable even after it has been downloaded, moved, or emailed to someone who never saw your folder structure. The name carries its own timeline. In `YYYY-MM-DD` order, that timeline also sorts correctly by default, so a folder falls into chronological order without anyone touching a sort setting.
+  A date in the name does something folders alone cannot: it makes a file identifiable and sortable even after it has been downloaded, moved, or emailed to someone who never saw your folder structure. The name carries its own timeline. In `YYYYMMDD` order, that timeline also sorts correctly by default, so a folder falls into chronological order without anyone touching a sort setting.
 
-  The judgment call is which date and how precise. A daily date suits things tied to a specific moment, like a dated export or a sending. For a file that covers a whole quarter or month, a full day-level date implies a precision that is not real, and a `YYYY-Q3` or `YYYY-MM` form reads more honestly. What matters most is picking the creation date or the publish date and applying the same choice everywhere, because a mix of the two makes the timeline unreliable in a way no one can see from the name.
+  The judgment call is which date and how precise. A daily date suits things tied to a specific moment, like a dated export or a sending. For a file that covers a whole quarter or month, a full day-level date implies a precision that is not real, and a `YYYY-Q3` or `YYYYMM` form reads more honestly. What matters most is picking the creation date or the publish date and applying the same choice everywhere, because a mix of the two makes the timeline unreliable in a way no one can see from the name.
 </Accordion>
 
 ### Version
@@ -195,19 +202,19 @@ Take one value from each field, in order, joined by your field separator. Skip a
 
 A dated Word document, which has no dimensions or language, uses only the core fields:
 
-`DOC_pricing-1pager_2027-09-15_v03_APPR.docx`
+`DOC_pricing-1pager_20270915_v03_APPR.docx`
 
 A display ad needs its dimensions, so the format field is filled in:
 
-`AD_q3-launch-hero_300x250_2027-09-15_v02_APPR.jpg`
+`AD_q3-launch-hero_300x250_20270915_v02_APPR.jpg`
 
 A localized video adds both dimensions and a language code:
 
-`VID_q3-launch-hero_16x9_en-CA_2027-09-15_v05_FINAL.mp4`
+`VID_q3-launch-hero_16x9_en-CA_20270915_v05_FINAL.mp4`
 
 A slide deck in progress, no format or language, still in draft:
 
-`DECK_sales-quarterly-review_2027-09-15_v01_DRAFT.pptx`
+`DECK_sales-quarterly-review_20270915_v01_DRAFT.pptx`
 
 <Info>
   This structure draws on public file-naming guidance from digital asset management providers and creative agencies, and on the ISO 8601 date standard used by libraries and archives. It covers how to name a single file across every type. For naming campaigns, ad sets, and ads inside an ad platform, see the [naming conventions overview](/naming-conventions-overview).
