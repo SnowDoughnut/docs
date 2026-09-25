@@ -27,6 +27,8 @@ _Examples below follow the Doughnut Labs brand: a SaaS company that sells disrup
 
 These apply to every event name, no exceptions. Most are pre-filled to the Segment standard; the grayed text is the recommended default, so keep it unless your team has a specific reason to change it.
 
+In Notion, set these once in the Naming rules database; the generators apply them.
+
 | Rule | Convention | Why it holds |
 | :-- | :-- | :-- |
 | Word order | _Object then action: `Product Viewed`_ | One order, applied everywhere, so events sort and group by the object they act on |
@@ -36,6 +38,7 @@ These apply to every event name, no exceptions. Most are pre-filled to the Segme
 | Number | _Singular object by default: `Product Added`_ | Reserve the plural for events that act on a set, like `Products Searched` |
 | Abbreviations | _None; spell words out: `Payment Info Entered`_ | Abbreviations drift; one person's `Info` is another's `Information` |
 | Reuse over invention | _Reuse an existing object and action before adding a new one_ | Two names for one action split its data in half |
+| *Add a rule* |  |  |
 
 <Accordion title="Concept review: Naming rules">
   The point of a naming convention is that one action always produces one name, so that everyone logging, querying, or reporting on it lands on the same string. Analytics tools treat `Cart Viewed`, `cart viewed`, and `Viewed Cart` as three unrelated events, so a single drift in casing or word order quietly splits one behavior into several, and every chart built on it undercounts without anyone noticing.
@@ -73,7 +76,7 @@ The nouns your events act on. Listing them keeps everyone using the same word fo
 | Checkout | The checkout flow |  |
 | Coupon | A discount code |  |
 | Account | The user's account |  |
-| \[add object\] |  |  |
+| *Add a row* |  |  |
 
 <Accordion title="Concept review: Your objects">
   The object is the noun at the front of every event name, and agreeing on the list is how you stop the same thing from being called two names. If one person logs `Cart Viewed` and another logs `Basket Viewed`, analytics sees two unrelated events and the behavior is split across both, so a shared list of objects is what keeps one thing to one word.
@@ -93,7 +96,7 @@ The past-tense verbs that describe what happened to an object. A shared list kee
 | Started | The user began a flow |  |
 | Completed | The user finished a flow |  |
 | Entered | The user submitted or joined something |  |
-| \[add action\] |  |  |
+| *Add a row* |  |  |
 
 <Accordion title="Concept review: Your actions">
   Actions drift even more easily than objects, because most actions have several plausible synonyms. `Viewed`, `Seen`, `Opened`, and `Loaded` can all describe the same moment, and if the team uses them interchangeably then one behavior ends up spread across four event names, none of which shows the full picture on its own. A shared list of actions settles which verb wins for each kind of action, so the same behavior always produces the same word.

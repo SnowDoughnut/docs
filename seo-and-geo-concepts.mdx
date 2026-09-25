@@ -45,7 +45,7 @@ The original GEO study tested content changes across roughly 10,000 queries and 
 The practical reading of this is unglamorous. Say something specific, attribute it, and structure it so a machine can lift one part without breaking it.
 
 <Warning>
-  Treat the specific numbers in this research as direction, not as targets to hit exactly. The engines change, the studies are young, and a page written to satisfy a word count rather than a reader will read like it. The [article standards](/article-standards) turn these findings into defaults your team can adjust.
+  Treat the specific numbers in this research as direction, not as targets to hit exactly. The engines change, the studies are young, and a page written to satisfy a word count rather than a reader will read like it. The [article standards](/article-standards) hold the defaults your team sets.
 </Warning>
 
 ## Topical and entity authority
@@ -99,6 +99,24 @@ Twenty is a cap rather than a target. A team that can only defend six areas has 
 
 The [article library](/article-library-overview) is where the areas get chosen and the articles get tracked, and the [article maintenance process](/article-maintenance-process) is the cycle that keeps them current.
 
+## Optional: schema and structured data
+
+Schema is a machine-readable statement of what a page is and what it contains, sitting alongside the human-readable version. It tells search and answer engines whether a block of text is a step, a question, an author, or a date, so they don't have to guess.
+
+You don't need it to publish. If your site or CMS supports it, these are the common types:
+
+| Page type | Schema |
+| :-- | :-- |
+| Any article | `Article` |
+| Article with an FAQ section | `FAQPage` |
+| Step-by-step guide | `HowTo` |
+| Site-wide | `Organization` with `sameAs` links |
+| Author | `Person`, linked from the article |
+
+The `Organization` markup with `sameAs` links connects most directly to entity authority. It states, in a form a machine can act on, that the company on your site is the same company as the one on your other profiles.
+
+Mark up only what is visible on the page. Markup claiming a review, an author, or an FAQ that isn't in the visible content is a misrepresentation that search engines act against.
+
 ## How this connects to the rest of the system
 
 An article sits inside the same set of documents as every other piece of work here.
@@ -116,7 +134,7 @@ An article sits inside the same set of documents as every other piece of work he
 
 - [**Article brief concepts**](/article-brief-concepts) The reasoning behind each section of the brief.
 - [**Article brief**](/article-brief) The fill-in workbook for a single article.
-- [**Article standards**](/article-standards) Length, heading hierarchy, structure, and metadata defaults.
+- [**Article standards**](/article-standards) Length, heading hierarchy, metadata, and review cadence defaults.
 - [**Article library overview**](/article-library-overview) How hero and supporting articles are chosen, named, and tracked.
 - [**GEO checklist**](/geo-checklist) The pre-publish pass for citability.
 

@@ -1,6 +1,6 @@
 ---
 title: "Experiment ID convention"
-description: "A fill-in workbook for defining your team's own experiment ID pattern, formatting rules, and logging process."
+description: "A fill-in workbook for defining your team's experiment ID prefix, format and logging process once, so every test gets an ID the same way."
 ---
 
 _This page is a workbook. You fill in each section to define your own experiment ID convention, and every section has a "Concept review" dropdown that explains the idea behind it. The dropdowns explain the tradeoffs; they don't tell you what to choose. Grayed `E.g.` text is an example you replace with your own answer._
@@ -11,21 +11,25 @@ _This page is a workbook. You fill in each section to define your own experiment
 
 <Steps>
   <Step title="Define your pattern and rules first">
-    Sections A through D set the rules everyone will follow, including which arm of a test carries the ID. Decide these as a team so the choices stick.
+    Sections 1 through 4 set the rules everyone will follow, including which arm of a test carries the ID. Decide these as a team so the choices stick.
   </Step>
   <Step title="Then define your process">
-    Sections E and F cover when to create an ID and how to log it, so the rules get applied the same way every time.
+    Sections 5 and 6 cover when to create an ID and how to log it, so the rules get applied the same way every time.
   </Step>
   <Step title="Read the concept reviews where a choice is unclear">
     Each dropdown explains why the section exists and what the tradeoffs are, so you can decide rather than guess.
   </Step>
 </Steps>
 
-## A. Your ID pattern
+## 1. Your ID pattern
 
-**Which pattern will your team use for every experiment ID? Write the pattern and two or three example IDs in that pattern:**
+**Define your prefix and pattern once. Every experiment ID follows it. Write the pattern and two or three example IDs:**
 
-_E.g. Sequential, two digits after `TEST` with no dash. Examples: `TEST07`, `TEST08`, `TEST09`. Pilots use `PILOT01`, `PILOT02` from the same log. One log owns the count, so numbers never collide._
+_E.g. The prefix `TEST`, then a two-digit number with no dash. Examples: `TEST07`, `TEST08`, `TEST09`. Pilots use the prefix `PILOT`: `PILOT01`, `PILOT02`. One log owns the count, so numbers never collide._
+
+<Info>
+  In Notion, set these once in the Naming rules database; the generators apply them. The Experiments database builds each ID automatically from the prefix plus the next number, so nobody types or checks an ID by hand.
+</Info>
 
 <Accordion title="Concept review: Choosing an ID pattern">
   An experiment ID is a short, unique code tied to one test. It rides on the end of a campaign, ad set, or ad name so the test stays identifiable wherever you look it up, and it stays with that test even if you clone the campaign or rename the other segments later.
@@ -35,7 +39,7 @@ _E.g. Sequential, two digits after `TEST` with no dash. Examples: `TEST07`, `TES
   The pattern you pick matters less than everyone using the same one, every time. A queue that mixes three patterns is harder to scan than any single pattern would have been.
 </Accordion>
 
-## B. Your formatting rules
+## 2. Your formatting rules
 
 **Fill in the formatting rules your team commits to. Edit the examples to match your own decisions:**
 
@@ -45,6 +49,7 @@ _E.g. Sequential, two digits after `TEST` with no dash. Examples: `TEST07`, `TES
 | Allowed characters | _E.g. Letters and numbers only, plus one dash before a variant letter. No spaces, `&`, `#`, or `/`._ |
 | Characters we avoid | _E.g. No letter `O` or `I` in a variant letter, since we sometimes read IDs aloud in standup._ |
 | Prefix or delimiter | _E.g. Every ID starts with `TEST`, or `PILOT` for a pilot, so it's obvious what the segment is._ |
+| *Add a rule* |  |
 
 <Accordion title="Concept review: Why formatting rules exist">
   These rules aren't cosmetic. Each one prevents a specific failure downstream.
@@ -54,7 +59,7 @@ _E.g. Sequential, two digits after `TEST` with no dash. Examples: `TEST07`, `TES
   The look-alike character rule matters only if a human ever reads or retypes an ID: `O` versus `0`, or `I`, `l`, and `1`, are easy to confuse by eye or by ear. If your IDs are always copied and pasted by machine, this one may not apply to you, which is exactly the kind of call this section is asking you to make.
 </Accordion>
 
-## C. Control and variants
+## 3. Control and variants
 
 One test has one ID, and a test has at least two arms. This section decides which of them carries it.
 
@@ -75,6 +80,7 @@ One test has one ID, and a test has at least two arms. This section decides whic
 | More than one variant | _E.g. Append a letter after the ID: `TEST07-B`, `TEST07-C`. The first variant carries no letter._ |
 | Where the control is recorded | _E.g. In the [experiment brief](/experiment-brief) variants table and in the log below, by its exact platform name._ |
 | What makes two arms distinguishable | _E.g. A different [message angle](/ad-name-conventions#message-angle) value where only the copy changes._ |
+| *Add a rule* |  |
 
 <Warning>
   Never append an ID to an object that is already live. Adding `TEST07` to a running ad renames it, which splits its history in two: rows before the change carry the old name, rows after carry the new one, and every report treats them as two ads. That is precisely the ad you need an unbroken baseline for. See [don't rename anything after launch](/campaign-structure-best-practices#dont-rename-anything-after-launch).
@@ -90,7 +96,7 @@ One test has one ID, and a test has at least two arms. This section decides whic
   Teams that build both arms fresh, where nothing is being renamed because nothing was live, sometimes tag both and accept the extra object. That works too. What does not work is deciding per test, because then no filter means the same thing twice.
 </Accordion>
 
-## D. What "unique" means for your team
+## 4. What "unique" means for your team
 
 **How will you guarantee no two tests share an ID? Describe your rule:**
 
@@ -99,14 +105,14 @@ _E.g. Every ID is the next number in the experiment log, checked against the log
 <Accordion title="Concept review: Keeping IDs unique">
   The whole value of an experiment ID is that it points to one test and only that test. Two live tests sharing a code means every comparison, filter, and trace-back after that point is suspect, and you often won't notice until the numbers stop making sense.
 
-  How you protect uniqueness depends on your pattern. A sequential counter is self-protecting as long as one source owns the count. A date-based ID can collide when two tests launch the same day, so those teams usually add a suffix. Random codes rarely collide but can, which is why a pre-assignment check against a shared log is the common safeguard. The right rule is the one that matches the pattern you chose in section A.
+  How you protect uniqueness depends on your pattern. A sequential counter is self-protecting as long as one source owns the count. A date-based ID can collide when two tests launch the same day, so those teams usually add a suffix. Random codes rarely collide but can, which is why a pre-assignment check against a shared log is the common safeguard. The right rule is the one that matches the pattern you chose in section 1. In Notion, the auto number does this for you: each new experiment gets the next number, and no two can share one.
 </Accordion>
 
-## E. When you create the ID
+## 5. When you create the ID
 
 **Write the point in your process where the ID gets created, and the steps for creating it:**
 
-_E.g. We create the ID when we set up the experiment brief, before the test launches on any platform. Steps: (1) open the brief in Notion, (2) take the next number from the experiment log, (3) check it isn't already in use, (4) save it in the brief, (5) add it to the campaign name in Meta, (6) add it to the `utm_content` on the landing page._
+_E.g. We create the ID when we set up the experiment brief, before the test launches on any platform. Steps: (1) add the experiment to the log, which gives it the next ID, (2) link the brief to it, (3) add the ID to the variant's name in Meta, (4) add it to the `utm_content` on the landing page._
 
 <Accordion title="Concept review: Timing and the no-change rule">
   Creating the ID at the brief stage, before launch, is what lets the ID link three things together: the brief that documents the hypothesis, the live campaign, and every report that references the test. Create it later and you've usually already named the campaign or fired a UTM without it, so the links have gaps.
@@ -114,7 +120,7 @@ _E.g. We create the ID when we set up the experiment brief, before the test laun
   The rule that carries the most weight here is not changing an ID after a test goes live. Once a test launches, the code is referenced by the live campaign, by any dashboard filter, and by data that's already been collected. Change it and you sever the link between the brief, the campaign, and the reports that already used the old code, and there's no clean way to stitch them back together.
 </Accordion>
 
-## F. Your experiment log
+## 6. Your experiment log
 
 **Describe where your single experiment log lives and what each entry records. Fill in the columns you'll track:**
 
@@ -127,7 +133,7 @@ _E.g. We create the ID when we set up the experiment brief, before the test laun
 | Control object name | _E.g. `AutoGlaze-STATIC-DISC-TRY-LP`, the exact platform name_ |
 | Variant object names | _E.g. `AutoGlaze-STATIC-SOCPROOF-TRY-LP-TEST07`_ |
 | Status | _E.g. Live, complete, or archived_ |
-| \[add column\] |  |
+| *Add a row* |  |
 
 **Where the log lives:** _E.g. A single database view in Notion, shared with the whole growth team._
 
@@ -142,11 +148,11 @@ _E.g. We create the ID when we set up the experiment brief, before the test laun
 **Confirm every place the ID needs to appear in your stack. Keep the ones that apply, add any that are specific to you:**
 
 - The experiment brief in your project management tool
-- The **variant** campaign, ad set, or ad name in the ad platform, per section C
+- The **variant** campaign, ad set, or ad name in the ad platform, per [section 3](#3-control-and-variants)
 - The `experiment_id` column in the [flat file](/flat-file-template#dimension-columns)
 - Tags, filters, or dashboards in your BI tool
 - UTM parameters such as `utm_content` or `utm_campaign`, if the test links to a tracked landing page
-- \[add your own destination\]
+- *Add a destination*
 
 **Where it deliberately does not go:** the control. Its name stays as it is, and it is found by the name recorded in the brief and the log.
 
@@ -160,16 +166,16 @@ _E.g. We create the ID when we set up the experiment brief, before the test laun
 
 <Steps>
   <Step title="Pattern">
-    We use \[your pattern from A\] for every experiment ID.
+    We use \[your pattern from section 1\] for every experiment ID.
   </Step>
   <Step title="Format">
-    IDs follow the length, character, and delimiter rules in B.
+    IDs follow the length, character, and delimiter rules in section 2.
   </Step>
   <Step title="Create at the brief">
-    We generate the ID at the brief stage, before launch, and never change it after (E).
+    We generate the ID at the brief stage, before launch, and never change it after (section 5).
   </Step>
   <Step title="Check the log, then log it">
-    Every ID is checked against and recorded in our single experiment log (F).
+    Every ID is checked against and recorded in our single experiment log (section 6).
   </Step>
   <Step title="Apply it everywhere">
     The same ID goes on every surface the test touches.

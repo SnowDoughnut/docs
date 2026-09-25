@@ -1,11 +1,11 @@
 ---
 title: "Reporting framework concepts"
-description: "The thinking behind a data dictionary: how to choose a north star metric, build KPI tiers that don't overwhelm anyone, pick an attribution model and know its blind spots, and assign one source of truth per number. Read this before filling in the data dictionary."
+description: "The thinking behind a data dictionary and KPI definitions: how to choose a north star metric, build KPI tiers that don't overwhelm anyone, pick the right KPI for each piece of work, handle attribution, and assign one source of truth per number. Read this before filling in the data dictionary."
 ---
 
 A data dictionary is the single place a business writes down what its numbers mean: which metrics matter, how each one is calculated, which system it comes from, and who owns it. Once it exists, "what does this number mean" has one answer instead of as many answers as there are people in the room.
 
-This page explains the ideas behind each part of the dictionary: what the concept is, why it exists, and what tends to go wrong without it. It is not the fill-in document. Use it to understand the thinking, then fill in the [data dictionary](/marketing-reporting-data-dictionary).
+This page explains the ideas behind each part of the dictionary: what the concept is, why it exists, and what tends to go wrong without it. Use it to understand the thinking, then fill in [KPI definitions](/kpi-definitions) and the [data dictionary](/marketing-reporting-data-dictionary).
 
 ## Why reporting fails
 
@@ -17,7 +17,7 @@ The dictionary is worth building even for a small brand with a handful of channe
 
 ### A KPI is a metric that changes what you do
 
-Plenty of numbers are worth watching. Far fewer are worth calling a KPI. The test is simple: if this metric moved 20% in either direction, would you do anything differently? If the honest answer is no, it is context, not a KPI, and it belongs lower down or off the list entirely.
+Plenty of numbers are worth watching. Far fewer are worth calling a KPI. The test is simple: if this metric moved 20% in either direction, would you do anything differently? If the honest answer is no, it is context, not a KPI. Keep it in the dictionary with the KPI tier Tracked, or leave it off entirely.
 
 Starting from decisions rather than from whatever a dashboard happens to surface is what keeps this list short. Starting from available data is how a team ends up reporting impressions and time on page: numbers that are easy to pull and hard to act on.
 
@@ -25,21 +25,83 @@ Starting from decisions rather than from whatever a dashboard happens to surface
 
 A flat list of ten KPIs gives no sense of priority or cause. Splitting them into tiers turns the list into a chain, so a report can explain why something moved instead of only stating that it did.
 
-| Tier | Contains | Typical audience | How many |
+| KPI tier | Contains | Typical audience | How many |
 | --- | --- | --- | --- |
-| 1, outcome | The business results the team is accountable for | Executives, clients | 3 to 5 |
-| 2, driver | The levers that move the outcomes | Marketing leads | 5 to 10 |
-| 3, diagnostic | What explains why a driver moved | Specialists | As needed |
+| North star | The tiebreaker when two reasonable options conflict | Everyone | Exactly one |
+| Tier 1, outcome | The business results the team is accountable for | Executives, clients | 3 to 5 |
+| Tier 2, driver | The levers that move the outcomes | Marketing leads | 5 to 10 |
+| Tracked | What explains why a driver moved | Specialists | As needed |
 
-Each tier explains the tier above it. If contribution margin (tier 1) falls, tier 2 says why: efficiency dropped, or order value fell, or acquisition cost rose. If acquisition cost rose, tier 3 says why that happened: cost per click went up, or conversion rate fell. A report built this way reads as a chain of cause and effect rather than a list of unrelated facts.
+Each tier explains the tier above it. If contribution margin (tier 1) falls, tier 2 says why: efficiency dropped, or order value fell, or acquisition cost rose. If acquisition cost rose, a Tracked metric says why that happened: cost per click went up, or conversion rate fell. A report built this way reads as a chain of cause and effect rather than a list of unrelated facts.
 
-Businesses with a longer path from marketing touch to revenue run into a specific version of this problem. A lead generated this week might not close for months, so the tier 1 outcome (revenue, closed deals) always lags the tier 2 and 3 activity that produced it. Reporting those lagging outcomes against the cohort that generated them, rather than the calendar period they landed in, is what keeps this month's spend from getting credited with a deal that pipeline built two quarters ago.
+Businesses with a longer path from marketing touch to revenue run into a specific version of this problem. A lead generated this week might not close for months, so the tier 1 outcome (revenue, closed deals) always lags the tier 2 and Tracked activity that produced it. Reporting those lagging outcomes against the cohort that generated them, rather than the calendar period they landed in, is what keeps this month's spend from getting credited with a deal that pipeline built two quarters ago.
 
 ### A target needs a basis, and a floor
 
 Write down where each target came from: last year's number, a board plan, a benchmark, or, honestly, a guess. There is nothing wrong with starting from a guess, but a guessed target quietly treated as a firm commitment is how reporting turns into theatre, where every review becomes a defense of a number nobody actually chose carefully.
 
 A floor is different from a target. It is the level that triggers an actual phone call rather than a line in a report. Setting it in advance means the response to a bad number is decided ahead of the moment it happens, rather than negotiated under pressure.
+
+## Choosing KPIs for your work
+
+### One primary KPI per piece of work
+
+Every campaign, experiment and report has to name what it is judged on. Two primaries is no primary. Work judged on two numbers gets reported against whichever one moved favorably, which is how everything succeeds and nothing improves.
+
+Name one primary, then name the counter-metric that catches damage done in pursuit of it. Both go in the brief before launch.
+
+_E.g. A Doughnut Labs trial-acquisition campaign is judged on trial starts, with trial-to-paid rate as the counter-metric. Starts can always be bought by loosening the offer; the counter-metric stops that reading as a win._
+
+### Which KPI applies to what
+
+| Work | Primary KPI comes from | Typical counter-metric |
+| :-- | :-- | :-- |
+| A campaign | The objective in the [marketing campaign brief](/marketing-campaign-brief) | Quality or cost measure for the same action |
+| An experiment | The hypothesis in the [experiment brief](/experiment-brief) | A guardrail the change could plausibly damage |
+| A landing page | The one action in the [landing page brief](/landing-page-brief) | Downstream quality of that action |
+| An article | The job named in the [article brief](/article-brief) | Nothing usually needed |
+| A weekly report | Tier 2 drivers | Tier 1 outcomes as context |
+| A monthly or quarterly report | Tier 1 outcomes | The north star's counter-metric |
+
+### Match the metric to the cadence
+
+A metric that cannot move inside the reporting period cannot be reported on usefully. This is the most common mismatch in reporting.
+
+| Cadence | Judge on | Because |
+| :-- | :-- | :-- |
+| Weekly | Tier 2 drivers, leading indicators | Tier 1 outcomes barely move in a week and the noise swamps the signal |
+| Monthly | Tier 1 outcomes against target | Long enough for the outcome to be real |
+| Quarterly | Tier 1 plus the north star trend | Long enough to judge strategy rather than execution |
+| Annual | North star, and whether the tiers still fit | The only period where changing the KPI set is sensible |
+
+### What disqualifies a metric
+
+A metric belongs in the dictionary. It does not automatically belong as a KPI. Leave it as Tracked if any of these are true:
+
+- A 20% move in either direction would not change what you do.
+- Nobody owns it.
+- No one can state its definition without looking it up twice.
+- It is a rate whose denominator nobody agrees on.
+- It only ever moves up, which usually means it counts activity rather than measuring a result.
+- It moves so closely with another KPI that the two always tell the same story.
+
+Keep the north star, tier 1 and tier 2 under 15 metrics in total. Every addition past that is a decision to remove something.
+
+### Adding a KPI
+
+1. **Name the decision it changes.** If nobody can say which decision this metric would change, and at what threshold, it is a Tracked metric. Tracked metrics belong in the dictionary and on dashboards; they don't need a target.
+2. **Define it in the dictionary first.** Formula, grain, source and owner. A KPI adopted before it is defined gets defined differently by each person who reports it.
+3. **Name what it replaces.** The list is capped. Adding without removing is how 8 useful KPIs become 20 that nobody reads.
+4. **Backfill before you adopt it.** A KPI with no history has no normal range, so nobody can tell whether this week's figure is good. Backfill at least a full seasonal cycle where the data allows.
+5. **Record the change** in the decisions and changes section of the dictionary, with the date. A trend line that shifts because the metric changed, with no record of the change, reads as performance.
+
+### Retiring a KPI
+
+Keep the definition in the dictionary and set its KPI tier back to Tracked, or mark it retired, with the date and what replaced it. Reports covering earlier periods still reference it, and deleting the definition makes those reports unreadable.
+
+### Reviewing the KPI set
+
+Review the KPI set once a year, alongside the dictionary. Mid-year changes should be rare: a KPI set that changes often cannot show a trend, which is most of what it is for.
 
 ## The north star metric
 
@@ -65,9 +127,9 @@ A counter-metric does not need its own target. It needs to be reported in the sa
 
 ## Attribution
 
-### Pick one model, apply it consistently, and write down where it's wrong
+### Every model is wrong somewhere, so write down where
 
-Attribution decides which marketing touch gets credit for a result. Every attribution model is wrong in a different way, because no model can see everything that actually influenced a decision to buy or convert. The goal is not finding the one true model. It is picking one and applying it the same way every time, so that a change in the number reflects a change in performance and not a change in how credit was counted.
+Attribution decides which marketing touch gets credit for a result. Every attribution model is wrong in a different way, because no model can see everything that actually influenced a decision to buy or convert. The goal is not finding the one true model. It is knowing where each number comes from and where it is known to be wrong, so that a change in the number reflects a change in performance and not a change in how credit was counted.
 
 This is also why platform-reported numbers can never simply be added together. Each ad platform counts a conversion if it touched that customer's path anywhere within its own window, so two or three platforms often claim the same conversion. Summing them produces a total larger than the number of actual orders, not because anyone is lying, but because every platform is answering a slightly different question.
 
@@ -77,9 +139,11 @@ Three questions tend to decide which model fits: how long the path from first to
 
 Attribution sophistication tends to track a business's maturity, not because more complexity is inherently better, but because more complex models need more history and more volume to trust. A brand just getting started is usually better served by one simple, consistently applied model than by an ambitious multi-model setup nobody has the data to validate yet.
 
-### The window matters as much as the model
+### Windows differ by browser and platform
 
-An attribution window that is much shorter than the real path to purchase quietly starves the top of the funnel of credit, because touches that happened outside the window never get counted at all. The fix is not a guess: pull the actual distribution of time between first touch and purchase and set the window where that curve levels off, rather than defaulting to whatever a platform ships with.
+An attribution window is how long after a touch a conversion still gets credited to it. Each ad platform sets its own defaults, and browsers limit how long tracking cookies last, so the same conversion can fall inside one window and outside another. No single window holds across all your traffic, which is why the data dictionary does not fix one.
+
+Handle it case by case instead. Label every platform-reported number with where it came from, keep a blended check such as total revenue against total spend alongside it, and when a decision depends on the answer, test it. A window that is much shorter than the real path to purchase quietly starves the top of the funnel of credit, and a holdout test is what shows you that.
 
 ### Validate the model, don't just trust it
 
@@ -122,6 +186,7 @@ A definition should only change when its owner approves the change, the data own
 
 ## Related resources
 
+- [**KPI definitions**](/kpi-definitions) Where you fill in your north star, tier 1 and tier 2 metrics.
 - [**Data dictionary**](/marketing-reporting-data-dictionary) The fill-in workbook for every concept on this page.
 - [**Report writing concepts**](/report-writing-concepts) How the metrics this page defines turn into a report people actually read.
 - [**Data quality and rollup concepts**](/data-quality-and-rollup-concepts) How weekly numbers combine into monthly, quarterly, and annual ones without breaking.

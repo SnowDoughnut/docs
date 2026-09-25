@@ -1,96 +1,61 @@
 ---
 title: "KPI definitions"
-description: "Which KPI a given piece of work is judged on, and how a new one gets added or retired. The definitions and formulas themselves live in the data dictionary; this is how you pick the right one."
+description: "Fill in the metrics your marketing is judged on: one north star, then your tier 1 and tier 2 metrics. Each one links to its full definition in the data dictionary."
 ---
 
-Every campaign, experiment, and report has to name what it is judged on. This page is how that choice gets made.
+_Fill in each section below. Grayed_ `E.g.` _text is an example to replace. Examples use Doughnut Labs, a SaaS company that sells disruptive Doughnut Technology, modelled here as its direct-to-consumer arm._
 
 <Info>
-  The definitions, formulas, targets, floors, and owners all live in the [marketing reporting data dictionary](/marketing-reporting-data-dictionary), including the [north star and KPI tiers](/marketing-reporting-data-dictionary#kpi-tiers). Set that up first, starting from the [ecommerce](/ecommerce-metrics-starter-pack) or [sales-led](/sales-led-metrics-starter-pack) starter pack. Nothing on this page repeats it.
+  Each metric you name here needs a full entry in the [marketing reporting data dictionary](/marketing-reporting-data-dictionary#metric-formulas), with its KPI tier set to match. For why the tiers exist and how to choose a KPI for a piece of work, see [reporting framework concepts](/reporting-framework-concepts). In Notion, a KPI is a Data dictionary row with a KPI tier, and campaigns, experiments, platform briefs and reports select their KPIs from there.
 </Info>
 
-## One primary KPI per piece of work
+## 1. North star metric
 
-Two primaries is no primary. Work judged on two numbers will be reported against whichever one moved favorably, which is how everything succeeds and nothing improves.
+**The one metric you optimize for when two reasonable options conflict.**
 
-Name one primary, then name the counter-metric that catches damage done in pursuit of it. Both go in the brief before launch.
-
-_E.g. A trial-acquisition campaign is judged on trial starts, with trial-to-paid rate as the counter-metric. Starts can always be bought by loosening the offer; the counter-metric is what stops that reading as a win._
-
-## Which KPI applies to what
-
-| Work | Primary KPI comes from | Typical counter-metric |
-| :-- | :-- | :-- |
-| A campaign | The objective in the [marketing campaign brief](/marketing-campaign-brief) | Quality or cost measure for the same action |
-| An experiment | The hypothesis in the [experiment brief](/experiment-brief) | A guardrail the change could plausibly damage |
-| A landing page | The one action in [landing page brief](/landing-page-brief) | Downstream quality of that action |
-| An article | The job named in the [article brief](/article-brief) | Nothing usually needed |
-| A weekly report | Tier 2 drivers | Tier 1 outcomes as context |
-| A monthly or quarterly report | Tier 1 outcomes | The north star's counter-metric |
-
-| Level | Fill in |
+| Field | Fill in |
 | :-- | :-- |
-| North star | _E.g. Contribution margin_ |
-| Its counter-metric | _E.g. New customer count_ |
-| Default campaign primary | _E.g. Cost per trial start_ |
-| Default experiment primary | _E.g. Whatever the hypothesis names, always tier 2 or 3_ |
+| North star metric | _E.g. Contribution margin after marketing_ |
+| Plain-language definition | _E.g. What's left from sales after every cost that scales with an order, including advertising_ |
+| Why this one | _E.g. Revenue alone can be bought at a loss; this can't be improved by spending recklessly_ |
+| Counter-metric | _E.g. New customer count_ |
+| Owner | _E.g. Finance lead_ |
 
-## Match the metric to the cadence
+**Common starting points, if you want a reference rather than a blank page:**
 
-A metric that cannot move inside the reporting period cannot be reported on usefully. This is the most common mismatch in the whole system.
-
-| Cadence | Judge on | Because |
+| Business type | Common north star | Counter-metric |
 | :-- | :-- | :-- |
-| Weekly | Tier 2 drivers, leading indicators | Tier 1 outcomes barely move in a week and the noise swamps the signal |
-| Monthly | Tier 1 outcomes against target | Long enough for the outcome to be real |
-| Quarterly | Tier 1 plus the north star trend | Long enough to judge strategy rather than execution |
-| Annual | North star, and whether the tier structure still fits | The only period where changing the KPI set is sensible |
+| Ecommerce | Contribution margin after marketing | New customer count |
+| Subscription | Net new recurring revenue | Churn rate |
+| Lead generation | Cost per closed-won customer | Pipeline volume |
+| Marketplace | Completed transactions | Take rate |
 
-## What disqualifies a metric
+## 2. Tier 1 metrics
 
-A metric belongs in the dictionary. It does not automatically belong as a KPI. Cut it if any of these are true:
+**Three to five outcomes the business is directly accountable for.** The floor is the level that triggers a phone call rather than a note in a report.
 
-- A 20% move in either direction would not change what you do.
-- Nobody owns it.
-- No one can state its definition without looking it up twice.
-- It is a rate whose denominator nobody agrees on.
-- It only ever moves up, which usually means it is a count of activity rather than a measure of result.
-- It duplicates another KPI closely enough that they always move together.
+| Metric | Definition in one line | Target | Floor | Owner |
+| :-- | :-- | :-- | :-- | :-- |
+| _E.g. Contribution margin_ | _E.g. Net revenue minus every cost that scales with an order_ | _E.g. 24% of net revenue_ | _E.g. 18%_ | _E.g. Finance lead_ |
+| _E.g. New customer count_ | _E.g. First-ever purchasers in the period_ | _E.g. 2,400 a month_ | _E.g. 1,800 a month_ | _E.g. Growth lead_ |
+| *Add a row* |  |  |  |  |
 
-The cap in the dictionary is under 15 total across all tiers. Every addition past that is a decision to remove something, not an exception.
+## 3. Tier 2 metrics
 
-## Adding a KPI
+**Five to ten drivers: the levers that move your tier 1 metrics.**
 
-<Steps>
-  <Step title="1. Name the decision it changes">
-    If nobody can say which decision this metric would change, and at what threshold, it is a diagnostic rather than a KPI. Diagnostics belong in the dictionary and on dashboards; they do not need a target.
-  </Step>
-  <Step title="2. Define it in the dictionary first">
-    Formula, grain, source, owner, target, floor. A KPI adopted before it is defined gets defined differently by each person who reports it.
-  </Step>
-  <Step title="3. Name what it replaces">
-    The list is capped. Adding without removing is how a set of 8 useful KPIs becomes 20 that nobody reads.
-  </Step>
-  <Step title="4. Backfill before you adopt it">
-    A KPI with no history has no normal range, so nobody can tell whether this week's figure is good. Backfill at least a full seasonal cycle where the data allows.
-  </Step>
-  <Step title="5. Record the change">
-    In the decisions and changes section of the dictionary, with the date. A trend line that shifts because the metric changed, with no record of the change, reads as performance.
-  </Step>
-</Steps>
+| Metric | Which tier 1 metric it moves | Owner |
+| :-- | :-- | :-- |
+| _E.g. Marketing efficiency ratio_ | _E.g. Contribution margin_ | _E.g. Paid media lead_ |
+| _E.g. Blended customer acquisition cost_ | _E.g. New customer count_ | _E.g. Paid media lead_ |
+| *Add a row* |  |  |
 
-## Retiring a KPI
-
-Keep the definition in the dictionary and mark it retired, with the date and what replaced it. Reports covering earlier periods still reference it, and deleting the definition makes those reports unreadable.
-
-## Review
-
-Review the KPI set annually, alongside the dictionary. Mid-year changes should be rare: a KPI set that changes often cannot show a trend, which is most of what it is for.
+Every other metric in the data dictionary has the KPI tier **Tracked**. Tracked metrics explain why a tier 2 metric moved, such as cost per click by channel or checkout abandonment rate. They don't need a target.
 
 ## Related resources
 
-- [**Marketing reporting data dictionary**](/marketing-reporting-data-dictionary) Definitions, formulas, targets, owners.
-- [**Reporting framework concepts**](/reporting-framework-concepts) Why the tiers and the north star exist.
-- [**Dashboard standards**](/dashboard-standards) Which dashboards surface which tier.
+- [**Marketing reporting data dictionary**](/marketing-reporting-data-dictionary) Definitions, formulas, sources and owners for every metric.
+- [**Reporting framework concepts**](/reporting-framework-concepts) Why the tiers exist, and how to choose, add and retire a KPI.
+- [**Ecommerce metrics starter pack**](/ecommerce-metrics-starter-pack) and [**Sales-led metrics starter pack**](/sales-led-metrics-starter-pack) Researched metric definitions to start from.
+- [**Dashboard standards**](/dashboard-standards) Which dashboards show which tier.
 - [**Reporting cadence**](/reporting-cadence) How often each report runs.
-- [**Report on results**](/report-on-results) The full reporting path.

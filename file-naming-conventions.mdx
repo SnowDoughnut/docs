@@ -27,6 +27,8 @@ _Examples below continue the Doughnut Labs brand: a SaaS company that sells disr
 
 These rules apply to every file name regardless of type. Decide each one once, write it down, and don't mix schemes later. A search for `doughnut_labs` will not find `doughnut-labs`, so a convention that drifts is worse than one that is imperfect but consistent.
 
+In Notion, set these once in the Naming rules database; the generators apply them.
+
 | Rule | Convention | Why it holds |
 | :-- | :-- | :-- |
 | Separator between fields | _E.g. Underscore `_`_ | Keeps each field visually distinct and machine-splittable |
@@ -37,6 +39,7 @@ These rules apply to every file name regardless of type. Decide each one once, w
 | Spaces | _E.g. None, ever_ | Spaces break URLs, command-line tools, and sync scripts |
 | Forbidden characters | _E.g._ `< > : " / \ \| ? *` | Illegal or reserved on Windows, macOS, Linux, or in URLs |
 | Maximum length | _E.g. Under 70 characters_ | Long paths get truncated or corrupted; Windows caps total path at 260 |
+| *Add a rule* |  |  |
 
 <Accordion title="Concept review: Formatting rules">
   Everything else in this document is about which words go in a file name. This section is about the mechanics that make those words sortable and portable, and it is the part that quietly decides whether the convention survives contact with real operating systems.
@@ -68,7 +71,7 @@ The kind of file. This is what lets someone group every deck, every image, or ev
 | Audience list | LIST | Uploaded audience files |  |
 | Customer profile, B2B | CP | B2B customer profile documents |  |
 | Customer profile, B2C | CPB2C | B2C customer profile documents |  |
-| \[add asset type\] |  |  |  |
+| *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Asset type">
   Asset type is the field that makes a library browsable before anyone opens a single file. It answers the first question people usually have, which is not "what campaign is this" but "is this the deck, the video, or the doc." Sorting or filtering by this one field pulls every file of a kind together, which is why it tends to sit near the front of the name.
@@ -86,7 +89,7 @@ A short, human-readable label for what the file actually is or contains. This is
 | Pricing one-pager | pricing-1pager | The single-page pricing explainer |  |
 | Founder headshot | founder-headshot | Portrait of the founder for press use |  |
 | Onboarding welcome | onboard-welcome | The first email in the onboarding series |  |
-| \[add descriptor\] |  |  |  |
+| *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Descriptor">
   The descriptor is the one field written for a human rather than a system. Every other field is a code that sorts and filters; this is the plain-language handle that tells a person "yes, this is the thing I was looking for" without opening it. A file named only with codes and a date is findable but not recognizable, and the descriptor closes that gap.
@@ -103,7 +106,7 @@ When the file was created or dated, in the ISO format you locked above. Gives ev
 | _E.g. 20270915_ | _20270915_ | _Full date: creation or publish date_ |  |
 | 2027-Q3 | 2027-Q3 | Quarter, for files that cover a whole quarter |  |
 | 202709 | 202709 | Month, for files dated to a month not a day |  |
-| \[add date form\] |  |  |  |
+| *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Date">
   A date in the name does something folders alone cannot: it makes a file identifiable and sortable even after it has been downloaded, moved, or emailed to someone who never saw your folder structure. The name carries its own timeline. In `YYYYMMDD` order, that timeline also sorts correctly by default, so a folder falls into chronological order without anyone touching a sort setting.
@@ -120,7 +123,7 @@ Which iteration of the file this is. Keeps successive drafts of the same file in
 | _E.g. Version 1_ | _v01_ | _First version of this file_ |  |
 | Version 2 | v02 | Second version, after a round of changes |  |
 | Version 10 | v10 | Tenth version: two digits keep it sorting after v09 |  |
-| \[add version form\] |  |  |  |
+| *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Version">
   Version numbering exists to answer one question with certainty: which of these is the newest. The word "final" cannot answer it, because there is always one more round, and a folder full of `final`, `final-v2`, and `final-real` tells you nothing about order. A running number does, as long as it is applied from the first draft rather than bolted on once things get confusing.
@@ -143,7 +146,7 @@ Where the file sits in its review cycle. Optional, but useful when a file moves 
 | Approved | APPR | Signed off, cleared for use |  |
 | Final | FINAL | Locked; no further changes expected |  |
 | Archived | ARCH | Superseded, kept for record only |  |
-| \[add status\] |  |  |  |
+| *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Status">
   Status marks a file's place in its review cycle so someone can tell, without asking, whether a file is safe to send to a client or still halfway through edits. It answers a different question than version does: version says which iteration, status says whether that iteration has been cleared. The newest version and the approved version are not always the same file.
@@ -169,7 +172,7 @@ Size, aspect ratio, or format specification. Mostly for visual files, where the 
 | 1080x1920 | 1080x1920 | Vertical story or reel, in pixels |  |
 | 16x9 | 16x9 | Widescreen video aspect ratio |  |
 | A4 | A4 | Print page size |  |
-| \[add format\] |  |  |  |
+| *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Format or dimensions">
   For visual files, one descriptor usually exists in many shapes: the same hero image cut to a square, a vertical story, a banner, and a print size. The format field is what tells those siblings apart, so someone grabbing a `300x250` does not open five look-alike files to find the one that fits the slot. Without it, the only difference between those files lives inside them, where search cannot see it.
@@ -188,7 +191,7 @@ The language or market a file is for. For anything localized or region-specific,
 | English, Canada | en-CA | English for the Canadian market |  |
 | French, Canada | fr-CA | French for the Canadian market |  |
 | United States | us | US market, any language |  |
-| \[add language or region\] |  |  |  |
+| *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Language or region">
   When a file exists in more than one language or market, the versions are otherwise identical: same descriptor, same date, same dimensions. The language or region code is often the only thing keeping the English and French cuts from looking like duplicates or overwriting each other. It also lets someone pull every asset for one market in a single filter, which is how localized campaigns get audited.

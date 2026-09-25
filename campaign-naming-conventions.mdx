@@ -9,6 +9,8 @@ _Examples below continue the Doughnut Labs brand introduced in [Naming conventio
 
 <Note>
   Fill in a row for every value you use in each category table below, its short form if you name jam it, and what it means. That's what builds this level's dictionary, all in one place. Add a new value, or a whole new category, as your program grows; don't rename or remove one a live campaign is already using. See [Naming conventions overview](/naming-conventions-overview) for the reasoning. Testing identifiers, below, are optional and only apply while a test is running.
+
+  **Separators and case.** In Notion, set these once in the Naming rules database; the generators apply them.
 </Note>
 
 <Steps>
@@ -37,7 +39,7 @@ _Examples below continue the Doughnut Labs brand introduced in [Naming conventio
 | Email | EM | Email campaigns |  |
 | LinkedIn | LI | LinkedIn Ads, run in Campaign Manager |  |
 | TikTok | TT | TikTok Ads |  |
-| \[add channel\] |  |  |  |
+| *Add a row* |  |  |  |
 
 ### Marketing campaign name
 
@@ -48,7 +50,7 @@ The initiative this campaign belongs to, as named in its [marketing campaign bri
 | _E.g. BFCM2027_ | _BC7_ | _Black Friday Cyber Monday Marketing Campaign 2027_ |  |
 | Fresh Batch spring trial | FBS | Spring 2026 trial acquisition push |  |
 | Always-on | AO | Not part of a time-boxed marketing campaign |  |
-| \[add marketing campaign\] |  |  |  |
+| *Add a row* |  |  |  |
 
 ### Product
 
@@ -60,7 +62,7 @@ The product or product line this campaign sells, using the identifier registered
 | Doughnut Analytics Starter | DASTART | Entry plan, self-serve |  |
 | Doughnut Automation | DAUTO | Workflow automation product line |  |
 | Brand | BRAND | Not selling a specific product |  |
-| \[add product\] |  |  |  |
+| *Add a row* |  |  |  |
 
 <Warning>
   Add a value here only after it exists in the [product catalog](/product-catalog). An identifier invented at build time is a one-off value typed into a platform, which is how a closed list stops being closed.
@@ -75,7 +77,7 @@ The product or product line this campaign sells, using the identifier registered
 | Facebook Feed | FB | Meta placement on Facebook feed |  |
 | Standard | STD | Pinterest default placement |  |
 | Native | NAT | Native display placement |  |
-| \[add placement\] |  |  |  |
+| *Add a row* |  |  |  |
 
 ### Objective
 
@@ -89,7 +91,7 @@ The product or product line this campaign sells, using the identifier registered
 | App installs | APP | Optimizing for app installs |  |
 | Engagement | ENG | Optimizing for likes, comments, or shares |  |
 | Trial Signup | TRIAL | Optimizing for self-serve free trial signups |  |
-| \[add objective\] |  |  |  |
+| *Add a row* |  |  |  |
 
 ### Budget type
 
@@ -100,7 +102,7 @@ The product or product line this campaign sells, using the identifier registered
 | Fixed | FIX | A fixed, non-optimized budget |  |
 | Daily | D | Budget set and spent on a daily basis |  |
 | Lifetime | LT | Budget set as a total across the campaign's flight |  |
-| \[add budget type\] |  |  |  |
+| *Add a row* |  |  |  |
 
 ### Bid type
 
@@ -111,7 +113,7 @@ The product or product line this campaign sells, using the identifier registered
 | Manual CPC | MCPC | Manually set cost per click |  |
 | Maximize conversions | MAXC | Platform bids to maximize conversions within budget |  |
 | Highest volume | HV | Platform bids for the highest volume of the objective |  |
-| \[add bid type\] |  |  |  |
+| *Add a row* |  |  |  |
 
 ### Funnel position
 
@@ -121,7 +123,7 @@ The product or product line this campaign sells, using the identifier registered
 | MOFU | tM | Middle of funnel: warm customer profiles considering the brand |  |
 | BOFU | tB | Bottom of funnel: customer profiles close to purchase |  |
 | Retention | RET | Existing customers, post-purchase |  |
-| \[add funnel position\] |  |  |  |
+| *Add a row* |  |  |  |
 
 <Accordion title="Concept review: campaign-level identifiers">
   These eight categories describe the strategy behind a campaign, not its creative or its customer profile. That's what makes one campaign distinguishable from another at a glance: which channel it runs on, which initiative and product it belongs to, what it's optimizing for, and where it sits in the funnel.
@@ -183,7 +185,7 @@ Testing identifiers mark a hypothesis you're currently running, for example a ca
 
 - With a testing identifier appended: `Meta-Instagram-Awareness-CBO-TOFU-TEST01`
 
-**The control does not carry a testing identifier.** It keeps the name it already has, because appending one to a live object renames it and splits its history in two. Only the arms under test carry the ID. See [control and variants](/experiment-id-convention#c-control-and-variants).
+**The control does not carry a testing identifier.** It keeps the name it already has, because appending one to a live object renames it and splits its history in two. Only the arms under test carry the ID. See [control and variants](/experiment-id-convention#3-control-and-variants).
 
 This document only covers where a testing identifier sits in the name. It doesn't cover how an [experiment ID](/glossary#experiment-id) gets created, how long it stays on an ad, or where the result gets logged once the test ends. Visit the [Experiment ID concepts](/experiment-id-concepts) for that.
 
