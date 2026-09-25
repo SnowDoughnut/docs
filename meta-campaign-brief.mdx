@@ -123,7 +123,7 @@ Meta's bid strategies, as of 7 August 2026:
 | :-- | :-- | :-- | :-- |
 | _E.g. Prospecting, RevOps lookalike_ | _E.g. [Mid-market RevOps lead](https://link)_ | _E.g. Campaign-level_ | _E.g. Main cold-traffic volume driver_ |
 | _E.g. Retargeting, site visitors 180d_ | _E.g. [Mid-market RevOps lead](https://link)_ | _E.g. Campaign-level_ | _E.g. Recovers trial abandoners_ |
-| \[add ad set\] |  |  |  |
+| *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Campaign structure">
   Structure is the part of a Meta campaign that is expensive to change once it is running, because splitting or merging ad sets resets learning and breaks the continuity of the data. Deciding it on paper, where a change costs nothing, is cheaper than discovering the problem three weeks in.
@@ -138,7 +138,7 @@ Meta's bid strategies, as of 7 August 2026:
 | Customer profile | Link | Built as | Source |
 | :-- | :-- | :-- | :-- |
 | _E.g. Mid-market RevOps lead_ | _E.g. [CP\_midmarket-revops\_20260302\_v02](https://link)_ | _E.g. 3% lookalike_ | _E.g. HubSpot lead list, uploaded via [Meta CSV template](/customer-profile-csv-template-meta)_ |
-| \[add profile\] |  |  |  |
+| *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Targeting">
   A customer profile is the definition of who you are trying to reach. A Meta audience is one implementation of that definition inside one ad account. They are not the same thing, and the gap between them is where a lot of performance goes missing: a well-researched profile can be built as an audience that reaches almost nobody it describes.
@@ -171,6 +171,7 @@ Meta's bid strategies, as of 7 August 2026:
 | Copy template | _E.g._ [Meta static and video](/meta-static-video-copy-template) |
 | Finished creative | _E.g. [Fresh Batch Meta creative, final](https://link)_ |
 | Landing page | _E.g. [doughnutlabs.com/lp/fresh-batch-trial](https://link)_ |
+| *Add a row* |  |
 
 Creative has to meet the [Meta creative specs](/meta-creative-specs) for every placement the campaign runs on.
 
@@ -195,11 +196,11 @@ One tagged URL per ad set, not one per campaign. `utm_content` carries the ad se
 
 | Parameter | Value | Where it comes from |
 | :-- | :-- | :-- |
-| `utm_source` | _E.g._ `meta` | Source list, [section A](/utm-standards#a-source-standard-utm_source) |
-| `utm_medium` | _E.g._ `paid_social` | Medium list, [section B](/utm-standards#b-medium-standard-utm_medium). Match the spelling in your standard exactly |
+| `utm_source` | _E.g._ `meta` | Source list, [section 1](/utm-standards#1-source-standard-utm_source) |
+| `utm_medium` | _E.g._ `paid_social` | Medium list, [section 2](/utm-standards#2-medium-standard-utm_medium). Match the spelling in your standard exactly |
 | `utm_campaign` | _E.g._ `Meta-Instagram-Conversions-CBO-TOFU` | The **platform campaign name** above, character for character |
 | `utm_content` | _E.g._ `20260401-LLA3-HSL` | The ad set name. One per ad set |
-| `utm_term` | _E.g._ `AutoGlaze-STATIC-FREETRIAL-TRY-LP` | The ad name, per your [section D](/utm-standards#d-content-and-term-standard-utm_content-utm_term) rule for Meta |
+| `utm_term` | _E.g._ `AutoGlaze-STATIC-FREETRIAL-TRY-LP` | The ad name, per your [section 4](/utm-standards#4-content-and-term-standard-utm_content-utm_term) rule for Meta |
 
 <Warning>
   `utm_campaign` carries the platform campaign name, not the marketing campaign name and not the brief's file name. The three are set out in [which name is which](/campaign-naming-conventions#which-name-is-which). A slug like `fresh-batch-trial` in this field will not join to anything in your platform export.
@@ -235,7 +236,7 @@ One tagged URL per ad set, not one per campaign. `utm_content` carries the ad se
 | :-- | :-- | :-- |
 | _E.g. Trial signups_ | _E.g. 500_ | (blank until launch) |
 | _E.g. Cost per signup_ | _E.g. ≤ \$33_ | (blank until launch) |
-| \[add KPI\] |  |  |
+| *Add a row* |  |  |
 
 **Where this campaign is reported:** _E.g. [Paid media dashboard](https://link), rolled into the weekly report_
 

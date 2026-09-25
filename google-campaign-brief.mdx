@@ -184,7 +184,7 @@ One row per group. The name and the `utm_content` value are filled in here, not 
 | _E.g._ `20260401-KW-REPORTAUTO` | _E.g. High-intent reporting queries, exact and phrase_ | _E.g. [link](https://link)_ | _E.g. [Mid-market RevOps lead](https://link)_ | _E.g._ `20260401-KW-REPORTAUTO` | _E.g. Core intent volume_ |
 | _E.g._ `20260401-KW-COMPET` | _E.g. Competitor brand queries_ | _E.g. [link](https://link)_ | _E.g. [Mid-market RevOps lead](https://link)_ | _E.g._ `20260401-KW-COMPET` | _E.g. Switching demand, watched for cost_ |
 | _E.g._ `20260401-KW-BRAND` | _E.g. Our own brand terms_ | _E.g. [link](https://link)_ | _E.g. All_ | _E.g._ `20260401-KW-BRAND` | _E.g. Defence, held at low cost_ |
-| \[add group\] |  |  |  |  |  |
+| *Add a row* |  |  |  |  |  |
 
 <Warning>
   Every group needs its own `utm_content` value. Tagging three ad groups with one campaign-level URL means analytics sees one undifferentiated bucket, and the join fails at exactly the level the campaign was structured around. Theme values come from the [ad group theme dictionary](/ad-set-group-naming-conventions#ad-group-theme-search-and-shopping); a theme typed straight into Google is a value no report recognizes.
@@ -207,7 +207,7 @@ One row per group. The name and the `utm_content` value are filled in here, not 
 | Customer profile | Link | Built as | Source |
 | :-- | :-- | :-- | :-- |
 | _E.g. Mid-market RevOps lead_ | _E.g. [CP\_midmarket-revops\_20260302\_v02](https://link)_ | _E.g. Customer Match list plus in-market segment_ | _E.g. HubSpot export via [Google CSV template](/customer-profile-csv-template-google)_ |
-| \[add profile\] |  |  |  |
+| *Add a row* |  |  |  |
 
 **Match type policy (Search and Shopping):** _E.g. Exact and phrase only. Broad off until CPA is stable for two consecutive months._
 
@@ -236,6 +236,7 @@ One row per group. The name and the `utm_content` value are filled in here, not 
 | Copy template | _E.g._ [Google Search copy template](/google-search-copy-template) |
 | Finished assets | _E.g. [Fresh Batch Google assets, final](https://link)_ |
 | Landing page | _E.g. [doughnutlabs.com/lp/fresh-batch-trial](https://link)_ |
+| *Add a row* |  |
 
 | Campaign type | Copy template | Creative specs |
 | :-- | :-- | :-- |
@@ -294,11 +295,11 @@ Build these from the [UTM standards](/utm-standards) before any URL goes anywher
 
 | Parameter | Value | Where it comes from |
 | :-- | :-- | :-- |
-| `utm_source` | _E.g._ `google` | Source list, [section A](/utm-standards#a-source-standard-utm_source) |
-| `utm_medium` | _E.g._ `paid_search` | Medium list, [section B](/utm-standards#b-medium-standard-utm_medium). Match the spelling in your standard exactly |
+| `utm_source` | _E.g._ `google` | Source list, [section 1](/utm-standards#1-source-standard-utm_source) |
+| `utm_medium` | _E.g._ `paid_search` | Medium list, [section 2](/utm-standards#2-medium-standard-utm_medium). Match the spelling in your standard exactly |
 | `utm_campaign` | _E.g._ `Google-FBS-Search-Trial-tCPA-DAPRO-TOFU` | The **platform campaign name** above, character for character |
 | `utm_content` | _E.g._ `20260401-KW-REPORTAUTO` | The ad group name. One per group, from the structure table |
-| `utm_term` | _E.g._ `{keyword}` _on Search_ | Your per-platform rule, [section D](/utm-standards#d-content-and-term-standard-utm_content-utm_term) |
+| `utm_term` | _E.g._ `{keyword}` _on Search_ | Your per-platform rule, [section 4](/utm-standards#4-content-and-term-standard-utm_content-utm_term) |
 
 **Full tagged URL, one per ad group:**
 
@@ -309,7 +310,7 @@ Build these from the [UTM standards](/utm-standards) before any URL goes anywher
 </Warning>
 
 <Note>
-  On Search, `utm_term` carrying `{keyword}` means analytics cannot tell one ad from another in this campaign. That is the usual trade and it is a real one: ad-level performance is read in Google Ads instead. If this campaign needs ad-level reporting in your own dashboards, pick a route from [section D](/utm-standards#d-content-and-term-standard-utm_content-utm_term) and record it here.
+  On Search, `utm_term` carrying `{keyword}` means analytics cannot tell one ad from another in this campaign. That is the usual trade and it is a real one: ad-level performance is read in Google Ads instead. If this campaign needs ad-level reporting in your own dashboards, pick a route from [section 4](/utm-standards#4-content-and-term-standard-utm_content-utm_term) and record it here.
 </Note>
 
 <Accordion title="Concept review: Naming and tracking">
@@ -338,7 +339,7 @@ Build these from the [UTM standards](/utm-standards) before any URL goes anywher
 | :-- | :-- | :-- |
 | _E.g. Trial signups_ | _E.g. 380_ | (blank until launch) |
 | _E.g. Cost per signup_ | _E.g. ≤ \$33_ | (blank until launch) |
-| \[add KPI\] |  |  |
+| *Add a row* |  |  |
 
 **Where this campaign is reported:** _E.g. [Paid media dashboard](https://link), rolled into the weekly report_
 

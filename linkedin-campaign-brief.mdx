@@ -85,7 +85,7 @@ LinkedIn's bid strategies, as of 7 August 2026:
 | :-- | :-- | :-- | :-- | :-- |
 | _E.g. RevOps job titles, single image_ | _E.g. [Mid-market RevOps lead](https://link)_ | _E.g. Single image_ | _E.g. \$200 per day_ | _E.g. Core volume driver_ |
 | _E.g. Target account list, document_ | _E.g. [Named account list](https://link)_ | _E.g. Document ad_ | _E.g. \$100 per day_ | _E.g. Whether gated content beats direct trial_ |
-| \[add campaign\] |  |  |  |  |
+| *Add a row* |  |  |  |  |
 
 <Accordion title="Concept review: Campaign structure">
   On LinkedIn the campaign is the targeting unit, not the ad set, so structure decisions here are really audience decisions. Splitting one audience across several campaigns divides an already small pool and slows every one of them out of learning.
@@ -100,14 +100,14 @@ LinkedIn's bid strategies, as of 7 August 2026:
 | Customer profile | Link | Built as |
 | :-- | :-- | :-- |
 | _E.g. Mid-market RevOps lead_ | _E.g. [CP\_midmarket-revops\_20260302\_v02](https://link)_ | _E.g. Job title plus company size, native LinkedIn targeting_ |
-| \[add profile\] |  |  |
+| *Add a row* |  |  |
 
 **Targeting built from an uploaded list.** Named accounts or contacts. The file lives in the [audience list store](/audience-list-store), never in this brief.
 
 | List name | What it is | Supplied by | Selection criteria | As of | Refresh due |
 | :-- | :-- | :-- | :-- | :-- | :-- |
 | _E.g._ `LIST_q2-target-accounts_20260401_v01` | _E.g. Named accounts for the Q2 ABM push_ | _E.g. Dana Ortiz, sales ops_ | _E.g. Open opportunities over \$50k, plus closed-lost in the last 18 months_ | _E.g. 2026-04-01_ | _E.g. 2026-07-01_ |
-| \[add list\] |  |  |  |  |  |
+| *Add a row* |  |  |  |  |  |
 
 <Warning>
   Reference a list by its name only. No account names, domains, or contact details in this brief. See the [audience list store](/audience-list-store) for where the file lives and who may access it.
@@ -163,6 +163,7 @@ LinkedIn's bid strategies, as of 7 August 2026:
 | Copy template | _E.g._ [Single image](/linkedin-single-image-copy-template) |
 | Finished creative | _E.g. [Fresh Batch LinkedIn creative, final](https://link)_ |
 | Landing page or lead form | _E.g. [doughnutlabs.com/lp/fresh-batch-trial](https://link)_ |
+| *Add a row* |  |
 
 Copy templates by format: [Single image](/linkedin-single-image-copy-template), [Video](/linkedin-video-copy-template), [Carousel](/linkedin-carousel-copy-template), [Document](/linkedin-document-copy-template), [Message ad](/linkedin-message-ad-copy-template), [Conversation ad](/linkedin-conversation-ad-copy-template), [Text ad](/linkedin-text-ad-copy-template), [Follower ad](/linkedin-follower-ad-copy-template).
 
@@ -184,11 +185,11 @@ One tagged URL per audience or variant, not one per campaign. `utm_content` carr
 
 | Parameter | Value | Where it comes from |
 | :-- | :-- | :-- |
-| `utm_source` | _E.g._ `linkedin` | Source list, [section A](/utm-standards#a-source-standard-utm_source) |
-| `utm_medium` | _E.g._ `paid_social` | Medium list, [section B](/utm-standards#b-medium-standard-utm_medium). Match the spelling in your standard exactly |
+| `utm_source` | _E.g._ `linkedin` | Source list, [section 1](/utm-standards#1-source-standard-utm_source) |
+| `utm_medium` | _E.g._ `paid_social` | Medium list, [section 2](/utm-standards#2-medium-standard-utm_medium). Match the spelling in your standard exactly |
 | `utm_campaign` | _E.g._ `LinkedIn-Feed-Conversions-CostCap-MOFU` | The **platform campaign name** above, character for character |
 | `utm_content` | _E.g._ `20260401-JT-revops-midmarket` | The audience or variant name. One per variant |
-| `utm_term` | _E.g._ `AutoGlaze-STATIC-FREETRIAL-TRY-LP` | The ad name, per your [section D](/utm-standards#d-content-and-term-standard-utm_content-utm_term) rule |
+| `utm_term` | _E.g._ `AutoGlaze-STATIC-FREETRIAL-TRY-LP` | The ad name, per your [section 4](/utm-standards#4-content-and-term-standard-utm_content-utm_term) rule |
 
 <Warning>
   `utm_campaign` carries the platform campaign name, not the marketing campaign name and not the brief's file name. The three are set out in [which name is which](/campaign-naming-conventions#which-name-is-which). A slug like `fresh-batch-trial` in this field will not join to anything in your platform export.
@@ -217,7 +218,7 @@ One tagged URL per audience or variant, not one per campaign. `utm_content` carr
 | _E.g. Trial signups_ | _E.g. 50_ | (blank until launch) |
 | _E.g. Cost per signup_ | _E.g. ≤ \$180_ | (blank until launch) |
 | _E.g. Qualified lead rate_ | _E.g. ≥ 40%_ | (blank until launch) |
-| \[add KPI\] |  |  |
+| *Add a row* |  |  |
 
 **Where this campaign is reported:** _E.g. [Paid media dashboard](https://link), rolled into the weekly report_
 

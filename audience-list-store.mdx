@@ -55,6 +55,7 @@ Set these once with whoever owns data protection at your company, then follow th
 | Default retention | _E.g. 12 months from the as-of date, then deleted from the store and the platform_ |
 | Deletion on request | _E.g. Handled by the data protection owner within the statutory window_ |
 | What is recorded in the register | _E.g. Metadata only. Never a row from the list itself_ |
+| *Add a rule* |  |
 
 <Warning>
   Deleting a list from this store does not delete it from the ad platform. An uploaded audience persists in the platform until it is removed there too. Whoever owns retention needs both steps on the same schedule, or the deletion is only half done.
@@ -82,7 +83,7 @@ One row per list. Metadata only.
 | :-- | :-- | :-- | :-- | :-- | :-- |
 | _E.g._ `LIST_q2-target-accounts_20260401_v01` | _E.g. Named accounts for the Q2 ABM push_ | _E.g. Dana Ortiz, sales ops_ | _E.g. Open opportunities over \$50k, plus closed-lost in the last 18 months_ | _E.g. 2026-04-01_ | _E.g. Priya Nadel_ |
 | _E.g._ `LIST_customers-suppress_20260401_v03` | _E.g. Existing customers, excluded from acquisition_ | _E.g. Stripe export, marketing ops_ | _E.g. Any account with an active subscription_ | _E.g. 2026-04-01_ | _E.g. Priya Nadel_ |
-| \[add list\] |  |  |  |  |  |
+| *Add a row* |  |  |  |  |  |
 
 **Size, match, and expiry.** What the platform actually did with it, and when it stops being true.
 
@@ -90,7 +91,7 @@ One row per list. Metadata only.
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
 | _E.g._ `LIST_q2-target-accounts_20260401_v01` | _E.g. 1,240_ | _E.g. 892_ | _E.g. 72%_ | _E.g. LinkedIn_ | _E.g. 2026-07-01, quarterly_ | _E.g. 2027-04-01_ |
 | _E.g._ `LIST_customers-suppress_20260401_v03` | _E.g. 4,100_ | _E.g. 3,050_ | _E.g. 74%_ | _E.g. LinkedIn, Meta_ | _E.g. Monthly_ | _E.g. Rolling, replaced each month_ |
-| \[add list\] |  |  |  |  |  |  |
+| *Add a row* |  |  |  |  |  |  |
 
 <Info>
   The matched count and match rate are the baseline for next quarter's refresh. A list that matched at 72% and now matches at 51% has decayed, and without the first number nobody can tell.

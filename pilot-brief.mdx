@@ -3,7 +3,7 @@ title: "Pilot brief"
 description: "A fill-in workbook for spend that is buying information rather than results: a new channel, a new product line, or a new market with no control to test against. Sets the budget, the read date, and the kill or scale rule before the money goes out."
 ---
 
-_This page is a workbook. Fill in sections A to E before the pilot launches, and section F on the read date. Each section has a concept review dropdown explaining what it is for._
+_This page is a workbook. Fill in sections 1 to 5 before the pilot launches, and section 6 on the read date. Each section has a concept review dropdown explaining what it is for._
 
 _Grayed_ `E.g.` _text is a placeholder. Delete it and replace it with your own. Examples use **Doughnut Labs**, a SaaS company that sells disruptive Doughnut Technology._
 
@@ -31,7 +31,7 @@ _Grayed_ `E.g.` _text is a placeholder. Delete it and replace it with your own. 
   The two records share a library for a practical reason. The question "did we already try this?" does not distinguish between a controlled test and a first flight, and an answer that only covers one of them sends someone to repeat the other.
 </Accordion>
 
-## A. Setup
+## 1. Setup
 
 | Field | Fill in |
 | :-- | :-- |
@@ -54,7 +54,7 @@ _Grayed_ `E.g.` _text is a placeholder. Delete it and replace it with your own. 
   The read date is filled in here, at setup, rather than left to be picked later. A read date chosen after seeing the numbers is not a read date.
 </Accordion>
 
-## B. The question
+## 2. The question
 
 **What are you buying information about, and what would change depending on the answer?**
 
@@ -74,7 +74,7 @@ _Grayed_ `E.g.` _text is a placeholder. Delete it and replace it with your own. 
   The "what we are not asking" row is there because pilots attract scope. Every question that would be interesting to answer arrives during setup, and each one added is another reason the read will be inconclusive.
 </Accordion>
 
-## C. Budget and duration
+## 3. Budget and duration
 
 | Field | Fill in |
 | :-- | :-- |
@@ -98,14 +98,14 @@ _Grayed_ `E.g.` _text is a placeholder. Delete it and replace it with your own. 
   Separating media from production matters more on a pilot than on a campaign, because production is a larger share of a small budget. A \$15,000 pilot that spends \$5,000 on a landing page is a \$10,000 pilot, and judging it on \$15,000 of spend understates it.
 </Accordion>
 
-## D. What you'll measure
+## 4. What you'll measure
 
 | Metric | Definition | Baseline or comparison | Target |
 | :-- | :-- | :-- | :-- |
 | _E.g. Cost per trial signup_ | _E.g. [CPL as defined here](/marketing-reporting-data-dictionary)_ | _E.g. LinkedIn at \$62_ | _E.g. ≤ \$45_ |
 | _E.g. Trial signups_ | _E.g. `Trial Started` from the [event tracking plan](/event-tracking-plan)_ | _E.g. 210 per month, all channels_ | _E.g. ≥ 250 in the flight_ |
 | _E.g. Trial to paid rate_ | _E.g. Guardrail. Paid conversions ÷ trials, 30-day window_ | _E.g. 18% blended_ | _E.g. Not below 12%_ |
-| \[add metric\] |  |  |  |
+| *Add a row* |  |  |  |
 
 **How this pilot is identified in reporting:** _E.g. Pilot ID in the campaign name and in_ `utm_campaign`_, landing in the flat file's_ [`experiment_id` column](/flat-file-template#dimension-columns) _at campaign grain, so the pilot's rows filter cleanly._
 
@@ -121,7 +121,7 @@ _Grayed_ `E.g.` _text is a placeholder. Delete it and replace it with your own. 
   Definitions link out rather than getting restated. A pilot that invents its own version of cost per lead produces a number that cannot be compared to the channel it is being judged against, which was the entire point of measuring it.
 </Accordion>
 
-## E. The decision rule
+## 5. The decision rule
 
 **Write the rule before launch. On the read date you apply it; you do not revisit it.**
 
@@ -147,7 +147,7 @@ _Grayed_ `E.g.` _text is a placeholder. Delete it and replace it with your own. 
   Naming the decider matters as much as naming the condition. A rule with no owner gets applied by whoever is most invested in the answer.
 </Accordion>
 
-## F. The read
+## 6. The read
 
 <Tip>
   Fill this in on the read date, not before.
@@ -158,7 +158,7 @@ _Grayed_ `E.g.` _text is a placeholder. Delete it and replace it with your own. 
 | Read date | _E.g. 3 Jun 2026_ |
 | Actual spend | _E.g. \$14,180_ |
 | Result per metric | _E.g. CPL \$41, 346 signups, trial-to-paid 15%_ |
-| Outcome, per the rule in section E | _E.g. Scale_ |
+| Outcome, per the rule in section 5 | _E.g. Scale_ |
 | Decision taken, and by whom | _E.g. Move 30% of LinkedIn budget to Search from 1 Jul. Head of growth, 3 Jun._ |
 | What we learned that we didn't expect | _E.g. Competitor terms carried a third of volume at twice the CPL. Worth separating next flight._ |
 | What we'd do differently | _E.g. Set up the trial-to-paid join before launch. Reconstructing it cost a week._ |
@@ -183,7 +183,7 @@ _Grayed_ `E.g.` _text is a placeholder. Delete it and replace it with your own. 
     Into the [campaign library](/campaign-library-overview), named per the [file naming conventions](/file-naming-conventions).
   </Step>
   <Step title="File the read into the learning library">
-    Once section F is complete, add it to the [experiment learning library](/experiment-learning-home) with its outcome, so the next person asking finds it.
+    Once section 6 is complete, add it to the [experiment learning library](/experiment-learning-home) with its outcome, so the next person asking finds it.
   </Step>
 </Steps>
 
