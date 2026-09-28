@@ -1,0 +1,2 @@
+hotel_id,name,description,url,image[0].url,address.addr1,address.city,address.region,address.country,address.postal_code,latitude,longitude,base_price,star_rating
+HTL_1029,Doughnut Labs Grand Hotel,Downtown hotel near the convention center,https://doughnutlabs.example/hotels/grand-hotel,https://doughnutlabs.example/images/grand-hotel-01.jpg,100 Batter Street,San Francisco,CA,US,94103,37.7793,-122.4193,189.00 USD,4
