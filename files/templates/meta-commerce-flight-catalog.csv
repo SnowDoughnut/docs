@@ -1,0 +1,2 @@
+origin_airport,destination_airport,departure_date,return_date,price,url
+SFO,JFK,2026-09-15,2026-09-22,249.00 USD,https://doughnutlabs.example/flights/sfo-jfk

@@ -1,0 +1,2 @@
+vehicle_id,title,description,price,link,image_link,condition,availability,make,model,year,vin,mileage,body_style,state_of_vehicle
+VIN1HGCM82633A004352,2025 Doughnut Labs Torque Wagon,"One owner, clean title, 2025 model year",28995.00 USD,https://doughnutlabs.example/inventory/torque-wagon-2025,https://doughnutlabs.example/images/torque-wagon.jpg,used,in stock,Doughnut Labs,Torque Wagon,2025,1HGCM82633A004352,12000 mi,wagon,used

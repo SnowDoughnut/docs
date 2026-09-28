@@ -1,0 +1,2 @@
+home_listing_id,name,availability,address,latitude,longitude,price,image_url,url,num_beds,num_baths
+LIST_10391,3BR Craftsman near Doughnut Labs HQ,for sale,"250 Sourdough St, San Francisco, CA 94103",37.7793,-122.4193,899000.00 USD,https://doughnutlabs.example/images/craftsman-listing.jpg,https://doughnutlabs.example/listings/craftsman-10391,3,2
