@@ -51,7 +51,7 @@ The demographic and situational facts that describe this person. These are the o
 | Income level | _E.g. Middle to upper-middle income, comfortable with small treats_ |
 | Location | _E.g. Urban and inner-suburban neighborhoods, walkable areas_ |
 | Occupation or context | _E.g. Office workers, remote workers, students near campus_ |
-| \[add attribute\] |  |
+| *Add a row* |  |
 
 <Accordion title="Concept review: Who they are">
   Demographics are the baseline of a consumer profile because they are observable and they map onto where and how you can reach people. Age, income, and location decide which channels make sense and what a person can comfortably spend, which is why this section tends to be the practical starting point even though it is rarely the deepest part of the profile.
@@ -101,7 +101,7 @@ The way this person actually discovers, decides, and buys. Consumer purchases ru
 | How do they buy? | _E.g. In person on the way to work, plus occasional delivery app orders_ |
 | How often, and on impulse or planned? | _E.g. A couple of times a week, usually impulse, sometimes a planned weekend treat_ |
 | What do they research or compare first? | _E.g. Very little; they decide fast based on look, smell, and reviews_ |
-| \[add question\] |  |
+| *Add a row* |  |
 
 <Accordion title="Concept review: How they shop">
   Where and how a person shops decides whether they ever see you at all. A consumer profile that nails who someone is and what they want but ignores their channels leaves you guessing where to spend. This section connects the person to the practical question of how a marketing dollar reaches them, which is what turns the rest of the profile into action.
@@ -119,7 +119,7 @@ The moments or feelings that tip this person from "might buy someday" into "buyi
 | A reward moment | Finishing a hard week, celebrating a small win, treating the kids |
 | Social occasion | Bringing something to share at work or a weekend gathering |
 | Seasonal or event | Holidays, a new seasonal flavor, a local event nearby |
-| \[add trigger\] |  |
+| *Add a row* |  |
 
 <Accordion title="Concept review: What triggers a purchase">
   Someone can fit the profile in every way and still not buy today, because nothing has prompted them. Triggers are the prompts. For consumers they are often tied to a moment or a mood rather than a business event: the time of day, a feeling, a small occasion worth marking. Naming them tells you not just who to reach but when a message will actually land.
@@ -154,7 +154,7 @@ The people and voices that sway this person's decision. Even a solo purchase is 
 | Friends and family | _E.g. A partner or friends recommending a spot carries a lot of weight_ |
 | Social media and creators | _E.g. A local food creator posting about a flavor can drive a rush_ |
 | Reviews and ratings | _E.g. They glance at ratings before trying somewhere new_ |
-| \[add influence\] |  |
+| *Add a row* |  |
 
 <Accordion title="Concept review: Influences">
   Consumer decisions look individual but are rarely made alone. A recommendation from a friend, a post from a creator they follow, or a strong set of reviews can matter more than anything you say about yourself. This section names those voices so you can invest in the ones that actually move your buyer, rather than assuming the decision happens purely in their head.
@@ -193,7 +193,7 @@ The signs that someone is not really your customer even when they seem to fit. T
 | _E.g. Deal-only shoppers_ | _E.g. Only ever buy with a heavy discount and never return at full price_ |
 | Pure convenience buyers | Choose purely on whatever is closest, so quality never wins them over |
 | Strict dietary mismatch | Need options the core product doesn't offer, so they rarely come back |
-| \[add disqualifier\] |  |
+| *Add a row* |  |
 
 <Accordion title="Concept review: Disqualifiers">
   Most profiles describe who to pursue and stop there, which quietly assumes anyone who doesn't match is simply neutral. In practice some customers are worse than neutral: they respond only to deep discounts, buy once and never return, or cost more to serve than they are worth. Naming those patterns keeps you from pouring marketing money into people who were never going to become good customers.
@@ -213,21 +213,21 @@ A consumer customer profile name is built from four parts, joined by underscores
 | :-- | :-- | :-- |
 | `CPB2C` | Marks the file as a consumer customer profile | Always `CPB2C`, so consumer profiles group together and don't mix with business ones |
 | `descriptor` | A short, human-readable label for who the profile is for | Lowercase, hyphens between words, no spaces |
-| `date` | When this version was written, as `YYYY-MM-DD` | This format sorts by date on its own |
+| `date` | When this version was written, as `YYYYMMDD` | This format sorts by date on its own |
 | `version` | Which iteration this is, as `v` plus two digits | Start at `v01`; two digits keep `v10` sorting after `v09` |
 
 Add the file extension last. Some worked examples:
 
-`CPB2C_urban-treat-seeker_2027-09-15_v01.md`
+`CPB2C_urban-treat-seeker_20270915_v01.md`
 
-`CPB2C_weekend-family-buyer_2027-09-15_v02.md`
+`CPB2C_weekend-family-buyer_20270915_v02.md`
 
-`CPB2C_student-late-night_2027-10-01_v01.md`
+`CPB2C_student-late-night_20271001_v01.md`
 
 <Accordion title="Concept review: Name and save the profile">
   A naming pattern exists so that a profile is findable and recognizable months after whoever wrote it has moved on. The four parts each answer one question: what kind of file this is, who it's about, when it was written, and which version it is. Put in a fixed order with consistent formatting, those four turn a folder of profiles into something you can sort and scan instead of open one by one.
 
-  The prefix earns its place by keeping the two kinds of profile apart. If consumer profiles and business profiles share one library, a distinct `CPB2C` tag lets you pull just the consumer ones in a single filter. Beyond that, two small rules carry most of the weight: writing the date as `YYYY-MM-DD` means a plain alphabetical sort also sorts by date, and padding the version to two digits keeps `v10` sorting after `v09` rather than next to `v01`. The pattern only works if everyone writes it the same way every time, so a search for `CPB2C` won't find a file saved as `cpb2c` or `b2c-profile`.
+  The prefix earns its place by keeping the two kinds of profile apart. If consumer profiles and business profiles share one library, a distinct `CPB2C` tag lets you pull just the consumer ones in a single filter. Beyond that, two small rules carry most of the weight: writing the date as `YYYYMMDD` means a plain alphabetical sort also sorts by date, and padding the version to two digits keeps `v10` sorting after `v09` rather than next to `v01`. The pattern only works if everyone writes it the same way every time, so a search for `CPB2C` won't find a file saved as `cpb2c` or `b2c-profile`.
 </Accordion>
 
 ## Related resources

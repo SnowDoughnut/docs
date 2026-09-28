@@ -27,6 +27,8 @@ _Examples below continue the Doughnut Labs brand: a SaaS company that sells disr
 
 These rules apply to every file name regardless of type. Decide each one once, write it down, and don't mix schemes later. A search for `doughnut_labs` will not find `doughnut-labs`, so a convention that drifts is worse than one that is imperfect but consistent.
 
+In Notion, set these once in the Naming rules database; the generators apply them.
+
 | Rule | Convention | Why it holds |
 | :-- | :-- | :-- |
 | Separator between fields | _E.g. Underscore `_`_ | Keeps each field visually distinct and machine-splittable |
@@ -35,13 +37,14 @@ These rules apply to every file name regardless of type. Decide each one once, w
 | Version format | _E.g. `v` plus two digits: `v01`_ | Leading zero keeps `v10` sorting after `v09`, not after `v01` |
 | Case | _E.g. Lowercase throughout_ | Avoids `File.jpg` and `file.jpg` being treated as different or identical depending on the system |
 | Spaces | _E.g. None, ever_ | Spaces break URLs, command-line tools, and sync scripts |
-| Forbidden characters | \_E.g. \`\< \> : " / \\ | Illegal or reserved on Windows, macOS, Linux, or in URLs |
+| Forbidden characters | _E.g._ `< > : " / \ \| ? *` | Illegal or reserved on Windows, macOS, Linux, or in URLs |
 | Maximum length | _E.g. Under 70 characters_ | Long paths get truncated or corrupted; Windows caps total path at 260 |
+| *Add a rule* |  |  |
 
 <Accordion title="Concept review: Formatting rules">
   Everything else in this document is about which words go in a file name. This section is about the mechanics that make those words sortable and portable, and it is the part that quietly decides whether the convention survives contact with real operating systems.
 
-  Two choices do most of the work. The date format is one: `YYYY-MM-DD` is the only common format where sorting a folder alphabetically also sorts it by date, which is why archives and libraries standardize on it. The version format is the other: two digits with a leading zero (`v01`, not `v1`) keeps versions in order once you pass nine, because `v10` sorts before `v2` in a plain text sort. The rest (no spaces, no special characters, one consistent separator) exists because a name that works on one person's Mac can break the moment it is zipped, synced to a shared drive, or dropped into a URL. Picking one scheme and holding to it matters more than which scheme you pick.
+  Two choices do most of the work. The date format is one: `YYYYMMDD` is the only common format where sorting a folder alphabetically also sorts it by date, which is why archives and libraries standardize on it. The version format is the other: two digits with a leading zero (`v01`, not `v1`) keeps versions in order once you pass nine, because `v10` sorts before `v2` in a plain text sort. The rest (no spaces, no special characters, one consistent separator) exists because a name that works on one person's Mac can break the moment it is zipped, synced to a shared drive, or dropped into a URL. Picking one scheme and holding to it matters more than which scheme you pick.
 </Accordion>
 
 ## Standard fields
@@ -61,7 +64,14 @@ The kind of file. This is what lets someone group every deck, every image, or ev
 | Presentation | DECK | PowerPoint, Keynote, Google Slides |  |
 | Spreadsheet | XLS | Excel, Google Sheets, CSV |  |
 | Logo | LOGO | Brand marks and lockups |  |
-| \[add asset type\] |  |  |  |
+| Copy | COPY | Copy documents and copy briefs |  |
+| Creative brief | CRE | Creative briefs |  |
+| Article brief | ART | Article briefs |  |
+| Landing page brief | LP | Landing page briefs |  |
+| Audience list | LIST | Uploaded audience files |  |
+| Customer profile, B2B | CP | B2B customer profile documents |  |
+| Customer profile, B2C | CPB2C | B2C customer profile documents |  |
+| *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Asset type">
   Asset type is the field that makes a library browsable before anyone opens a single file. It answers the first question people usually have, which is not "what campaign is this" but "is this the deck, the video, or the doc." Sorting or filtering by this one field pulls every file of a kind together, which is why it tends to sit near the front of the name.
@@ -79,7 +89,7 @@ A short, human-readable label for what the file actually is or contains. This is
 | Pricing one-pager | pricing-1pager | The single-page pricing explainer |  |
 | Founder headshot | founder-headshot | Portrait of the founder for press use |  |
 | Onboarding welcome | onboard-welcome | The first email in the onboarding series |  |
-| \[add descriptor\] |  |  |  |
+| *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Descriptor">
   The descriptor is the one field written for a human rather than a system. Every other field is a code that sorts and filters; this is the plain-language handle that tells a person "yes, this is the thing I was looking for" without opening it. A file named only with codes and a date is findable but not recognizable, and the descriptor closes that gap.
@@ -93,15 +103,15 @@ When the file was created or dated, in the ISO format you locked above. Gives ev
 
 | Long form | Short form | Description | \[add value\] |
 | :-- | :-- | :-- | :-- |
-| _E.g. 2027-09-15_ | _2027-09-15_ | _Full date: creation or publish date_ |  |
+| _E.g. 20270915_ | _20270915_ | _Full date: creation or publish date_ |  |
 | 2027-Q3 | 2027-Q3 | Quarter, for files that cover a whole quarter |  |
-| 2027-09 | 2027-09 | Month, for files dated to a month not a day |  |
-| \[add date form\] |  |  |  |
+| 202709 | 202709 | Month, for files dated to a month not a day |  |
+| *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Date">
-  A date in the name does something folders alone cannot: it makes a file identifiable and sortable even after it has been downloaded, moved, or emailed to someone who never saw your folder structure. The name carries its own timeline. In `YYYY-MM-DD` order, that timeline also sorts correctly by default, so a folder falls into chronological order without anyone touching a sort setting.
+  A date in the name does something folders alone cannot: it makes a file identifiable and sortable even after it has been downloaded, moved, or emailed to someone who never saw your folder structure. The name carries its own timeline. In `YYYYMMDD` order, that timeline also sorts correctly by default, so a folder falls into chronological order without anyone touching a sort setting.
 
-  The judgment call is which date and how precise. A daily date suits things tied to a specific moment, like a dated export or a sending. For a file that covers a whole quarter or month, a full day-level date implies a precision that is not real, and a `YYYY-Q3` or `YYYY-MM` form reads more honestly. What matters most is picking the creation date or the publish date and applying the same choice everywhere, because a mix of the two makes the timeline unreliable in a way no one can see from the name.
+  The judgment call is which date and how precise. A daily date suits things tied to a specific moment, like a dated export or a sending. For a file that covers a whole quarter or month, a full day-level date implies a precision that is not real, and a `YYYY-Q3` or `YYYYMM` form reads more honestly. What matters most is picking the creation date or the publish date and applying the same choice everywhere, because a mix of the two makes the timeline unreliable in a way no one can see from the name.
 </Accordion>
 
 ### Version
@@ -113,7 +123,7 @@ Which iteration of the file this is. Keeps successive drafts of the same file in
 | _E.g. Version 1_ | _v01_ | _First version of this file_ |  |
 | Version 2 | v02 | Second version, after a round of changes |  |
 | Version 10 | v10 | Tenth version: two digits keep it sorting after v09 |  |
-| \[add version form\] |  |  |  |
+| *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Version">
   Version numbering exists to answer one question with certainty: which of these is the newest. The word "final" cannot answer it, because there is always one more round, and a folder full of `final`, `final-v2`, and `final-real` tells you nothing about order. A running number does, as long as it is applied from the first draft rather than bolted on once things get confusing.
@@ -136,7 +146,7 @@ Where the file sits in its review cycle. Optional, but useful when a file moves 
 | Approved | APPR | Signed off, cleared for use |  |
 | Final | FINAL | Locked; no further changes expected |  |
 | Archived | ARCH | Superseded, kept for record only |  |
-| \[add status\] |  |  |  |
+| *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Status">
   Status marks a file's place in its review cycle so someone can tell, without asking, whether a file is safe to send to a client or still halfway through edits. It answers a different question than version does: version says which iteration, status says whether that iteration has been cleared. The newest version and the approved version are not always the same file.
@@ -162,7 +172,7 @@ Size, aspect ratio, or format specification. Mostly for visual files, where the 
 | 1080x1920 | 1080x1920 | Vertical story or reel, in pixels |  |
 | 16x9 | 16x9 | Widescreen video aspect ratio |  |
 | A4 | A4 | Print page size |  |
-| \[add format\] |  |  |  |
+| *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Format or dimensions">
   For visual files, one descriptor usually exists in many shapes: the same hero image cut to a square, a vertical story, a banner, and a print size. The format field is what tells those siblings apart, so someone grabbing a `300x250` does not open five look-alike files to find the one that fits the slot. Without it, the only difference between those files lives inside them, where search cannot see it.
@@ -181,7 +191,7 @@ The language or market a file is for. For anything localized or region-specific,
 | English, Canada | en-CA | English for the Canadian market |  |
 | French, Canada | fr-CA | French for the Canadian market |  |
 | United States | us | US market, any language |  |
-| \[add language or region\] |  |  |  |
+| *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Language or region">
   When a file exists in more than one language or market, the versions are otherwise identical: same descriptor, same date, same dimensions. The language or region code is often the only thing keeping the English and French cuts from looking like duplicates or overwriting each other. It also lets someone pull every asset for one market in a single filter, which is how localized campaigns get audited.
@@ -195,19 +205,19 @@ Take one value from each field, in order, joined by your field separator. Skip a
 
 A dated Word document, which has no dimensions or language, uses only the core fields:
 
-`DOC_pricing-1pager_2027-09-15_v03_APPR.docx`
+`DOC_pricing-1pager_20270915_v03_APPR.docx`
 
 A display ad needs its dimensions, so the format field is filled in:
 
-`AD_q3-launch-hero_300x250_2027-09-15_v02_APPR.jpg`
+`AD_q3-launch-hero_300x250_20270915_v02_APPR.jpg`
 
 A localized video adds both dimensions and a language code:
 
-`VID_q3-launch-hero_16x9_en-CA_2027-09-15_v05_FINAL.mp4`
+`VID_q3-launch-hero_16x9_en-CA_20270915_v05_FINAL.mp4`
 
 A slide deck in progress, no format or language, still in draft:
 
-`DECK_sales-quarterly-review_2027-09-15_v01_DRAFT.pptx`
+`DECK_sales-quarterly-review_20270915_v01_DRAFT.pptx`
 
 <Info>
   This structure draws on public file-naming guidance from digital asset management providers and creative agencies, and on the ISO 8601 date standard used by libraries and archives. It covers how to name a single file across every type. For naming campaigns, ad sets, and ads inside an ad platform, see the [naming conventions overview](/naming-conventions-overview).

@@ -3,10 +3,10 @@ title: "Flat file template"
 description: "The schema for the single spreadsheet that holds every metric, for every channel and period. Every report and dashboard is a view of this file; no code required to build or use it."
 ---
 
-_This page explains the schema and how to build it as a plain spreadsheet. Examples use Doughnut Labs, a SaaS company that sells disruptive Doughnut Technology, modelled here as its direct-to-consumer arm so the numbers have orders and revenue behind them._
+_Build the schema below as a plain spreadsheet. Examples use Doughnut Labs, a SaaS company that sells disruptive Doughnut Technology, modelled here as its direct-to-consumer arm so the numbers have orders and revenue behind them._
 
 <Note>
-  Copy the blank template linked below into your own spreadsheet and start filling in rows each week. Nothing about the structure changes when you add a channel or a metric; you just add rows. See [data quality and rollup concepts](/data-quality-and-rollup-concepts) for why this shape, one row per metric, works better than the wide table most people picture first.
+  Copy the blank template ([spreadsheet](/files/flat-file-template.xlsx) or [CSV](/files/flat-file-template.csv)) into your own spreadsheet and start filling in rows each week. Nothing about the structure changes when you add a channel or a metric; you just add rows. See [data quality and rollup concepts](/data-quality-and-rollup-concepts) for why this shape, one row per metric, works better than the wide table most people picture first.
 </Note>
 
 ## Why one row per metric
@@ -75,9 +75,9 @@ Each of these has exactly one source, and none of them is typed by hand at repor
 | `campaign` | [Campaign naming conventions](/campaign-naming-conventions), matching `utm_campaign` character for character |
 | `ad_group` | [Ad set / ad group / variant naming conventions](/ad-set-group-naming-conventions), matching `utm_content` |
 | `ad` | [Ad naming conventions](/ad-name-conventions) |
-| `product` | The product segment of the campaign name, split out at import. See [product catalog](/product-catalog#f-where-the-identifier-goes) |
+| `product` | The product segment of the campaign name, split out at import. See [product catalog](/product-catalog#3-where-the-short-form-goes) |
 | `experiment_id` | The [experiment ID](/experiment-id-convention) or [pilot ID](/pilot-brief) appended to the name at the level the test targets |
-| `attributed_week` | Your CRM or analytics platform, from the stored source fields on the record. See [where the values get stored](/utm-standards#g-where-the-values-get-stored) |
+| `attributed_week` | Your CRM or analytics platform, from the stored source fields on the record. See [where the values get stored](/utm-standards#7-where-the-values-get-stored) |
 
 <Warning>
   **Never sum across grains.** A week has an `ad_spend` row at channel grain and several more at campaign grain, and they describe the same money. Adding them together double-counts it. Filter to a single `grain` value before adding anything up, every time, exactly as you already filter to a single period.
@@ -154,7 +154,7 @@ This file has a fixed core and a set of extensions. Which extensions apply depen
 | `attributed_week` | Rarely needed | Required, or cost per closed-won is wrong |
 | Fractional credit | Uncommon, one session one order | Normal, several channels touch one deal |
 | Outcome metrics | [Ecommerce starter pack](/ecommerce-metrics-starter-pack) | [Sales-led starter pack](/sales-led-metrics-starter-pack) |
-| Where deal data comes from | The store platform | The CRM, see [where the values get stored](/utm-standards#g-where-the-values-get-stored) |
+| Where deal data comes from | The store platform | The CRM, see [where the values get stored](/utm-standards#7-where-the-values-get-stored) |
 
 Adding a column later costs nothing structural. You start filling it from that week forward, and older rows keep whatever they were collected with.
 

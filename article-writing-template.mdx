@@ -34,7 +34,7 @@ Everything in this table ships with the page. Limits and rules are in the [artic
 | :-- | :-- | :-- |
 | Page name (H1) | _E.g. Why deployment pipelines fail after 94 days_ | The one H1 on the page |
 | Meta title | _E.g. Why deployment pipelines fail after 94 days \| Doughnut Labs_ | Aim for under 60 characters |
-| Slug | _E.g. deployment-pipeline-decay_ | Lowercase, hyphens, no dates, no stop words |
+| Slug | _E.g. deployment-pipeline-decay_ | Lowercase, hyphens, no dates |
 | Full URL | _E.g. doughnutlabs.com/blog/deployment-pipeline-decay_ |  |
 | Category or cluster | _E.g. Pipeline reliability_ | Matches the register |
 | Meta description | _E.g. Pipelines pass their builds for months while silently failing to deploy. Our telemetry across 400 teams puts the median at 94 days. Here are the four checks that catch it._ | Aim for 140 to 160 characters |
@@ -42,18 +42,14 @@ Everything in this table ships with the page. Limits and rules are in the [artic
 | Author | _E.g. Priya Nadan, Head of Reliability_ | A real named person |
 | Author bio link | _E.g. [link](https://link)_ |  |
 | Published date | _E.g. 2027-10-14_ |  |
-| Last updated date | _E.g. 2028-01-20_ | Shown on the page, not just in the CMS |
 | Next review date | _E.g. 2028-04-20_ | Also recorded in the register |
 | Canonical URL | _E.g. Self_ | Only differs if this duplicates another page |
-| Schema type | _E.g. Article, plus FAQPage for the FAQ section_ |  |
 | Primary entity | _E.g. Doughnut Technology_ | From the brief |
 | Featured image | _E.g. [link](https://link)_ | Alt text written, not left blank |
-| \[add row\] |  |  |
+| *Add a row* |  |  |
 
 <Accordion title="Concept review: Publishing metadata">
   Two of these fields do a job most teams underuse. The meta description is not a ranking factor, but it is the sentence a person reads before deciding whether to click, and answer engines sometimes lift it as a summary. Writing it last, once the article exists, tends to produce a real summary rather than a guess at one.
-
-  The visible last-updated date matters more than it used to. Freshness is one of the clearer signals in how AI answers select sources, and a date buried in a CMS field that never renders on the page cannot be read by anything crawling it. Teams differ on whether to show both published and updated dates or only the most recent, and both are defensible as long as the choice is consistent across the site.
 
   The canonical URL is usually the page itself. It earns attention in the cases where it is not: syndicated pieces, near-duplicate regional versions, or an article that supersedes an older one still sitting at another URL.
 </Accordion>
@@ -72,7 +68,7 @@ One H1. Every heading below it steps down one level at a time. Fill in the headi
 | H3 | _E.g. Check 1: deploy step exit codes_ | _E.g. What is the first check?_ |
 | H2 | _E.g. How often to audit a pipeline_ | _E.g. How often should I check?_ |
 | H2 | _E.g. Frequently asked questions_ | _E.g. The leftover specifics_ |
-| \[add row\] |  |  |
+| *Add a row* |  |  |
 
 <Accordion title="Concept review: Heading skeleton">
   A heading hierarchy does two separate jobs. For a person, it is the map: it lets someone scan the page and jump to the part they came for. For a machine, it is the structure that defines where one passage ends and the next begins, which is what makes a section retrievable on its own.
@@ -136,7 +132,7 @@ _E.g. The four checks become a numbered list. The audit cadence by deploy freque
 | :-- | :-- |
 | _E.g. Does this affect pipelines that deploy daily?_ | _E.g. Yes, but later. Daily deploys surface breakage sooner, pushing the median past 120 days._ |
 | _E.g. Can monitoring catch this automatically?_ | _E.g. Only if it checks deploy outcomes rather than build status. Most setups check the build._ |
-| \[add row\] |  |
+| *Add a row* |  |
 
 <Accordion title="Concept review: Frequently asked questions">
   A question-and-answer block is the closest thing on a page to the shape an answer engine is working in, which is why these sections get cited disproportionately often. Each pair is self-contained by construction.

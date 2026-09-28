@@ -1,6 +1,6 @@
 ---
 title: "Audience list store"
-description: "Where uploaded audience files live: named account lists, customer match files, and suppression lists. Records who supplied each list, on what criteria, when it expires, and how it matched, without the list itself ever entering this knowledge base."
+description: "Where uploaded audience files live: named account lists, customer match files, and suppression lists. Records who supplied each list, on what criteria, and when it expires, without the list itself ever entering this knowledge base."
 ---
 
 The audience list store holds the files you upload to an ad platform to build an audience: named account lists, customer match files, contact lists, and suppression lists.
@@ -41,7 +41,6 @@ Both directions are legitimate. A profile can generate a list, which is what [de
 | Owner | _E.g. Priya Nadel, marketing ops_ |
 | Who has access | _E.g. Marketing ops and the media buyer only. Not the wider marketing team, not agencies_ |
 | How to request access | _E.g. Ask the owner. Access is granted per person, not per team_ |
-| Where the access list is reviewed | _E.g. Quarterly, in the marketing ops review_ |
 
 ## Handling rules
 
@@ -54,7 +53,7 @@ Set these once with whoever owns data protection at your company, then follow th
 | Where lists may be sent | _E.g. The ad platform only. Never email, never a shared doc, never a chat message_ |
 | Default retention | _E.g. 12 months from the as-of date, then deleted from the store and the platform_ |
 | Deletion on request | _E.g. Handled by the data protection owner within the statutory window_ |
-| What is recorded in the register | _E.g. Metadata only. Never a row from the list itself_ |
+| *Add a rule* |  |
 
 <Warning>
   Deleting a list from this store does not delete it from the ad platform. An uploaded audience persists in the platform until it is removed there too. Whoever owns retention needs both steps on the same schedule, or the deletion is only half done.
@@ -64,13 +63,15 @@ Set these once with whoever owns data protection at your company, then follow th
 
 Build every list to the template for the platform before uploading it. A list assembled ad hoc matches at a lower rate and fails in ways that only show up after the file is in.
 
-| Platform | Template | Carries personal data? |
-| :-- | :-- | :-- |
-| LinkedIn, account-based | [Company list CSV template](/linkedin-company-list-csv-template) | No, companies only |
-| LinkedIn, contacts | [Customer profile CSV template (LinkedIn)](/customer-profile-csv-template-linkedin) | Yes |
-| Meta | [Customer profile CSV template (Meta)](/customer-profile-csv-template-meta) | Yes |
-| Google | [Customer profile CSV template (Google)](/customer-profile-csv-template-google) | Yes |
-| TikTok | [Customer profile CSV template (TikTok)](/customer-profile-csv-template-tiktok) | Yes |
+| Platform | Template | Download | Carries personal data? |
+| :-- | :-- | :-- | :-- |
+| LinkedIn, account-based | [Company list CSV template](/linkedin-company-list-csv-template) | [LinkedIn company list CSV](/files/audience-templates/linkedin-company-list.csv) | No, companies only |
+| LinkedIn, contacts | [Customer profile CSV template (LinkedIn)](/customer-profile-csv-template-linkedin) | [LinkedIn contact list CSV](/files/audience-templates/linkedin-contact-list.csv) | Yes |
+| Meta | [Customer profile CSV template (Meta)](/customer-profile-csv-template-meta) | [Meta customer list CSV](/files/audience-templates/meta-customer-list.csv) | Yes |
+| Google | [Customer profile CSV template (Google)](/customer-profile-csv-template-google) | [Google Customer Match CSV](/files/audience-templates/google-customer-match.csv) | Yes |
+| TikTok | [Customer profile CSV template (TikTok)](/customer-profile-csv-template-tiktok) | [Email](/files/audience-templates/tiktok-email.csv), [phone](/files/audience-templates/tiktok-phone.csv), or [mobile ID](/files/audience-templates/tiktok-maid.csv) CSV, one identifier per file | Yes |
+
+Each download has the header row and one example row with fake data. Delete the example row before you add your own. The mobile ID file has the header row only.
 
 ## The register
 
@@ -80,27 +81,25 @@ One row per list. Metadata only.
 
 | List name | What it is | Supplied by | Selection criteria | As of | Owner |
 | :-- | :-- | :-- | :-- | :-- | :-- |
-| _E.g._ `LIST_q2-target-accounts_2026-04-01_v01` | _E.g. Named accounts for the Q2 ABM push_ | _E.g. Dana Ortiz, sales ops_ | _E.g. Open opportunities over \$50k, plus closed-lost in the last 18 months_ | _E.g. 2026-04-01_ | _E.g. Priya Nadel_ |
-| _E.g._ `LIST_customers-suppress_2026-04-01_v03` | _E.g. Existing customers, excluded from acquisition_ | _E.g. Stripe export, marketing ops_ | _E.g. Any account with an active subscription_ | _E.g. 2026-04-01_ | _E.g. Priya Nadel_ |
-| \[add list\] |  |  |  |  |  |
+| _E.g._ `LIST_q2-target-accounts_20260401_v01` | _E.g. Named accounts for the Q2 ABM push_ | _E.g. Dana Ortiz, sales ops_ | _E.g. Open opportunities over \$50k, plus closed-lost in the last 18 months_ | _E.g. 2026-04-01_ | _E.g. Priya Nadel_ |
+| _E.g._ `LIST_customers-suppress_20260401_v03` | _E.g. Existing customers, excluded from acquisition_ | _E.g. Stripe export, marketing ops_ | _E.g. Any account with an active subscription_ | _E.g. 2026-04-01_ | _E.g. Priya Nadel_ |
+| *Add a row* |  |  |  |  |  |
 
-**Size, match, and expiry.** What the platform actually did with it, and when it stops being true.
+**Size and expiry.** How big it is, where it runs, and when it stops being true.
 
-| List name | Rows | Matched | Match rate | Platform | Refresh due | Retention ends |
-| :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| _E.g._ `LIST_q2-target-accounts_2026-04-01_v01` | _E.g. 1,240_ | _E.g. 892_ | _E.g. 72%_ | _E.g. LinkedIn_ | _E.g. 2026-07-01, quarterly_ | _E.g. 2027-04-01_ |
-| _E.g._ `LIST_customers-suppress_2026-04-01_v03` | _E.g. 4,100_ | _E.g. 3,050_ | _E.g. 74%_ | _E.g. LinkedIn, Meta_ | _E.g. Monthly_ | _E.g. Rolling, replaced each month_ |
-| \[add list\] |  |  |  |  |  |  |
+| List name | Rows | Platform | Refresh due | Retention ends |
+| :-- | :-- | :-- | :-- | :-- |
+| _E.g._ `LIST_q2-target-accounts_20260401_v01` | _E.g. 1,240_ | _E.g. LinkedIn_ | _E.g. 2026-07-01, quarterly_ | _E.g. 2027-04-01_ |
+| _E.g._ `LIST_customers-suppress_20260401_v03` | _E.g. 4,100_ | _E.g. LinkedIn, Meta_ | _E.g. Monthly_ | _E.g. Rolling, replaced each month_ |
+| *Add a row* |  |  |  |  |
 
-<Info>
-  The matched count and match rate are the baseline for next quarter's refresh. A list that matched at 72% and now matches at 51% has decayed, and without the first number nobody can tell.
-</Info>
+Match counts and match rates stay in the ad platform. Check them there before each refresh.
 
 ## Naming
 
 Every file follows the [file naming conventions](/file-naming-conventions), using the same four-part shape as a customer profile:
 
-`LIST_q2-target-accounts_2026-04-01_v01.csv`
+`LIST_q2-target-accounts_20260401_v01.csv`
 
 | Part | What it is |
 | :-- | :-- |
@@ -124,7 +123,7 @@ The as-of date is doing real work here. It is what the [ad set / ad group / vari
   <Step title="Record the provenance while the supplier is still in the room">
     Who picked these accounts, on what criteria, as of when. This is the field that becomes unrecoverable fastest, because the person who knows moves on to the next quarter.
   </Step>
-  <Step title="Upload and record the match rate before anything else is briefed">
+  <Step title="Upload and check the match in the platform before anything else is briefed">
     Matching takes time and can fail the campaign outright. Doing it first means a short list is a scheduling problem, not a write-off of finished creative.
   </Step>
   <Step title="Set the refresh date and the retention date">

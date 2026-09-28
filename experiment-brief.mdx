@@ -8,7 +8,7 @@ description: "A fill-in brief for a single test. Each field is yours to keep, cu
 </Info>
 
 <Note>
-  Nothing here is fixed. The fields, channels, test types, and result statuses below are a starting set. Where you see an `[add ...]` row, that's an invitation to extend the set; where a row doesn't apply to you, delete it. Fill in the setup, hypothesis, and design fields before the test launches, and return to the results section after it ends.
+  Nothing here is fixed. The fields, channels, test types, and result statuses below are a starting set. Where you see an *Add a row* line, that's an invitation to extend the set; where a row doesn't apply to you, delete it. Fill in the setup, hypothesis, and design fields before the test launches, and return to the results section after it ends.
 </Note>
 
 <Steps>
@@ -32,12 +32,12 @@ The examples below all describe one invented test, a pricing-page CTA color test
 | Field | Fill in |
 | :-- | :-- |
 | [Owner](/glossary#owner) | _E.g. Steve Steverson._ |
-| [Experiment ID](/experiment-id-convention) | _E.g. `TEST-8H2P`_ |
+| [Experiment ID](/experiment-id-convention) | _E.g. `TEST07`_ |
 | Test type | _E.g. A/B (one control, one variant)_ |
 | [Marketing campaign brief](/marketing-campaign-brief) | _E.g. Black Friday Cyber Monday 2027_ |
-| [Copy brief](/copy-brief), if the test changes words | _E.g. [COPY\_socialproof-test\_2026-07-10\_v01](https://link)_ |
+| [Copy brief](/copy-brief), if the test changes words | _E.g. [COPY\_socialproof-test\_20260710\_v01](https://link)_ |
 | [Creative brief](/creative-brief), if the test changes assets | _E.g. Not applicable, same creative in both arms_ |
-| \[add setup field\] |  |
+| *Add a row* |  |
 
 <Accordion title="Concept review: Setup fields">
   These fields answer "which test is this, and who's accountable for it." Teams differ on how much identifying detail a brief needs: some add a squad, a quarter, or a linked objective; a solo operator might strip it down to owner and ID. The set here is a common starting point rather than a required list.
@@ -52,7 +52,7 @@ _E.g A/B: one control, one variant_
 <Accordion title="Concept review: Why test type is worth naming">
   Naming the test type early sets expectations for the design that follows. A multivariate test needs more variant rows and more sample than a simple A/B, so flagging the type up front signals what the rest of the brief has to account for.
 
-  The four types listed are the common ones in digital marketing, but they aren't a closed set. Some teams run bandit tests, sequential tests, or their own named variations, and this list is meant to be edited toward whatever your team runs rather than treated as the only options.
+  A/B and multivariate are the most common types in digital marketing, but they aren't a closed set. Some teams run bandit tests, sequential tests, or their own named variations, so name whatever your team actually runs.
 </Accordion>
 
 ## Hypothesis and metrics
@@ -178,6 +178,7 @@ _E.g. Start 2026-07-14, end 2026-07-28. End date set by the sample math (18,000 
 | Channel | Fields to record | Your entry |
 | :-- | :-- | :-- |
 | _E.g. Paid social_ | _Platform, campaign, ad set, ad, creative, copy_ | _E.g. Meta, Q3-Pricing, TOFU-set, CTA-color-ad, orange-button-v1, "See pricing"_ |
+| *Add a row* |  |  |
 
 <Accordion title="Concept review: Writing for the six-month auditor">
   This section is written for a specific reader: someone who opens the brief months later and needs to find the exact asset that ran. The test is recorded so the campaign, ad, page, or message can be located and confirmed, not just described in general terms.
@@ -192,11 +193,11 @@ _E.g. Start 2026-07-14, end 2026-07-28. End date set by the sample math (18,000 
 | Arm | Description | Platform object name | Carries the ID? | Split |
 | :-- | :-- | :-- | :-- | :-- |
 | Control | _E.g. Existing gray CTA button_ | _E.g._ `AutoGlaze-STATIC-DISC-ANNUAL20-TRY-LP` | _E.g. No, already live_ | _E.g. 50%_ |
-| Variant A | _E.g. Orange CTA button_ | _E.g._ `AutoGlaze-STATIC-SOCPROOF-ANNUAL20-TRY-LP-TEST-8H2P` | _E.g. Yes_ | _E.g. 50%_ |
-| \[add arm\] |  |  |  |  |
+| Variant A | _E.g. Orange CTA button_ | _E.g._ `AutoGlaze-STATIC-SOCPROOF-ANNUAL20-TRY-LP-TEST07` | _E.g. Yes_ | _E.g. 50%_ |
+| *Add a row* |  |  |  |  |
 
 <Warning>
-  The control's exact platform name is the only way to find its rows at review, because the control carries no experiment ID. Copy it in character for character rather than describing it. See [control and variants](/experiment-id-convention#c-control-and-variants).
+  The control's exact platform name is the only way to find its rows at review, because the control carries no experiment ID. Copy it in character for character rather than describing it. See [control and variants](/experiment-id-convention#3-control-and-variants).
 </Warning>
 
 ### On-site tests
@@ -210,7 +211,7 @@ A page variant has no name in any of the [naming conventions](/naming-convention
 | Field | Fill in |
 | :-- | :-- |
 | Testing tool | _E.g. \[your tool\], or "developer-built, split at the CDN"_ |
-| Experiment name in the tool | _E.g._ `homepage-hero-TEST-4K9M` |
+| Experiment name in the tool | _E.g._ `homepage-hero-TEST08` |
 | Variation names in the tool | _E.g._ `control`_,_ `variant-a` |
 | How traffic is split | _E.g. 50/50, tool-served on one URL_ |
 | Control URL | _E.g._ `/` |
@@ -227,7 +228,7 @@ A page variant has no name in any of the [naming conventions](/naming-convention
 
   Inventing a parallel convention would produce a name that exists in the brief and nowhere in the tool, which is worse than no convention at all. What matters instead is that the tool's name is written down here, exactly as the tool has it, with the experiment ID in it somewhere so the two systems can be joined.
 
-  The URL question sits in this section rather than in the process because it is a measurement decision more than a build decision. It determines whether the test produces one row or two in your analytics, and that is not something to discover after the test has run.
+  Answer the URL question here, as a measurement decision rather than a build decision. It determines whether the test produces one row or two in your analytics, and that is not something to discover after the test has run.
 </Accordion>
 
 <Accordion title="Concept review: Listing the control and the splits">
@@ -240,20 +241,21 @@ A page variant has no name in any of the [naming conventions](/naming-convention
 
 ## Results
 
-**After the test ends, mark it with a status and note the outcome. These four cover the common cases; add your own if your team distinguishes more:**
+**After the test ends, mark it with a status and note the outcome. These five cover the common cases; add your own if your team distinguishes more:**
 
 | Status | When to use it | Your result |
 | :-- | :-- | :-- |
-| Winner | Primary metric hit success criteria; no guardrails degraded | _E.g. Selected. CTA click-through rose 6.2% at 96% confidence, AOV flat._ |
-| Loser | Primary metric performed worse than control at the stated confidence |  |
+| Win | Primary metric hit success criteria; no guardrails degraded | _E.g. Selected. CTA click-through rose 6.2% at 96% confidence, AOV flat._ |
+| Loss | Primary metric performed worse than control at the stated confidence |  |
 | Inconclusive | Ran to plan but didn't reach significance, or missed criteria |  |
+| Invalid | Something broke: tracking, a mid-flight change, insufficient sample. Not evidence either way |  |
 | Cancelled | Stopped before completion (broken tracking, bad launch, business change) |  |
-| \[add status\] | \[when your team would use it\] |  |
+| *Add a row* |  |  |
 
 **Report / review link:** _E.g. Link to the CTA-color writeup in the learning library._
 
 <Accordion title="Concept review: Statuses and the link to a report">
-  The statuses keep the outcome unambiguous, sorting each test into a clear bucket rather than a fuzzy in-between. The winner bucket is worth noting: it usually asks for both halves of the success criteria, the primary metric hitting its bar and no guardrail degrading, which is what keeps a metric-up, revenue-down result from being filed as a win. Some teams add statuses of their own, such as a partial result or a re-run flag, which is what the extra row is for.
+  The statuses keep the outcome unambiguous, sorting each test into a clear bucket rather than a fuzzy in-between. The Win bucket is worth noting: it usually asks for both halves of the success criteria, the primary metric hitting its bar and no guardrail degrading, which is what keeps a metric-up, revenue-down result from being filed as a win. Some teams add statuses of their own, such as a partial result or a re-run flag, which is what the extra row is for.
 
   Linking each completed test to a learning library report is what turns a stack of finished tests into something later tests can build on. Without the link, a brief records what happened once and then fades; with it, the next person testing the same idea can find the prior evidence instead of starting blind. Cancelled tests are the common exception: often they need only a short note on why they stopped rather than a full report.
 </Accordion>
