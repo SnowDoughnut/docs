@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Sync the page endcap across docs pages.
 
-The endcap is stock Mintlify: a rule, a Columns, and two Cards. No CSS backs
-it and style.css carries nothing for it, so appearance comes entirely from
-the theme.
+The endcap is stock Mintlify: a rule, a Columns, and two Cards. It has no
+CSS of its own; the site-wide rules in style.css for prose rules and cards
+(the yellow line, the outlined cards with the yellow shadow) style it like
+every other rule and card on the site.
 
 Two earlier approaches are worth not repeating. A /snippets import does not
 survive a web-editor build — the import is stripped and the component renders
@@ -16,8 +17,9 @@ Usage:
     python3 scripts/endcap.py          # sync
     python3 scripts/endcap.py --check  # exit 1 if anything is out of sync
 
-To widen the rollout, add tab names to TABS and re-run. Idempotent: it adds
-where the endcap belongs and removes it where it does not.
+TABS = None puts the endcap on every page in the navigation. To narrow it,
+set TABS to a set of tab names and re-run. Idempotent: it adds where the
+endcap belongs and removes it where it does not.
 """
 import glob
 import json
@@ -25,9 +27,10 @@ import os
 import re
 import sys
 
-TABS = {"Get started"}
+# None means every tab in docs.json.
+TABS = None
 
-REFERRAL_URL = "https://snowdoughnut.com/refer"
+SUBSCRIBE_URL = "https://snowdoughnut.com"
 AGENCY_URL = "https://snowdoughnut.com/agency"
 UTM = "utm_source=docs&utm_medium=owned&utm_campaign=docs-endcap&utm_content="
 
@@ -44,9 +47,8 @@ END = "{/* sd-endcap:end */}"
 # what makes a default Card look deliberate.
 #
 # No color prop either. Left alone, Card tints its icon with the theme's
-# primary, which is already Brooklyn Green from docs.json — so the brand
-# arrives automatically and both cards stay consistent. The hand-picked
-# hex on one icon was doing the opposite.
+# primary from docs.json, so the brand arrives automatically and both
+# cards stay consistent.
 #
 # Keep both bodies to one short sentence. Cards set their own height from
 # the tallest one, so uneven copy leaves visible dead space in the other.
@@ -55,12 +57,12 @@ BLOCK = f"""{START}
 ---
 
 <Columns cols={{2}}>
-  <Card title="Get the complete Marketing OS" icon="gift" href="{REFERRAL_URL}?{UTM}os-referral" cta="Get your referral link" arrow>
-    Refer 3 friends and every workbook, brief, and checklist here arrives as one connected Notion system.
+  <Card title="Get the complete Marketing OS" icon="gift" href="{SUBSCRIBE_URL}?{UTM}os-subscribe" cta="Subscribe for free" arrow>
+    Subscribe to Snow Doughnut, our free weekly newsletter, and get every workbook, brief, and checklist here as one connected Notion system.
   </Card>
 
   <Card title="Have us run it for you" icon="briefcase" href="{AGENCY_URL}?{UTM}agency" cta="Work with us" arrow>
-    We install this system inside your team and run your paid media against it.
+    We implement this system, use it to help you grow and scale, then hand it all off to you when you're ready.
   </Card>
 </Columns>
 
@@ -73,6 +75,20 @@ LEGACY_RE = re.compile(
     r'^import PageEndcap from "/snippets/page-endcap\.mdx";\n\n|\n*^<PageEndcap />\n?',
     re.M,
 )
+
+
+def tab_names(node, out=None):
+    """Collect every tab name in the navigation."""
+    out = [] if out is None else out
+    if isinstance(node, dict):
+        if "tab" in node:
+            out.append(node["tab"])
+        for value in node.values():
+            tab_names(value, out)
+    elif isinstance(node, list):
+        for item in node:
+            tab_names(item, out)
+    return out
 
 
 def slugs_in_tabs(node, wanted, inside=False, out=None):
@@ -111,7 +127,8 @@ def desired(path, keep):
 
 check = "--check" in sys.argv
 config = json.load(open("docs.json", encoding="utf-8"))
-keep = {s.lstrip("/") for s in slugs_in_tabs(config["navigation"], TABS)}
+tabs = set(tab_names(config["navigation"])) if TABS is None else TABS
+keep = {s.lstrip("/") for s in slugs_in_tabs(config["navigation"], tabs)}
 
 stale = []
 for path in sorted(glob.glob("*.mdx")):
@@ -124,6 +141,6 @@ for path in sorted(glob.glob("*.mdx")):
         open(path, "w", encoding="utf-8").write(target)
 
 verb = "out of sync" if check else "synced"
-print(f"endcap on {len(keep)} page(s): {', '.join(sorted(keep))}")
+print(f"endcap on {len(keep)} page(s)")
 print(f"{len(stale)} file(s) {verb}" + (": " + ", ".join(stale) if stale else ""))
 sys.exit(1 if (check and stale) else 0)
