@@ -58,7 +58,7 @@ BLOCK = f"""{START}
 
 <Columns cols={{2}}>
   <Card title="Get the complete Marketing OS" icon="gift" href="{SUBSCRIBE_URL}?{UTM}os-subscribe" cta="Subscribe for free" arrow>
-    Subscribe to Snow Doughnut, our free weekly newsletter, and get the Notion workspace where you do the work, not just read about it: tasks, a marketing calendar, name generators, briefs, and more.
+    Subscribe to Snow Doughnut, our free weekly newsletter, and get the Notion workspace where you do the work: tasks, a marketing calendar, name generators, briefs, and more.
   </Card>
 
   <Card title="Have us run it for you" icon="briefcase" href="{AGENCY_URL}?{UTM}agency" cta="Work with us" arrow>
