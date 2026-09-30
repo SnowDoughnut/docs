@@ -1,99 +1,103 @@
 ---
-title: "Product catalog"
-description: "A fill-in list of what you sell, each with a name and a short form that campaign names carry. Fill it in so every campaign and report can say which product it was for."
+title: "Product page"
+description: "One page per thing you sell: what it is, who it's for, what it costs, where it lives, and the short form that campaign names carry."
 ---
 
-_Fill in this workbook top to bottom, and expand a concept review if you want the reasoning behind a section. Grayed_ `E.g.` _text is a placeholder. Delete it and replace it with your own._
+_Fill in one page per product. Grayed_ `E.g.` _text is a placeholder. Delete it and replace it with your own._
 
 _Examples on this page use a bullion dealer. Its customers do three things with it: buy metal, sell metal back, and pay to store metal. So its products are "Buy from us", "Sell to us", and "Storage"._
 
-<Note>
-  The goal is to name what you sell, once. Campaign names, briefs, and reports then use those names instead of inventing their own.
-</Note>
+## Before you start
 
-## 1. What you sell
+Decide these once, for every product.
 
-**What counts as one product?** Pick the level at which you would move budget between things.
+- **What counts as one product.** Pick the level at which you would move budget between things. _E.g. Something a customer comes to us to do. Individual coins and bars are stock, not products._
+- **How short forms work.** Each product gets a short form, such as `SELL`. Keep it short, and never rename or reuse it, even after the product is retired. Add it to the Product table in [campaign naming conventions](/campaign-naming-conventions) before any brief mentions the product.
+- **Where the short form goes.** Campaign names carry it. Ad set names carry it only where one campaign covers several products. Ads carry the offer's short form instead. The flat file's [`product` column](/flat-file-template#dimension-columns) picks it up from the campaign name.
+- **Retiring a product.** Set its status to Retired. Keep the page and the short form, so old campaigns and reports still make sense.
 
-_E.g. Something a customer comes to us to do: buy metal, sell metal, or store metal. Individual coins and bars are not products here. They are stock, and they change daily._
+<Accordion title="Concept review: Short forms">
+  The short form turns a name someone typed into a value a report can group by. Without one, "which products did we spend on last quarter?" is answered by reading campaign names and guessing.
 
-<Accordion title="Concept review: What you sell">
-  The unit you pick here decides how coarse or fine every downstream report can be. List too few and you can never tell which one carried the spend. List every item you stock and the catalog becomes a second copy of your inventory system that nobody maintains.
+  Short matters more than readable. The short form sits inside names that already carry channel, objective, and funnel position, and platforms limit how long those names can be.
 
-  Most teams land on the level at which they would actually reallocate budget. If nobody would ever move money between two things, they probably do not need to be two rows. If someone would ask "what did we spend on that one?" and expect an answer, it needs its own row.
-
-  A product is not always a physical thing. For a service business, the products are often the jobs a customer hires you for. The bullion dealer sells metal, but it advertises three different jobs, and each one has its own customers, its own ads, and its own results.
+  Keeping retired products is the part most teams skip and later regret. The page costs nothing, and it is the only thing that makes a two-year-old report readable after the product is gone.
 </Accordion>
 
-## 2. Product list
+## Product details
 
-One row per product. The short form is what campaign names and reports carry, so keep it short and never change it.
+Every product page records these fields alongside the sections below:
 
-Type is Product or Offer. An offer is a way of selling a product, such as a discount or free delivery. It attaches to a product and gets its own row so it can be reported on separately.
+- **Product name** and **short form**.
+- **Status**: Live, Beta, Sunsetting, or Retired.
+- **Owner**: who keeps the page up to date.
+- **Tags**: any grouping you report on, such as product line or category.
+- **Price** and **SKU**.
+- **Destination URL** and **asset folder**.
+- **Shopping feeds**: which feeds list this product, such as [Google Merchant Center](/google-merchant-center-overview) or [Meta Commerce](/meta-commerce-overview). Leave it empty if you don't run one.
 
-| Name | Short form | Type | What it is | Status | Owner |
-| :-- | :-- | :-- | :-- | :-- | :-- |
-| _E.g. Buy from us_ | _E.g._ `BUY` | _E.g. Product_ | _E.g. Customers buy coins and bars, delivered or collected_ | _E.g. Live_ | _E.g. Sales lead_ |
-| _E.g. Sell to us_ | _E.g._ `SELL` | _E.g. Product_ | _E.g. Customers sell metal back to us at a quoted price_ | _E.g. Live_ | _E.g. Buyback lead_ |
-| _E.g. Storage_ | _E.g._ `STORE` | _E.g. Product_ | _E.g. Insured vault storage, billed yearly_ | _E.g. Live_ | _E.g. Operations lead_ |
-| _E.g. Free delivery over $5,000_ | _E.g._ `FREEDEL` | _E.g. Offer_ | _E.g. Applies to Buy from us_ | _E.g. Live_ | _E.g. Sales lead_ |
-| *Add a row* |  |  |  |  |  |
+## 1. One-line description
 
-**Status values:** _E.g. Live or Retired. A retired product keeps its row and its short form, so old reports still make sense._
+**What is it, in one sentence a new hire would understand?**
 
-<Warning>
-  Never reuse or rename a short form. A retired product's short form stays reserved, because campaigns, exports, and dashboards from its lifetime still carry it. Add a new one instead.
-</Warning>
+_E.g. Customers sell metal back to us at a quoted price, paid the same day._
 
-<Accordion title="Concept review: Product list">
-  The short form turns a name someone typed into a value a report can group by. Without one, "which products did we spend on last quarter?" is answered by reading campaign names and guessing, which is why the question usually goes unanswered.
+## 2. Long description
 
-  Short matters more than readable. The short form sits inside names that already carry channel, objective, and funnel position, and platforms limit how long those names can be. Teams that start with `sell-your-gold-to-us` end up cutting it down in different ways within a quarter.
+**What does the customer get, how does it work, and what makes it different?**
 
-  Keeping retired products on the list is the part most teams skip and later regret. The row costs nothing, and it is the only thing that makes a two-year-old report readable after the product is gone.
-</Accordion>
+_E.g. Customers bring or post coins and bars. We test them, quote against the live spot price, and pay by bank transfer once they accept. No minimum amount._
 
-## 3. Where the short form goes
+## 3. Who it's for
 
-**Which names carry the product short form?**
+**Which customer profiles buy it?** Link the profiles from the [customer profile library](/customer-profile-library-overview) rather than describing the customer again.
 
-| Level | Carries the short form? |
-| :-- | :-- |
-| Campaign | _E.g. Yes. Added to the Product table in [campaign naming conventions](/campaign-naming-conventions)._ |
-| Ad group or ad set | _E.g. Only where one campaign covers several products._ |
-| Ad | _E.g. No. The ad's offer field covers what changes at that level._ |
-| *Add a row* |  |
+_E.g. Inherited-metal sellers; collectors trimming a collection._
 
-_E.g. A Search campaign for Sell to us carries_ `SELL` _in its product field. The flat file's_ [`product` column](/flat-file-template#dimension-columns) _picks it up from there, so reports can total spend by product._
+## 4. Price and offer
 
-<Accordion title="Concept review: Where the short form goes">
-  A product list nobody puts into names is a reference document. A short form carried in campaign names and split out into the flat file's `product` column is something every report can group by. Both halves are needed: the name carries the value, and the column receives it.
+**What does it cost, and how is it charged?**
 
-  Campaign level is the usual answer, because most teams already separate products at that level, and `utm_campaign` inherits it for free. Putting it at every level repeats the same value and uses up character limits.
-</Accordion>
+_E.g. We pay spot minus 2%. No fees._
 
-## 4. Adding and retiring a product
+Link any live offers for this product. See [Offers](#offers).
 
-<Steps>
-  <Step title="Add it before it is briefed">
-    A new product gets its row and its short form in section 2 before any campaign brief mentions it. A value invented at build time is one no report recognizes.
-  </Step>
-  <Step title="Add the short form to the naming conventions">
-    Add the value to the Product table in [campaign naming conventions](/campaign-naming-conventions), so it is available the first time someone builds a name.
-  </Step>
-  <Step title="On retirement, change the status only">
-    Set the status to Retired. Keep the row and the short form.
-  </Step>
-</Steps>
+## 5. Where it lives
+
+**Where do ads send people, and where are its approved files?** Record the destination URL and the asset folder.
+
+_E.g._ `snowdoughnut.com/sell` _and the "Sell to us" folder in the brand drive._
+
+## Optional
+
+### 6. Approved claims
+
+**Which claims about this product are approved, word for word?** Include any required qualifier.
+
+_E.g. "Paid the same day", only for offers accepted before 2 p.m._
+
+### 7. Proof points
+
+**What backs the claims up?** Numbers, reviews, awards, or case studies, each with its source.
+
+_E.g. 4.8 stars from 2,300 reviews on Trustpilot, September 2026._
+
+## Offers
+
+An offer is a way of selling a product, such as a discount, a bundle, or free delivery. It has an end date; the product carries on.
+
+Give each offer its own entry: a name, a short form, a status, the discount or terms, start and end dates, the products it applies to, and the campaigns that run it. Ad names carry the offer's short form. See [ad naming conventions](/ad-name-conventions).
+
+_E.g. Free delivery over $5,000, short form_ `FREEDEL`_, applies to Buy from us._
 
 ## Related resources
 
-- [**Campaign naming conventions**](/campaign-naming-conventions) Where the product identifier becomes part of a name.
+- [**Campaign naming conventions**](/campaign-naming-conventions) Where the product short form becomes part of a name.
 - [**Ad naming conventions**](/ad-name-conventions) Where the offer short form sits.
 - [**Positioning**](/positioning) and [**messaging**](/messaging) What you say about the brand and each product.
-- [**Customer profile library**](/customer-profile-library-overview) The other list briefs link to rather than restate.
+- [**Customer profile library**](/customer-profile-library-overview) The profiles a product page links to.
 - [**Marketing campaign brief**](/marketing-campaign-brief) Where a campaign names the product it is selling.
-- [**Google Merchant Center**](/google-merchant-center-overview) and [**Meta Commerce**](/meta-commerce-overview) Where catalog and tag values end up in a feed.
+- [**Google Merchant Center**](/google-merchant-center-overview) and [**Meta Commerce**](/meta-commerce-overview) Where shopping feeds list your products.
 
 {/* sd-endcap:start — generated by scripts/endcap.py, do not edit by hand */}
 
