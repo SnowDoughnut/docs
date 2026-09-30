@@ -26,6 +26,17 @@ toc-item[data-active-deepest] > a::before {
   max-width: none;
 }
 
+/* Page top: more room between the navbar and the eyebrow above the page
+   title. Mintlify pads the content column 24px; double it, and move the
+   "On this page" column down by the same 24px so it still lines up with
+   the eyebrow. */
+#content-area {
+  padding-top: 3rem !important;
+}
+#content-side-layout {
+  padding-top: 2.5rem !important;
+}
+
 /* tab row: center the tabs instead of packing them to the left */
 #navbar .nav-tabs {
   margin-inline: auto;
