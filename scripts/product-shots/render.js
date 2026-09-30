@@ -14,9 +14,9 @@ const fs = require('fs');
     await page.waitForTimeout(150);
     // overflow check on the app window
     const ov = await page.evaluate(() => {
-      const w = document.querySelector('.window'); const r = w.getBoundingClientRect();
+      const w = document.querySelector(".stage"); const r = w.getBoundingClientRect();
       const bad = [];
-      document.querySelectorAll('.page *').forEach(el => { const b = el.getBoundingClientRect(); if (b.bottom > r.bottom + 0.5 || b.right > r.right + 0.5) bad.push(el.className || el.tagName); });
+      document.querySelectorAll(".pop *").forEach(el => { const b = el.getBoundingClientRect(); if (b.bottom > r.bottom + 0.5 || b.right > r.right + 0.5) bad.push(el.className || el.tagName); });
       return bad.slice(0, 5);
     });
     if (ov.length) console.warn(f, 'OVERFLOW:', ov);
