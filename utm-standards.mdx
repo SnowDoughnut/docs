@@ -10,7 +10,7 @@ _Examples throughout use one invented company, **Doughnut Labs**, a SaaS company
 <Note>
   Fill in the core parameter sections first (1 through 3). They apply to every link your team ships. The optional sections (4 and 5) only matter if you run paid search or add custom parameters. Section 6 sets your ID policy and applies to everyone. Section 7 matters if a conversion is recorded in a CRM rather than only in analytics, which is every sales-led business.
 
-  In Notion, set these once in the Naming rules database; the generators apply them.
+  In Notion, source and medium are naming dictionaries, the per-platform choices in sections 3, 4 and 6 are rows in the UTM rules database, and the UTM builder applies both.
 </Note>
 
 <Steps>
@@ -31,6 +31,10 @@ _Examples throughout use one invented company, **Doughnut Labs**, a SaaS company
   </Step>
 </Steps>
 
+<Tip>
+  Keep one list for source and one for medium, and build every link from them. Nobody types a source or medium by hand.
+</Tip>
+
 ## 1. Source standard (`utm_source`)
 
 **List every approved value for `utm_source`, and the one spelling each must always use. Add a rule for who can add a new source.**
@@ -42,9 +46,12 @@ _Examples throughout use one invented company, **Doughnut Labs**, a SaaS company
 | Newsletter | _E.g. `newsletter`_ | _E.g. Our owned product-update email list._ |
 | *Add a row* |  |  |
 
-**Who can add a new source to this list, and how?**
+**Who can add a new source, and how?**
 
-_E.g. Only the analytics lead. Request in the #marketing-ops channel; the list is updated before the campaign launches, never mid-flight._
+| Question | Your answer |
+| :-- | :-- |
+| Who can add one | _E.g. Only the analytics lead._ |
+| How to ask for one | _E.g. Post in #marketing-ops. The list is updated before the campaign launches, never mid-flight._ |
 
 <Accordion title="Concept review: Source standard">
   `utm_source` records where the click came from: the platform, site, or property that sent the visitor. The value of the field comes almost entirely from everyone spelling each source the same way every time. To an analytics platform, `facebook`, `Facebook`, `fb`, and `meta` are four different sources, so one campaign can splinter into four rows that no longer add up.
@@ -86,30 +93,23 @@ _E.g. Only the analytics lead. Request in the #marketing-ops channel; the list i
   The value in `utm_campaign` has to match the name in the ad platform exactly, character for character. That match is what joins platform spend to analytics conversions.
 </Warning>
 
-**Confirm which value goes in `utm_campaign`, and show one filled-in example.**
+**For each platform, pick what `utm_campaign` carries: the platform campaign name, the platform campaign ID, the marketing campaign short form, or a custom value. Add a default for anything not listed.**
 
-| Question | Your answer |
-| :-- | :-- |
-| Value to use | _E.g. The campaign name from [Campaign naming conventions](/campaign-naming-conventions)._ |
-| Name or ID | _E.g. ID when the name would leak strategy or could be renamed, see [section 6](#6-id-versus-name-policy)._ |
-| Example (name) | _E.g. `Meta-Instagram-Awareness-CBO-TOFU`_ |
-| Example (ID) | _E.g. `{{campaign.id}}`_ |
+| Platform | `utm_campaign` carries | Example |
+| :-- | :-- | :-- |
+| Default | _E.g. The platform campaign name._ | _E.g. `Meta-Instagram-Awareness-CBO-TOFU`_ |
+| Meta, LinkedIn, TikTok | _E.g. The platform campaign name._ | _E.g. `Meta-Instagram-Awareness-CBO-TOFU`_ |
+| Google | _E.g. The platform campaign name._ | _E.g. `Google-Search-Leads-tROAS-TOFU`_ |
+| Email | _E.g. The marketing campaign short form. The send goes in `utm_content`._ | _E.g. `FBS`_ |
+| Organic social | _E.g. The marketing campaign short form._ | _E.g. `FBS`_ |
+| Posts outside any campaign | _E.g. A custom value, `always-on`, so the rows still group._ | _E.g. `always-on`_ |
+| *Add a row* |  |  |
 
 **When an ID replaces the readable name, see [section 6](#6-id-versus-name-policy).**
 
 ### Channels with no platform campaign
 
-Email and organic social have no ad platform campaign object, so there is no platform name to match. `utm_campaign` there carries the marketing campaign identifier instead, and that is the one place the rule above bends.
-
-**Record what these channels use, so the exception is deliberate rather than assumed:**
-
-| Channel | What `utm_campaign` carries | Example |
-| :-- | :-- | :-- |
-| Paid channels | _E.g. The platform campaign name, matching the platform exactly._ | _E.g. `Meta-Instagram-Awareness-CBO-TOFU`_ |
-| Email | _E.g. The marketing campaign short form, plus the send._ | _E.g. `FBS`, with the send in `utm_content`_ |
-| Organic social | _E.g. The marketing campaign short form._ | _E.g. `FBS`_ |
-| Posts outside any campaign | _E.g. `always-on`, so the rows still group._ | _E.g. `always-on`_ |
-| *Add a row* |  |  |
+Email and organic social have no ad platform campaign object, so there is no platform name to match. `utm_campaign` there carries the marketing campaign short form instead, and that is the one place the rule above bends. Record it in the table above so the exception is deliberate rather than assumed.
 
 <Warning>
   Use the registered short form from your [campaign naming dictionary](/campaign-naming-conventions), not a fresh slug typed for the occasion. `FBS` and `fresh-batch-trial` and `freshbatch` are three campaigns to an analytics tool, and the whole point of the exception is that these rows still join to the paid rows for the same initiative.
@@ -125,20 +125,15 @@ Email and organic social have no ad platform campaign object, so there is no pla
 
 These two parameters carry the names you built in the other two naming-convention documents. `utm_content` carries the ad set / ad group / variant name; `utm_term` carries the ad (creative) name. Reuse those names rather than inventing new values here.
 
-**Confirm which value goes in each parameter as your default.**
-
-| Parameter | Value to use | Example |
-| :-- | :-- | :-- |
-| `utm_content` | _E.g. The ad set / ad group / variant name from [Ad set / ad group / variant naming conventions](/ad-set-group-naming-conventions)._ | _E.g. `20260601-LLA3-HSL`_ |
-| `utm_term` | _E.g. The ad name from [Ad naming conventions](/ad-name-conventions)._ | _E.g. `AutoGlaze-STATIC-FREETRIAL-TRY-LP`_ |
-
-**Then document what each parameter holds on every platform you run, because the default does not survive contact with paid search.**
+**For each platform, pick what goes in each parameter: the ad set name or ID, the ad name or ID, the keyword, a custom value, or nothing. Note where ad-level results are read. The default row covers any platform not listed.**
 
 | Platform | `utm_content` holds | `utm_term` holds | Ad-level reporting comes from |
 | :-- | :-- | :-- | :-- |
+| Default | _E.g. The ad set name, from [Ad set / ad group / variant naming conventions](/ad-set-group-naming-conventions)._ | _E.g. The ad name, from [Ad naming conventions](/ad-name-conventions)._ | _E.g. `utm_term`_ |
 | Meta | _E.g. The ad set name._ | _E.g. The ad name._ | _E.g. `utm_term`_ |
-| Google Search | _E.g. The ad group name._ | _E.g. `{keyword}`, the matched keyword._ | _E.g. Not available in UTMs. See below._ |
+| Google Search | _E.g. The ad group name._ | _E.g. `{keyword}`, the matched keyword._ | _E.g. Google Ads only. See below._ |
 | Google Demand Gen, Display, PMax | _E.g. The asset group name._ | _E.g. The ad name. No keyword exists._ | _E.g. `utm_term`_ |
+| Email | _E.g. A custom value for the send, like `send-01`._ | _E.g. Nothing._ | _E.g. Your email tool_ |
 | *Add a row* |  |  |  |
 
 <Warning>
@@ -190,7 +185,7 @@ _E.g. A custom parameter is added only when no standard field fits, and only if 
 
 ## 6. ID versus name policy
 
-**Decide, per parameter, whether the link carries a readable name or a platform ID. Note the dynamic field you use to insert each ID.**
+**Decide, per parameter, whether the link carries a readable name or a platform ID. Note the dynamic field you use to insert each ID. Where a platform uses an ID, record it in its row in sections 3 and 4.**
 
 | Parameter | Name or ID | ID field to insert |
 | :-- | :-- | :-- |
