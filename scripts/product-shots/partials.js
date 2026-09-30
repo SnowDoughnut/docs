@@ -32,7 +32,7 @@ const NAV = [
 ];
 function sidebar(active){
   return `<aside class="side">
-    <div class="ws"><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#FFC91F" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.2" fill="#FFC91F" stroke="none"/></svg></span>Snow Doughnut <span class="chev">⌄</span></div>
+    <div class="ws"><img class="mark" src="logo.png" alt="">Snow Doughnut <span class="chev">⌄</span></div>
     <div class="sect">Workspace</div>
     <nav class="nav">${NAV.map(([k,n])=>`<a class="${n===active?'on':''}">${I[k]}${n}</a>`).join('')}</nav>
     <div class="sect">Shared</div>
