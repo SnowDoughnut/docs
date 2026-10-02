@@ -32,7 +32,7 @@ out('01-campaign-brief.html', doc({
     .kv b{display:block;font-weight:600;margin:8px 0 2px;font-size:12px;color:var(--ink-2)}
     .kv p{margin:0}
     .stack{display:flex;flex-direction:column;gap:12px}
-    .pop{left:56px;top:330px;width:640px}
+    .pop{left:20px;top:330px;width:640px}
   `,
   body: `
     <div class="title"><span class="ico">${I.rocket}</span><h2>Spring launch · Doughnut Pro</h2></div>
@@ -140,7 +140,7 @@ out('02-task-management.html', doc({
     .filters{display:flex;gap:8px;margin:0 0 12px;align-items:center}
     .chip{border:1px solid var(--line-2);border-radius:6px;padding:4px 9px;font-size:12px;color:var(--ink-2);display:inline-flex;gap:6px;align-items:center}
     .chip b{font-weight:600;color:var(--ink)}
-    .pop{right:56px;top:430px;width:600px}
+    .pop{right:20px;top:400px;width:600px}
   `,
   body: `
     <div class="title"><span class="ico">${I.check}</span><h2>Tasks</h2></div>
@@ -264,7 +264,7 @@ out('03-calendar.html', doc({
     .ev.sel{outline:2px solid #2f6fde;outline-offset:-1px}
     .flight{position:absolute;left:8px;right:8px;height:18px;border-radius:5px;background:#1f1f1f;color:#fff;font-size:11px;font-weight:600;display:flex;align-items:center;padding:0 8px;gap:6px;z-index:2}
     .flight i{width:6px;height:6px;border-radius:50%;background:var(--brand);display:inline-block}
-    .pop{left:56px;top:420px;width:600px}
+    .pop{left:20px;top:400px;width:600px}
   `,
   body: `
     <div class="title"><span class="ico">${I.cal}</span><h2>Content calendar</h2></div>
@@ -310,7 +310,7 @@ out('04-kpi-reporting.html', doc({
   extraCss: `
     .page{padding:22px 34px 0}
     .stack{display:flex;flex-direction:column;gap:14px}
-    .pop{left:56px;top:330px;width:720px}
+    .pop{left:20px;top:330px;width:720px}
     .pop .sum{font-size:14px;color:var(--ink);margin:0 0 6px}
   `,
   body: `
