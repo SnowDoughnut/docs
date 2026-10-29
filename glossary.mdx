@@ -65,6 +65,10 @@ The 40 to 60 word third-person description of the company used on press releases
 
 The match type that uses the most signals to read intent, matching queries related in meaning rather than in wording. Google's current account structure guidance pairs it with themed ad groups and Smart Bidding. Which match types a theme runs on is the media buyer's decision.
 
+### Builder
+
+The actor that executes a process's mechanical steps: gathering inputs, assembling names and UTMs, drafting to templates, building paused campaigns, running rule-checkable checks, filing, and linking back. A builder can be a person or an AI agent connected to the same tools. A builder never sets anything live and never invents a value a dictionary doesn't hold: a missing input becomes a precise ask to the [owner](#owner), and a missing value gets registered before it's used. Judgment stays with the owner unless a [standing rule](#standing-rule) covers it.
+
 ### Campaign
 
 The top-level container for ads in a platform account: it sets the objective, budget type, and funnel position that everything underneath it inherits. See [campaign naming conventions](/campaign-naming-conventions).
@@ -259,7 +263,7 @@ The test that decides where a theme stops: could one responsive search ad be gen
 
 ### Owner
 
-The one person accountable for a piece of work from start to finish. The owner drives it forward, makes the calls it needs, coordinates anyone else involved, and answers for the result. Ownership is singular: one named person, not a team or a role, so there's never a question of who to ask.
+The one person accountable for a piece of work from start to finish. The owner drives it forward, makes the calls it needs, coordinates anyone else involved, and answers for the result. Ownership is singular: one named person, not a team or a role, so there's never a question of who to ask. The owner is always a person, even when the [builder](#builder) is an AI agent: approvals, go-live calls, rulings, and sign-offs are the owner's.
 
 ### Pacing
 
@@ -316,6 +320,10 @@ Return on ad spend: revenue attributed to a channel divided by that channel's ad
 ### Rollup
 
 Building a longer report from the shorter reports underneath it by summing raw inputs across the shorter periods and recalculating every ratio from the totals, rather than averaging the shorter periods' ratios directly. See [data quality and rollup concepts](/data-quality-and-rollup-concepts).
+
+### Scheduled pass
+
+A recurring job with a defined trigger, actor, and output: the daily flat file fill, a report draft, a review sweep over a register. It replaces a date on a calendar that somebody has to remember. Report schedules live in [reporting cadence](/reporting-cadence).
 
 ### Schema markup
 
@@ -374,6 +382,10 @@ Sales qualified lead: a lead vetted by sales as ready for a direct conversation.
 ### Standard identifier
 
 A permanent, always-present piece of a name (channel, objective, customer profile, offer, and so on) as opposed to a [testing identifier](#testing-identifier). See [naming conventions overview](/naming-conventions-overview#how-a-name-is-built).
+
+### Standing rule
+
+A decision approved once and recorded in a brief or register, so a [builder](#builder) can act on it without a per-instance ask: a pilot's kill-or-scale rule, an always-on campaign's relaunch, a cadence flagged auto-send in [reporting cadence](/reporting-cadence). Where a condition applies, write it as a metric, a threshold, and a date, so any actor can evaluate it without interpretation.
 
 ### Statistical significance
 

@@ -3,9 +3,9 @@ title: "Budget pacing process"
 description: "How to track spend against plan while a campaign is live: the one calculation that matters, when a variance is worth acting on, and what to change when it is."
 ---
 
-[Pacing](/glossary#pacing) is a weekly check with a monthly consequence. A campaign that under-delivers by 8% a week finishes 30% under budget, and nobody notices until the flight is over and the money is gone unspent.
+[Pacing](/glossary#pacing) is a weekly check with a monthly consequence; with an agent filling the flat file daily, it's computed every day for free and surfaced in the [daily brief](/daily-brief) whenever it leaves the on-plan band. A campaign that under-delivers by 8% a week finishes 30% under budget, and nobody notices until the flight is over and the money is gone unspent.
 
-This runs against the daily rate set in [budget planning](/budget-planning).
+This runs against the daily rate recorded on the brief in [budget planning](/budget-planning). Persist each week's pace value (or derive it from the daily spend rows), so "holds two weeks" below is checkable rather than remembered.
 
 ## The one calculation
 
@@ -35,7 +35,7 @@ Not every variance is a problem. Acting on noise is how a campaign gets reset ou
 
 ## Underspending is a delivery problem first
 
-The instinct is to raise budgets. Check the cause first, because raising the budget on a campaign that can't spend what it already has does nothing.
+The instinct is to raise budgets. Check the cause first, because raising the budget on a campaign that can't spend what it already has does nothing. Every check in the table is readable from the platform (or its API), so an agent can run all five and attach the findings to a pacing alert; the intervention that follows is the owner's call.
 
 | Likely cause | Check |
 | :-- | :-- |
@@ -67,9 +67,9 @@ The instinct is to raise budgets. Check the cause first, because raising the bud
 
 ## Record every change
 
-Any budget change explains a movement in a later report. Undocumented changes are why a report says performance improved when what actually happened is that someone moved \$4,000.
+Any budget change explains a movement in a later report. Undocumented changes are why a report says performance improved when what actually happened is that someone moved \$4,000. Every change that moves money is a person's decision; an agent recommends with its findings attached and never moves budget on its own.
 
-Log the date, what changed, by how much, who decided, and why. The [campaign QA checklist](/campaign-qa-checklist) checks this weekly, and [budget reporting](/budget-reporting-process) reads from it.
+Log the date, what changed, by how much, who decided, and why, in the data dictionary's [decisions and changes](/marketing-reporting-data-dictionary#decisions-and-changes) section. A change an agent executes through a platform API is logged there at execution time by construction; a manual change still needs the entry. The [campaign QA checklist](/campaign-qa-checklist) checks this weekly, and [budget reporting](/budget-reporting-process) reads from it.
 
 ## Exceptions
 

@@ -15,7 +15,7 @@ Four hold across every dashboard.
 
 1. **Every dashboard reads from the [flat file](/flat-file-template).** Not from a platform connector, not from a separate export. A dashboard on its own data source will eventually disagree with a report, and there is no way to settle which is right.
 2. **Every number traces to a row in the [data dictionary](/marketing-reporting-data-dictionary).** A metric on a dashboard that isn't defined anywhere is a metric being invented in public.
-3. **Every dashboard has one named owner.** Not a team. Dashboards with no owner are the ones that break silently and stay broken.
+3. **Every dashboard has one named owner.** Not a team. The owner is a person even when an agent builds and refreshes the dashboard. Dashboards with no owner are the ones that break silently and stay broken.
 4. **Every dashboard answers a stated question.** Written on the dashboard itself, so a viewer knows what it's for and a reviewer can tell whether it still does its job.
 
 ## The register
@@ -68,12 +68,12 @@ Broad view access is usually right. Broad edit access is how a shared dashboard 
 
 Dashboards need maintenance in the opposite direction from most documents: the work is removing tiles, not adding them.
 
-At each review, per dashboard:
+At each review, per dashboard. The first two checks are mechanical, so the dashboard's maintaining actor can run them each quarter and bring the answers; the rulings are the owner's:
 
-- Does it still answer its stated question?
 - Has anyone opened it this quarter? Most tools can tell you.
+- Do the numbers still match the flat file? Reconcile one figure.
+- Does it still answer its stated question?
 - Which tiles have not changed a decision in a quarter? Delete them.
-- Do the numbers still match the flat file? Check one figure by hand.
 - Is the owner still the right person, and still here?
 
 Retire rather than delete. Mark it retired, note what replaced it, and keep the row. Otherwise the same dashboard gets rebuilt in six months by someone who assumed it never existed.
@@ -86,6 +86,8 @@ Retire rather than delete. Mark it retired, note what replaced it, and keep the 
 ## Before you build a new one
 
 Check the register first. Most requests for a new dashboard are answered by an existing one, or by adding a filter to it. A near-duplicate dashboard splits the audience and doubles the maintenance, in the same way a near-duplicate landing page splits traffic.
+
+A dashboard whose stated question is already answered by the scheduled [daily brief](/daily-brief) is a retirement candidate: "is today tracking normal?" arrives as a push, and dashboards earn their place below the brief's grain, for on-demand exploration of why.
 
 ## Related resources
 

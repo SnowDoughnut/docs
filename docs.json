@@ -713,6 +713,7 @@
               {
                 "group": "Recurring reports",
                 "pages": [
+                  "daily-brief",
                   "weekly-reporting-process",
                   "monthly-reporting-process",
                   "quarterly-reporting-process",

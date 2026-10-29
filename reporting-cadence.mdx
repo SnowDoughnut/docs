@@ -1,14 +1,48 @@
 ---
 title: "Reporting cadence"
-description: "How often each report runs: weekly, monthly, quarterly, and yearly."
+description: "The schedule register: when each report runs, who or what drafts it, who approves it, whether it auto-sends, and where it lands. Fill it in once; every scheduled day in the reporting processes resolves here."
 ---
 
-How often each recurring report runs, and what each cadence is for: a weekly report catches what needs attention now, a monthly report checks the target, a quarterly review checks the strategy, and an annual review sets next year's plan. See [weekly](/weekly-reporting-process), [monthly](/monthly-reporting-process), [quarterly](/quarterly-reporting-process), and [yearly](/yearly-reporting-process) reporting processes for the steps behind each cadence, and [report writing concepts](/report-writing-concepts#cadence-changes-what-a-report-is-for-not-just-its-length) for how to match reporting frequency to decision frequency.
+_Fill in the register below. Grayed `E.g.` text is Doughnut Labs' filled-in answer; delete it and write your own._
 
-Every cadence above weekly is a rollup of the cadence below it, not a new report; see [data quality and rollup concepts](/data-quality-and-rollup-concepts) for how that works.
+Each cadence answers a different question: the [daily brief](/daily-brief) flags exceptions and pacing, a [weekly report](/weekly-reporting-process) catches what needs attention now, a [monthly report](/monthly-reporting-process) checks the target, a [quarterly review](/quarterly-reporting-process) checks the strategy, and an [annual review](/yearly-reporting-process) sets next year's plan. Every cadence is a rollup of the flat file's dated rows, not a new report; see [data quality and rollup concepts](/data-quality-and-rollup-concepts) for how that works, and [report writing concepts](/report-writing-concepts#cadence-changes-what-a-report-is-for-not-just-its-length) for matching reporting frequency to decision frequency.
+
+<Note>
+  Two roles appear in the register. **Drafted by** can be a person or an AI agent connected to the flat file and your sources of truth. **Approved by** is always a person: the report owner reads, edits, and approves before a report goes out. **Auto-send** is that owner's standing rule to skip the per-report approval for a cadence, set here once rather than decided send by send. Pick the channel each audience actually reads; one team wants everything in Slack, another wants email, another wants a doc. A daily brief usually auto-sends, since it reports only exceptions; whether anything else does is yours to decide.
+</Note>
+
+## The register
+
+One row per scheduled job. The first row is the data load, not a report; it is what makes every report below it cheap to produce.
+
+| Job | Runs | Drafted by | Approved by | Auto-send | Delivered to | Via |
+| :-- | :-- | :-- | :-- | :-- | :-- | :-- |
+| Flat file fill | _E.g. Daily, 07:00_ | _E.g. AI agent_ | _E.g. Checks run on every fill_ | _E.g. Not sent_ | _E.g. Flat file_ | _E.g. Direct write_ |
+| [Daily brief](/daily-brief) | _E.g. Daily, 08:00_ | _E.g. AI agent_ | _E.g. None; exceptions only_ | _E.g. Yes_ | _E.g. Priya Desai_ | _E.g. Slack, #marketing_ |
+| Weekly report | _E.g. Tuesday, 09:00_ | _E.g. AI agent_ | _E.g. Marco Silva_ | _E.g. No_ | _E.g. Growth team_ | _E.g. Email_ |
+| Monthly report | _E.g. 4th business day_ | _E.g. AI agent_ | _E.g. Priya Desai_ | _E.g. No_ | _E.g. Leadership_ | _E.g. Email, linked doc_ |
+| Quarterly review | _E.g. 3 days before the review meeting_ | _E.g. AI agent_ | _E.g. Priya Desai_ | _E.g. Deck sends once approved_ | _E.g. Leadership, board_ | _E.g. Meeting deck_ |
+| Annual review | _E.g. 4 weeks before planning kickoff_ | _E.g. AI agent_ | _E.g. Priya Desai_ | _E.g. No_ | _E.g. Leadership, board_ | _E.g. Meeting deck_ |
+| _Add a row_ |  |  |  |  |  |  |
+
+Templates: [weekly](/weekly-report-template), [monthly](/monthly-report-template), [quarterly](/quarterly-report-template), [annual](/annual-report-template). Leave a row blank for a cadence you don't yet produce; most brands start with the fill, the daily brief, and a monthly report, and add weekly once spend justifies it.
+
+## Fixed dates the schedule depends on
+
+Two cadences hang off dates only your team knows. Record them here so "three days before the meeting" and "before planning starts" resolve without asking anyone.
+
+| Date | Fill in |
+| :-- | :-- |
+| Quarterly review meeting | _E.g. Second Thursday after quarter end_ |
+| Annual planning kickoff | _E.g. November 15_ |
+
+## Where sent reports go
+
+Every sent report gets logged in its archive: [weekly](/weekly-report-archive), [monthly](/monthly-report-archive), [quarterly](/quarterly-report-archive), [annual](/annual-report-archive). The daily brief is not archived; its numbers already live in the flat file, and yesterday's brief has no reader.
 
 ## Related resources
 
+- [Report on results](/report-on-results)
 - [Weekly reporting process](/weekly-reporting-process)
 - [Monthly reporting process](/monthly-reporting-process)
 - [Quarterly reporting process](/quarterly-reporting-process)

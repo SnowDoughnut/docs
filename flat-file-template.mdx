@@ -6,7 +6,7 @@ description: "The schema for the single spreadsheet that holds every metric, for
 _Build the schema below as a plain spreadsheet. Examples use Doughnut Labs, a SaaS company that sells disruptive Doughnut Technology, modelled here as its direct-to-consumer arm so the numbers have orders and revenue behind them._
 
 <Note>
-  Copy the blank template ([spreadsheet](https://docs.google.com/spreadsheets/d/19uHFbXOlrPPh5FgEbqFfPrB0P8mnwtswCxVKZzt6tag/export?format=xlsx) or [CSV](https://drive.google.com/uc?export=download&id=1sGO2aQvigQ1E8Vcfro09PxmDae6Gdg3m)) into your own spreadsheet and start filling in rows each week. Nothing about the structure changes when you add a channel or a metric; you just add rows. See [data quality and rollup concepts](/data-quality-and-rollup-concepts) for why this shape, one row per metric, works better than the wide table most people picture first.
+  Copy the blank template ([spreadsheet](https://docs.google.com/spreadsheets/d/19uHFbXOlrPPh5FgEbqFfPrB0P8mnwtswCxVKZzt6tag/export?format=xlsx) or [CSV](https://drive.google.com/uc?export=download&id=1sGO2aQvigQ1E8Vcfro09PxmDae6Gdg3m)) into your own spreadsheet and start filling in rows each day, or each week by hand. Nothing about the structure changes when you add a channel or a metric; you just add rows. See [data quality and rollup concepts](/data-quality-and-rollup-concepts) for why this shape, one row per metric, works better than the wide table most people picture first.
 </Note>
 
 ## Why one row per metric
@@ -20,22 +20,22 @@ Most people picture a metrics table like this, metrics down the side, dates acro
 
 That's a fine way to look at data. It's a poor way to store it, because adding a second channel means either a second table, a second header row, or metric names that awkwardly embed the channel (`Ad spend (Meta)`, `Ad spend (Google)`). Every one of those breaks the moment you add a third channel.
 
-The fix is to store one row per period, channel, and metric instead. The base period is a week; see [why weeks, not days](#why-weeks-not-days):
+The fix is to store one row per date, channel, and metric instead:
 
-| Week starting | Week ending | Channel | Metric | Value |
-| :-- | :-- | :-- | :-- | :-- |
-| 2026-06-01 | 2026-06-07 | meta | ad\_spend | 61400 |
-| 2026-06-01 | 2026-06-07 | meta | impressions | 1204300 |
-| 2026-06-01 | 2026-06-07 | google\_search | ad\_spend | 28900 |
+| Date | Channel | Metric | Value |
+| :-- | :-- | :-- | :-- |
+| 2026-06-01 | meta | ad_spend | 8770 |
+| 2026-06-01 | meta | impressions | 172040 |
+| 2026-06-01 | google_search | ad_spend | 4130 |
 
 Nothing about this structure changes when a channel or a metric gets added. You add rows, never new columns. The wide table at the top of this page is one pivot table away from this format; it's a view you generate, not the thing you store.
 
 ## The schema
 
-Sixteen columns, in two blocks. The **core** nine describe the measurement. The **dimension** seven say what was being measured, and they are what every naming convention in this knowledge base exists to fill.
+Fifteen columns, in two blocks. The **core** eight describe the measurement. The **dimension** seven say what was being measured, and they are what every naming convention in this knowledge base exists to fill. Each row covers one day, so a report over any date range, such as October 2 to November 1, is a filter, never a restructure.
 
 <Info>
-  The core nine are the same for every business. Some of the dimension columns only earn their place in some businesses: `product` matters once you sell more than one thing, and `attributed_week` matters once results arrive later than the spend that caused them. Leave a column out until you need it, and add it from the week you do. See [which columns your business needs](#which-columns-your-business-needs).
+  The core eight are the same for every business. Some of the dimension columns only earn their place in some businesses: `product` matters once you sell more than one thing, and `attributed_date` matters once results arrive later than the spend that caused them. Leave a column out until you need it, and add it from the day you do. See [which columns your business needs](#which-columns-your-business-needs).
 </Info>
 
 ### Core columns
@@ -44,8 +44,7 @@ Always filled in, on every row.
 
 | Column | What it holds | Example |
 | :-- | :-- | :-- |
-| `week_start` | The Monday of the week this row covers | `2026-06-08` |
-| `week_end` | The Sunday of the week this row covers | `2026-06-14` |
+| `date` | The day this row covers, `YYYY-MM-DD` | `2026-06-08` |
 | `grain` | What this row measures: `channel`, `campaign`, `ad_group`, or `ad` | `campaign` |
 | `channel` | Lowercase channel name, or `blended` for business-level numbers | `meta` |
 | `metric` | Lowercase metric name, matching a metric in your [data dictionary](/marketing-reporting-data-dictionary) | `ad_spend` |
@@ -65,7 +64,7 @@ Filled down to the row's grain, blank below it. Leave them genuinely blank, not 
 | `ad` | The ad name | `ad` only |
 | `product` | The product identifier from your [product pages](/product-catalog) | `campaign` and below |
 | `experiment_id` | The experiment or pilot ID, blank if the row is neither | Wherever the test runs |
-| `attributed_week` | The week this result is **credited to**, when that differs from the week it happened. Blank on ordinary rows | Any |
+| `attributed_date` | The date this result is **credited to**, when that differs from the date it happened. Blank on ordinary rows | Any |
 | `notes` | Optional, anything worth flagging on this specific row | Any |
 
 Each of these has exactly one source, and none of them is typed by hand at report time:
@@ -77,33 +76,33 @@ Each of these has exactly one source, and none of them is typed by hand at repor
 | `ad` | [Ad naming conventions](/ad-name-conventions) |
 | `product` | The product segment of the campaign name, split out at import. See [product pages](/product-catalog#before-you-start) |
 | `experiment_id` | The [experiment ID](/experiment-id-convention) or [pilot ID](/pilot-brief) appended to the name at the level the test targets |
-| `attributed_week` | Your CRM or analytics platform, from the stored source fields on the record. See [where the values get stored](/utm-standards#7-where-the-values-get-stored) |
+| `attributed_date` | Your CRM or analytics platform, from the stored source fields on the record. See [where the values get stored](/utm-standards#7-where-the-values-get-stored) |
 
 <Warning>
   **Never sum across grains.** A week has an `ad_spend` row at channel grain and several more at campaign grain, and they describe the same money. Adding them together double-counts it. Filter to a single `grain` value before adding anything up, every time, exactly as you already filter to a single period.
 </Warning>
 
-### Lagging outcomes and the week they belong to
+### Lagging outcomes and the date they belong to
 
 Some results arrive long after the spend that caused them. A deal closing in June was often generated by leads, and budget, from March. Two pages in this framework tell you to report those against the period that generated them rather than the period they landed in, and this is the column that makes that possible.
 
 | Column | Answers |
 | :-- | :-- |
-| `week_start` / `week_end` | When did this happen? |
-| `attributed_week` | Which week's effort is it credited to? |
+| `date` | When did this happen? |
+| `attributed_date` | Which day's effort is it credited to? |
 
-On an ordinary row the two are the same thing, so `attributed_week` stays blank. On a lagging outcome they differ, and both are needed: the close date is a fact about the deal, the attributed week is what lets the cost per result be calculated against the spend that produced it.
+On an ordinary row the two are the same thing, so `attributed_date` stays blank. On a lagging outcome they differ, and both are needed: the close date is a fact about the deal, the attributed week is what lets the cost per result be calculated against the spend that produced it.
 
 **A closed deal, closing in June, generated by March's leads:**
 
-| week\_start | attributed\_week | grain | channel | metric | value | unit |
+| date | attributed_date | grain | channel | metric | value | unit |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
 | 2026-06-08 | 2026-03-09 | channel | google\_search | closed\_won | 0.6 | count |
 | 2026-06-08 | 2026-03-09 | channel | linkedin | closed\_won | 0.4 | count |
 | 2026-06-08 | 2026-03-09 | channel | google\_search | closed\_won\_value | 21000.00 | currency |
 | 2026-06-08 | 2026-03-09 | channel | linkedin | closed\_won\_value | 14000.00 | currency |
 
-Cost per closed-won for the March cohort is then March's `ad_spend` divided by every `closed_won` row whose `attributed_week` falls in March, whenever those deals actually closed. Filtering on `week_start` instead gives you June's spend over June's closes, which is the number all three pages warn against.
+Cost per closed-won for the March cohort is then March's `ad_spend` divided by every `closed_won` row whose `attributed_date` falls in March, whenever those deals actually closed. Filtering on `date` instead gives you June's spend over June's closes, which is the number all three pages warn against.
 
 <Warning>
   A cohort read is never final. Deals from a recent cohort are still open, so its cost per closed-won will only ever fall as more of them close. Read a cohort against cohorts of the same age, not against last month, and mark rows from an incomplete cohort with `is_estimate` set to `true`.
@@ -119,7 +118,7 @@ Where an attribution model splits one outcome across several channels, the credi
 | :-- | :-- |
 | Which metrics may be fractional | Outcome counts that an attribution model splits: `closed_won`, `leads`, `mqls`, `conversions` |
 | Which may never be | Platform-reported counts: `impressions`, `clicks`, `sessions`. Nothing splits those |
-| What the fractions must do | Sum to the whole outcome across all channels for that `attributed_week`. Two channels on one deal sum to 1.0, not 0.5 and 0.6 |
+| What the fractions must do | Sum to the whole outcome across all channels for that `attributed_date`. Two channels on one deal sum to 1.0, not 0.5 and 0.6 |
 | Where the model is recorded | The `ATTRIBUTION APPLIED` line of the metric's block in the [data dictionary](/marketing-reporting-data-dictionary), not per row |
 | Rounding | Store at least two decimal places. Rounding 0.33 three ways loses a deal every three deals |
 
@@ -144,19 +143,19 @@ This file has a fixed core and a set of extensions. Which extensions apply depen
 | `campaign`, `ad_group`, `ad` | You report below channel level. Almost everyone eventually |
 | `product` | You sell more than one thing and would ever move budget between them. See [product pages](/product-catalog) |
 | `experiment_id` | You run tests or pilots |
-| `attributed_week` | Results arrive later than the spend that caused them: any sales-led business with a pipeline, and any subscription business reporting on payback |
+| `attributed_date` | Results arrive later than the spend that caused them: any sales-led business with a pipeline, and any subscription business reporting on payback |
 
 **Ecommerce and sales-led businesses need different extensions**, and this is the main place the difference shows up:
 
 | | Ecommerce | Sales-led |
 | :-- | :-- | :-- |
 | Outcome arrives | Same week as the spend, mostly | Weeks or months later |
-| `attributed_week` | Rarely needed | Required, or cost per closed-won is wrong |
+| `attributed_date` | Rarely needed | Required, or cost per closed-won is wrong |
 | Fractional credit | Uncommon, one session one order | Normal, several channels touch one deal |
 | Outcome metrics | [Ecommerce starter pack](/ecommerce-metrics-starter-pack) | [Sales-led starter pack](/sales-led-metrics-starter-pack) |
 | Where deal data comes from | The store platform | The CRM, see [where the values get stored](/utm-standards#7-where-the-values-get-stored) |
 
-Adding a column later costs nothing structural. You start filling it from that week forward, and older rows keep whatever they were collected with.
+Adding a column later costs nothing structural. You start filling it from that day forward, and older rows keep whatever they were collected with.
 
 ### Only store the grains you report on
 
@@ -169,11 +168,17 @@ Every extra grain multiplies the row count: a week with 40 campaigns, 120 ad gro
 | `ad_group` | A recurring report or an experiment needs the ad set level |
 | `ad` | An experiment targets creative, or ad-level reporting is a standing need |
 
-Adding a grain later costs nothing structural. You start writing the extra rows from that week forward, and history stays at whatever grain it was collected at.
+Adding a grain later costs nothing structural. You start writing the extra rows from that day forward, and history stays at whatever grain it was collected at.
 
-### Why weeks, not days
+### The base grain is a day
 
-This framework reports on a weekly base grain, since that's the shortest cadence most brands actually act on, and everything longer (monthly, quarterly, annual) is a rollup built from weeks rather than a separately-collected number. If your team genuinely makes same-day decisions from data, add a daily grain alongside the weekly one; most brands don't need to.
+Each row covers one day, and every report is a date-range filter over the rows: a week, a calendar month, a quarter, or any range you need, such as October 2 to November 1. Nothing ties a report to period boundaries the file holds, because the file holds none.
+
+Daily rows were the expensive option when a person loaded the file by hand, so teams loaded weekly and accepted the rough edges: month-to-date reads, weeks straddling a month boundary. An agent filling the file each morning removes the loading cost, and the rough edges with it. Reporting cadence is a separate choice: the weekly report stays the shortest written report, because day-over-day movement is mostly noise. If you do load by hand, weekly loading still works; write the week's totals as one row dated the Monday of that week, and keep the choice consistent.
+
+### Daily fill and restatement
+
+When an agent loads the file, it writes yesterday's rows each morning: one row per metric, per channel, per grain you store. Conversion metrics settle over several days, so recent rows carry `is_estimate` set to `true` and get restated in place once the platform's figures settle; spend and impressions settle fast and rarely need the flag. Record the restatement window in the [data dictionary](/marketing-reporting-data-dictionary), and treat a restatement as an update to the row, never a second row.
 
 ### `blended` is a real channel value, not a summary row
 
@@ -198,13 +203,13 @@ See the [formula blocks in the data dictionary](/marketing-reporting-data-dictio
   One exception, and it is worth naming because the rule above reads as absolute. A few metrics are aggregates of a grain this file does not hold: `pipeline_value` is summed from individual CRM deal records, and `sales_cycle_days` is averaged across deals. Neither can be recalculated from anything in the flat file, because the deal-level rows live in the CRM. Store them as inputs, and record in the [data dictionary](/marketing-reporting-data-dictionary) which system computed them and over what set, so the number can be reproduced where it was made.
 </Info>
 
-## A worked week
+## A worked day
 
-One week at two grains, showing how the same money appears once per grain. Dimension columns are trimmed to the four that carry values here; a real file keeps all six.
+One day at two grains, showing how the same money appears once per grain. Dimension columns are trimmed to the four that carry values here; a real file keeps all six.
 
-**Channel grain.** What weekly and monthly reporting reads.
+**Channel grain.** What every report reads, over whatever date range it covers.
 
-| week\_start | grain | channel | metric | value | unit | source | campaign | product |
+| date | grain | channel | metric | value | unit | source | campaign | product |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
 | 2026-06-08 | channel | meta | ad\_spend | 61400.00 | currency | meta\_ads |  |  |
 | 2026-06-08 | channel | meta | purchases | 712 | count | meta\_ads |  |  |
@@ -214,27 +219,27 @@ One week at two grains, showing how the same money appears once per grain. Dimen
 
 **Campaign grain.** The same Google spend, split across the campaigns that make it up.
 
-| week\_start | grain | channel | metric | value | unit | source | campaign | product | experiment\_id |
+| date | grain | channel | metric | value | unit | source | campaign | product | experiment_id |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
 | 2026-06-08 | campaign | google\_search | ad\_spend | 17300.00 | currency | google\_ads | Google-FBS-Search-Trial-tCPA-DAPRO-TOFU | DAPRO | |
 | 2026-06-08 | campaign | google\_search | ad\_spend | 8200.00 | currency | google\_ads | Google-FBS-Search-Trial-tCPA-DASTART-TOFU | DASTART | |
 | 2026-06-08 | campaign | google\_search | ad\_spend | 3400.00 | currency | google\_ads | Google-AO-Search-Leads-tCPA-BRAND-BOFU | BRAND | PILOT04 |
 | 2026-06-08 | campaign | google\_search | purchases | 214 | count | google\_ads | Google-FBS-Search-Trial-tCPA-DAPRO-TOFU | DAPRO | |
 
-The three campaign-grain `ad_spend` rows add to 28,900, the channel-grain figure. **That is why they are never summed together.** A pivot that doesn't filter on `grain` reports 57,800 of Google spend in a week that had 28,900.
+The three campaign-grain `ad_spend` rows add to 28,900, the channel-grain figure. **That is why they are never summed together.** A pivot that doesn't filter on `grain` reports 57,800 of Google spend on a day that had 28,900.
 
-With the `product` column populated, "what did we spend on Analytics Pro this week?" is a filter on one column: `grain = campaign`, `product = DAPRO`. Without it, that question needs someone to read campaign names and add up by hand.
+With the `product` column populated, "what did we spend on Analytics Pro this period?" is a filter on one column: `grain = campaign`, `product = DAPRO`. Without it, that question needs someone to read campaign names and add up by hand.
 
 Note what's absent: no `cost_per_click`, `roas`, or `contribution_margin` rows. Those get calculated when a report needs them, not stored.
 
-## Rolling weeks up into months, quarters, and years
+## Rolling days up into weeks, months, quarters, and years
 
-A monthly total is every matching row, filtered to the weeks that fall in that month, added together, with every ratio then recalculated from the summed totals rather than averaged from the weekly ratios. A spreadsheet pivot table does this in a few clicks:
+A period total is every matching row, filtered to the dates that fall in that period, added together, with every ratio then recalculated from the summed totals rather than averaged from smaller-period ratios. Any date range works the same way: a Monday-to-Sunday week, a calendar month, a quarter, or October 2 to November 1. A spreadsheet pivot table does this in a few clicks:
 
 1. Select the whole flat file range.
 2. Insert a pivot table.
 3. **Filter `grain` to a single value.** Do this first, before anything else. A pivot spanning two grains double-counts every number it touches.
-4. Set **rows** to `metric`, **columns** to `week_start` (or filter to a channel first if you want one channel's view).
+4. Set **rows** to `metric`, **columns** to `date`, grouped into weeks or months in the pivot (or filter to a channel first if you want one channel's view).
 5. Set **values** to sum of `value`.
 6. Filter `channel` to the one you want, or leave it as a row field to compare channels side by side.
 
@@ -247,23 +252,25 @@ To report per product, per campaign, or on a single test, keep step 3 and change
 | Spend by product | `grain = campaign` | `product` |
 | Spend by campaign | `grain = campaign` | `campaign` |
 | One pilot's or experiment's rows | `grain = campaign`, `experiment_id = PILOT04` | `metric` |
-| Creative performance in a test | `grain = ad`, `experiment_id = TEST01` | `ad` | For a monthly rollup, filter the pivot's date range to the weeks in that month, and let the sum do the adding up. Then recalculate every ratio (ROAS, conversion rate, contribution margin) from the summed totals shown in the pivot, exactly as the [monthly report template](/monthly-report-template) walks through.
+| Creative performance in a test | `grain = ad`, `experiment_id = TEST01` | `ad` |
+
+For any rollup, filter the pivot's date range to the period's dates and let the sum do the adding up. Then recalculate every ratio (ROAS, conversion rate, contribution margin) from the summed totals shown in the pivot, exactly as the [monthly report template](/monthly-report-template) walks through.
 
 See [data quality and rollup concepts](/data-quality-and-rollup-concepts) for a worked example of why summing first and recalculating after is the only version of this that produces a correct number.
 
-## Checks before you trust a week's rows
+## Checks before you trust new rows
 
-Run through this list before using a week's data in a report. None of it requires code, just a scan of the new rows.
+Run through this list before using new rows in a report. The checks are testable assertions: a person can scan for them, and the agent that loaded the rows can run them on every fill.
 
 **Structural**
 
-- Every row has all nine core columns filled in.
-- `week_end` is six days after `week_start`.
+- Every row has all eight core columns filled in.
+- `date` is a valid calendar day in `YYYY-MM-DD` form.
 - `grain` is one of `channel`, `campaign`, `ad_group`, `ad`.
 - Dimension columns are filled down to the row's grain and blank below it. A campaign-grain row with an `ad` value is a row at the wrong grain.
 - `channel` matches your approved list in the data dictionary's source of truth section.
 - `metric` matches a metric defined in the data dictionary's formula blocks.
-- No duplicate rows for the same week, grain, channel, metric, and dimension set.
+- No duplicate rows for the same date, grain, channel, metric, and dimension set. A restatement updates the existing row.
 - `value` is a bare number: no `$`, no `%`, no commas.
 
 **Dimensions**
@@ -279,14 +286,14 @@ Run through this list before using a week's data in a report. None of it require
 - Counts are whole numbers, unless the metric carries fractional attribution credit. See [fractional credit](#fractional-credit) for which metrics may, and what the fractions have to sum to.
 - `clicks` is less than or equal to `impressions`.
 - `purchases` is less than or equal to any funnel stage above it (checkouts, add-to-carts).
-- No gaps: every week has a full set of rows for every channel you track.
+- No gaps: every day has a full set of rows for every channel you track.
 
 **Cross-checks**
 
-- Spend matches what the ad platforms themselves report for the week.
+- Spend matches what the ad platforms themselves report for the same dates.
 - `total_revenue` matches your approved source of truth.
 - Sum of channel-level `conversion_value` sits within the normal gap you recorded against `total_revenue` in the data dictionary; it should be lower, never higher by an unusual margin.
-- For any grain you store below `channel`, its rows sum to the channel-grain figure for the same week and metric. A gap means a campaign is missing from the file or one is being counted twice.
+- For any grain you store below `channel`, its rows sum to the channel-grain figure for the same date and metric. A gap means a campaign is missing from the file or one is being counted twice.
 
 If a check fails, fix it before building anything on top of that week's data. An error caught here costs a few minutes. The same error found after it's already shaped a report costs a great deal more.
 

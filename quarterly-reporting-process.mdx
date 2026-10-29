@@ -3,7 +3,7 @@ title: "Quarterly reporting process"
 description: "The process for producing the quarterly review by rolling up the quarter's three monthly reports: sum the flat file's inputs across the quarter, review whether the measurement setup itself still holds, then deliver as a meeting."
 ---
 
-The quarterly review answers a strategic question the monthly report doesn't: is the strategy working? It rolls up the quarter's three monthly reports, and it's the one cadence in this framework that includes a formal check on the [data dictionary](/marketing-reporting-data-dictionary) itself, not just the numbers running through it.
+The quarterly review answers a strategic question the monthly report doesn't: is the strategy working? It rolls up the quarter's three monthly reports, and it's the one cadence in this framework that includes a formal check on the [data dictionary](/marketing-reporting-data-dictionary) itself, not just the numbers running through it. An AI agent can roll up the numbers, pull the trend, assemble the evidence for the measurement review, and draft the deck; the answers in the review, the meeting, and the decisions are the owner's.
 
 <Info>
   This process uses the [**data dictionary**](/marketing-reporting-data-dictionary), the [**flat file**](/flat-file-template), and the [**quarterly report template**](/quarterly-report-template).
@@ -52,13 +52,23 @@ Line up the metric against at least the three prior quarters. A single quarter's
 
 ## 3. Run the measurement review
 
-This is a five-minute check, once a quarter, and it's the section most teams are tempted to skip. Work through the data dictionary and confirm: is the north star still right, are the tier 1 KPIs still right, did any definition change this quarter, is the attribution model still appropriate, was it validated this quarter, are the sources of truth still correct, and is there an open question older than two quarters.
+This is a short check, once a quarter, and it's the section most teams are tempted to skip. Work through the checklist; an agent can pre-fill the evidence column from the dictionary's change log and open questions, and the answers are the owner's to give.
+
+| Question | Still holds? | Evidence |
+| :-- | :-- | :-- |
+| Is the north star still right? |  | _E.g. No definition changes this quarter_ |
+| Are the tier 1 KPIs still right? |  |  |
+| Did any definition change this quarter? |  | _E.g. Change log entries, with effective dates_ |
+| Is the attribution labeling still appropriate? |  |  |
+| Was attribution validated this quarter? |  | _E.g. Geo holdout run in May, result logged_ |
+| Are the sources of truth still correct? |  |  |
+| Any open question older than two quarters? |  | _E.g. Open questions table, filtered by date_ |
 
 Most quarters, the honest answer to all of these is "yes, still holds," and that confirmation is itself worth recording. Any change gets logged in the data dictionary's decisions and changes section with an effective date, before the next quarter's numbers get produced under the new definition.
 
 ## 4. Write and send the deck
 
-Fill in the [quarterly report template](/quarterly-report-template). Start with goals set last quarter, not with whichever metrics happen to look best this quarter; that ordering keeps the review honest about the plan rather than a highlight reel. Send the deck two days ahead of the meeting so the goals and trend sections can be read in advance.
+Fill in the [quarterly report template](/quarterly-report-template). Start with goals set last quarter, not with whichever metrics happen to look best this quarter; that ordering keeps the review honest about the plan rather than a highlight reel. The meeting date lives in the [reporting cadence](/reporting-cadence) register's fixed dates; the owner approves the deck, and it goes out two days ahead of the meeting so the goals and trend sections can be read in advance.
 
 ## 5. Hold the meeting
 

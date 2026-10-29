@@ -5,6 +5,8 @@ description: "The process for producing the weekly report: load the week's rows 
 
 The weekly report answers one question: does anything need attention right now? It runs on the [flat file](/flat-file-template) and the [data dictionary](/marketing-reporting-data-dictionary), and every later report, monthly, quarterly, and annual, is built by rolling up the weeks this process produces. Getting this cycle right is what makes every longer cadence cheap to produce.
 
+The process can be run by hand or drafted by an AI agent on the schedule recorded in [reporting cadence](/reporting-cadence). Either way, the report owner, a person, stands behind what gets sent.
+
 <Info>
   This process uses the [**data dictionary**](/marketing-reporting-data-dictionary), the [**flat file**](/flat-file-template), and the [**weekly report template**](/weekly-report-template).
 </Info>
@@ -44,13 +46,13 @@ The weekly report answers one question: does anything need attention right now? 
 
 ## 1. Load the week's rows
 
-Pull each metric from the system named as its source of truth in the data dictionary, and add one row per channel and metric to the flat file for the week just ended. Load raw inputs only, spend, clicks, purchases, revenue; never a calculated ratio.
+If an agent fills the flat file daily, the week's rows already exist. Confirm every day of the week is present, and restate any row still marked `is_estimate` against the settled platform figures.
 
-Wait at least two days after the week ends before loading it. Conversion data settles over a couple of days, and a week loaded too early will need correcting later.
+If you load weekly by hand, pull each metric from the system named as its source of truth in the data dictionary and add the week's rows. Load raw inputs only, spend, clicks, purchases, revenue; never a calculated ratio. Wait at least two days after the week ends before a hand load: conversion data settles over a couple of days, and a week loaded too early will need correcting later.
 
 ## 2. Check them
 
-Run through the [flat file's checks](/flat-file-template#checks-before-you-trust-a-weeks-rows) before using the new rows for anything. At minimum: spend matches the ad platforms, revenue matches the source of truth, and nothing looks unclassified or missing that wasn't missing last week.
+Run through the [flat file's checks](/flat-file-template#checks-before-you-trust-new-rows) before using the new rows for anything. At minimum: spend matches the ad platforms, revenue matches the source of truth, and nothing looks unclassified or missing that wasn't missing last week.
 
 If a check fails, fix it before writing the report. An error caught here costs a few minutes; the same error found after the report has already shaped a decision costs a great deal more.
 
@@ -68,9 +70,11 @@ Fill in the [weekly report template](/weekly-report-template). Compare against t
 
 ## 5. Quality check and deliver
 
-Before sending, confirm: the summary matches the numbers in the pacing table, percentages are calculated in the right direction, and last week's "needs a decision" items are carried forward and marked resolved or not.
+Before sending, run three checks, each a testable assertion: every number in the summary appears in the pacing table; each pace value equals actual divided by expected for the period; last week's "needs a decision" items appear, marked resolved or carried forward.
 
-Send on the scheduled day with a two- or three-line message giving the headline and the ask. A report attached with no summary in the message body tends to get opened later, which in practice often means never.
+When an AI drafts the report, the report owner is the reviewer: they read, edit, and approve before it goes out, unless this cadence is flagged auto-send in [reporting cadence](/reporting-cadence).
+
+Send on the day the schedule records, with a two- or three-line message giving the headline and the ask. A report attached with no summary in the message body tends to get opened later, which in practice often means never.
 
 ## 6. File it
 

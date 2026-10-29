@@ -5,6 +5,8 @@ description: "How reporting works end to end: one flat file feeding every report
 
 Use this to produce a report, or to set reporting up for the first time.
 
+Every step here can be done by a person or by an AI agent connected to the same tools, with one division that never moves: the **report owner** is a person, and the owner stands behind every report that goes out. An agent can fill the flat file, run the checks, and draft every cadence; the owner reviews and approves, unless a cadence is flagged auto-send in [reporting cadence](/reporting-cadence).
+
 <Note>
   Every report reads from the [flat file](/flat-file-template), not from the ad platforms. If two reports pull from two places, they will eventually disagree and nobody will know which is right.
 </Note>
@@ -21,10 +23,13 @@ Use this to produce a report, or to set reporting up for the first time.
     If a starter pack fits, begin there: [ecommerce](/ecommerce-metrics-starter-pack) or [sales-led](/sales-led-metrics-starter-pack).
   </Step>
   <Step title="3. Build the flat file">
-    Set up the [flat file](/flat-file-template). Its metric names come from the data dictionary, and its `campaign`, `ad_group`, `ad`, and `product` columns join on your [naming conventions](/campaign-naming-conventions) and [UTM values](/utm-standards). Decide which [grains](/flat-file-template#only-store-the-grains-you-report-on) you store: channel alone cannot answer a per-product or per-campaign question.
+    Set up the [flat file](/flat-file-template). Its metric names come from the data dictionary, and its `campaign`, `ad_group`, `ad`, and `product` columns join on your [naming conventions](/campaign-naming-conventions) and [UTM values](/utm-standards). Decide which [grains](/flat-file-template#only-store-the-grains-you-report-on) you store: channel alone cannot answer a per-product or per-campaign question. Record the file's location, and how each source of truth is accessed, in the data dictionary's [where everything lives](/marketing-reporting-data-dictionary#where-everything-lives) section, so any actor, person or agent, can open both.
   </Step>
-  <Step title="4. Set the cadence and the dashboards">
-    Agree who reports what, to whom, how often in [reporting cadence](/reporting-cadence), and how it's presented in [dashboard standards](/dashboard-standards).
+  <Step title="4. Set the schedule">
+    Fill in the [reporting cadence](/reporting-cadence) register: when each report runs, who or what drafts it, who approves it, whether it auto-sends, and where it lands. This is where "the scheduled day" on every process page resolves.
+  </Step>
+  <Step title="5. Set the dashboards">
+    Decide how the numbers are presented on demand in [dashboard standards](/dashboard-standards).
   </Step>
 </Steps>
 
@@ -32,6 +37,7 @@ Use this to produce a report, or to set reporting up for the first time.
 
 | Cadence | Template | Process | Archive |
 | :-- | :-- | :-- | :-- |
+| Daily | [Daily brief](/daily-brief) | On the same page | Not archived |
 | Weekly | [Weekly report template](/weekly-report-template) | [Weekly reporting process](/weekly-reporting-process) | [Weekly archive](/weekly-report-archive) |
 | Monthly | [Monthly report template](/monthly-report-template) | [Monthly reporting process](/monthly-reporting-process) | [Monthly archive](/monthly-report-archive) |
 | Quarterly | [Quarterly report template](/quarterly-report-template) | [Quarterly reporting process](/quarterly-reporting-process) | [Quarterly archive](/quarterly-report-archive) |
@@ -41,7 +47,7 @@ Each period rolls up into the next. A monthly report is not written from scratch
 
 <Steps>
   <Step title="1. Load and check the rows">
-    Add the period's rows to the flat file and check them against the rules in [data quality and rollup concepts](/data-quality-and-rollup-concepts). Catch the gaps before writing, not after someone questions a number.
+    Add the period's rows to the flat file and check them against the rules in [data quality and rollup concepts](/data-quality-and-rollup-concepts). When an agent fills the file [daily](/flat-file-template#daily-fill-and-restatement), this step is confirming the period is complete and restating estimates, not loading. Catch the gaps before writing, not after someone questions a number.
   </Step>
   <Step title="2. Check the change log">
     Anything that changed mid-period (a budget shift, a tracking fix, a naming correction) explains a movement that otherwise looks like performance.

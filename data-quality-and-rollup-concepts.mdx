@@ -38,13 +38,13 @@ The reason is simple once you've seen it go wrong. If you store both ad spend an
 
 Most people picture their reporting data the way it looks on a whiteboard: metrics down the side, weeks across the top, one table per channel. That's a reasonable way to look at data. It's a poor way to store it, because adding a fifth channel or a new metric to that shape means restructuring the whole table, and nothing about the structure prevents someone from summing across a boundary that shouldn't be summed.
 
-The alternative is to store one row per combination of period, channel, and metric: this metric, this channel, this period, this value, and nothing else on the row. Nothing about that structure changes when a channel or a metric gets added. You just add rows. The wide table people actually want to look at is something you generate from this format in a few clicks with a spreadsheet's pivot table, not something you maintain by hand.
+The alternative is to store one row per combination of date, channel, and metric: this metric, this channel, this day, this value, and nothing else on the row. Nothing about that structure changes when a channel or a metric gets added. You just add rows. The wide table people actually want to look at is something you generate from this format in a few clicks with a spreadsheet's pivot table, not something you maintain by hand.
 
 ## How a rollup actually works
 
 ### The core rule: sum the raw numbers, then recalculate every ratio
 
-A monthly report is not a new report written from scratch. It's what you get when you take the raw inputs from every week in that month, add them up, and recalculate every ratio from those totals. A quarterly report does the same thing with its three months, and an annual report with its four quarters. The chain only works because every level stores the same kind of raw inputs the level below it does.
+A monthly report is not a new report written from scratch. It's what you get when you take the raw inputs from every day in that month, add them up, and recalculate every ratio from those totals. A weekly report does the same thing with its seven days, a quarterly report with its three months, and an annual report with its four quarters. Any date range works the same way, October 2 to November 1 included. The chain only works because every level is built from the same raw daily inputs.
 
 What doesn't work, and what quietly produces wrong numbers even though it feels like the obvious shortcut, is averaging the four weekly ratios directly. A worked example shows why:
 
@@ -96,16 +96,9 @@ Pace = actual to date ÷ expected to date
 Expected to date = target for the period × (calendar days elapsed ÷ calendar days in the period)
 ```
 
-For a month-to-date figure in a weekly report, actual to date is the sum of the raw inputs from the month's completed days, and the target comes from [KPI definitions](/kpi-definitions) for metrics, or from the budget plan registered in the [data dictionary](/marketing-reporting-data-dictionary) for spend. Use calendar days unless your team records a different convention in the dictionary's decision log; a business-day pace works too, but mixing the two across reports makes pace numbers incomparable.
+Actual to date is the sum of the dated rows in the period so far, which the daily flat file gives you for any period and any day of it. The target comes from [KPI definitions](/kpi-definitions) for metrics, or from the budget plan registered in the [data dictionary](/marketing-reporting-data-dictionary) for spend. Use calendar days unless your team records a different convention in the dictionary's decision log; a business-day pace works too, but mixing the two across reports makes pace numbers incomparable.
 
-### When a week straddles a month boundary
-
-A Monday to Sunday week can sit in two months, and the weekly flat file can't split it on its own. Pick one convention and record it in the data dictionary's decision log:
-
-- **Daily rows for the current month.** Add daily-grain rows alongside the weekly ones and build month-to-date from the daily rows, filtered to one granularity as above. The most accurate option, and the one to choose when decisions hang on month-to-date precision.
-- **Whole-week assignment.** Assign the straddling week, whole, to the month holding its `week_end`. Cheaper, and fine when precision inside one week doesn't change a decision.
-
-Whichever you choose, use it everywhere. A month-to-date number built one way in the weekly report and another way in the monthly report will disagree, and the gap will read as an error.
+A legacy weekly-grain file can't give a clean month-to-date read when a week straddles a month boundary. If you still load weekly, pick one convention and record it in the decision log: assign the straddling week, whole, to the month holding its final day, or move to daily rows and let the dates decide.
 
 ## Checks before every report
 

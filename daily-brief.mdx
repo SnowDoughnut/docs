@@ -1,0 +1,68 @@
+---
+title: "Daily brief"
+description: "A short brief an AI agent produces each morning from the flat file: pacing, plus anything outside its normal range. Covers the template, the rules it follows, and when 'nothing needs attention' is the whole brief."
+---
+
+_This page is both the template and the process, because the producer is an agent: there is no human workflow to document, only the rules the agent follows and the format the reader gets._
+
+The daily brief is the push version of a dashboard. A person writing a daily report is usually a sign the dashboard is missing; an agent drafting one from the flat file costs nothing, reports only what moved, and reaches people who never open the dashboard. It answers one question: is anything outside its normal range today?
+
+<Note>
+  The daily brief auto-sends by default, because it contains only exceptions and pace. Set its time, audience, and channel in the [reporting cadence](/reporting-cadence) register. "Nothing needs attention" is a valid, complete brief; padding a quiet day teaches readers to skim.
+</Note>
+
+## How it runs
+
+<Steps>
+  <Step title="The flat file fill completes">
+    The agent writes yesterday's rows first, per the [flat file's daily fill](/flat-file-template#daily-fill-and-restatement), and runs the file's checks. A failed check becomes the brief's first line; a brief built on unchecked rows is worse than no brief.
+  </Step>
+  <Step title="Compute pace">
+    Spend and the tier 1 metrics, month to date, using the [pace formula](/data-quality-and-rollup-concepts): targets from [KPI definitions](/kpi-definitions), budgets from the plan registered in the [data dictionary](/marketing-reporting-data-dictionary).
+  </Step>
+  <Step title="Compare against normal ranges">
+    Each metric against the normal range recorded in its data dictionary block. Inside the range is silence. Day-over-day movement is never compared; it is noise by construction.
+  </Step>
+  <Step title="Send">
+    Deliver per the register. An exception repeats in each day's brief until it returns to range or the owner acknowledges it, so a one-day glance can't bury a week-long problem.
+  </Step>
+</Steps>
+
+## The template
+
+**Status**
+
+_E.g. Nothing needs attention. Spend pacing 98%, contribution margin pacing 101%._
+
+**Pacing**
+
+| Metric | Month-to-date | Target | Pace |
+| :-- | :-- | :-- | :-- |
+| _E.g. Total marketing spend_ | _E.g. \$42,300_ | _E.g. \$43,000_ | _E.g. 98%_ |
+| _E.g. Contribution margin (north star)_ | _E.g. \$38,900_ | _E.g. \$38,500_ | _E.g. 101%_ |
+| _Add a row_ |  |  |  |
+
+**Exceptions**
+
+| Metric | Value | Normal range | First seen | Note |
+| :-- | :-- | :-- | :-- | :-- |
+| _E.g. Meta ROAS_ | _E.g. 4.8x_ | _E.g. 3.2 to 3.8x_ | _E.g. 2026-06-11_ | _E.g. New creative outperforming; unknown whether it holds_ |
+| _Add a row_ |  |  |  |  |
+
+**Data notes**
+
+_E.g. Conversion metrics for the last 2 days are estimates, restated as platforms settle._
+
+## Rules the agent follows
+
+- Report a cause only when the [change log](/marketing-reporting-data-dictionary#decisions-and-changes) records one for the period; otherwise write "unknown, investigating." An invented explanation is worse than an honest gap.
+- Never recommend a budget or bid change here. The brief observes; decisions route through [budget pacing](/budget-pacing) and the owner.
+- Estimated rows are labeled, never presented as settled.
+- The brief is not archived. Its numbers live in the flat file, and yesterday's brief has no reader.
+
+## Related resources
+
+- [Reporting cadence](/reporting-cadence) Where this brief's time, audience, and channel are set.
+- [Flat file template](/flat-file-template) The daily fill the brief reads from.
+- [Weekly reporting process](/weekly-reporting-process) The shortest written report; the brief never replaces it.
+- [Report writing concepts](/report-writing-concepts) Why exceptions-only is the rule.

@@ -225,7 +225,7 @@ A tagged link only pays off if the values survive the visit. On a same-session p
 | `utm_medium` | _E.g._ `Medium_First__c` | _E.g. First_ | _E.g. On lead creation, never overwritten_ |
 | `utm_campaign` | _E.g._ `Campaign_First__c` | _E.g. First_ | _E.g. On lead creation, never overwritten_ |
 | `utm_content` | _E.g._ `Content_First__c` | _E.g. First_ | _E.g. On lead creation_ |
-| First touch date | _E.g._ `First_Touch_Date__c` | _E.g. Not applicable_ | _E.g. On lead creation. This becomes `attributed_week`_ |
+| First touch date | _E.g._ `First_Touch_Date__c` | _E.g. Not applicable_ | _E.g. On lead creation. This becomes `attributed_date`_ |
 | *Add a row* |  |  |  |
 
 **Fields that travel from lead to deal:** _E.g. All source fields copy from the lead to the opportunity on conversion, so a closed deal still carries where it came from._
@@ -242,8 +242,8 @@ A tagged link only pays off if the values survive the visit. On a same-session p
 | :-- | :-- |
 | `channel` | The stored source and medium fields, mapped to your channel list |
 | `campaign` | The stored campaign field, matching the platform campaign name |
-| `attributed_week` | The week containing the first touch date |
-| `week_start` | The week the deal actually closed |
+| `attributed_date` | The first touch date |
+| `date` | The day the deal actually closed |
 | `value` | 1.0 for single-touch, or the fraction your attribution model assigns |
 
 <Accordion title="Concept review: Where the values get stored">

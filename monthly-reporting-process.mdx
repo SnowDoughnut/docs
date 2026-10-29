@@ -3,7 +3,7 @@ title: "Monthly reporting process"
 description: "The process for producing the monthly report by rolling up the month's weekly reports rather than writing a new one from scratch: sum the flat file's inputs, recalculate every ratio, then analyze and write."
 ---
 
-The monthly report answers a different question than the weekly one: did we hit the target, and why? It's built by rolling up the flat file rows from every week in the month, the same weeks the [weekly reporting process](/weekly-reporting-process) already loaded and checked.
+The monthly report answers a different question than the weekly one: did we hit the target, and why? It's built by rolling up the flat file rows whose dates fall in the month, the same rows the [weekly reporting process](/weekly-reporting-process) already checked week by week. Like every cadence, it can be drafted by hand or by an AI agent on the schedule in [reporting cadence](/reporting-cadence); the report owner approves what goes out.
 
 <Info>
   This process uses the [**data dictionary**](/marketing-reporting-data-dictionary), the [**flat file**](/flat-file-template), and the [**monthly report template**](/monthly-report-template).
@@ -43,13 +43,13 @@ The monthly report answers a different question than the weekly one: did we hit 
 
 ## 1. Roll up the month
 
-Filter the flat file to every week whose dates fall inside the month, add up the raw inputs (spend, revenue, orders, and so on) across those weeks, and only then recalculate every ratio, ROAS, conversion rate, contribution margin, from the summed totals. A spreadsheet pivot table does the summing in a few clicks; see [the flat file template](/flat-file-template#rolling-weeks-up-into-months-quarters-and-years) for the exact steps.
+Filter the flat file to every row whose date falls inside the calendar month, add up the raw inputs (spend, revenue, orders, and so on), and only then recalculate every ratio, ROAS, conversion rate, contribution margin, from the summed totals. A spreadsheet pivot table does the summing in a few clicks, and an agent does it as arithmetic; see [the flat file template](/flat-file-template#rolling-days-up-into-weeks-months-quarters-and-years) for the exact steps.
 
 <Warning>
   Never average the four weekly ratios directly. A week with unusually high or low volume, a promotion, a stockout, a big push, gets the same weight as an ordinary week in a simple average, which produces a monthly number that doesn't match what actually happened. See [data quality and rollup concepts](/data-quality-and-rollup-concepts) for a worked example of how far off this can be.
 </Warning>
 
-If a month straddles a partial week at either end, either assign that week fully to the month it mostly falls in, or split the week's rows proportionally, whichever your data dictionary specifies. Do it the same way every month.
+Daily rows make month boundaries a non-issue: the date decides which month a row belongs to. If you still load the file weekly by hand, a week can straddle the boundary; pick one rule, assign the straddling week whole to the month holding its final day, record it in the data dictionary's decision log, and apply it the same way every month.
 
 ## 2. Check the rollup
 
@@ -65,9 +65,9 @@ Fill in the [monthly report template](/monthly-report-template). Write the body 
 
 ## 5. Quality check and deliver
 
-Have someone other than the writer read the report before it goes out. Ten minutes from a second reader catches more than an hour of re-reading your own work, and this is the cadence where an error does the most damage to credibility, since a monthly report usually reaches a wider or more senior audience than a weekly one.
+A reader other than the drafting actor reviews the report before it goes out. When a person wrote it, that's a second reader; when an AI drafted it, the report owner is that reader. Ten minutes of fresh eyes catch more than an hour of re-reading your own work, and this is the cadence where an error does the most damage to credibility, since a monthly report usually reaches a wider or more senior audience than a weekly one.
 
-Send on the scheduled day with a short message stating the headline result and the ask.
+Send on the day the [reporting cadence](/reporting-cadence) register records, with a short message stating the headline result and the ask.
 
 ## 6. File it
 
