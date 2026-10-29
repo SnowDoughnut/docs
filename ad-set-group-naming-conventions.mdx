@@ -10,7 +10,7 @@ _Examples below continue the Doughnut Labs brand introduced in [Naming conventio
 <Note>
   Platforms use different terms for this level: Meta calls it an ad set, Google and Pinterest call it an ad group, and SMS or email platforms often call it a segment or variant. This document covers all of them under one convention. Fill in a row for every value you use in each category table below; that's what builds this level's dictionary. Testing identifiers, below, are optional and only apply while a test is running.
 
-  **Separators and case.** In Notion, set these once in the Naming rules database; the generators apply them.
+  **Separators and case.** The default delimiter is a hyphen with no spaces, and a value keeps the exact casing its dictionary row records. Never use a hyphen inside a value; register a short form instead, so a report can split the name on the delimiter. If you use the Notion workspace, record a different choice once in the Naming rules database; the generators apply it.
 </Note>
 
 <Steps>
@@ -27,7 +27,7 @@ _Examples below continue the Doughnut Labs brand introduced in [Naming conventio
 
 ## Standard identifiers
 
-Date is freeform, for example `20260601`, and doesn't need a table of its own.
+Date is the day the customer profile was built or last refreshed, written as `YYYYMMDD` with no separators, for example `20260601`. One fixed format keeps names sortable and the joins intact, so it doesn't need a table of its own.
 
 ### Customer profile type
 
@@ -132,14 +132,16 @@ Date is freeform, for example `20260601`, and doesn't need a table of its own.
 
 ## Assemble the name
 
-Spaces, `%`, and other special characters can break platform parsing or reporting exports. Use the short form you logged above for anything that isn't a plain alphanumeric string.
+The order is date, customer profile type, customer profile seed, then any optional categories you use in the order they appear on this page: geo, language, device, then list or segment type. Keep the order fixed even when a category is skipped.
 
-- Long form: `20260601-3-Percent-LLA-HubSpot-Leads`
+Spaces, `%`, and other special characters can break platform parsing or reporting exports. Use the short form you logged above for anything that isn't a plain alphanumeric string, and never use the delimiter inside a value; run the words together instead.
+
+- Long form: `20260601-3PercentLLA-HubSpotLeads`
 - Short form (name jammed): `20260601-LLA3-HSL`
 
 On search and shopping, where the group is built around queries rather than an audience, the theme takes the seed's place:
 
-- Long form: `20260401-Keyword-Reporting-Automation`
+- Long form: `20260401-Keyword-ReportingAutomation`
 - Short form (name jammed): `20260401-KW-REPORTAUTO`
 
 <Info>
@@ -154,7 +156,7 @@ On search and shopping, where the group is built around queries rather than an a
 
 Testing identifiers mark a hypothesis you're currently running, for example an A/B variant test. Because a test only applies to some sets / groups / variants for a limited time, testing identifiers aren't part of the standard identifier set: append one to the end of the sets / groups / variant name, after the standard identifiers, instead of building it into a table above.
 
-- With a testing identifier appended: `20260601-3-Percent-LLA-HubSpot-Leads-TEST01`
+- With a testing identifier appended: `20260601-3PercentLLA-HubSpotLeads-TEST01`
 
 **The control does not carry a testing identifier.** It keeps the name it already has, because appending one to a live object renames it and splits its history in two. Only the arms under test carry the ID. See [control and variants](/experiment-id-convention#3-control-and-variants).
 

@@ -70,6 +70,7 @@ _E.g. Doughnut Labs sells a direct-to-consumer subscription box of small-batch d
 | Do platform-reported numbers appear in reports? | _E.g. Yes, as a separate column_ |
 | If yes, how they're labeled | _E.g. "Platform-reported, not comparable across platforms"_ |
 | Blended check used alongside them | _E.g. Marketing efficiency ratio (total revenue divided by total ad spend)_ |
+| Footer label for reports | _E.g. "7-day click, platform-reported; see this dictionary"_ |
 
 **Where your numbers are known to be wrong:**
 
@@ -177,6 +178,8 @@ EXCLUDES: _______________________________________
 
 GRAIN (what one row represents): ________________
 DATE ATTRIBUTED TO: _____________________________
+ATTRIBUTION APPLIED (model, if credit is split): _
+NORMAL RANGE (for exception reporting): _________
 
 WORKED EXAMPLE (real numbers, one recent period):
 _________________________________________________
@@ -214,6 +217,8 @@ EXCLUDES: wholesale orders, flagged test orders, salaries, software
 
 GRAIN: one order, rolled up to week and channel
 DATE ATTRIBUTED TO: order date, account time zone
+ATTRIBUTION APPLIED: none; order-level inputs
+NORMAL RANGE: 21% to 26% of net revenue
 
 WORKED EXAMPLE (week of June 8, 2026):
   Net revenue      $103,000
@@ -267,6 +272,16 @@ improving because the business is quietly shrinking.
 | Restatement window | _E.g. 14 days_ |
 
 Metric names in the flat file must match the metric formulas above. Channel and source names must match Source of truth. See the [flat file template](/flat-file-template) for the schema.
+
+### The budget plan
+
+| Field | Fill in |
+| :-- | :-- |
+| Location | _E.g. Google Sheet: "Doughnut Labs 2026 channel budgets"_ |
+| Owner | _E.g. Priya Desai_ |
+| Grain | _E.g. Month by channel_ |
+
+The budget tables in the weekly and monthly reports read their targets and totals from this plan. How the plan gets set is covered in [budget planning](/budget-planning).
 
 ### Dashboards
 

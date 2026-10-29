@@ -20,7 +20,7 @@ Most people picture a metrics table like this, metrics down the side, dates acro
 
 That's a fine way to look at data. It's a poor way to store it, because adding a second channel means either a second table, a second header row, or metric names that awkwardly embed the channel (`Ad spend (Meta)`, `Ad spend (Google)`). Every one of those breaks the moment you add a third channel.
 
-The fix is to store one row per date, channel, and metric instead:
+The fix is to store one row per period, channel, and metric instead. The base period is a week; see [why weeks, not days](#why-weeks-not-days):
 
 | Week starting | Week ending | Channel | Metric | Value |
 | :-- | :-- | :-- | :-- | :-- |

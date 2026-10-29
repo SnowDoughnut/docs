@@ -85,6 +85,28 @@ This is also what makes a naming convention pay off. The reason campaign, ad set
 
 A number calculated before its inputs have fully settled, spend before a platform's final reconciliation, cost of goods before a finance close, is legitimately useful for an early read, but it should be marked as an estimate everywhere it appears. When a monthly figure rolls up from four weekly figures and one of them was still an estimate at the time, the monthly figure inherits that same uncertainty until the underlying weekly number gets reconciled and the estimate flag comes off.
 
+## Pacing against a plan
+
+### Pace: the one formula
+
+Pace compares what has happened so far against where the plan says you should be by now:
+
+```text
+Pace = actual to date ÷ expected to date
+Expected to date = target for the period × (calendar days elapsed ÷ calendar days in the period)
+```
+
+For a month-to-date figure in a weekly report, actual to date is the sum of the raw inputs from the month's completed days, and the target comes from [KPI definitions](/kpi-definitions) for metrics, or from the budget plan registered in the [data dictionary](/marketing-reporting-data-dictionary) for spend. Use calendar days unless your team records a different convention in the dictionary's decision log; a business-day pace works too, but mixing the two across reports makes pace numbers incomparable.
+
+### When a week straddles a month boundary
+
+A Monday to Sunday week can sit in two months, and the weekly flat file can't split it on its own. Pick one convention and record it in the data dictionary's decision log:
+
+- **Daily rows for the current month.** Add daily-grain rows alongside the weekly ones and build month-to-date from the daily rows, filtered to one granularity as above. The most accurate option, and the one to choose when decisions hang on month-to-date precision.
+- **Whole-week assignment.** Assign the straddling week, whole, to the month holding its `week_end`. Cheaper, and fine when precision inside one week doesn't change a decision.
+
+Whichever you choose, use it everywhere. A month-to-date number built one way in the weekly report and another way in the monthly report will disagree, and the gap will read as an error.
+
 ## Checks before every report
 
 A short set of checks, run the same way every time, catches most of what goes wrong before it reaches a reader:

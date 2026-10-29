@@ -10,7 +10,7 @@ _Examples below continue the Doughnut Labs brand introduced in [Naming conventio
 <Note>
   Fill in a row for every value you use in each category table below, its short form if you name jam it, and what it means. That's what builds this level's dictionary, all in one place. Add a new value, or a whole new category, as your program grows; don't rename or remove one a live campaign is already using. See [Naming conventions overview](/naming-conventions-overview) for the reasoning. Testing identifiers, below, are optional and only apply while a test is running.
 
-  **Separators and case.** In Notion, set these once in the Naming rules database; the generators apply them.
+  **Separators and case.** The default delimiter is a hyphen with no spaces, and a value keeps the exact casing its dictionary row records. Never use a hyphen inside a value; register a short form instead, so a report can split the name on the delimiter. If you use the Notion workspace, record a different choice once in the Naming rules database; the generators apply it.
 </Note>
 
 <Steps>
@@ -151,9 +151,11 @@ Three different strings get called "the campaign name," and mixing them up is th
 
 ## Assemble the name
 
-Concatenate one value from each category that applies, in the order the tables appear above:
+Concatenate one value from each category that applies, in this fixed order. Assembly follows this line, not the order the tables appear in above:
 
 `Channel - Marketing campaign - Placement - Objective - Budget type - Bid type - Product - Funnel position`
+
+The field labels above are spaced for reading. An assembled name joins the values with the bare delimiter and no spaces, as in the examples below.
 
 A Search campaign for one product inside a named marketing campaign, using every category that applies:
 
