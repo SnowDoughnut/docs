@@ -38,7 +38,7 @@ The reason is simple once you've seen it go wrong. If you store both ad spend an
 
 Most people picture their reporting data the way it looks on a whiteboard: metrics down the side, weeks across the top, one table per channel. That's a reasonable way to look at data. It's a poor way to store it, because adding a fifth channel or a new metric to that shape means restructuring the whole table, and nothing about the structure prevents someone from summing across a boundary that shouldn't be summed.
 
-The alternative is to store one row per combination of date, channel, and metric: this metric, this channel, this day, this value, and nothing else on the row. Nothing about that structure changes when a channel or a metric gets added. You just add rows. The wide table people actually want to look at is something you generate from this format in a few clicks with a spreadsheet's pivot table, not something you maintain by hand.
+The alternative is to store one row per combination of date, channel, and metric: this metric, this channel, this day, this value, and nothing else on the row. Nothing about that structure changes when a channel or a metric gets added. You just add rows. The wide table people actually want to look at is something you generate from this format in a few clicks with a spreadsheet's pivot table, or that an agent builds as plain arithmetic, not something you maintain by hand.
 
 ## How a rollup actually works
 
@@ -65,13 +65,13 @@ Monthly ROAS = 170,000 / 70,000 = 2.43
 
 The averaged figure, 2.75, overstates monthly performance, because it treats the huge-spend week as equal in weight to three ordinary weeks, when in reality it made up more than half the month's spend. The summed-and-recalculated figure, 2.43, reflects what actually happened: a month where the biggest week ran at below-average efficiency. Any week with meaningfully different volume from the others will produce this same gap, and real weeks almost never have identical volume. This is why a rollup only stays honest if it works upward from the raw inputs rather than averaging the ratios above them.
 
-### Two columns make the rollup safe: scope and period
+### Two habits keep the rollup safe
 
-Two ideas need to be visible on every row for a rollup to work without silently double-counting.
+Two kinds of double-counting can creep into a rollup, and the flat file's structure closes off both.
 
-**Scope** distinguishes a number that's true for one period alone from a number that's cumulative to date. Spend during this week and total spend since the account started are both legitimate numbers to store, but they answer different questions, and summing a cumulative number across periods produces nonsense: it would count every earlier period's spend several times over. Keeping the two clearly labeled is what makes it safe to store both.
+**Store one period per row, never a running total.** Spend during one day and total spend since the account started are both legitimate numbers, but summing a cumulative figure across rows counts every earlier day's spend several times over. The flat file stores only the first kind: every row covers one day, named in its `date` column, and any to-date figure is calculated by summing the dated rows rather than stored as its own number.
 
-**Granularity** distinguishes a daily row from a weekly one from a monthly one. Mixing granularities in the same file is genuinely useful, recent detail at the daily level and older history at the weekly level, but only if every calculation filters to a single granularity before adding anything up. Summing a week's row on top of the daily rows that made it up is the same double-counting mistake as summing a cumulative number, just in a different disguise.
+**Keep every row at the same time grain.** The flat file's base grain is a day. A file that also held weekly or monthly rows would double-count the moment a week's row was summed on top of the daily rows that made it up. The one exception is the legacy weekly fallback in [the flat file template](/flat-file-template): if older history still lives at the weekly level, filter to a single level before adding anything up.
 
 ### The same problem exists sideways, and it is the one people miss
 
@@ -83,7 +83,7 @@ This is also what makes a naming convention pay off. The reason campaign, ad set
 
 ### The rollup also carries the estimate flag forward
 
-A number calculated before its inputs have fully settled, spend before a platform's final reconciliation, cost of goods before a finance close, is legitimately useful for an early read, but it should be marked as an estimate everywhere it appears. When a monthly figure rolls up from four weekly figures and one of them was still an estimate at the time, the monthly figure inherits that same uncertainty until the underlying weekly number gets reconciled and the estimate flag comes off.
+A number calculated before its inputs have fully settled, spend before a platform's final reconciliation, cost of goods before a finance close, is legitimately useful for an early read, but it should be marked as an estimate everywhere it appears. When a monthly figure rolls up from daily rows and some of them were still estimates at the time, the monthly figure inherits that same uncertainty until the underlying daily rows are restated and the `is_estimate` flag comes off.
 
 ## Pacing against a plan
 

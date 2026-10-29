@@ -1,0 +1,37 @@
+---
+title: "Snow Doughnut MCP"
+description: "What the Snow Doughnut MCP is: a set of marketing operations commands your AI calls against this knowledge base and your filled workbooks. Read this to understand what it does, what it never does, and how a request flows through it."
+---
+
+The Snow Doughnut MCP turns this knowledge base into commands your AI can run. Connect it to Claude, ChatGPT, or any MCP-compatible agent, and your AI plans, names, briefs, checks, and reports the way these documents describe, against the workbooks your team has filled in.
+
+It is the operations layer. The same split that runs through [what this framework covers](/what-this-framework-covers#the-split) applies to the MCP: it records the decision and the name, and your other tools hold the execution. An ads manager MCP builds the campaign, your email platform sends, your CMS publishes. The Snow Doughnut MCP never touches an ad account.
+
+## What it does
+
+- Runs the [operation commands](/mcp-commands): naming, UTMs, briefs, checklists, the flat file fill, reports, experiments, maintenance sweeps.
+- Reads your filled workbooks, so a name comes from your dictionaries and a report compares against your targets, never from a model's guess.
+- Remembers your setup: where your libraries live, which tools you work in, your [schedule register](/reporting-cadence), your [standing rules](/glossary#standing-rule).
+- Pulls framework updates, so `whats_new` tells you when a process here changed since you set up.
+
+## What it never does
+
+- Build, edit, or launch anything in an ad platform. That runs through the execution tool you connect, and the [owner](/glossary#owner) or a standing rule sets campaigns live.
+- Send an email, publish a page, or post. Same rule: your platform executes, a person, or a standing rule a person approved, holds the irreversible gates.
+- Invent a value. A product short form, CTA, or metric missing from your dictionaries comes back as a question, not a guess.
+
+## How a request flows
+
+1. You ask in plain words: "Name my new Meta prospecting campaign for the spring push."
+2. Your AI picks the matching command, here `name_this`, and the MCP returns your naming dictionaries and the assembly rules.
+3. Your AI assembles the name from your registered values and asks you for any value your dictionary doesn't hold.
+4. Execution, when the task has any, goes to the tool that owns it: the name is typed into the platform by you or by your ads manager MCP.
+
+The [builder](/glossary#builder) and owner roles from the process pages apply unchanged. The MCP plus your AI is the builder's brain; your connected execution tools are its hands; approvals and go-lives stay with a person.
+
+## Related resources
+
+- [**Set up the MCP**](/mcp-setup) Connect it and run onboarding.
+- [**Operation commands**](/mcp-commands) Every command, with an example prompt and the process it runs.
+- [**What this framework covers**](/what-this-framework-covers) The decision/execution split the MCP inherits.
+- [**Skills**](/skills-overview) The portable skill files that run alongside the MCP.

@@ -1,6 +1,6 @@
 ---
 title: "Weekly reporting process"
-description: "The process for producing the weekly report: load the week's rows into the flat file, check them, compare against target, and file the report in the archive. Built to take about an hour."
+description: "The process for producing the weekly report: confirm the week's rows in the flat file, check them, compare against target, and file the report in the archive. Drafted by hand or by an agent on the schedule register."
 ---
 
 The weekly report answers one question: does anything need attention right now? It runs on the [flat file](/flat-file-template) and the [data dictionary](/marketing-reporting-data-dictionary), and every later report, monthly, quarterly, and annual, is built by rolling up the weeks this process produces. Getting this cycle right is what makes every longer cadence cheap to produce.
@@ -24,8 +24,8 @@ The process can be run by hand or drafted by an AI agent on the schedule recorde
 ## The process at a glance
 
 <Steps>
-  <Step title="Load the week's rows">
-    Pull each metric from its source of truth and add the week's rows to the flat file.
+  <Step title="Confirm the week's rows">
+    The daily fill already wrote them; confirm the week is complete and restate estimates. Loading by hand, pull each metric from its source of truth.
   </Step>
   <Step title="Check them">
     Run the flat file checks before trusting a single number in the report.
@@ -44,7 +44,7 @@ The process can be run by hand or drafted by an AI agent on the schedule recorde
   </Step>
 </Steps>
 
-## 1. Load the week's rows
+## 1. Confirm the week's rows
 
 If an agent fills the flat file daily, the week's rows already exist. Confirm every day of the week is present, and restate any row still marked `is_estimate` against the settled platform figures.
 

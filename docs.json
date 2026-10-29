@@ -60,6 +60,19 @@
         ]
       },
       {
+        "tab": "MCP",
+        "groups": [
+          {
+            "group": "Snow Doughnut MCP",
+            "pages": [
+              "mcp-overview",
+              "mcp-setup",
+              "mcp-commands"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "Find what you need",
         "groups": [
           {

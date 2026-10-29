@@ -1,0 +1,69 @@
+---
+title: "Set up the MCP"
+description: "Connect the Snow Doughnut MCP to your AI, connect the tools that hold your work, and run onboarding. Thirty minutes once, and every command after that runs against your own setup."
+---
+
+Setup happens once. Connect the server, connect your own tools, then run onboarding, which records where your work lives and the rules your commands follow.
+
+## Before you begin
+
+- A Snow Doughnut subscription. Subscribing at [snowdoughnut.com](https://snowdoughnut.com?utm_source=docs&utm_medium=owned&utm_campaign=mcp-setup&utm_content=subscribe) sends a welcome email with your personal server URL.
+- An AI that supports MCP servers: Claude, ChatGPT, Cursor, or another MCP-compatible agent.
+- The tools your marketing already lives in: where documents are kept, where work is managed, and the platforms that execute, such as an ads manager MCP, your email platform, and your CMS.
+
+## 1. Add the server to your AI
+
+Add the server URL from your welcome email as a connector or MCP server in your AI's settings. Most agents take a remote server entry shaped like this:
+
+```json
+{
+  "mcpServers": {
+    "snowdoughnut": {
+      "type": "http",
+      "url": "<the server URL from your welcome email>"
+    }
+  }
+}
+```
+
+Where your agent offers a connectors screen instead of a config file, paste the same URL there. Restart or reload the agent so it reads the new server.
+
+## 2. Connect your own tools
+
+The commands read and write your work through the tools you connect alongside the MCP, in the same AI:
+
+- **A docs home**, where filled workbooks, briefs, and libraries live. Notion, Google Drive, Confluence, or whatever your team already uses.
+- **A work home**, where tasks and projects are managed. ClickUp, Asana, Notion, or any tool with a connector.
+- **Execution tools**, which do the building and sending: an ads manager MCP for campaigns, your email platform, your CMS.
+
+The MCP is tool-agnostic. It records which tools you chose and points every command at them; it does not require any particular one.
+
+## 3. Run onboarding
+
+Send one message:
+
+> Set up Snow Doughnut
+
+Your AI calls `setup_snowdoughnut`, which walks the [setup path](/overview) as a conversation and records your answers:
+
+1. **Locations.** Where filled workbooks, briefs, libraries, and the [flat file](/flat-file-template) live.
+2. **Dictionaries.** Your [naming conventions](/naming-conventions-overview) and [UTM standards](/utm-standards), filled in or confirmed.
+3. **The schedule register.** The [reporting cadence](/reporting-cadence): when each report runs, who approves it, whether it auto-sends, and where it lands. One team wants everything in Slack, another wants email; the register records yours.
+4. **Standing rules and defaults.** [Standing rules](/glossary#standing-rule), [creator defaults](/creative-brief-process) per deliverable type, and the access your builder needs.
+
+Onboarding is resumable. Stop at any stage and "Continue Snow Doughnut setup" picks up where you left off. Stages 1 to 6 of the setup path are the minimum before your first campaign; the rest can follow.
+
+## 4. Try a command
+
+Ask for something real:
+
+> Name my new Meta prospecting campaign for Glacier Boots
+
+The answer comes from your own dictionaries. If a value is missing, the AI asks you and records your answer, which is the [missing-value rule](/naming-conventions-overview#delimiter-case-and-missing-values) working as designed. The full set is on [operation commands](/mcp-commands).
+
+## Related resources
+
+- [**Snow Doughnut MCP**](/mcp-overview) What the MCP does and never does.
+- [**Operation commands**](/mcp-commands) Every command, with an example prompt.
+- [**Get started**](/overview) The setup path onboarding walks.
+- [**Reporting cadence**](/reporting-cadence) The schedule register onboarding fills.

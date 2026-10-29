@@ -1,0 +1,59 @@
+---
+title: "Operation commands"
+description: "Every command the Snow Doughnut MCP exposes: what it runs, an example prompt, what it reads, and what comes back. Ask in your own words and your AI picks the command."
+---
+
+Each command runs one of this knowledge base's processes against your filled workbooks. You don't have to name a command; ask in your own words and your AI matches the request, the same way [skills](/skills-overview#how-a-skill-gets-picked-up) get picked up. Name one directly when you want to be certain.
+
+Every command follows the same three rules:
+
+- It reads your filled copies, from the locations recorded at [setup](/mcp-setup), never the blank workbooks on this site.
+- A missing value is a question back to you, recorded in your dictionary once you answer. No command invents one.
+- It decides and records; execution runs through your own connected tools. See [what this framework covers](/what-this-framework-covers#the-split).
+
+## Setup and context
+
+| Command | Example prompt | What it does |
+| :-- | :-- | :-- |
+| `setup_snowdoughnut` | "Set up Snow Doughnut" | Walks the [setup path](/overview): locations, dictionaries, the [schedule register](/reporting-cadence), [standing rules](/glossary#standing-rule), and creator defaults. Resumable |
+| `get_context` | Runs before any task | Returns your tools, locations, setup, and framework version, so every other command works against your own copies |
+| `whats_new` | "Any framework updates?" | Compares your recorded framework version against the current one and lists what changed |
+
+## Naming and tracking
+
+| Command | Example prompt | Runs |
+| :-- | :-- | :-- |
+| `name_this` | "Name my new Meta prospecting campaign for Glacier Boots" | [Name something](/name-something) and the three [naming conventions](/naming-conventions-overview), assembled from your dictionaries |
+| `build_utms` | "Tag this URL for that campaign" | [UTM standards](/utm-standards), one tagged URL per ad set, joined to the names above |
+
+## Briefs and checks
+
+| Command | Example prompt | Runs |
+| :-- | :-- | :-- |
+| `create_brief` | "Start a campaign brief for the spring push" | The [campaign](/campaign-brief-process), platform, [copy](/copywriting-process), [creative](/creative-brief-process), [article](/article-process), or [landing page](/landing-page-process) brief process, drafted from your libraries for the [owner](/glossary#owner) to approve |
+| `run_checklist` | "Pre-launch check this campaign" | The matching [checklist](/campaign-launch-checklist): the rule checks run and reported, the [human-eyes rows](/meta-pre-launch-checklist) listed for a person to clear |
+| `log_experiment` | "Register this test" | [Creating an experiment](/creating-an-experiment): the ID, the log row, the names, and the scheduled guardrail watch |
+
+## Reporting
+
+| Command | Example prompt | Runs |
+| :-- | :-- | :-- |
+| `fill_flat_file` | "Log yesterday's numbers" | The [daily fill](/flat-file-template#daily-fill-and-restatement): one dated row per metric, per channel, per grain you store, estimates flagged and restated, the file's checks run |
+| `build_report` | "Make this week's report" | The [reporting process](/report-on-results) for any cadence, from the [daily brief](/daily-brief) to the [annual review](/yearly-reporting-process), drafted for the approver the register names |
+
+## Maintenance
+
+| Command | Example prompt | Runs |
+| :-- | :-- | :-- |
+| `run_maintenance` | "Run the article sweep" | The [article maintenance](/article-maintenance-process) and [content calendar](/content-calendar-process) passes: what's due, the checks, and a triage or exceptions list for the owner to rule on |
+
+## Commands on a schedule
+
+Every [scheduled pass](/glossary#scheduled-pass) in this knowledge base is one of these commands on a timer: `fill_flat_file` each morning, `build_report` on the register's days, `run_checklist` at +1 hour, +48 hours, and weekly on a live campaign, `run_maintenance` monthly, and the guardrail watch from `log_experiment` until a test's end date. Set the schedules once during [setup](/mcp-setup) and the commands run without being asked, with results going to the owner the register names.
+
+## Related resources
+
+- [**Set up the MCP**](/mcp-setup) Connect the server and run onboarding.
+- [**Snow Doughnut MCP**](/mcp-overview) What the MCP does and never does.
+- [**Reporting cadence**](/reporting-cadence) Where the schedules live.
+- [**Glossary**](/glossary) Owner, builder, creator, standing rule, scheduled pass.
