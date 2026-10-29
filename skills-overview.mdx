@@ -9,6 +9,28 @@ Skills are portable. The format is a plain folder of markdown, so the same skill
 
 The documents come first. A skill reads the workbooks you have already filled in, applies the rules the framework sets, and hands back finished work. Nothing here replaces a brief or a template, and no skill invents a fact your documents do not contain.
 
+## The operation commands
+
+Snow Doughnut is an operations layer, the way an influencer platform's MCP is an influencer layer: a set of commands your AI calls when a marketing operations task comes up. Each command runs one of this knowledge base's processes against your filled workbooks. Ask in your own words and your AI picks the command; what comes back is the plan, the name, the brief, the checklist result, or the report.
+
+Execution is not here. The commands decide and record; your own connected tools execute: an ads manager MCP builds the campaign, your email platform sends, your CMS publishes. See [what this framework covers](/what-this-framework-covers#the-split).
+
+| Command | Example prompt | Runs |
+| :-- | :-- | :-- |
+| `setup_snowdoughnut` | "Set up Snow Doughnut" | The [setup path](/overview): locations, dictionaries, the [schedule register](/reporting-cadence), standing rules |
+| `get_context` | Called before any task | Returns your tools, locations, and framework version |
+| `name_this` | "Name my new Meta prospecting campaign" | [Name something](/name-something) and the three naming conventions |
+| `build_utms` | "Tag this URL for that campaign" | [UTM standards](/utm-standards) |
+| `create_brief` | "Start a campaign brief for the spring push" | The [campaign](/campaign-brief-process), platform, [copy](/copywriting-process), and [creative](/creative-brief-process) brief processes |
+| `run_checklist` | "Pre-launch check this campaign" | The [checklists](/campaign-launch-checklist): rule checks run, human-eyes rows listed |
+| `fill_flat_file` | "Log yesterday's numbers" | The [daily fill](/flat-file-template#daily-fill-and-restatement) and its checks |
+| `build_report` | "Make this week's report" | The [reporting processes](/report-on-results), daily through annual |
+| `log_experiment` | "Register this test" | [Creating an experiment](/creating-an-experiment) |
+| `run_maintenance` | "Run the article sweep" | The [article maintenance](/article-maintenance-process) and [calendar](/content-calendar-process) passes |
+| `whats_new` | "Any framework updates?" | The changelog since your recorded version |
+
+Every scheduled pass in this knowledge base, the daily fill, the reports, the QA passes, the maintenance sweeps, is one of these commands on a schedule.
+
 ## How a skill gets picked up
 
 Every skill carries a description listing the requests it covers. The agent reads that description against what you asked for and loads the skill when the two match. You do not have to name it.
