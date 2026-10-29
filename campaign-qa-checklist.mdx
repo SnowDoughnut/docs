@@ -13,11 +13,15 @@ Run this after launch, not instead of the [campaign launch checklist](/campaign-
   Three passes with different jobs. The first hour catches things that are outright broken. The first 48 hours catches things that are working but wrong. The weekly pass catches drift.
 </Info>
 
+<Note>
+  Every pass can be run by a person at the dashboard or as a [scheduled pass](/glossary#scheduled-pass) by an agent against the platform APIs, analytics, and the flat file: launch arms the three schedules (+1 hour, +48 hours, weekly). Either way, a failed check goes to the owner with the observed value against the expected one; rows tagged **(human eyes)** need a person's read. Deciding what to do about a failure is the owner's call.
+</Note>
+
 ## First hour
 
 - Spend and impressions are registering on every platform. Zero after an hour usually means a rejected ad or an unmet audience condition, not a slow start.
 - No ads are in a rejected or limited state.
-- A real click on a live ad reaches the destination page.
+- A real click on a live ad reaches the destination page. A scripted request to the final tagged URL, verified in analytics, is an acceptable equivalent; the one thing it misses is the ad rendering itself.
 - The conversion event fires on that click, verified in the analytics tool rather than in the platform's own reporting.
 - The `utm_campaign` value arriving in analytics matches the campaign name exactly. Check the value that actually lands, not the one you intended.
 
@@ -31,17 +35,17 @@ Run this after launch, not instead of the [campaign launch checklist](/campaign-
 - Conversion counts in the platform and in analytics are in the same order of magnitude. They will not match exactly; they should not differ by a factor of ten.
 - Spend is [pacing](/budget-pacing) against the flight, not front-loading the whole budget into two days.
 - Every ad in the campaign has delivered something. An ad on zero impressions after two days is usually a placement or aspect ratio problem.
-- The destination page is holding up: no console errors, no broken form, no slow load on mobile.
+- The destination page is holding up: no console errors, no broken form, no slow load on mobile. The checks are scriptable; whether the page still reads well is **(human eyes)**.
 - If a test is running, the [experiment ID](/experiment-id-convention) is present on the rows arriving in the flat file.
 
 ## Weekly, while it runs
 
 - Names have not been edited in any platform. A renamed campaign splits its own history.
 - No new ad has been added outside the naming convention. Ads added mid-flight are where conventions usually break.
-- Budget changes have been recorded in the change log, so next week's report can explain the movement.
+- Budget changes have been recorded in the [change log](/marketing-reporting-data-dictionary#decisions-and-changes), so next week's report can explain the movement. A change an agent executed through a platform API is logged there at execution time by construction; a manual change still needs the entry.
 - Creative is not being swapped without a brief. A new asset needs a [creative brief](/creative-brief) even mid-campaign.
 - Any claim added to new copy is still on the approved list in [messaging](/messaging).
-- Guardrail metrics are being watched, not just the primary one.
+- Guardrail metrics are checked against their normal ranges, not just the primary one. The check is mechanical; what a drift means is **(human eyes)**.
 
 ## Before you call anything a result
 
