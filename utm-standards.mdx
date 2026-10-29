@@ -91,6 +91,8 @@ _Examples throughout use one invented company, **Doughnut Labs**, a SaaS company
   | The **brief file name**, from the [file naming conventions](/file-naming-conventions) | `DOC_google-fresh-batch-trial_20260807_v01` | No. It names a document, not a campaign |
 
   The value in `utm_campaign` has to match the name in the ad platform exactly, character for character. That match is what joins platform spend to analytics conversions.
+
+  When section F puts an ID in `utm_campaign` instead, the join moves to the reporting tool: the platform fills in a stable ID, the reporting tool maps that ID back to the campaign, and the character-for-character rule applies to that mapping rather than to the link. Either way, one join rule per parameter, written down.
 </Warning>
 
 **For each platform, pick what `utm_campaign` carries: the platform campaign name, the platform campaign ID, the marketing campaign short form, or a custom value. Add a default for anything not listed.**
