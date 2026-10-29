@@ -17,7 +17,7 @@ Three things that point at each other:
 - An **experiment ID** that carries the test across your ad platform, BI tool, and reporting.
 - A **review** saved in the learning library, linked back to the brief.
 
-One person, the [**owner**](/glossary#owner), is responsible for all three. The owner copies the brief, runs the test, writes the review, and recommends the next action. Others come in at set points: whoever approves the spend or page change, whoever builds the creative or customer profile, and whoever reads the result later.
+One person, the [**owner**](/glossary#owner), is responsible for all three. The hypothesis, the success criteria, the stop-or-extend calls, and the final status are the owner's. The mechanical parts, registering the ID, applying it to every surface, verifying the splits, monitoring the guardrails on a schedule, and filling the review's numbers, can be done by the owner or by a [builder](/glossary#builder), person or AI agent, working in the same tools. Others come in at set points: whoever approves the spend or page change, whoever builds the creative or customer profile, and whoever reads the result later.
 
 ## Before you start
 
@@ -88,7 +88,7 @@ See the [experiment brief concepts](/experiment-brief-concepts) for how to write
 Finish the design section of the brief before anything goes live. This is where you set what counts as a win and how long the test runs:
 
 - **Success criteria:** the minimum lift, the confidence threshold, and the guardrail condition, all stated before results come in.
-- **Sample size and minimum detectable effect:** calculated with a sample size calculator before launch.
+- **Sample size and minimum detectable effect:** calculated before launch, with a sample size calculator or by the builder from the minimum detectable effect and confidence you set. Either way the inputs are yours; the arithmetic isn't.
 - **Timeline:** start and end dates, with the end date derived from the sample math, not the calendar.
 
 <Warning>
@@ -142,21 +142,23 @@ Once the ID is on every surface and the split matches the brief, launch.
 
 ## 7. Run and monitor
 
-Let the test collect the sample the brief planned for. Watch, don't touch.
+Let the test collect the sample the brief planned for. Monitoring is a [scheduled pass](/glossary#scheduled-pass): on a fixed cadence, check only the guardrail metrics against the thresholds the brief pre-registered, and alert the owner on a breach. An agent running that pass is structurally incapable of [peeking](/glossary#peeking), because it never looks at the primary metric's significance; a person running it follows the same rule.
 
-- **Watch the guardrails.** If a guardrail metric degrades badly, stop the test and mark it cancelled.
+- **Watch the guardrails, nothing else.** If a guardrail metric degrades past its threshold, the owner stops the test and marks it cancelled. Stopping is always the owner's call; the pass only alerts.
 - **Don't stop early to lock in a win.** A test that crosses 95% on day two hasn't collected its sample yet.
-- **Only extend for an external reason.** A traffic drop, a tracking break, or a seasonal shift can justify extending the timeline. "Not yet significant" cannot. Record the reason in the brief if you extend.
+- **Only extend for an external reason.** A traffic drop, a tracking break, or a seasonal shift can justify extending the timeline. "Not yet significant" cannot. The owner records the reason in the brief if the test extends.
 
 ## 8. Set up the review
 
-Once the test finishes collecting data on its planned timeline, copy the [experiment review template](/experiment-review-process) and work through it:
+The end date set in step 3 is what fires this step, as a scheduled pass rather than a thing someone remembers. Copy the [experiment review template](/experiment-review-process) and work through it:
 
 1. Fill in the identifying fields, starting with the same experiment ID.
 2. Record the primary metric, secondary metrics, and guardrails against the baseline and success criteria, and note whether significance was reached.
 3. Check the result against the success criteria the brief set in advance.
 4. Assign one status: Win, Loss, Inconclusive, Invalid, or Cancelled.
 5. Write what the result means and the next action: a rollout, a follow-up test, or a decision to drop the idea.
+
+Steps 1 to 3 are assembly from the flat file and the brief, and a builder can pre-fill them. Steps 4 and 5 are the owner's: the status and the next action are the judgment the whole test existed to produce.
 
 ## 9. Link everything together
 
