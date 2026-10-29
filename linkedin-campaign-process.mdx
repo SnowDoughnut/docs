@@ -17,7 +17,7 @@ Three things that point at each other:
 - A **live campaign** in Campaign Manager, named per the three naming conventions, pointing at a tagged landing page or lead form, tracking a conversion action defined in the [event tracking plan](/event-tracking-plan).
 - **Links back** from the marketing campaign brief to this campaign's brief, finished creative, and finished copy.
 
-One person, the [**owner**](/glossary#owner), is accountable for all three. The **media buyer** builds and runs the campaign.
+One person, the [**owner**](/glossary#owner), is accountable for all three. The **media buyer** builds and runs the campaign; the building half of that role is a [builder](/glossary#builder), a person or an AI agent with API access to Campaign Manager. When the builder is an AI, in-flight bid and rotation judgment goes to the owner unless a [standing rule](/glossary#standing-rule) in the brief covers it.
 
 ## Before you start
 
@@ -36,7 +36,8 @@ Every input below has to exist, or be deliberately marked as not applicable, bef
 | Names, all three levels | [Campaign](/campaign-naming-conventions), [audience](/ad-set-group-naming-conventions), [ad](/ad-name-conventions) | Always | Assemble from the dictionaries |
 | UTMs | [UTM standards](/utm-standards) | Always | Build them from the standard before the URLs go anywhere |
 | Budget | Marketing campaign brief, [budget planning](/budget-planning) | Always | Confirm the LinkedIn line item, sized for LinkedIn's cost per result |
-| Experiment ID | [Experiment ID conventions](/experiment-id-concepts) | Only if testing | Register one via [creating an experiment](/creating-an-experiment) |
+| Experiment ID | [Experiment ID convention](/experiment-id-convention) | Only if testing | Register one via [creating an experiment](/creating-an-experiment) |
+| Access | Campaign Manager account, Insight Tag read, CRM read for lead routing, the libraries above | Always | Grant it to the builder, person or agent, before the build is scheduled |
 
 <Warning>
   **A named account list is not a customer profile.** A profile describes a type of buyer and lives in the [customer profile library](/customer-profile-library-overview); a list of specific named accounts is a data file and lives in the [audience list store](/audience-list-store), behind access control. A list handed over by sales does not need a profile written before it can run, and it does need an owner, a recorded source, and an expiry date. Never paste account names into a brief.
@@ -105,7 +106,7 @@ The brief fixes objective, conversion action, budget, bid strategy, audience def
 
 ## 4. Check audience size, match rate, and overlap
 
-Do this before building, while changing it is free, and before creative and copy are briefed.
+Do this before building, while changing it is free, and before creative and copy are briefed. All four checks are readable from Campaign Manager or its API, so the builder runs them and records the values in the brief; the overlap judgment call is the one that needs a person's read.
 
 - **Match rate, on any uploaded list.** Upload the list and record how many companies matched. LinkedIn needs **at least 300 matched companies** before a campaign can serve, whatever the row count was. A 400-row list that matches 180 cannot run, and finding that out at the pre-launch checklist means finished creative with nowhere to go. The matched count stays in Campaign Manager; check it there before each refresh.
 - **Size.** Record the estimated audience for each campaign. Too narrow and delivery stalls regardless of budget. Too broad and the targeting precision that justified LinkedIn's cost has been given away.
@@ -126,7 +127,7 @@ Only if there is a control, and only if the budget can reach the sample the test
 
 ## 7. Build the campaign group, campaigns, and ads
 
-Build from the brief. Work down the levels:
+Build everything **paused**: nothing goes live in this step, whoever the builder is. Build from the brief, working down the levels:
 
 1. **Campaign group:** name, budget if set at group level, flight dates.
 2. **Campaigns:** one per row of the brief's structure table. Objective, audience, format, budget, bid strategy, conversion tracking, campaign name.
@@ -136,13 +137,13 @@ Build from the brief. Work down the levels:
 
 Run the [**LinkedIn pre-launch checklist**](/linkedin-pre-launch-checklist) with the campaign built and paused.
 
-## 9. Launch and link back
+## 9. Owner sets live, then link back
 
-Set the campaign live, then:
+The owner flips the campaign live, or a [standing rule](/glossary#standing-rule) recorded in the brief does. Then:
 
 - Paste the finished creative and finished copy links into the [marketing campaign brief](/marketing-campaign-brief).
 - Add the campaign to the reporting dashboard named in the brief.
-- If the campaign uses lead forms, confirm leads are reaching the CRM before you stop watching.
+- If the campaign uses lead forms, confirm leads are reaching the CRM: by watching, or by an automated check against the CRM that alerts when the first leads don't arrive.
 - Record the launch date and the mid-flight review date in the brief.
 
 ## 10. File the brief

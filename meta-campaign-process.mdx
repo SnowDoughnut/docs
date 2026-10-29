@@ -19,7 +19,7 @@ Three things that point at each other:
 - A **live campaign** in Ads Manager, named per the three naming conventions, pointing at a tagged landing page, optimizing toward a conversion action defined in the [event tracking plan](/event-tracking-plan).
 - **Links back** from the marketing campaign brief to this campaign's brief, finished creative, and finished copy.
 
-One person, the [**owner**](/glossary#owner), is accountable for all three. The **media buyer** builds and runs the campaign. Where they are the same person, the roles still separate at review time: the brief is what the build gets checked against.
+One person, the [**owner**](/glossary#owner), is accountable for all three. The **media buyer** builds and runs the campaign; the building half of that role is a [builder](/glossary#builder), a person or an AI agent with API access to the ad account and the framework's tools. When the builder is an AI, in-flight judgment calls, which creative to scale, when to consolidate ad sets, go to the owner unless a [standing rule](/glossary#standing-rule) in the brief covers them. Where owner and media buyer are the same person, the roles still separate at review time: the brief is what the build gets checked against.
 
 ## Before you start
 
@@ -39,6 +39,7 @@ Every input below has to exist, or be deliberately marked as not applicable, bef
 | UTMs | [UTM standards](/utm-standards) | Always | Build them from the standard before the URLs go anywhere |
 | Budget | Marketing campaign brief, [budget planning](/budget-planning) | Always | Confirm the Meta line item and its amount |
 | Experiment ID | [Experiment ID convention](/experiment-id-convention) | Only if testing | Register one via [creating an experiment](/creating-an-experiment) |
+| Access | Ad account, Events Manager read, the libraries and drives above | Always | Grant it to the builder, person or agent, before the build is scheduled |
 
 <Warning>
   A missing input is a schedule problem, not a paperwork problem. Creative and landing pages are the two that most often push a launch date, because both need production time from someone who isn't the media buyer. Check those two first.
@@ -129,7 +130,7 @@ If it is a real test, follow [creating an experiment](/creating-an-experiment): 
 
 ## 6. Build the campaign, ad sets, and ads
 
-Build from the brief. The values are already decided, so this step is transcription rather than decision-making.
+Build everything **paused**: nothing goes live in this step, whoever the builder is. Build from the brief; the values are already decided, so this step is transcription rather than decision-making.
 
 Work down the levels:
 
@@ -145,9 +146,9 @@ Work down the levels:
 
 Run the [**Meta pre-launch checklist**](/meta-pre-launch-checklist) with the campaign built and paused. It checks naming at all three levels, UTMs on every URL, the conversion event firing, budget and bid values, and creative previewed in every placement.
 
-## 8. Launch and link back
+## 8. Owner sets live, then link back
 
-Set the campaign live, then do the parts that are easy to skip on launch day:
+The owner flips the campaign live, or a [standing rule](/glossary#standing-rule) recorded in the brief does, the always-on exception below being the common case. Then do the parts that are easy to skip on launch day:
 
 - Paste the finished creative and finished copy links into the [marketing campaign brief](/marketing-campaign-brief).
 - Add the campaign to the reporting dashboard named in the brief.

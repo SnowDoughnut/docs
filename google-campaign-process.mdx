@@ -23,7 +23,7 @@ Three things that point at each other:
 - A **live campaign** in Google Ads, named per the three naming conventions, pointing at a tagged landing page, optimizing toward a conversion action defined in the [event tracking plan](/event-tracking-plan).
 - **Links back** from the marketing campaign brief to this campaign's brief, finished assets, and finished copy.
 
-One person, the [**owner**](/glossary#owner), is accountable for all three. The **media buyer** builds and runs the campaign.
+One person, the [**owner**](/glossary#owner), is accountable for all three. The **media buyer** builds and runs the campaign; the building half of that role is a [builder](/glossary#builder), a person or an AI agent with API access to the account. When the builder is an AI, the judgment this page leaves with the media buyer, keywords, negatives, target adjustments, asset rotation, auto-applied recommendations, goes to the owner unless a [standing rule](/glossary#standing-rule) in the brief covers it.
 
 ## Before you start
 
@@ -45,6 +45,7 @@ Every input below has to exist, or be deliberately marked as not applicable, bef
 | Product feed | [Merchant Center](/google-merchant-center-overview) | Shopping and retail PMax only | Build the feed from the [product CSV template](/google-merchant-center-product-csv-template) |
 | Experiment ID | [Experiment ID concepts](/experiment-id-concepts) | Only if there's a control | Register one via [creating an experiment](/creating-an-experiment) |
 | Pilot brief | [Pilot brief](/pilot-brief) | Only if there's no control and no baseline | Set the read date and the kill or scale rule before launch |
+| Access | Google Ads account, conversion tracking read, the libraries and drives above | Always | Grant it to the builder, person or agent, before the build is scheduled |
 
 <Warning>
   Asset coverage is the input most often underestimated on Performance Max and Demand Gen. A missing ratio or logo size doesn't throw an error, it silently removes the placements those assets would have served on. Check the [specs for the campaign type you're building](/google-campaign-brief#assets-creative-and-copy) before you promise a launch date. Search is the exception: it is text only and needs no image or video assets.
@@ -127,7 +128,7 @@ Copy the [**Google campaign brief**](/google-campaign-brief) and work down it. E
 
 The brief fixes campaign type, conversion goal, budget, bid strategy, and structure. Those get reviewed before the build. Keyword additions and negatives, target adjustments, and asset rotation stay with the media buyer, who is making those calls against live data.
 
-**Check the budget against the strategy before going further.** Two pieces of arithmetic decide whether the rest of the brief is realistic:
+**Check the budget against the strategy before going further.** Two pieces of arithmetic decide whether the rest of the brief is realistic; the builder runs them, and a result below the threshold is an ask to the owner, never a silent downgrade to a maximize strategy:
 
 1. **Daily, not monthly.** Google's budget field is a daily average. Divide the monthly budget by 30.4 to get it. Google can spend up to twice that figure on a single day and caps the month at daily × 30.4.
 2. **Enough conversions for the strategy.** Divide the monthly budget by the target cost per conversion. Target CPA wants roughly 30 conversions in 30 days; Target ROAS wants roughly 50. Below that, launch on a maximize strategy and record when you plan to switch.
@@ -182,7 +183,7 @@ Three values are worth checking against the standard rather than typing from mem
 
 Decide auto-tagging and manual UTMs together. Auto-tagging adds a `gclid` for Google Ads reporting; it does not fill the `utm_source` and `utm_medium` fields your analytics groups by. Most accounts run both, and the brief is where that decision gets recorded rather than re-argued.
 
-Record the auto-applied recommendations setting at the same time. Recommendations left on can rewrite ad copy, add keywords, and change the bid strategy after launch, which means the reviewed brief and the running campaign stop matching. Which ones are on is the media buyer's call; that somebody made the call is the brief's.
+Record the auto-applied recommendations setting at the same time. Recommendations left on can rewrite ad copy, add keywords, and change the bid strategy after launch, which means the reviewed brief and the running campaign stop matching. Which ones are on is the media buyer's call; that somebody made the call is the brief's. Record the allowlist in the brief as a [standing rule](/glossary#standing-rule), and when the builder is an AI, this is also the one setting that can silently un-sync its build from the brief, so the weekly QA pass checks the change history against it.
 
 ## 7. Register an experiment or a pilot, if either applies
 
@@ -194,7 +195,7 @@ Record the auto-applied recommendations setting at the same time. Recommendation
 
 ## 8. Build the campaign, groups, and ads
 
-Build from the brief. Work down the levels:
+Build everything **paused**: nothing goes live in this step, whoever the builder is. Build from the brief, working down the levels:
 
 1. **Campaign:** type, networks, conversion goals, budget, bid strategy, locations and languages, campaign name.
 2. **Ad groups or asset groups:** one per row of the brief's structure table. On Search, the keywords, match types, and ad group negatives come from that group's [search theme brief](/google-search-theme-brief). On Performance Max and Demand Gen, audience signals and assets. Group name.
@@ -208,9 +209,9 @@ Build from the brief. Work down the levels:
 
 Run the [**Google pre-launch checklist**](/google-pre-launch-checklist) with the campaign built and paused.
 
-## 10. Launch and link back
+## 10. Owner sets live, then link back
 
-Set the campaign live, then:
+The owner flips the campaign live, or a [standing rule](/glossary#standing-rule) recorded in the brief does. Then:
 
 - Paste the finished assets and finished copy links into the [marketing campaign brief](/marketing-campaign-brief).
 - Add the campaign to the reporting dashboard named in the brief.

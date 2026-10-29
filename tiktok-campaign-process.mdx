@@ -17,7 +17,7 @@ Three things that point at each other:
 - A **live campaign** in TikTok Ads Manager, named per the three naming conventions, pointing at a tagged landing page, optimizing toward a conversion action defined in the [event tracking plan](/event-tracking-plan).
 - **Links back** from the marketing campaign brief to this campaign's brief, finished creative, and finished copy.
 
-One person, the [**owner**](/glossary#owner), is accountable for all three. The **media buyer** builds and runs the campaign.
+One person, the [**owner**](/glossary#owner), is accountable for all three. The **media buyer** builds and runs the campaign; the building half of that role is a [builder](/glossary#builder), a person or an AI agent with API access to the ad account. When the builder is an AI, creative rotation and in-flight bid judgment go to the owner unless a [standing rule](/glossary#standing-rule) in the brief covers them.
 
 ## Before you start
 
@@ -36,7 +36,8 @@ Every input below has to exist, or be deliberately marked as not applicable, bef
 | Names, all three levels | [Campaign](/campaign-naming-conventions), [ad group](/ad-set-group-naming-conventions), [ad](/ad-name-conventions) | Always | Assemble from the dictionaries |
 | UTMs | [UTM standards](/utm-standards) | Always | Build them from the standard before the URLs go anywhere |
 | Budget | Marketing campaign brief, [budget planning](/budget-planning) | Always | Confirm the TikTok line item and its amount |
-| Experiment ID | [Experiment ID conventions](/experiment-id-concepts) | Only if testing | Register one via [creating an experiment](/creating-an-experiment) |
+| Experiment ID | [Experiment ID convention](/experiment-id-convention) | Only if testing | Register one via [creating an experiment](/creating-an-experiment) |
+| Access | TikTok Ads Manager account, pixel and Events API read, the libraries and drives above | Always | Grant it to the builder, person or agent, before the build is scheduled |
 
 <Warning>
   Creative volume is the input that most often gets underestimated here. TikTok exhausts a creative faster than the other paid platforms, and a campaign launched with one video usually stalls on frequency well before its budget is spent. Decide the number of variants at brief stage, not when performance drops.
@@ -100,14 +101,14 @@ Copy the [**TikTok campaign brief**](/tiktok-campaign-brief) and work down it. E
 The brief fixes objective, optimization event, budget, bid strategy, and structure. Creative rotation and in-flight bid adjustments stay with the media buyer.
 
 <Warning>
-  Check the cost cap against the daily budget before launch. TikTok's guidance is a daily budget of at least 50 times the bid. Below that, a cost cap campaign holds cost down by simply not delivering, which reads as a targeting problem rather than a budget one.
+  Check the cost cap against the daily budget before launch; the builder runs this arithmetic, and a mismatch is an ask to the owner. TikTok's guidance is a daily budget of at least 50 times the bid. Below that, a cost cap campaign holds cost down by simply not delivering, which reads as a targeting problem rather than a budget one.
 </Warning>
 
 ## 4. Clear Spark Ads authorization, if you're using it
 
 Spark Ads run against a real organic post, yours or a creator's, and need an authorization code with an expiry date.
 
-Request the code, record it in the brief, and record when it expires. An expiry that lands mid-flight will take the ad down without warning, and it is usually the best-performing one.
+Request the code, record it in the brief, and record when it expires. An expiry that lands mid-flight will take the ad down without warning, and it is usually the best-performing one. The expiry watch makes a good [scheduled pass](/glossary#scheduled-pass): an alert ahead of the date, so renewal happens before delivery stops. Requesting the code from a creator stays a person's job.
 
 ## 5. Assemble names and UTMs
 
@@ -119,7 +120,7 @@ Only if there is a control. Follow [creating an experiment](/creating-an-experim
 
 ## 7. Build the campaign, ad groups, and ads
 
-Build from the brief. Work down the levels:
+Build everything **paused**: nothing goes live in this step, whoever the builder is. Build from the brief, working down the levels:
 
 1. **Campaign:** objective, budget level, campaign type, campaign name.
 2. **Ad groups:** one per row of the brief's structure table. Placements, audience, optimization event, budget, bid strategy, ad group name.
@@ -129,9 +130,9 @@ Build from the brief. Work down the levels:
 
 Run the [**TikTok pre-launch checklist**](/tiktok-pre-launch-checklist) with the campaign built and paused.
 
-## 9. Launch and link back
+## 9. Owner sets live, then link back
 
-Set the campaign live, then:
+The owner flips the campaign live, or a [standing rule](/glossary#standing-rule) recorded in the brief does. Then:
 
 - Paste the finished creative and finished copy links into the [marketing campaign brief](/marketing-campaign-brief).
 - Add the campaign to the reporting dashboard named in the brief.
