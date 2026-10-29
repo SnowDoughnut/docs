@@ -29,7 +29,7 @@ The signal is measurable. Published analyzes of AI citations on commercial queri
 | Supporting | Every 6 to 12 months |
 | Anything with pricing, specs, or fast-moving data | Every 1 to 3 months |
 
-Run the sweep on a fixed schedule, monthly is usually enough, and work whatever is due that month. A fixed date on a calendar with a named owner is what makes this happen. A cadence that exists only in a document does not.
+Run the sweep as a [scheduled pass](/glossary#scheduled-pass), monthly is usually enough, and work whatever is due that month. The pass has a defined trigger and an actor: a [builder](/glossary#builder), person or AI agent, pulls what is due, runs the decay checks, and produces a triage list with evidence and a recommended decision per row. The rulings are the owner's. A cadence that exists only in a document does not run; a scheduled pass does.
 
 <Warning>
   Do not set a cadence the team cannot sustain. A quarterly cycle across twenty hero articles is real recurring work. An honest twice-yearly cadence that actually runs is worth more than a quarterly one that is silently missed, because the register stays true.
@@ -66,14 +66,16 @@ Anything with a review date in the past is overdue and goes to the top of the li
 
 ## 2. Check for decay signals
 
-For each article, look at what has changed since the last review:
+For each article, look at what has changed since the last review. Every signal has a place it is read from; record yours once, in the [data dictionary's where-everything-lives section](/marketing-reporting-data-dictionary#where-everything-lives) or the register itself, so any actor can run the checks.
 
-- **The facts.** Are the numbers, prices, screenshots, product names, and dates still correct? Start with the "what will go out of date first" note from the original brief.
-- **Traffic and rankings.** Is organic traffic falling? Has the article slipped for the queries it was written for?
-- **Citations.** Run the article's primary question as a prompt in the AI tools your customers use. Are you cited? Is a competitor cited instead?
-- **The competition.** Has someone published a more current or more complete answer?
-- **The question.** Are people still asking this, and asking it the same way?
-- **Links.** Are the outbound links still alive? Do the inbound links from the brief still exist?
+| Signal | Check | Where it is read |
+| :-- | :-- | :-- |
+| **The facts** | Are the numbers, prices, screenshots, product names, and dates still correct? Start with the "what will go out of date first" note from the original brief | The article against its brief and sources |
+| **Traffic and rankings** | Is organic traffic falling? Has the article slipped for the queries it was written for? | _E.g. GA4, Search Console_ |
+| **Citations** | Run the article's primary question as a prompt in the AI tools your customers use. Are you cited? Is a competitor cited instead? | _E.g. ChatGPT, Claude, Perplexity_ |
+| **The competition** | Has someone published a more current or more complete answer? | Web search on the primary question |
+| **The question** | Are people still asking this, and asking it the same way? | _E.g. Search Console queries, keyword tool_ |
+| **Links** | Are the outbound links still alive? Do the inbound links from the brief still exist? | Link checker |
 
 ## 3. Triage each article
 
@@ -86,7 +88,7 @@ Every article that came due gets one of four decisions.
 | **Retire** | Nobody asks this any more, or it is no longer ours to answer | Redirect or remove, and record why |
 | **Leave** | Still accurate, still performing | Change nothing, record that it was checked, set the next date |
 
-Leaving an article alone is a real decision, not a skipped one. Record it, so the next reviewer knows the article was looked at.
+Leaving an article alone is a real decision, not a skipped one. Record it, so the next reviewer knows the article was looked at. The decision column is the owner's on every row: a builder recommends with its evidence attached, and never rules "leave" on its own, because a pass that grades its own triage list checks nothing.
 
 <Warning>
   Consolidating and retiring both change URLs. A removed page with no redirect loses every inbound link and citation pointing at it, including ones you never knew existed. Redirect to the closest equivalent page rather than the homepage.
@@ -106,7 +108,7 @@ A substantive update usually means one or more of:
 - Rewriting an opening that no longer answers the question directly.
 - Adding the internal links to articles published since this one.
 
-A hero article that has drifted far enough to need rewriting rather than updating goes back through the [article process](/article-process) with a fresh brief, keeping the same URL.
+A hero article that has drifted far enough to need rewriting rather than updating goes back through the [article process](/article-process) with a fresh brief, keeping the same URL. Within a decided triage, the execution, refreshed data with updated sources, redirects on consolidation, register bookkeeping, is the builder's; a change big enough to amount to a rewrite goes back to the owner instead of quietly growing inside an update.
 
 ## 5. Update the register
 
@@ -123,7 +125,7 @@ The one-line note is what makes the next review fast. A reviewer who can see tha
 
 ## 6. Review the hero set once a year
 
-Once a year, step back from individual articles and look at the hero set as a whole:
+Once a year, the pass escalates instead of triaging: it assembles the evidence (review-date misses, traffic by area, citation share) and the owner answers the questions below. These are the judgment calls the cap exists to force.
 
 - Are these still the areas where we can answer better than anyone else?
 - Has an area stopped being ours, because the market moved or someone else now owns it?

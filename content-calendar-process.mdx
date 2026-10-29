@@ -5,6 +5,8 @@ description: "The recurring workflow that fills and maintains the content calend
 
 Run this on a cadence to keep the [content calendar](/content-calendar) accurate enough to produce against. It covers the planning session that fills the calendar and the weekly pass that keeps it true.
 
+The two halves have different actors. The planning session is people deciding what to say and when. The preparation for it, and the weekly pass, are a [builder](/glossary#builder)'s: a person or an AI agent working in the same calendar, briefs, and reporting.
+
 <Info>
   This process uses the [**content calendar**](/content-calendar) standard, the [**organic social post brief**](/organic-social-post-brief), the [**article brief**](/article-brief), [**messaging**](/messaging), and the [**approval process**](/approval-process).
 </Info>
@@ -28,12 +30,12 @@ Run this on a cadence to keep the [content calendar](/content-calendar) accurate
 
 <Steps>
   <Step title="1. Close out the last period first">
-    Before adding anything, walk the rows that have passed. Fill in published URLs, move anything that did not ship to Dropped with a reason or forward with a new date, and note which posts did unusually well or badly.
+    Before adding anything, walk the rows that have passed. Fill in published URLs, move anything that did not ship to Dropped with a reason or forward with a new date, and note which posts did unusually well or badly against the channel reporting source named in Before you start.
 
-    Planning on top of an inaccurate calendar produces a plan nobody trusts by week two.
+    This step, and the next, are preparation a builder can finish before the session starts, so the people in the room spend the session planning rather than bookkeeping. Planning on top of an inaccurate calendar produces a plan nobody trusts by week two.
   </Step>
   <Step title="2. Lay in the fixed points">
-    Start with what is already committed and cannot move: campaign flights, product releases, events, reports, and anything seasonal.
+    Start with what is already committed and cannot move: campaign flights from the campaign briefs, product releases from the release plan, events, reports, and anything seasonal.
 
     Everything added in the next step is timed around one of these, or is deliberately standalone.
   </Step>
@@ -49,7 +51,7 @@ Run this on a cadence to keep the [content calendar](/content-calendar) accurate
     One name per row. A row with no owner is a row that gets discussed again next month in exactly the same state.
   </Step>
   <Step title="6. Check the mix">
-    Read the period as a whole: are the message pillars balanced, or has one taken over? Is one format doing all the work because it is the fastest to make? Both drift without anyone deciding.
+    Read the period as a whole: are the message pillars balanced, or has one taken over? Is one format doing all the work because it is the fastest to make? Both drift without anyone deciding. The counts are a builder's to compute; whether the mix is right is the room's call.
   </Step>
 </Steps>
 
@@ -71,13 +73,24 @@ Record each row's position in the **sequence** column and link the campaign. Tha
 
 ## The weekly pass
 
-Short, and the thing that keeps the calendar worth reading.
+Short, and the thing that keeps the calendar worth reading. Run it as a [scheduled pass](/glossary#scheduled-pass): every bullet is a register query, so a builder runs the five and posts an exceptions list, rows missing a brief, an owner, a URL, or an approval, for the owner to clear. A clean week is a one-line result.
 
 - Every row publishing in the next two weeks has a brief and an owner.
 - Every row in production has cleared, or is queued for, whatever [approval](/approval-process) it needs.
 - Every row that published last week has its URL filled in.
 - Anything slipping has been moved, with its sequence moved with it.
 - Anything urgent that published without a row has one now.
+
+## When an anchor moves
+
+A campaign flight or release that moves drags its supporting set with it. The move is mechanical and a builder can execute it; the confirmation is the owner's:
+
+1. Filter the calendar to rows linked to the anchor.
+2. Shift the set, keeping the intervals between sequence positions.
+3. Check for collisions with other rows and flag any.
+4. Notify each affected row's owner through the channel your team names here: _E.g. Slack, #marketing_.
+
+The owner confirms the new dates before production continues; a sequenced set shifted without its owners knowing publishes out of order anyway.
 
 ## Exceptions
 
