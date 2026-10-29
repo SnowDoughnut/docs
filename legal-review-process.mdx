@@ -13,7 +13,7 @@ The general workflow, approvers, and turnaround times live in the [approval proc
 
 ## What triggers a review
 
-Start from this list, then edit it with your reviewer. The point is that a producer can tell from the list alone whether their work needs to go, without asking.
+Start from this list, then edit it with your reviewer. The point is that a producer can tell from the list alone whether their work needs to go, without asking, and that is also what makes the routing automatic: a [builder](/glossary#builder) scans every outbound asset against the table at draft time and routes hits to review, so a triggering claim never ships because nobody thought to ask.
 
 | Trigger | Because |
 | :-- | :-- |
@@ -42,7 +42,7 @@ Start from this list, then edit it with your reviewer. The point is that a produ
 
 ## What to send
 
-Legal reviews the claim and its evidence together. Sending only the creative produces a request for the evidence and a lost round.
+Legal reviews the claim and its evidence together. Sending only the creative produces a request for the evidence and a lost round. Assembling the package below is a builder's work; the ruling on it never is, and legal review never defaults to approved whoever submitted it.
 
 <Steps>
   <Step title="1. The work in its final form">
@@ -81,13 +81,13 @@ An approval with a condition attached is only met if the format can guarantee th
 | Performance Max and Demand Gen | Mixes headlines, descriptions, images, and video per placement | Put the qualifier in every asset that carries the claim, since pinning is unavailable |
 | Carousel and collection formats | A viewer may only see the first card | Keep the claim and its qualifier on the same card |
 
-Record which mechanism was used, next to the condition, on the brief. An unexplained pin reads as a mistake to the next person optimizing the ad, and removing it silently breaks the approval.
+Record which mechanism was used, next to the condition, on the brief. An unexplained pin reads as a mistake to the next person optimizing the ad, and removing it silently breaks the approval. Because the break is silent, re-checking the mechanism on every later edit to the ad belongs in a [scheduled pass](/glossary#scheduled-pass) or the weekly QA, not in memory.
 
 ## Claims expire even when the wording doesn't
 
 The sentence stays the same while the number behind it moves. A claim cleared last year on data from the year before is not cleared today.
 
-Every approved claim carries a refresh date on its evidence, not on the claim. When the evidence is refreshed and still supports the sentence, nothing needs re-reviewing. When it no longer does, the claim comes down.
+Every approved claim carries a refresh date on its evidence, not on the claim. A [scheduled pass](/glossary#scheduled-pass) sweeps those refresh dates, and release expiries from [brand assets](/brand-assets), and flags lapsed support to the owner. When the evidence is refreshed and still supports the sentence, nothing needs re-reviewing. When it no longer does, the claim comes down.
 
 ## Exceptions
 

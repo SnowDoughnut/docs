@@ -17,7 +17,7 @@ Three things that point at each other:
 - A **sent campaign or a live sequence**, named per the three naming conventions, tagged with UTMs that distinguish each send, driving a conversion action defined in the [event tracking plan](/event-tracking-plan).
 - **Links back** from the marketing campaign brief to this campaign's brief and finished copy.
 
-One person, the [**owner**](/glossary#owner), is accountable for all three.
+One person, the [**owner**](/glossary#owner), is accountable for all three. A [builder](/glossary#builder), person or AI agent with platform access, can audit the inputs, draft the brief, build the segment from its written definition, assemble names and UTMs, and run the checks. Two gates stay a person's whoever builds: the consent attestation, and pressing send.
 
 ## Before you start
 
@@ -36,7 +36,8 @@ Every input below has to exist, or be deliberately marked as not applicable, bef
 | Authentication | Your sending domain | Always | Fix SPF, DKIM, and DMARC before sending anything |
 | Names, all three levels | [Campaign](/campaign-naming-conventions), [segment](/ad-set-group-naming-conventions), [send](/ad-name-conventions) | Always | Assemble from the dictionaries |
 | UTMs | [UTM standards](/utm-standards) | Always | Build them, including `utm_content` per send |
-| Experiment ID | [Experiment ID conventions](/experiment-id-concepts) | Only if testing | Register one via [creating an experiment](/creating-an-experiment) |
+| Experiment ID | [Experiment ID convention](/experiment-id-convention) | Only if testing | Register one via [creating an experiment](/creating-an-experiment) |
+| Access | Email platform, CRM read, the libraries above | Always | Grant it to the builder, person or agent, before the build is scheduled |
 
 <Warning>
   Consent basis and domain authentication are the two rows that stop a send rather than delay it. Neither is fixable in the hour before a scheduled send, so check both first.
@@ -89,7 +90,7 @@ Work down the table in **Before you start**.
 
 **Suppressions.** List them explicitly, including other campaigns sending in the same window. Overlapping sends are a deliverability problem as much as an experience one.
 
-**Consent.** Confirm every contact in the segment has a recorded basis for receiving marketing email. This is not a step to take on trust.
+**Consent.** Confirm every contact in the segment has a recorded basis for receiving marketing email. This is not a step to take on trust, and it is not the builder's to attest: a named person confirms the basis and the confirmation is recorded in the brief.
 
 **Destination.** Check the [landing page library](/landing-page-library) for a page that already serves this offer. The page has to carry the same offer and the same call-to-action wording as the email, or the click is wasted.
 
@@ -101,7 +102,7 @@ If this is an automated sequence, pay particular attention to the trigger, the t
 
 ## 4. Build the segment and its suppressions
 
-Build the segment from the written definition. Then check the count against the estimate in the brief.
+Build the segment from the written definition. Then check the count against the estimate in the brief; the comparison is mechanical, and a sharp difference is a finding to raise, never to resolve silently.
 
 A count that differs sharply from the estimate means the query does not say what you thought it said. Resolve that before sending rather than after.
 
@@ -119,10 +120,10 @@ Use `utm_content` to distinguish each send in a sequence. Without it, three touc
 
 ## 7. Send test emails and render-check
 
-Send a real test to real inboxes, not just the platform's preview.
+Send a real test to real inboxes, not just the platform's preview. A rendering service can stand in for the device wall, and the builder can run the link, token, and clipping checks; the dark-mode read stays a person's eyes.
 
-- Check at least one webmail client, one mobile app, and one desktop client.
-- Check **light and dark mode**. Dark mode handling varies sharply between clients, and a logo that disappears against an inverted background is the most common failure.
+- Check at least one webmail client, one mobile app, and one desktop client, directly or through a rendering service.
+- Check **light and dark mode**. **(human eyes)** Dark mode handling varies sharply between clients, and a logo that disappears against an inverted background is the most common failure.
 - Click every link in the test, including the unsubscribe link and any link inside an image.
 - Confirm personalization tokens resolve, and that the fallback is sensible when a field is empty.
 - Confirm the email is not clipped. See the [email creative specs](/email-creative-specs) for the size threshold.
@@ -133,17 +134,17 @@ Run the [**email pre-send checklist**](/email-pre-send-checklist).
 
 ## 9. Send, then link back
 
-Send the broadcast or activate the sequence, then:
+**A person presses send.** A broadcast is irreversible, so sending the broadcast or activating the sequence is the owner's act, the email counterpart of flipping a campaign live. Then:
 
 - Paste the finished copy link into the [marketing campaign brief](/marketing-campaign-brief) and file it in the [copy drive](/copy-drive).
-- Confirm the first conversions are attributing correctly rather than assuming they will.
+- Confirm the first conversions are attributing correctly rather than assuming they will; an automated check that alerts when they don't is the builder's way to do it.
 - Record the send date in the brief.
 
 ## 10. File the brief and set a review date
 
 File the completed [email campaign brief](/email-campaign-brief) in the [campaign library](/campaign-library-overview), under the Email folder, named per the [file naming conventions](/file-naming-conventions).
 
-For an automated sequence, set a recurring review date. A sequence keeps sending to new contacts long after the campaign closes, and an unreviewed one is the most common way an expired offer stays in circulation.
+For an automated sequence, set a recurring review date, and make it a [scheduled pass](/glossary#scheduled-pass): the pass sweeps live sequences for expired offers, dead links, and lapsed claims, and flags findings to the owner. A sequence keeps sending to new contacts long after the campaign closes, and an unreviewed one is the most common way an expired offer stays in circulation.
 
 ## Exceptions
 
