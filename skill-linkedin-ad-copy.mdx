@@ -33,6 +33,8 @@ One question per turn, following [how the MCP talks](/mcp-conversation). The for
 | Question | Why it needs the answer |
 | :-- | :-- |
 | Ad format | Sets the template, the fields, and every character limit |
+| The creative | For formats with a visual (single image, video, carousel, document), the copy has to match it |
+| The angle | The proposition the ad argues, from the [angle library](/angle-library) |
 | Hook type | From [hook types](/hook-types), or the angle brief's drafted hooks |
 | Copy framework | From [copywriting frameworks](/copywriting-frameworks), for intro text with room to argue |
 | Landing page | The copy's promise has to be the page's promise |
@@ -88,10 +90,12 @@ The run card an agent executes this skill from, in order. The turn-by-turn contr
 | Trigger | Any request for LinkedIn ad copy, or a brief handed over with "write the ads" |
 | Ask 1 | Ad format, from the eight above. Skip when the brief names it |
 | Ask 2 | Sender, for a message or conversation ad only: a real member's name |
-| Ask 3 | Hook type, offered from [hook types](/hook-types). Skip when the angle brief carries a drafted hook |
-| Ask 4 | Copy framework, offered from [copywriting frameworks](/copywriting-frameworks). Skip when the copy brief names one |
-| Ask 5 | Landing page URL. Skip when the brief names it |
-| Ask 6 | Documents on hand: brand voice, messaging, briefs. Skip any attached or recorded at setup |
+| Ask 3 | The creative: attach it or point at the creative library. Single image, video, carousel, and document ads only; skip when attached |
+| Ask 4 | The angle, offered from the [angle library](/angle-library). Skip when the brief names one |
+| Ask 5 | Hook type, the top five from [hook types](/hook-types). Skip for a follower ad, whose copy sits around an automatic profile photo, and when the angle brief carries a drafted hook |
+| Ask 6 | Copy framework, the top five from [copywriting frameworks](/copywriting-frameworks). Only where the copy has room to argue: intro text, a message body, a conversation intro. Skip for text and follower ads, and when the copy brief names one |
+| Ask 7 | Landing page URL. Skip when the brief names it, and for a follower ad, which points at the company page |
+| Ask 8 | Documents on hand: brand voice, messaging, briefs. Skip any attached or recorded at setup |
 | Pulls | The format's copy template, the [angle brief](/angle-brief), the [copy brief](/copy-brief), [brand voice and tone](/brand-voice-and-tone), [messaging](/messaging), [hook types](/hook-types), and [copywriting frameworks](/copywriting-frameworks) |
 | Rules | The three rules above |
 | Output | The filled template, delivered to the export destination, with every blank listed next to the fact that would unlock it |

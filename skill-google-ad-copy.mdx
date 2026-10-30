@@ -37,6 +37,8 @@ The skill opens with a short intake. Where the agent can put questions on screen
 | Question | Why it needs the answer |
 | :-- | :-- |
 | Campaign type | Sets the template, the fields, and every character limit |
+| The search theme, or the angle | A Search ad answers a query, so its theme sets the keywords and landing page; every other type argues an angle |
+| The creative, for YouTube and Demand Gen | The copy has to match the video or images it runs with |
 | Which brand documents you have | [Positioning](/positioning), [messaging](/messaging), and [brand voice and tone](/brand-voice-and-tone) decide what the copy can claim and how it sounds |
 | Which campaign documents you have | The brief, search theme brief, or angle brief set the objective, offer, audience, and landing page |
 | How you want it exported | In chat, Google Doc, Word, or something else |
@@ -147,12 +149,14 @@ The run card an agent executes this skill from, in order. The turn-by-turn contr
 | :-- | :-- |
 | Trigger | Any request for Google ad copy: headlines, descriptions, a full asset group, or a brief handed over with "write the ads" |
 | Ask 1 | Campaign type: Search, Performance Max, Display, Demand Gen, YouTube, or App. Skip when the brief names it |
-| Ask 2 | Brand documents on hand: positioning, messaging, brand voice. Skip any already attached or recorded at setup |
-| Ask 3 | Campaign documents on hand: campaign brief, search theme brief, or angle brief. Skip as above |
-| Ask 4 | Export destination: chat, Google Doc, Word. Skip when setup records a default |
-| Pulls | The campaign type's [copy template](/google-template-directory), [messaging](/messaging) and its approved claims table, [brand voice and tone](/brand-voice-and-tone), the brief supplied, and the headline buckets above |
-| Rules | The three rules above; limits and combinations checked by the script |
-| Output | The filled template, delivered to the export destination, with every blank listed next to the fact that would unlock it |
+| Ask 2 | Search only: the search theme, offered from the [search theme register](/google-search-theme-register). Its brief carries the intent, keywords, and landing page. Skip when the brief names it |
+| Ask 3 | Every other type: the angle, offered from the [angle library](/angle-library). Skip when the brief names one |
+| Ask 4 | YouTube and Demand Gen only: the video or images the copy runs with. Skip when attached |
+| Ask 5 | Landing page URL. Skip when the search theme brief or campaign brief names it |
+| Ask 6 | Brand documents on hand: positioning, messaging, brand voice. Skip any already attached or recorded at setup |
+| Ask 7 | Export destination: chat, Google Doc, Word. Skip when setup records a default |
+
+There is no hook type or copy framework question. Google assembles its own ads from the headline pool, so there is no single opening line to hook with and no fixed order to structure; each headline is tagged with a headline bucket instead. | Pulls | The campaign type's [copy template](/google-template-directory), [messaging](/messaging) and its approved claims table, [brand voice and tone](/brand-voice-and-tone), the brief supplied, and the headline buckets above | | Rules | The three rules above; limits and combinations checked by the script | | Output | The filled template, delivered to the export destination, with every blank listed next to the fact that would unlock it |
 
 One question per turn, options offered as a pick list, and nothing asked that the documents already answer.
 

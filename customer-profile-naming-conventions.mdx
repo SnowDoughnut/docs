@@ -31,13 +31,15 @@ _Examples below follow the Doughnut Labs brand: a SaaS company that sells disrup
 
 These rules apply to every customer profile name regardless of type. Decide each one once, write it down, and don't mix schemes later. A filter for `LAL` will not find `Lookalike`, so a convention that drifts is worse than one that is plain but consistent.
 
+The codes are shared with the other naming levels. Customer profile type uses the same values as the [ad set customer profile type](/ad-set-group-naming-conventions#customer-profile-type), funnel stage uses the same values as the [campaign funnel position](/campaign-naming-conventions#funnel-position), and platform uses the campaign channel codes. One code per thing at every level is what lets a report join a profile to the ad sets and campaigns that use it.
+
 In Notion, set these once in the Naming rules database; the generators apply them.
 
 | Rule | Convention | Why it holds |
 | :-- | :-- | :-- |
-| Separator between fields | _E.g. Underscore `_`_ | Keeps each field visually distinct and easy to split when you export to a sheet |
-| Separator within a field | _E.g. Hyphen `-`_ | Lets a multi-word value stay one field: `cart-abandoners` |
-| Case | _E.g. Field codes uppercase, values lowercase_ | Makes the structural codes (`LAL`, `TOF`) scan at a glance against the readable segment |
+| Separator between fields | _E.g. Hyphen `-`, the same delimiter as campaign and ad set names_ | Keeps each field visually distinct and easy to split when you export to a sheet |
+| Separator within a field | _E.g. None. Run the words together in CamelCase_ | Lets a multi-word value stay one field without breaking the split: `CartAbandoners7d` |
+| Case | _E.g. Codes uppercase, segments in CamelCase_ | Makes the structural codes (`LAL`, `TOFU`) scan at a glance against the readable segment |
 | Abbreviation style | _E.g. Fixed short codes from the dictionaries below, never ad-hoc_ | `LAL` and `Lookalike` and `lklk` are three different strings to a filter |
 | Spaces | _E.g. None, ever_ | Spaces break exports, pivot tables, and bulk-upload sheets |
 | Order of fields | _E.g. Always the dictionary order below, even when fields are skipped_ | A predictable order is what lets you read a name left to right without a key |
@@ -60,9 +62,10 @@ The kind of customer profile, by how it was built. This is the field that tells 
 
 | Long form | Short form | Description | \[add value\] |
 | :-- | :-- | :-- | :-- |
-| _E.g. Custom customer profile_ | _CA_ | _Built from your own data: site visitors, customer lists, engagers_ |  |
+| _E.g. Custom customer profile_ | _CA_ | _Built from your own signals: site visitors, video viewers, engagers_ |  |
+| Customer list | CM | Uploaded from a CRM or customer list |  |
 | Lookalike customer profile | LAL | Modeled from a seed customer profile to find similar new people |  |
-| Saved / interest customer profile | SAV | Built from interests, demographics, or behaviors in the ad platform |  |
+| Interest / saved customer profile | INT | Built from interests, demographics, or behaviors in the ad platform |  |
 | Broad / no targeting | BROAD | No manual customer profile; the platform's algorithm decides |  |
 | Retargeting customer profile | RTG | A warm pool of people who already interacted with you |  |
 | *Add a row* |  |  |  |
@@ -79,9 +82,9 @@ Where this customer profile sits in the customer journey. Tells someone whether 
 
 | Long form | Short form | Description | \[add value\] |
 | :-- | :-- | :-- | :-- |
-| _E.g. Top of funnel_ | _TOF_ | _Cold customer profiles, awareness, people who don't know Doughnut Labs yet_ |  |
-| Middle of funnel | MOF | Warm customer profiles, consideration, people evaluating options |  |
-| Bottom of funnel | BOF | Hot customer profiles, conversion, people close to buying |  |
+| _E.g. Top of funnel_ | _TOFU_ | _Cold customer profiles, awareness, people who don't know Doughnut Labs yet_ |  |
+| Middle of funnel | MOFU | Warm customer profiles, consideration, people evaluating options |  |
+| Bottom of funnel | BOFU | Hot customer profiles, conversion, people close to buying |  |
 | Retention | RET | Existing customers, for upsell, cross-sell, or renewal |  |
 | *Add a row* |  |  |  |
 
@@ -97,18 +100,18 @@ A short, human-readable label for who is actually in the customer profile. This 
 
 | Long form | Short form | Description | \[add value\] |
 | :-- | :-- | :-- | :-- |
-| _E.g. Cart abandoners, 7 days_ | _cart-abandoners-7d_ | _People who added to cart but didn't buy in the last 7 days_ |  |
-| Purchasers, 180 days | purchasers-180d | Everyone who bought in the last 180 days |  |
-| Website visitors, 30 days | site-visitors-30d | All site traffic in the last 30 days |  |
-| High-LTV customer list | hi-ltv-crm | Top-value customers uploaded from the CRM |  |
-| Video viewers, 50 percent | video-viewers-50 | Watched at least half of a video |  |
-| Interest: doughnut lovers | int-doughnut-lovers | Interest-based segment of doughnut enthusiasts |  |
+| _E.g. Cart abandoners, 7 days_ | _CartAbandoners7d_ | _People who added to cart but didn't buy in the last 7 days_ |  |
+| Purchasers, 180 days | Purchasers180d | Everyone who bought in the last 180 days |  |
+| Website visitors, 30 days | SiteVisitors30d | All site traffic in the last 30 days |  |
+| High-LTV customer list | HiLtvCrm | Top-value customers uploaded from the CRM |  |
+| Video viewers, 50 percent | VideoViewers50 | Watched at least half of a video |  |
+| Interest: doughnut lovers | DoughnutLovers | Interest-based segment of doughnut enthusiasts |  |
 | *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Segment">
   The segment is the one field written for a human rather than a system. Every other field is a code that sorts and filters; this is the plain-language handle that tells a person "yes, this is the customer profile I meant" without opening it to check the definition. A customer profile named only with type and stage codes is findable but not recognizable, and the segment closes that gap.
 
-  Two details do most of the work here. One is the recency window: `site-visitors-30d` and `site-visitors-180d` are completely different customer profiles that behave differently, so folding the window into the label keeps them from blurring together. The other is consistency of phrasing. If the same group is called `cart-abandoners` in one customer profile and `abandoned-cart` in another, the segment stops being predictable, and a predictable segment is what lets someone guess the name of a customer profile before they even find it. The tension throughout is length against clarity: too vague (`visitors`, `list`) and it tells you nothing, too long and it gets cut off in the customer profile dropdown where you actually pick it.
+  Two details do most of the work here. One is the recency window: `SiteVisitors30d` and `SiteVisitors180d` are completely different customer profiles that behave differently, so folding the window into the label keeps them from blurring together. The other is consistency of phrasing. If the same group is called `CartAbandoners` in one customer profile and `AbandonedCart` in another, the segment stops being predictable, and a predictable segment is what lets someone guess the name of a customer profile before they even find it. The tension throughout is length against clarity: too vague (`visitors`, `list`) and it tells you nothing, too long and it gets cut off in the customer profile dropdown where you actually pick it.
 </Accordion>
 
 ## Conditional fields
@@ -125,16 +128,16 @@ The size and closeness of a lookalike customer profile. Only for lookalikes, whe
 
 | Long form | Short form | Description | \[add value\] |
 | :-- | :-- | :-- | :-- |
-| _E.g. 1 percent lookalike_ | _1pct_ | _Closest match, smallest and most similar customer profile_ |  |
-| 1 to 3 percent lookalike | 1-3pct | Slightly wider, still close to the seed |  |
-| 5 percent lookalike | 5pct | Broader reach, looser similarity |  |
-| 10 percent lookalike | 10pct | Widest reach, loosest similarity |  |
+| _E.g. 1 percent lookalike_ | _1PCT_ | _Closest match, smallest and most similar customer profile_ |  |
+| 3 percent lookalike | 3PCT | Slightly wider, still close to the seed |  |
+| 5 percent lookalike | 5PCT | Broader reach, looser similarity |  |
+| 10 percent lookalike | 10PCT | Widest reach, loosest similarity |  |
 | *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Lookalike percentage">
   A lookalike is defined by two things: the seed it was modeled from and how wide you cast the net. The seed usually lives in the segment field (a 1 percent lookalike of purchasers is not the same customer profile as a 1 percent lookalike of site visitors). The percentage is what this field captures, and it matters because the same seed at 1 percent and at 10 percent are genuinely different customer profiles: one is small and tightly matched, the other is large and loose, and they rarely perform the same way.
 
-  This field earns its place only on lookalikes, which is why it sits among the conditional fields rather than the core ones. Putting it on a custom or interest customer profile would be meaningless. Where it does apply, a consistent way of writing the value matters, since `1pct`, `1%`, and `1-percent` are three different strings even though they mean the same size, and only the one that matches this sheet will come back when you filter for it.
+  This field earns its place only on lookalikes, which is why it sits among the conditional fields rather than the core ones. Putting it on a custom or interest customer profile would be meaningless. Where it does apply, a consistent way of writing the value matters, since `1PCT`, `1%`, and `1percent` are three different strings even though they mean the same size, and only the one that matches this sheet will come back when you filter for it.
 </Accordion>
 
 ### Geography
@@ -143,17 +146,17 @@ The location a customer profile is limited to. Only for customer profiles that a
 
 | Long form | Short form | Description | \[add value\] |
 | :-- | :-- | :-- | :-- |
-| _E.g. United States_ | _us_ | _Customer profile limited to the US market_ |  |
-| Canada | ca | Customer profile limited to the Canadian market |  |
-| United Kingdom | uk | Customer profile limited to the UK market |  |
-| DACH region | dach | Germany, Austria, Switzerland |  |
-| English-speaking markets | en-mkts | US, UK, Canada, Australia combined |  |
+| _E.g. United States_ | _US_ | _Customer profile limited to the US market_ |  |
+| Canada | CA | Customer profile limited to the Canadian market |  |
+| United Kingdom | UK | Customer profile limited to the UK market |  |
+| DACH region | DACH | Germany, Austria, Switzerland |  |
+| English-speaking markets | ENMKTS | US, UK, Canada, Australia combined |  |
 | *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Geography">
   When the same segment is run separately for different markets, the customer profiles are otherwise identical: same type, same funnel stage, same recency window. The geography code is often the only thing keeping the US and Canada versions of a customer profile from looking like duplicates. It also lets someone pull every customer profile for one market in a single filter, which is how a regional budget or a localized campaign gets audited.
 
-  The field only belongs on customer profiles that are genuinely split by location. If an account only ever runs in one country, adding the country to every name just makes them longer without telling anyone anything, because a value that is always present stops signaling anything. Where geography does vary, the usual approach is a short standard region code, and as with every field the value is only as useful as its consistency: `us`, `usa`, and `united-states` will not filter as the same market.
+  The field only belongs on customer profiles that are genuinely split by location. If an account only ever runs in one country, adding the country to every name just makes them longer without telling anyone anything, because a value that is always present stops signaling anything. Where geography does vary, the usual approach is a short standard region code, and as with every field the value is only as useful as its consistency: `US`, `USA`, and `UnitedStates` will not filter as the same market. Geo codes match the [ad set geo values](/ad-set-group-naming-conventions#geo-%2F-market).
 </Accordion>
 
 ### Demographics
@@ -162,17 +165,17 @@ An age, gender, or other demographic split. Only for customer profiles you delib
 
 | Long form | Short form | Description | \[add value\] |
 | :-- | :-- | :-- | :-- |
-| _E.g. Ages 18 to 24_ | _18-24_ | _Customer profile limited to the 18 to 24 age band_ |  |
-| Ages 25 to 34 | 25-34 | Customer profile limited to the 25 to 34 age band |  |
-| Female | f | Customer profile limited to women |  |
-| Male | m | Customer profile limited to men |  |
-| Parents | parents | Customer profile limited to people with children |  |
+| _E.g. Ages 18 to 24_ | _A1824_ | _Customer profile limited to the 18 to 24 age band_ |  |
+| Ages 25 to 34 | A2534 | Customer profile limited to the 25 to 34 age band |  |
+| Female | F | Customer profile limited to women |  |
+| Male | M | Customer profile limited to men |  |
+| Parents | PARENTS | Customer profile limited to people with children |  |
 | *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Demographics">
   This field exists for the case where you deliberately split one segment into demographic slices to test them against each other, for example running the same interest customer profile separately for two age bands to see which converts. When you do that, the slices are identical on every other field, and the demographic code is what keeps them distinct and lets you compare them cleanly later.
 
-  It belongs only on customer profiles that are actually broken out this way. Many customer profiles aren't, and letting the platform's algorithm handle age and gender is often the better choice, in which case this field should simply be absent rather than filled with an "all" placeholder. As with geography, the value is only useful if it is written consistently: an age band entered as `18-24` in one name and `18to24` in another will not group together when you try to compare the two.
+  It belongs only on customer profiles that are actually broken out this way. Many customer profiles aren't, and letting the platform's algorithm handle age and gender is often the better choice, in which case this field should simply be absent rather than filled with an "all" placeholder. As with geography, the value is only useful if it is written consistently: an age band entered as `A1824` in one name and `18to24` in another will not group together when you try to compare the two.
 </Accordion>
 
 ### Inclusion or exclusion
@@ -201,16 +204,16 @@ The ad platform the customer profile lives in. Only needed if you keep customer 
 
 | Long form | Short form | Description | \[add value\] |
 | :-- | :-- | :-- | :-- |
-| _E.g. Meta (Facebook / Instagram)_ | _meta_ | _Customer profile built in Meta Ads Manager_ |  |
-| Google Ads | goog | Customer profile built in Google Ads |  |
-| TikTok Ads | tiktok | Customer profile built in TikTok Ads Manager |  |
-| LinkedIn Ads | li | Customer profile built in LinkedIn Campaign Manager |  |
+| _E.g. Meta (Facebook / Instagram)_ | _ME_ | _Customer profile built in Meta Ads Manager_ |  |
+| Google Ads | GO | Customer profile built in Google Ads |  |
+| TikTok Ads | TT | Customer profile built in TikTok Ads Manager |  |
+| LinkedIn Ads | LI | Customer profile built in LinkedIn Campaign Manager |  |
 | *Add a row* |  |  |  |
 
 <Accordion title="Concept review: Platform">
   Every ad platform holds its own customer profiles, so within a single platform the name never needs to say which one it is. This field matters only when you track customer profiles across platforms in one place, like a shared planning sheet or a cross-channel library, where a Meta lookalike and its Google equivalent would otherwise look like the same customer profile and get confused in reporting.
 
-  Because most people build and pick customer profiles inside one platform at a time, many teams never need this field at all, and adding it to every name just makes them longer. Where you do run the same customer profile logic across Meta, Google, and TikTok and compare them side by side, a short platform code keeps them separate. As always, the code only works if it is consistent, so `meta`, `fb`, and `facebook` should not all appear for the same platform.
+  Because most people build and pick customer profiles inside one platform at a time, many teams never need this field at all, and adding it to every name just makes them longer. Where you do run the same customer profile logic across Meta, Google, and TikTok and compare them side by side, a short platform code keeps them separate. As always, the code only works if it is consistent, so `ME`, `FB`, and `Facebook` should not all appear for the same platform. The codes are the [campaign channel](/campaign-naming-conventions#channel) short forms.
 </Accordion>
 
 ## Assemble the name
@@ -219,23 +222,23 @@ Take one value from each field, in order, joined by your field separator. Skip a
 
 A warm retargeting customer profile of recent cart abandoners uses only the core fields:
 
-`CA_MOF_cart-abandoners-7d`
+`CA-MOFU-CartAbandoners7d`
 
 A cold lookalike needs its percentage, so that field is filled in:
 
-`LAL_TOF_purchasers-180d_1pct`
+`LAL-TOFU-Purchasers180d-1PCT`
 
 A lookalike split by market and age adds geography and a demographic:
 
-`LAL_TOF_hi-ltv-crm_1pct_us_25-34`
+`LAL-TOFU-HiLtvCrm-1PCT-US-A2534`
 
 A customer list used as a suppression customer profile marks the exclusion:
 
-`CA_RET_purchasers-180d_EXCL`
+`CM-RET-Purchasers180d-EXCL`
 
 An interest customer profile tracked in a cross-platform library adds the platform:
 
-`SAV_TOF_int-doughnut-lovers_us_meta`
+`INT-TOFU-DoughnutLovers-US-ME`
 
 ## Related resources
 

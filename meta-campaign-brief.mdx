@@ -190,7 +190,7 @@ Creative has to meet the [Meta creative specs](/meta-creative-specs) for every p
 | Level | Name | Convention |
 | :-- | :-- | :-- |
 | Campaign | _E.g._ `Meta-Instagram-Conversions-CBO-TOFU` | [Campaign naming conventions](/campaign-naming-conventions) |
-| Ad set | _E.g._ `20260401-LLA3-HSL` | [Ad set / ad group / variant](/ad-set-group-naming-conventions) |
+| Ad set | _E.g._ `20260401-LAL-HSL-3PCT` | [Ad set / ad group / variant](/ad-set-group-naming-conventions) |
 | Ad | _E.g._ `AutoGlaze-STATIC-FREETRIAL-TRY-LP` | [Ad naming conventions](/ad-name-conventions) |
 | UTMs | See the table below | [UTM standards](/utm-standards) |
 
@@ -282,11 +282,11 @@ One tagged URL per ad set, not one per campaign. `utm_content` carries the ad se
   **Asks, one per turn, in order:**
 
   1. Which marketing campaign does this Meta spend belong to? Options: `campaign-brief`. Skip when: parent brief already in context.
-  2. Which objective fits what this campaign has to do? Options: [platform-brief:meta#objectives](/platform-brief:meta#objectives). Skip when: parent brief states Meta objective.
+  2. Which objective fits what this campaign has to do? Options: [objectives](/meta-campaign-brief#objectives). Skip when: parent brief states Meta objective.
   3. Which conversion action should it optimize toward, and is it firing? Options: `library:event`. Skip when: objective is Awareness or Engagement.
-  4. What's the Meta budget, and should Meta allocate it across ad sets or should each ad set hold a fixed amount? Options: [platform-brief:meta#budget-level](/platform-brief:meta#budget-level). Skip when: budget-plan has Meta line and structure.
-  5. Which bid strategy? Do you have a reliable CPA or ROAS baseline? Options: [platform-brief:meta#bid-strategies](/platform-brief:meta#bid-strategies).
-  6. Which attribution setting, and incremental on or off? Options: [platform-brief:meta#attribution](/platform-brief:meta#attribution). Skip when: account default recorded.
+  4. What's the Meta budget, and should Meta allocate it across ad sets or should each ad set hold a fixed amount? Options: [budget level](/meta-campaign-brief#budget-level). Skip when: budget-plan has Meta line and structure.
+  5. Which bid strategy? Do you have a reliable CPA or ROAS baseline? Options: [bid strategies](/meta-campaign-brief#bid-strategies).
+  6. Which attribution setting, and incremental on or off? Options: [attribution](/meta-campaign-brief#attribution). Skip when: account default recorded.
   7. Which customer profiles become ad sets, and how is each built (lookalike, list, interest)? Options: `customer-profile`.
   8. Advantage+ placements or manual, and any exclusions? Options: your answer.
   9. Is any part of this a controlled test? Options: `experiment-brief`. Skip when: user says no testing.

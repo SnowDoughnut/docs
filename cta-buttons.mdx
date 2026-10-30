@@ -1,0 +1,117 @@
+---
+title: "CTA buttons"
+description: "The call-to-action buttons each ad platform offers, with when each one fits. Pick from this list when a copy template asks for the button, or let the MCP rank the five that fit the ad."
+launch: private
+---
+
+A call-to-action button is the fixed label a platform puts on an ad, chosen from the platform's own list. The copy can say anything; the button can only say what the platform allows. This page holds each platform's list. Checked 30 October 2026.
+
+The button should promise the same next step the landing page delivers. "Shop now" on a page with no products, or "Book now" on a page with no booking, breaks the ad's promise in its last word.
+
+The MCP ranks each list against the context of the ad using the [context facets](/mcp-registry#context-facets) and offers the five that fit best. Rows with no Best for rank last, in the order shown.
+
+## Meta
+
+Which buttons appear depends on the campaign objective and where the conversion happens: a website, an app, a message, a call, or an Instant Form.
+
+| Button | Best for | Avoid when |
+| :-- | :-- | :-- |
+| Learn more | goal: awareness, consideration; audience: cold | goal: conversion |
+| Shop now | business: ecommerce; goal: conversion; offer: sale | business: saas, sales-led |
+| Sign up | offer: trial, lead-magnet, event | |
+| Get offer | offer: sale, trial | offer: evergreen |
+| Order now | business: ecommerce, local; goal: conversion | |
+| Book now | business: local; goal: conversion | |
+| Get quote | business: sales-led, b2b; goal: conversion | |
+| Contact us | business: sales-led, b2b, local | |
+| Apply now | goal: conversion | |
+| Download | offer: lead-magnet | |
+| Subscribe | goal: retention; offer: lead-magnet | |
+| Get started | offer: trial; business: saas | |
+| See more | goal: consideration | |
+| Send message | goal: consideration; business: local | |
+| Call now | business: local | |
+| Install app, Use app, Play game, Watch more, Listen now, Buy tickets, Get showtimes, Get directions, Request time, Inquire now, Donate now, Get updates, No button | | |
+
+**Lead ads** offer a shorter list: Apply now, Download, Get quote, Learn more, Sign up, and Subscribe. Messaging buttons need a messaging destination.
+
+<Note>
+  Meta's labels here are converted from its Marketing API values, because the help page that lists the on-screen labels could not be checked. Confirm the wording in Ads Manager the first time a button is used.
+</Note>
+
+## Google
+
+Performance Max takes one call to action per asset group, set to Automated by default. Demand Gen uses a similar list; check it in the platform before relying on a specific button.
+
+| Button | Best for | Avoid when |
+| :-- | :-- | :-- |
+| Automated | channel: google | |
+| Learn more | goal: awareness, consideration | goal: conversion |
+| Shop now | business: ecommerce; goal: conversion | business: saas, sales-led |
+| Sign up | offer: trial, lead-magnet, event | |
+| Get quote | business: sales-led, b2b | |
+| Contact us | business: sales-led, b2b, local | |
+| Book now | business: local; goal: conversion | |
+| Apply now | goal: conversion | |
+| Download | offer: lead-magnet | |
+| Subscribe | goal: retention; offer: lead-magnet | |
+| Install, Visit site, See more | | |
+
+Search ads have no button. The call to action lives in the headlines and descriptions, as the [Call-to-Action headline bucket](/skill-google-ad-copy#headline-buckets).
+
+## LinkedIn
+
+Sponsored content (single image, video, carousel, and document ads) uses the list below. Which buttons each format allows can vary, so confirm in Campaign Manager.
+
+| Button | Best for | Avoid when |
+| :-- | :-- | :-- |
+| Learn more | goal: awareness, consideration | |
+| Request demo | business: saas, sales-led, b2b; goal: conversion | audience: cold |
+| Download | offer: lead-magnet | |
+| Register | offer: event | |
+| Sign up | offer: trial, lead-magnet | |
+| Get quote | business: sales-led, b2b | |
+| Apply now | goal: conversion | |
+| Subscribe | goal: retention | |
+| Attend | offer: event | |
+| Join | offer: event | |
+| See more | goal: consideration | |
+| Shop now, Buy now | business: ecommerce | business: b2b |
+| Unlock full document | Gated document ads only | |
+
+Message ads take one button with your own text, and conversation ads take one to four. Each conversation button shows the next message, opens a landing page, or opens a lead gen form. Those labels are copy, written to the [message ad](/linkedin-message-ad-copy-template) and [conversation ad](/linkedin-conversation-ad-copy-template) limits.
+
+## TikTok
+
+Performance campaigns use a dynamic call to action by default: TikTok picks from a set of options and decides when the button appears. Turn it off to choose one button yourself.
+
+| Button | Best for | Avoid when |
+| :-- | :-- | :-- |
+| Shop now | business: ecommerce; goal: conversion | business: saas, sales-led |
+| Learn more | goal: awareness, consideration | |
+| Sign up | offer: trial, lead-magnet, event | |
+| Order now | business: ecommerce, local; goal: conversion | |
+| Book now | business: local | |
+| Download | offer: lead-magnet | |
+| Get quote | business: sales-led, b2b | |
+| Contact us | business: sales-led, local | |
+| Apply now | goal: conversion | |
+| Subscribe | goal: retention | |
+| Pre-order now | offer: launch | offer: evergreen |
+| Install now, Visit store, Play game, Watch now, View now, Interested, Get showtimes, Experience now, Get tickets now, Listen now, Read more | | |
+
+The dynamic set is Shop now, View now, Get it now, Buy today, Buy here, Learn more, Order here, Shop, Buy it now, and Buy now.
+
+## Related resources
+
+- [**Hook types**](/hook-types) The opening the button closes on.
+- [**Copywriting frameworks**](/copywriting-frameworks) The structure that ends at the button.
+- [**Copy templates**](/copy-templates) Every template with a button field.
+
+{/* sd-wiring:start, MCP wiring. Stripped from the public site at launch. Schema: /mcp-registry */}
+
+<Accordion title="MCP wiring">
+**Type:** list<br />**Domains:** copy, meta, google, linkedin<br />**Provides:** `cta-button`, `cta-button:meta`, `cta-button:google`, `cta-button:linkedin`, `cta-button:tiktok`<br />**Uses:** `copy-template`, `landing-page-brief`<br />**Best for:** per row, in each platform's table
+</Accordion>
+
+{/* sd-wiring:end */}

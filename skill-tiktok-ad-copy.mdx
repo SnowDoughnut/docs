@@ -34,6 +34,8 @@ One question per turn, following [how the MCP talks](/mcp-conversation).
 | :-- | :-- |
 | Ad format | Sets the template and which fields exist at all |
 | How many variants | The brief decides this at brief stage; the skill drafts them all at once |
+| The video | The caption has to match what the first seconds show; a Spark ad needs the source post instead |
+| The angle | The proposition every variant argues, from the [angle library](/angle-library) |
 | Hook types, one per variant | From [hook types](/hook-types), or the angle brief's drafted hooks |
 | Landing page | The caption's promise has to be the page's promise |
 | Which documents you have | [Brand voice](/brand-voice-and-tone), [messaging](/messaging), and the briefs decide what the copy can claim and how it sounds |
@@ -78,12 +80,13 @@ The run card an agent executes this skill from, in order. The turn-by-turn contr
 | Trigger | Any request for TikTok ad copy, or a brief handed over with "write the ads" |
 | Ask 1 | Ad format: in-feed, Spark, carousel, video shopping, or TopView. Skip when the brief names it |
 | Ask 2 | Variant count. Skip when the brief set it; flag a count of one as a frequency risk |
-| Ask 3 | Hook types, one per variant, offered from [hook types](/hook-types). Skip those the angle brief drafts |
-| Ask 4 | Landing page URL. Skip when the brief names it |
-| Ask 5 | Documents on hand: brand voice, messaging, briefs. Skip any attached or recorded at setup |
-| Pulls | The format's copy template, the [angle brief](/angle-brief), the [copy brief](/copy-brief), [brand voice and tone](/brand-voice-and-tone), [messaging](/messaging), [hook types](/hook-types), and for Spark ads the third-party section of [logo usage](/logo-usage) |
-| Rules | The three rules above |
-| Output | One filled template per variant, delivered to the export destination, with every blank listed next to the fact that would unlock it |
+| Ask 3 | The video, or for a Spark ad the source post link. Skip when attached |
+| Ask 4 | The angle, offered from the [angle library](/angle-library). Skip when the brief names one |
+| Ask 5 | Hook types, one per variant, the top five from [hook types](/hook-types). Skip those the angle brief drafts, and for a Spark ad, whose caption is locked |
+| Ask 6 | Landing page URL. Skip when the brief names it |
+| Ask 7 | Documents on hand: brand voice, messaging, briefs. Skip any attached or recorded at setup |
+
+There is no copy framework question. A 100-character caption has room for one hook, not a structure. | Pulls | The format's copy template, the [angle brief](/angle-brief), the [copy brief](/copy-brief), [brand voice and tone](/brand-voice-and-tone), [messaging](/messaging), [hook types](/hook-types), and for Spark ads the third-party section of [logo usage](/logo-usage) | | Rules | The three rules above | | Output | One filled template per variant, delivered to the export destination, with every blank listed next to the fact that would unlock it |
 
 One question per turn, options offered as a pick list, and nothing asked that the documents already answer.
 

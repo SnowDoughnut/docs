@@ -31,13 +31,16 @@ Date is the day the customer profile was built or last refreshed, written as `YY
 
 ### Customer profile type
 
+The same values as the [customer profile type](/customer-profile-naming-conventions#customer-profile-type) in customer profile naming, so a profile and the ad sets that use it carry one code.
+
 | Long form | Short form | Description | \[add value\] |
 | :-- | :-- | :-- | :-- |
-| _E.g. 3% LLA_ | _LLA3_ | _1 to 3 percent lookalike customer profile_ |  |
-| Retargeting | RT | Users who previously engaged with the brand |  |
+| _E.g. Lookalike_ | _LAL_ | _Modeled from a seed list; add its size below_ |  |
+| Retargeting | RTG | Users who previously engaged with the brand |  |
+| Custom | CA | Built from your own signals: site visitors, video viewers, engagers |  |
+| Customer list | CM | Matched against an uploaded customer list |  |
 | Interest | INT | Platform interest or behavior targeting |  |
-| Customer match | CM | Matched against an uploaded customer list |  |
-| Prospecting | PROS | Broad, non-lookalike cold targeting |  |
+| Broad | BROAD | No manual customer profile; the platform's algorithm decides |  |
 | Keyword | KW | Targeted by search query rather than by audience |  |
 | *Add a row* |  |  |  |
 
@@ -51,6 +54,18 @@ Date is the day the customer profile was built or last refreshed, written as `YY
 | Email Subscribers | ESUB | Active email list subscribers |  |
 | Trial Abandoners | TRIALAB | Started a free trial signup without completing it |  |
 | *Add a row* |  |  |  |
+
+### Lookalike size
+
+Only on lookalike ad sets. The same values as the [lookalike percentage](/customer-profile-naming-conventions#lookalike-percentage) in customer profile naming.
+
+| Long form | Short form | Description | [add value] |
+| :-- | :-- | :-- | :-- |
+| _E.g. 1 percent_ | _1PCT_ | _Closest match to the seed_ |  |
+| 3 percent | 3PCT | Slightly wider, still close to the seed |  |
+| 5 percent | 5PCT | Broader reach, looser similarity |  |
+| 10 percent | 10PCT | Widest reach, loosest similarity |  |
+| _Add a row_ |  |  |  |
 
 <Accordion title="Concept review: ad set / ad group / variant identifiers">
   Date tells you when a customer profile was built or last refreshed, which matters because customer profile performance can drift as a list ages or a lookalike source changes. Recording it lets you compare a customer profile's early performance against its later performance, or tell two versions of "the same" customer profile apart. Customer profile type and customer profile seed work together rather than separately. Customer profile type says what kind of customer profile it is (a lookalike, a retargeting pool, a customer list); customer profile seed says where it came from. Two 3% lookalikes built from different seed lists can perform very differently, so recording both is what lets you attribute a result to the customer profile itself rather than just to "lookalikes" in general.
@@ -132,12 +147,12 @@ Date is the day the customer profile was built or last refreshed, written as `YY
 
 ## Assemble the name
 
-The order is date, customer profile type, customer profile seed, then any optional categories you use in the order they appear on this page: geo, language, device, then list or segment type. Keep the order fixed even when a category is skipped.
+The order is date, customer profile type, customer profile seed, lookalike size when the type is a lookalike, then any optional categories you use in the order they appear on this page: geo, language, device, then list or segment type. Keep the order fixed even when a category is skipped.
 
 Spaces, `%`, and other special characters can break platform parsing or reporting exports. Use the short form you logged above for anything that isn't a plain alphanumeric string, and never use the delimiter inside a value; run the words together instead.
 
-- Long form: `20260601-3PercentLLA-HubSpotLeads`
-- Short form (name jammed): `20260601-LLA3-HSL`
+- Long form: `20260601-Lookalike-HubSpotLeads-3Percent`
+- Short form (name jammed): `20260601-LAL-HSL-3PCT`
 
 On search and shopping, where the group is built around queries rather than an audience, the theme takes the seed's place:
 
@@ -156,7 +171,7 @@ On search and shopping, where the group is built around queries rather than an a
 
 Testing identifiers mark a hypothesis you're currently running, for example an A/B variant test. Because a test only applies to some sets / groups / variants for a limited time, testing identifiers aren't part of the standard identifier set: append one to the end of the sets / groups / variant name, after the standard identifiers, instead of building it into a table above.
 
-- With a testing identifier appended: `20260601-3PercentLLA-HubSpotLeads-TEST01`
+- With a testing identifier appended: `20260601-LAL-HSL-3PCT-TEST01`
 
 **The control does not carry a testing identifier.** It keeps the name it already has, because appending one to a live object renames it and splits its history in two. Only the arms under test carry the ID. See [control and variants](/experiment-id-convention#3-control-and-variants).
 
