@@ -1,0 +1,482 @@
+---
+title: "MCP registry"
+description: "How the Snow Doughnut MCP finds, ranks, and connects every page in this knowledge base: page types, capability keys, the Best for system, and the three lines that wire in a new page. Read this before adding a skill, framework, list, or process."
+launch: private
+---
+
+Every page in this knowledge base carries a short **MCP wiring** block at the bottom. The block is how the MCP finds the page, knows what it supplies, and knows what else to pull when it runs. Readers can ignore it; the collaborator reads nothing else first.
+
+## How discovery works
+
+Pages connect by **capability key**, never by page name.
+
+- **Provides** is what a page supplies: `hook-type`, `copy-framework`, `brand-voice`, `copy-template:meta:carousel`, `process:copywriting`.
+- **Uses** is what a page needs. When the MCP runs a process, it pulls every page that provides each key in Uses.
+- **A key matches everything below it.** `copy-template:meta` matches every Meta copy template; `copy-template` matches all of them. A process that uses `creative-specs` finds a spec page added next year without being edited.
+
+So a new copywriting framework page that declares `Provides: copy-framework` appears as an option in every copy conversation the day it is published. Nothing else changes.
+
+## How options get ranked
+
+A question with a closed list behind it, such as which hook, which framework, or which report template, can have five options or fifty. The MCP never shows fifty.
+
+1. It reads the **context** from the brief, the setup, and the conversation so far, as values from the facets below.
+2. It scores each option by how many of its **Best for** values match the context, and drops any option whose **Avoid when** matches.
+3. It offers the **top five**, each with a one-line reason, and ends with "or see all".
+4. Ties keep the order the options appear in on their page. Five or fewer options are all shown.
+
+Best for and Avoid when sit in the wiring block for a page that is one option, and in their own columns for a list page where each row is an option, like [hook types](/hook-types).
+
+### Context facets
+
+Best for and Avoid when use only these values, so every option across the framework ranks against the same context.
+
+| Facet | Values |
+| :-- | :-- |
+| `goal` | awareness, consideration, conversion, retention |
+| `offer` | sale, launch, trial, lead-magnet, event, evergreen |
+| `audience` | cold, warm, retargeting, customers |
+| `length` | short, long |
+| `proof` | numbers, reviews, none |
+| `channel` | meta, google, linkedin, tiktok, youtube, email, organic-social, web, seo |
+| `business` | ecommerce, saas, sales-led, b2b, b2c, local |
+
+A new facet value gets added here first, then used.
+
+## Wire in a new page
+
+Add the block at the bottom of the page, above the endcap if the page has one, and fill in:
+
+1. **Type**, one of the page types below.
+2. **Provides**, reusing an existing key from the index when the page supplies the same kind of thing. A new framework is `copy-framework`; a new video skill is `skill:` plus its name.
+3. **Best for**, if the page is something the MCP might offer as a choice.
+
+Processes, briefs, and setup pages also get **Triggers** (the requests that route to them), **Asks** (one short question per turn, each naming the key its options come from), and **Output**. The turn-by-turn rules are [how the MCP talks](/mcp-conversation), and the [router](/mcp-router) lists every entry point.
+
+### Page types
+
+| Type | What it is |
+| :-- | :-- |
+| process | A step-by-step SOP a person or agent runs |
+| skill | An agent skill with a runbook |
+| brief | A fill-in planning document |
+| template | A fill-in output, like a copy template or report template |
+| checklist | Checks run before or after something ships |
+| list | A closed list whose rows are answer options |
+| standard | Rules and best practices to follow |
+| concept | The reasoning behind a standard |
+| spec | Platform specs and limits |
+| library | A register where work is filed and found |
+| hub | A landing page for a channel or task |
+| setup | Onboarding and setup |
+| mcp | Pages about the MCP itself |
+
+### Domains
+
+brand, strategy, campaign, copy, creative, video, naming, tracking, reporting, budget, experiment, content, email, social, landing-page, legal, approval, setup, mcp, meta, google, linkedin, tiktok, youtube.
+
+## Capability index
+
+Every key in use, and the pages that provide it.
+
+### Tasks: the plain-language entry points
+
+| Key | Provided by |
+| :-- | :-- |
+| `task:brief-creative` | [Brief creative](/brief-creative) |
+| `task:build-a-landing-page` | [Build a landing page](/build-a-landing-page) |
+| `task:define-a-customer-profile` | [Define a customer profile](/define-a-customer-profile) |
+| `task:make-a-campaign` | [Make a campaign](/make-a-campaign) |
+| `task:name-something` | [Name something](/name-something) |
+| `task:report-on-results` | [Report on results](/report-on-results) |
+| `task:run-an-experiment` | [Run an experiment](/run-an-experiment) |
+| `task:set-up-tracking` | [Set up tracking](/set-up-tracking) |
+| `task:set-up-your-brand` | [Set up your brand](/set-up-your-brand) |
+| `task:write-an-article` | [Write an article](/write-an-article) |
+| `task:write-copy` | [Write copy](/write-copy) |
+
+### Processes: an SOP someone or something runs
+
+| Key | Provided by |
+| :-- | :-- |
+| `process:approval` | [Approval process](/approval-process) |
+| `process:article` | [Creating an article](/article-process) |
+| `process:article-maintenance` | [Maintaining the article library](/article-maintenance-process) |
+| `process:brand-approval` | [Brand approval process](/brand-approval-process) |
+| `process:budget-pacing` | [Budget pacing process](/budget-pacing), [Budget pacing process](/budget-pacing) |
+| `process:budget-planning` | [Budget planning process](/budget-planning) |
+| `process:budget-reporting` | [Budget reporting process](/budget-reporting-process) |
+| `process:campaign-brief` | [Campaign brief process](/campaign-brief-process) |
+| `process:campaign-retrospective` | [Campaign retrospective process](/campaign-retrospect-process), [Campaign retrospective process](/campaign-retrospect-process) |
+| `process:campaign:google` | [Launching a Google campaign](/google-campaign-process) |
+| `process:campaign:linkedin` | [Launching a LinkedIn campaign](/linkedin-campaign-process) |
+| `process:campaign:meta` | [Launching a Meta campaign](/meta-campaign-process) |
+| `process:campaign:tiktok` | [Launching a TikTok campaign](/tiktok-campaign-process) |
+| `process:content-calendar` | [Planning the content calendar](/content-calendar-process) |
+| `process:copywriting` | [Copywriting process](/copywriting-process) |
+| `process:creative-brief` | [Creating a creative brief](/creative-brief-process) |
+| `process:daily-brief` | [Daily brief](/daily-brief) |
+| `process:email` | [Launching an email campaign](/email-campaign-process) |
+| `process:event-tracking` | [Event tracking plan overview](/event-tracking-plan-overview) |
+| `process:experiment` | [Creating an experiment](/creating-an-experiment) |
+| `process:experiment-review` | [Experiment review](/experiment-review-process) |
+| `process:landing-page` | [Building a landing page](/landing-page-process) |
+| `process:legal-review` | [Legal review process](/legal-review-process) |
+| `process:monthly-reporting` | [Monthly reporting process](/monthly-reporting-process) |
+| `process:organic-social` | [Publishing an organic social post](/organic-social-post-process) |
+| `process:quarterly-reporting` | [Quarterly reporting process](/quarterly-reporting-process) |
+| `process:weekly-reporting` | [Weekly reporting process](/weekly-reporting-process) |
+| `process:yearly-reporting` | [Yearly reporting process](/yearly-reporting-process) |
+
+### Skills: agent skills with a runbook
+
+| Key | Provided by |
+| :-- | :-- |
+| `skill:ad-creation` | [Ad creation](/skill-ad-creation) |
+| `skill:deai` | [De-AI writing review](/skill-deai) |
+| `skill:google-ad-copy` | [Google ad copy](/skill-google-ad-copy) |
+| `skill:linkedin-ad-copy` | [LinkedIn ad copy](/skill-linkedin-ad-copy) |
+| `skill:meta-ad-copy` | [Meta ad copy](/skill-meta-ad-copy) |
+| `skill:tiktok-ad-copy` | [TikTok ad copy](/skill-tiktok-ad-copy) |
+| `skill:video-editing` | [Video editing](/skill-video-editing) |
+
+### Audience list upload formats
+
+| Key | Provided by |
+| :-- | :-- |
+| `audience-list:google` | [Customer profile CSV template (Google)](/customer-profile-csv-template-google) |
+| `audience-list:linkedin` | [Customer profile CSV template (LinkedIn)](/customer-profile-csv-template-linkedin) |
+| `audience-list:linkedin:company` | [Company list CSV template (LinkedIn)](/linkedin-company-list-csv-template) |
+| `audience-list:meta` | [Customer profile CSV template (Meta)](/customer-profile-csv-template-meta) |
+| `audience-list:tiktok` | [Customer profile CSV template (TikTok)](/customer-profile-csv-template-tiktok) |
+
+### Catalog and commerce feeds
+
+| Key | Provided by |
+| :-- | :-- |
+| `catalog-feed:google` | [Google Merchant Center feed templates](/google-merchant-center-overview) |
+| `catalog-feed:google:hotel` | [Hotel properties feed CSV template (Google Hotel Center)](/google-hotel-center-csv-template) |
+| `catalog-feed:google:local-inventory` | [Local inventory feed CSV template (Google Merchant Center)](/google-merchant-center-local-inventory-csv-template) |
+| `catalog-feed:google:product` | [Product feed CSV template (Google Merchant Center)](/google-merchant-center-product-csv-template) |
+| `catalog-feed:google:promotions` | [Promotions feed CSV template (Google Merchant Center)](/google-merchant-center-promotions-csv-template) |
+| `catalog-feed:google:vehicle` | [Vehicle ads feed CSV template (Google Merchant Center)](/google-merchant-center-vehicle-csv-template) |
+| `catalog-feed:meta` | [Meta Commerce catalog templates](/meta-commerce-overview) |
+| `catalog-feed:meta:destination` | [Destination catalog CSV template (Meta)](/meta-commerce-destination-csv-template) |
+| `catalog-feed:meta:flight` | [Flight catalog CSV template (Meta)](/meta-commerce-flight-csv-template) |
+| `catalog-feed:meta:home-listing` | [Home listing catalog CSV template (Meta)](/meta-commerce-home-listing-csv-template) |
+| `catalog-feed:meta:hotel` | [Hotel catalog CSV template (Meta)](/meta-commerce-hotel-csv-template) |
+| `catalog-feed:meta:product` | [Product catalog CSV template (Meta)](/meta-commerce-product-csv-template) |
+| `catalog-feed:meta:vehicle` | [Vehicle catalog CSV template (Meta)](/meta-commerce-vehicle-csv-template) |
+
+### Pre-launch checklists
+
+| Key | Provided by |
+| :-- | :-- |
+| `checklist-prelaunch` | [Campaign launch checklist](/campaign-launch-checklist) |
+| `checklist-prelaunch:article` | [Article pre-publish checklist](/article-pre-publish-checklist) |
+| `checklist-prelaunch:email` | [Email pre-send checklist](/email-pre-send-checklist) |
+| `checklist-prelaunch:google` | [Google pre-launch checklist](/google-pre-launch-checklist) |
+| `checklist-prelaunch:linkedin` | [LinkedIn pre-launch checklist](/linkedin-pre-launch-checklist) |
+| `checklist-prelaunch:meta` | [Meta pre-launch checklist](/meta-pre-launch-checklist) |
+| `checklist-prelaunch:organic-social` | [Organic social pre-publish checklist](/organic-social-pre-publish-checklist) |
+| `checklist-prelaunch:tiktok` | [TikTok pre-launch checklist](/tiktok-pre-launch-checklist) |
+
+### Review checklists
+
+| Key | Provided by |
+| :-- | :-- |
+| `checklist-review` | [Creative review checklist](/creative-review-checklist), [De-AI writing review](/skill-deai) |
+| `checklist-review:article-update` | [Article update checklist](/article-update-checklist) |
+| `checklist-review:geo` | [GEO checklist](/geo-checklist) |
+
+### Concepts: the reasoning behind a standard
+
+| Key | Provided by |
+| :-- | :-- |
+| `concept:angle` | [Angle concepts](/angle-concepts) |
+| `concept:article-brief` | [Article brief concepts](/article-brief-concepts) |
+| `concept:battle-card` | [Battle card concepts](/battle-card-concepts) |
+| `concept:brand-strategy` | [Brand strategy concepts](/brand-strategy-concepts) |
+| `concept:budget` | [Budget concepts](/budget-concepts) |
+| `concept:content-calendar` | [Content calendar concepts](/content-calendar-concepts) |
+| `concept:copy-brief` | [Copy brief concepts](/copy-brief-concepts) |
+| `concept:creative-brief` | [Creative brief concepts](/creative-brief-concepts) |
+| `concept:customer-profile` | [Customer profile concepts](/customer-profile-concepts) |
+| `concept:experiment-brief` | [Experiment brief concepts](/experiment-brief-concepts) |
+| `concept:experiment-id` | [Experiment ID concepts](/experiment-id-concepts), [Experiment ID concepts](/experiment-id-concepts) |
+| `concept:kpi` | [Reporting framework concepts](/reporting-framework-concepts) |
+| `concept:landing-page-brief` | [Landing page briefs concepts](/landing-page-brief-concepts) |
+| `concept:naming-convention` | [Naming conventions overview](/naming-conventions-overview) |
+| `concept:report-writing` | [Report writing concepts](/report-writing-concepts), [Report writing concepts](/report-writing-concepts) |
+| `concept:reporting` | [Reporting framework concepts](/reporting-framework-concepts) |
+| `concept:rollup` | [Data quality and rollup concepts](/data-quality-and-rollup-concepts), [Data quality and rollup concepts](/data-quality-and-rollup-concepts), [Data quality and rollup concepts](/data-quality-and-rollup-concepts) |
+| `concept:search-theme` | [Search theme concepts](/google-search-theme-concepts) |
+| `concept:seo-geo` | [SEO and GEO concepts](/seo-and-geo-concepts) |
+| `concept:utm` | [UTM parameters](/utm-parameters) |
+| `concept:visual-identity` | [Visual identity concepts](/visual-identity-concepts) |
+
+### Copy templates, by channel and format
+
+| Key | Provided by |
+| :-- | :-- |
+| `copy-template` | [Copy templates](/copy-templates) |
+| `copy-template:email` | [Email copy template](/email-copy-template) |
+| `copy-template:google:app` | [Google App campaign copy template](/google-app-campaign-copy-template) |
+| `copy-template:google:demand-gen` | [Google Demand Gen copy template](/google-demand-gen-copy-template) |
+| `copy-template:google:display` | [Google Display copy template](/google-display-copy-template) |
+| `copy-template:google:pmax` | [Google Performance Max copy template](/google-pmax-copy-template) |
+| `copy-template:google:search` | [Google Search copy template](/google-search-copy-template) |
+| `copy-template:google:youtube` | [Google YouTube ad copy template](/google-youtube-copy-template) |
+| `copy-template:landing-page` | [Landing page block library](/landing-page-skeleton) |
+| `copy-template:linkedin:carousel` | [LinkedIn Carousel ad copy template](/linkedin-carousel-copy-template) |
+| `copy-template:linkedin:conversation-ad` | [LinkedIn Conversation ad copy template](/linkedin-conversation-ad-copy-template) |
+| `copy-template:linkedin:document` | [LinkedIn Document ad copy template](/linkedin-document-copy-template) |
+| `copy-template:linkedin:follower-ad` | [LinkedIn Follower ad copy template](/linkedin-follower-ad-copy-template) |
+| `copy-template:linkedin:message-ad` | [LinkedIn Message ad copy template](/linkedin-message-ad-copy-template) |
+| `copy-template:linkedin:single-image` | [LinkedIn Single Image ad copy template](/linkedin-single-image-copy-template) |
+| `copy-template:linkedin:text-ad` | [LinkedIn Text ad copy template](/linkedin-text-ad-copy-template) |
+| `copy-template:linkedin:video` | [LinkedIn Video ad copy template](/linkedin-video-copy-template) |
+| `copy-template:meta:carousel` | [Meta Carousel copy template](/meta-carousel-copy-template) |
+| `copy-template:meta:collection` | [Meta Collection copy template](/meta-collection-copy-template) |
+| `copy-template:meta:lead-ad` | [Meta Lead ad copy template](/meta-lead-ad-copy-template) |
+| `copy-template:meta:static-video` | [Meta Static/Video ad copy template](/meta-static-video-copy-template) |
+| `copy-template:organic-social` | [Organic social copy template](/organic-social-copy-template) |
+| `copy-template:tiktok:carousel` | [TikTok Carousel ad copy template](/tiktok-carousel-copy-template) |
+| `copy-template:tiktok:in-feed` | [TikTok In-Feed ad copy template](/tiktok-in-feed-copy-template) |
+| `copy-template:tiktok:spark-ad` | [TikTok Spark ad copy template](/tiktok-spark-ad-copy-template) |
+| `copy-template:tiktok:topview` | [TikTok TopView ad copy template](/tiktok-topview-copy-template) |
+| `copy-template:tiktok:video-shopping` | [TikTok Video Shopping ad copy template](/tiktok-video-shopping-copy-template) |
+
+### Creative specs, by channel
+
+| Key | Provided by |
+| :-- | :-- |
+| `creative-specs` | [Image and video specs](/image-and-video-specs) |
+| `creative-specs:email` | [Email creative specs](/email-creative-specs) |
+| `creative-specs:google:demand-gen` | [Search, Demand Gen and uploaded display specs](/google-search-demandgen-display-specs) |
+| `creative-specs:google:display` | [Display creative specs](/google-display-creative-specs) |
+| `creative-specs:google:pmax` | [Performance Max creative specs](/google-pmax-creative-specs) |
+| `creative-specs:google:search` | [Search, Demand Gen and uploaded display specs](/google-search-demandgen-display-specs) |
+| `creative-specs:google:uploaded-display` | [Search, Demand Gen and uploaded display specs](/google-search-demandgen-display-specs) |
+| `creative-specs:linkedin` | [LinkedIn creative specs](/linkedin-creative-specs) |
+| `creative-specs:meta` | [Meta creative specs](/meta-creative-specs) |
+| `creative-specs:organic-social` | [Organic social creative specs](/organic-social-creative-specs) |
+| `creative-specs:tiktok` | [TikTok creative specs](/tiktok-creative-specs) |
+| `creative-specs:youtube` | [YouTube creative specs](/youtube-creative-specs) |
+
+### Customer profile
+
+| Key | Provided by |
+| :-- | :-- |
+| `customer-profile` | [Customer profile brief (B2B)](/customer-profile-brief) |
+| `customer-profile:b2c` | [Customer profile brief (B2C)](/b2-c-customer-profiles) |
+
+### Hook type
+
+| Key | Provided by |
+| :-- | :-- |
+| `hook-type` | [Hook types](/hook-types) |
+| `hook-type:google-headline-bucket` | [Google ad copy](/skill-google-ad-copy) |
+
+### KPI definitions and starter packs
+
+| Key | Provided by |
+| :-- | :-- |
+| `kpi-definitions` | [KPI definitions](/kpi-definitions) |
+| `kpi-definitions:ecommerce` | [Ecommerce metrics starter pack](/ecommerce-metrics-starter-pack) |
+| `kpi-definitions:sales-led` | [Sales-led metrics starter pack](/sales-led-metrics-starter-pack) |
+
+### Libraries: where finished work is filed and reusable work is found
+
+| Key | Provided by |
+| :-- | :-- |
+| `library:angle` | [Angle library](/angle-library) |
+| `library:article` | [Article library overview](/article-library-overview) |
+| `library:article-brief` | [Article brief library](/article-brief-library) |
+| `library:article:hero` | [Hero article register](/hero-article-register) |
+| `library:article:supporting` | [Supporting article register](/supporting-article-register) |
+| `library:audience-list` | [Audience list store](/audience-list-store) |
+| `library:battle-card` | [Battle card library](/battle-card-library) |
+| `library:campaign` | [Campaign library overview](/campaign-library-overview) |
+| `library:copy` | [Copy drive](/copy-drive) |
+| `library:copy-brief` | [Copy brief library](/copy-brief-library) |
+| `library:creative` | [Creative drive](/creative-drive) |
+| `library:creative-brief` | [Creative brief library](/creative-brief-library) |
+| `library:customer-profile` | [Customer profile library overview](/customer-profile-library-overview) |
+| `library:event` | [Event tracking plan](/event-tracking-plan) |
+| `library:experiment` | [Experiment learning library](/experiment-learning-home) |
+| `library:landing-page` | [Landing page library](/landing-page-library) |
+| `library:report:annual` | [Annual report library](/annual-report-archive) |
+| `library:report:monthly` | [Monthly report library](/monthly-report-archive) |
+| `library:report:quarterly` | [Quarterly report library](/quarterly-report-archive) |
+| `library:report:weekly` | [Weekly report library](/weekly-report-archive) |
+| `library:search-theme` | [Search theme register](/google-search-theme-register) |
+| `library:site-page` | [Site pages register](/site-pages-register) |
+| `library:video` | [Video drive](/video-drive) |
+
+### Naming conventions
+
+| Key | Provided by |
+| :-- | :-- |
+| `naming-convention:ad` | [Ad naming conventions](/ad-name-conventions) |
+| `naming-convention:ad-set` | [Ad set / ad group / variant naming conventions](/ad-set-group-naming-conventions) |
+| `naming-convention:audience` | [Customer profile naming conventions](/customer-profile-naming-conventions) |
+| `naming-convention:campaign` | [Campaign naming conventions](/campaign-naming-conventions) |
+| `naming-convention:event` | [Event naming conventions](/event-naming-conventions) |
+| `naming-convention:file` | [File naming conventions](/file-naming-conventions) |
+
+### Naming dictionaries (closed value lists)
+
+| Key | Provided by |
+| :-- | :-- |
+| `naming-dictionary:ad` | [Ad naming conventions](/ad-name-conventions) |
+| `naming-dictionary:ad-set` | [Ad set / ad group / variant naming conventions](/ad-set-group-naming-conventions) |
+| `naming-dictionary:audience` | [Customer profile naming conventions](/customer-profile-naming-conventions) |
+| `naming-dictionary:campaign` | [Campaign naming conventions](/campaign-naming-conventions) |
+| `naming-dictionary:event` | [Event naming conventions](/event-naming-conventions) |
+| `naming-dictionary:file` | [File naming conventions](/file-naming-conventions) |
+
+### Platform briefs
+
+| Key | Provided by |
+| :-- | :-- |
+| `platform-brief:google` | [Google campaign brief](/google-campaign-brief) |
+| `platform-brief:linkedin` | [LinkedIn campaign brief](/linkedin-campaign-brief) |
+| `platform-brief:meta` | [Meta campaign brief](/meta-campaign-brief) |
+| `platform-brief:tiktok` | [TikTok campaign brief](/tiktok-campaign-brief) |
+
+### Channel hubs
+
+| Key | Provided by |
+| :-- | :-- |
+| `platform-hub:email` | [Email](/email-home) |
+| `platform-hub:google` | [Google](/google-home) |
+| `platform-hub:linkedin` | [LinkedIn](/linked-in-home) |
+| `platform-hub:meta` | [Meta](/meta-home) |
+| `platform-hub:organic-social` | [Organic social](/organic-social-home) |
+| `platform-hub:seo` | [SEO](/seo-home) |
+| `platform-hub:tiktok` | [TikTok](/tik-tok-home) |
+| `platform-hub:web` | [Website and landing pages](/web-home) |
+
+### Report templates, by cadence
+
+| Key | Provided by |
+| :-- | :-- |
+| `report-template:annual` | [Annual report template](/annual-report-template) |
+| `report-template:daily` | [Daily brief](/daily-brief) |
+| `report-template:monthly` | [Monthly report template](/monthly-report-template) |
+| `report-template:quarterly` | [Quarterly report template](/quarterly-report-template) |
+| `report-template:weekly` | [Weekly report template](/weekly-report-template) |
+
+### Template directories, by channel
+
+| Key | Provided by |
+| :-- | :-- |
+| `template-directory:email` | [Template directory (Email)](/email-template-directory) |
+| `template-directory:google` | [Template directory (Google)](/google-template-directory) |
+| `template-directory:linkedin` | [Template directory (LinkedIn)](/linkedin-template-directory) |
+| `template-directory:meta` | [Template directory (Meta)](/meta-template-directory) |
+| `template-directory:organic-social` | [Template directory (Organic social)](/organic-social-template-directory) |
+| `template-directory:seo` | [Template directory (SEO)](/seo-template-directory) |
+| `template-directory:tiktok` | [Template directory (TikTok)](/tiktok-template-directory) |
+| `template-directory:web` | [Template directory (Website)](/web-template-directory) |
+
+### Everything else
+
+| Key | Provided by |
+| :-- | :-- |
+| `angle-brief` | [Angle brief](/angle-brief) |
+| `angle-template` | [Angle template](/angle-template) |
+| `angle-type` | [Ad naming conventions](/ad-name-conventions) |
+| `approval-route` | [Approval process](/approval-process) |
+| `approved-claims` | [Messaging](/messaging) |
+| `article-best-practices` | [Article best practices](/article-best-practices) |
+| `article-brief` | [Article brief](/article-brief) |
+| `article-standards` | [Article standards](/article-standards) |
+| `article-template` | [Article writing template](/article-writing-template) |
+| `asset-locations` | [Asset directory](/asset-directory) |
+| `authority-areas` | [Article library overview](/article-library-overview) |
+| `battle-card` | [Competitor battle card](/competitor-battle-card) |
+| `brand-assets` | [Brand assets](/brand-assets) |
+| `brand-hub` | [Brand guidelines](/brand-guidelines) |
+| `brand-voice` | [Brand voice and tone](/brand-voice-and-tone) |
+| `budget-plan` | [Budget planning process](/budget-planning) |
+| `campaign-brief` | [Marketing campaign brief](/marketing-campaign-brief) |
+| `campaign-structure-best-practices` | [Campaign structure best practices](/campaign-structure-best-practices) |
+| `checklist-qa` | [Campaign QA checklist](/campaign-qa-checklist) |
+| `content-calendar` | [Content calendar](/content-calendar) |
+| `conversation-contract` | [How the MCP talks](/mcp-conversation) |
+| `copy-best-practices` | [Copy best practices](/copy-best-practices) |
+| `copy-brief` | [Copy brief](/copy-brief) |
+| `copy-framework` | [Copywriting frameworks](/copywriting-frameworks) |
+| `creative-best-practices` | [Creative best practices](/creative-best-practices) |
+| `creative-brief` | [Creative brief](/creative-brief) |
+| `creator-defaults` | [Creating a creative brief](/creative-brief-process) |
+| `dashboard-standards` | [Dashboard standards](/dashboard-standards) |
+| `data-dictionary` | [Marketing reporting data dictionary](/marketing-reporting-data-dictionary) |
+| `email-brief` | [Email campaign brief](/email-campaign-brief) |
+| `experiment-brief` | [Experiment brief](/experiment-brief) |
+| `experiment-id` | [Experiment ID convention](/experiment-id-convention) |
+| `experiment-log` | [Experiment learning library](/experiment-learning-home) |
+| `experimentation-best-practices` | [Experimentation best practices](/experimentation-best-practices) |
+| `flat-file` | [Flat file template](/flat-file-template) |
+| `glossary` | [Glossary](/glossary) |
+| `landing-page-brief` | [Landing page brief](/landing-page-brief) |
+| `landing-page-skeleton` | [Landing page block library](/landing-page-skeleton) |
+| `legal-triggers` | [Legal review process](/legal-review-process) |
+| `logo-usage` | [Logo usage](/logo-usage) |
+| `mcp-commands` | [Operation commands](/mcp-commands) |
+| `mcp-onboarding` | [Set up the MCP](/mcp-setup) |
+| `mcp-scope` | [Snow Doughnut MCP](/mcp-overview) |
+| `messaging` | [Messaging](/messaging) |
+| `naming-rules` | [Naming conventions overview](/naming-conventions-overview) |
+| `onboarding-brand` | [Brand onboarding](/brand-onboarding) |
+| `onboarding-paid-media` | [Paid media onboarding](/paid-media-onboarding) |
+| `onboarding-path` | [New member onboarding](/new-member-onboarding) |
+| `page-feed:google` | [Page feed CSV template (Google Ads)](/google-ads-page-feed-csv-template) |
+| `pilot-brief` | [Pilot brief](/pilot-brief) |
+| `positioning` | [Positioning](/positioning) |
+| `product-catalog` | [Product page](/product-catalog) |
+| `reporting-best-practices` | [Reporting best practices](/reporting-best-practices) |
+| `reporting-cadence` | [Reporting cadence](/reporting-cadence) |
+| `scope-boundary` | [What this framework covers](/what-this-framework-covers) |
+| `search-theme-brief` | [Search theme brief](/google-search-theme-brief) |
+| `search-theme-template` | [Search theme template](/google-search-theme-template) |
+| `seasonality-index` | [Yearly reporting process](/yearly-reporting-process) |
+| `setup-checklist` | [Setup checklist](/setup-checklist) |
+| `setup-path` | [Get started](/overview) |
+| `skill-index` | [Skills](/skills-overview) |
+| `social-brief` | [Organic social post brief](/organic-social-post-brief) |
+| `statistical-significance` | [Statistical significance](/statistical-significance) |
+| `tracking-best-practices` | [Tracking best practices](/tracking-best-practices) |
+| `utm-rules` | [UTM standards](/utm-standards) |
+| `visual-identity` | [Visual identity](/visual-identity) |
+
+## Open gaps
+
+Questions the MCP asks that have no closed list behind them yet. Until each list exists, the MCP takes a typed answer.
+
+| Missing list | Asked by |
+| :-- | :-- |
+| CTA buttons, per platform | Meta, Google Performance Max and Demand Gen, LinkedIn, and TikTok copy templates |
+| Lead form field types and form type | [Meta lead ad copy template](/meta-lead-ad-copy-template) |
+| Gated or ungated document | [LinkedIn document copy template](/linkedin-document-copy-template) |
+| Keyword match types and funnel stage | [Search theme template](/google-search-theme-template) |
+| Approved hashtags | [Organic social copy template](/organic-social-copy-template) |
+| Content pillars | [Content calendar](/content-calendar) |
+| Negative keyword lists | Google campaign pages |
+| Where the change log lives | Budget pacing, budget reporting, campaign QA, retrospectives |
+
+## Related resources
+
+- [**How the MCP talks**](/mcp-conversation) The conversation contract every runbook follows.
+- [**Router**](/mcp-router) Every plain-language request and where it starts.
+- [**Skills**](/skills-overview) What a skill is made of.
+
+{/* sd-wiring:start, MCP wiring. Stripped from the public site at launch. Schema: /mcp-registry */}
+
+<Accordion title="MCP wiring">
+  **Type:** mcp<br />**Domains:** mcp<br />**Provides:** `registry`<br />**Uses:** `conversation-contract`, `router`
+</Accordion>
+
+{/* sd-wiring:end */}

@@ -23,6 +23,25 @@ A hook type is a family, not a finished line. "Scarcity" is the type; "Only 40 o
 | Bold result | A specific, provable number | Batch waste down 38% in eight weeks |
 | Question | Puts the reader in the scene | What would you do with ten free hours a week? |
 
+## When each type fits
+
+The MCP ranks this list against the context of the ad and offers the five that fit best, using the [context facets](/mcp-registry#context-facets). A type whose Avoid when matches is left out.
+
+| Type | Best for | Avoid when |
+| :-- | :-- | :-- |
+| FOMO | offer: launch, sale; audience: warm, retargeting | proof: none |
+| Scarcity | offer: sale, launch, event; goal: conversion | offer: evergreen |
+| Urgency | offer: sale, event, trial; goal: conversion | offer: evergreen |
+| Social proof | proof: reviews, numbers; audience: cold | proof: none |
+| Value | offer: sale, trial; goal: conversion |  |
+| Risk reversal | offer: trial; audience: warm, retargeting; goal: conversion |  |
+| Curiosity | goal: awareness, consideration; audience: cold | audience: customers |
+| Problem call-out | goal: awareness, consideration; audience: cold | audience: customers |
+| Bold result | proof: numbers; business: b2b, saas | proof: none |
+| Question | goal: awareness; audience: cold; length: short |  |
+
+A new hook type is a new row in both tables. It joins the ranking the moment it is published.
+
 These are the same families as the [headline buckets](/skill-google-ad-copy#headline-buckets) in the Google ad copy skill, applied there to a pool of headlines instead of one opening line.
 
 ## Picking one
@@ -42,3 +61,11 @@ Two guardrails hold whatever the type:
 - [**Angle brief**](/angle-brief) Where drafted hooks are recorded, tagged with their type.
 - [**Copywriting frameworks**](/copywriting-frameworks) The structure that carries the copy from the hook to the call to action.
 - [**Copy best practices**](/copy-best-practices) The standards that hold whichever hook opens the ad.
+
+{/* sd-wiring:start, MCP wiring. Stripped from the public site at launch. Schema: /mcp-registry */}
+
+<Accordion title="MCP wiring">
+  **Type:** list<br />**Domains:** copy, creative<br />**Provides:** `hook-type`<br />**Uses:** `angle-brief`, `approved-claims`, `copy-framework`, `legal-triggers`, `messaging`<br />**Best for:** per row, in When each type fits
+</Accordion>
+
+{/* sd-wiring:end */}

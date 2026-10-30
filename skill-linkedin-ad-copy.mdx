@@ -105,3 +105,11 @@ One question per turn, options offered as a pick list, and nothing asked that th
 - [Angle brief](/angle-brief) The proposition, the drafted hooks, and what the angle must not claim.
 - [Copy best practices](/copy-best-practices) The standards that apply however the copy was written.
 - [Skills](/skills-overview) How skills load and where they are installed.
+
+{/* sd-wiring:start, MCP wiring. Stripped from the public site at launch. Schema: /mcp-registry */}
+
+<Accordion title="MCP wiring">
+  **Type:** skill<br />**Domains:** copy, linkedin<br />**Provides:** `skill:linkedin-ad-copy`<br />**Uses:** `angle-brief`, `approved-claims`, `brand-voice`, `copy-brief`, `copy-framework`, `copy-template`, `creative-brief`, `hook-type`, `messaging`, `naming-convention`, `utm-rules`<br />**Best for:** channel: linkedin
+</Accordion>
+
+{/* sd-wiring:end */}

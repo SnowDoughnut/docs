@@ -66,3 +66,15 @@ _E.g. Conversion metrics for the last 2 days are estimates, restated as platform
 - [Flat file template](/flat-file-template) The daily fill the brief reads from.
 - [Weekly reporting process](/weekly-reporting-process) The shortest written report; the brief never replaces it.
 - [Report writing concepts](/report-writing-concepts) Why exceptions-only is the rule.
+
+{/* sd-wiring:start, MCP wiring. Stripped from the public site at launch. Schema: /mcp-registry */}
+
+<Accordion title="MCP wiring">
+  **Type:** process<br />**Domains:** reporting, budget<br />**Provides:** `process:daily-brief`, `report-template:daily`<br />**Uses:** `data-dictionary`, `flat-file`, `kpi-definitions`, `library:change-log`, `reporting-cadence`<br />**Hands off to:** `process:budget-pacing`
+
+  **Triggers:** "What needs attention today?" · "Send the daily brief" · "Morning numbers" · "Anything off this morning?"
+
+  **Output:** Exceptions-only brief (status, pacing table, exceptions with normal range and first-seen, data notes) sent per reporting cadence register; no archive, no recommendations.
+</Accordion>
+
+{/* sd-wiring:end */}

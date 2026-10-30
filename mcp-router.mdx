@@ -1,0 +1,222 @@
+---
+title: "MCP router"
+description: "Every plain-language request the Snow Doughnut MCP recognises and the page it starts from, grouped by area. The MCP reads this to route a request; read it to see everything the MCP can help with."
+launch: private
+---
+
+The MCP starts every request here. It matches what you asked against the requests below, opens the page in **Start at**, and runs that page's wiring: the questions in order, the pages it pulls, and the output. A request that matches more than one row gets one short question back: which of the matches you meant.
+
+Matching is by meaning, not exact wording. "Can you help me write some Meta ads" routes the same as "Help me write Meta copy".
+
+When a request matches nothing, the MCP searches the [registry](/mcp-registry) for a key that fits, and says so if the framework does not cover it yet.
+
+### Setting up
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "I'm new to the team, what should I read?" · "Onboard a new hire" · "Give me the reading list for week one" | [New member onboarding](/new-member-onboarding) | `onboarding-path` |
+| "Help me set up Snow Doughnut for my team" · "Where do I start?" · "Set up the framework for a new client" | [Get started](/overview) | `setup-path` |
+| "I'm getting ad account access, what do I read first?" · "Onboard a new media buyer" · "What are the rules for building campaigns here?" | [Paid media onboarding](/paid-media-onboarding) | `onboarding-paid-media` |
+
+### Brand
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "Is this on brand?" · "Run brand review on this" · "Pre-check before I send to the brand lead" | [Brand approval process](/brand-approval-process) | `process:brand-approval` |
+| "I'm producing creative for the brand, what do I need to know?" · "Brief me on the brand" · "Can we say this?" | [Brand onboarding](/brand-onboarding) | `onboarding-brand` |
+| "Help me make a brand guide" · "Set up our brand" · "Write our positioning" | [Set up your brand](/set-up-your-brand) | `task:set-up-your-brand` |
+| "Define our brand voice" · "Help me write a tone of voice guide" · "How should we sound on social vs support?" | [Brand voice and tone](/brand-voice-and-tone) | `brand-voice` |
+| "Write logo usage rules" · "Which logo version should I use here?" · "Set up co-branding rules for a partner" | [Logo usage](/logo-usage) | `logo-usage` |
+| "Write our messaging" · "Help me with a tagline and elevator pitch" · "What are our message pillars?" | [Messaging](/messaging) | `messaging` |
+| "Help me with our positioning" · "Write a positioning statement" · "How are we different from competitors?" | [Positioning](/positioning) | `positioning` |
+| "Document our brand colors and fonts" · "Help me build a visual identity" · "Make a style guide for our designers" | [Visual identity](/visual-identity) | `visual-identity` |
+
+### Strategy and customers
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "Define our customer persona" · "Create a customer profile" · "Who are we targeting?" | [Define a customer profile](/define-a-customer-profile) | `task:define-a-customer-profile` |
+| "Help me define our target consumer" · "Build a B2C customer profile" · "Who buys our product?" | [Customer profile brief (B2C)](/b2-c-customer-profiles) | `customer-profile:b2c` |
+| "Make a battle card for a competitor" · "How do we beat Competitor X?" · "Help sales handle objections about a rival" | [Competitor battle card](/competitor-battle-card) | `battle-card` |
+| "Help me define our ideal customer" · "Build a B2B ICP" · "Who should we be selling to?" | [Customer profile brief (B2B)](/customer-profile-brief) | `customer-profile` |
+
+### Campaigns
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "Help me plan a campaign" · "I need a campaign brief" · "We're launching X next month, set up the campaign" | [Campaign brief process](/campaign-brief-process) | `process:campaign-brief` |
+| "Write the retro for campaign X" · "How did the campaign do?" · "Close out the campaign" | [Campaign retrospective process](/campaign-retrospect-process) | `process:campaign-retrospective` |
+| "Help me make a campaign" · "Launch a new paid campaign" · "Take this idea to a live campaign" | [Make a campaign](/make-a-campaign) | `task:make-a-campaign` |
+| "Create a campaign brief" · "Help me plan a new campaign" · "We're launching a spring promo, set it up" | [Marketing campaign brief](/marketing-campaign-brief) | `campaign-brief` |
+
+### Meta
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "Set up a Meta catalog" · "Which Meta catalog type do I need?" · "Build a product feed for Facebook" | [Meta Commerce catalog templates](/meta-commerce-overview) | `catalog-feed:meta` |
+| "Launch a Meta campaign" · "Set up Facebook ads for this campaign" · "Build our Meta campaign in Ads Manager" | [Launching a Meta campaign](/meta-campaign-process) | `process:campaign:meta` |
+| "Plan a Meta campaign" · "Fill in a Meta campaign brief" · "Set up the structure for our Facebook/Instagram ads" | [Meta campaign brief](/meta-campaign-brief) | `platform-brief:meta` |
+
+### Google
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "Set up a Google Shopping feed" · "Which Merchant Center feed do I need?" · "Add promotions to Shopping" | [Google Merchant Center feed templates](/google-merchant-center-overview) | `catalog-feed:google` |
+| "Launch a Google Ads campaign" · "Set up a Search campaign for this campaign" · "Build our Performance Max campaign" | [Launching a Google campaign](/google-campaign-process) | `process:campaign:google` |
+| "Plan a Google Ads campaign" · "Fill in a Google campaign brief" · "Should this be Search or Performance Max?" | [Google campaign brief](/google-campaign-brief) | `platform-brief:google` |
+| "Plan a search theme" · "Build a new ad group for Google Search" · "Help me group these keywords" | [Search theme brief](/google-search-theme-brief) | `search-theme-brief` |
+
+### LinkedIn
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "Launch a LinkedIn campaign" · "Set up LinkedIn ads for this campaign" · "Run an account-based campaign on LinkedIn" | [Launching a LinkedIn campaign](/linkedin-campaign-process) | `process:campaign:linkedin` |
+| "Plan a LinkedIn campaign" · "Fill in a LinkedIn campaign brief" · "Set up an ABM campaign on LinkedIn" | [LinkedIn campaign brief](/linkedin-campaign-brief) | `platform-brief:linkedin` |
+
+### TikTok
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "Launch a TikTok campaign" · "Set up TikTok ads" · "Add a new video variant to our TikTok ad group" | [Launching a TikTok campaign](/tiktok-campaign-process) | `process:campaign:tiktok` |
+| "Plan a TikTok campaign" · "Fill in a TikTok campaign brief" · "How many TikTok creatives do I need at launch?" | [TikTok campaign brief](/tiktok-campaign-brief) | `platform-brief:tiktok` |
+
+### Copy
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "Help me write ad copy" · "Which copy template do I use for a LinkedIn carousel?" · "Write copy for this campaign across platforms" | [Copy templates](/copy-templates) | `copy-template` |
+| "Help me write Meta copy" · "I need ad copy for the new campaign" · "Write copy for Google and LinkedIn from this brief" | [Copywriting process](/copywriting-process) | `process:copywriting` |
+| "Help me write some Meta copy" · "Write a Google search ad" · "I need an email subject line" | [Write copy](/write-copy) | `task:write-copy` |
+| "check/humanize/de-AI this" · "does this sound like ChatGPT" · "make this less robotic" | [De-AI writing review](/skill-deai) | `skill:deai` |
+| "RSA headlines" · "PMax asset group copy" · "fill the search copy template" | [Google ad copy](/skill-google-ad-copy) | `skill:google-ad-copy` |
+| "LinkedIn ad copy" · "intro text" · "fill the conversation ad template" | [LinkedIn ad copy](/skill-linkedin-ad-copy) | `skill:linkedin-ad-copy` |
+| "Meta ad copy" · "primary text" · "fill the carousel template" | [Meta ad copy](/skill-meta-ad-copy) | `skill:meta-ad-copy` |
+| "TikTok ad copy" · "caption the videos" · "fill the in-feed template" | [TikTok ad copy](/skill-tiktok-ad-copy) | `skill:tiktok-ad-copy` |
+| "Help me write Meta copy" · "Write a copy brief" · "I need ad copy for our trial campaign" | [Copy brief](/copy-brief) | `copy-brief` |
+
+### Creative
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "where does this file go" · "where do we keep X" · "find an existing asset" | [Asset directory](/asset-directory) | `asset-locations` |
+| "I need a brief for some ads" · "Brief creative for the campaign" · "Help me commission a video" | [Brief creative](/brief-creative) | `task:brief-creative` |
+| "Help me brief a designer" · "I need a creative brief for new ads" · "Brief a video shoot" | [Creating a creative brief](/creative-brief-process) | `process:creative-brief` |
+| "need ad creative" · "brief the new static set" · "what assets do we need for TikTok" | [Ad creation](/skill-ad-creation) | `skill:ad-creation` |
+| "Help me come up with a new ad angle" · "Write an angle brief" · "I need a new argument for our ads" | [Angle brief](/angle-brief) | `angle-brief` |
+| "Write a creative brief" · "Brief our designer on new Meta ads" · "I need a brief for a video shoot" | [Creative brief](/creative-brief) | `creative-brief` |
+
+### Video
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "cut the video for Reels" · "15-second version" · "make the vertical edits" | [Video editing](/skill-video-editing) | `skill:video-editing` |
+
+### Landing pages
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "Build a landing page for the campaign" · "I need a page for this offer" · "Rebuild our landing page" | [Build a landing page](/build-a-landing-page) | `task:build-a-landing-page` |
+| "Build a landing page for this campaign" · "We need a page for the ads to point at" · "Create a landing page for the free trial offer" | [Building a landing page](/landing-page-process) | `process:landing-page` |
+| "Brief a landing page" · "We need a new landing page for the trial" · "Plan the LP for our campaign" | [Landing page brief](/landing-page-brief) | `landing-page-brief` |
+
+### Articles and content
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "pick hero article topics" · "what should we write authority content on" · "set up the article library" | [Article library overview](/article-library-overview) | `library:article` |
+| "Review our articles" · "Which blog posts need updating?" · "Run the article maintenance pass" | [Maintaining the article library](/article-maintenance-process) | `process:article-maintenance` |
+| "Write a blog article" · "Help me create an SEO article" · "Brief and draft a hero article on reporting automation" | [Creating an article](/article-process) | `process:article` |
+| "Plan next month's content" · "Fill in our content calendar" · "What should we post around the launch?" | [Planning the content calendar](/content-calendar-process) | `process:content-calendar` |
+| "Write a blog post" · "Help me write a guide on X" · "Create a comparison page" | [Write an article](/write-an-article) | `task:write-an-article` |
+| "Write an article brief" · "Plan a blog post" · "Help me brief a hero article" | [Article brief](/article-brief) | `article-brief` |
+
+### Email
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "Send an email campaign" · "Launch the nurture sequence" · "Set up and test our newsletter send" | [Launching an email campaign](/email-campaign-process) | `process:email` |
+| "Plan an email campaign" · "Brief a nurture sequence" · "Set up an email for the trial push" | [Email campaign brief](/email-campaign-brief) | `email-brief` |
+
+### Organic social
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "Publish a post on LinkedIn" · "Write and schedule an Instagram post" · "Post this on our socials" | [Publishing an organic social post](/organic-social-post-process) | `process:organic-social` |
+| "Help me write a LinkedIn post" · "Plan an Instagram carousel" · "Brief a series of organic posts for the campaign" | [Organic social post brief](/organic-social-post-brief) | `social-brief` |
+
+### Naming
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "Name this campaign" · "What should I call this ad set?" · "Generate an ad name" | [Name something](/name-something) | `task:name-something` |
+
+### Tracking
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "add an event to the tracking plan" · "track a new conversion" | [Event tracking plan overview](/event-tracking-plan-overview) | `process:event-tracking` |
+| "Set up UTMs" · "Build our tracking plan" · "Define our events" | [Set up tracking](/set-up-tracking) | `task:set-up-tracking` |
+
+### Reporting
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "What needs attention today?" · "Send the daily brief" · "Morning numbers" | [Daily brief](/daily-brief) | `process:daily-brief` |
+| "Write the monthly report" · "Did we hit target this month?" · "Monthly recap for leadership" | [Monthly reporting process](/monthly-reporting-process) | `process:monthly-reporting` |
+| "Prep the quarterly review" · "QBR deck" · "Is the strategy working?" | [Quarterly reporting process](/quarterly-reporting-process) | `process:quarterly-reporting` |
+| "How did we do?" · "Make me a report" · "Set up reporting" | [Report on results](/report-on-results) | `task:report-on-results` |
+| "Write the weekly report" · "How did we do this week?" · "Weekly numbers" | [Weekly reporting process](/weekly-reporting-process) | `process:weekly-reporting` |
+| "Write the annual review" · "Year in review" · "Prep for next year's planning" | [Yearly reporting process](/yearly-reporting-process) | `process:yearly-reporting` |
+| "Help me pick our KPIs" · "What should our north star metric be?" · "Set targets and floors for our metrics" | [KPI definitions](/kpi-definitions) | `kpi-definitions` |
+| "Help me set up a data dictionary" · "Define how we calculate our marketing metrics" · "Where should our reporting numbers come from?" | [Marketing reporting data dictionary](/marketing-reporting-data-dictionary) | `data-dictionary` |
+| "Set up our reporting schedule" · "When should each report go out?" · "Who approves the weekly report?" | [Reporting cadence](/reporting-cadence) | `reporting-cadence` |
+
+### Budget
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "Are we on pace?" · "Campaign X is underspending" · "Why is spend so high this week?" | [Budget pacing process](/budget-pacing) | `process:budget-pacing` |
+| "How much should we spend on this campaign?" · "Build a budget for X" · "Split the budget across channels" | [Budget planning process](/budget-planning) | `process:budget-planning` |
+| "Report on spend this month" · "Budget report for Q3" · "Are we over or under budget?" | [Budget reporting process](/budget-reporting-process) | `process:budget-reporting` |
+
+### Experiments
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "I want to test two headlines" · "Set up an A/B test" · "Create an experiment brief" | [Creating an experiment](/creating-an-experiment) | `process:experiment` |
+| "I want to test something" · "Run an A/B test" · "Is this worth testing?" | [Run an experiment](/run-an-experiment) | `task:run-an-experiment` |
+| "Help me set up an A/B test" · "Write an experiment brief" · "I want to test a new headline against the current one" | [Experiment brief](/experiment-brief) | `experiment-brief` |
+| "We want to try a new channel" · "Plan a pilot for Google Search" · "Test a new market with no control" | [Pilot brief](/pilot-brief) | `pilot-brief` |
+
+### Approvals
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "Does this need approval?" · "Who needs to sign off on this?" · "Send this for approval" | [Approval process](/approval-process) | `process:approval` |
+
+### Legal
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "Does this need legal?" · "Send this to legal" · "Can we say 'fastest'?" | [Legal review process](/legal-review-process) | `process:legal-review` |
+
+### The MCP
+
+| When you hear | Start at | Key |
+| :-- | :-- | :-- |
+| "what can you do" · "which skill handles X" | [Skills](/skills-overview) | `skill-index` |
+| "Set up Snow Doughnut" · "Continue Snow Doughnut setup" | [Set up the MCP](/mcp-setup) | `mcp-onboarding` |
+
+## Related resources
+
+- [**MCP registry**](/mcp-registry) How pages connect, and how options get ranked.
+- [**How the MCP talks**](/mcp-conversation) One question per turn, options from your lists.
+- [**Operation commands**](/mcp-commands) The named commands behind these routes.
+
+{/* sd-wiring:start, MCP wiring. Stripped from the public site at launch. Schema: /mcp-registry */}
+
+<Accordion title="MCP wiring">
+  **Type:** mcp<br />**Domains:** mcp<br />**Provides:** `router`<br />**Uses:** `registry`, `conversation-contract`
+</Accordion>
+
+{/* sd-wiring:end */}

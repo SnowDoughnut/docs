@@ -75,9 +75,32 @@ Use it for promotions and retargeting when the product needs no introduction. Ev
 | Warm audience weighing specifics | Feature to benefit |
 | Promotion or retargeting with an offer | Direct offer |
 
+## When each framework fits
+
+The MCP ranks this list against the context of the asset and offers the five that fit best, using the [context facets](/mcp-registry#context-facets). A framework whose Avoid when matches is left out.
+
+| Framework | Best for | Avoid when |
+| :-- | :-- | :-- |
+| Four-part | audience: cold; length: short; goal: consideration, conversion | length: long |
+| Problem and solution | audience: warm; goal: consideration | audience: customers |
+| Before and after | goal: awareness, consideration; channel: meta, tiktok, organic-social |  |
+| AIDA | length: long; channel: email, web | length: short |
+| Feature to benefit | audience: warm, retargeting, customers; goal: consideration | audience: cold |
+| Direct offer | offer: sale, trial, launch; audience: warm, retargeting, customers | offer: evergreen; audience: cold |
+
+A new framework is a new section above and a new row here. It joins the ranking the moment it is published.
+
 ## Related resources
 
 - [**Hook types**](/hook-types) The opening line the framework carries forward.
 - [**Copy brief**](/copy-brief) Where the framework pick is recorded per asset.
 - [**Copy best practices**](/copy-best-practices) The standards that hold whichever framework the copy follows.
 - [**Brand voice and tone**](/brand-voice-and-tone) The voice every framework is written in.
+
+{/* sd-wiring:start, MCP wiring. Stripped from the public site at launch. Schema: /mcp-registry */}
+
+<Accordion title="MCP wiring">
+  **Type:** list<br />**Domains:** copy, email<br />**Provides:** `copy-framework`<br />**Uses:** `brand-voice`, `copy-best-practices`, `copy-brief`, `hook-type`, `legal-triggers`<br />**Best for:** per row, in When each framework fits
+</Accordion>
+
+{/* sd-wiring:end */}

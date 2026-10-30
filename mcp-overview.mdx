@@ -39,3 +39,11 @@ The [builder](/glossary#builder) and owner roles from the process pages apply un
 - [**How the MCP talks**](/mcp-conversation) The conversation contract every command and skill follows.
 - [**What this framework covers**](/what-this-framework-covers) The decision/execution split the MCP inherits.
 - [**Skills**](/skills-overview) The portable skill files that run alongside the MCP.
+
+{/* sd-wiring:start, MCP wiring. Stripped from the public site at launch. Schema: /mcp-registry */}
+
+<Accordion title="MCP wiring">
+  **Type:** mcp<br />**Domains:** mcp<br />**Provides:** `mcp-scope`<br />**Uses:** `conversation-contract`, `glossary`, `mcp-commands`, `reporting-cadence`
+</Accordion>
+
+{/* sd-wiring:end */}

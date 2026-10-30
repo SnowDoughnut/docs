@@ -58,3 +58,11 @@ Every [scheduled pass](/glossary#scheduled-pass) in this knowledge base is one o
 - [**Snow Doughnut MCP**](/mcp-overview) What the MCP does and never does.
 - [**Reporting cadence**](/reporting-cadence) Where the schedules live.
 - [**Glossary**](/glossary) Owner, builder, creator, standing rule, scheduled pass.
+
+{/* sd-wiring:start, MCP wiring. Stripped from the public site at launch. Schema: /mcp-registry */}
+
+<Accordion title="MCP wiring">
+  **Type:** mcp<br />**Domains:** mcp<br />**Provides:** `mcp-commands`<br />**Uses:** `article-brief`, `campaign-brief`, `checklist-prelaunch`, `copy-brief`, `creative-brief`, `experiment-log`, `flat-file`, `landing-page-brief`, `naming-convention`, `process:article-maintenance`, `report-template`, `reporting-cadence`, `utm-rules`
+</Accordion>
+
+{/* sd-wiring:end */}

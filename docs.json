@@ -68,7 +68,9 @@
               "mcp-overview",
               "mcp-setup",
               "mcp-commands",
-              "mcp-conversation"
+              "mcp-conversation",
+              "mcp-registry",
+              "mcp-router"
             ]
           }
         ]

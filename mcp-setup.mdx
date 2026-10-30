@@ -67,3 +67,22 @@ The answer comes from your own dictionaries. If a value is missing, the AI asks 
 - [**Operation commands**](/mcp-commands) Every command, with an example prompt.
 - [**Get started**](/overview) The setup path onboarding walks.
 - [**Reporting cadence**](/reporting-cadence) The schedule register onboarding fills.
+
+{/* sd-wiring:start, MCP wiring. Stripped from the public site at launch. Schema: /mcp-registry */}
+
+<Accordion title="MCP wiring">
+  **Type:** setup<br />**Domains:** mcp, setup<br />**Provides:** `mcp-onboarding`<br />**Uses:** `creator-defaults`, `flat-file`, `glossary`, `naming-convention`, `reporting-cadence`, `utm-rules`
+
+  **Triggers:** "Set up Snow Doughnut" · "Continue Snow Doughnut setup"
+
+  **Asks, one per turn, in order:**
+
+  1. Where do filled workbooks, briefs, libraries, and the flat file live? Options: your answer. Skip when: recorded.
+  2. Naming and UTM dictionaries filled or confirmed? Options: `naming-convention`. Skip when: recorded.
+  3. Reporting schedule, approver, auto-send, destination? Options: `reporting-cadence`. Skip when: recorded.
+  4. Standing rules and creator defaults? Options: `creator-defaults`. Skip when: recorded.
+
+  **Output:** Recorded setup: locations per library, dictionaries, schedule register, defaults
+</Accordion>
+
+{/* sd-wiring:end */}
