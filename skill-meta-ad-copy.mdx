@@ -1,0 +1,112 @@
+---
+title: "Meta ad copy"
+description: "The skill that fills a Snow Doughnut Meta copy template for any ad format, inside every character limit, with one hook executing one angle."
+launch: private
+---
+
+Produces a filled Meta copy template for one ad format, written from the brand and campaign documents you already have. Static image, video, carousel, collection, and lead ads are all covered.
+
+## When it runs
+
+Ask for Meta ad copy in any form and this skill loads. It covers requests like "write me some Meta copy", "I need primary text for the spring push", "fill in the carousel template", and handing over a [marketing campaign brief](/marketing-campaign-brief), [Meta campaign brief](/meta-campaign-brief), or [angle brief](/angle-brief) and asking for the ads that come out of it.
+
+It does not cover Google, LinkedIn, TikTok, email, or organic social. Those have their own [copy templates](/copy-templates), and Google has its own [skill](/skill-google-ad-copy).
+
+## The three rules it enforces
+
+<Steps>
+  <Step title="The hook lands before the fold">
+    Meta does not reject long primary text; it truncates it behind "See more" at about 125 characters. Copy that saves the point for line three serves as copy with no point. The hook and the proposition land inside the fold, whatever follows it.
+  </Step>
+  <Step title="One hook, one angle per ad">
+    Every ad executes one [angle](/angle-concepts) and opens with one [hook](/hook-types). Variants are different hooks on the same angle, which is what makes the results readable. A re-edit with the same opening is not a variant.
+  </Step>
+  <Step title="The copy advertises the approved claims">
+    The approved claims table in [messaging](/messaging) bounds what can be said, and the angle brief's "must not claim" line is usually there because legal said so. The skill never manufactures a proof point.
+  </Step>
+</Steps>
+
+## What it asks you for
+
+The skill opens with a short intake, one question per turn, following [how the MCP talks](/mcp-conversation). Each answer with a closed list behind it arrives as options you pick.
+
+| Question | Why it needs the answer |
+| :-- | :-- |
+| Ad format | Sets the template, the fields, and the limits |
+| The creative | The copy has to match what the reader sees; attach it or point at your creative library |
+| Hook type | From [hook types](/hook-types), or the angle brief's drafted hooks |
+| Copy framework | From [copywriting frameworks](/copywriting-frameworks); sets the structure of the primary text |
+| Landing page | The copy's promise has to be the page's promise |
+| Which documents you have | [Brand voice](/brand-voice-and-tone), [messaging](/messaging), and the briefs decide what the copy can claim and how it sounds |
+
+Anything already answered by your setup, an attached brief, or the conversation gets skipped.
+
+### If you do not have the documents
+
+Missing documents are normal and do not stop the work. Give the landing page URL and the skill drafts a quick brief for you to correct, fill in a short form of seven fields, or just describe the product and the skill reads the same fields back before writing. Blanks are allowed; a missing proof line leaves the bold-result and social-proof hooks off the table, which is better than a number nobody can stand behind.
+
+## Character limits by format
+
+The templates are authoritative. This table is what the copy is written against.
+
+| Format | Field | Limit |
+| :-- | :-- | :-- |
+| **Static image / video** | Primary text | 125 before "See more" |
+|  | Headline | 40 |
+|  | Description | 30, often hidden on mobile |
+| **Carousel** | Primary text | 125 before "See more" |
+|  | Card headline | 45, per card, 2 to 10 cards |
+|  | Card description | 20 per card |
+| **Collection** | Primary text | 125 before "See more" |
+|  | Headline | 40 |
+| **Lead ad** | Primary text | 125 before "See more" |
+|  | Headline | 40 |
+
+A collection ad also carries its Instant Experience link, and a lead ad carries every screen of its Instant Form: intro, questions, and thank you. The templates hold those fields.
+
+## What you get
+
+A filled markdown template for the format, ready to hand to whoever builds the ad. It comes with:
+
+- The angle block carried across from the angle brief, so the setup inherits the proposition and the must-not-claim line.
+- A list of what was left blank and the fact that would unlock it.
+- Campaign, ad set, and ad names left to the [naming conventions](/naming-conventions-overview) unless you supplied them.
+
+A hook written fresh goes back into the angle brief once approved, so the next writer starts from it.
+
+## Templates it fills
+
+| Format | Template |
+| :-- | :-- |
+| Static image / video | [Static/Video copy template](/meta-static-video-copy-template) |
+| Carousel | [Carousel copy template](/meta-carousel-copy-template) |
+| Collection | [Collection copy template](/meta-collection-copy-template) |
+| Lead ad | [Lead ad copy template](/meta-lead-ad-copy-template) |
+
+## Runbook
+
+The run card an agent executes this skill from, in order. This intake is the worked example on [how the MCP talks](/mcp-conversation).
+
+| Step | What happens |
+| :-- | :-- |
+| Trigger | Any request for Meta ad copy: primary text, headlines, a full ad, or a brief handed over with "write the ads" |
+| Ask 1 | Ad format: static image, video, carousel, collection, or lead ad. Skip when the brief or the creative names it |
+| Ask 2 | The creative: attach it or point at the creative library. Skip when already attached |
+| Ask 3 | Hook type, offered from [hook types](/hook-types). Skip when the angle brief carries a drafted hook for this ad |
+| Ask 4 | Copy framework, offered from [copywriting frameworks](/copywriting-frameworks). Skip when the copy brief names one |
+| Ask 5 | Landing page URL. Skip when the brief names it |
+| Ask 6 | Documents on hand: brand voice, messaging, briefs. Skip any attached or recorded at setup |
+| Pulls | The format's copy template, the [angle brief](/angle-brief), the [copy brief](/copy-brief), [brand voice and tone](/brand-voice-and-tone), [messaging](/messaging) and its approved claims table, [hook types](/hook-types), and [copywriting frameworks](/copywriting-frameworks) |
+| Rules | The three rules above |
+| Output | The filled template, delivered to the export destination, with every blank listed next to the fact that would unlock it |
+
+One question per turn, options offered as a pick list, and nothing asked that the documents already answer.
+
+## Related resources
+
+- [Meta campaign brief](/meta-campaign-brief) Sets objective, structure, and landing pages.
+- [Angle brief](/angle-brief) The proposition, the drafted hooks, and what the angle must not claim.
+- [Copy brief](/copy-brief) The brief this copy answers.
+- [Copy best practices](/copy-best-practices) The standards that apply however the copy was written.
+- [Meta pre-launch checklist](/meta-pre-launch-checklist) The last pass before the copy spends money.
+- [Skills](/skills-overview) How skills load and where they are installed.
