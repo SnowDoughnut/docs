@@ -67,7 +67,8 @@
             "pages": [
               "mcp-overview",
               "mcp-setup",
-              "mcp-commands"
+              "mcp-commands",
+              "mcp-conversation"
             ]
           }
         ]

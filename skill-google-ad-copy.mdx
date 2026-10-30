@@ -138,6 +138,23 @@ A filled markdown template for the campaign type, ready to paste into the ad pla
 
 The docs site is the source of truth for template structure. The skill's script is the source of truth for enforcement.
 
+## Runbook
+
+The run card an agent executes this skill from, in order. The turn-by-turn contract is [how the MCP talks](/mcp-conversation).
+
+| Step | What happens |
+| :-- | :-- |
+| Trigger | Any request for Google ad copy: headlines, descriptions, a full asset group, or a brief handed over with "write the ads" |
+| Ask 1 | Campaign type: Search, Performance Max, Display, Demand Gen, YouTube, or App. Skip when the brief names it |
+| Ask 2 | Brand documents on hand: positioning, messaging, brand voice. Skip any already attached or recorded at setup |
+| Ask 3 | Campaign documents on hand: campaign brief, search theme brief, or angle brief. Skip as above |
+| Ask 4 | Export destination: chat, Google Doc, Word. Skip when setup records a default |
+| Pulls | The campaign type's [copy template](/google-template-directory), [messaging](/messaging) and its approved claims table, [brand voice and tone](/brand-voice-and-tone), the brief supplied, and the headline buckets above |
+| Rules | The three rules above; limits and combinations checked by the script |
+| Output | The filled template, delivered to the export destination, with every blank listed next to the fact that would unlock it |
+
+One question per turn, options offered as a pick list, and nothing asked that the documents already answer.
+
 ## Related resources
 
 - [Google campaign brief](/google-campaign-brief) Sets campaign type, conversion goal, structure, and landing pages.

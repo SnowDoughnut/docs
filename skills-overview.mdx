@@ -35,6 +35,14 @@ Ask in your own words and the right skill loads. Name it directly, which most ag
 
 A skill that can check its own work carries a script for it. The Google ad copy skill validates every character count before it renders anything, which is why its output never exceeds a limit.
 
+## Skills call other skills
+
+A skill rarely runs alone. Ad copy pulls the copy template, the brief, the brand voice, and a hook list before it writes a word; a report pulls the flat file, the KPI definitions, and the report template. Each skill's runbook carries a Pulls row naming everything it loads, so an agent gathers the full set in one pass and you never assemble it by hand.
+
+## The runbook
+
+Every skill page ends with a runbook: the run card an agent executes from. It holds the trigger, the intake questions in order, what the skill pulls, the rules it enforces, and the output contract. The rest of the page explains the skill to a person. The runbook is the same skill compressed for the agent, run under [how the MCP talks](/mcp-conversation): one question per turn, options from the framework's lists, and nothing asked twice.
+
 ## Published skills
 
 | Skill | Use it when | Category |

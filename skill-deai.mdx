@@ -96,6 +96,19 @@ This skill checks whether writing reads as machine-generated. It does not check 
 | Does this sound like our brand? | [Brand voice and tone](/brand-voice-and-tone) |
 | Is this the right style for a docs page? | [Article standards](/article-standards) |
 
+## Runbook
+
+The run card an agent executes this skill from. The turn-by-turn contract is [how the MCP talks](/mcp-conversation).
+
+| Step | What happens |
+| :-- | :-- |
+| Trigger | A draft shared with any ask to check, humanize, or de-AI it, or a question about whether it reads as machine-written |
+| Ask 1 | Diagnosis only, or diagnosis plus rewrite. Skip when the request says |
+| Ask 2 | Strictness: flag everything, or the worst offenders only. Skip when the request says |
+| Pulls | The pattern catalogue with its calibration sections, and [brand voice and tone](/brand-voice-and-tone) when the rewrite must land in the house voice |
+| Rules | Severity order, exact quotes, the author's voice preserved; ask before producing new writing that would lean on a flagged pattern |
+| Output | The verdict, the findings by severity, and the rewrite when asked, returned in the format the draft arrived in |
+
 ## Related resources
 
 - [Brand voice and tone](/brand-voice-and-tone) The voice a draft is meant to land in once the tells are gone.
