@@ -1,0 +1,96 @@
+---
+title: "TikTok ad copy"
+description: "The skill that fills a Snow Doughnut TikTok copy template for any ad format, inside the 100-character caption, planned as a variant set because TikTok burns creative fast."
+launch: private
+---
+
+Produces a filled TikTok copy template for one ad format, written from the brand and campaign documents you already have. In-feed, Spark, carousel, video shopping, and TopView ads are all covered.
+
+## When it runs
+
+Ask for TikTok ad copy in any form and this skill loads: "caption the spring videos", "fill in the in-feed template", or a [TikTok campaign brief](/tiktok-campaign-brief) handed over with "write the ads".
+
+It does not cover Meta, Google, LinkedIn, email, or organic social. Those have their own [copy templates](/copy-templates) and skills.
+
+## The three rules it enforces
+
+<Steps>
+  <Step title="The caption is the hook">
+    A TikTok caption is 100 characters. There is no room for a hook and then an argument, so the caption is one [hook](/hook-types) executing the angle, and the video carries the rest.
+  </Step>
+  <Step title="Copy ships as a variant set">
+    TikTok exhausts a creative faster than the other paid platforms, and a campaign launched with one video usually stalls on frequency before its budget is spent. The skill drafts the variant count the brief planned, each variant a distinct hook on the same angle. A variant added later to see which performs better is an experiment, and it needs a registered ID first.
+  </Step>
+  <Step title="A Spark ad's caption is not written here">
+    Spark ads boost an existing organic post as-is: the caption is locked to the source post, the authorization code has an expiry that belongs in the brief, and requesting that code from a creator stays a person's job. The skill fills the ad wrapper and flags the expiry; it never drafts a caption the format cannot change. A post running through a creator's account also gets checked against the third-party section of [logo usage](/logo-usage).
+  </Step>
+</Steps>
+
+## What it asks you for
+
+One question per turn, following [how the MCP talks](/mcp-conversation).
+
+| Question | Why it needs the answer |
+| :-- | :-- |
+| Ad format | Sets the template and which fields exist at all |
+| How many variants | The brief decides this at brief stage; the skill drafts them all at once |
+| Hook types, one per variant | From [hook types](/hook-types), or the angle brief's drafted hooks |
+| Landing page | The caption's promise has to be the page's promise |
+| Which documents you have | [Brand voice](/brand-voice-and-tone), [messaging](/messaging), and the briefs decide what the copy can claim and how it sounds |
+
+## Character limits by format
+
+The templates are authoritative. This table is what the copy is written against.
+
+| Format | Field | Limit |
+| :-- | :-- | :-- |
+| **In-feed** | Ad text / caption | 100 |
+|  | Display name | 2 to 20 |
+| **Spark ad** | Caption | Locked to the source post |
+| **Carousel** | Ad text / caption | 100 |
+|  | Cards | 2 to 35, each with its own headline and URL |
+| **Video shopping** | Ad text / caption | 100 |
+|  | Product name | 18 recommended, 30 max, from the TikTok Shop catalog |
+| **TopView** | Ad text / caption | 100 |
+
+A video shopping ad's product card is pinned from the Shop catalog, so most of that format's copy is the catalog product name rather than freeform text.
+
+## What you get
+
+A filled template per variant, each with the angle block carried across and a distinct hook, plus a list of what was left blank next to the fact that would unlock it. Names stay with the [naming conventions](/naming-conventions-overview), UTMs with [UTM standards](/utm-standards), and the creative itself with [TikTok creative specs](/tiktok-creative-specs), whose safe areas move with caption length.
+
+## Templates it fills
+
+| Format | Template |
+| :-- | :-- |
+| In-feed | [In-feed copy template](/tiktok-in-feed-copy-template) |
+| Spark ad | [Spark ad copy template](/tiktok-spark-ad-copy-template) |
+| Carousel | [Carousel copy template](/tiktok-carousel-copy-template) |
+| Video shopping | [Video shopping copy template](/tiktok-video-shopping-copy-template) |
+| TopView | [TopView copy template](/tiktok-topview-copy-template) |
+
+## Runbook
+
+The run card an agent executes this skill from, in order. The turn-by-turn contract is [how the MCP talks](/mcp-conversation).
+
+| Step | What happens |
+| :-- | :-- |
+| Trigger | Any request for TikTok ad copy, or a brief handed over with "write the ads" |
+| Ask 1 | Ad format: in-feed, Spark, carousel, video shopping, or TopView. Skip when the brief names it |
+| Ask 2 | Variant count. Skip when the brief set it; flag a count of one as a frequency risk |
+| Ask 3 | Hook types, one per variant, offered from [hook types](/hook-types). Skip those the angle brief drafts |
+| Ask 4 | Landing page URL. Skip when the brief names it |
+| Ask 5 | Documents on hand: brand voice, messaging, briefs. Skip any attached or recorded at setup |
+| Pulls | The format's copy template, the [angle brief](/angle-brief), the [copy brief](/copy-brief), [brand voice and tone](/brand-voice-and-tone), [messaging](/messaging), [hook types](/hook-types), and for Spark ads the third-party section of [logo usage](/logo-usage) |
+| Rules | The three rules above |
+| Output | One filled template per variant, delivered to the export destination, with every blank listed next to the fact that would unlock it |
+
+One question per turn, options offered as a pick list, and nothing asked that the documents already answer.
+
+## Related resources
+
+- [TikTok campaign brief](/tiktok-campaign-brief) Sets objective, structure, and the variant count.
+- [TikTok campaign process](/tiktok-campaign-process) Where the filled templates land, and the Spark authorization steps.
+- [Angle brief](/angle-brief) The proposition, the drafted hooks, and what the angle must not claim.
+- [Copy best practices](/copy-best-practices) The standards that apply however the copy was written.
+- [Skills](/skills-overview) How skills load and where they are installed.

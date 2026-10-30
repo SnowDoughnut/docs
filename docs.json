@@ -1014,6 +1014,25 @@
                 "pages": [
                   "skill-meta-ad-copy"
                 ]
+              },
+              {
+                "group": "Creative",
+                "pages": [
+                  "skill-ad-creation",
+                  "skill-video-editing"
+                ]
+              },
+              {
+                "group": "LinkedIn",
+                "pages": [
+                  "skill-linkedin-ad-copy"
+                ]
+              },
+              {
+                "group": "TikTok",
+                "pages": [
+                  "skill-tiktok-ad-copy"
+                ]
               }
             ]
           },

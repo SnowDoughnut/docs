@@ -1,0 +1,107 @@
+---
+title: "LinkedIn ad copy"
+description: "The skill that fills a Snow Doughnut LinkedIn copy template for any ad format, inside every character limit, with one hook executing one angle."
+launch: private
+---
+
+Produces a filled LinkedIn copy template for one ad format, written from the brand and campaign documents you already have. Single image, video, carousel, document, message, conversation, text, and follower ads are all covered.
+
+## When it runs
+
+Ask for LinkedIn ad copy in any form and this skill loads: "write the intro text for the single image set", "fill in the conversation ad template", or a [LinkedIn campaign brief](/linkedin-campaign-brief) handed over with "write the ads".
+
+It does not cover Meta, Google, TikTok, email, or organic social. Those have their own [copy templates](/copy-templates) and skills.
+
+## The three rules it enforces
+
+<Steps>
+  <Step title="The intro text lands before truncation">
+    LinkedIn allows 600 characters of introductory text and truncates it around 150. Copy written to the allowance serves with its point hidden behind "see more", so the skill writes the hook and the proposition inside 150 and treats the rest as optional depth.
+  </Step>
+  <Step title="One hook, one angle per ad">
+    Every template carries the same angle block, copied across from the [angle brief](/angle-brief). One ad executes one angle and opens with one [hook](/hook-types). A variant added to a live campaign to see which performs better is an experiment, and it needs a registered ID before it goes live.
+  </Step>
+  <Step title="The copy advertises the approved claims">
+    The approved claims table in [messaging](/messaging) bounds what can be said, and the angle's must-not-claim line holds. The skill never manufactures a proof point.
+  </Step>
+</Steps>
+
+## What it asks you for
+
+One question per turn, following [how the MCP talks](/mcp-conversation). The format comes first, because it decides which template applies and which limits bind.
+
+| Question | Why it needs the answer |
+| :-- | :-- |
+| Ad format | Sets the template, the fields, and every character limit |
+| Hook type | From [hook types](/hook-types), or the angle brief's drafted hooks |
+| Copy framework | From [copywriting frameworks](/copywriting-frameworks), for intro text with room to argue |
+| Landing page | The copy's promise has to be the page's promise |
+| Which documents you have | [Brand voice](/brand-voice-and-tone), [messaging](/messaging), and the briefs decide what the copy can claim and how it sounds |
+
+A message or conversation ad also needs a sender, and that stays a question for you: both send from a real LinkedIn member's profile, so the skill asks whose and never assumes.
+
+## Character limits by format
+
+The templates are authoritative. This table is what the copy is written against.
+
+| Format | Field | Limit |
+| :-- | :-- | :-- |
+| **Single image / video** | Introductory text | 150 before truncation, 600 max |
+|  | Headline | 70 |
+| **Carousel** | Introductory text | 255 |
+|  | Card headline | 45, per card, 2 to 10 cards |
+| **Document** | Introductory text | 150 before truncation, 600 max |
+| **Message ad** | Subject line | 60 |
+|  | Message body | 1,500 including the link |
+|  | CTA button text | 20 |
+| **Conversation ad** | Intro message | 500 |
+|  | Button text | 25, up to 5 buttons |
+| **Text ad** | Headline | 25 |
+|  | Description | 75 |
+| **Follower ad** | Headline | 50 |
+
+A document ad's first page acts as the ad's thumbnail, so the skill flags it as a standalone creative for the [creative brief](/creative-brief). A conversation ad's buttons each branch to their own follow-up, so the skill maps where every button leads before writing any of them.
+
+## What you get
+
+A filled template for the format, with the angle block carried across, every field inside its limit, and a list of what was left blank next to the fact that would unlock it. Names stay with the [naming conventions](/naming-conventions-overview) and UTMs with [UTM standards](/utm-standards) before any URL goes anywhere.
+
+## Templates it fills
+
+| Format | Template |
+| :-- | :-- |
+| Single image | [Single image copy template](/linkedin-single-image-copy-template) |
+| Video | [Video copy template](/linkedin-video-copy-template) |
+| Carousel | [Carousel copy template](/linkedin-carousel-copy-template) |
+| Document | [Document copy template](/linkedin-document-copy-template) |
+| Message ad | [Message ad copy template](/linkedin-message-ad-copy-template) |
+| Conversation ad | [Conversation ad copy template](/linkedin-conversation-ad-copy-template) |
+| Text ad | [Text ad copy template](/linkedin-text-ad-copy-template) |
+| Follower ad | [Follower ad copy template](/linkedin-follower-ad-copy-template) |
+
+## Runbook
+
+The run card an agent executes this skill from, in order. The turn-by-turn contract is [how the MCP talks](/mcp-conversation).
+
+| Step | What happens |
+| :-- | :-- |
+| Trigger | Any request for LinkedIn ad copy, or a brief handed over with "write the ads" |
+| Ask 1 | Ad format, from the eight above. Skip when the brief names it |
+| Ask 2 | Sender, for a message or conversation ad only: a real member's name |
+| Ask 3 | Hook type, offered from [hook types](/hook-types). Skip when the angle brief carries a drafted hook |
+| Ask 4 | Copy framework, offered from [copywriting frameworks](/copywriting-frameworks). Skip when the copy brief names one |
+| Ask 5 | Landing page URL. Skip when the brief names it |
+| Ask 6 | Documents on hand: brand voice, messaging, briefs. Skip any attached or recorded at setup |
+| Pulls | The format's copy template, the [angle brief](/angle-brief), the [copy brief](/copy-brief), [brand voice and tone](/brand-voice-and-tone), [messaging](/messaging), [hook types](/hook-types), and [copywriting frameworks](/copywriting-frameworks) |
+| Rules | The three rules above |
+| Output | The filled template, delivered to the export destination, with every blank listed next to the fact that would unlock it |
+
+One question per turn, options offered as a pick list, and nothing asked that the documents already answer.
+
+## Related resources
+
+- [LinkedIn campaign brief](/linkedin-campaign-brief) Sets objective, structure, and landing pages.
+- [LinkedIn campaign process](/linkedin-campaign-process) Where the filled template lands.
+- [Angle brief](/angle-brief) The proposition, the drafted hooks, and what the angle must not claim.
+- [Copy best practices](/copy-best-practices) The standards that apply however the copy was written.
+- [Skills](/skills-overview) How skills load and where they are installed.
