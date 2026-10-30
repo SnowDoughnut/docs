@@ -33,7 +33,7 @@ These rules apply to every customer profile name regardless of type. Decide each
 
 The codes are shared with the other naming levels. Customer profile type uses the same values as the [ad set customer profile type](/ad-set-group-naming-conventions#customer-profile-type), funnel stage uses the same values as the [campaign funnel position](/campaign-naming-conventions#funnel-position), and platform uses the campaign channel codes. One code per thing at every level is what lets a report join a profile to the ad sets and campaigns that use it.
 
-In Notion, set these once in the Naming rules database; the generators apply them.
+If you use the Snow Doughnut Notion workspace, set these once in its Naming rules database; the generators apply them.
 
 | Rule | Convention | Why it holds |
 | :-- | :-- | :-- |
@@ -62,7 +62,7 @@ The kind of customer profile, by how it was built. This is the field that tells 
 
 | Long form | Short form | Description | \[add value\] |
 | :-- | :-- | :-- | :-- |
-| _E.g. Custom customer profile_ | _CA_ | _Built from your own signals: site visitors, video viewers, engagers_ |  |
+| _E.g. Custom customer profile_ | _CUS_ | _Built from your own signals: site visitors, video viewers, engagers_ |  |
 | Customer list | CM | Uploaded from a CRM or customer list |  |
 | Lookalike customer profile | LAL | Modeled from a seed customer profile to find similar new people |  |
 | Interest / saved customer profile | INT | Built from interests, demographics, or behaviors in the ad platform |  |
@@ -222,7 +222,7 @@ Take one value from each field, in order, joined by your field separator. Skip a
 
 A warm retargeting customer profile of recent cart abandoners uses only the core fields:
 
-`CA-MOFU-CartAbandoners7d`
+`CUS-MOFU-CartAbandoners7d`
 
 A cold lookalike needs its percentage, so that field is filled in:
 

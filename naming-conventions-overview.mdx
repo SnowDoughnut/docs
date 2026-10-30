@@ -22,7 +22,11 @@ Every name in this framework is built from two kinds of identifiers.
 
 ## Delimiter, case, and missing values
 
-Every level joins its values with the same delimiter. The default is a hyphen with no spaces, and a value keeps the exact casing its dictionary row records. Never use the delimiter inside a value; register a short form instead, so a report can split any name back into its fields. If you use the Notion workspace, record a different separator or casing once in the Naming rules database; the generators apply it.
+Every level joins its values with the same delimiter. The default is a hyphen with no spaces, and a value keeps the exact casing its dictionary row records. Never use the delimiter inside a value; register a short form instead, so a report can split any name back into its fields. Record a different separator or casing once, wherever your team keeps its naming rules, and apply it at every level.
+
+Every short form is unique across all the dictionaries, not only within its own table. `CA` can mean Canada in the geo table or something else in another table, never both, because a report filtering for `CA` cannot tell which field it came from. Geo and language codes are the most common collision, so no other category may use a two-letter country or language code.
+
+Some categories hold a pattern rather than a fixed list. A percent-off offer is `OFFXX`, where `XX` is the number: a 34 percent sale is `OFF34`, with nothing to register first, because the pattern is the registered value. Use a pattern wherever a category carries a number (a discount, a lookalike size, a day count) so a dictionary records the rule once instead of every amount you might ever run.
 
 When a name needs a value the dictionary doesn't hold yet, such as a new product short form, ad type, or CTA, register it in that category's table first, then use it. Don't type a one-off value straight into a platform. The same rule applies to any tool or AI assistant assembling names from these conventions: a value missing from your filled-in dictionary is a question for the team, not something to invent. Ask, then record the answer in the table.
 
@@ -47,7 +51,7 @@ These fields describe the creative itself: what it looks like, what it offers, a
 Name jamming means packing as many identifiers as possible into a name using their short form. For example:
 
 ```text
-go-$l-CBO-tR-tO
+GO-L-CBO-tR-TOFU
 ```
 
 instead of:

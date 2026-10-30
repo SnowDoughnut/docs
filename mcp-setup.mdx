@@ -44,14 +44,33 @@ Send one message:
 
 > Set up Snow Doughnut
 
-Your AI calls `setup_snowdoughnut`, which walks the [setup path](/overview) as a conversation and records your answers:
+Your AI calls `setup_snowdoughnut`. The first question is whether you are starting fresh or joining a team.
 
-1. **Locations.** Where filled workbooks, briefs, libraries, and the [flat file](/flat-file-template) live.
-2. **Dictionaries.** Your [naming conventions](/naming-conventions-overview) and [UTM standards](/utm-standards), filled in or confirmed.
-3. **The schedule register.** The [reporting cadence](/reporting-cadence): when each report runs, who approves it, whether it auto-sends, and where it lands. One team wants everything in Slack, another wants email; the register records yours.
-4. **Standing rules and defaults.** [Standing rules](/glossary#standing-rule), [creator defaults](/creative-brief-process) per deliverable type, and the access your builder needs.
+### Joining a team that's already set up
 
-Onboarding is resumable. Stop at any stage and "Continue Snow Doughnut setup" picks up where you left off. Stages 1 to 6 of the setup path are the minimum before your first campaign; the rest can follow.
+Say "I'm joining a team that's already set up" and point to where the team's setup lives: a Google Drive folder, a Notion page, or wherever it was saved. The MCP reads the team's setup record there, confirms what it found in one line, and you are ready. Nothing the team already answered is asked again.
+
+### A new setup
+
+1. **Save location first.** The first question is where to save. Nothing else runs until there is a place to write to, because every answer after it gets saved there.
+2. **Recommended or advanced.** Recommended applies the framework's full defaults in one step: every channel, placement, ad type, objective, creative type, and naming pattern in the dictionaries, and the default reporting schedule. You review the summary and change anything you want. Advanced walks every section and asks as it goes.
+3. **The sections**, in order, each opening with a one-line explanation of what it sets up and why, and a link to the page behind it:
+   1. **Locations.** Where each kind of work lives. Each can be a different tool: briefs in Google Drive, creative in Dropbox, brand files in iCloud. See the [asset directory](/asset-directory).
+   2. **Dictionaries.** Your [naming conventions](/naming-conventions-overview) and [UTM standards](/utm-standards). Where a value carries a number, the dictionary records a pattern, such as `OFFXX` for a percent-off offer, rather than every amount.
+   3. **The schedule register.** The [reporting cadence](/reporting-cadence): when each report runs, who approves it, whether it auto-sends, and where it lands.
+   4. **Standing rules and defaults.** [Standing rules](/glossary#standing-rule) and [creator defaults](/creative-brief-process) per deliverable type.
+
+You don't have to be all new or all existing. Point any section at documents you already have, and the wizard reads them instead of asking.
+
+### The setup record
+
+Your answers are saved as a setup record at the location you chose in step 1. The record holds where each kind of work lives, your dictionaries, your schedule, and how far through setup you are. The MCP remembers only where the record is.
+
+That is what makes setup resumable and shareable. Stop at any point, and "Continue Snow Doughnut setup" reads the record and picks up at the next unanswered step. A teammate who points to the same record joins your setup. Stages 1 to 6 of the [setup path](/overview) are the minimum before your first campaign; the rest can follow.
+
+### What setup does not ask
+
+Who owns a folder, who can open a tool, or who adds teammates to it. Permissions are managed in your own tools. Setup records where things live, not who may open them. See [what this framework covers](/what-this-framework-covers).
 
 ## 4. Try a command
 
@@ -73,16 +92,17 @@ The answer comes from your own dictionaries. If a value is missing, the AI asks 
 <Accordion title="MCP wiring">
   **Type:** setup<br />**Domains:** mcp, setup<br />**Provides:** `mcp-onboarding`<br />**Uses:** `creator-defaults`, `flat-file`, `glossary`, `naming-convention`, `reporting-cadence`, `utm-rules`
 
-  **Triggers:** "Set up Snow Doughnut" · "Continue Snow Doughnut setup"
+  **Triggers:** "Set up Snow Doughnut" · "Continue Snow Doughnut setup" · "I'm joining a team that's already set up"
 
   **Asks, one per turn, in order:**
 
-  1. Where do filled workbooks, briefs, libraries, and the flat file live? Options: your answer. Skip when: recorded.
-  2. Naming and UTM dictionaries filled or confirmed? Options: `naming-convention`. Skip when: recorded.
-  3. Reporting schedule, approver, auto-send, destination? Options: `reporting-cadence`. Skip when: recorded.
-  4. Standing rules and creator defaults? Options: `creator-defaults`. Skip when: recorded.
+  1. New setup, or joining a team that's already set up? Options: new, joining. Skip when: a setup record is already linked.
+  2. Joining: where is the team's setup? Options: your answer (a link or location). Then read the setup record, confirm in one line, and stop.
+  3. New: where should Snow Doughnut save your setup? Options: your connected docs tools. Nothing else runs until this is answered.
+  4. Recommended setup, or advanced? Options: recommended (full defaults, review at the end), advanced (every section). Recommended first.
+  5. Advanced, per section: locations per kind of work, then dictionaries, then the schedule register, then standing rules and creator defaults. Options: `asset-locations`, `naming-dictionary`, `reporting-cadence`, `creator-defaults`. Skip when: recorded, or an existing document answers it.
 
-  **Output:** Recorded setup: locations per library, dictionaries, schedule register, defaults
+  **Output:** A setup record saved at the user's chosen location: locations per kind of work, dictionaries, schedule register, defaults, and progress. The MCP stores only where the record lives.
 </Accordion>
 
 {/* sd-wiring:end */}
