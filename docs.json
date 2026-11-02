@@ -1058,19 +1058,9 @@
           },
           {
             "dropdown": "Components",
-            "groups": [
-              {
-                "group": "Visual hooks",
-                "pages": [
-                  "visual-hooks"
-                ]
-              },
-              {
-                "group": "Text / audio hook frameworks",
-                "pages": [
-                  "text-audio-hook-frameworks"
-                ]
-              }
+            "pages": [
+              "visual-hooks",
+              "text-audio-hook-frameworks"
             ]
           }
         ]
