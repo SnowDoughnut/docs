@@ -82,7 +82,7 @@ A story worth using passes three tests:
 
 The opening hooks on three channels at once: what the viewer sees, what they hear, and the text on screen. Each script ships with all three.
 
-**Visual.** A face to camera already stops the scroll; small movements in the first second help it more. The options the skill offers:
+**Visual.** A face to camera already stops the scroll; small movements in the first second help it more. Four that suit a yapper, alongside the wider list in [visual hooks](/visual-hooks):
 
 - Hands coming together (no actual clap, it ruins the audio)
 - Putting the hair up or down
@@ -162,7 +162,7 @@ The run card an agent executes this skill from. The conversation follows [how th
 | Dialog 1: The ad | Where it runs: Meta Feed and Reels, TikTok, YouTube Shorts, several. Who is watching: under 35, 35 to 50, over 50. Length: let the story decide (Recommended), about 60 seconds, 90 seconds to 2 minutes, 3 minutes plus. Speaker: Convert (Recommended), Expert, Friend. Skip any the brief or setup answers |
 | Dialog 2: The story | Story source: I'll paste it, a Reddit or TikTok post, a customer review, draft one from the customer problem. Story feel: everyday and believable (Recommended), wild and surprising. The Oracle: an expert (doctor, derm, pro), a friend or family member, an aspirational neighbour or insider, no Oracle. Product enters: woven through (Recommended), early then woven back, late once the story lands |
 | Chat asks | Only what the documents do not hold, one per turn: the story itself (unless drafting one); the mechanism and what competitors lack; the biggest objection; the offer (discount, guarantee length, whether it really sells out). Skip each answered by [messaging](/messaging), the customer profile, a [battle card](/competitor-battle-card), or the brief |
-| Dialog 3: The close | CTA includes (multi-select): the sale or discount, real scarcity, the guarantee, the Amazon knockoff warning. Timeline: yes (Recommended for anything used over time), no. Visual hook: let Claude pick (Recommended), hands coming together, hair up or down, getting into the car or propping the phone up. Planned slip: yes, mark one place (Recommended), no |
+| Dialog 3: The close | CTA includes (multi-select): the sale or discount, real scarcity, the guarantee, the Amazon knockoff warning. Timeline: yes (Recommended for anything used over time), no. Visual hook: let Claude pick (Recommended), then the best-ranked options from the yapper four and [visual hooks](/visual-hooks). Planned slip: yes, mark one place (Recommended), no |
 | Confirm | One line: speaker, Oracle, story, length, then write |
 | Pulls | [Hook types](/hook-types), [messaging](/messaging) and its approved claims table, [brand voice and tone](/brand-voice-and-tone), the customer profile, the [angle brief](/angle-brief) when one exists, the [legal review](/legal-review-process) trigger table, and the placement's creative specs for ratio and caption-safe zones |
 | Rules | The six rules above. Every claim traces to the approved claims table; an unbacked claim is flagged, never invented. A drafted story stays ordinary and believable, never presented as a real customer's words. Run the script past [de-AI writing review](/skill-deai) before delivering, since it will be spoken aloud |
@@ -180,7 +180,7 @@ The run card an agent executes this skill from. The conversation follows [how th
 {/* sd-wiring:start, MCP wiring. Stripped from the public site at launch. Schema: /mcp-registry */}
 
 <Accordion title="MCP wiring">
-  **Type:** skill<br />**Domains:** copy, creative, video, meta, tiktok, youtube<br />**Provides:** `skill:yapper-framework`<br />**Uses:** `angle-brief`, `approved-claims`, `battle-card`, `brand-voice`, `creative-specs`, `customer-profile`, `hook-type`, `legal-triggers`, `messaging`<br />**Hands off to:** `skill:deai`, `skill:ad-creation`, `skill:video-editing`<br />**Best for:** channel: meta, tiktok, youtube; business: ecommerce, b2c; audience: cold; length: long<br />**Avoid when:** business: sales-led
+  **Type:** skill<br />**Domains:** copy, creative, video, meta, tiktok, youtube<br />**Provides:** `skill:yapper-framework`<br />**Uses:** `angle-brief`, `approved-claims`, `battle-card`, `brand-voice`, `creative-specs`, `customer-profile`, `hook-type`, `legal-triggers`, `messaging`, `visual-hook`<br />**Hands off to:** `skill:deai`, `skill:ad-creation`, `skill:video-editing`<br />**Best for:** channel: meta, tiktok, youtube; business: ecommerce, b2c; audience: cold; length: long<br />**Avoid when:** business: sales-led
 
   **Triggers:** "yapper ad" · "storytelling UGC script" · "talking-head story ad" · "break down this winning ad"
 

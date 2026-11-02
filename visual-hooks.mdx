@@ -1,0 +1,81 @@
+---
+title: "Visual hooks"
+description: "The closed list of visual openings for a video ad or post: what the viewer sees in the first second, how to film each one, and when it fits. Pick from this list in a creative brief, or when a skill asks which visual hook to use."
+launch: "private"
+---
+
+A visual hook is what the viewer sees in the first second, before a word lands. It works alongside the spoken line and the text on screen, which come from [hook types](/hook-types). A video ad opens with one of each: one visual, one spoken line, one line of text.
+
+A face to camera already stops the scroll. A visual hook adds movement or a reveal in that first second, so the face arrives with a reason to keep watching.
+
+## The hooks
+
+| # | Hook | What the viewer sees | How to film it |
+| :-- | :-- | :-- | :-- |
+| 1 | Slide into frame | The speaker enters an empty frame from the side and starts talking | Lock the camera on an empty shot, step in from one edge on the first word |
+| 2 | Quick zoom out | A tight shot snaps wide to reveal the speaker or the setting | Start on a close detail, zoom or cut wide inside half a second |
+| 3 | Random object as a mic | The speaker talks into something that is not a microphone | Hold a hairbrush, banana, or the product itself like a mic, played straight |
+| 4 | Laptop turn | The speaker spins a laptop toward the camera to show the screen | Start with the lid facing the speaker, turn it on the first line |
+| 5 | Camera pull back | The shot backs away to show more than the viewer expected | Start close, walk the camera back or pull out on a gimbal |
+| 6 | Talk in front of the subject | The speaker stands in front of the thing they are talking about | Frame the product, place, or result behind the speaker's shoulder |
+| 7 | Wired earphone mic | The speaker holds a wired earphone up like a lapel mic | Hold the earphone's mic near the mouth, as in street interviews |
+| 8 | Camera rotate | The frame turns as the clip opens | Rotate the phone or gimbal 90 to 180 degrees into the opening shot |
+| 9 | Close-up stack montage | Three or four fast close-ups before the speaker appears | Shoot tight detail clips, cut each to well under a second |
+| 10 | Object metaphor | A prop stands in for the problem | Show the prop doing the problem: a leaking bucket for wasted spend |
+| 11 | Split-screen whiteboard | The speaker on one side, a whiteboard sketch on the other | Film the speaker and the board separately, place them side by side |
+| 12 | Physical timer countdown | A real timer starts as the speaker begins | Set a kitchen timer or phone stopwatch in frame and start it on the first word |
+| 13 | Unrelated action while talking | The speaker talks while doing something ordinary | Cook, fold laundry, or do makeup while delivering the script |
+| 14 | Driving and talking | The speaker talks from a car seat | Film parked or as a passenger, never while driving |
+| 15 | Walk towards camera and talk | The speaker walks into a close shot while already talking | Start far back, walk toward a fixed camera, land in frame on the key line |
+
+Yapper ads add four small openings of their own, filmed face to camera: hands coming together without a clap, putting the hair up or down, getting into the car and shutting the door, and propping the phone up as recording starts. They sit in the [Yapper Framework](/skill-yapper-framework#the-hook).
+
+## When each hook fits
+
+The MCP ranks this list against the context of the video and offers the ones that fit best (four in a dialog, five in chat), using the [context facets](/mcp-registry#context-facets). A hook whose Avoid when matches is left out.
+
+| Hook | Best for | Avoid when |
+| :-- | :-- | :-- |
+| Slide into frame | length: short; channel: tiktok, meta, organic-social |  |
+| Quick zoom out | business: ecommerce, local; length: short |  |
+| Random object as a mic | goal: awareness; audience: cold; channel: tiktok, organic-social | business: b2b, sales-led |
+| Laptop turn | business: saas, b2b; goal: consideration |  |
+| Camera pull back | business: ecommerce, local; goal: awareness |  |
+| Talk in front of the subject | business: ecommerce, local; proof: numbers, reviews |  |
+| Wired earphone mic | audience: cold; channel: tiktok, organic-social |  |
+| Camera rotate | length: short; channel: tiktok, meta |  |
+| Close-up stack montage | business: ecommerce; goal: conversion; length: short |  |
+| Object metaphor | goal: awareness, consideration; audience: cold |  |
+| Split-screen whiteboard | business: saas, b2b; goal: consideration; length: long |  |
+| Physical timer countdown | offer: sale, event, trial; goal: conversion | offer: evergreen |
+| Unrelated action while talking | length: long; business: b2c; audience: cold |  |
+| Driving and talking | length: long; business: b2c |  |
+| Walk towards camera and talk | goal: awareness; audience: cold |  |
+
+A new visual hook is a new row in both tables. It joins the ranking the moment it is published.
+
+## Picking one
+
+One visual hook per video. Variants of a video are different visual hooks on the same script, or different spoken hooks on the same visual, never both at once, so a test shows which change did the work.
+
+The visual has to make sense with the spoken line. A countdown timer opening a story about a slow, gradual change confuses the viewer; the same timer opening "you have until Friday" lands.
+
+Two guardrails hold whatever the hook:
+
+- Film driving shots parked or from the passenger seat.
+- A countdown or other urgency cue has to match a real deadline. A timer on an evergreen offer is the kind of claim [legal review](/legal-review-process) exists to catch.
+
+## Related resources
+
+- [**Hook types**](/hook-types) The spoken and written openings a visual hook pairs with.
+- [**Yapper Framework**](/skill-yapper-framework) Scripts that pick a visual hook for every opening.
+- [**Video editing**](/skill-video-editing) Where the opening gets cut for each placement.
+- [**Creative brief**](/creative-brief) Where the chosen visual hook is recorded for the creator.
+
+{/* sd-wiring:start, MCP wiring. Stripped from the public site at launch. Schema: /mcp-registry */}
+
+<Accordion title="MCP wiring">
+  **Type:** list<br />**Domains:** creative, video<br />**Provides:** `visual-hook`<br />**Uses:** `hook-type`, `legal-triggers`<br />**Best for:** per row, in When each hook fits
+</Accordion>
+
+{/* sd-wiring:end */}
