@@ -22,8 +22,8 @@ A question with a closed list behind it, such as which hook, which framework, or
 
 1. It reads the **context** from the brief, the setup, and the conversation so far, as values from the facets below.
 2. It scores each option by how many of its **Best for** values match the context, and drops any option whose **Avoid when** matches.
-3. It offers the **top five**, each with a one-line reason, and ends with "or see all".
-4. Ties keep the order the options appear in on their page. Five or fewer options are all shown.
+3. It offers the **top four** in a multiple-choice dialog, recommended first, with the dialog's Other box for anything else or "see all". Where there is no dialog, it offers the **top five** in chat, each with a one-line reason, ending with "or see all".
+4. Ties keep the order the options appear in on their page. A list short enough to fit is shown whole.
 
 Best for and Avoid when sit in the wiring block for a page that is one option, and in their own columns for a list page where each row is an option, like [hook types](/hook-types).
 
@@ -51,7 +51,7 @@ Add the block at the bottom of the page, above the endcap if the page has one, a
 2. **Provides**, reusing an existing key from the index when the page supplies the same kind of thing. A new framework is `copy-framework`; a new video skill is `skill:` plus its name.
 3. **Best for**, if the page is something the MCP might offer as a choice.
 
-Processes, briefs, and setup pages also get **Triggers** (the requests that route to them), **Asks** (one short question per turn, each naming the key its options come from), and **Output**. The turn-by-turn rules are [how the MCP talks](/mcp-conversation), and the [router](/mcp-router) lists every entry point.
+Processes, briefs, and setup pages also get **Triggers** (the requests that route to them), **Asks** (in order, each naming the key its options come from; closed-list asks are batched into dialogs), and **Output**. The turn-by-turn rules are [how the MCP talks](/mcp-conversation), and the [router](/mcp-router) lists every entry point.
 
 ### Page types
 
@@ -139,6 +139,7 @@ Every key in use, and the pages that provide it.
 | `skill:meta-ad-copy` | [Meta ad copy](/skill-meta-ad-copy) |
 | `skill:tiktok-ad-copy` | [TikTok ad copy](/skill-tiktok-ad-copy) |
 | `skill:video-editing` | [Video editing](/skill-video-editing) |
+| `skill:yapper-framework` | [Yapper Framework](/skill-yapper-framework) |
 
 ### Audience list upload formats
 

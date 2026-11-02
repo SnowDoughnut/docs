@@ -1,17 +1,17 @@
 ---
 title: "How the MCP talks"
-description: "The conversation contract every Snow Doughnut command and skill follows: one question at a time, options from your own lists, short turns, and work delivered into your tools. Read this to know what working with the MCP feels like, and, if you are an agent, to run it."
+description: "The conversation contract every Snow Doughnut command and skill follows: quick picks in a multiple-choice dialog, options from your own lists, short turns, and work delivered into your tools. Read this to know what working with the MCP feels like, and, if you are an agent, to run it."
 launch: "private"
 ---
 
-Working with the MCP reads like working with a colleague who knows the framework. Nobody opens a project by reciting a methodology, and the MCP doesn't either. It asks what it needs, one short question at a time, and the frameworks stay in the background, where it reads them for you.
+Working with the MCP reads like working with a colleague who knows the framework. Nobody opens a project by reciting a methodology, and the MCP doesn't either. It asks what it needs, mostly as quick picks in a dialog, and the frameworks stay in the background, where it reads them for you.
 
 ## The contract
 
 Every [command](/mcp-commands) and [skill](/skills-overview) follows the same rules.
 
-1. **One question per turn.** A question is one or two sentences. When several inputs are missing, they arrive as a short sequence of turns rather than one long form.
-2. **Options come from the framework's own lists, best first.** When an answer has a closed list behind it (hook types, copy frameworks, campaign types, dictionary values), the question offers the five options that best fit the work, each with a short reason, and ends with "or see all". Ranking uses each option's Best for, described in the [registry](/mcp-registry#how-options-get-ranked). Typing is for the answers only you hold.
+1. **Pick-list questions come in a dialog, up to four at a time.** Every question with a closed list behind it goes in the multiple-choice dialog Claude opens, batched up to four per dialog, each with two to four options and the recommended one first. Questions only you can answer, such as a URL, a story, or a number, are asked in chat, one per turn, in one or two sentences. Where the app has no dialog, every question comes one per turn in chat with its options listed.
+2. **Options come from the framework's own lists, best first.** When an answer has a closed list behind it (hook types, copy frameworks, campaign types, dictionary values), the question offers the options that best fit the work, recommended first. A dialog holds four, so it shows the top four and its Other box takes anything else, including "see all". In chat it is the top five, each with a short reason, ending with "or see all". Ranking uses each option's Best for, described in the [registry](/mcp-registry#how-options-get-ranked).
 3. **Known answers are never asked.** Your setup, the documents you attached, and anything you said earlier in the conversation all count as answered. An intake with nothing missing is skipped whole.
 4. **Confirm in one line, then produce.** Once the inputs are in, the MCP plays the brief back in a single line and goes. It does not restate the whole brief at essay length.
 5. **The work lands in your tools.** The output goes where your setup says finished work lives. Chat gets the short version: what was made, where it went, and what is still open.
@@ -23,21 +23,17 @@ A Doughnut Labs marketer asks for ad copy:
 
 > **You:** I need help writing some Meta copy.
 >
-> **MCP:** What ad format is it for? Static image, carousel, or video.
+> **MCP** opens a dialog with three questions:
 >
-> **You:** Static image.
+> - **Format:** Static image · Video · Carousel · Collection
+> - **Hook type**, ranked for a spring sale to warm audiences: FOMO (Recommended) · Scarcity · Urgency · Value
+> - **Copy framework:** Four-part (Recommended) · Problem and solution
+>
+> **You:** _(picks Static image, FOMO, and Four-part)_
 >
 > **MCP:** Attach the image, or point me at it in your creative library.
 >
 > **You:** _(attaches it)_
->
-> **MCP:** Which hook type? For a spring sale to warm audiences: FOMO, scarcity, urgency, value, or risk reversal. Or see all ten.
->
-> **You:** FOMO.
->
-> **MCP:** Which copy framework? Four-part, or problem and solution.
->
-> **You:** Four-part.
 >
 > **MCP:** What's the landing page?
 >
@@ -45,13 +41,13 @@ A Doughnut Labs marketer asks for ad copy:
 >
 > **MCP:** Static image, FOMO hook, four-part framework, landing on the spring page. I'll pull the copy template, your brand voice, and the campaign brief, and draft into your copy doc.
 
-Six short turns. The campaign brief already named the angle, so that question never came up. The marketer typed one URL and picked three options. The skill read the template, the voice guide, and the hook definitions itself. That intake is the [Meta ad copy skill](/skill-meta-ad-copy)'s runbook, and the lists behind the questions are [hook types](/hook-types) and [copywriting frameworks](/copywriting-frameworks).
+Four short turns. The campaign brief already named the angle, so that question never came up. The marketer clicked three picks in one dialog and typed one URL. The skill read the template, the voice guide, and the hook definitions itself. That intake is the [Meta ad copy skill](/skill-meta-ad-copy)'s runbook, and the lists behind the questions are [hook types](/hook-types) and [copywriting frameworks](/copywriting-frameworks).
 
 ## Wizards
 
 A wizard is any flow longer than a few questions: setup, filling in a dictionary, building a brief from scratch. Every wizard runs the same way.
 
-- **A header on every turn.** The first line names the wizard, the section, and the step, so you always know where you are: **Snow Doughnut setup · Dictionaries · 4 of 9**.
+- **A header on every turn.** The first line names the wizard, the section, and the step, so you always know where you are: **Snow Doughnut setup · Dictionaries · 4 of 9**. When the turn is a dialog, the header sits in the message above it.
 - **Each section opens with its purpose.** One or two sentences on what the section sets up and why it matters, with a link to the page that explains it. Until setup is done, links go to docs.snowdoughnut.com; after that, they go to your own copy, wherever your setup record says it lives.
 - **Recommended or advanced first.** A wizard opens by offering the recommended path, which applies the framework's full defaults in one step for you to review, or the advanced path, which asks section by section.
 - **A recommended answer on every question.** For a list question it is usually "add all of them", marked recommended and offered first.
@@ -82,10 +78,11 @@ This page is your instruction set for every command and skill in this framework.
 
 - Route the request through the [router](/mcp-router), then open that page's MCP wiring block: Triggers, Asks in order, Uses, Hands off to, and Output. A skill page carries the same in its runbook.
 - Find pages by capability key, never by page name. A Uses or Options key matches every page that provides it or a key below it, as the [registry](/mcp-registry#how-discovery-works) describes, so pages added after this one are found the same way.
-- Rank every option list against the context before offering it: top five with a reason each, then "or see all".
+- Work through the Asks in order. Batch the closed-list asks that are ready into one multiple-choice dialog, up to four questions, two to four options each, the recommended option first and labelled "(Recommended)". Ask free-text inputs in chat, one per turn. An ask that depends on an earlier answer waits for the next dialog.
+- Rank every option list against the context before offering it: the top four in a dialog, the top five with a reason each and "or see all" in chat.
 - Pull everything the wiring lists before drafting, in one pass, without narrating the reading. Check the matching library for reusable work before making new, and file the output where the wiring's Output says.
 - A missing input is one precise ask. A value missing from a dictionary is a question, never a guess.
-- Keep every turn under three sentences until the work itself.
+- Keep every chat turn under three sentences until the work itself.
 - Deliver into the user's recorded locations and summarize in chat in a line or two.
 
 ## Related resources

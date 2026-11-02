@@ -42,7 +42,7 @@ A skill rarely runs alone. Ad copy pulls the copy template, the brief, the brand
 
 ## The runbook
 
-Every skill page ends with a runbook: the run card an agent executes from. It holds the trigger, the intake questions in order, what the skill pulls, the rules it enforces, and the output contract. The rest of the page explains the skill to a person. The runbook is the same skill compressed for the agent, run under [how the MCP talks](/mcp-conversation): one question per turn, options from the framework's lists, and nothing asked twice.
+Every skill page ends with a runbook: the run card an agent executes from. It holds the trigger, the intake questions in order, what the skill pulls, the rules it enforces, and the output contract. The rest of the page explains the skill to a person. The runbook is the same skill compressed for the agent, run under [how the MCP talks](/mcp-conversation): pick-list questions in a multiple-choice dialog, up to four at a time, options from the framework's lists, and nothing asked twice.
 
 ## Published skills
 
@@ -55,6 +55,7 @@ Every skill page ends with a runbook: the run card an agent executes from. It ho
 | [Ad creation](/skill-ad-creation) | You need a creative brief, a deliverables plan, and per-variant direction for new ad creative | Creative |
 | [Video editing](/skill-video-editing) | You need source footage turned into an edit brief and cut list per placement | Creative |
 | [De-AI writing review](/skill-deai) | A draft reads as machine-written and you want the tells found and fixed | Writing and editing |
+| [Yapper Framework](/skill-yapper-framework) | You need a fully scripted storytelling UGC ad, or want a winning one broken down | Writing and editing |
 
 ## Installing a skill
 
@@ -77,7 +78,7 @@ Check your agent's own documentation for the exact path or upload screen, since 
 {/* sd-wiring:start, MCP wiring. Stripped from the public site at launch. Schema: /mcp-registry */}
 
 <Accordion title="MCP wiring">
-  **Type:** hub<br />**Domains:** mcp<br />**Provides:** `skill-index`<br />**Uses:** `conversation-contract`, `skill:ad-creation`, `skill:deai`, `skill:google-ad-copy`, `skill:linkedin-ad-copy`, `skill:meta-ad-copy`, `skill:tiktok-ad-copy`, `skill:video-editing`
+  **Type:** hub<br />**Domains:** mcp<br />**Provides:** `skill-index`<br />**Uses:** `conversation-contract`, `skill:ad-creation`, `skill:deai`, `skill:google-ad-copy`, `skill:linkedin-ad-copy`, `skill:meta-ad-copy`, `skill:tiktok-ad-copy`, `skill:video-editing`, `skill:yapper-framework`
 
   **Triggers:** "what can you do" · "which skill handles X"
 

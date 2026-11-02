@@ -1047,6 +1047,12 @@
                 "pages": [
                   "skill-deai"
                 ]
+              },
+              {
+                "group": "Scripts",
+                "pages": [
+                  "skill-yapper-framework"
+                ]
               }
             ]
           }

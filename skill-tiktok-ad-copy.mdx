@@ -28,7 +28,7 @@ It does not cover Meta, Google, LinkedIn, email, or organic social. Those have t
 
 ## What it asks you for
 
-One question per turn, following [how the MCP talks](/mcp-conversation).
+Pick-list questions arrive in a multiple-choice dialog, up to four at a time, following [how the MCP talks](/mcp-conversation).
 
 | Question | Why it needs the answer |
 | :-- | :-- |
@@ -82,13 +82,13 @@ The run card an agent executes this skill from, in order. The turn-by-turn contr
 | Ask 2 | Variant count. Skip when the brief set it; flag a count of one as a frequency risk |
 | Ask 3 | The video, or for a Spark ad the source post link. Skip when attached |
 | Ask 4 | The angle, offered from the [angle library](/angle-library). Skip when the brief names one |
-| Ask 5 | Hook types, one per variant, the top five from [hook types](/hook-types). Skip those the angle brief drafts, and for a Spark ad, whose caption is locked |
+| Ask 5 | Hook types, one per variant, the best-ranked options from [hook types](/hook-types). Skip those the angle brief drafts, and for a Spark ad, whose caption is locked |
 | Ask 6 | Landing page URL. Skip when the brief names it |
 | Ask 7 | Documents on hand: brand voice, messaging, briefs. Skip any attached or recorded at setup |
 
 There is no copy framework question. A 100-character caption has room for one hook, not a structure. | Pulls | The format's copy template, the [angle brief](/angle-brief), the [copy brief](/copy-brief), [brand voice and tone](/brand-voice-and-tone), [messaging](/messaging), [hook types](/hook-types), and for Spark ads the third-party section of [logo usage](/logo-usage) | | Rules | The three rules above | | Output | One filled template per variant, delivered to the export destination, with every blank listed next to the fact that would unlock it |
 
-One question per turn, options offered as a pick list, and nothing asked that the documents already answer.
+Pick-list asks batched into dialogs of up to four, free-text asks one per turn in chat, and nothing asked that the documents already answer.
 
 ## Related resources
 

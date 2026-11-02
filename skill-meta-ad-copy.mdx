@@ -28,7 +28,7 @@ It does not cover Google, LinkedIn, TikTok, email, or organic social. Those have
 
 ## What it asks you for
 
-The skill opens with a short intake, one question per turn, following [how the MCP talks](/mcp-conversation). Each answer with a closed list behind it arrives as options you pick.
+The skill opens with a short intake, following [how the MCP talks](/mcp-conversation). Questions with a closed list behind them arrive in a multiple-choice dialog, up to four at a time; the rest are asked in chat.
 
 | Question | Why it needs the answer |
 | :-- | :-- |
@@ -94,15 +94,15 @@ The run card an agent executes this skill from, in order. This intake is the wor
 | Ask 1 | Ad format: static image, video, carousel, collection, or lead ad. Skip when the brief or the creative names it |
 | Ask 2 | The creative: attach it or point at the creative library. Skip when already attached |
 | Ask 3 | The angle, offered from the [angle library](/angle-library). Skip when the brief names one |
-| Ask 4 | Hook type, the top five from [hook types](/hook-types) ranked for this angle and offer. Skip when the angle brief carries a drafted hook for this ad |
-| Ask 5 | Copy framework, the top five from [copywriting frameworks](/copywriting-frameworks). Skip when the copy brief names one |
+| Ask 4 | Hook type, the best-ranked options from [hook types](/hook-types) ranked for this angle and offer. Skip when the angle brief carries a drafted hook for this ad |
+| Ask 5 | Copy framework, the best-ranked options from [copywriting frameworks](/copywriting-frameworks). Skip when the copy brief names one |
 | Ask 6 | Landing page URL. Skip when the brief names it, and for a lead ad, where the Instant Form is the destination |
 | Ask 7 | Documents on hand: brand voice, messaging, briefs. Skip any attached or recorded at setup |
 | Pulls | The format's copy template, the [angle brief](/angle-brief), the [copy brief](/copy-brief), [brand voice and tone](/brand-voice-and-tone), [messaging](/messaging) and its approved claims table, [hook types](/hook-types), and [copywriting frameworks](/copywriting-frameworks) |
 | Rules | The three rules above |
 | Output | The filled template, delivered to the export destination, with every blank listed next to the fact that would unlock it |
 
-One question per turn, options offered as a pick list, and nothing asked that the documents already answer.
+Pick-list asks batched into dialogs of up to four, free-text asks one per turn in chat, and nothing asked that the documents already answer.
 
 ## Related resources
 
