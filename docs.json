@@ -1055,6 +1055,17 @@
                 ]
               }
             ]
+          },
+          {
+            "dropdown": "Components",
+            "groups": [
+              {
+                "group": "Hooks",
+                "pages": [
+                  "visual-hooks"
+                ]
+              }
+            ]
           }
         ]
       },
