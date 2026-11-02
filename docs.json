@@ -1060,9 +1060,15 @@
             "dropdown": "Components",
             "groups": [
               {
-                "group": "Hooks",
+                "group": "Visual hooks",
                 "pages": [
                   "visual-hooks"
+                ]
+              },
+              {
+                "group": "Text / audio hook frameworks",
+                "pages": [
+                  "text-audio-hook-frameworks"
                 ]
               }
             ]

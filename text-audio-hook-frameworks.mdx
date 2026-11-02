@@ -1,0 +1,68 @@
+---
+title: "Text / audio hook frameworks"
+description: "The closed list of fill-in sentence patterns for the opening line of an ad, spoken or on screen: the pattern, what goes in each slot, and an example. Pick from this list when a skill asks for the opening line, or to write hook variants."
+launch: "private"
+---
+
+A hook framework is a sentence pattern with slots. It turns a [hook type](/hook-types), the family of opening, into a line someone can say in the first two seconds. The same line usually runs twice: spoken by the creator and as the text on screen, paired with one of the [visual hooks](/visual-hooks).
+
+Fill the slots from the [customer profile](/b2-c-customer-profiles) and [messaging](/messaging). A slot is a specific word or number, never a placeholder the viewer has to decode: "if you run a bakery", not "if you run a business".
+
+## The frameworks
+
+| # | Framework | Fill in | Example | Hook type |
+| :-- | :-- | :-- | :-- | :-- |
+| 1 | If you're **X**, pay attention | X = who this is for, as they would describe themselves | "If you run a bakery with more than one oven, pay attention." | Problem call-out |
+| 2 | Most **X** are **Y** because | X = the audience, Y = the mistake or pain they share | "Most bakeries are throwing out a tray a day because they bake to a guess." | Curiosity |
+| 3 | The reason you **X** is | X = the problem the viewer already has | "The reason you sell out by noon is your bake schedule, not your demand." | Problem call-out |
+| 4 | **X!** | X = one short, surprising statement, said with energy | "Stop counting trays by hand!" | Bold result |
+| 5 | **X** is **Y** | X = something the viewer believes or uses, Y = a new way to see it | "Your oven timer is your most expensive employee." | Curiosity |
+
+The list comes from a short-form breakdown of the best hooks for Facebook ads. The slot notes and examples here are Snow Doughnut's.
+
+## How each one works
+
+| Framework | Why it stops the scroll | Watch for |
+| :-- | :-- | :-- |
+| If you're X, pay attention | The viewer hears themselves named and assumes the rest is for them | An X so broad it names everyone, which names no one |
+| Most X are Y because | It sorts the viewer into "most people" and promises the reason they are stuck | Y has to be true and provable from the approved claims |
+| The reason you X is | It explains a problem the viewer has already noticed | The reason given in the next line has to be the product's mechanism, or the ad breaks its promise |
+| X! | A short, loud statement interrupts the feed by itself | It needs strong delivery; read flat, it reads as a shout with nothing behind it |
+| X is Y | A familiar thing gets a new label, so the viewer stays for the explanation | The comparison has to land in one hearing; if it needs explaining, pick another framework |
+
+## When each one fits
+
+The MCP ranks this list against the context of the ad and offers the ones that fit best (four in a dialog, five in chat), using the [context facets](/mcp-registry#context-facets). A framework whose Avoid when matches is left out.
+
+| Framework | Best for | Avoid when |
+| :-- | :-- | :-- |
+| If you're X, pay attention | audience: cold; goal: awareness, consideration; business: b2b, local | audience: customers |
+| Most X are Y because | audience: cold; goal: consideration; proof: numbers, reviews | proof: none |
+| The reason you X is | goal: consideration, conversion; audience: warm, retargeting |  |
+| X! | length: short; channel: tiktok, meta; offer: sale, launch |  |
+| X is Y | goal: awareness; audience: cold; length: short |  |
+
+A new framework is a new row in every table. It joins the ranking the moment it is published.
+
+## Writing one
+
+- **Write it to fit the platform.** On Meta the line has to land before the "See more" fold, about 125 characters; on TikTok it is the 100-character caption. Shorter wins either way, and every example above is under 90.
+- **One framework per ad.** Hook variants are the same script opened with different frameworks, so a test shows which opening did the work.
+- **The next line pays it off.** Every framework opens a question. The second line answers it, or the viewer feels baited and leaves.
+- **Spoken and on screen match.** The text on screen can be shorter than the spoken line, but it says the same thing.
+- **The claim has to be true.** A "most X are Y" or a bold statement is a claim, and stays inside the approved claims table in [messaging](/messaging).
+
+## Related resources
+
+- [**Hook types**](/hook-types) The families these patterns belong to.
+- [**Visual hooks**](/visual-hooks) What the viewer sees while the line lands.
+- [**Yapper Framework**](/skill-yapper-framework) Scripts that open with one of these lines.
+- [**Copywriting frameworks**](/copywriting-frameworks) The structure that carries the copy after the hook.
+
+{/* sd-wiring:start, MCP wiring. Stripped from the public site at launch. Schema: /mcp-registry */}
+
+<Accordion title="MCP wiring">
+  **Type:** list<br />**Domains:** copy, creative, video<br />**Provides:** `hook-framework`<br />**Uses:** `hook-type`, `visual-hook`, `approved-claims`, `customer-profile`, `messaging`<br />**Best for:** per row, in When each one fits
+</Accordion>
+
+{/* sd-wiring:end */}
