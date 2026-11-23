@@ -17,11 +17,11 @@ toc-item[data-active-deepest] > a::before {
   pointer-events: none;
 }
 
-/* topbar logo: fixed height inside the 48px navbar. The SVG's natural
-   size is 482x126, so without a height it grows until it spills out of
-   the bar. */
+/* topbar logo: fixed height inside the 48px navbar. The lockup SVG is
+   197x33 (donut mark + "Snow Doughnut" wordmark, the same lockup as the
+   snowdoughnut.com nav), so pin the height and let the width follow. */
 #navbar a[href="/"] img.nav-logo {
-  height: 2.0625rem;
+  height: 1.875rem;
   width: auto;
   max-width: none;
 }
@@ -48,7 +48,7 @@ a[nav-tabs-item] {
 }
 
 .kb-feature-card {
-  background-color: rgb(var(--brand-ink));
+  background-color: rgb(var(--brand-soil));
 }
 
 .kb-feature-card::before {
@@ -62,255 +62,266 @@ a[nav-tabs-item] {
 }
 
 /* ───────────────────────────────────────────────────────────
-   Brand palette — matches snowdoughnut.com
+   Brand palette — matches snowdoughnut.com (2026 refresh)
 
-     White     #FFFFFF   page background, large neutral surfaces
-     Ink       #222222   body text, headings, icons, borders, links
-     Yellow    #FFC91F   brand accent: filled buttons, highlights, marks
+     Snow          #FFFFFF   page background
+     Pastel White  #F7F5F5   raised surfaces: cards, nav bar, accordions
+     Soil          #53483B   text, headings, icons, filled buttons
+     Golden Sand   #E9DDBA   highlight: active items, selection, marks
+     Feldgrau      #141414   dark-mode background
 
-   docs.json carries the two slots its schema has fields for: the
-   accent (colors) and the page background (background.color). The
-   rules below cover what it has no field for — the neutral ramp
-   Mintlify derives from the accent, which is what actually paints
-   body text, icons and borders.
+   Type: EB Garamond for headings, Figtree for everything else, both
+   set in docs.json. Surfaces are soft: 12px radius, hairline Soil
+   borders and low, warm shadows, no hard offsets.
 
-   Yellow is a light colour: 1.5:1 on White, so it clears neither AA
-   text (4.5:1) nor the 3:1 floor for interface elements, and darkening
-   it far enough to pass turns it brown and off-brand. So it is used the
-   way the site uses it — as a fill under Ink, never as ink on White.
-   Ink on Yellow is 10.3:1 and Yellow on Ink is 10.3:1, so the pairing
-   works in both directions and in both modes.
-
-   That splits the accent by mode, which is what docs.json's colors
-   block is for: `dark` (the light-mode accent) is Ink, so light-mode
-   links and active states resolve to text-safe black; `light` (the
-   dark-mode accent) is Yellow, which reads 10.3:1 on the Ink
-   background. Yellow re-enters light mode only through the rules
-   below, where it always sits under an Ink label.
+   Contrast: Soil on Snow is 8.9:1, Soil on Pastel White 8.2:1 and
+   Soil on Golden Sand 6.6:1, so Soil can carry text on every light
+   surface. Golden Sand on Snow is 1.4:1, so it is only ever a fill
+   behind Soil, never a text colour on the page. In dark mode the
+   accent is Golden Sand on Feldgrau, 13.6:1.
 
    Mintlify reads these variables as space-separated RGB triples,
    not hex, because it composes them through rgb(). Keep that form.
    ─────────────────────────────────────────────────────────── */
 
 :root {
-  --brand-surface: 255 255 255;
-  --brand-ink: 34 34 34;
-  --brand-yellow: 255 201 31;
+  --brand-snow: 255 255 255;
+  --brand-pastel: 247 245 245;
+  --brand-soil: 83 72 59;
+  --brand-sand: 233 221 186;
+  --brand-night: 20 20 20;
 
-  /* Neutral ramp, re-tinted off Mintlify's auto-derived primary-tinted
-     grey and onto pure neutral grey. The ramp stays monotonic and each
-     stop holds its luminance band, so contrast behaviour is unchanged in
-     both modes — only the hue moves. Left tinted, the ramp would pull
-     Yellow's hue into every border and secondary label on the page and
-     read as a wash rather than an accent; Ink is a neutral grey, so the
-     ramp resolves neutral to sit under it. */
-  --gray-50: 250 250 250;
-  --gray-100: 244 244 244;
-  --gray-200: 231 231 231;
-  --gray-300: 213 213 213;
-  --gray-400: 161 161 161;
-  --gray-500: 116 116 116;
-  --gray-600: 85 85 85;
-  --gray-700: 67 67 67;
-  --gray-800: 40 40 40;
-  --gray-900: 26 26 26;
-  --gray-950: 14 14 14;
+  /* Hairlines and washes, as the site's Soil 12 / Soil 40 / Sand 40
+     tokens. */
+  --brand-line: rgb(83 72 59 / 0.12);
+  --brand-line-strong: rgb(83 72 59 / 0.2);
+  --brand-underline: rgb(83 72 59 / 0.4);
+  --brand-wash: rgb(233 221 186 / 0.4);
+
+  --brand-surface: var(--brand-pastel);
+  --brand-ink: var(--brand-soil);
+  --brand-shadow: 0 1px 2px 0 rgb(83 72 59 / 0.08), 0 4px 12px 0 rgb(83 72 59 / 0.06);
+  --brand-shadow-hover: 0 2px 4px 0 rgb(83 72 59 / 0.1), 0 10px 24px 0 rgb(83 72 59 / 0.1);
+  --brand-radius: 12px;
+  --brand-radius-sm: 8px;
+
+  /* Neutral ramp, warmed toward Soil so borders and secondary text sit
+     in the same family as the ink. Mintlify derives the ramp from the
+     accent; these replace it. Stop 700 is Soil itself. Each stop keeps
+     its luminance band, so 500 still clears 4.5:1 on Snow and 400 still
+     clears 4.5:1 on Feldgrau. */
+  --gray-50: 250 249 248;
+  --gray-100: 247 245 245;
+  --gray-200: 234 231 227;
+  --gray-300: 214 209 202;
+  --gray-400: 168 160 150;
+  --gray-500: 125 116 105;
+  --gray-600: 97 88 77;
+  --gray-700: 83 72 59;
+  --gray-800: 55 48 40;
+  --gray-900: 36 31 26;
+  --gray-950: 20 20 20;
 }
 
-/* Primary text and headings sit on exact Ink: 15.9:1 on White. Scoped
-   to light mode — in dark mode Mintlify resolves prose colour to
-   `inherit` against the Ink background, and those rules are left
-   alone. */
+html.dark {
+  --brand-surface: 30 28 26;
+  --brand-ink: var(--brand-pastel);
+  --brand-line: rgb(247 245 245 / 0.12);
+  --brand-line-strong: rgb(247 245 245 / 0.2);
+  --brand-underline: rgb(233 221 186 / 0.5);
+  --brand-wash: rgb(233 221 186 / 0.12);
+  --brand-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.4);
+  --brand-shadow-hover: 0 4px 16px 0 rgb(0 0 0 / 0.5);
+}
+
+/* ── Type ─────────────────────────────────────────────────── */
+
+/* Text and headings on exact Soil in light mode. Dark mode keeps
+   Mintlify's light-on-dark pairing. */
 html:not(.dark) .prose {
-  color: rgb(var(--brand-ink));
-  --tw-prose-headings: rgb(var(--brand-ink));
-  --tw-prose-bold: rgb(var(--brand-ink));
-  --tw-prose-quotes: rgb(var(--brand-ink));
-  --tw-prose-code: rgb(var(--brand-ink));
-  --tw-prose-kbd: rgb(var(--brand-ink));
+  color: rgb(var(--brand-soil));
+  --tw-prose-headings: rgb(var(--brand-soil));
+  --tw-prose-bold: rgb(var(--brand-soil));
+  --tw-prose-quotes: rgb(var(--brand-soil));
+  --tw-prose-code: rgb(var(--brand-soil));
+  --tw-prose-kbd: rgb(var(--brand-soil));
 }
-
-/* The page title renders outside .prose on a ramp utility rather than a
-   prose token, so it needs its own rule to land on the same Ink as every
-   heading below it. Dark mode keeps Mintlify's light-on-dark pairing. */
 html:not(.dark) h1.text-gray-900 {
-  color: rgb(var(--brand-ink));
+  color: rgb(var(--brand-soil));
 }
 
-/* Primary CTA: Ink label on Yellow, 10.3:1. This is the one place the
-   accent is loud in both modes, and it is the button the site itself
-   paints yellow. The fill is pinned rather than left to the theme,
-   because Mintlify resolves a filled control to `colors.primary` in
-   some slots and `colors.dark`/`colors.light` in others — which would
-   otherwise give a black button in light mode and a yellow one in
-   dark. Both label colours are stated so neither mode inherits white
-   text onto Yellow, which is 1.5:1. */
-a.bg-primary,
-button.bg-primary,
-.dark a.bg-primary-light,
-.dark button.bg-primary-light {
-  background-color: rgb(var(--brand-yellow));
-  color: rgb(var(--brand-ink));
+/* EB Garamond headings run tight on the site (-0.03em to -0.04em) and
+   at regular weight; the serif carries the hierarchy, not boldness. */
+h1#page-title,
+.prose h1,
+.prose h2,
+.prose h3 {
+  font-weight: 400;
+  letter-spacing: -0.03em;
 }
-
-/* Inline prose links. The light-mode accent is Ink, so a link would
-   otherwise be the same black as the sentence around it with nothing
-   to mark it. Yellow does the marking as an underline, where it sits
-   under an Ink label rather than carrying text itself. Scoped to text
-   containers so Cards and other block-level anchors are untouched, and
-   to light mode — dark-mode links already resolve to Yellow. */
-html:not(.dark) .prose p a,
-html:not(.dark) .prose li a,
-html:not(.dark) .prose td a {
-  color: rgb(var(--brand-ink));
-  text-decoration-color: rgb(var(--brand-yellow));
-  text-decoration-thickness: 0.125em;
-  text-underline-offset: 0.2em;
-}
-
-/* ───────────────────────────────────────────────────────────
-   Yellow accents. Each one is a fill, bar, border or underline that
-   sits beside or under an Ink label, never the label itself, and none
-   of them is the only thing marking a state: active items also change
-   text colour and weight, so the yellow is decoration on top.
-   ─────────────────────────────────────────────────────────── */
-
-/* Active top-nav tab: thicker Yellow bar in place of the thin accent
-   line. Both modes. */
-a.nav-tabs-item[data-active="true"] > div.bg-primary {
-  height: 3px;
-  background-color: rgb(var(--brand-yellow));
-}
-
-/* Active sidebar page: Yellow bar on the left edge over a pale Yellow
-   wash. Ink on the wash is 14:1 in light mode; dark mode keeps its
-   Yellow label, 8:1 on the darker wash. */
-.sidebar-group a[aria-current="page"] {
-  border-radius: 0.375rem;
-  background-color: rgb(var(--brand-yellow) / 0.16);
-  box-shadow: inset 3px 0 0 rgb(var(--brand-yellow));
-}
-
-/* Sidebar hover: Yellow underline under the Ink label. */
-.sidebar-group a:not([aria-current="page"]):hover span {
-  text-decoration: underline;
-  text-decoration-color: rgb(var(--brand-yellow));
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.25em;
-}
-
-/* Table of contents: the active-section chevron in Yellow. */
-toc-item[data-active-deepest] > a::before {
-  background-color: rgb(var(--brand-yellow));
-}
-
-/* Page title: short Yellow rule underneath. */
 h1#page-title {
-  padding-bottom: 0.75rem;
-  background: linear-gradient(rgb(var(--brand-yellow)), rgb(var(--brand-yellow)))
-    no-repeat left bottom / 3rem 5px;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+.prose h4 {
+  letter-spacing: -0.01em;
 }
 
-/* Inline prose links: Mintlify underlines them with a 1px bottom
-   border in the accent, which is Ink in light mode. Make it a 2px
-   Yellow line in both modes, and fill the Yellow in behind the Ink
-   label on hover, 10.3:1. */
-.prose a.link {
-  border-bottom: 2px solid rgb(var(--brand-yellow));
+/* ── Links ────────────────────────────────────────────────── */
+
+/* Inline prose links: Soil text with a soft Soil underline that firms
+   up on hover, like body links on the site. Mintlify marks inline
+   links with `a.link` wherever they sit (paragraphs, list items, steps,
+   tables), and leaves Cards and other block-level anchors without it,
+   so this class is the scope. Without it, inline links fall back to
+   Mintlify's default navy. */
+.prose a.link,
+.prose p a,
+.prose li a,
+.prose td a {
+  color: rgb(var(--brand-ink));
+  border-bottom: 0;
+  text-decoration-line: underline;
+  text-decoration-color: var(--brand-underline);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  transition: text-decoration-color 150ms ease;
 }
+.prose a.link:hover,
 .prose p a:hover,
 .prose li a:hover,
 .prose td a:hover {
-  background-color: rgb(var(--brand-yellow));
-  color: rgb(var(--brand-ink)) !important;
-  border-radius: 0.15em;
+  text-decoration-color: currentColor;
 }
 
+/* ── Buttons ──────────────────────────────────────────────── */
 
-/* Prose furniture: Yellow for the lines that frame content. */
-.prose blockquote:not(.sr-only) {
-  border-left-color: rgb(var(--brand-yellow));
-  border-left-width: 4px;
+/* Filled controls: Soil fill with a Pastel White label (8.2:1), 8px
+   radius — the site's "Book a call" button. Pinned rather than left to
+   the theme, because Mintlify resolves a filled control to
+   `colors.primary` in some slots and `colors.dark`/`colors.light` in
+   others. Dark mode flips to Golden Sand with a Soil label (6.6:1). */
+a.bg-primary,
+button.bg-primary {
+  background-color: rgb(var(--brand-soil));
+  color: rgb(var(--brand-pastel));
+  border-radius: var(--brand-radius-sm);
 }
-.prose hr {
-  border-top: 2px solid rgb(var(--brand-yellow));
-}
-.prose thead th {
-  border-bottom: 2px solid rgb(var(--brand-yellow));
-}
-
-/* Native checkboxes and radios in workbooks. Browsers draw a dark mark
-   on a light accent colour, so the tick stays Ink on Yellow. */
-input[type="checkbox"],
-input[type="radio"] {
-  accent-color: rgb(var(--brand-yellow));
-}
-
-/* ───────────────────────────────────────────────────────────
-   Outlined blocks with a hard Yellow shadow — the snowdoughnut.com
-   card style: 2px solid edge, no-blur Yellow shadow offset down and
-   to the left. The edge is Ink in light mode (15.9:1 on White) and
-   White in dark mode (15.9:1 on Ink), so the outline carries the
-   contrast and the shadow is decoration.
-   ─────────────────────────────────────────────────────────── */
-
-:root {
-  --brand-edge: var(--brand-ink);
-}
-html.dark {
-  --brand-edge: 255 255 255;
+.dark a.bg-primary,
+.dark button.bg-primary,
+.dark a.bg-primary-light,
+.dark button.bg-primary-light {
+  background-color: rgb(var(--brand-sand));
+  color: rgb(var(--brand-soil));
+  border-radius: var(--brand-radius-sm);
 }
 
-.card,
-#pagination a,
-details.accordion {
-  border: 2px solid rgb(var(--brand-edge)) !important;
-  box-shadow: -4px 4px 0 0 rgb(var(--brand-yellow));
-  transition: transform 150ms ease, box-shadow 150ms ease;
-}
-
-/* Cards are the large blocks, so they take the site's bigger shadow. */
-.card {
-  box-shadow: -8px 8px 0 0 rgb(var(--brand-yellow));
-}
-
-/* Hover: the block lifts toward the top right and the shadow grows to
-   match, so it reads as rising off the page. Mintlify's card hover
-   swaps the border to the accent with an !important utility; hold it
-   on the edge colour instead, and hand the accent back to the card's
-   children, whose label and arrow read the same variable. */
-.card:hover {
-  --primary: var(--brand-edge);
-  --primary-light: var(--brand-edge);
-  transform: translate(2px, -2px);
-  box-shadow: -10px 10px 0 0 rgb(var(--brand-yellow));
-}
-.card:hover * {
-  --primary: var(--brand-ink);
-  --primary-light: var(--brand-yellow);
-}
-#pagination a:hover {
-  transform: translate(2px, -2px);
-  box-shadow: -6px 6px 0 0 rgb(var(--brand-yellow));
-}
-
-/* Subscribe button: White fill with an Ink label (15.9:1), Ink edge
-   and the small Yellow shadow. The edge stays Ink in dark mode too,
-   because a White edge would vanish into the White fill; the fill
-   itself separates the button from the dark navbar. */
 #navbar a.bg-primary,
 #navbar a.bg-primary-light {
-  background-color: rgb(255 255 255);
-  color: rgb(var(--brand-ink));
-  border: 2px solid rgb(var(--brand-ink));
-  box-shadow: -3px 3px 0 0 rgb(var(--brand-yellow));
-  transition: transform 150ms ease, box-shadow 150ms ease;
+  border-radius: var(--brand-radius-sm);
+  font-weight: 500;
+  transition: opacity 200ms ease;
 }
 #navbar a.bg-primary:hover,
 #navbar a.bg-primary-light:hover {
-  opacity: 1;
-  transform: translate(1px, -1px);
-  box-shadow: -4px 4px 0 0 rgb(var(--brand-yellow));
+  opacity: 0.88;
+}
+
+/* ── Navigation ───────────────────────────────────────────── */
+
+/* Active top-nav tab: a 2px Soil bar (Golden Sand in dark mode). */
+a.nav-tabs-item[data-active="true"] > div.bg-primary {
+  height: 2px;
+  background-color: rgb(var(--brand-soil));
+}
+.dark a.nav-tabs-item[data-active="true"] > div.bg-primary,
+.dark a.nav-tabs-item[data-active="true"] > div.bg-primary-light {
+  background-color: rgb(var(--brand-sand));
+}
+
+/* Active sidebar page: Golden Sand wash behind the Soil label, rounded
+   like the site's segmented control. */
+.sidebar-group a[aria-current="page"] {
+  border-radius: var(--brand-radius-sm);
+  background-color: var(--brand-wash);
+}
+
+/* Sidebar hover: soft underline under the label. */
+.sidebar-group a:not([aria-current="page"]):hover span {
+  text-decoration: underline;
+  text-decoration-color: var(--brand-underline);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+}
+
+/* Table of contents: the active-section chevron in the ink colour. */
+toc-item[data-active-deepest] > a::before {
+  background-color: rgb(var(--brand-ink));
+}
+
+/* ── Prose furniture ──────────────────────────────────────── */
+
+.prose blockquote:not(.sr-only) {
+  border-left-color: rgb(var(--brand-sand));
+  border-left-width: 3px;
+}
+.prose hr {
+  border-top: 1px solid var(--brand-line);
+}
+.prose thead th {
+  border-bottom: 1px solid var(--brand-line-strong);
+}
+
+/* Note callouts: Mintlify paints them blue, the one cool colour on the
+   page. Re-tint to a Golden Sand wash with a Soil label and icon
+   (6.6:1 on the solid Sand; higher on the lighter wash). Warning,
+   danger and the other status callouts keep their semantic colours. */
+.callout[data-callout-type="note"] {
+  background-color: rgb(var(--brand-sand) / 0.3);
+  border-color: rgb(var(--brand-sand));
+}
+.callout[data-callout-type="note"],
+.callout[data-callout-type="note"] * {
+  color: rgb(var(--brand-soil));
+}
+.dark .callout[data-callout-type="note"] {
+  background-color: rgb(var(--brand-sand) / 0.1);
+  border-color: rgb(var(--brand-sand) / 0.3);
+}
+.dark .callout[data-callout-type="note"],
+.dark .callout[data-callout-type="note"] * {
+  color: rgb(var(--brand-sand));
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: rgb(var(--brand-soil));
+}
+
+/* ── Surfaces ─────────────────────────────────────────────── */
+
+/* Cards, pagination and accordions: Pastel White surfaces with a Soil
+   hairline, 12px radius and a low warm shadow — the site's nav bar and
+   card style. Hover lifts gently instead of jumping. */
+.card,
+#pagination a,
+details.accordion {
+  background-color: rgb(var(--brand-surface));
+  border: 1px solid var(--brand-line) !important;
+  border-radius: var(--brand-radius) !important;
+  box-shadow: var(--brand-shadow);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card:hover,
+#pagination a:hover {
+  --primary: var(--brand-ink);
+  --primary-light: var(--brand-sand);
+  transform: translateY(-2px);
+  box-shadow: var(--brand-shadow-hover);
+}
+.card:hover {
+  border-color: var(--brand-line-strong) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -322,37 +333,36 @@ details.accordion {
     transition: none;
   }
   .card:hover,
-  #pagination a:hover,
-  #navbar a.bg-primary:hover,
-  #navbar a.bg-primary-light:hover {
+  #pagination a:hover {
     transform: none;
   }
 }
 
-/* Text selection, the cheapest place the brand colour can show up
-   without a contrast cost: Ink on Yellow either way round. */
+/* Text selection: Soil on Golden Sand. */
 ::selection {
-  background-color: rgb(var(--brand-yellow));
-  color: rgb(var(--brand-ink));
+  background-color: rgb(var(--brand-sand));
+  color: rgb(var(--brand-soil));
 }
 
-/* Yellow by hand, for the marks the theme has no slot for. Both put
-   Ink on Yellow rather than Yellow on White — as a text colour it is
-   1.5:1 on the page background, so it is a fill colour only. */
+/* Golden Sand pill, as the highlighted word in the site's hero. Soil
+   label on Sand, 6.6:1. */
 .brand-mark {
-  background-color: rgb(var(--brand-yellow));
-  color: rgb(var(--brand-ink));
-  padding: 0.05em 0.3em;
-  border-radius: 0.2em;
+  background-color: rgb(var(--brand-sand));
+  color: rgb(var(--brand-soil));
+  padding: 0.05em 0.45em;
+  border-radius: 999px;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
 
-/* Status dot — the accent at the size it is meant to be used. */
+/* Status dot. */
 .brand-dot {
   display: inline-block;
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 9999px;
-  background-color: rgb(var(--brand-yellow));
+  background-color: rgb(var(--brand-soil));
+}
+html.dark .brand-dot {
+  background-color: rgb(var(--brand-sand));
 }
